@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <ThingCategoryDef>
+    <defName>EB_Essences</defName>
+    <label>Essences</label>
+    <parent>ResourcesRaw</parent>
+  </ThingCategoryDef>
+</Defs>

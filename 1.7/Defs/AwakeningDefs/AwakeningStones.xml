@@ -1,0 +1,573 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Defs>
+  <Essencebound.AwakeningStoneDef>
+    <defName>EB_Stone_Fire</defName>
+    <label>awakening stone of fire</label>
+    <description>A warm ember crystal that flickers when held near an awakened essence. Rarity: Common. Imprint preferences and favored essences are original mod design.</description>
+    <rarity>common</rarity>
+    <favoredEssences>
+      <li>EB_Fire</li>
+      <li>EB_Sun</li>
+      <li>EB_Lightning</li>
+      <li>EB_Elemental</li>
+    </favoredEssences>
+    <possibleAspects>
+      <li>EB_Aspect_Assault</li>
+      <li>EB_Aspect_Aura</li>
+      <li>EB_Aspect_Control</li>
+    </possibleAspects>
+    <sourceStatus>community_listed_known_rarity</sourceStatus>
+    <sourceUrl>https://he-who-fights-with-monsters.fandom.com/wiki/Awakening_Stones</sourceUrl>
+  </Essencebound.AwakeningStoneDef>
+  <Essencebound.AwakeningStoneDef>
+    <defName>EB_Stone_Shield</defName>
+    <label>awakening stone of shield</label>
+    <description>A faceted blue stone with a faint outline of a sheltering barrier. Rarity: Common. Imprint preferences and favored essences are original mod design.</description>
+    <rarity>common</rarity>
+    <favoredEssences>
+      <li>EB_Shield</li>
+      <li>EB_Armour</li>
+      <li>EB_Iron</li>
+      <li>EB_Resolute</li>
+    </favoredEssences>
+    <possibleAspects>
+      <li>EB_Aspect_Ward</li>
+      <li>EB_Aspect_Counter</li>
+      <li>EB_Aspect_Recovery</li>
+    </possibleAspects>
+    <sourceStatus>community_listed_known_rarity</sourceStatus>
+    <sourceUrl>https://he-who-fights-with-monsters.fandom.com/wiki/Awakening_Stones</sourceUrl>
+  </Essencebound.AwakeningStoneDef>
+  <Essencebound.AwakeningStoneDef>
+    <defName>EB_Stone_Magus</defName>
+    <label>awakening stone of magus</label>
+    <description>A violet prism threaded with fine runic filaments. Rarity: Common. Imprint preferences and favored essences are original mod design.</description>
+    <rarity>common</rarity>
+    <favoredEssences>
+      <li>EB_Magic</li>
+      <li>EB_Rune</li>
+      <li>EB_Knowledge</li>
+      <li>EB_Staff</li>
+    </favoredEssences>
+    <possibleAspects>
+      <li>EB_Aspect_Spell</li>
+      <li>EB_Aspect_Ritual</li>
+      <li>EB_Aspect_Control</li>
+    </possibleAspects>
+    <sourceStatus>community_listed_known_rarity</sourceStatus>
+    <sourceUrl>https://he-who-fights-with-monsters.fandom.com/wiki/Awakening_Stones</sourceUrl>
+  </Essencebound.AwakeningStoneDef>
+  <Essencebound.AwakeningStoneDef>
+    <defName>EB_Stone_Plant</defName>
+    <label>awakening stone of plant</label>
+    <description>A moss-green pebble with branching veins beneath its surface. Rarity: Common. Imprint preferences and favored essences are original mod design.</description>
+    <rarity>common</rarity>
+    <favoredEssences>
+      <li>EB_Plant</li>
+      <li>EB_Tree</li>
+      <li>EB_Growth</li>
+      <li>EB_Renewal</li>
+    </favoredEssences>
+    <possibleAspects>
+      <li>EB_Aspect_Growth</li>
+      <li>EB_Aspect_Recovery</li>
+      <li>EB_Aspect_Familiar</li>
+    </possibleAspects>
+    <sourceStatus>community_listed_known_rarity</sourceStatus>
+    <sourceUrl>https://he-who-fights-with-monsters.fandom.com/wiki/Awakening_Stones</sourceUrl>
+  </Essencebound.AwakeningStoneDef>
+  <Essencebound.AwakeningStoneDef>
+    <defName>EB_Stone_Water</defName>
+    <label>awakening stone of water</label>
+    <description>A glassy blue stone whose inner currents never settle. Rarity: Common. Imprint preferences and favored essences are original mod design.</description>
+    <rarity>common</rarity>
+    <favoredEssences>
+      <li>EB_Water</li>
+      <li>EB_Life</li>
+      <li>EB_Cloud</li>
+      <li>EB_Pure</li>
+    </favoredEssences>
+    <possibleAspects>
+      <li>EB_Aspect_Recovery</li>
+      <li>EB_Aspect_Control</li>
+      <li>EB_Aspect_Ward</li>
+    </possibleAspects>
+    <sourceStatus>community_listed_rarity_unknown</sourceStatus>
+    <sourceUrl>https://he-who-fights-with-monsters.fandom.com/wiki/Awakening_Stones</sourceUrl>
+  </Essencebound.AwakeningStoneDef>
+  <Essencebound.AwakeningStoneDef>
+    <defName>EB_Stone_Wind</defName>
+    <label>awakening stone of wind</label>
+    <description>A pale crystal that hums with the suggestion of moving air. Rarity: Common. Imprint preferences and favored essences are original mod design.</description>
+    <rarity>common</rarity>
+    <favoredEssences>
+      <li>EB_Wind</li>
+      <li>EB_Wing</li>
+      <li>EB_Swift</li>
+      <li>EB_Bird</li>
+    </favoredEssences>
+    <possibleAspects>
+      <li>EB_Aspect_Mobility</li>
+      <li>EB_Aspect_Reach</li>
+      <li>EB_Aspect_Surge</li>
+    </possibleAspects>
+    <sourceStatus>community_listed_rarity_unknown</sourceStatus>
+    <sourceUrl>https://he-who-fights-with-monsters.fandom.com/wiki/Awakening_Stones</sourceUrl>
+  </Essencebound.AwakeningStoneDef>
+  <Essencebound.AwakeningStoneDef>
+    <defName>EB_Stone_Stone</defName>
+    <label>awakening stone of stone</label>
+    <description>A rough slate gem with a heavy, unyielding core. Rarity: Common. Imprint preferences and favored essences are original mod design.</description>
+    <rarity>common</rarity>
+    <favoredEssences>
+      <li>EB_Earth</li>
+      <li>EB_Iron</li>
+      <li>EB_Shield</li>
+      <li>EB_Crystal</li>
+    </favoredEssences>
+    <possibleAspects>
+      <li>EB_Aspect_Ward</li>
+      <li>EB_Aspect_Counter</li>
+      <li>EB_Aspect_Growth</li>
+    </possibleAspects>
+    <sourceStatus>mod_original_unverified</sourceStatus>
+    <sourceUrl>unverified_mod_original</sourceUrl>
+  </Essencebound.AwakeningStoneDef>
+  <Essencebound.AwakeningStoneDef>
+    <defName>EB_Stone_Fang</defName>
+    <label>awakening stone of fang</label>
+    <description>An ivory-colored shard with a dark line through its point. Rarity: Common. Imprint preferences and favored essences are original mod design.</description>
+    <rarity>common</rarity>
+    <favoredEssences>
+      <li>EB_Wolf</li>
+      <li>EB_Snake</li>
+      <li>EB_Shark</li>
+      <li>EB_Hunt</li>
+    </favoredEssences>
+    <possibleAspects>
+      <li>EB_Aspect_Assault</li>
+      <li>EB_Aspect_Familiar</li>
+      <li>EB_Aspect_Precision</li>
+    </possibleAspects>
+    <sourceStatus>mod_original_unverified</sourceStatus>
+    <sourceUrl>unverified_mod_original</sourceUrl>
+  </Essencebound.AwakeningStoneDef>
+  <Essencebound.AwakeningStoneDef>
+    <defName>EB_Stone_Light</defName>
+    <label>awakening stone of light</label>
+    <description>A milky crystal carrying a steady lantern-like glow. Rarity: Common. Imprint preferences and favored essences are original mod design.</description>
+    <rarity>common</rarity>
+    <favoredEssences>
+      <li>EB_Light</li>
+      <li>EB_Sun</li>
+      <li>EB_Pure</li>
+      <li>EB_Life</li>
+    </favoredEssences>
+    <possibleAspects>
+      <li>EB_Aspect_Ward</li>
+      <li>EB_Aspect_Recovery</li>
+      <li>EB_Aspect_Exploration</li>
+    </possibleAspects>
+    <sourceStatus>mod_original_unverified</sourceStatus>
+    <sourceUrl>unverified_mod_original</sourceUrl>
+  </Essencebound.AwakeningStoneDef>
+  <Essencebound.AwakeningStoneDef>
+    <defName>EB_Stone_Shadow</defName>
+    <label>awakening stone of shadow</label>
+    <description>A smoke-black stone that seems to dim the space around it. Rarity: Common. Imprint preferences and favored essences are original mod design.</description>
+    <rarity>common</rarity>
+    <favoredEssences>
+      <li>EB_Dark</li>
+      <li>EB_Void</li>
+      <li>EB_Smoke</li>
+      <li>EB_Bat</li>
+    </favoredEssences>
+    <possibleAspects>
+      <li>EB_Aspect_Veil</li>
+      <li>EB_Aspect_Mobility</li>
+      <li>EB_Aspect_Control</li>
+    </possibleAspects>
+    <sourceStatus>mod_original_unverified</sourceStatus>
+    <sourceUrl>unverified_mod_original</sourceUrl>
+  </Essencebound.AwakeningStoneDef>
+  <Essencebound.AwakeningStoneDef>
+    <defName>EB_Stone_Focus</defName>
+    <label>awakening stone of focus</label>
+    <description>A clear turquoise gem with a perfectly still center. Rarity: Uncommon. Imprint preferences and favored essences are original mod design.</description>
+    <rarity>uncommon</rarity>
+    <favoredEssences>
+      <li>EB_Adept</li>
+      <li>EB_Eye</li>
+      <li>EB_Mirror</li>
+      <li>EB_Knowledge</li>
+    </favoredEssences>
+    <possibleAspects>
+      <li>EB_Aspect_Precision</li>
+      <li>EB_Aspect_Control</li>
+      <li>EB_Aspect_Spell</li>
+    </possibleAspects>
+    <sourceStatus>community_listed_known_rarity</sourceStatus>
+    <sourceUrl>https://he-who-fights-with-monsters.fandom.com/wiki/Awakening_Stones</sourceUrl>
+  </Essencebound.AwakeningStoneDef>
+  <Essencebound.AwakeningStoneDef>
+    <defName>EB_Stone_Reach</defName>
+    <label>awakening stone of reach</label>
+    <description>A sky-blue crystal whose markings stretch toward its tip. Rarity: Uncommon. Imprint preferences and favored essences are original mod design.</description>
+    <rarity>uncommon</rarity>
+    <favoredEssences>
+      <li>EB_Wind</li>
+      <li>EB_Wing</li>
+      <li>EB_Bow</li>
+      <li>EB_Vast</li>
+    </favoredEssences>
+    <possibleAspects>
+      <li>EB_Aspect_Reach</li>
+      <li>EB_Aspect_Mobility</li>
+      <li>EB_Aspect_Precision</li>
+    </possibleAspects>
+    <sourceStatus>community_listed_known_rarity</sourceStatus>
+    <sourceUrl>https://he-who-fights-with-monsters.fandom.com/wiki/Awakening_Stones</sourceUrl>
+  </Essencebound.AwakeningStoneDef>
+  <Essencebound.AwakeningStoneDef>
+    <defName>EB_Stone_Preparation</defName>
+    <label>awakening stone of preparation</label>
+    <description>A layered amber stone that looks like a folded map. Rarity: Uncommon. Imprint preferences and favored essences are original mod design.</description>
+    <rarity>uncommon</rarity>
+    <favoredEssences>
+      <li>EB_Trap</li>
+      <li>EB_Knowledge</li>
+      <li>EB_Rune</li>
+      <li>EB_Balance</li>
+    </favoredEssences>
+    <possibleAspects>
+      <li>EB_Aspect_Preparation</li>
+      <li>EB_Aspect_Ward</li>
+      <li>EB_Aspect_Control</li>
+    </possibleAspects>
+    <sourceStatus>community_listed_known_rarity</sourceStatus>
+    <sourceUrl>https://he-who-fights-with-monsters.fandom.com/wiki/Awakening_Stones</sourceUrl>
+  </Essencebound.AwakeningStoneDef>
+  <Essencebound.AwakeningStoneDef>
+    <defName>EB_Stone_Surge</defName>
+    <label>awakening stone of surge</label>
+    <description>A bright orange shard that pulses in irregular waves. Rarity: Uncommon. Imprint preferences and favored essences are original mod design.</description>
+    <rarity>uncommon</rarity>
+    <favoredEssences>
+      <li>EB_Swift</li>
+      <li>EB_Lightning</li>
+      <li>EB_Might</li>
+      <li>EB_Wind</li>
+    </favoredEssences>
+    <possibleAspects>
+      <li>EB_Aspect_Surge</li>
+      <li>EB_Aspect_Assault</li>
+      <li>EB_Aspect_Mobility</li>
+    </possibleAspects>
+    <sourceStatus>community_listed_known_rarity</sourceStatus>
+    <sourceUrl>https://he-who-fights-with-monsters.fandom.com/wiki/Awakening_Stones</sourceUrl>
+  </Essencebound.AwakeningStoneDef>
+  <Essencebound.AwakeningStoneDef>
+    <defName>EB_Stone_Hunt</defName>
+    <label>awakening stone of hunt</label>
+    <description>A green-brown stone marked with a faint tracking spiral. Rarity: Uncommon. Imprint preferences and favored essences are original mod design.</description>
+    <rarity>uncommon</rarity>
+    <favoredEssences>
+      <li>EB_Hunt</li>
+      <li>EB_Wolf</li>
+      <li>EB_Bow</li>
+      <li>EB_Deer</li>
+    </favoredEssences>
+    <possibleAspects>
+      <li>EB_Aspect_Exploration</li>
+      <li>EB_Aspect_Precision</li>
+      <li>EB_Aspect_Familiar</li>
+    </possibleAspects>
+    <sourceStatus>community_listed_rarity_unknown</sourceStatus>
+    <sourceUrl>https://he-who-fights-with-monsters.fandom.com/wiki/Awakening_Stones</sourceUrl>
+  </Essencebound.AwakeningStoneDef>
+  <Essencebound.AwakeningStoneDef>
+    <defName>EB_Stone_Grace</defName>
+    <label>awakening stone of grace</label>
+    <description>A smooth silver-blue stone that feels almost weightless. Rarity: Uncommon. Imprint preferences and favored essences are original mod design.</description>
+    <rarity>uncommon</rarity>
+    <favoredEssences>
+      <li>EB_Dance</li>
+      <li>EB_Balance</li>
+      <li>EB_Swift</li>
+      <li>EB_Wind</li>
+    </favoredEssences>
+    <possibleAspects>
+      <li>EB_Aspect_Mobility</li>
+      <li>EB_Aspect_Recovery</li>
+      <li>EB_Aspect_Counter</li>
+    </possibleAspects>
+    <sourceStatus>mod_original_unverified</sourceStatus>
+    <sourceUrl>unverified_mod_original</sourceUrl>
+  </Essencebound.AwakeningStoneDef>
+  <Essencebound.AwakeningStoneDef>
+    <defName>EB_Stone_Blood</defName>
+    <label>awakening stone of blood</label>
+    <description>A dark crimson gem with slow-moving threads at its heart. Rarity: Uncommon. Imprint preferences and favored essences are original mod design.</description>
+    <rarity>uncommon</rarity>
+    <favoredEssences>
+      <li>EB_Blood</li>
+      <li>EB_Life</li>
+      <li>EB_Hunger</li>
+      <li>EB_Flesh</li>
+    </favoredEssences>
+    <possibleAspects>
+      <li>EB_Aspect_Recovery</li>
+      <li>EB_Aspect_Assault</li>
+      <li>EB_Aspect_Control</li>
+    </possibleAspects>
+    <sourceStatus>mod_original_unverified</sourceStatus>
+    <sourceUrl>unverified_mod_original</sourceUrl>
+  </Essencebound.AwakeningStoneDef>
+  <Essencebound.AwakeningStoneDef>
+    <defName>EB_Stone_Mist</defName>
+    <label>awakening stone of mist</label>
+    <description>A cloudy opal whose interior is difficult to focus on. Rarity: Uncommon. Imprint preferences and favored essences are original mod design.</description>
+    <rarity>uncommon</rarity>
+    <favoredEssences>
+      <li>EB_Cloud</li>
+      <li>EB_Smoke</li>
+      <li>EB_Water</li>
+      <li>EB_Dark</li>
+    </favoredEssences>
+    <possibleAspects>
+      <li>EB_Aspect_Veil</li>
+      <li>EB_Aspect_Ward</li>
+      <li>EB_Aspect_Control</li>
+    </possibleAspects>
+    <sourceStatus>mod_original_unverified</sourceStatus>
+    <sourceUrl>unverified_mod_original</sourceUrl>
+  </Essencebound.AwakeningStoneDef>
+  <Essencebound.AwakeningStoneDef>
+    <defName>EB_Stone_Adventure</defName>
+    <label>awakening stone of adventure</label>
+    <description>A sea-green stone that catches glints like far-off horizons. Rarity: Rare. Imprint preferences and favored essences are original mod design.</description>
+    <rarity>rare</rarity>
+    <favoredEssences>
+      <li>EB_Hunt</li>
+      <li>EB_Ship</li>
+      <li>EB_Vast</li>
+      <li>EB_Wing</li>
+    </favoredEssences>
+    <possibleAspects>
+      <li>EB_Aspect_Adventure</li>
+      <li>EB_Aspect_Exploration</li>
+      <li>EB_Aspect_Mobility</li>
+    </possibleAspects>
+    <sourceStatus>community_listed_known_rarity</sourceStatus>
+    <sourceUrl>https://he-who-fights-with-monsters.fandom.com/wiki/Awakening_Stones</sourceUrl>
+  </Essencebound.AwakeningStoneDef>
+  <Essencebound.AwakeningStoneDef>
+    <defName>EB_Stone_Judgement</defName>
+    <label>awakening stone of judgement</label>
+    <description>A pale gold stone whose inner markings resemble scales. Rarity: Rare. Imprint preferences and favored essences are original mod design.</description>
+    <rarity>rare</rarity>
+    <favoredEssences>
+      <li>EB_Balance</li>
+      <li>EB_Light</li>
+      <li>EB_Zeal</li>
+      <li>EB_Pure</li>
+    </favoredEssences>
+    <possibleAspects>
+      <li>EB_Aspect_Judgement</li>
+      <li>EB_Aspect_Ward</li>
+      <li>EB_Aspect_Control</li>
+    </possibleAspects>
+    <sourceStatus>community_listed_known_rarity</sourceStatus>
+    <sourceUrl>https://he-who-fights-with-monsters.fandom.com/wiki/Awakening_Stones</sourceUrl>
+  </Essencebound.AwakeningStoneDef>
+  <Essencebound.AwakeningStoneDef>
+    <defName>EB_Stone_Chain</defName>
+    <label>awakening stone of chain</label>
+    <description>A linked metallic crystal that softly chimes when turned. Rarity: Rare. Imprint preferences and favored essences are original mod design.</description>
+    <rarity>rare</rarity>
+    <favoredEssences>
+      <li>EB_Chain</li>
+      <li>EB_Trap</li>
+      <li>EB_Iron</li>
+      <li>EB_Balance</li>
+    </favoredEssences>
+    <possibleAspects>
+      <li>EB_Aspect_Control</li>
+      <li>EB_Aspect_Counter</li>
+      <li>EB_Aspect_Reach</li>
+    </possibleAspects>
+    <sourceStatus>mod_original_unverified</sourceStatus>
+    <sourceUrl>unverified_mod_original</sourceUrl>
+  </Essencebound.AwakeningStoneDef>
+  <Essencebound.AwakeningStoneDef>
+    <defName>EB_Stone_Mirror</defName>
+    <label>awakening stone of mirror</label>
+    <description>A silvery gem that reflects shapes a heartbeat late. Rarity: Rare. Imprint preferences and favored essences are original mod design.</description>
+    <rarity>rare</rarity>
+    <favoredEssences>
+      <li>EB_Mirror</li>
+      <li>EB_Glass</li>
+      <li>EB_Magic</li>
+      <li>EB_Shimmer</li>
+    </favoredEssences>
+    <possibleAspects>
+      <li>EB_Aspect_Counter</li>
+      <li>EB_Aspect_Veil</li>
+      <li>EB_Aspect_Ritual</li>
+    </possibleAspects>
+    <sourceStatus>mod_original_unverified</sourceStatus>
+    <sourceUrl>unverified_mod_original</sourceUrl>
+  </Essencebound.AwakeningStoneDef>
+  <Essencebound.AwakeningStoneDef>
+    <defName>EB_Stone_Ash</defName>
+    <label>awakening stone of ash</label>
+    <description>A grey-black crystal with tiny rose-red embers beneath the dust. Rarity: Rare. Imprint preferences and favored essences are original mod design.</description>
+    <rarity>rare</rarity>
+    <favoredEssences>
+      <li>EB_Fire</li>
+      <li>EB_Smoke</li>
+      <li>EB_Death</li>
+      <li>EB_Renewal</li>
+    </favoredEssences>
+    <possibleAspects>
+      <li>EB_Aspect_Aura</li>
+      <li>EB_Aspect_Control</li>
+      <li>EB_Aspect_Recovery</li>
+    </possibleAspects>
+    <sourceStatus>mod_original_unverified</sourceStatus>
+    <sourceUrl>unverified_mod_original</sourceUrl>
+  </Essencebound.AwakeningStoneDef>
+  <Essencebound.AwakeningStoneDef>
+    <defName>EB_Stone_Tide</defName>
+    <label>awakening stone of tide</label>
+    <description>A blue-green stone patterned by overlapping circles. Rarity: Rare. Imprint preferences and favored essences are original mod design.</description>
+    <rarity>rare</rarity>
+    <favoredEssences>
+      <li>EB_Water</li>
+      <li>EB_Swift</li>
+      <li>EB_Cloud</li>
+      <li>EB_Life</li>
+    </favoredEssences>
+    <possibleAspects>
+      <li>EB_Aspect_Control</li>
+      <li>EB_Aspect_Surge</li>
+      <li>EB_Aspect_Recovery</li>
+    </possibleAspects>
+    <sourceStatus>mod_original_unverified</sourceStatus>
+    <sourceUrl>unverified_mod_original</sourceUrl>
+  </Essencebound.AwakeningStoneDef>
+  <Essencebound.AwakeningStoneDef>
+    <defName>EB_Stone_Stars</defName>
+    <label>awakening stone of stars</label>
+    <description>A midnight stone scattered with moving points of white light. Rarity: Epic. Imprint preferences and favored essences are original mod design.</description>
+    <rarity>epic</rarity>
+    <favoredEssences>
+      <li>EB_Star</li>
+      <li>EB_Moon</li>
+      <li>EB_Dark</li>
+      <li>EB_Void</li>
+    </favoredEssences>
+    <possibleAspects>
+      <li>EB_Aspect_Stars</li>
+      <li>EB_Aspect_Veil</li>
+      <li>EB_Aspect_Spell</li>
+    </possibleAspects>
+    <sourceStatus>community_listed_known_rarity</sourceStatus>
+    <sourceUrl>https://he-who-fights-with-monsters.fandom.com/wiki/Awakening_Stones</sourceUrl>
+  </Essencebound.AwakeningStoneDef>
+  <Essencebound.AwakeningStoneDef>
+    <defName>EB_Stone_Tempest</defName>
+    <label>awakening stone of tempest</label>
+    <description>An indigo crystal with bright threads that flash through its core. Rarity: Epic. Imprint preferences and favored essences are original mod design.</description>
+    <rarity>epic</rarity>
+    <favoredEssences>
+      <li>EB_Lightning</li>
+      <li>EB_Wind</li>
+      <li>EB_Cloud</li>
+      <li>EB_Elemental</li>
+    </favoredEssences>
+    <possibleAspects>
+      <li>EB_Aspect_Surge</li>
+      <li>EB_Aspect_Aura</li>
+      <li>EB_Aspect_Reach</li>
+    </possibleAspects>
+    <sourceStatus>mod_original_unverified</sourceStatus>
+    <sourceUrl>unverified_mod_original</sourceUrl>
+  </Essencebound.AwakeningStoneDef>
+  <Essencebound.AwakeningStoneDef>
+    <defName>EB_Stone_Sovereign</defName>
+    <label>awakening stone of sovereign</label>
+    <description>A regal amethyst stone ringed by a tiny gold halo. Rarity: Epic. Imprint preferences and favored essences are original mod design.</description>
+    <rarity>epic</rarity>
+    <favoredEssences>
+      <li>EB_Zeal</li>
+      <li>EB_Sceptre</li>
+      <li>EB_Might</li>
+      <li>EB_Balance</li>
+    </favoredEssences>
+    <possibleAspects>
+      <li>EB_Aspect_Ward</li>
+      <li>EB_Aspect_Aura</li>
+      <li>EB_Aspect_Control</li>
+    </possibleAspects>
+    <sourceStatus>mod_original_unverified</sourceStatus>
+    <sourceUrl>unverified_mod_original</sourceUrl>
+  </Essencebound.AwakeningStoneDef>
+  <Essencebound.AwakeningStoneDef>
+    <defName>EB_Stone_Eclipse</defName>
+    <label>awakening stone of eclipse</label>
+    <description>A two-tone gem split between warm gold and dark violet. Rarity: Epic. Imprint preferences and favored essences are original mod design.</description>
+    <rarity>epic</rarity>
+    <favoredEssences>
+      <li>EB_Light</li>
+      <li>EB_Dark</li>
+      <li>EB_Moon</li>
+      <li>EB_Balance</li>
+    </favoredEssences>
+    <possibleAspects>
+      <li>EB_Aspect_Veil</li>
+      <li>EB_Aspect_Spell</li>
+      <li>EB_Aspect_Counter</li>
+    </possibleAspects>
+    <sourceStatus>mod_original_unverified</sourceStatus>
+    <sourceUrl>unverified_mod_original</sourceUrl>
+  </Essencebound.AwakeningStoneDef>
+  <Essencebound.AwakeningStoneDef>
+    <defName>EB_Stone_Reaper</defName>
+    <label>awakening stone of reaper</label>
+    <description>An enigmatic purple-black stone cold to the touch. Rarity: Legendary. Imprint preferences and favored essences are original mod design.</description>
+    <rarity>legendary</rarity>
+    <favoredEssences>
+      <li>EB_Dark</li>
+      <li>EB_Death</li>
+      <li>EB_Omen</li>
+      <li>EB_Sin</li>
+    </favoredEssences>
+    <possibleAspects>
+      <li>EB_Aspect_Reaper</li>
+      <li>EB_Aspect_Control</li>
+      <li>EB_Aspect_Counter</li>
+    </possibleAspects>
+    <sourceStatus>community_listed_known_rarity</sourceStatus>
+    <sourceUrl>https://he-who-fights-with-monsters.fandom.com/wiki/Awakening_Stones</sourceUrl>
+  </Essencebound.AwakeningStoneDef>
+  <Essencebound.AwakeningStoneDef>
+    <defName>EB_Stone_Phoenix</defName>
+    <label>awakening stone of phoenix</label>
+    <description>A glowing gold-red stone whose internal flame never goes out. Rarity: Legendary. Imprint preferences and favored essences are original mod design.</description>
+    <rarity>legendary</rarity>
+    <favoredEssences>
+      <li>EB_Fire</li>
+      <li>EB_Renewal</li>
+      <li>EB_Life</li>
+      <li>EB_Wing</li>
+    </favoredEssences>
+    <possibleAspects>
+      <li>EB_Aspect_Recovery</li>
+      <li>EB_Aspect_Aura</li>
+      <li>EB_Aspect_Familiar</li>
+    </possibleAspects>
+    <sourceStatus>mod_original_unverified</sourceStatus>
+    <sourceUrl>unverified_mod_original</sourceUrl>
+  </Essencebound.AwakeningStoneDef>
+</Defs>

@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128">
+<defs><linearGradient id="g" x1=".15" x2=".9" y1=".1" y2="1"><stop offset="0" stop-color="#ffe390"/><stop offset=".55" stop-color="#bf461b"/><stop offset="1" stop-color="#72230b"/></linearGradient></defs>
+<path d="M64 14 L91 28 L109 62 L96 90 L64 113 L32 90 L19 62 L37 28 Z" fill="url(#g)" stroke="#141a27" stroke-width="2.5" stroke-linejoin="round"/>
+<path d="M64 14 L37 28 L46 58 L64 44 Z" fill="#ffe390" opacity=".45"/><path d="M64 14 L91 28 L83 57 L64 44 Z" fill="white" opacity=".16"/>
+<path d="M37 28 L19 62 L46 58 Z" fill="#72230b" opacity=".47"/><path d="M91 28 L109 62 L83 57 Z" fill="#ffe390" opacity=".30"/>
+<path d="M19 62 L32 90 L53 76 L46 58 Z" fill="#bf461b" opacity=".40"/><path d="M109 62 L96 90 L75 77 L83 57 Z" fill="#72230b" opacity=".65"/>
+<path d="M32 90 L64 113 L64 94 L53 76 Z" fill="#72230b" opacity=".40"/><path d="M96 90 L64 113 L64 94 L75 77 Z" fill="#72230b" opacity=".75"/>
+<path d="M46 58 L64 44 L83 57 L75 77 L64 94 L53 76 Z" fill="#72230b" opacity=".40"/>
+<g fill="none" stroke="white" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" opacity=".95"><path d="M64 36 Q54 47 55 59 Q44 45 31 48 Q41 63 52 67 Q36 65 33 75 Q47 80 57 75 Q55 87 64 95 Q73 87 71 75 Q82 80 95 75 Q92 65 76 67 Q87 63 97 48 Q84 45 73 59 Q74 47 64 36 Z" fill="white" stroke="none"/><path d="M64 57 L58 68 L64 74 L70 68 Z" fill="#dc4b1c" stroke="none"/></g>
+</svg>

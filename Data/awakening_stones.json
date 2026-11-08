@@ -1,0 +1,1140 @@
+{
+  "schema_version": "0.5",
+  "project": "Essencebound",
+  "target_rimworld_version": "1.7",
+  "stone_count": 30,
+  "rarity_distribution": {
+    "Common": 10,
+    "Uncommon": 8,
+    "Rare": 6,
+    "Epic": 4,
+    "Legendary": 2
+  },
+  "source_notes": [
+    "Names and rarity status cross-checked against the HWFWM community Awakening Stones wiki on 2026-11-07.",
+    "community_listed_known_rarity is NOT independent verification against published novels.",
+    "community_listed_rarity_unknown: name is wiki-listed but its rarity is assigned for this mod.",
+    "mod_original_unverified: this name is NOT in the cited wiki stone list; treat as custom content, not canon.",
+    "All themes, descriptions, preferred ability types, imprint tags, affinities and item prices are mod design.",
+    "No real ability effects implemented; stones only imprint themed placeholder slots in source prototype."
+  ],
+  "stones": [
+    {
+      "name": "Fire",
+      "rarity": "Common",
+      "item_defName": "EB_AwakeningStone_Fire",
+      "stone_defName": "EB_Stone_Fire",
+      "theme": "Ember / heat",
+      "description": "A warm ember crystal that flickers when held near an awakened essence.",
+      "focus_aspects_mod_design": [
+        "Assault",
+        "Aura",
+        "Control"
+      ],
+      "example_imprint_tags": [
+        "Assault",
+        "Aura",
+        "Control"
+      ],
+      "preferred_ability_types_mod_design": [
+        "Ranged flame spells",
+        "heat zones",
+        "burning retaliation"
+      ],
+      "favored_essences_mod_design": [
+        "Fire",
+        "Sun",
+        "Lightning",
+        "Elemental"
+      ],
+      "stone_lore_source_status": "community_listed_known_rarity",
+      "rarity_status": "community_listed",
+      "stone_lore_source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Awakening_Stones",
+      "implementation_status": "playable_power_pool_linked_in_source",
+      "playable_ability_effects_implemented": true,
+      "art_status": "original_png",
+      "texture_path": "Essencebound/AwakeningStones/StoneFire",
+      "market_value_prototype": 120
+    },
+    {
+      "name": "Shield",
+      "rarity": "Common",
+      "item_defName": "EB_AwakeningStone_Shield",
+      "stone_defName": "EB_Stone_Shield",
+      "theme": "Protection",
+      "description": "A faceted blue stone with a faint outline of a sheltering barrier.",
+      "focus_aspects_mod_design": [
+        "Ward",
+        "Counter",
+        "Recovery"
+      ],
+      "example_imprint_tags": [
+        "Ward",
+        "Counter",
+        "Recovery"
+      ],
+      "preferred_ability_types_mod_design": [
+        "Temporary barriers",
+        "damage reduction",
+        "protective countereffects"
+      ],
+      "favored_essences_mod_design": [
+        "Shield",
+        "Armour",
+        "Iron",
+        "Resolute"
+      ],
+      "stone_lore_source_status": "community_listed_known_rarity",
+      "rarity_status": "community_listed",
+      "stone_lore_source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Awakening_Stones",
+      "implementation_status": "playable_power_pool_linked_in_source",
+      "playable_ability_effects_implemented": true,
+      "art_status": "original_png",
+      "texture_path": "Essencebound/AwakeningStones/StoneShield",
+      "market_value_prototype": 120
+    },
+    {
+      "name": "Magus",
+      "rarity": "Common",
+      "item_defName": "EB_AwakeningStone_Magus",
+      "stone_defName": "EB_Stone_Magus",
+      "theme": "Spellcasting",
+      "description": "A violet prism threaded with fine runic filaments.",
+      "focus_aspects_mod_design": [
+        "Spell",
+        "Ritual",
+        "Control"
+      ],
+      "example_imprint_tags": [
+        "Spell",
+        "Ritual",
+        "Control"
+      ],
+      "preferred_ability_types_mod_design": [
+        "Direct spells",
+        "ritual utility",
+        "spell amplification"
+      ],
+      "favored_essences_mod_design": [
+        "Magic",
+        "Rune",
+        "Knowledge",
+        "Staff"
+      ],
+      "stone_lore_source_status": "community_listed_known_rarity",
+      "rarity_status": "community_listed",
+      "stone_lore_source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Awakening_Stones",
+      "implementation_status": "playable_power_pool_linked_in_source",
+      "playable_ability_effects_implemented": true,
+      "art_status": "original_png",
+      "texture_path": "Essencebound/AwakeningStones/StoneMagus",
+      "market_value_prototype": 120
+    },
+    {
+      "name": "Plant",
+      "rarity": "Common",
+      "item_defName": "EB_AwakeningStone_Plant",
+      "stone_defName": "EB_Stone_Plant",
+      "theme": "Growth / vitality",
+      "description": "A moss-green pebble with branching veins beneath its surface.",
+      "focus_aspects_mod_design": [
+        "Growth",
+        "Recovery",
+        "Familiar"
+      ],
+      "example_imprint_tags": [
+        "Growth",
+        "Recovery",
+        "Familiar"
+      ],
+      "preferred_ability_types_mod_design": [
+        "Regeneration",
+        "root control",
+        "botanical companions"
+      ],
+      "favored_essences_mod_design": [
+        "Plant",
+        "Tree",
+        "Growth",
+        "Renewal"
+      ],
+      "stone_lore_source_status": "community_listed_known_rarity",
+      "rarity_status": "community_listed",
+      "stone_lore_source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Awakening_Stones",
+      "implementation_status": "playable_power_pool_linked_in_source",
+      "playable_ability_effects_implemented": true,
+      "art_status": "original_png",
+      "texture_path": "Essencebound/AwakeningStones/StonePlant",
+      "market_value_prototype": 120
+    },
+    {
+      "name": "Water",
+      "rarity": "Common",
+      "item_defName": "EB_AwakeningStone_Water",
+      "stone_defName": "EB_Stone_Water",
+      "theme": "Flow / restoration",
+      "description": "A glassy blue stone whose inner currents never settle.",
+      "focus_aspects_mod_design": [
+        "Recovery",
+        "Control",
+        "Ward"
+      ],
+      "example_imprint_tags": [
+        "Recovery",
+        "Control",
+        "Ward"
+      ],
+      "preferred_ability_types_mod_design": [
+        "Healing flow",
+        "water shaping",
+        "protective currents"
+      ],
+      "favored_essences_mod_design": [
+        "Water",
+        "Life",
+        "Cloud",
+        "Pure"
+      ],
+      "stone_lore_source_status": "community_listed_rarity_unknown",
+      "rarity_status": "mod_assigned",
+      "stone_lore_source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Awakening_Stones",
+      "implementation_status": "playable_power_pool_linked_in_source",
+      "playable_ability_effects_implemented": true,
+      "art_status": "original_png",
+      "texture_path": "Essencebound/AwakeningStones/StoneWater",
+      "market_value_prototype": 120
+    },
+    {
+      "name": "Wind",
+      "rarity": "Common",
+      "item_defName": "EB_AwakeningStone_Wind",
+      "stone_defName": "EB_Stone_Wind",
+      "theme": "Air / motion",
+      "description": "A pale crystal that hums with the suggestion of moving air.",
+      "focus_aspects_mod_design": [
+        "Mobility",
+        "Reach",
+        "Surge"
+      ],
+      "example_imprint_tags": [
+        "Mobility",
+        "Reach",
+        "Surge"
+      ],
+      "preferred_ability_types_mod_design": [
+        "Movement bursts",
+        "knockback gusts",
+        "extended reach"
+      ],
+      "favored_essences_mod_design": [
+        "Wind",
+        "Wing",
+        "Swift",
+        "Bird"
+      ],
+      "stone_lore_source_status": "community_listed_rarity_unknown",
+      "rarity_status": "mod_assigned",
+      "stone_lore_source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Awakening_Stones",
+      "implementation_status": "playable_power_pool_linked_in_source",
+      "playable_ability_effects_implemented": true,
+      "art_status": "original_png",
+      "texture_path": "Essencebound/AwakeningStones/StoneWind",
+      "market_value_prototype": 120
+    },
+    {
+      "name": "Stone",
+      "rarity": "Common",
+      "item_defName": "EB_AwakeningStone_Stone",
+      "stone_defName": "EB_Stone_Stone",
+      "theme": "Earth / endurance",
+      "description": "A rough slate gem with a heavy, unyielding core.",
+      "focus_aspects_mod_design": [
+        "Ward",
+        "Counter",
+        "Growth"
+      ],
+      "example_imprint_tags": [
+        "Ward",
+        "Counter",
+        "Growth"
+      ],
+      "preferred_ability_types_mod_design": [
+        "Stone skin",
+        "cover creation",
+        "ground control"
+      ],
+      "favored_essences_mod_design": [
+        "Earth",
+        "Iron",
+        "Shield",
+        "Crystal"
+      ],
+      "stone_lore_source_status": "mod_original_unverified",
+      "rarity_status": "mod_assigned",
+      "stone_lore_source_url": "",
+      "implementation_status": "playable_power_pool_linked_in_source",
+      "playable_ability_effects_implemented": true,
+      "art_status": "original_png",
+      "texture_path": "Essencebound/AwakeningStones/StoneStone",
+      "market_value_prototype": 120
+    },
+    {
+      "name": "Fang",
+      "rarity": "Common",
+      "item_defName": "EB_AwakeningStone_Fang",
+      "stone_defName": "EB_Stone_Fang",
+      "theme": "Predator / precision",
+      "description": "An ivory-colored shard with a dark line through its point.",
+      "focus_aspects_mod_design": [
+        "Assault",
+        "Familiar",
+        "Precision"
+      ],
+      "example_imprint_tags": [
+        "Assault",
+        "Familiar",
+        "Precision"
+      ],
+      "preferred_ability_types_mod_design": [
+        "Piercing attacks",
+        "predator senses",
+        "animal companions"
+      ],
+      "favored_essences_mod_design": [
+        "Wolf",
+        "Snake",
+        "Shark",
+        "Hunt"
+      ],
+      "stone_lore_source_status": "mod_original_unverified",
+      "rarity_status": "mod_assigned",
+      "stone_lore_source_url": "",
+      "implementation_status": "playable_power_pool_linked_in_source",
+      "playable_ability_effects_implemented": true,
+      "art_status": "original_png",
+      "texture_path": "Essencebound/AwakeningStones/StoneFang",
+      "market_value_prototype": 120
+    },
+    {
+      "name": "Light",
+      "rarity": "Common",
+      "item_defName": "EB_AwakeningStone_Light",
+      "stone_defName": "EB_Stone_Light",
+      "theme": "Illumination / support",
+      "description": "A milky crystal carrying a steady lantern-like glow.",
+      "focus_aspects_mod_design": [
+        "Ward",
+        "Recovery",
+        "Exploration"
+      ],
+      "example_imprint_tags": [
+        "Ward",
+        "Recovery",
+        "Exploration"
+      ],
+      "preferred_ability_types_mod_design": [
+        "Illumination",
+        "cleansing",
+        "ally protection"
+      ],
+      "favored_essences_mod_design": [
+        "Light",
+        "Sun",
+        "Pure",
+        "Life"
+      ],
+      "stone_lore_source_status": "mod_original_unverified",
+      "rarity_status": "mod_assigned",
+      "stone_lore_source_url": "",
+      "implementation_status": "playable_power_pool_linked_in_source",
+      "playable_ability_effects_implemented": true,
+      "art_status": "original_png",
+      "texture_path": "Essencebound/AwakeningStones/StoneLight",
+      "market_value_prototype": 120
+    },
+    {
+      "name": "Shadow",
+      "rarity": "Common",
+      "item_defName": "EB_AwakeningStone_Shadow",
+      "stone_defName": "EB_Stone_Shadow",
+      "theme": "Concealment",
+      "description": "A smoke-black stone that seems to dim the space around it.",
+      "focus_aspects_mod_design": [
+        "Veil",
+        "Mobility",
+        "Control"
+      ],
+      "example_imprint_tags": [
+        "Veil",
+        "Mobility",
+        "Control"
+      ],
+      "preferred_ability_types_mod_design": [
+        "Stealth",
+        "shadow relocation",
+        "concealment fields"
+      ],
+      "favored_essences_mod_design": [
+        "Dark",
+        "Void",
+        "Smoke",
+        "Bat"
+      ],
+      "stone_lore_source_status": "mod_original_unverified",
+      "rarity_status": "mod_assigned",
+      "stone_lore_source_url": "",
+      "implementation_status": "playable_power_pool_linked_in_source",
+      "playable_ability_effects_implemented": true,
+      "art_status": "original_png",
+      "texture_path": "Essencebound/AwakeningStones/StoneShadow",
+      "market_value_prototype": 120
+    },
+    {
+      "name": "Focus",
+      "rarity": "Uncommon",
+      "item_defName": "EB_AwakeningStone_Focus",
+      "stone_defName": "EB_Stone_Focus",
+      "theme": "Clarity / mastery",
+      "description": "A clear turquoise gem with a perfectly still center.",
+      "focus_aspects_mod_design": [
+        "Precision",
+        "Control",
+        "Spell"
+      ],
+      "example_imprint_tags": [
+        "Precision",
+        "Control",
+        "Spell"
+      ],
+      "preferred_ability_types_mod_design": [
+        "Accuracy",
+        "concentrated casting",
+        "maintained effects"
+      ],
+      "favored_essences_mod_design": [
+        "Adept",
+        "Eye",
+        "Mirror",
+        "Knowledge"
+      ],
+      "stone_lore_source_status": "community_listed_known_rarity",
+      "rarity_status": "community_listed",
+      "stone_lore_source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Awakening_Stones",
+      "implementation_status": "playable_power_pool_linked_in_source",
+      "playable_ability_effects_implemented": true,
+      "art_status": "original_png",
+      "texture_path": "Essencebound/AwakeningStones/StoneFocus",
+      "market_value_prototype": 260
+    },
+    {
+      "name": "Reach",
+      "rarity": "Uncommon",
+      "item_defName": "EB_AwakeningStone_Reach",
+      "stone_defName": "EB_Stone_Reach",
+      "theme": "Distance / projection",
+      "description": "A sky-blue crystal whose markings stretch toward its tip.",
+      "focus_aspects_mod_design": [
+        "Reach",
+        "Mobility",
+        "Precision"
+      ],
+      "example_imprint_tags": [
+        "Reach",
+        "Mobility",
+        "Precision"
+      ],
+      "preferred_ability_types_mod_design": [
+        "Long-range abilities",
+        "extended targeting",
+        "quick repositioning"
+      ],
+      "favored_essences_mod_design": [
+        "Wind",
+        "Wing",
+        "Bow",
+        "Vast"
+      ],
+      "stone_lore_source_status": "community_listed_known_rarity",
+      "rarity_status": "community_listed",
+      "stone_lore_source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Awakening_Stones",
+      "implementation_status": "playable_power_pool_linked_in_source",
+      "playable_ability_effects_implemented": true,
+      "art_status": "original_png",
+      "texture_path": "Essencebound/AwakeningStones/StoneReach",
+      "market_value_prototype": 260
+    },
+    {
+      "name": "Preparation",
+      "rarity": "Uncommon",
+      "item_defName": "EB_AwakeningStone_Preparation",
+      "stone_defName": "EB_Stone_Preparation",
+      "theme": "Planning / setup",
+      "description": "A layered amber stone that looks like a folded map.",
+      "focus_aspects_mod_design": [
+        "Preparation",
+        "Ward",
+        "Control"
+      ],
+      "example_imprint_tags": [
+        "Preparation",
+        "Ward",
+        "Control"
+      ],
+      "preferred_ability_types_mod_design": [
+        "Traps",
+        "advance wards",
+        "tactical setup buffs"
+      ],
+      "favored_essences_mod_design": [
+        "Trap",
+        "Knowledge",
+        "Rune",
+        "Balance"
+      ],
+      "stone_lore_source_status": "community_listed_known_rarity",
+      "rarity_status": "community_listed",
+      "stone_lore_source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Awakening_Stones",
+      "implementation_status": "playable_power_pool_linked_in_source",
+      "playable_ability_effects_implemented": true,
+      "art_status": "original_png",
+      "texture_path": "Essencebound/AwakeningStones/StonePreparation",
+      "market_value_prototype": 260
+    },
+    {
+      "name": "Surge",
+      "rarity": "Uncommon",
+      "item_defName": "EB_AwakeningStone_Surge",
+      "stone_defName": "EB_Stone_Surge",
+      "theme": "Burst / momentum",
+      "description": "A bright orange shard that pulses in irregular waves.",
+      "focus_aspects_mod_design": [
+        "Surge",
+        "Assault",
+        "Mobility"
+      ],
+      "example_imprint_tags": [
+        "Surge",
+        "Assault",
+        "Mobility"
+      ],
+      "preferred_ability_types_mod_design": [
+        "Short speed boosts",
+        "sudden force",
+        "burst casting"
+      ],
+      "favored_essences_mod_design": [
+        "Swift",
+        "Lightning",
+        "Might",
+        "Wind"
+      ],
+      "stone_lore_source_status": "community_listed_known_rarity",
+      "rarity_status": "community_listed",
+      "stone_lore_source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Awakening_Stones",
+      "implementation_status": "playable_power_pool_linked_in_source",
+      "playable_ability_effects_implemented": true,
+      "art_status": "original_png",
+      "texture_path": "Essencebound/AwakeningStones/StoneSurge",
+      "market_value_prototype": 260
+    },
+    {
+      "name": "Hunt",
+      "rarity": "Uncommon",
+      "item_defName": "EB_AwakeningStone_Hunt",
+      "stone_defName": "EB_Stone_Hunt",
+      "theme": "Tracking / pursuit",
+      "description": "A green-brown stone marked with a faint tracking spiral.",
+      "focus_aspects_mod_design": [
+        "Exploration",
+        "Precision",
+        "Familiar"
+      ],
+      "example_imprint_tags": [
+        "Exploration",
+        "Precision",
+        "Familiar"
+      ],
+      "preferred_ability_types_mod_design": [
+        "Tracking",
+        "target marking",
+        "companion aid"
+      ],
+      "favored_essences_mod_design": [
+        "Hunt",
+        "Wolf",
+        "Bow",
+        "Deer"
+      ],
+      "stone_lore_source_status": "community_listed_rarity_unknown",
+      "rarity_status": "mod_assigned",
+      "stone_lore_source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Awakening_Stones",
+      "implementation_status": "playable_power_pool_linked_in_source",
+      "playable_ability_effects_implemented": true,
+      "art_status": "original_png",
+      "texture_path": "Essencebound/AwakeningStones/StoneHunt",
+      "market_value_prototype": 260
+    },
+    {
+      "name": "Grace",
+      "rarity": "Uncommon",
+      "item_defName": "EB_AwakeningStone_Grace",
+      "stone_defName": "EB_Stone_Grace",
+      "theme": "Agility / balance",
+      "description": "A smooth silver-blue stone that feels almost weightless.",
+      "focus_aspects_mod_design": [
+        "Mobility",
+        "Recovery",
+        "Counter"
+      ],
+      "example_imprint_tags": [
+        "Mobility",
+        "Recovery",
+        "Counter"
+      ],
+      "preferred_ability_types_mod_design": [
+        "Dodge buffs",
+        "safe repositioning",
+        "graceful counterattacks"
+      ],
+      "favored_essences_mod_design": [
+        "Dance",
+        "Balance",
+        "Swift",
+        "Wind"
+      ],
+      "stone_lore_source_status": "mod_original_unverified",
+      "rarity_status": "mod_assigned",
+      "stone_lore_source_url": "",
+      "implementation_status": "playable_power_pool_linked_in_source",
+      "playable_ability_effects_implemented": true,
+      "art_status": "original_png",
+      "texture_path": "Essencebound/AwakeningStones/StoneGrace",
+      "market_value_prototype": 260
+    },
+    {
+      "name": "Blood",
+      "rarity": "Uncommon",
+      "item_defName": "EB_AwakeningStone_Blood",
+      "stone_defName": "EB_Stone_Blood",
+      "theme": "Vitality / exchange",
+      "description": "A dark crimson gem with slow-moving threads at its heart.",
+      "focus_aspects_mod_design": [
+        "Recovery",
+        "Assault",
+        "Control"
+      ],
+      "example_imprint_tags": [
+        "Recovery",
+        "Assault",
+        "Control"
+      ],
+      "preferred_ability_types_mod_design": [
+        "Life transfer",
+        "sustained recovery",
+        "weakening afflictions"
+      ],
+      "favored_essences_mod_design": [
+        "Blood",
+        "Life",
+        "Hunger",
+        "Flesh"
+      ],
+      "stone_lore_source_status": "mod_original_unverified",
+      "rarity_status": "mod_assigned",
+      "stone_lore_source_url": "",
+      "implementation_status": "playable_power_pool_linked_in_source",
+      "playable_ability_effects_implemented": true,
+      "art_status": "original_png",
+      "texture_path": "Essencebound/AwakeningStones/StoneBlood",
+      "market_value_prototype": 260
+    },
+    {
+      "name": "Mist",
+      "rarity": "Uncommon",
+      "item_defName": "EB_AwakeningStone_Mist",
+      "stone_defName": "EB_Stone_Mist",
+      "theme": "Obscurity / defense",
+      "description": "A cloudy opal whose interior is difficult to focus on.",
+      "focus_aspects_mod_design": [
+        "Veil",
+        "Ward",
+        "Control"
+      ],
+      "example_imprint_tags": [
+        "Veil",
+        "Ward",
+        "Control"
+      ],
+      "preferred_ability_types_mod_design": [
+        "Smoke screens",
+        "area denial",
+        "evasion fields"
+      ],
+      "favored_essences_mod_design": [
+        "Cloud",
+        "Smoke",
+        "Water",
+        "Dark"
+      ],
+      "stone_lore_source_status": "mod_original_unverified",
+      "rarity_status": "mod_assigned",
+      "stone_lore_source_url": "",
+      "implementation_status": "playable_power_pool_linked_in_source",
+      "playable_ability_effects_implemented": true,
+      "art_status": "original_png",
+      "texture_path": "Essencebound/AwakeningStones/StoneMist",
+      "market_value_prototype": 260
+    },
+    {
+      "name": "Adventure",
+      "rarity": "Rare",
+      "item_defName": "EB_AwakeningStone_Adventure",
+      "stone_defName": "EB_Stone_Adventure",
+      "theme": "Exploration / adaptability",
+      "description": "A sea-green stone that catches glints like far-off horizons.",
+      "focus_aspects_mod_design": [
+        "Adventure",
+        "Exploration",
+        "Mobility"
+      ],
+      "example_imprint_tags": [
+        "Adventure",
+        "Exploration",
+        "Mobility"
+      ],
+      "preferred_ability_types_mod_design": [
+        "Exploration utility",
+        "emergency traversal",
+        "situational adaptation"
+      ],
+      "favored_essences_mod_design": [
+        "Hunt",
+        "Ship",
+        "Vast",
+        "Wing"
+      ],
+      "stone_lore_source_status": "community_listed_known_rarity",
+      "rarity_status": "community_listed",
+      "stone_lore_source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Awakening_Stones",
+      "implementation_status": "playable_power_pool_linked_in_source",
+      "playable_ability_effects_implemented": true,
+      "art_status": "original_png",
+      "texture_path": "Essencebound/AwakeningStones/StoneAdventure",
+      "market_value_prototype": 600
+    },
+    {
+      "name": "Judgement",
+      "rarity": "Rare",
+      "item_defName": "EB_AwakeningStone_Judgement",
+      "stone_defName": "EB_Stone_Judgement",
+      "theme": "Verdict / discernment",
+      "description": "A pale gold stone whose inner markings resemble scales.",
+      "focus_aspects_mod_design": [
+        "Judgement",
+        "Ward",
+        "Control"
+      ],
+      "example_imprint_tags": [
+        "Judgement",
+        "Ward",
+        "Control"
+      ],
+      "preferred_ability_types_mod_design": [
+        "Target marking",
+        "condition-based counters",
+        "protective verdicts"
+      ],
+      "favored_essences_mod_design": [
+        "Balance",
+        "Light",
+        "Zeal",
+        "Pure"
+      ],
+      "stone_lore_source_status": "community_listed_known_rarity",
+      "rarity_status": "community_listed",
+      "stone_lore_source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Awakening_Stones",
+      "implementation_status": "playable_power_pool_linked_in_source",
+      "playable_ability_effects_implemented": true,
+      "art_status": "original_png",
+      "texture_path": "Essencebound/AwakeningStones/StoneJudgement",
+      "market_value_prototype": 600
+    },
+    {
+      "name": "Chain",
+      "rarity": "Rare",
+      "item_defName": "EB_AwakeningStone_Chain",
+      "stone_defName": "EB_Stone_Chain",
+      "theme": "Binding / coordination",
+      "description": "A linked metallic crystal that softly chimes when turned.",
+      "focus_aspects_mod_design": [
+        "Control",
+        "Counter",
+        "Reach"
+      ],
+      "example_imprint_tags": [
+        "Control",
+        "Counter",
+        "Reach"
+      ],
+      "preferred_ability_types_mod_design": [
+        "Binding fields",
+        "tethering",
+        "linked ally effects"
+      ],
+      "favored_essences_mod_design": [
+        "Chain",
+        "Trap",
+        "Iron",
+        "Balance"
+      ],
+      "stone_lore_source_status": "mod_original_unverified",
+      "rarity_status": "mod_assigned",
+      "stone_lore_source_url": "",
+      "implementation_status": "playable_power_pool_linked_in_source",
+      "playable_ability_effects_implemented": true,
+      "art_status": "original_png",
+      "texture_path": "Essencebound/AwakeningStones/StoneChain",
+      "market_value_prototype": 600
+    },
+    {
+      "name": "Mirror",
+      "rarity": "Rare",
+      "item_defName": "EB_AwakeningStone_Mirror",
+      "stone_defName": "EB_Stone_Mirror",
+      "theme": "Reflection / deception",
+      "description": "A silvery gem that reflects shapes a heartbeat late.",
+      "focus_aspects_mod_design": [
+        "Counter",
+        "Veil",
+        "Ritual"
+      ],
+      "example_imprint_tags": [
+        "Counter",
+        "Veil",
+        "Ritual"
+      ],
+      "preferred_ability_types_mod_design": [
+        "Reflected damage",
+        "decoys",
+        "counterspells"
+      ],
+      "favored_essences_mod_design": [
+        "Mirror",
+        "Glass",
+        "Magic",
+        "Shimmer"
+      ],
+      "stone_lore_source_status": "mod_original_unverified",
+      "rarity_status": "mod_assigned",
+      "stone_lore_source_url": "",
+      "implementation_status": "playable_power_pool_linked_in_source",
+      "playable_ability_effects_implemented": true,
+      "art_status": "original_png",
+      "texture_path": "Essencebound/AwakeningStones/StoneMirror",
+      "market_value_prototype": 600
+    },
+    {
+      "name": "Ash",
+      "rarity": "Rare",
+      "item_defName": "EB_AwakeningStone_Ash",
+      "stone_defName": "EB_Stone_Ash",
+      "theme": "Aftermath / renewal",
+      "description": "A grey-black crystal with tiny rose-red embers beneath the dust.",
+      "focus_aspects_mod_design": [
+        "Aura",
+        "Control",
+        "Recovery"
+      ],
+      "example_imprint_tags": [
+        "Aura",
+        "Control",
+        "Recovery"
+      ],
+      "preferred_ability_types_mod_design": [
+        "Lingering ash clouds",
+        "endurance",
+        "recovery after hardship"
+      ],
+      "favored_essences_mod_design": [
+        "Fire",
+        "Smoke",
+        "Death",
+        "Renewal"
+      ],
+      "stone_lore_source_status": "mod_original_unverified",
+      "rarity_status": "mod_assigned",
+      "stone_lore_source_url": "",
+      "implementation_status": "playable_power_pool_linked_in_source",
+      "playable_ability_effects_implemented": true,
+      "art_status": "original_png",
+      "texture_path": "Essencebound/AwakeningStones/StoneAsh",
+      "market_value_prototype": 600
+    },
+    {
+      "name": "Tide",
+      "rarity": "Rare",
+      "item_defName": "EB_AwakeningStone_Tide",
+      "stone_defName": "EB_Stone_Tide",
+      "theme": "Rhythm / currents",
+      "description": "A blue-green stone patterned by overlapping circles.",
+      "focus_aspects_mod_design": [
+        "Control",
+        "Surge",
+        "Recovery"
+      ],
+      "example_imprint_tags": [
+        "Control",
+        "Surge",
+        "Recovery"
+      ],
+      "preferred_ability_types_mod_design": [
+        "Wave control",
+        "ebb-and-flow movement",
+        "restorative pulses"
+      ],
+      "favored_essences_mod_design": [
+        "Water",
+        "Swift",
+        "Cloud",
+        "Life"
+      ],
+      "stone_lore_source_status": "mod_original_unverified",
+      "rarity_status": "mod_assigned",
+      "stone_lore_source_url": "",
+      "implementation_status": "playable_power_pool_linked_in_source",
+      "playable_ability_effects_implemented": true,
+      "art_status": "original_png",
+      "texture_path": "Essencebound/AwakeningStones/StoneTide",
+      "market_value_prototype": 600
+    },
+    {
+      "name": "Stars",
+      "rarity": "Epic",
+      "item_defName": "EB_AwakeningStone_Stars",
+      "stone_defName": "EB_Stone_Stars",
+      "theme": "Astral / veiling",
+      "description": "A midnight stone scattered with moving points of white light.",
+      "focus_aspects_mod_design": [
+        "Stars",
+        "Veil",
+        "Spell"
+      ],
+      "example_imprint_tags": [
+        "Stars",
+        "Veil",
+        "Spell"
+      ],
+      "preferred_ability_types_mod_design": [
+        "Celestial concealment",
+        "astral effects",
+        "unusual magic"
+      ],
+      "favored_essences_mod_design": [
+        "Star",
+        "Moon",
+        "Dark",
+        "Void"
+      ],
+      "stone_lore_source_status": "community_listed_known_rarity",
+      "rarity_status": "community_listed",
+      "stone_lore_source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Awakening_Stones",
+      "implementation_status": "playable_power_pool_linked_in_source",
+      "playable_ability_effects_implemented": true,
+      "art_status": "original_png",
+      "texture_path": "Essencebound/AwakeningStones/StoneStars",
+      "market_value_prototype": 1500
+    },
+    {
+      "name": "Tempest",
+      "rarity": "Epic",
+      "item_defName": "EB_AwakeningStone_Tempest",
+      "stone_defName": "EB_Stone_Tempest",
+      "theme": "Storm / upheaval",
+      "description": "An indigo crystal with bright threads that flash through its core.",
+      "focus_aspects_mod_design": [
+        "Surge",
+        "Aura",
+        "Reach"
+      ],
+      "example_imprint_tags": [
+        "Surge",
+        "Aura",
+        "Reach"
+      ],
+      "preferred_ability_types_mod_design": [
+        "Storm fields",
+        "chain effects",
+        "high-area disruption"
+      ],
+      "favored_essences_mod_design": [
+        "Lightning",
+        "Wind",
+        "Cloud",
+        "Elemental"
+      ],
+      "stone_lore_source_status": "mod_original_unverified",
+      "rarity_status": "mod_assigned",
+      "stone_lore_source_url": "",
+      "implementation_status": "playable_power_pool_linked_in_source",
+      "playable_ability_effects_implemented": true,
+      "art_status": "original_png",
+      "texture_path": "Essencebound/AwakeningStones/StoneTempest",
+      "market_value_prototype": 1500
+    },
+    {
+      "name": "Sovereign",
+      "rarity": "Epic",
+      "item_defName": "EB_AwakeningStone_Sovereign",
+      "stone_defName": "EB_Stone_Sovereign",
+      "theme": "Command / dominion",
+      "description": "A regal amethyst stone ringed by a tiny gold halo.",
+      "focus_aspects_mod_design": [
+        "Ward",
+        "Aura",
+        "Control"
+      ],
+      "example_imprint_tags": [
+        "Ward",
+        "Aura",
+        "Control"
+      ],
+      "preferred_ability_types_mod_design": [
+        "Leadership auras",
+        "command marks",
+        "area protection"
+      ],
+      "favored_essences_mod_design": [
+        "Zeal",
+        "Sceptre",
+        "Might",
+        "Balance"
+      ],
+      "stone_lore_source_status": "mod_original_unverified",
+      "rarity_status": "mod_assigned",
+      "stone_lore_source_url": "",
+      "implementation_status": "playable_power_pool_linked_in_source",
+      "playable_ability_effects_implemented": true,
+      "art_status": "original_png",
+      "texture_path": "Essencebound/AwakeningStones/StoneSovereign",
+      "market_value_prototype": 1500
+    },
+    {
+      "name": "Eclipse",
+      "rarity": "Epic",
+      "item_defName": "EB_AwakeningStone_Eclipse",
+      "stone_defName": "EB_Stone_Eclipse",
+      "theme": "Twilight / duality",
+      "description": "A two-tone gem split between warm gold and dark violet.",
+      "focus_aspects_mod_design": [
+        "Veil",
+        "Spell",
+        "Counter"
+      ],
+      "example_imprint_tags": [
+        "Veil",
+        "Spell",
+        "Counter"
+      ],
+      "preferred_ability_types_mod_design": [
+        "Light-shadow mixing",
+        "counter-magic",
+        "stealth wards"
+      ],
+      "favored_essences_mod_design": [
+        "Light",
+        "Dark",
+        "Moon",
+        "Balance"
+      ],
+      "stone_lore_source_status": "mod_original_unverified",
+      "rarity_status": "mod_assigned",
+      "stone_lore_source_url": "",
+      "implementation_status": "playable_power_pool_linked_in_source",
+      "playable_ability_effects_implemented": true,
+      "art_status": "original_png",
+      "texture_path": "Essencebound/AwakeningStones/StoneEclipse",
+      "market_value_prototype": 1500
+    },
+    {
+      "name": "Reaper",
+      "rarity": "Legendary",
+      "item_defName": "EB_AwakeningStone_Reaper",
+      "stone_defName": "EB_Stone_Reaper",
+      "theme": "Reaper / finality",
+      "description": "An enigmatic purple-black stone cold to the touch.",
+      "focus_aspects_mod_design": [
+        "Reaper",
+        "Control",
+        "Counter"
+      ],
+      "example_imprint_tags": [
+        "Reaper",
+        "Control",
+        "Counter"
+      ],
+      "preferred_ability_types_mod_design": [
+        "Offensive utility",
+        "control afflictions",
+        "anti-healing pressure"
+      ],
+      "favored_essences_mod_design": [
+        "Dark",
+        "Death",
+        "Omen",
+        "Sin"
+      ],
+      "stone_lore_source_status": "community_listed_known_rarity",
+      "rarity_status": "community_listed",
+      "stone_lore_source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Awakening_Stones",
+      "implementation_status": "playable_power_pool_linked_in_source",
+      "playable_ability_effects_implemented": true,
+      "art_status": "original_png",
+      "texture_path": "Essencebound/AwakeningStones/StoneReaper",
+      "market_value_prototype": 3800
+    },
+    {
+      "name": "Phoenix",
+      "rarity": "Legendary",
+      "item_defName": "EB_AwakeningStone_Phoenix",
+      "stone_defName": "EB_Stone_Phoenix",
+      "theme": "Rekindling / rebirth",
+      "description": "A glowing gold-red stone whose internal flame never goes out.",
+      "focus_aspects_mod_design": [
+        "Recovery",
+        "Aura",
+        "Familiar"
+      ],
+      "example_imprint_tags": [
+        "Recovery",
+        "Aura",
+        "Familiar"
+      ],
+      "preferred_ability_types_mod_design": [
+        "Recovery from defeat",
+        "protective flame",
+        "phoenix-like familiar"
+      ],
+      "favored_essences_mod_design": [
+        "Fire",
+        "Renewal",
+        "Life",
+        "Wing"
+      ],
+      "stone_lore_source_status": "mod_original_unverified",
+      "rarity_status": "mod_assigned",
+      "stone_lore_source_url": "",
+      "implementation_status": "playable_power_pool_linked_in_source",
+      "playable_ability_effects_implemented": true,
+      "art_status": "original_png",
+      "texture_path": "Essencebound/AwakeningStones/StonePhoenix",
+      "market_value_prototype": 3800
+    }
+  ],
+  "artwork_notes": [
+    "30 distinct 128x128 transparent PNG sprites integrated into both packages",
+    "Original 12 sprites retained; 18 icons newly drawn in matching faceted style",
+    "PNG sprites plus editable SVG source for new stones; concept poster is promotional only"
+  ],
+  "power_pool_size": 12,
+  "source_testing_status": "offline_structural_only_not_compiled"
+}

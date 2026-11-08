@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <HediffDef>
+    <defName>EB_EssenceUser</defName>
+    <label>essence user</label>
+    <description>Stores the pawn's absorbed essences, automatically resolved confluence, rank and awakening ability slots.</description>
+    <hediffClass>Essencebound.Hediff_EssenceUser</hediffClass>
+    <isBad>false</isBad>
+    <initialSeverity>0.1</initialSeverity>
+  </HediffDef>
+</Defs>

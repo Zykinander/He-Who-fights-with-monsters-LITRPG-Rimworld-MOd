@@ -1,0 +1,353 @@
+{
+  "version": "0.6",
+  "target": "RimWorld 1.7",
+  "count": 12,
+  "note": "All effects are original mod-design templates, not book canon.",
+  "powers": [
+    {
+      "id": "EmberBolt",
+      "defName": "EB_Power_EmberBolt",
+      "name": "Ember Bolt",
+      "description": "A focused ember strike against a hostile pawn.",
+      "effect": "damage",
+      "target": "hostile",
+      "range_cells": 10,
+      "magnitude": 6,
+      "cooldown_ticks": 450,
+      "duration_ticks": 0,
+      "status_hediff": "",
+      "damage_def": "Burn",
+      "compatible_aspects": [
+        "Assault",
+        "Spell",
+        "Reach",
+        "Reaper"
+      ],
+      "favored_essences": [
+        "Fire",
+        "Sun",
+        "Elemental",
+        "Volcano"
+      ],
+      "icon": "Essencebound/AwakeningStones/StoneFire",
+      "source_status": "original_mod_gameplay_design"
+    },
+    {
+      "id": "FrostShard",
+      "defName": "EB_Power_FrostShard",
+      "name": "Frost Shard",
+      "description": "A chilling shard that briefly slows a hostile pawn.",
+      "effect": "damageDebuff",
+      "target": "hostile",
+      "range_cells": 9,
+      "magnitude": 4,
+      "cooldown_ticks": 540,
+      "duration_ticks": 360,
+      "status_hediff": "EB_Debuff_Chilled",
+      "damage_def": "Blunt",
+      "compatible_aspects": [
+        "Control",
+        "Assault",
+        "Spell",
+        "Reach",
+        "Stars"
+      ],
+      "favored_essences": [
+        "Ice",
+        "Water"
+      ],
+      "icon": "Essencebound/AwakeningStones/StoneWater",
+      "source_status": "original_mod_gameplay_design"
+    },
+    {
+      "id": "StormSpark",
+      "defName": "EB_Power_StormSpark",
+      "name": "Storm Spark",
+      "description": "A crackling spell that briefly disrupts a hostile pawn.",
+      "effect": "damageDebuff",
+      "target": "hostile",
+      "range_cells": 8,
+      "magnitude": 5,
+      "cooldown_ticks": 570,
+      "duration_ticks": 240,
+      "status_hediff": "EB_Debuff_Static",
+      "damage_def": "Blunt",
+      "compatible_aspects": [
+        "Spell",
+        "Precision",
+        "Surge",
+        "Stars",
+        "Assault"
+      ],
+      "favored_essences": [
+        "Lightning",
+        "Storm",
+        "Magic",
+        "Wind"
+      ],
+      "icon": "Essencebound/AwakeningStones/StoneSurge",
+      "source_status": "original_mod_gameplay_design"
+    },
+    {
+      "id": "VerdantMend",
+      "defName": "EB_Power_VerdantMend",
+      "name": "Verdant Mend",
+      "description": "Heal an injured friendly pawn.",
+      "effect": "heal",
+      "target": "ally",
+      "range_cells": 7,
+      "magnitude": 6,
+      "cooldown_ticks": 900,
+      "duration_ticks": 0,
+      "status_hediff": "",
+      "damage_def": "",
+      "compatible_aspects": [
+        "Recovery",
+        "Growth",
+        "Familiar",
+        "Adventure"
+      ],
+      "favored_essences": [
+        "Life",
+        "Plant",
+        "Renewal",
+        "Growth",
+        "Tree"
+      ],
+      "icon": "Essencebound/AwakeningStones/StonePlant",
+      "source_status": "original_mod_gameplay_design"
+    },
+    {
+      "id": "GuardianWard",
+      "defName": "EB_Power_GuardianWard",
+      "name": "Guardian Ward",
+      "description": "Grant a temporary protective ward to a friendly pawn.",
+      "effect": "buff",
+      "target": "ally",
+      "range_cells": 8,
+      "magnitude": 0,
+      "cooldown_ticks": 840,
+      "duration_ticks": 900,
+      "status_hediff": "EB_Buff_GuardianWard",
+      "damage_def": "",
+      "compatible_aspects": [
+        "Ward",
+        "Ritual",
+        "Preparation",
+        "Counter",
+        "Aura"
+      ],
+      "favored_essences": [
+        "Shield",
+        "Magic",
+        "Light",
+        "Pure"
+      ],
+      "icon": "Essencebound/AwakeningStones/StoneShield",
+      "source_status": "original_mod_gameplay_design"
+    },
+    {
+      "id": "StoneSkin",
+      "defName": "EB_Power_StoneSkin",
+      "name": "Stone Skin",
+      "description": "Gain temporary armor with a small movement penalty.",
+      "effect": "buff",
+      "target": "self",
+      "range_cells": 0,
+      "magnitude": 0,
+      "cooldown_ticks": 900,
+      "duration_ticks": 900,
+      "status_hediff": "EB_Buff_StoneSkin",
+      "damage_def": "",
+      "compatible_aspects": [
+        "Ward",
+        "Counter",
+        "Growth",
+        "Preparation",
+        "Aura"
+      ],
+      "favored_essences": [
+        "Earth",
+        "Iron",
+        "Might",
+        "Shield"
+      ],
+      "icon": "Essencebound/AwakeningStones/StoneStone",
+      "source_status": "original_mod_gameplay_design"
+    },
+    {
+      "id": "SwiftStep",
+      "defName": "EB_Power_SwiftStep",
+      "name": "Swift Step",
+      "description": "Move faster for a short time.",
+      "effect": "buff",
+      "target": "self",
+      "range_cells": 0,
+      "magnitude": 0,
+      "cooldown_ticks": 720,
+      "duration_ticks": 660,
+      "status_hediff": "EB_Buff_SwiftStep",
+      "damage_def": "",
+      "compatible_aspects": [
+        "Mobility",
+        "Surge",
+        "Adventure",
+        "Exploration",
+        "Reach"
+      ],
+      "favored_essences": [
+        "Swift",
+        "Wind",
+        "Wing",
+        "Balance",
+        "Bird"
+      ],
+      "icon": "Essencebound/AwakeningStones/StoneWind",
+      "source_status": "original_mod_gameplay_design"
+    },
+    {
+      "id": "MistVeil",
+      "defName": "EB_Power_MistVeil",
+      "name": "Mist Veil",
+      "description": "Gain short-lived evasive footwork; does not grant invisibility.",
+      "effect": "buff",
+      "target": "self",
+      "range_cells": 0,
+      "magnitude": 0,
+      "cooldown_ticks": 900,
+      "duration_ticks": 720,
+      "status_hediff": "EB_Buff_MistVeil",
+      "damage_def": "",
+      "compatible_aspects": [
+        "Veil",
+        "Mobility",
+        "Exploration",
+        "Counter"
+      ],
+      "favored_essences": [
+        "Dark",
+        "Cloud",
+        "Smoke"
+      ],
+      "icon": "Essencebound/AwakeningStones/StoneMist",
+      "source_status": "original_mod_gameplay_design"
+    },
+    {
+      "id": "KeenSight",
+      "defName": "EB_Power_KeenSight",
+      "name": "Keen Sight",
+      "description": "Improve aiming and awareness for a short time.",
+      "effect": "buff",
+      "target": "self",
+      "range_cells": 0,
+      "magnitude": 0,
+      "cooldown_ticks": 900,
+      "duration_ticks": 900,
+      "status_hediff": "EB_Buff_KeenSight",
+      "damage_def": "",
+      "compatible_aspects": [
+        "Precision",
+        "Exploration",
+        "Preparation",
+        "Judgement",
+        "Familiar",
+        "Reach"
+      ],
+      "favored_essences": [
+        "Eye",
+        "Vision",
+        "Bird"
+      ],
+      "icon": "Essencebound/AwakeningStones/StoneFocus",
+      "source_status": "original_mod_gameplay_design"
+    },
+    {
+      "id": "RallyingSurge",
+      "defName": "EB_Power_RallyingSurge",
+      "name": "Rallying Surge",
+      "description": "Improve a friendly pawn\u2019s speed and work efficiency briefly.",
+      "effect": "buff",
+      "target": "ally",
+      "range_cells": 8,
+      "magnitude": 0,
+      "cooldown_ticks": 900,
+      "duration_ticks": 600,
+      "status_hediff": "EB_Buff_RallyingSurge",
+      "damage_def": "",
+      "compatible_aspects": [
+        "Surge",
+        "Aura",
+        "Ritual",
+        "Familiar",
+        "Adventure",
+        "Stars"
+      ],
+      "favored_essences": [
+        "Might",
+        "Life",
+        "Renewal",
+        "Balance",
+        "Pure"
+      ],
+      "icon": "Essencebound/AwakeningStones/StoneGrace",
+      "source_status": "original_mod_gameplay_design"
+    },
+    {
+      "id": "PurifyingTouch",
+      "defName": "EB_Power_PurifyingTouch",
+      "name": "Purifying Touch",
+      "description": "Remove an Essencebound chill or static affliction from a friendly pawn.",
+      "effect": "cleanse",
+      "target": "ally",
+      "range_cells": 6,
+      "magnitude": 0,
+      "cooldown_ticks": 780,
+      "duration_ticks": 0,
+      "status_hediff": "",
+      "damage_def": "",
+      "compatible_aspects": [
+        "Recovery",
+        "Judgement",
+        "Reaper",
+        "Ritual"
+      ],
+      "favored_essences": [
+        "Pure",
+        "Life",
+        "Light",
+        "Renewal"
+      ],
+      "icon": "Essencebound/AwakeningStones/StoneLight",
+      "source_status": "original_mod_gameplay_design"
+    },
+    {
+      "id": "ForcePulse",
+      "defName": "EB_Power_ForcePulse",
+      "name": "Force Pulse",
+      "description": "Release a brief close-range pulse affecting nearby hostile pawns.",
+      "effect": "pulse",
+      "target": "self",
+      "range_cells": 3,
+      "magnitude": 3,
+      "cooldown_ticks": 720,
+      "duration_ticks": 0,
+      "status_hediff": "",
+      "damage_def": "Blunt",
+      "compatible_aspects": [
+        "Control",
+        "Assault",
+        "Counter",
+        "Reaper",
+        "Judgement"
+      ],
+      "favored_essences": [
+        "Might",
+        "Force",
+        "Potent",
+        "Magic"
+      ],
+      "icon": "Essencebound/AwakeningStones/StoneChain",
+      "source_status": "original_mod_gameplay_design"
+    }
+  ]
+}

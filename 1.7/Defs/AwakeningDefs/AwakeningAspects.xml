@@ -1,0 +1,129 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Defs>
+  <Essencebound.AwakeningAspectDef>
+    <defName>EB_Aspect_Assault</defName>
+    <label>assault</label>
+    <description>Direct offensive power. This is an imprint placeholder, not a playable ability.</description>
+    <role>Assault</role>
+  </Essencebound.AwakeningAspectDef>
+  <Essencebound.AwakeningAspectDef>
+    <defName>EB_Aspect_Aura</defName>
+    <label>aura</label>
+    <description>Ambient area influence. This is an imprint placeholder, not a playable ability.</description>
+    <role>Aura</role>
+  </Essencebound.AwakeningAspectDef>
+  <Essencebound.AwakeningAspectDef>
+    <defName>EB_Aspect_Control</defName>
+    <label>control</label>
+    <description>Control and manipulation. This is an imprint placeholder, not a playable ability.</description>
+    <role>Control</role>
+  </Essencebound.AwakeningAspectDef>
+  <Essencebound.AwakeningAspectDef>
+    <defName>EB_Aspect_Ward</defName>
+    <label>ward</label>
+    <description>Protection and warding. This is an imprint placeholder, not a playable ability.</description>
+    <role>Ward</role>
+  </Essencebound.AwakeningAspectDef>
+  <Essencebound.AwakeningAspectDef>
+    <defName>EB_Aspect_Counter</defName>
+    <label>counter</label>
+    <description>Defensive response. This is an imprint placeholder, not a playable ability.</description>
+    <role>Counter</role>
+  </Essencebound.AwakeningAspectDef>
+  <Essencebound.AwakeningAspectDef>
+    <defName>EB_Aspect_Recovery</defName>
+    <label>recovery</label>
+    <description>Recovery and restoration. This is an imprint placeholder, not a playable ability.</description>
+    <role>Recovery</role>
+  </Essencebound.AwakeningAspectDef>
+  <Essencebound.AwakeningAspectDef>
+    <defName>EB_Aspect_Spell</defName>
+    <label>spell</label>
+    <description>Spellcasting technique. This is an imprint placeholder, not a playable ability.</description>
+    <role>Spell</role>
+  </Essencebound.AwakeningAspectDef>
+  <Essencebound.AwakeningAspectDef>
+    <defName>EB_Aspect_Ritual</defName>
+    <label>ritual</label>
+    <description>Ritual and sustained magic. This is an imprint placeholder, not a playable ability.</description>
+    <role>Ritual</role>
+  </Essencebound.AwakeningAspectDef>
+  <Essencebound.AwakeningAspectDef>
+    <defName>EB_Aspect_Growth</defName>
+    <label>growth</label>
+    <description>Growth and cultivation. This is an imprint placeholder, not a playable ability.</description>
+    <role>Growth</role>
+  </Essencebound.AwakeningAspectDef>
+  <Essencebound.AwakeningAspectDef>
+    <defName>EB_Aspect_Familiar</defName>
+    <label>familiar</label>
+    <description>Companion or familiar affinity. This is an imprint placeholder, not a playable ability.</description>
+    <role>Familiar</role>
+  </Essencebound.AwakeningAspectDef>
+  <Essencebound.AwakeningAspectDef>
+    <defName>EB_Aspect_Precision</defName>
+    <label>precision</label>
+    <description>Precision and timing. This is an imprint placeholder, not a playable ability.</description>
+    <role>Precision</role>
+  </Essencebound.AwakeningAspectDef>
+  <Essencebound.AwakeningAspectDef>
+    <defName>EB_Aspect_Reach</defName>
+    <label>reach</label>
+    <description>Extended range or reach. This is an imprint placeholder, not a playable ability.</description>
+    <role>Reach</role>
+  </Essencebound.AwakeningAspectDef>
+  <Essencebound.AwakeningAspectDef>
+    <defName>EB_Aspect_Mobility</defName>
+    <label>mobility</label>
+    <description>Movement and positioning. This is an imprint placeholder, not a playable ability.</description>
+    <role>Mobility</role>
+  </Essencebound.AwakeningAspectDef>
+  <Essencebound.AwakeningAspectDef>
+    <defName>EB_Aspect_Preparation</defName>
+    <label>preparation</label>
+    <description>Readiness and preparation. This is an imprint placeholder, not a playable ability.</description>
+    <role>Preparation</role>
+  </Essencebound.AwakeningAspectDef>
+  <Essencebound.AwakeningAspectDef>
+    <defName>EB_Aspect_Surge</defName>
+    <label>surge</label>
+    <description>Sudden acceleration or force. This is an imprint placeholder, not a playable ability.</description>
+    <role>Surge</role>
+  </Essencebound.AwakeningAspectDef>
+  <Essencebound.AwakeningAspectDef>
+    <defName>EB_Aspect_Adventure</defName>
+    <label>adventure</label>
+    <description>Adaptive adventuring. This is an imprint placeholder, not a playable ability.</description>
+    <role>Adventure</role>
+  </Essencebound.AwakeningAspectDef>
+  <Essencebound.AwakeningAspectDef>
+    <defName>EB_Aspect_Exploration</defName>
+    <label>exploration</label>
+    <description>Discovery and awareness. This is an imprint placeholder, not a playable ability.</description>
+    <role>Exploration</role>
+  </Essencebound.AwakeningAspectDef>
+  <Essencebound.AwakeningAspectDef>
+    <defName>EB_Aspect_Judgement</defName>
+    <label>judgement</label>
+    <description>Discernment and evaluation. This is an imprint placeholder, not a playable ability.</description>
+    <role>Judgement</role>
+  </Essencebound.AwakeningAspectDef>
+  <Essencebound.AwakeningAspectDef>
+    <defName>EB_Aspect_Stars</defName>
+    <label>stars</label>
+    <description>Celestial affinity. This is an imprint placeholder, not a playable ability.</description>
+    <role>Stars</role>
+  </Essencebound.AwakeningAspectDef>
+  <Essencebound.AwakeningAspectDef>
+    <defName>EB_Aspect_Veil</defName>
+    <label>veil</label>
+    <description>Concealment and subtlety. This is an imprint placeholder, not a playable ability.</description>
+    <role>Veil</role>
+  </Essencebound.AwakeningAspectDef>
+  <Essencebound.AwakeningAspectDef>
+    <defName>EB_Aspect_Reaper</defName>
+    <label>reaper</label>
+    <description>Reaper-aligned utility. This is an imprint placeholder, not a playable ability.</description>
+    <role>Reaper</role>
+  </Essencebound.AwakeningAspectDef>
+</Defs>

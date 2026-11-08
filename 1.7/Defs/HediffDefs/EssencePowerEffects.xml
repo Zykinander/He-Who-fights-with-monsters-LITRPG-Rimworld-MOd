@@ -1,0 +1,128 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Defs>
+  <HediffDef>
+    <defName>EB_Buff_GuardianWard</defName>
+    <label>guardian ward</label>
+    <description>A protective essence ward strengthens the pawn’s defenses.</description>
+    <hediffClass>Essencebound.Hediff_EssenceTimed</hediffClass>
+    <isBad>false</isBad>
+    <initialSeverity>0.1</initialSeverity>
+    <stages>
+      <li>
+        <statOffsets>
+          <ArmorRating_Sharp>0.18</ArmorRating_Sharp>
+          <ArmorRating_Blunt>0.18</ArmorRating_Blunt>
+        </statOffsets>
+      </li>
+    </stages>
+  </HediffDef>
+  <HediffDef>
+    <defName>EB_Buff_StoneSkin</defName>
+    <label>stone skin</label>
+    <description>Mineral-like essence hardens the pawn at the cost of a little speed.</description>
+    <hediffClass>Essencebound.Hediff_EssenceTimed</hediffClass>
+    <isBad>false</isBad>
+    <initialSeverity>0.1</initialSeverity>
+    <stages>
+      <li>
+        <statOffsets>
+          <ArmorRating_Sharp>0.28</ArmorRating_Sharp>
+          <ArmorRating_Blunt>0.28</ArmorRating_Blunt>
+          <MoveSpeed>-0.25</MoveSpeed>
+        </statOffsets>
+      </li>
+    </stages>
+  </HediffDef>
+  <HediffDef>
+    <defName>EB_Buff_SwiftStep</defName>
+    <label>swift step</label>
+    <description>Essence power quickens the pawn’s stride.</description>
+    <hediffClass>Essencebound.Hediff_EssenceTimed</hediffClass>
+    <isBad>false</isBad>
+    <initialSeverity>0.1</initialSeverity>
+    <stages>
+      <li>
+        <statOffsets>
+          <MoveSpeed>0.85</MoveSpeed>
+        </statOffsets>
+      </li>
+    </stages>
+  </HediffDef>
+  <HediffDef>
+    <defName>EB_Buff_MistVeil</defName>
+    <label>mist veil</label>
+    <description>A subtle veil improves evasive movement, but does not hide the pawn.</description>
+    <hediffClass>Essencebound.Hediff_EssenceTimed</hediffClass>
+    <isBad>false</isBad>
+    <initialSeverity>0.1</initialSeverity>
+    <stages>
+      <li>
+        <statOffsets>
+          <MeleeDodgeChance>0.12</MeleeDodgeChance>
+        </statOffsets>
+      </li>
+    </stages>
+  </HediffDef>
+  <HediffDef>
+    <defName>EB_Buff_KeenSight</defName>
+    <label>keen sight</label>
+    <description>Essence focus improves the pawn’s accuracy.</description>
+    <hediffClass>Essencebound.Hediff_EssenceTimed</hediffClass>
+    <isBad>false</isBad>
+    <initialSeverity>0.1</initialSeverity>
+    <stages>
+      <li>
+        <statOffsets>
+          <ShootingAccuracyPawn>1.5</ShootingAccuracyPawn>
+        </statOffsets>
+      </li>
+    </stages>
+  </HediffDef>
+  <HediffDef>
+    <defName>EB_Buff_RallyingSurge</defName>
+    <label>rallying surge</label>
+    <description>Essence energy briefly boosts speed and productivity.</description>
+    <hediffClass>Essencebound.Hediff_EssenceTimed</hediffClass>
+    <isBad>false</isBad>
+    <initialSeverity>0.1</initialSeverity>
+    <stages>
+      <li>
+        <statOffsets>
+          <MoveSpeed>0.45</MoveSpeed>
+          <WorkSpeedGlobal>0.1</WorkSpeedGlobal>
+        </statOffsets>
+      </li>
+    </stages>
+  </HediffDef>
+  <HediffDef>
+    <defName>EB_Debuff_Chilled</defName>
+    <label>essence chill</label>
+    <description>A short-lived slowing effect from an essence spell.</description>
+    <hediffClass>Essencebound.Hediff_EssenceTimed</hediffClass>
+    <isBad>true</isBad>
+    <initialSeverity>0.1</initialSeverity>
+    <stages>
+      <li>
+        <statOffsets>
+          <MoveSpeed>-0.55</MoveSpeed>
+        </statOffsets>
+      </li>
+    </stages>
+  </HediffDef>
+  <HediffDef>
+    <defName>EB_Debuff_Static</defName>
+    <label>essence static</label>
+    <description>A short-lived disruption from an essence spell.</description>
+    <hediffClass>Essencebound.Hediff_EssenceTimed</hediffClass>
+    <isBad>true</isBad>
+    <initialSeverity>0.1</initialSeverity>
+    <stages>
+      <li>
+        <statOffsets>
+          <MoveSpeed>-0.25</MoveSpeed>
+          <WorkSpeedGlobal>-0.12</WorkSpeedGlobal>
+        </statOffsets>
+      </li>
+    </stages>
+  </HediffDef>
+</Defs>

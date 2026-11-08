@@ -1,0 +1,504 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Defs>
+  <ThingDef Name="EB_AwakeningStoneItemBase" Abstract="True">
+    <thingClass>ThingWithComps</thingClass>
+    <category>Item</category>
+    <stackLimit>10</stackLimit>
+    <rotatable>false</rotatable>
+    <alwaysHaulable>true</alwaysHaulable>
+    <useHitPoints>false</useHitPoints>
+    <graphicData>
+      <texPath>Essencebound/AwakeningStones/StoneFire</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(0.62,0.62)</drawSize>
+    </graphicData>
+    <statBases>
+      <MarketValue>120</MarketValue>
+      <Mass>0.15</Mass>
+      <Flammability>0</Flammability>
+    </statBases>
+    <thingCategories>
+      <li>EB_AwakeningStones</li>
+    </thingCategories>
+  </ThingDef>
+  <ThingDef ParentName="EB_AwakeningStoneItemBase">
+    <defName>EB_AwakeningStone_Fire</defName>
+    <label>awakening stone of fire</label>
+    <description>A warm ember crystal that flickers when held near an awakened essence. Rarity: Common. Right-click with an adjacent essence user to awaken an imprint (requires compiled C#).</description>
+    <graphicData>
+      <texPath>Essencebound/AwakeningStones/StoneFire</texPath>
+    </graphicData>
+    <statBases>
+      <MarketValue>120</MarketValue>
+    </statBases>
+    <comps>
+      <li Class="Essencebound.CompProperties_AwakeningStoneItem">
+        <stoneDefName>EB_Stone_Fire</stoneDefName>
+      </li>
+    </comps>
+  </ThingDef>
+  <ThingDef ParentName="EB_AwakeningStoneItemBase">
+    <defName>EB_AwakeningStone_Shield</defName>
+    <label>awakening stone of shield</label>
+    <description>A faceted blue stone with a faint outline of a sheltering barrier. Rarity: Common. Right-click with an adjacent essence user to awaken an imprint (requires compiled C#).</description>
+    <graphicData>
+      <texPath>Essencebound/AwakeningStones/StoneShield</texPath>
+    </graphicData>
+    <statBases>
+      <MarketValue>120</MarketValue>
+    </statBases>
+    <comps>
+      <li Class="Essencebound.CompProperties_AwakeningStoneItem">
+        <stoneDefName>EB_Stone_Shield</stoneDefName>
+      </li>
+    </comps>
+  </ThingDef>
+  <ThingDef ParentName="EB_AwakeningStoneItemBase">
+    <defName>EB_AwakeningStone_Magus</defName>
+    <label>awakening stone of magus</label>
+    <description>A violet prism threaded with fine runic filaments. Rarity: Common. Right-click with an adjacent essence user to awaken an imprint (requires compiled C#).</description>
+    <graphicData>
+      <texPath>Essencebound/AwakeningStones/StoneMagus</texPath>
+    </graphicData>
+    <statBases>
+      <MarketValue>120</MarketValue>
+    </statBases>
+    <comps>
+      <li Class="Essencebound.CompProperties_AwakeningStoneItem">
+        <stoneDefName>EB_Stone_Magus</stoneDefName>
+      </li>
+    </comps>
+  </ThingDef>
+  <ThingDef ParentName="EB_AwakeningStoneItemBase">
+    <defName>EB_AwakeningStone_Plant</defName>
+    <label>awakening stone of plant</label>
+    <description>A moss-green pebble with branching veins beneath its surface. Rarity: Common. Right-click with an adjacent essence user to awaken an imprint (requires compiled C#).</description>
+    <graphicData>
+      <texPath>Essencebound/AwakeningStones/StonePlant</texPath>
+    </graphicData>
+    <statBases>
+      <MarketValue>120</MarketValue>
+    </statBases>
+    <comps>
+      <li Class="Essencebound.CompProperties_AwakeningStoneItem">
+        <stoneDefName>EB_Stone_Plant</stoneDefName>
+      </li>
+    </comps>
+  </ThingDef>
+  <ThingDef ParentName="EB_AwakeningStoneItemBase">
+    <defName>EB_AwakeningStone_Water</defName>
+    <label>awakening stone of water</label>
+    <description>A glassy blue stone whose inner currents never settle. Rarity: Common. Lore rarity not verified; assigned for this mod. Right-click with an adjacent essence user to awaken an imprint (requires compiled C#).</description>
+    <graphicData>
+      <texPath>Essencebound/AwakeningStones/StoneWater</texPath>
+    </graphicData>
+    <statBases>
+      <MarketValue>120</MarketValue>
+    </statBases>
+    <comps>
+      <li Class="Essencebound.CompProperties_AwakeningStoneItem">
+        <stoneDefName>EB_Stone_Water</stoneDefName>
+      </li>
+    </comps>
+  </ThingDef>
+  <ThingDef ParentName="EB_AwakeningStoneItemBase">
+    <defName>EB_AwakeningStone_Wind</defName>
+    <label>awakening stone of wind</label>
+    <description>A pale crystal that hums with the suggestion of moving air. Rarity: Common. Lore rarity not verified; assigned for this mod. Right-click with an adjacent essence user to awaken an imprint (requires compiled C#).</description>
+    <graphicData>
+      <texPath>Essencebound/AwakeningStones/StoneWind</texPath>
+    </graphicData>
+    <statBases>
+      <MarketValue>120</MarketValue>
+    </statBases>
+    <comps>
+      <li Class="Essencebound.CompProperties_AwakeningStoneItem">
+        <stoneDefName>EB_Stone_Wind</stoneDefName>
+      </li>
+    </comps>
+  </ThingDef>
+  <ThingDef ParentName="EB_AwakeningStoneItemBase">
+    <defName>EB_AwakeningStone_Stone</defName>
+    <label>awakening stone of stone</label>
+    <description>A rough slate gem with a heavy, unyielding core. Rarity: Common. Lore rarity not verified; assigned for this mod. Right-click with an adjacent essence user to awaken an imprint (requires compiled C#).</description>
+    <graphicData>
+      <texPath>Essencebound/AwakeningStones/StoneStone</texPath>
+    </graphicData>
+    <statBases>
+      <MarketValue>120</MarketValue>
+    </statBases>
+    <comps>
+      <li Class="Essencebound.CompProperties_AwakeningStoneItem">
+        <stoneDefName>EB_Stone_Stone</stoneDefName>
+      </li>
+    </comps>
+  </ThingDef>
+  <ThingDef ParentName="EB_AwakeningStoneItemBase">
+    <defName>EB_AwakeningStone_Fang</defName>
+    <label>awakening stone of fang</label>
+    <description>An ivory-colored shard with a dark line through its point. Rarity: Common. Lore rarity not verified; assigned for this mod. Right-click with an adjacent essence user to awaken an imprint (requires compiled C#).</description>
+    <graphicData>
+      <texPath>Essencebound/AwakeningStones/StoneFang</texPath>
+    </graphicData>
+    <statBases>
+      <MarketValue>120</MarketValue>
+    </statBases>
+    <comps>
+      <li Class="Essencebound.CompProperties_AwakeningStoneItem">
+        <stoneDefName>EB_Stone_Fang</stoneDefName>
+      </li>
+    </comps>
+  </ThingDef>
+  <ThingDef ParentName="EB_AwakeningStoneItemBase">
+    <defName>EB_AwakeningStone_Light</defName>
+    <label>awakening stone of light</label>
+    <description>A milky crystal carrying a steady lantern-like glow. Rarity: Common. Lore rarity not verified; assigned for this mod. Right-click with an adjacent essence user to awaken an imprint (requires compiled C#).</description>
+    <graphicData>
+      <texPath>Essencebound/AwakeningStones/StoneLight</texPath>
+    </graphicData>
+    <statBases>
+      <MarketValue>120</MarketValue>
+    </statBases>
+    <comps>
+      <li Class="Essencebound.CompProperties_AwakeningStoneItem">
+        <stoneDefName>EB_Stone_Light</stoneDefName>
+      </li>
+    </comps>
+  </ThingDef>
+  <ThingDef ParentName="EB_AwakeningStoneItemBase">
+    <defName>EB_AwakeningStone_Shadow</defName>
+    <label>awakening stone of shadow</label>
+    <description>A smoke-black stone that seems to dim the space around it. Rarity: Common. Lore rarity not verified; assigned for this mod. Right-click with an adjacent essence user to awaken an imprint (requires compiled C#).</description>
+    <graphicData>
+      <texPath>Essencebound/AwakeningStones/StoneShadow</texPath>
+    </graphicData>
+    <statBases>
+      <MarketValue>120</MarketValue>
+    </statBases>
+    <comps>
+      <li Class="Essencebound.CompProperties_AwakeningStoneItem">
+        <stoneDefName>EB_Stone_Shadow</stoneDefName>
+      </li>
+    </comps>
+  </ThingDef>
+  <ThingDef ParentName="EB_AwakeningStoneItemBase">
+    <defName>EB_AwakeningStone_Focus</defName>
+    <label>awakening stone of focus</label>
+    <description>A clear turquoise gem with a perfectly still center. Rarity: Uncommon. Right-click with an adjacent essence user to awaken an imprint (requires compiled C#).</description>
+    <graphicData>
+      <texPath>Essencebound/AwakeningStones/StoneFocus</texPath>
+    </graphicData>
+    <statBases>
+      <MarketValue>260</MarketValue>
+    </statBases>
+    <comps>
+      <li Class="Essencebound.CompProperties_AwakeningStoneItem">
+        <stoneDefName>EB_Stone_Focus</stoneDefName>
+      </li>
+    </comps>
+  </ThingDef>
+  <ThingDef ParentName="EB_AwakeningStoneItemBase">
+    <defName>EB_AwakeningStone_Reach</defName>
+    <label>awakening stone of reach</label>
+    <description>A sky-blue crystal whose markings stretch toward its tip. Rarity: Uncommon. Right-click with an adjacent essence user to awaken an imprint (requires compiled C#).</description>
+    <graphicData>
+      <texPath>Essencebound/AwakeningStones/StoneReach</texPath>
+    </graphicData>
+    <statBases>
+      <MarketValue>260</MarketValue>
+    </statBases>
+    <comps>
+      <li Class="Essencebound.CompProperties_AwakeningStoneItem">
+        <stoneDefName>EB_Stone_Reach</stoneDefName>
+      </li>
+    </comps>
+  </ThingDef>
+  <ThingDef ParentName="EB_AwakeningStoneItemBase">
+    <defName>EB_AwakeningStone_Preparation</defName>
+    <label>awakening stone of preparation</label>
+    <description>A layered amber stone that looks like a folded map. Rarity: Uncommon. Right-click with an adjacent essence user to awaken an imprint (requires compiled C#).</description>
+    <graphicData>
+      <texPath>Essencebound/AwakeningStones/StonePreparation</texPath>
+    </graphicData>
+    <statBases>
+      <MarketValue>260</MarketValue>
+    </statBases>
+    <comps>
+      <li Class="Essencebound.CompProperties_AwakeningStoneItem">
+        <stoneDefName>EB_Stone_Preparation</stoneDefName>
+      </li>
+    </comps>
+  </ThingDef>
+  <ThingDef ParentName="EB_AwakeningStoneItemBase">
+    <defName>EB_AwakeningStone_Surge</defName>
+    <label>awakening stone of surge</label>
+    <description>A bright orange shard that pulses in irregular waves. Rarity: Uncommon. Right-click with an adjacent essence user to awaken an imprint (requires compiled C#).</description>
+    <graphicData>
+      <texPath>Essencebound/AwakeningStones/StoneSurge</texPath>
+    </graphicData>
+    <statBases>
+      <MarketValue>260</MarketValue>
+    </statBases>
+    <comps>
+      <li Class="Essencebound.CompProperties_AwakeningStoneItem">
+        <stoneDefName>EB_Stone_Surge</stoneDefName>
+      </li>
+    </comps>
+  </ThingDef>
+  <ThingDef ParentName="EB_AwakeningStoneItemBase">
+    <defName>EB_AwakeningStone_Hunt</defName>
+    <label>awakening stone of hunt</label>
+    <description>A green-brown stone marked with a faint tracking spiral. Rarity: Uncommon. Lore rarity not verified; assigned for this mod. Right-click with an adjacent essence user to awaken an imprint (requires compiled C#).</description>
+    <graphicData>
+      <texPath>Essencebound/AwakeningStones/StoneHunt</texPath>
+    </graphicData>
+    <statBases>
+      <MarketValue>260</MarketValue>
+    </statBases>
+    <comps>
+      <li Class="Essencebound.CompProperties_AwakeningStoneItem">
+        <stoneDefName>EB_Stone_Hunt</stoneDefName>
+      </li>
+    </comps>
+  </ThingDef>
+  <ThingDef ParentName="EB_AwakeningStoneItemBase">
+    <defName>EB_AwakeningStone_Grace</defName>
+    <label>awakening stone of grace</label>
+    <description>A smooth silver-blue stone that feels almost weightless. Rarity: Uncommon. Lore rarity not verified; assigned for this mod. Right-click with an adjacent essence user to awaken an imprint (requires compiled C#).</description>
+    <graphicData>
+      <texPath>Essencebound/AwakeningStones/StoneGrace</texPath>
+    </graphicData>
+    <statBases>
+      <MarketValue>260</MarketValue>
+    </statBases>
+    <comps>
+      <li Class="Essencebound.CompProperties_AwakeningStoneItem">
+        <stoneDefName>EB_Stone_Grace</stoneDefName>
+      </li>
+    </comps>
+  </ThingDef>
+  <ThingDef ParentName="EB_AwakeningStoneItemBase">
+    <defName>EB_AwakeningStone_Blood</defName>
+    <label>awakening stone of blood</label>
+    <description>A dark crimson gem with slow-moving threads at its heart. Rarity: Uncommon. Lore rarity not verified; assigned for this mod. Right-click with an adjacent essence user to awaken an imprint (requires compiled C#).</description>
+    <graphicData>
+      <texPath>Essencebound/AwakeningStones/StoneBlood</texPath>
+    </graphicData>
+    <statBases>
+      <MarketValue>260</MarketValue>
+    </statBases>
+    <comps>
+      <li Class="Essencebound.CompProperties_AwakeningStoneItem">
+        <stoneDefName>EB_Stone_Blood</stoneDefName>
+      </li>
+    </comps>
+  </ThingDef>
+  <ThingDef ParentName="EB_AwakeningStoneItemBase">
+    <defName>EB_AwakeningStone_Mist</defName>
+    <label>awakening stone of mist</label>
+    <description>A cloudy opal whose interior is difficult to focus on. Rarity: Uncommon. Lore rarity not verified; assigned for this mod. Right-click with an adjacent essence user to awaken an imprint (requires compiled C#).</description>
+    <graphicData>
+      <texPath>Essencebound/AwakeningStones/StoneMist</texPath>
+    </graphicData>
+    <statBases>
+      <MarketValue>260</MarketValue>
+    </statBases>
+    <comps>
+      <li Class="Essencebound.CompProperties_AwakeningStoneItem">
+        <stoneDefName>EB_Stone_Mist</stoneDefName>
+      </li>
+    </comps>
+  </ThingDef>
+  <ThingDef ParentName="EB_AwakeningStoneItemBase">
+    <defName>EB_AwakeningStone_Adventure</defName>
+    <label>awakening stone of adventure</label>
+    <description>A sea-green stone that catches glints like far-off horizons. Rarity: Rare. Right-click with an adjacent essence user to awaken an imprint (requires compiled C#).</description>
+    <graphicData>
+      <texPath>Essencebound/AwakeningStones/StoneAdventure</texPath>
+    </graphicData>
+    <statBases>
+      <MarketValue>600</MarketValue>
+    </statBases>
+    <comps>
+      <li Class="Essencebound.CompProperties_AwakeningStoneItem">
+        <stoneDefName>EB_Stone_Adventure</stoneDefName>
+      </li>
+    </comps>
+  </ThingDef>
+  <ThingDef ParentName="EB_AwakeningStoneItemBase">
+    <defName>EB_AwakeningStone_Judgement</defName>
+    <label>awakening stone of judgement</label>
+    <description>A pale gold stone whose inner markings resemble scales. Rarity: Rare. Right-click with an adjacent essence user to awaken an imprint (requires compiled C#).</description>
+    <graphicData>
+      <texPath>Essencebound/AwakeningStones/StoneJudgement</texPath>
+    </graphicData>
+    <statBases>
+      <MarketValue>600</MarketValue>
+    </statBases>
+    <comps>
+      <li Class="Essencebound.CompProperties_AwakeningStoneItem">
+        <stoneDefName>EB_Stone_Judgement</stoneDefName>
+      </li>
+    </comps>
+  </ThingDef>
+  <ThingDef ParentName="EB_AwakeningStoneItemBase">
+    <defName>EB_AwakeningStone_Chain</defName>
+    <label>awakening stone of chain</label>
+    <description>A linked metallic crystal that softly chimes when turned. Rarity: Rare. Lore rarity not verified; assigned for this mod. Right-click with an adjacent essence user to awaken an imprint (requires compiled C#).</description>
+    <graphicData>
+      <texPath>Essencebound/AwakeningStones/StoneChain</texPath>
+    </graphicData>
+    <statBases>
+      <MarketValue>600</MarketValue>
+    </statBases>
+    <comps>
+      <li Class="Essencebound.CompProperties_AwakeningStoneItem">
+        <stoneDefName>EB_Stone_Chain</stoneDefName>
+      </li>
+    </comps>
+  </ThingDef>
+  <ThingDef ParentName="EB_AwakeningStoneItemBase">
+    <defName>EB_AwakeningStone_Mirror</defName>
+    <label>awakening stone of mirror</label>
+    <description>A silvery gem that reflects shapes a heartbeat late. Rarity: Rare. Lore rarity not verified; assigned for this mod. Right-click with an adjacent essence user to awaken an imprint (requires compiled C#).</description>
+    <graphicData>
+      <texPath>Essencebound/AwakeningStones/StoneMirror</texPath>
+    </graphicData>
+    <statBases>
+      <MarketValue>600</MarketValue>
+    </statBases>
+    <comps>
+      <li Class="Essencebound.CompProperties_AwakeningStoneItem">
+        <stoneDefName>EB_Stone_Mirror</stoneDefName>
+      </li>
+    </comps>
+  </ThingDef>
+  <ThingDef ParentName="EB_AwakeningStoneItemBase">
+    <defName>EB_AwakeningStone_Ash</defName>
+    <label>awakening stone of ash</label>
+    <description>A grey-black crystal with tiny rose-red embers beneath the dust. Rarity: Rare. Lore rarity not verified; assigned for this mod. Right-click with an adjacent essence user to awaken an imprint (requires compiled C#).</description>
+    <graphicData>
+      <texPath>Essencebound/AwakeningStones/StoneAsh</texPath>
+    </graphicData>
+    <statBases>
+      <MarketValue>600</MarketValue>
+    </statBases>
+    <comps>
+      <li Class="Essencebound.CompProperties_AwakeningStoneItem">
+        <stoneDefName>EB_Stone_Ash</stoneDefName>
+      </li>
+    </comps>
+  </ThingDef>
+  <ThingDef ParentName="EB_AwakeningStoneItemBase">
+    <defName>EB_AwakeningStone_Tide</defName>
+    <label>awakening stone of tide</label>
+    <description>A blue-green stone patterned by overlapping circles. Rarity: Rare. Lore rarity not verified; assigned for this mod. Right-click with an adjacent essence user to awaken an imprint (requires compiled C#).</description>
+    <graphicData>
+      <texPath>Essencebound/AwakeningStones/StoneTide</texPath>
+    </graphicData>
+    <statBases>
+      <MarketValue>600</MarketValue>
+    </statBases>
+    <comps>
+      <li Class="Essencebound.CompProperties_AwakeningStoneItem">
+        <stoneDefName>EB_Stone_Tide</stoneDefName>
+      </li>
+    </comps>
+  </ThingDef>
+  <ThingDef ParentName="EB_AwakeningStoneItemBase">
+    <defName>EB_AwakeningStone_Stars</defName>
+    <label>awakening stone of stars</label>
+    <description>A midnight stone scattered with moving points of white light. Rarity: Epic. Right-click with an adjacent essence user to awaken an imprint (requires compiled C#).</description>
+    <graphicData>
+      <texPath>Essencebound/AwakeningStones/StoneStars</texPath>
+    </graphicData>
+    <statBases>
+      <MarketValue>1500</MarketValue>
+    </statBases>
+    <comps>
+      <li Class="Essencebound.CompProperties_AwakeningStoneItem">
+        <stoneDefName>EB_Stone_Stars</stoneDefName>
+      </li>
+    </comps>
+  </ThingDef>
+  <ThingDef ParentName="EB_AwakeningStoneItemBase">
+    <defName>EB_AwakeningStone_Tempest</defName>
+    <label>awakening stone of tempest</label>
+    <description>An indigo crystal with bright threads that flash through its core. Rarity: Epic. Lore rarity not verified; assigned for this mod. Right-click with an adjacent essence user to awaken an imprint (requires compiled C#).</description>
+    <graphicData>
+      <texPath>Essencebound/AwakeningStones/StoneTempest</texPath>
+    </graphicData>
+    <statBases>
+      <MarketValue>1500</MarketValue>
+    </statBases>
+    <comps>
+      <li Class="Essencebound.CompProperties_AwakeningStoneItem">
+        <stoneDefName>EB_Stone_Tempest</stoneDefName>
+      </li>
+    </comps>
+  </ThingDef>
+  <ThingDef ParentName="EB_AwakeningStoneItemBase">
+    <defName>EB_AwakeningStone_Sovereign</defName>
+    <label>awakening stone of sovereign</label>
+    <description>A regal amethyst stone ringed by a tiny gold halo. Rarity: Epic. Lore rarity not verified; assigned for this mod. Right-click with an adjacent essence user to awaken an imprint (requires compiled C#).</description>
+    <graphicData>
+      <texPath>Essencebound/AwakeningStones/StoneSovereign</texPath>
+    </graphicData>
+    <statBases>
+      <MarketValue>1500</MarketValue>
+    </statBases>
+    <comps>
+      <li Class="Essencebound.CompProperties_AwakeningStoneItem">
+        <stoneDefName>EB_Stone_Sovereign</stoneDefName>
+      </li>
+    </comps>
+  </ThingDef>
+  <ThingDef ParentName="EB_AwakeningStoneItemBase">
+    <defName>EB_AwakeningStone_Eclipse</defName>
+    <label>awakening stone of eclipse</label>
+    <description>A two-tone gem split between warm gold and dark violet. Rarity: Epic. Lore rarity not verified; assigned for this mod. Right-click with an adjacent essence user to awaken an imprint (requires compiled C#).</description>
+    <graphicData>
+      <texPath>Essencebound/AwakeningStones/StoneEclipse</texPath>
+    </graphicData>
+    <statBases>
+      <MarketValue>1500</MarketValue>
+    </statBases>
+    <comps>
+      <li Class="Essencebound.CompProperties_AwakeningStoneItem">
+        <stoneDefName>EB_Stone_Eclipse</stoneDefName>
+      </li>
+    </comps>
+  </ThingDef>
+  <ThingDef ParentName="EB_AwakeningStoneItemBase">
+    <defName>EB_AwakeningStone_Reaper</defName>
+    <label>awakening stone of reaper</label>
+    <description>An enigmatic purple-black stone cold to the touch. Rarity: Legendary. Right-click with an adjacent essence user to awaken an imprint (requires compiled C#).</description>
+    <graphicData>
+      <texPath>Essencebound/AwakeningStones/StoneReaper</texPath>
+    </graphicData>
+    <statBases>
+      <MarketValue>3800</MarketValue>
+    </statBases>
+    <comps>
+      <li Class="Essencebound.CompProperties_AwakeningStoneItem">
+        <stoneDefName>EB_Stone_Reaper</stoneDefName>
+      </li>
+    </comps>
+  </ThingDef>
+  <ThingDef ParentName="EB_AwakeningStoneItemBase">
+    <defName>EB_AwakeningStone_Phoenix</defName>
+    <label>awakening stone of phoenix</label>
+    <description>A glowing gold-red stone whose internal flame never goes out. Rarity: Legendary. Lore rarity not verified; assigned for this mod. Right-click with an adjacent essence user to awaken an imprint (requires compiled C#).</description>
+    <graphicData>
+      <texPath>Essencebound/AwakeningStones/StonePhoenix</texPath>
+    </graphicData>
+    <statBases>
+      <MarketValue>3800</MarketValue>
+    </statBases>
+    <comps>
+      <li Class="Essencebound.CompProperties_AwakeningStoneItem">
+        <stoneDefName>EB_Stone_Phoenix</stoneDefName>
+      </li>
+    </comps>
+  </ThingDef>
+</Defs>

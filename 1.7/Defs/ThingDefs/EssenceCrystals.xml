@@ -1,0 +1,1273 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <ThingDef Name="EB_EssenceItemBase" Abstract="True">
+    <thingClass>ThingWithComps</thingClass>
+    <category>Item</category>
+    <stackLimit>1</stackLimit>
+    <rotatable>false</rotatable>
+    <alwaysHaulable>true</alwaysHaulable>
+    <useHitPoints>false</useHitPoints>
+    <graphicData>
+      <texPath>Essencebound/EssenceCrystal</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(0.55,0.55)</drawSize>
+    </graphicData>
+    <statBases>
+      <MarketValue>100</MarketValue>
+      <Mass>0.1</Mass>
+      <Flammability>0</Flammability>
+    </statBases>
+    <thingCategories><li>EB_Essences</li></thingCategories>
+  </ThingDef>
+  <ThingDef ParentName="EB_EssenceItemBase">
+    <defName>EB_Adept_Crystal</defName>
+    <label>adept essence</label>
+    <description>A crystallized adept essence. When the Essencebound assembly is installed, a nearby colonist can absorb it by right-clicking the crystal.</description>
+    <comps>
+      <li Class="Essencebound.CompProperties_EssenceItem">
+        <essenceDefName>EB_Adept</essenceDefName>
+      </li>
+    </comps>
+  </ThingDef>
+  <ThingDef ParentName="EB_EssenceItemBase">
+    <defName>EB_Armour_Crystal</defName>
+    <label>armour essence</label>
+    <description>A crystallized armour essence. When the Essencebound assembly is installed, a nearby colonist can absorb it by right-clicking the crystal.</description>
+    <comps>
+      <li Class="Essencebound.CompProperties_EssenceItem">
+        <essenceDefName>EB_Armour</essenceDefName>
+      </li>
+    </comps>
+  </ThingDef>
+  <ThingDef ParentName="EB_EssenceItemBase">
+    <defName>EB_Axe_Crystal</defName>
+    <label>axe essence</label>
+    <description>A crystallized axe essence. When the Essencebound assembly is installed, a nearby colonist can absorb it by right-clicking the crystal.</description>
+    <comps>
+      <li Class="Essencebound.CompProperties_EssenceItem">
+        <essenceDefName>EB_Axe</essenceDefName>
+      </li>
+    </comps>
+  </ThingDef>
+  <ThingDef ParentName="EB_EssenceItemBase">
+    <defName>EB_Balance_Crystal</defName>
+    <label>balance essence</label>
+    <description>A crystallized balance essence. When the Essencebound assembly is installed, a nearby colonist can absorb it by right-clicking the crystal.</description>
+    <comps>
+      <li Class="Essencebound.CompProperties_EssenceItem">
+        <essenceDefName>EB_Balance</essenceDefName>
+      </li>
+    </comps>
+  </ThingDef>
+  <ThingDef ParentName="EB_EssenceItemBase">
+    <defName>EB_Bat_Crystal</defName>
+    <label>bat essence</label>
+    <description>A crystallized bat essence. When the Essencebound assembly is installed, a nearby colonist can absorb it by right-clicking the crystal.</description>
+    <comps>
+      <li Class="Essencebound.CompProperties_EssenceItem">
+        <essenceDefName>EB_Bat</essenceDefName>
+      </li>
+    </comps>
+  </ThingDef>
+  <ThingDef ParentName="EB_EssenceItemBase">
+    <defName>EB_Bear_Crystal</defName>
+    <label>bear essence</label>
+    <description>A crystallized bear essence. When the Essencebound assembly is installed, a nearby colonist can absorb it by right-clicking the crystal.</description>
+    <comps>
+      <li Class="Essencebound.CompProperties_EssenceItem">
+        <essenceDefName>EB_Bear</essenceDefName>
+      </li>
+    </comps>
+  </ThingDef>
+  <ThingDef ParentName="EB_EssenceItemBase">
+    <defName>EB_Bird_Crystal</defName>
+    <label>bird essence</label>
+    <description>A crystallized bird essence. When the Essencebound assembly is installed, a nearby colonist can absorb it by right-clicking the crystal.</description>
+    <comps>
+      <li Class="Essencebound.CompProperties_EssenceItem">
+        <essenceDefName>EB_Bird</essenceDefName>
+      </li>
+    </comps>
+  </ThingDef>
+  <ThingDef ParentName="EB_EssenceItemBase">
+    <defName>EB_Blight_Crystal</defName>
+    <label>blight essence</label>
+    <description>A crystallized blight essence. When the Essencebound assembly is installed, a nearby colonist can absorb it by right-clicking the crystal.</description>
+    <comps>
+      <li Class="Essencebound.CompProperties_EssenceItem">
+        <essenceDefName>EB_Blight</essenceDefName>
+      </li>
+    </comps>
+  </ThingDef>
+  <ThingDef ParentName="EB_EssenceItemBase">
+    <defName>EB_Blood_Crystal</defName>
+    <label>blood essence</label>
+    <description>A crystallized blood essence. When the Essencebound assembly is installed, a nearby colonist can absorb it by right-clicking the crystal.</description>
+    <comps>
+      <li Class="Essencebound.CompProperties_EssenceItem">
+        <essenceDefName>EB_Blood</essenceDefName>
+      </li>
+    </comps>
+  </ThingDef>
+  <ThingDef ParentName="EB_EssenceItemBase">
+    <defName>EB_Bone_Crystal</defName>
+    <label>bone essence</label>
+    <description>A crystallized bone essence. When the Essencebound assembly is installed, a nearby colonist can absorb it by right-clicking the crystal.</description>
+    <comps>
+      <li Class="Essencebound.CompProperties_EssenceItem">
+        <essenceDefName>EB_Bone</essenceDefName>
+      </li>
+    </comps>
+  </ThingDef>
+  <ThingDef ParentName="EB_EssenceItemBase">
+    <defName>EB_Bow_Crystal</defName>
+    <label>bow essence</label>
+    <description>A crystallized bow essence. When the Essencebound assembly is installed, a nearby colonist can absorb it by right-clicking the crystal.</description>
+    <comps>
+      <li Class="Essencebound.CompProperties_EssenceItem">
+        <essenceDefName>EB_Bow</essenceDefName>
+      </li>
+    </comps>
+  </ThingDef>
+  <ThingDef ParentName="EB_EssenceItemBase">
+    <defName>EB_Cage_Crystal</defName>
+    <label>cage essence</label>
+    <description>A crystallized cage essence. When the Essencebound assembly is installed, a nearby colonist can absorb it by right-clicking the crystal.</description>
+    <comps>
+      <li Class="Essencebound.CompProperties_EssenceItem">
+        <essenceDefName>EB_Cage</essenceDefName>
+      </li>
+    </comps>
+  </ThingDef>
+  <ThingDef ParentName="EB_EssenceItemBase">
+    <defName>EB_Cat_Crystal</defName>
+    <label>cat essence</label>
+    <description>A crystallized cat essence. When the Essencebound assembly is installed, a nearby colonist can absorb it by right-clicking the crystal.</description>
+    <comps>
+      <li Class="Essencebound.CompProperties_EssenceItem">
+        <essenceDefName>EB_Cat</essenceDefName>
+      </li>
+    </comps>
+  </ThingDef>
+  <ThingDef ParentName="EB_EssenceItemBase">
+    <defName>EB_Cattle_Crystal</defName>
+    <label>cattle essence</label>
+    <description>A crystallized cattle essence. When the Essencebound assembly is installed, a nearby colonist can absorb it by right-clicking the crystal.</description>
+    <comps>
+      <li Class="Essencebound.CompProperties_EssenceItem">
+        <essenceDefName>EB_Cattle</essenceDefName>
+      </li>
+    </comps>
+  </ThingDef>
+  <ThingDef ParentName="EB_EssenceItemBase">
+    <defName>EB_Chain_Crystal</defName>
+    <label>chain essence</label>
+    <description>A crystallized chain essence. When the Essencebound assembly is installed, a nearby colonist can absorb it by right-clicking the crystal.</description>
+    <comps>
+      <li Class="Essencebound.CompProperties_EssenceItem">
+        <essenceDefName>EB_Chain</essenceDefName>
+      </li>
+    </comps>
+  </ThingDef>
+  <ThingDef ParentName="EB_EssenceItemBase">
+    <defName>EB_Claw_Crystal</defName>
+    <label>claw essence</label>
+    <description>A crystallized claw essence. When the Essencebound assembly is installed, a nearby colonist can absorb it by right-clicking the crystal.</description>
+    <comps>
+      <li Class="Essencebound.CompProperties_EssenceItem">
+        <essenceDefName>EB_Claw</essenceDefName>
+      </li>
+    </comps>
+  </ThingDef>
+  <ThingDef ParentName="EB_EssenceItemBase">
+    <defName>EB_Cloth_Crystal</defName>
+    <label>cloth essence</label>
+    <description>A crystallized cloth essence. When the Essencebound assembly is installed, a nearby colonist can absorb it by right-clicking the crystal.</description>
+    <comps>
+      <li Class="Essencebound.CompProperties_EssenceItem">
+        <essenceDefName>EB_Cloth</essenceDefName>
+      </li>
+    </comps>
+  </ThingDef>
+  <ThingDef ParentName="EB_EssenceItemBase">
+    <defName>EB_Cloud_Crystal</defName>
+    <label>cloud essence</label>
+    <description>A crystallized cloud essence. When the Essencebound assembly is installed, a nearby colonist can absorb it by right-clicking the crystal.</description>
+    <comps>
+      <li Class="Essencebound.CompProperties_EssenceItem">
+        <essenceDefName>EB_Cloud</essenceDefName>
+      </li>
+    </comps>
+  </ThingDef>
+  <ThingDef ParentName="EB_EssenceItemBase">
+    <defName>EB_Cold_Crystal</defName>
+    <label>cold essence</label>
+    <description>A crystallized cold essence. When the Essencebound assembly is installed, a nearby colonist can absorb it by right-clicking the crystal.</description>
+    <comps>
+      <li Class="Essencebound.CompProperties_EssenceItem">
+        <essenceDefName>EB_Cold</essenceDefName>
+      </li>
+    </comps>
+  </ThingDef>
+  <ThingDef ParentName="EB_EssenceItemBase">
+    <defName>EB_Corrupt_Crystal</defName>
+    <label>corrupt essence</label>
+    <description>A crystallized corrupt essence. When the Essencebound assembly is installed, a nearby colonist can absorb it by right-clicking the crystal.</description>
+    <comps>
+      <li Class="Essencebound.CompProperties_EssenceItem">
+        <essenceDefName>EB_Corrupt</essenceDefName>
+      </li>
+    </comps>
+  </ThingDef>
+  <ThingDef ParentName="EB_EssenceItemBase">
+    <defName>EB_Crystal_Crystal</defName>
+    <label>crystal essence</label>
+    <description>A crystallized crystal essence. When the Essencebound assembly is installed, a nearby colonist can absorb it by right-clicking the crystal.</description>
+    <comps>
+      <li Class="Essencebound.CompProperties_EssenceItem">
+        <essenceDefName>EB_Crystal</essenceDefName>
+      </li>
+    </comps>
+  </ThingDef>
+  <ThingDef ParentName="EB_EssenceItemBase">
+    <defName>EB_Dance_Crystal</defName>
+    <label>dance essence</label>
+    <description>A crystallized dance essence. When the Essencebound assembly is installed, a nearby colonist can absorb it by right-clicking the crystal.</description>
+    <comps>
+      <li Class="Essencebound.CompProperties_EssenceItem">
+        <essenceDefName>EB_Dance</essenceDefName>
+      </li>
+    </comps>
+  </ThingDef>
+  <ThingDef ParentName="EB_EssenceItemBase">
+    <defName>EB_Dark_Crystal</defName>
+    <label>dark essence</label>
+    <description>A crystallized dark essence. When the Essencebound assembly is installed, a nearby colonist can absorb it by right-clicking the crystal.</description>
+    <comps>
+      <li Class="Essencebound.CompProperties_EssenceItem">
+        <essenceDefName>EB_Dark</essenceDefName>
+      </li>
+    </comps>
+  </ThingDef>
+  <ThingDef ParentName="EB_EssenceItemBase">
+    <defName>EB_Death_Crystal</defName>
+    <label>death essence</label>
+    <description>A crystallized death essence. When the Essencebound assembly is installed, a nearby colonist can absorb it by right-clicking the crystal.</description>
+    <comps>
+      <li Class="Essencebound.CompProperties_EssenceItem">
+        <essenceDefName>EB_Death</essenceDefName>
+      </li>
+    </comps>
+  </ThingDef>
+  <ThingDef ParentName="EB_EssenceItemBase">
+    <defName>EB_Deep_Crystal</defName>
+    <label>deep essence</label>
+    <description>A crystallized deep essence. When the Essencebound assembly is installed, a nearby colonist can absorb it by right-clicking the crystal.</description>
+    <comps>
+      <li Class="Essencebound.CompProperties_EssenceItem">
+        <essenceDefName>EB_Deep</essenceDefName>
+      </li>
+    </comps>
+  </ThingDef>
+  <ThingDef ParentName="EB_EssenceItemBase">
+    <defName>EB_Deer_Crystal</defName>
+    <label>deer essence</label>
+    <description>A crystallized deer essence. When the Essencebound assembly is installed, a nearby colonist can absorb it by right-clicking the crystal.</description>
+    <comps>
+      <li Class="Essencebound.CompProperties_EssenceItem">
+        <essenceDefName>EB_Deer</essenceDefName>
+      </li>
+    </comps>
+  </ThingDef>
+  <ThingDef ParentName="EB_EssenceItemBase">
+    <defName>EB_Dimension_Crystal</defName>
+    <label>dimension essence</label>
+    <description>A crystallized dimension essence. When the Essencebound assembly is installed, a nearby colonist can absorb it by right-clicking the crystal.</description>
+    <comps>
+      <li Class="Essencebound.CompProperties_EssenceItem">
+        <essenceDefName>EB_Dimension</essenceDefName>
+      </li>
+    </comps>
+  </ThingDef>
+  <ThingDef ParentName="EB_EssenceItemBase">
+    <defName>EB_Discord_Crystal</defName>
+    <label>discord essence</label>
+    <description>A crystallized discord essence. When the Essencebound assembly is installed, a nearby colonist can absorb it by right-clicking the crystal.</description>
+    <comps>
+      <li Class="Essencebound.CompProperties_EssenceItem">
+        <essenceDefName>EB_Discord</essenceDefName>
+      </li>
+    </comps>
+  </ThingDef>
+  <ThingDef ParentName="EB_EssenceItemBase">
+    <defName>EB_Duck_Crystal</defName>
+    <label>duck essence</label>
+    <description>A crystallized duck essence. When the Essencebound assembly is installed, a nearby colonist can absorb it by right-clicking the crystal.</description>
+    <comps>
+      <li Class="Essencebound.CompProperties_EssenceItem">
+        <essenceDefName>EB_Duck</essenceDefName>
+      </li>
+    </comps>
+  </ThingDef>
+  <ThingDef ParentName="EB_EssenceItemBase">
+    <defName>EB_Dust_Crystal</defName>
+    <label>dust essence</label>
+    <description>A crystallized dust essence. When the Essencebound assembly is installed, a nearby colonist can absorb it by right-clicking the crystal.</description>
+    <comps>
+      <li Class="Essencebound.CompProperties_EssenceItem">
+        <essenceDefName>EB_Dust</essenceDefName>
+      </li>
+    </comps>
+  </ThingDef>
+  <ThingDef ParentName="EB_EssenceItemBase">
+    <defName>EB_Earth_Crystal</defName>
+    <label>earth essence</label>
+    <description>A crystallized earth essence. When the Essencebound assembly is installed, a nearby colonist can absorb it by right-clicking the crystal.</description>
+    <comps>
+      <li Class="Essencebound.CompProperties_EssenceItem">
+        <essenceDefName>EB_Earth</essenceDefName>
+      </li>
+    </comps>
+  </ThingDef>
+  <ThingDef ParentName="EB_EssenceItemBase">
+    <defName>EB_Echo_Crystal</defName>
+    <label>echo essence</label>
+    <description>A crystallized echo essence. When the Essencebound assembly is installed, a nearby colonist can absorb it by right-clicking the crystal.</description>
+    <comps>
+      <li Class="Essencebound.CompProperties_EssenceItem">
+        <essenceDefName>EB_Echo</essenceDefName>
+      </li>
+    </comps>
+  </ThingDef>
+  <ThingDef ParentName="EB_EssenceItemBase">
+    <defName>EB_Elemental_Crystal</defName>
+    <label>elemental essence</label>
+    <description>A crystallized elemental essence. When the Essencebound assembly is installed, a nearby colonist can absorb it by right-clicking the crystal.</description>
+    <comps>
+      <li Class="Essencebound.CompProperties_EssenceItem">
+        <essenceDefName>EB_Elemental</essenceDefName>
+      </li>
+    </comps>
+  </ThingDef>
+  <ThingDef ParentName="EB_EssenceItemBase">
+    <defName>EB_Eye_Crystal</defName>
+    <label>eye essence</label>
+    <description>A crystallized eye essence. When the Essencebound assembly is installed, a nearby colonist can absorb it by right-clicking the crystal.</description>
+    <comps>
+      <li Class="Essencebound.CompProperties_EssenceItem">
+        <essenceDefName>EB_Eye</essenceDefName>
+      </li>
+    </comps>
+  </ThingDef>
+  <ThingDef ParentName="EB_EssenceItemBase">
+    <defName>EB_Feast_Crystal</defName>
+    <label>feast essence</label>
+    <description>A crystallized feast essence. When the Essencebound assembly is installed, a nearby colonist can absorb it by right-clicking the crystal.</description>
+    <comps>
+      <li Class="Essencebound.CompProperties_EssenceItem">
+        <essenceDefName>EB_Feast</essenceDefName>
+      </li>
+    </comps>
+  </ThingDef>
+  <ThingDef ParentName="EB_EssenceItemBase">
+    <defName>EB_Fire_Crystal</defName>
+    <label>fire essence</label>
+    <description>A crystallized fire essence. When the Essencebound assembly is installed, a nearby colonist can absorb it by right-clicking the crystal.</description>
+    <comps>
+      <li Class="Essencebound.CompProperties_EssenceItem">
+        <essenceDefName>EB_Fire</essenceDefName>
+      </li>
+    </comps>
+  </ThingDef>
+  <ThingDef ParentName="EB_EssenceItemBase">
+    <defName>EB_Fish_Crystal</defName>
+    <label>fish essence</label>
+    <description>A crystallized fish essence. When the Essencebound assembly is installed, a nearby colonist can absorb it by right-clicking the crystal.</description>
+    <comps>
+      <li Class="Essencebound.CompProperties_EssenceItem">
+        <essenceDefName>EB_Fish</essenceDefName>
+      </li>
+    </comps>
+  </ThingDef>
+  <ThingDef ParentName="EB_EssenceItemBase">
+    <defName>EB_Flea_Crystal</defName>
+    <label>flea essence</label>
+    <description>A crystallized flea essence. When the Essencebound assembly is installed, a nearby colonist can absorb it by right-clicking the crystal.</description>
+    <comps>
+      <li Class="Essencebound.CompProperties_EssenceItem">
+        <essenceDefName>EB_Flea</essenceDefName>
+      </li>
+    </comps>
+  </ThingDef>
+  <ThingDef ParentName="EB_EssenceItemBase">
+    <defName>EB_Flesh_Crystal</defName>
+    <label>flesh essence</label>
+    <description>A crystallized flesh essence. When the Essencebound assembly is installed, a nearby colonist can absorb it by right-clicking the crystal.</description>
+    <comps>
+      <li Class="Essencebound.CompProperties_EssenceItem">
+        <essenceDefName>EB_Flesh</essenceDefName>
+      </li>
+    </comps>
+  </ThingDef>
+  <ThingDef ParentName="EB_EssenceItemBase">
+    <defName>EB_Foot_Crystal</defName>
+    <label>foot essence</label>
+    <description>A crystallized foot essence. When the Essencebound assembly is installed, a nearby colonist can absorb it by right-clicking the crystal.</description>
+    <comps>
+      <li Class="Essencebound.CompProperties_EssenceItem">
+        <essenceDefName>EB_Foot</essenceDefName>
+      </li>
+    </comps>
+  </ThingDef>
+  <ThingDef ParentName="EB_EssenceItemBase">
+    <defName>EB_Frog_Crystal</defName>
+    <label>frog essence</label>
+    <description>A crystallized frog essence. When the Essencebound assembly is installed, a nearby colonist can absorb it by right-clicking the crystal.</description>
+    <comps>
+      <li Class="Essencebound.CompProperties_EssenceItem">
+        <essenceDefName>EB_Frog</essenceDefName>
+      </li>
+    </comps>
+  </ThingDef>
+  <ThingDef ParentName="EB_EssenceItemBase">
+    <defName>EB_Fungus_Crystal</defName>
+    <label>fungus essence</label>
+    <description>A crystallized fungus essence. When the Essencebound assembly is installed, a nearby colonist can absorb it by right-clicking the crystal.</description>
+    <comps>
+      <li Class="Essencebound.CompProperties_EssenceItem">
+        <essenceDefName>EB_Fungus</essenceDefName>
+      </li>
+    </comps>
+  </ThingDef>
+  <ThingDef ParentName="EB_EssenceItemBase">
+    <defName>EB_Gathering_Crystal</defName>
+    <label>gathering essence</label>
+    <description>A crystallized gathering essence. When the Essencebound assembly is installed, a nearby colonist can absorb it by right-clicking the crystal.</description>
+    <comps>
+      <li Class="Essencebound.CompProperties_EssenceItem">
+        <essenceDefName>EB_Gathering</essenceDefName>
+      </li>
+    </comps>
+  </ThingDef>
+  <ThingDef ParentName="EB_EssenceItemBase">
+    <defName>EB_Glass_Crystal</defName>
+    <label>glass essence</label>
+    <description>A crystallized glass essence. When the Essencebound assembly is installed, a nearby colonist can absorb it by right-clicking the crystal.</description>
+    <comps>
+      <li Class="Essencebound.CompProperties_EssenceItem">
+        <essenceDefName>EB_Glass</essenceDefName>
+      </li>
+    </comps>
+  </ThingDef>
+  <ThingDef ParentName="EB_EssenceItemBase">
+    <defName>EB_Goat_Crystal</defName>
+    <label>goat essence</label>
+    <description>A crystallized goat essence. When the Essencebound assembly is installed, a nearby colonist can absorb it by right-clicking the crystal.</description>
+    <comps>
+      <li Class="Essencebound.CompProperties_EssenceItem">
+        <essenceDefName>EB_Goat</essenceDefName>
+      </li>
+    </comps>
+  </ThingDef>
+  <ThingDef ParentName="EB_EssenceItemBase">
+    <defName>EB_Growth_Crystal</defName>
+    <label>growth essence</label>
+    <description>A crystallized growth essence. When the Essencebound assembly is installed, a nearby colonist can absorb it by right-clicking the crystal.</description>
+    <comps>
+      <li Class="Essencebound.CompProperties_EssenceItem">
+        <essenceDefName>EB_Growth</essenceDefName>
+      </li>
+    </comps>
+  </ThingDef>
+  <ThingDef ParentName="EB_EssenceItemBase">
+    <defName>EB_Gun_Crystal</defName>
+    <label>gun essence</label>
+    <description>A crystallized gun essence. When the Essencebound assembly is installed, a nearby colonist can absorb it by right-clicking the crystal.</description>
+    <comps>
+      <li Class="Essencebound.CompProperties_EssenceItem">
+        <essenceDefName>EB_Gun</essenceDefName>
+      </li>
+    </comps>
+  </ThingDef>
+  <ThingDef ParentName="EB_EssenceItemBase">
+    <defName>EB_Hair_Crystal</defName>
+    <label>hair essence</label>
+    <description>A crystallized hair essence. When the Essencebound assembly is installed, a nearby colonist can absorb it by right-clicking the crystal.</description>
+    <comps>
+      <li Class="Essencebound.CompProperties_EssenceItem">
+        <essenceDefName>EB_Hair</essenceDefName>
+      </li>
+    </comps>
+  </ThingDef>
+  <ThingDef ParentName="EB_EssenceItemBase">
+    <defName>EB_Hammer_Crystal</defName>
+    <label>hammer essence</label>
+    <description>A crystallized hammer essence. When the Essencebound assembly is installed, a nearby colonist can absorb it by right-clicking the crystal.</description>
+    <comps>
+      <li Class="Essencebound.CompProperties_EssenceItem">
+        <essenceDefName>EB_Hammer</essenceDefName>
+      </li>
+    </comps>
+  </ThingDef>
+  <ThingDef ParentName="EB_EssenceItemBase">
+    <defName>EB_Hand_Crystal</defName>
+    <label>hand essence</label>
+    <description>A crystallized hand essence. When the Essencebound assembly is installed, a nearby colonist can absorb it by right-clicking the crystal.</description>
+    <comps>
+      <li Class="Essencebound.CompProperties_EssenceItem">
+        <essenceDefName>EB_Hand</essenceDefName>
+      </li>
+    </comps>
+  </ThingDef>
+  <ThingDef ParentName="EB_EssenceItemBase">
+    <defName>EB_Harmonic_Crystal</defName>
+    <label>harmonic essence</label>
+    <description>A crystallized harmonic essence. When the Essencebound assembly is installed, a nearby colonist can absorb it by right-clicking the crystal.</description>
+    <comps>
+      <li Class="Essencebound.CompProperties_EssenceItem">
+        <essenceDefName>EB_Harmonic</essenceDefName>
+      </li>
+    </comps>
+  </ThingDef>
+  <ThingDef ParentName="EB_EssenceItemBase">
+    <defName>EB_Hunger_Crystal</defName>
+    <label>hunger essence</label>
+    <description>A crystallized hunger essence. When the Essencebound assembly is installed, a nearby colonist can absorb it by right-clicking the crystal.</description>
+    <comps>
+      <li Class="Essencebound.CompProperties_EssenceItem">
+        <essenceDefName>EB_Hunger</essenceDefName>
+      </li>
+    </comps>
+  </ThingDef>
+  <ThingDef ParentName="EB_EssenceItemBase">
+    <defName>EB_Hunt_Crystal</defName>
+    <label>hunt essence</label>
+    <description>A crystallized hunt essence. When the Essencebound assembly is installed, a nearby colonist can absorb it by right-clicking the crystal.</description>
+    <comps>
+      <li Class="Essencebound.CompProperties_EssenceItem">
+        <essenceDefName>EB_Hunt</essenceDefName>
+      </li>
+    </comps>
+  </ThingDef>
+  <ThingDef ParentName="EB_EssenceItemBase">
+    <defName>EB_Ice_Crystal</defName>
+    <label>ice essence</label>
+    <description>A crystallized ice essence. When the Essencebound assembly is installed, a nearby colonist can absorb it by right-clicking the crystal.</description>
+    <comps>
+      <li Class="Essencebound.CompProperties_EssenceItem">
+        <essenceDefName>EB_Ice</essenceDefName>
+      </li>
+    </comps>
+  </ThingDef>
+  <ThingDef ParentName="EB_EssenceItemBase">
+    <defName>EB_Iron_Crystal</defName>
+    <label>iron essence</label>
+    <description>A crystallized iron essence. When the Essencebound assembly is installed, a nearby colonist can absorb it by right-clicking the crystal.</description>
+    <comps>
+      <li Class="Essencebound.CompProperties_EssenceItem">
+        <essenceDefName>EB_Iron</essenceDefName>
+      </li>
+    </comps>
+  </ThingDef>
+  <ThingDef ParentName="EB_EssenceItemBase">
+    <defName>EB_Knife_Crystal</defName>
+    <label>knife essence</label>
+    <description>A crystallized knife essence. When the Essencebound assembly is installed, a nearby colonist can absorb it by right-clicking the crystal.</description>
+    <comps>
+      <li Class="Essencebound.CompProperties_EssenceItem">
+        <essenceDefName>EB_Knife</essenceDefName>
+      </li>
+    </comps>
+  </ThingDef>
+  <ThingDef ParentName="EB_EssenceItemBase">
+    <defName>EB_Knowledge_Crystal</defName>
+    <label>knowledge essence</label>
+    <description>A crystallized knowledge essence. When the Essencebound assembly is installed, a nearby colonist can absorb it by right-clicking the crystal.</description>
+    <comps>
+      <li Class="Essencebound.CompProperties_EssenceItem">
+        <essenceDefName>EB_Knowledge</essenceDefName>
+      </li>
+    </comps>
+  </ThingDef>
+  <ThingDef ParentName="EB_EssenceItemBase">
+    <defName>EB_Life_Crystal</defName>
+    <label>life essence</label>
+    <description>A crystallized life essence. When the Essencebound assembly is installed, a nearby colonist can absorb it by right-clicking the crystal.</description>
+    <comps>
+      <li Class="Essencebound.CompProperties_EssenceItem">
+        <essenceDefName>EB_Life</essenceDefName>
+      </li>
+    </comps>
+  </ThingDef>
+  <ThingDef ParentName="EB_EssenceItemBase">
+    <defName>EB_Light_Crystal</defName>
+    <label>light essence</label>
+    <description>A crystallized light essence. When the Essencebound assembly is installed, a nearby colonist can absorb it by right-clicking the crystal.</description>
+    <comps>
+      <li Class="Essencebound.CompProperties_EssenceItem">
+        <essenceDefName>EB_Light</essenceDefName>
+      </li>
+    </comps>
+  </ThingDef>
+  <ThingDef ParentName="EB_EssenceItemBase">
+    <defName>EB_Lightning_Crystal</defName>
+    <label>lightning essence</label>
+    <description>A crystallized lightning essence. When the Essencebound assembly is installed, a nearby colonist can absorb it by right-clicking the crystal.</description>
+    <comps>
+      <li Class="Essencebound.CompProperties_EssenceItem">
+        <essenceDefName>EB_Lightning</essenceDefName>
+      </li>
+    </comps>
+  </ThingDef>
+  <ThingDef ParentName="EB_EssenceItemBase">
+    <defName>EB_Lizard_Crystal</defName>
+    <label>lizard essence</label>
+    <description>A crystallized lizard essence. When the Essencebound assembly is installed, a nearby colonist can absorb it by right-clicking the crystal.</description>
+    <comps>
+      <li Class="Essencebound.CompProperties_EssenceItem">
+        <essenceDefName>EB_Lizard</essenceDefName>
+      </li>
+    </comps>
+  </ThingDef>
+  <ThingDef ParentName="EB_EssenceItemBase">
+    <defName>EB_Locust_Crystal</defName>
+    <label>locust essence</label>
+    <description>A crystallized locust essence. When the Essencebound assembly is installed, a nearby colonist can absorb it by right-clicking the crystal.</description>
+    <comps>
+      <li Class="Essencebound.CompProperties_EssenceItem">
+        <essenceDefName>EB_Locust</essenceDefName>
+      </li>
+    </comps>
+  </ThingDef>
+  <ThingDef ParentName="EB_EssenceItemBase">
+    <defName>EB_Magic_Crystal</defName>
+    <label>magic essence</label>
+    <description>A crystallized magic essence. When the Essencebound assembly is installed, a nearby colonist can absorb it by right-clicking the crystal.</description>
+    <comps>
+      <li Class="Essencebound.CompProperties_EssenceItem">
+        <essenceDefName>EB_Magic</essenceDefName>
+      </li>
+    </comps>
+  </ThingDef>
+  <ThingDef ParentName="EB_EssenceItemBase">
+    <defName>EB_Malign_Crystal</defName>
+    <label>malign essence</label>
+    <description>A crystallized malign essence. When the Essencebound assembly is installed, a nearby colonist can absorb it by right-clicking the crystal.</description>
+    <comps>
+      <li Class="Essencebound.CompProperties_EssenceItem">
+        <essenceDefName>EB_Malign</essenceDefName>
+      </li>
+    </comps>
+  </ThingDef>
+  <ThingDef ParentName="EB_EssenceItemBase">
+    <defName>EB_Manatee_Crystal</defName>
+    <label>manatee essence</label>
+    <description>A crystallized manatee essence. When the Essencebound assembly is installed, a nearby colonist can absorb it by right-clicking the crystal.</description>
+    <comps>
+      <li Class="Essencebound.CompProperties_EssenceItem">
+        <essenceDefName>EB_Manatee</essenceDefName>
+      </li>
+    </comps>
+  </ThingDef>
+  <ThingDef ParentName="EB_EssenceItemBase">
+    <defName>EB_Might_Crystal</defName>
+    <label>might essence</label>
+    <description>A crystallized might essence. When the Essencebound assembly is installed, a nearby colonist can absorb it by right-clicking the crystal.</description>
+    <comps>
+      <li Class="Essencebound.CompProperties_EssenceItem">
+        <essenceDefName>EB_Might</essenceDefName>
+      </li>
+    </comps>
+  </ThingDef>
+  <ThingDef ParentName="EB_EssenceItemBase">
+    <defName>EB_Mirror_Crystal</defName>
+    <label>mirror essence</label>
+    <description>A crystallized mirror essence. When the Essencebound assembly is installed, a nearby colonist can absorb it by right-clicking the crystal.</description>
+    <comps>
+      <li Class="Essencebound.CompProperties_EssenceItem">
+        <essenceDefName>EB_Mirror</essenceDefName>
+      </li>
+    </comps>
+  </ThingDef>
+  <ThingDef ParentName="EB_EssenceItemBase">
+    <defName>EB_Moon_Crystal</defName>
+    <label>moon essence</label>
+    <description>A crystallized moon essence. When the Essencebound assembly is installed, a nearby colonist can absorb it by right-clicking the crystal.</description>
+    <comps>
+      <li Class="Essencebound.CompProperties_EssenceItem">
+        <essenceDefName>EB_Moon</essenceDefName>
+      </li>
+    </comps>
+  </ThingDef>
+  <ThingDef ParentName="EB_EssenceItemBase">
+    <defName>EB_Mouse_Crystal</defName>
+    <label>mouse essence</label>
+    <description>A crystallized mouse essence. When the Essencebound assembly is installed, a nearby colonist can absorb it by right-clicking the crystal.</description>
+    <comps>
+      <li Class="Essencebound.CompProperties_EssenceItem">
+        <essenceDefName>EB_Mouse</essenceDefName>
+      </li>
+    </comps>
+  </ThingDef>
+  <ThingDef ParentName="EB_EssenceItemBase">
+    <defName>EB_Myriad_Crystal</defName>
+    <label>myriad essence</label>
+    <description>A crystallized myriad essence. When the Essencebound assembly is installed, a nearby colonist can absorb it by right-clicking the crystal.</description>
+    <comps>
+      <li Class="Essencebound.CompProperties_EssenceItem">
+        <essenceDefName>EB_Myriad</essenceDefName>
+      </li>
+    </comps>
+  </ThingDef>
+  <ThingDef ParentName="EB_EssenceItemBase">
+    <defName>EB_Needle_Crystal</defName>
+    <label>needle essence</label>
+    <description>A crystallized needle essence. When the Essencebound assembly is installed, a nearby colonist can absorb it by right-clicking the crystal.</description>
+    <comps>
+      <li Class="Essencebound.CompProperties_EssenceItem">
+        <essenceDefName>EB_Needle</essenceDefName>
+      </li>
+    </comps>
+  </ThingDef>
+  <ThingDef ParentName="EB_EssenceItemBase">
+    <defName>EB_Octopus_Crystal</defName>
+    <label>octopus essence</label>
+    <description>A crystallized octopus essence. When the Essencebound assembly is installed, a nearby colonist can absorb it by right-clicking the crystal.</description>
+    <comps>
+      <li Class="Essencebound.CompProperties_EssenceItem">
+        <essenceDefName>EB_Octopus</essenceDefName>
+      </li>
+    </comps>
+  </ThingDef>
+  <ThingDef ParentName="EB_EssenceItemBase">
+    <defName>EB_Omen_Crystal</defName>
+    <label>omen essence</label>
+    <description>A crystallized omen essence. When the Essencebound assembly is installed, a nearby colonist can absorb it by right-clicking the crystal.</description>
+    <comps>
+      <li Class="Essencebound.CompProperties_EssenceItem">
+        <essenceDefName>EB_Omen</essenceDefName>
+      </li>
+    </comps>
+  </ThingDef>
+  <ThingDef ParentName="EB_EssenceItemBase">
+    <defName>EB_Pangolin_Crystal</defName>
+    <label>pangolin essence</label>
+    <description>A crystallized pangolin essence. When the Essencebound assembly is installed, a nearby colonist can absorb it by right-clicking the crystal.</description>
+    <comps>
+      <li Class="Essencebound.CompProperties_EssenceItem">
+        <essenceDefName>EB_Pangolin</essenceDefName>
+      </li>
+    </comps>
+  </ThingDef>
+  <ThingDef ParentName="EB_EssenceItemBase">
+    <defName>EB_Paper_Crystal</defName>
+    <label>paper essence</label>
+    <description>A crystallized paper essence. When the Essencebound assembly is installed, a nearby colonist can absorb it by right-clicking the crystal.</description>
+    <comps>
+      <li Class="Essencebound.CompProperties_EssenceItem">
+        <essenceDefName>EB_Paper</essenceDefName>
+      </li>
+    </comps>
+  </ThingDef>
+  <ThingDef ParentName="EB_EssenceItemBase">
+    <defName>EB_Plant_Crystal</defName>
+    <label>plant essence</label>
+    <description>A crystallized plant essence. When the Essencebound assembly is installed, a nearby colonist can absorb it by right-clicking the crystal.</description>
+    <comps>
+      <li Class="Essencebound.CompProperties_EssenceItem">
+        <essenceDefName>EB_Plant</essenceDefName>
+      </li>
+    </comps>
+  </ThingDef>
+  <ThingDef ParentName="EB_EssenceItemBase">
+    <defName>EB_Potent_Crystal</defName>
+    <label>potent essence</label>
+    <description>A crystallized potent essence. When the Essencebound assembly is installed, a nearby colonist can absorb it by right-clicking the crystal.</description>
+    <comps>
+      <li Class="Essencebound.CompProperties_EssenceItem">
+        <essenceDefName>EB_Potent</essenceDefName>
+      </li>
+    </comps>
+  </ThingDef>
+  <ThingDef ParentName="EB_EssenceItemBase">
+    <defName>EB_Pure_Crystal</defName>
+    <label>pure essence</label>
+    <description>A crystallized pure essence. When the Essencebound assembly is installed, a nearby colonist can absorb it by right-clicking the crystal.</description>
+    <comps>
+      <li Class="Essencebound.CompProperties_EssenceItem">
+        <essenceDefName>EB_Pure</essenceDefName>
+      </li>
+    </comps>
+  </ThingDef>
+  <ThingDef ParentName="EB_EssenceItemBase">
+    <defName>EB_Rabbit_Crystal</defName>
+    <label>rabbit essence</label>
+    <description>A crystallized rabbit essence. When the Essencebound assembly is installed, a nearby colonist can absorb it by right-clicking the crystal.</description>
+    <comps>
+      <li Class="Essencebound.CompProperties_EssenceItem">
+        <essenceDefName>EB_Rabbit</essenceDefName>
+      </li>
+    </comps>
+  </ThingDef>
+  <ThingDef ParentName="EB_EssenceItemBase">
+    <defName>EB_Rake_Crystal</defName>
+    <label>rake essence</label>
+    <description>A crystallized rake essence. When the Essencebound assembly is installed, a nearby colonist can absorb it by right-clicking the crystal.</description>
+    <comps>
+      <li Class="Essencebound.CompProperties_EssenceItem">
+        <essenceDefName>EB_Rake</essenceDefName>
+      </li>
+    </comps>
+  </ThingDef>
+  <ThingDef ParentName="EB_EssenceItemBase">
+    <defName>EB_Rat_Crystal</defName>
+    <label>rat essence</label>
+    <description>A crystallized rat essence. When the Essencebound assembly is installed, a nearby colonist can absorb it by right-clicking the crystal.</description>
+    <comps>
+      <li Class="Essencebound.CompProperties_EssenceItem">
+        <essenceDefName>EB_Rat</essenceDefName>
+      </li>
+    </comps>
+  </ThingDef>
+  <ThingDef ParentName="EB_EssenceItemBase">
+    <defName>EB_Renewal_Crystal</defName>
+    <label>renewal essence</label>
+    <description>A crystallized renewal essence. When the Essencebound assembly is installed, a nearby colonist can absorb it by right-clicking the crystal.</description>
+    <comps>
+      <li Class="Essencebound.CompProperties_EssenceItem">
+        <essenceDefName>EB_Renewal</essenceDefName>
+      </li>
+    </comps>
+  </ThingDef>
+  <ThingDef ParentName="EB_EssenceItemBase">
+    <defName>EB_Resolute_Crystal</defName>
+    <label>resolute essence</label>
+    <description>A crystallized resolute essence. When the Essencebound assembly is installed, a nearby colonist can absorb it by right-clicking the crystal.</description>
+    <comps>
+      <li Class="Essencebound.CompProperties_EssenceItem">
+        <essenceDefName>EB_Resolute</essenceDefName>
+      </li>
+    </comps>
+  </ThingDef>
+  <ThingDef ParentName="EB_EssenceItemBase">
+    <defName>EB_Rune_Crystal</defName>
+    <label>rune essence</label>
+    <description>A crystallized rune essence. When the Essencebound assembly is installed, a nearby colonist can absorb it by right-clicking the crystal.</description>
+    <comps>
+      <li Class="Essencebound.CompProperties_EssenceItem">
+        <essenceDefName>EB_Rune</essenceDefName>
+      </li>
+    </comps>
+  </ThingDef>
+  <ThingDef ParentName="EB_EssenceItemBase">
+    <defName>EB_Sand_Crystal</defName>
+    <label>sand essence</label>
+    <description>A crystallized sand essence. When the Essencebound assembly is installed, a nearby colonist can absorb it by right-clicking the crystal.</description>
+    <comps>
+      <li Class="Essencebound.CompProperties_EssenceItem">
+        <essenceDefName>EB_Sand</essenceDefName>
+      </li>
+    </comps>
+  </ThingDef>
+  <ThingDef ParentName="EB_EssenceItemBase">
+    <defName>EB_Sceptre_Crystal</defName>
+    <label>sceptre essence</label>
+    <description>A crystallized sceptre essence. When the Essencebound assembly is installed, a nearby colonist can absorb it by right-clicking the crystal.</description>
+    <comps>
+      <li Class="Essencebound.CompProperties_EssenceItem">
+        <essenceDefName>EB_Sceptre</essenceDefName>
+      </li>
+    </comps>
+  </ThingDef>
+  <ThingDef ParentName="EB_EssenceItemBase">
+    <defName>EB_Serene_Crystal</defName>
+    <label>serene essence</label>
+    <description>A crystallized serene essence. When the Essencebound assembly is installed, a nearby colonist can absorb it by right-clicking the crystal.</description>
+    <comps>
+      <li Class="Essencebound.CompProperties_EssenceItem">
+        <essenceDefName>EB_Serene</essenceDefName>
+      </li>
+    </comps>
+  </ThingDef>
+  <ThingDef ParentName="EB_EssenceItemBase">
+    <defName>EB_Shark_Crystal</defName>
+    <label>shark essence</label>
+    <description>A crystallized shark essence. When the Essencebound assembly is installed, a nearby colonist can absorb it by right-clicking the crystal.</description>
+    <comps>
+      <li Class="Essencebound.CompProperties_EssenceItem">
+        <essenceDefName>EB_Shark</essenceDefName>
+      </li>
+    </comps>
+  </ThingDef>
+  <ThingDef ParentName="EB_EssenceItemBase">
+    <defName>EB_Shield_Crystal</defName>
+    <label>shield essence</label>
+    <description>A crystallized shield essence. When the Essencebound assembly is installed, a nearby colonist can absorb it by right-clicking the crystal.</description>
+    <comps>
+      <li Class="Essencebound.CompProperties_EssenceItem">
+        <essenceDefName>EB_Shield</essenceDefName>
+      </li>
+    </comps>
+  </ThingDef>
+  <ThingDef ParentName="EB_EssenceItemBase">
+    <defName>EB_Shimmer_Crystal</defName>
+    <label>shimmer essence</label>
+    <description>A crystallized shimmer essence. When the Essencebound assembly is installed, a nearby colonist can absorb it by right-clicking the crystal.</description>
+    <comps>
+      <li Class="Essencebound.CompProperties_EssenceItem">
+        <essenceDefName>EB_Shimmer</essenceDefName>
+      </li>
+    </comps>
+  </ThingDef>
+  <ThingDef ParentName="EB_EssenceItemBase">
+    <defName>EB_Ship_Crystal</defName>
+    <label>ship essence</label>
+    <description>A crystallized ship essence. When the Essencebound assembly is installed, a nearby colonist can absorb it by right-clicking the crystal.</description>
+    <comps>
+      <li Class="Essencebound.CompProperties_EssenceItem">
+        <essenceDefName>EB_Ship</essenceDefName>
+      </li>
+    </comps>
+  </ThingDef>
+  <ThingDef ParentName="EB_EssenceItemBase">
+    <defName>EB_Shovel_Crystal</defName>
+    <label>shovel essence</label>
+    <description>A crystallized shovel essence. When the Essencebound assembly is installed, a nearby colonist can absorb it by right-clicking the crystal.</description>
+    <comps>
+      <li Class="Essencebound.CompProperties_EssenceItem">
+        <essenceDefName>EB_Shovel</essenceDefName>
+      </li>
+    </comps>
+  </ThingDef>
+  <ThingDef ParentName="EB_EssenceItemBase">
+    <defName>EB_Sickle_Crystal</defName>
+    <label>sickle essence</label>
+    <description>A crystallized sickle essence. When the Essencebound assembly is installed, a nearby colonist can absorb it by right-clicking the crystal.</description>
+    <comps>
+      <li Class="Essencebound.CompProperties_EssenceItem">
+        <essenceDefName>EB_Sickle</essenceDefName>
+      </li>
+    </comps>
+  </ThingDef>
+  <ThingDef ParentName="EB_EssenceItemBase">
+    <defName>EB_Sin_Crystal</defName>
+    <label>sin essence</label>
+    <description>A crystallized sin essence. When the Essencebound assembly is installed, a nearby colonist can absorb it by right-clicking the crystal.</description>
+    <comps>
+      <li Class="Essencebound.CompProperties_EssenceItem">
+        <essenceDefName>EB_Sin</essenceDefName>
+      </li>
+    </comps>
+  </ThingDef>
+  <ThingDef ParentName="EB_EssenceItemBase">
+    <defName>EB_Skunk_Crystal</defName>
+    <label>skunk essence</label>
+    <description>A crystallized skunk essence. When the Essencebound assembly is installed, a nearby colonist can absorb it by right-clicking the crystal.</description>
+    <comps>
+      <li Class="Essencebound.CompProperties_EssenceItem">
+        <essenceDefName>EB_Skunk</essenceDefName>
+      </li>
+    </comps>
+  </ThingDef>
+  <ThingDef ParentName="EB_EssenceItemBase">
+    <defName>EB_Smoke_Crystal</defName>
+    <label>smoke essence</label>
+    <description>A crystallized smoke essence. When the Essencebound assembly is installed, a nearby colonist can absorb it by right-clicking the crystal.</description>
+    <comps>
+      <li Class="Essencebound.CompProperties_EssenceItem">
+        <essenceDefName>EB_Smoke</essenceDefName>
+      </li>
+    </comps>
+  </ThingDef>
+  <ThingDef ParentName="EB_EssenceItemBase">
+    <defName>EB_Snake_Crystal</defName>
+    <label>snake essence</label>
+    <description>A crystallized snake essence. When the Essencebound assembly is installed, a nearby colonist can absorb it by right-clicking the crystal.</description>
+    <comps>
+      <li Class="Essencebound.CompProperties_EssenceItem">
+        <essenceDefName>EB_Snake</essenceDefName>
+      </li>
+    </comps>
+  </ThingDef>
+  <ThingDef ParentName="EB_EssenceItemBase">
+    <defName>EB_Song_Crystal</defName>
+    <label>song essence</label>
+    <description>A crystallized song essence. When the Essencebound assembly is installed, a nearby colonist can absorb it by right-clicking the crystal.</description>
+    <comps>
+      <li Class="Essencebound.CompProperties_EssenceItem">
+        <essenceDefName>EB_Song</essenceDefName>
+      </li>
+    </comps>
+  </ThingDef>
+  <ThingDef ParentName="EB_EssenceItemBase">
+    <defName>EB_Spear_Crystal</defName>
+    <label>spear essence</label>
+    <description>A crystallized spear essence. When the Essencebound assembly is installed, a nearby colonist can absorb it by right-clicking the crystal.</description>
+    <comps>
+      <li Class="Essencebound.CompProperties_EssenceItem">
+        <essenceDefName>EB_Spear</essenceDefName>
+      </li>
+    </comps>
+  </ThingDef>
+  <ThingDef ParentName="EB_EssenceItemBase">
+    <defName>EB_Spider_Crystal</defName>
+    <label>spider essence</label>
+    <description>A crystallized spider essence. When the Essencebound assembly is installed, a nearby colonist can absorb it by right-clicking the crystal.</description>
+    <comps>
+      <li Class="Essencebound.CompProperties_EssenceItem">
+        <essenceDefName>EB_Spider</essenceDefName>
+      </li>
+    </comps>
+  </ThingDef>
+  <ThingDef ParentName="EB_EssenceItemBase">
+    <defName>EB_Spike_Crystal</defName>
+    <label>spike essence</label>
+    <description>A crystallized spike essence. When the Essencebound assembly is installed, a nearby colonist can absorb it by right-clicking the crystal.</description>
+    <comps>
+      <li Class="Essencebound.CompProperties_EssenceItem">
+        <essenceDefName>EB_Spike</essenceDefName>
+      </li>
+    </comps>
+  </ThingDef>
+  <ThingDef ParentName="EB_EssenceItemBase">
+    <defName>EB_Staff_Crystal</defName>
+    <label>staff essence</label>
+    <description>A crystallized staff essence. When the Essencebound assembly is installed, a nearby colonist can absorb it by right-clicking the crystal.</description>
+    <comps>
+      <li Class="Essencebound.CompProperties_EssenceItem">
+        <essenceDefName>EB_Staff</essenceDefName>
+      </li>
+    </comps>
+  </ThingDef>
+  <ThingDef ParentName="EB_EssenceItemBase">
+    <defName>EB_Star_Crystal</defName>
+    <label>star essence</label>
+    <description>A crystallized star essence. When the Essencebound assembly is installed, a nearby colonist can absorb it by right-clicking the crystal.</description>
+    <comps>
+      <li Class="Essencebound.CompProperties_EssenceItem">
+        <essenceDefName>EB_Star</essenceDefName>
+      </li>
+    </comps>
+  </ThingDef>
+  <ThingDef ParentName="EB_EssenceItemBase">
+    <defName>EB_Sun_Crystal</defName>
+    <label>sun essence</label>
+    <description>A crystallized sun essence. When the Essencebound assembly is installed, a nearby colonist can absorb it by right-clicking the crystal.</description>
+    <comps>
+      <li Class="Essencebound.CompProperties_EssenceItem">
+        <essenceDefName>EB_Sun</essenceDefName>
+      </li>
+    </comps>
+  </ThingDef>
+  <ThingDef ParentName="EB_EssenceItemBase">
+    <defName>EB_Swift_Crystal</defName>
+    <label>swift essence</label>
+    <description>A crystallized swift essence. When the Essencebound assembly is installed, a nearby colonist can absorb it by right-clicking the crystal.</description>
+    <comps>
+      <li Class="Essencebound.CompProperties_EssenceItem">
+        <essenceDefName>EB_Swift</essenceDefName>
+      </li>
+    </comps>
+  </ThingDef>
+  <ThingDef ParentName="EB_EssenceItemBase">
+    <defName>EB_Sword_Crystal</defName>
+    <label>sword essence</label>
+    <description>A crystallized sword essence. When the Essencebound assembly is installed, a nearby colonist can absorb it by right-clicking the crystal.</description>
+    <comps>
+      <li Class="Essencebound.CompProperties_EssenceItem">
+        <essenceDefName>EB_Sword</essenceDefName>
+      </li>
+    </comps>
+  </ThingDef>
+  <ThingDef ParentName="EB_EssenceItemBase">
+    <defName>EB_Technology_Crystal</defName>
+    <label>technology essence</label>
+    <description>A crystallized technology essence. When the Essencebound assembly is installed, a nearby colonist can absorb it by right-clicking the crystal.</description>
+    <comps>
+      <li Class="Essencebound.CompProperties_EssenceItem">
+        <essenceDefName>EB_Technology</essenceDefName>
+      </li>
+    </comps>
+  </ThingDef>
+  <ThingDef ParentName="EB_EssenceItemBase">
+    <defName>EB_Tentacle_Crystal</defName>
+    <label>tentacle essence</label>
+    <description>A crystallized tentacle essence. When the Essencebound assembly is installed, a nearby colonist can absorb it by right-clicking the crystal.</description>
+    <comps>
+      <li Class="Essencebound.CompProperties_EssenceItem">
+        <essenceDefName>EB_Tentacle</essenceDefName>
+      </li>
+    </comps>
+  </ThingDef>
+  <ThingDef ParentName="EB_EssenceItemBase">
+    <defName>EB_Thread_Crystal</defName>
+    <label>thread essence</label>
+    <description>A crystallized thread essence. When the Essencebound assembly is installed, a nearby colonist can absorb it by right-clicking the crystal.</description>
+    <comps>
+      <li Class="Essencebound.CompProperties_EssenceItem">
+        <essenceDefName>EB_Thread</essenceDefName>
+      </li>
+    </comps>
+  </ThingDef>
+  <ThingDef ParentName="EB_EssenceItemBase">
+    <defName>EB_Trap_Crystal</defName>
+    <label>trap essence</label>
+    <description>A crystallized trap essence. When the Essencebound assembly is installed, a nearby colonist can absorb it by right-clicking the crystal.</description>
+    <comps>
+      <li Class="Essencebound.CompProperties_EssenceItem">
+        <essenceDefName>EB_Trap</essenceDefName>
+      </li>
+    </comps>
+  </ThingDef>
+  <ThingDef ParentName="EB_EssenceItemBase">
+    <defName>EB_Tree_Crystal</defName>
+    <label>tree essence</label>
+    <description>A crystallized tree essence. When the Essencebound assembly is installed, a nearby colonist can absorb it by right-clicking the crystal.</description>
+    <comps>
+      <li Class="Essencebound.CompProperties_EssenceItem">
+        <essenceDefName>EB_Tree</essenceDefName>
+      </li>
+    </comps>
+  </ThingDef>
+  <ThingDef ParentName="EB_EssenceItemBase">
+    <defName>EB_Trowel_Crystal</defName>
+    <label>trowel essence</label>
+    <description>A crystallized trowel essence. When the Essencebound assembly is installed, a nearby colonist can absorb it by right-clicking the crystal.</description>
+    <comps>
+      <li Class="Essencebound.CompProperties_EssenceItem">
+        <essenceDefName>EB_Trowel</essenceDefName>
+      </li>
+    </comps>
+  </ThingDef>
+  <ThingDef ParentName="EB_EssenceItemBase">
+    <defName>EB_Vast_Crystal</defName>
+    <label>vast essence</label>
+    <description>A crystallized vast essence. When the Essencebound assembly is installed, a nearby colonist can absorb it by right-clicking the crystal.</description>
+    <comps>
+      <li Class="Essencebound.CompProperties_EssenceItem">
+        <essenceDefName>EB_Vast</essenceDefName>
+      </li>
+    </comps>
+  </ThingDef>
+  <ThingDef ParentName="EB_EssenceItemBase">
+    <defName>EB_Vehicle_Crystal</defName>
+    <label>vehicle essence</label>
+    <description>A crystallized vehicle essence. When the Essencebound assembly is installed, a nearby colonist can absorb it by right-clicking the crystal.</description>
+    <comps>
+      <li Class="Essencebound.CompProperties_EssenceItem">
+        <essenceDefName>EB_Vehicle</essenceDefName>
+      </li>
+    </comps>
+  </ThingDef>
+  <ThingDef ParentName="EB_EssenceItemBase">
+    <defName>EB_Venom_Crystal</defName>
+    <label>venom essence</label>
+    <description>A crystallized venom essence. When the Essencebound assembly is installed, a nearby colonist can absorb it by right-clicking the crystal.</description>
+    <comps>
+      <li Class="Essencebound.CompProperties_EssenceItem">
+        <essenceDefName>EB_Venom</essenceDefName>
+      </li>
+    </comps>
+  </ThingDef>
+  <ThingDef ParentName="EB_EssenceItemBase">
+    <defName>EB_Visage_Crystal</defName>
+    <label>visage essence</label>
+    <description>A crystallized visage essence. When the Essencebound assembly is installed, a nearby colonist can absorb it by right-clicking the crystal.</description>
+    <comps>
+      <li Class="Essencebound.CompProperties_EssenceItem">
+        <essenceDefName>EB_Visage</essenceDefName>
+      </li>
+    </comps>
+  </ThingDef>
+  <ThingDef ParentName="EB_EssenceItemBase">
+    <defName>EB_Void_Crystal</defName>
+    <label>void essence</label>
+    <description>A crystallized void essence. When the Essencebound assembly is installed, a nearby colonist can absorb it by right-clicking the crystal.</description>
+    <comps>
+      <li Class="Essencebound.CompProperties_EssenceItem">
+        <essenceDefName>EB_Void</essenceDefName>
+      </li>
+    </comps>
+  </ThingDef>
+  <ThingDef ParentName="EB_EssenceItemBase">
+    <defName>EB_Wasp_Crystal</defName>
+    <label>wasp essence</label>
+    <description>A crystallized wasp essence. When the Essencebound assembly is installed, a nearby colonist can absorb it by right-clicking the crystal.</description>
+    <comps>
+      <li Class="Essencebound.CompProperties_EssenceItem">
+        <essenceDefName>EB_Wasp</essenceDefName>
+      </li>
+    </comps>
+  </ThingDef>
+  <ThingDef ParentName="EB_EssenceItemBase">
+    <defName>EB_Water_Crystal</defName>
+    <label>water essence</label>
+    <description>A crystallized water essence. When the Essencebound assembly is installed, a nearby colonist can absorb it by right-clicking the crystal.</description>
+    <comps>
+      <li Class="Essencebound.CompProperties_EssenceItem">
+        <essenceDefName>EB_Water</essenceDefName>
+      </li>
+    </comps>
+  </ThingDef>
+  <ThingDef ParentName="EB_EssenceItemBase">
+    <defName>EB_Whale_Crystal</defName>
+    <label>whale essence</label>
+    <description>A crystallized whale essence. When the Essencebound assembly is installed, a nearby colonist can absorb it by right-clicking the crystal.</description>
+    <comps>
+      <li Class="Essencebound.CompProperties_EssenceItem">
+        <essenceDefName>EB_Whale</essenceDefName>
+      </li>
+    </comps>
+  </ThingDef>
+  <ThingDef ParentName="EB_EssenceItemBase">
+    <defName>EB_Whip_Crystal</defName>
+    <label>whip essence</label>
+    <description>A crystallized whip essence. When the Essencebound assembly is installed, a nearby colonist can absorb it by right-clicking the crystal.</description>
+    <comps>
+      <li Class="Essencebound.CompProperties_EssenceItem">
+        <essenceDefName>EB_Whip</essenceDefName>
+      </li>
+    </comps>
+  </ThingDef>
+  <ThingDef ParentName="EB_EssenceItemBase">
+    <defName>EB_Wind_Crystal</defName>
+    <label>wind essence</label>
+    <description>A crystallized wind essence. When the Essencebound assembly is installed, a nearby colonist can absorb it by right-clicking the crystal.</description>
+    <comps>
+      <li Class="Essencebound.CompProperties_EssenceItem">
+        <essenceDefName>EB_Wind</essenceDefName>
+      </li>
+    </comps>
+  </ThingDef>
+  <ThingDef ParentName="EB_EssenceItemBase">
+    <defName>EB_Wing_Crystal</defName>
+    <label>wing essence</label>
+    <description>A crystallized wing essence. When the Essencebound assembly is installed, a nearby colonist can absorb it by right-clicking the crystal.</description>
+    <comps>
+      <li Class="Essencebound.CompProperties_EssenceItem">
+        <essenceDefName>EB_Wing</essenceDefName>
+      </li>
+    </comps>
+  </ThingDef>
+  <ThingDef ParentName="EB_EssenceItemBase">
+    <defName>EB_Wolf_Crystal</defName>
+    <label>wolf essence</label>
+    <description>A crystallized wolf essence. When the Essencebound assembly is installed, a nearby colonist can absorb it by right-clicking the crystal.</description>
+    <comps>
+      <li Class="Essencebound.CompProperties_EssenceItem">
+        <essenceDefName>EB_Wolf</essenceDefName>
+      </li>
+    </comps>
+  </ThingDef>
+  <ThingDef ParentName="EB_EssenceItemBase">
+    <defName>EB_Zeal_Crystal</defName>
+    <label>zeal essence</label>
+    <description>A crystallized zeal essence. When the Essencebound assembly is installed, a nearby colonist can absorb it by right-clicking the crystal.</description>
+    <comps>
+      <li Class="Essencebound.CompProperties_EssenceItem">
+        <essenceDefName>EB_Zeal</essenceDefName>
+      </li>
+    </comps>
+  </ThingDef>
+
+</Defs>

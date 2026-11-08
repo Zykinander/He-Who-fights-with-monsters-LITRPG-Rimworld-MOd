@@ -1,0 +1,4411 @@
+{
+  "schema_version": "0.1",
+  "target_rimworld_version": "1.7",
+  "rules": {
+    "normal_essence_slots": 3,
+    "confluence_slots": 1,
+    "ability_slots_per_essence": 3,
+    "confluence_mode": "fixed",
+    "essence_order_matters": false
+  },
+  "notes": [
+    "Community wiki transcription, not independently verified against books.",
+    "Conflict entries need manual adjudication before enabling.",
+    "Unknown combinations have no fallback confluence.",
+    "Restriction classifications are provisional and should be reviewed."
+  ],
+  "combinations": [
+    {
+      "essences": [
+        "Gun",
+        "Hand",
+        "Vehicle"
+      ],
+      "confluence": "Action",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Adept",
+        "Venom",
+        "Water"
+      ],
+      "confluence": "Alchemy",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Earth",
+        "Spike",
+        "Trap"
+      ],
+      "confluence": "Ambush",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Fire",
+        "Spider",
+        "Trap"
+      ],
+      "confluence": "Ambush",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Iron",
+        "Thread",
+        "Trap"
+      ],
+      "confluence": "Ambush",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Rune",
+        "Spider",
+        "Trap"
+      ],
+      "confluence": "Ambush",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Bone",
+        "Death",
+        "Magic"
+      ],
+      "confluence": "Animate",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Cloth",
+        "Dance",
+        "Magic"
+      ],
+      "confluence": "Animate",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Dance",
+        "Dust",
+        "Echo"
+      ],
+      "confluence": "Animate",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Dance",
+        "Knowledge",
+        "Mirror"
+      ],
+      "confluence": "Animate",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Fungus",
+        "Growth",
+        "Zeal"
+      ],
+      "confluence": "Animate",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "combination",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Bird",
+        "Cat",
+        "Vast"
+      ],
+      "confluence": "Anzu",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Myriad",
+        "Shield",
+        "Sword"
+      ],
+      "confluence": "Arsenal",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Blood",
+        "Bone",
+        "Flesh"
+      ],
+      "confluence": "Avatar",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Blood",
+        "Life",
+        "Sun"
+      ],
+      "confluence": "Avatar",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Corrupt",
+        "Dimension",
+        "Magic"
+      ],
+      "confluence": "Avatar",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Corrupt",
+        "Dimension",
+        "Might"
+      ],
+      "confluence": "Avatar",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Corrupt",
+        "Dimension",
+        "Potent"
+      ],
+      "confluence": "Avatar",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Corrupt",
+        "Magic",
+        "Void"
+      ],
+      "confluence": "Avatar",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Dark",
+        "Tentacle",
+        "Void"
+      ],
+      "confluence": "Avatar",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Dimension",
+        "Light",
+        "Wing"
+      ],
+      "confluence": "Avatar",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Dimension",
+        "Light",
+        "Zeal"
+      ],
+      "confluence": "Avatar",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Dimension",
+        "Might",
+        "Renewal"
+      ],
+      "confluence": "Avatar",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Dimension",
+        "Tentacle",
+        "Void"
+      ],
+      "confluence": "Avatar",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Elemental",
+        "Harmonic",
+        "Potent"
+      ],
+      "confluence": "Avatar",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Elemental",
+        "Might",
+        "Resolute"
+      ],
+      "confluence": "Avatar",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Eye",
+        "Fire",
+        "Magic"
+      ],
+      "confluence": "Avatar",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Hammer",
+        "Lightning",
+        "Might"
+      ],
+      "confluence": "Avatar",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Lightning",
+        "Might",
+        "Sword"
+      ],
+      "confluence": "Avatar",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Magic",
+        "Might",
+        "Potent"
+      ],
+      "confluence": "Avatar",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Potent",
+        "Vast",
+        "Water"
+      ],
+      "confluence": "Avatar",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Rune",
+        "Spear",
+        "Tree"
+      ],
+      "confluence": "Avatar",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Iron",
+        "Spike",
+        "Vast"
+      ],
+      "confluence": "Battlefield",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Cattle",
+        "Earth",
+        "Vast"
+      ],
+      "confluence": "Behemoth",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Balance",
+        "Earth",
+        "Shield"
+      ],
+      "confluence": "Boundary",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Dance",
+        "Feast",
+        "Knife"
+      ],
+      "confluence": "Bounty",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Death",
+        "Myriad",
+        "Void"
+      ],
+      "confluence": "Cataclysm",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Dimension",
+        "Myriad",
+        "Sin"
+      ],
+      "confluence": "Cataclysm",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Fire",
+        "Potent",
+        "Water"
+      ],
+      "confluence": "Cataclysm",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Hunger",
+        "Vast",
+        "Void"
+      ],
+      "confluence": "Cataclysm",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Balance",
+        "Magic",
+        "Potent"
+      ],
+      "confluence": "Chaotic",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Adept",
+        "Magic",
+        "Trap"
+      ],
+      "confluence": "Charlatan",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Cat",
+        "Tentacle",
+        "Void"
+      ],
+      "confluence": "Chimera",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Earth",
+        "Pangolin",
+        "Shark"
+      ],
+      "confluence": "Chimera",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Lizard",
+        "Spider",
+        "Wolf"
+      ],
+      "confluence": "Chimera",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Rat",
+        "Skunk",
+        "Snake"
+      ],
+      "confluence": "Chimera",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Snake",
+        "Spider",
+        "Venom"
+      ],
+      "confluence": "Chimera",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Death",
+        "Flesh",
+        "Iron"
+      ],
+      "confluence": "Cyborg",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "always",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Flesh",
+        "Iron",
+        "Myriad"
+      ],
+      "confluence": "Cyborg",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "always",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Flesh",
+        "Iron",
+        "Technology"
+      ],
+      "confluence": "Cyborg",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "always",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Flesh",
+        "Magic",
+        "Water"
+      ],
+      "confluence": "Cyborg",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "always",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Flesh",
+        "Might",
+        "Technology"
+      ],
+      "confluence": "Cyborg",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "always",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Flesh",
+        "Myriad",
+        "Technology"
+      ],
+      "confluence": "Cyborg",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "always",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Balance",
+        "Light",
+        "Renewal"
+      ],
+      "confluence": "Cycle",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Corrupt",
+        "Pure",
+        "Renewal"
+      ],
+      "confluence": "Cycle",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Moon",
+        "Renewal",
+        "Sun"
+      ],
+      "confluence": "Cycle",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Dark",
+        "Light",
+        "Sun"
+      ],
+      "confluence": "Dawn",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Fire",
+        "Omen",
+        "Sun"
+      ],
+      "confluence": "Dawn",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Renewal",
+        "Sun",
+        "Water"
+      ],
+      "confluence": "Dawn",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Blood",
+        "Hunger",
+        "Locust"
+      ],
+      "confluence": "Desolate",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Bone",
+        "Dust",
+        "Sun"
+      ],
+      "confluence": "Desolate",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Cold",
+        "Hammer",
+        "Sickle"
+      ],
+      "confluence": "Desolate",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Death",
+        "Hunger",
+        "Plant"
+      ],
+      "confluence": "Desolate",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Earth",
+        "Ice",
+        "Wind"
+      ],
+      "confluence": "Desolate",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Hunger",
+        "Locust",
+        "Plant"
+      ],
+      "confluence": "Desolate",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Sand",
+        "Sun",
+        "Wind"
+      ],
+      "confluence": "Desolate",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Bow",
+        "Corrupt",
+        "Song"
+      ],
+      "confluence": "Discordant",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Balance",
+        "Omen",
+        "Sin"
+      ],
+      "confluence": "Doom",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Blight",
+        "Smoke",
+        "Venom"
+      ],
+      "confluence": "Doom",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Blood",
+        "Corrupt",
+        "Flesh"
+      ],
+      "confluence": "Doom",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Blood",
+        "Corrupt",
+        "Potent"
+      ],
+      "confluence": "Doom",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Blood",
+        "Dark",
+        "Omen"
+      ],
+      "confluence": "Doom",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Blood",
+        "Dark",
+        "Sin"
+      ],
+      "confluence": "Doom",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Corrupt",
+        "Feast",
+        "Growth"
+      ],
+      "confluence": "Doom",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Dark",
+        "Hunger",
+        "Void"
+      ],
+      "confluence": "Doom",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Death",
+        "Dimension",
+        "Vast"
+      ],
+      "confluence": "Doom",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Death",
+        "Dimension",
+        "Void"
+      ],
+      "confluence": "Doom",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Death",
+        "Dimension",
+        "Zeal"
+      ],
+      "confluence": "Doom",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Growth",
+        "Hunger",
+        "Void"
+      ],
+      "confluence": "Doom",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Moon",
+        "Omen",
+        "Sun"
+      ],
+      "confluence": "Doom",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Adept",
+        "Magic",
+        "Mirror"
+      ],
+      "confluence": "Doppelganger",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Flesh",
+        "Magic",
+        "Mirror"
+      ],
+      "confluence": "Doppelganger",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Hunger",
+        "Magic",
+        "Mirror"
+      ],
+      "confluence": "Doppelganger",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Magic",
+        "Might",
+        "Wing"
+      ],
+      "confluence": "Dragon",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Magic",
+        "Potent",
+        "Wing"
+      ],
+      "confluence": "Dragon",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Balance",
+        "Dark",
+        "Light"
+      ],
+      "confluence": "Eclipse",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Balance",
+        "Death",
+        "Life"
+      ],
+      "confluence": "Eclipse",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Balance",
+        "Moon",
+        "Sun"
+      ],
+      "confluence": "Eclipse",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Balance",
+        "Omen",
+        "Zeal"
+      ],
+      "confluence": "Eclipse",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Dimension",
+        "Moon",
+        "Sun"
+      ],
+      "confluence": "Eclipse",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Earth",
+        "Trowel",
+        "Vast"
+      ],
+      "confluence": "Edifice",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Blood",
+        "Dark",
+        "Shimmer"
+      ],
+      "confluence": "Effigy",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Dance",
+        "Glass",
+        "Visage"
+      ],
+      "confluence": "Effigy",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Rune",
+        "Star",
+        "Tree"
+      ],
+      "confluence": "Effigy",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Balance",
+        "Blood",
+        "Rune"
+      ],
+      "confluence": "Empower",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Balance",
+        "Hunger",
+        "Magic"
+      ],
+      "confluence": "Empower",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Blood",
+        "Growth",
+        "Hunger"
+      ],
+      "confluence": "Empower",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Blood",
+        "Hunger",
+        "Might"
+      ],
+      "confluence": "Empower",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Cat",
+        "Magic",
+        "Sun"
+      ],
+      "confluence": "Empower",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Crystal",
+        "Magic",
+        "Sword"
+      ],
+      "confluence": "Empower",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Elemental",
+        "Hunger",
+        "Potent"
+      ],
+      "confluence": "Empower",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Elemental",
+        "Lightning",
+        "Sword"
+      ],
+      "confluence": "Empower",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Flesh",
+        "Growth",
+        "Potent"
+      ],
+      "confluence": "Empower",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Frog",
+        "Hunger",
+        "Void"
+      ],
+      "confluence": "Empower",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Lightning",
+        "Swift",
+        "Sword"
+      ],
+      "confluence": "Empower",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Magic",
+        "Might",
+        "Swift"
+      ],
+      "confluence": "Empower",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Might",
+        "Renewal",
+        "Sin"
+      ],
+      "confluence": "Empower",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Cat",
+        "Fungus",
+        "Renewal"
+      ],
+      "confluence": "Fertile",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Magic",
+        "Pure",
+        "Visage"
+      ],
+      "confluence": "Fey",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Bird",
+        "Fire",
+        "Wind"
+      ],
+      "confluence": "Firebird",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Adept",
+        "Magic",
+        "Might"
+      ],
+      "confluence": "Force",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Balance",
+        "Might",
+        "Potent"
+      ],
+      "confluence": "Force",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Magic",
+        "Potent",
+        "Shield"
+      ],
+      "confluence": "Force",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Bird",
+        "Fire",
+        "Iron"
+      ],
+      "confluence": "Forge",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Fire",
+        "Hammer",
+        "Iron"
+      ],
+      "confluence": "Forge",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Fire",
+        "Iron",
+        "Technology"
+      ],
+      "confluence": "Forge",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Fire",
+        "Iron",
+        "Water"
+      ],
+      "confluence": "Forge",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Iron",
+        "Lightning",
+        "Technology"
+      ],
+      "confluence": "Forge",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Earth",
+        "Iron",
+        "Shield"
+      ],
+      "confluence": "Fortress",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Bird",
+        "Might",
+        "Swift"
+      ],
+      "confluence": "Garuda",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Might",
+        "Swift",
+        "Wing"
+      ],
+      "confluence": "Garuda",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Dimension",
+        "Magic",
+        "Rune"
+      ],
+      "confluence": "Gate",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Dimension",
+        "Magic",
+        "Void"
+      ],
+      "confluence": "Gate",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Dimension",
+        "Myriad",
+        "Rune"
+      ],
+      "confluence": "Gate",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Fire",
+        "Mirror",
+        "Venom"
+      ],
+      "confluence": "Glimeron",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Earth",
+        "Hair",
+        "Snake"
+      ],
+      "confluence": "Gorgon",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Bird",
+        "Cat",
+        "Might"
+      ],
+      "confluence": "Griffin",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Knowledge",
+        "Manatee",
+        "Sand"
+      ],
+      "confluence": "Guardian",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Magic",
+        "Shield",
+        "Void"
+      ],
+      "confluence": "Guardian",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Shield",
+        "Trap",
+        "Void"
+      ],
+      "confluence": "Guardian",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Bird",
+        "Discord",
+        "Song"
+      ],
+      "confluence": "Harpy",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Claw",
+        "Malign",
+        "Song"
+      ],
+      "confluence": "Harpy",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Discord",
+        "Song",
+        "Wing"
+      ],
+      "confluence": "Harpy",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Adept",
+        "Growth",
+        "Sickle"
+      ],
+      "confluence": "Harvest",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Adept",
+        "Plant",
+        "Sickle"
+      ],
+      "confluence": "Harvest",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Axe",
+        "Hunt",
+        "Plant"
+      ],
+      "confluence": "Harvest",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Earth",
+        "Plant",
+        "Sickle"
+      ],
+      "confluence": "Harvest",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Deep",
+        "Myriad",
+        "Potent"
+      ],
+      "confluence": "Hydra",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": true
+    },
+    {
+      "essences": [
+        "Myriad",
+        "Renewal",
+        "Snake"
+      ],
+      "confluence": "Hydra",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Blood",
+        "Potent",
+        "Renewal"
+      ],
+      "confluence": "Immortal",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Growth",
+        "Might",
+        "Renewal"
+      ],
+      "confluence": "Immortal",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": true
+    },
+    {
+      "essences": [
+        "Life",
+        "Magic",
+        "Renewal"
+      ],
+      "confluence": "Immortal",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Iron",
+        "Might",
+        "Swift"
+      ],
+      "confluence": "Juggernaut",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Might",
+        "Swift",
+        "Vehicle"
+      ],
+      "confluence": "Juggernaut",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Balance",
+        "Magic",
+        "Rune"
+      ],
+      "confluence": "Karmic",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Omen",
+        "Rune",
+        "Star"
+      ],
+      "confluence": "Karmic",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Deep",
+        "Might",
+        "Octopus"
+      ],
+      "confluence": "Kraken",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Deep",
+        "Myriad",
+        "Potent"
+      ],
+      "confluence": "Kraken",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": true
+    },
+    {
+      "essences": [
+        "Might",
+        "Octopus",
+        "Vast"
+      ],
+      "confluence": "Kraken",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Deep",
+        "Might",
+        "Vast"
+      ],
+      "confluence": "Leviathan",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Fish",
+        "Vast",
+        "Water"
+      ],
+      "confluence": "Leviathan",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Harmonic",
+        "Plant",
+        "Water"
+      ],
+      "confluence": "Lotus",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Plant",
+        "Sword",
+        "Water"
+      ],
+      "confluence": "Lotus",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Armour",
+        "Magic",
+        "Technology"
+      ],
+      "confluence": "Magitech",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Lightning",
+        "Magic",
+        "Technology"
+      ],
+      "confluence": "Magitech",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Cat",
+        "Spike",
+        "Venom"
+      ],
+      "confluence": "Manticore",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Adept",
+        "Bow",
+        "Swift"
+      ],
+      "confluence": "Master",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Adept",
+        "Cloth",
+        "Needle"
+      ],
+      "confluence": "Master",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Adept",
+        "Dance",
+        "Sword"
+      ],
+      "confluence": "Master",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Adept",
+        "Dance",
+        "Whip"
+      ],
+      "confluence": "Master",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Adept",
+        "Fire",
+        "Hammer"
+      ],
+      "confluence": "Master",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Adept",
+        "Fire",
+        "Iron"
+      ],
+      "confluence": "Master",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Adept",
+        "Foot",
+        "Hand"
+      ],
+      "confluence": "Master",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Adept",
+        "Gathering",
+        "Gun"
+      ],
+      "confluence": "Master",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Adept",
+        "Gun",
+        "Hand"
+      ],
+      "confluence": "Master",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Adept",
+        "Iron",
+        "Technology"
+      ],
+      "confluence": "Master",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Adept",
+        "Knife",
+        "Smoke"
+      ],
+      "confluence": "Master",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Adept",
+        "Magic",
+        "Potent"
+      ],
+      "confluence": "Master",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Adept",
+        "Magic",
+        "Sword"
+      ],
+      "confluence": "Master",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Adept",
+        "Myriad",
+        "Sword"
+      ],
+      "confluence": "Master",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Adept",
+        "Needle",
+        "Thread"
+      ],
+      "confluence": "Master",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Adept",
+        "Swift",
+        "Sword"
+      ],
+      "confluence": "Master",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Adept",
+        "Thread",
+        "Whip"
+      ],
+      "confluence": "Master",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Cloth",
+        "Needle",
+        "Thread"
+      ],
+      "confluence": "Master",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Dance",
+        "Song",
+        "Sword"
+      ],
+      "confluence": "Master",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Dance",
+        "Sword",
+        "Thread"
+      ],
+      "confluence": "Master",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Foot",
+        "Knife",
+        "Swift"
+      ],
+      "confluence": "Master",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Life",
+        "Pure",
+        "Renewal"
+      ],
+      "confluence": "Ministration",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Cattle",
+        "Hunt",
+        "Might"
+      ],
+      "confluence": "Minotaur",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Cattle",
+        "Might",
+        "Trap"
+      ],
+      "confluence": "Minotaur",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Dimension",
+        "Shimmer",
+        "Vast"
+      ],
+      "confluence": "Mirage",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Fire",
+        "Light",
+        "Water"
+      ],
+      "confluence": "Mirage",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Sand",
+        "Sun",
+        "Visage"
+      ],
+      "confluence": "Mirage",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Sun",
+        "Vast",
+        "Visage"
+      ],
+      "confluence": "Mirage",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Earth",
+        "Growth",
+        "Might"
+      ],
+      "confluence": "Monolith",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Adept",
+        "Water",
+        "Wind"
+      ],
+      "confluence": "Mystic",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Balance",
+        "Dimension",
+        "Harmonic"
+      ],
+      "confluence": "Mystic",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Balance",
+        "Hand",
+        "Iron"
+      ],
+      "confluence": "Mystic",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Balance",
+        "Swift",
+        "Sword"
+      ],
+      "confluence": "Mystic",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Balance",
+        "Swift",
+        "Wind"
+      ],
+      "confluence": "Mystic",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Blood",
+        "Renewal",
+        "Sword"
+      ],
+      "confluence": "Mystic",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Dark",
+        "Knowledge",
+        "Pure"
+      ],
+      "confluence": "Mystic",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Dark",
+        "Song",
+        "Vast"
+      ],
+      "confluence": "Mystic",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Harmonic",
+        "Knowledge",
+        "Pure"
+      ],
+      "confluence": "Mystic",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Iron",
+        "Might",
+        "Serene"
+      ],
+      "confluence": "Mystic",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Magic",
+        "Might",
+        "Staff"
+      ],
+      "confluence": "Mystic",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Magic",
+        "Omen",
+        "Vast"
+      ],
+      "confluence": "Mystic",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Magic",
+        "Sword",
+        "Wind"
+      ],
+      "confluence": "Mystic",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Cloud",
+        "Vast",
+        "Void"
+      ],
+      "confluence": "Nebula",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Balance",
+        "Mirror",
+        "Void"
+      ],
+      "confluence": "Nemesis",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Myriad",
+        "Technology",
+        "Vast"
+      ],
+      "confluence": "Network",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Earth",
+        "Sand",
+        "Water"
+      ],
+      "confluence": "Oasis",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Vast",
+        "Vehicle",
+        "Water"
+      ],
+      "confluence": "Ocean",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Adept",
+        "Might",
+        "Potent"
+      ],
+      "confluence": "Onslaught",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Adept",
+        "Might",
+        "Swift"
+      ],
+      "confluence": "Onslaught",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Bow",
+        "Gathering",
+        "Myriad"
+      ],
+      "confluence": "Onslaught",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Fire",
+        "Gun",
+        "Vehicle"
+      ],
+      "confluence": "Onslaught",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Growth",
+        "Might",
+        "Renewal"
+      ],
+      "confluence": "Onslaught",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": true
+    },
+    {
+      "essences": [
+        "Growth",
+        "Might",
+        "Zeal"
+      ],
+      "confluence": "Onslaught",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Gun",
+        "Might",
+        "Potent"
+      ],
+      "confluence": "Onslaught",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Gun",
+        "Might",
+        "Vehicle"
+      ],
+      "confluence": "Onslaught",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Gun",
+        "Vehicle",
+        "Wind"
+      ],
+      "confluence": "Onslaught",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Hand",
+        "Might",
+        "Swift"
+      ],
+      "confluence": "Onslaught",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Might",
+        "Potent",
+        "Swift"
+      ],
+      "confluence": "Onslaught",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Might",
+        "Potent",
+        "Vast"
+      ],
+      "confluence": "Onslaught",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Might",
+        "Swift",
+        "Wind"
+      ],
+      "confluence": "Onslaught",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Myriad",
+        "Vast",
+        "Visage"
+      ],
+      "confluence": "Phantasmagoria",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Fire",
+        "Renewal",
+        "Wing"
+      ],
+      "confluence": "Phoenix",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Bow",
+        "Dark",
+        "Hunt"
+      ],
+      "confluence": "Predatory",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Bow",
+        "Hunt",
+        "Trap"
+      ],
+      "confluence": "Predatory",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Bow",
+        "Spider",
+        "Trap"
+      ],
+      "confluence": "Predatory",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Hunt",
+        "Myriad",
+        "Wolf"
+      ],
+      "confluence": "Predatory",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Spear",
+        "Spider",
+        "Wing"
+      ],
+      "confluence": "Predatory",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Cage",
+        "Lightning",
+        "Myriad"
+      ],
+      "confluence": "Prison",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Cage",
+        "Rune",
+        "Trap"
+      ],
+      "confluence": "Prison",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Chain",
+        "Iron",
+        "Myriad"
+      ],
+      "confluence": "Prison",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Gathering",
+        "Iron",
+        "Might"
+      ],
+      "confluence": "Prison",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Shield",
+        "Trap",
+        "Vast"
+      ],
+      "confluence": "Prison",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Adept",
+        "Balance",
+        "Renewal"
+      ],
+      "confluence": "Prosperity",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Balance",
+        "Renewal",
+        "Rune"
+      ],
+      "confluence": "Prosperity",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Feast",
+        "Foot",
+        "Rabbit"
+      ],
+      "confluence": "Prosperity",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Growth",
+        "Omen",
+        "Sun"
+      ],
+      "confluence": "Prosperity",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Growth",
+        "Renewal",
+        "Shield"
+      ],
+      "confluence": "Prosperity",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Magic",
+        "Rune",
+        "Vast"
+      ],
+      "confluence": "Prosperity",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Balance",
+        "Echo",
+        "Ice"
+      ],
+      "confluence": "Refracting",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Bird",
+        "Needle",
+        "Song"
+      ],
+      "confluence": "Resonating",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Crystal",
+        "Harmonic",
+        "Serene"
+      ],
+      "confluence": "Resonating",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Echo",
+        "Swift",
+        "Wind"
+      ],
+      "confluence": "Resonating",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Bird",
+        "Might",
+        "Vast"
+      ],
+      "confluence": "Roc",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Blood",
+        "Dimension",
+        "Goat"
+      ],
+      "confluence": "Sacrifice",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "always",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Dimension",
+        "Knife",
+        "Sin"
+      ],
+      "confluence": "Sacrifice",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "always",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Hunger",
+        "Knife",
+        "Sun"
+      ],
+      "confluence": "Sacrifice",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "always",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Hand",
+        "Paper",
+        "Rune"
+      ],
+      "confluence": "Scribe",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Knowledge",
+        "Paper",
+        "Serene"
+      ],
+      "confluence": "Scribe",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Fire",
+        "Iron",
+        "Snake"
+      ],
+      "confluence": "Serpent",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Fire",
+        "Snake",
+        "Water"
+      ],
+      "confluence": "Serpent",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Fire",
+        "Snake",
+        "Wind"
+      ],
+      "confluence": "Serpent",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Paper",
+        "Sword",
+        "Visage"
+      ],
+      "confluence": "Simulacrum",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Adept",
+        "Bow",
+        "Hunt"
+      ],
+      "confluence": "Skirmish",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Cloud",
+        "Swift",
+        "Wind"
+      ],
+      "confluence": "Sky",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Moon",
+        "Star",
+        "Sun"
+      ],
+      "confluence": "Sky",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Star",
+        "Sun",
+        "Vast"
+      ],
+      "confluence": "Sky",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Bird",
+        "Swift",
+        "Wind"
+      ],
+      "confluence": "Soaring",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Ship",
+        "Water",
+        "Wind"
+      ],
+      "confluence": "Soaring",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Swift",
+        "Vehicle",
+        "Wind"
+      ],
+      "confluence": "Soaring",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Adept",
+        "Balance",
+        "Potent"
+      ],
+      "confluence": "Sovereign",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Adept",
+        "Potent",
+        "Sceptre"
+      ],
+      "confluence": "Sovereign",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Dark",
+        "Sin",
+        "Water"
+      ],
+      "confluence": "Sovereign",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Flesh",
+        "Magic",
+        "Thread"
+      ],
+      "confluence": "Sovereign",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Dark",
+        "Star",
+        "Sun"
+      ],
+      "confluence": "Stellar",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Cloud",
+        "Crystal",
+        "Wind"
+      ],
+      "confluence": "Storm",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Deep",
+        "Vast",
+        "Wind"
+      ],
+      "confluence": "Storm",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Dust",
+        "Ice",
+        "Wind"
+      ],
+      "confluence": "Storm",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Earth",
+        "Fire",
+        "Wind"
+      ],
+      "confluence": "Storm",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Fire",
+        "Gun",
+        "Lightning"
+      ],
+      "confluence": "Storm",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Fire",
+        "Potent",
+        "Wind"
+      ],
+      "confluence": "Storm",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Hammer",
+        "Lightning",
+        "Rune"
+      ],
+      "confluence": "Storm",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Lightning",
+        "Magic",
+        "Wind"
+      ],
+      "confluence": "Storm",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Lightning",
+        "Potent",
+        "Wind"
+      ],
+      "confluence": "Storm",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Sand",
+        "Vast",
+        "Wind"
+      ],
+      "confluence": "Storm",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Flesh",
+        "Sin",
+        "Visage"
+      ],
+      "confluence": "Succubus",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "always",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Hunger",
+        "Magic",
+        "Sin"
+      ],
+      "confluence": "Succubus",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "always",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Bat",
+        "Rabbit",
+        "Rat"
+      ],
+      "confluence": "Swarm",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Blood",
+        "Myriad",
+        "Wing"
+      ],
+      "confluence": "Swarm",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Dark",
+        "Fire",
+        "Rat"
+      ],
+      "confluence": "Swarm",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Duck",
+        "Flea",
+        "Foot"
+      ],
+      "confluence": "Swarm",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Fire",
+        "Venom",
+        "Wasp"
+      ],
+      "confluence": "Swarm",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Potent",
+        "Venom",
+        "Wasp"
+      ],
+      "confluence": "Swarm",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Magic",
+        "Paper",
+        "Rune"
+      ],
+      "confluence": "Talisman",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Bird",
+        "Lightning",
+        "Vast"
+      ],
+      "confluence": "Thunderbird",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Balance",
+        "Dimension",
+        "Swift"
+      ],
+      "confluence": "Time",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Dimension",
+        "Vast",
+        "Void"
+      ],
+      "confluence": "Time",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Balance",
+        "Moon",
+        "Water"
+      ],
+      "confluence": "Tranquil",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Corrupt",
+        "Death",
+        "Serene"
+      ],
+      "confluence": "Tranquil",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Serene",
+        "Tree",
+        "Vast"
+      ],
+      "confluence": "Tranquil",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Axe",
+        "Bear",
+        "Moon"
+      ],
+      "confluence": "Transfiguration",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Balance",
+        "Earth",
+        "Iron"
+      ],
+      "confluence": "Transfiguration",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Balance",
+        "Fire",
+        "Ice"
+      ],
+      "confluence": "Transfiguration",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Bear",
+        "Growth",
+        "Hand"
+      ],
+      "confluence": "Transfiguration",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Bird",
+        "Mouse",
+        "Whale"
+      ],
+      "confluence": "Transfiguration",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Blood",
+        "Fire",
+        "Iron"
+      ],
+      "confluence": "Transfiguration",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Deer",
+        "Earth",
+        "Hammer"
+      ],
+      "confluence": "Transfiguration",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Flesh",
+        "Growth",
+        "Water"
+      ],
+      "confluence": "Transfiguration",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Hunger",
+        "Moon",
+        "Wolf"
+      ],
+      "confluence": "Transfiguration",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "combination",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Hunt",
+        "Moon",
+        "Wolf"
+      ],
+      "confluence": "Transfiguration",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Bird",
+        "Water",
+        "Wind"
+      ],
+      "confluence": "Transgression",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Corrupt",
+        "Pure",
+        "Sin"
+      ],
+      "confluence": "Transgression",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Death",
+        "Dimension",
+        "Magic"
+      ],
+      "confluence": "Transgression",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Death",
+        "Life",
+        "Sin"
+      ],
+      "confluence": "Transgression",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Fish",
+        "Water",
+        "Wind"
+      ],
+      "confluence": "Transgression",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Moon",
+        "Myriad",
+        "Sun"
+      ],
+      "confluence": "Transgression",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Blood",
+        "Might",
+        "Renewal"
+      ],
+      "confluence": "Troll",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Dark",
+        "Light",
+        "Moon"
+      ],
+      "confluence": "Twilight",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Moon",
+        "Omen",
+        "Wind"
+      ],
+      "confluence": "Twilight",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Bat",
+        "Blood",
+        "Death"
+      ],
+      "confluence": "Undeath",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "always",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Blood",
+        "Bone",
+        "Corrupt"
+      ],
+      "confluence": "Undeath",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "always",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Blood",
+        "Corrupt",
+        "Dark"
+      ],
+      "confluence": "Undeath",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "always",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Blood",
+        "Dark",
+        "Death"
+      ],
+      "confluence": "Undeath",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "always",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Blood",
+        "Death",
+        "Duck"
+      ],
+      "confluence": "Undeath",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "always",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Blood",
+        "Death",
+        "Hunger"
+      ],
+      "confluence": "Undeath",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "always",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Blood",
+        "Death",
+        "Hunt"
+      ],
+      "confluence": "Undeath",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "always",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Blood",
+        "Death",
+        "Moon"
+      ],
+      "confluence": "Undeath",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "always",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Blood",
+        "Death",
+        "Sin"
+      ],
+      "confluence": "Undeath",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "always",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Blood",
+        "Death",
+        "Snake"
+      ],
+      "confluence": "Undeath",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "always",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Blood",
+        "Death",
+        "Spider"
+      ],
+      "confluence": "Undeath",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "always",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Blood",
+        "Death",
+        "Visage"
+      ],
+      "confluence": "Undeath",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "always",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Blood",
+        "Death",
+        "Wolf"
+      ],
+      "confluence": "Undeath",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "always",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Bone",
+        "Corrupt",
+        "Dance"
+      ],
+      "confluence": "Undeath",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "always",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Bone",
+        "Corrupt",
+        "Flesh"
+      ],
+      "confluence": "Undeath",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "always",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Corrupt",
+        "Dance",
+        "Flesh"
+      ],
+      "confluence": "Undeath",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "always",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Death",
+        "Flesh",
+        "Hunger"
+      ],
+      "confluence": "Undeath",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "always",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Death",
+        "Magic",
+        "Sand"
+      ],
+      "confluence": "Undeath",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "always",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Harmonic",
+        "Myriad",
+        "Vast"
+      ],
+      "confluence": "Unity",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Mirror",
+        "Myriad",
+        "Technology"
+      ],
+      "confluence": "Unity",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Earth",
+        "Plant",
+        "Rake"
+      ],
+      "confluence": "Verdant",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Earth",
+        "Plant",
+        "Vast"
+      ],
+      "confluence": "Verdant",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Earth",
+        "Shovel",
+        "Water"
+      ],
+      "confluence": "Verdant",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Balance",
+        "Blood",
+        "Crystal"
+      ],
+      "confluence": "Vessel",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Balance",
+        "Blood",
+        "Hunger"
+      ],
+      "confluence": "Vessel",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Balance",
+        "Life",
+        "Needle"
+      ],
+      "confluence": "Vessel",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Cloud",
+        "Growth",
+        "Vehicle"
+      ],
+      "confluence": "Vessel",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Crystal",
+        "Magic",
+        "Potent"
+      ],
+      "confluence": "Vessel",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Death",
+        "Vehicle",
+        "Water"
+      ],
+      "confluence": "Vessel",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Dimension",
+        "Vast",
+        "Vehicle"
+      ],
+      "confluence": "Vessel",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Duck",
+        "Iron",
+        "Vast"
+      ],
+      "confluence": "Vessel",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Duck",
+        "Iron",
+        "Visage"
+      ],
+      "confluence": "Vessel",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Gathering",
+        "Magic",
+        "Star"
+      ],
+      "confluence": "Vessel",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Iron",
+        "Sin",
+        "Wind"
+      ],
+      "confluence": "Vessel",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Knowledge",
+        "Technology",
+        "Vast"
+      ],
+      "confluence": "Vessel",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Rat",
+        "Swift",
+        "Water"
+      ],
+      "confluence": "Vessel",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Technology",
+        "Vehicle",
+        "Wind"
+      ],
+      "confluence": "Vessel",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Dark",
+        "Omen",
+        "Serene"
+      ],
+      "confluence": "Vision",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Eye",
+        "Magic",
+        "Mirror"
+      ],
+      "confluence": "Vision",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Earth",
+        "Fire",
+        "Potent"
+      ],
+      "confluence": "Volcano",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Earth",
+        "Fire",
+        "Vast"
+      ],
+      "confluence": "Volcano",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Corrupt",
+        "Dimension",
+        "Void"
+      ],
+      "confluence": "Vortex",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Dark",
+        "Void",
+        "Wind"
+      ],
+      "confluence": "Vortex",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Deep",
+        "Vast",
+        "Void"
+      ],
+      "confluence": "Vortex",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Dimension",
+        "Hunger",
+        "Void"
+      ],
+      "confluence": "Vortex",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Feast",
+        "Magic",
+        "Void"
+      ],
+      "confluence": "Vortex",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Shark",
+        "Water",
+        "Wind"
+      ],
+      "confluence": "Vortex",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Trap",
+        "Void",
+        "Wind"
+      ],
+      "confluence": "Vortex",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Dance",
+        "Myriad",
+        "Thread"
+      ],
+      "confluence": "Weave",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Dance",
+        "Needle",
+        "Thread"
+      ],
+      "confluence": "Weave",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Harmonic",
+        "Myriad",
+        "Omen"
+      ],
+      "confluence": "Weave",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Flesh",
+        "Hunger",
+        "Might"
+      ],
+      "confluence": "Wendigo",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "always",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Adept",
+        "Fire",
+        "Zeal"
+      ],
+      "confluence": "Wrath",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Balance",
+        "Blood",
+        "Might"
+      ],
+      "confluence": "Wrath",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Balance",
+        "Might",
+        "Zeal"
+      ],
+      "confluence": "Wrath",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Balance",
+        "Potent",
+        "Zeal"
+      ],
+      "confluence": "Wrath",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Blood",
+        "Might",
+        "Potent"
+      ],
+      "confluence": "Wrath",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Dimension",
+        "Light",
+        "Potent"
+      ],
+      "confluence": "Wrath",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Fire",
+        "Light",
+        "Potent"
+      ],
+      "confluence": "Wrath",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Fire",
+        "Light",
+        "Zeal"
+      ],
+      "confluence": "Wrath",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Might",
+        "Potent",
+        "Zeal"
+      ],
+      "confluence": "Wrath",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    },
+    {
+      "essences": [
+        "Bird",
+        "Vast",
+        "Wind"
+      ],
+      "confluence": "Ziz",
+      "source_status": "community_listed_unverified",
+      "restriction_status": "not_identified",
+      "source_url": "https://he-who-fights-with-monsters.fandom.com/wiki/Essences",
+      "conflict": false
+    }
+  ]
+}

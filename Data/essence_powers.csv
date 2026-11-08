@@ -1,0 +1,13 @@
+id,name,effect,target,range_cells,magnitude,cooldown_ticks,duration_ticks,status_hediff,compatible_aspects,favored_essences,source_status
+EmberBolt,Ember Bolt,damage,hostile,10,6,450,0,,Assault; Spell; Reach; Reaper,Fire; Sun; Elemental; Volcano,original_mod_gameplay_design
+FrostShard,Frost Shard,damageDebuff,hostile,9,4,540,360,EB_Debuff_Chilled,Control; Assault; Spell; Reach; Stars,Ice; Water,original_mod_gameplay_design
+StormSpark,Storm Spark,damageDebuff,hostile,8,5,570,240,EB_Debuff_Static,Spell; Precision; Surge; Stars; Assault,Lightning; Storm; Magic; Wind,original_mod_gameplay_design
+VerdantMend,Verdant Mend,heal,ally,7,6,900,0,,Recovery; Growth; Familiar; Adventure,Life; Plant; Renewal; Growth; Tree,original_mod_gameplay_design
+GuardianWard,Guardian Ward,buff,ally,8,0,840,900,EB_Buff_GuardianWard,Ward; Ritual; Preparation; Counter; Aura,Shield; Magic; Light; Pure,original_mod_gameplay_design
+StoneSkin,Stone Skin,buff,self,0,0,900,900,EB_Buff_StoneSkin,Ward; Counter; Growth; Preparation; Aura,Earth; Iron; Might; Shield,original_mod_gameplay_design
+SwiftStep,Swift Step,buff,self,0,0,720,660,EB_Buff_SwiftStep,Mobility; Surge; Adventure; Exploration; Reach,Swift; Wind; Wing; Balance; Bird,original_mod_gameplay_design
+MistVeil,Mist Veil,buff,self,0,0,900,720,EB_Buff_MistVeil,Veil; Mobility; Exploration; Counter,Dark; Cloud; Smoke,original_mod_gameplay_design
+KeenSight,Keen Sight,buff,self,0,0,900,900,EB_Buff_KeenSight,Precision; Exploration; Preparation; Judgement; Familiar; Reach,Eye; Vision; Bird,original_mod_gameplay_design
+RallyingSurge,Rallying Surge,buff,ally,8,0,900,600,EB_Buff_RallyingSurge,Surge; Aura; Ritual; Familiar; Adventure; Stars,Might; Life; Renewal; Balance; Pure,original_mod_gameplay_design
+PurifyingTouch,Purifying Touch,cleanse,ally,6,0,780,0,,Recovery; Judgement; Reaper; Ritual,Pure; Life; Light; Renewal,original_mod_gameplay_design
+ForcePulse,Force Pulse,pulse,self,3,3,720,0,,Control; Assault; Counter; Reaper; Judgement,Might; Force; Potent; Magic,original_mod_gameplay_design
