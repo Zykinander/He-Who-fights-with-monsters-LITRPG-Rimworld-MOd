@@ -6,6 +6,12 @@ namespace Essencebound
     public sealed class EssenceDef : Def
     {
         public bool isConfluence;
+        // Weighted random attribute rolled when each pawn acquires this essence.
+        // All weights stay positive; every attribute remains possible.
+        public float powerWeight = 1f;
+        public float speedWeight = 1f;
+        public float spiritWeight = 1f;
+        public float recoveryWeight = 1f;
     }
 
     // Each ordered-free triple has exactly one proposed output, but
