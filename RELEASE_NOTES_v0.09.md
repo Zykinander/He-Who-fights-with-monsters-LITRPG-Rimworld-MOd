@@ -19,3 +19,6 @@
 
 ## Validation
 GitHub Actions must compile and run structural tests. This update is **not** proof of in-game correctness until user testing confirms targeting both friendly and hostile pawns.
+
+## Automatically named test builds
+Each new GitHub Actions build reads the development version from `manifest.json`, and includes the GitHub workflow run number and attempt number. Example: `Essencebound-v0.09-RW1.7-build7-attempt1.zip` (the downloaded Actions artifact). Inside it is `Essencebound-v0.09-RW1.7-build7-attempt1-mod.zip`, containing the unchanged installation directory `Essencebound/`. Run numbers and attempts prevent confusion between builds; repeating a download of one existing build retains its name. The package ID and save identity stay unchanged.

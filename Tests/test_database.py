@@ -120,3 +120,14 @@ metadata=ET.parse(ROOT/'About/About.xml').getroot()
 assert 'v0.09' in metadata.findtext('name')
 assert json.loads((ROOT/'manifest.json').read_text())['version']=='0.09'
 print('PASS: v0.09 metadata and inherited stack-count overlays')
+
+# Regression: each GitHub Actions run must have a unique versioned artifact name.
+workflow=(ROOT/'.github/workflows/build-essencebound.yml').read_text()
+assert 'id: build_name' in workflow
+assert 'manifest.json' in workflow
+assert '${GITHUB_RUN_NUMBER}' in workflow
+assert '${GITHUB_RUN_ATTEMPT}' in workflow
+assert 'name: ${{ steps.build_name.outputs.name }}' in workflow
+assert 'path: ${{ steps.build_name.outputs.name }}-mod.zip' in workflow
+assert 'cd build && zip -qr "../${{ steps.build_name.outputs.name }}-mod.zip" Essencebound' in workflow
+print('PASS: versioned GitHub Actions test-build archive names')

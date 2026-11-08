@@ -19,6 +19,16 @@ Range, line of sight, cooldowns, empty-target rejection and same-map checks rema
 - Absorbing a normal essence and gaining a confluence both grant an innate starter ability.
 - 30 awakening stones with distinct artwork and 12 reusable ability effect templates.
 
+## Versioned test downloads
+
+GitHub Actions automatically names **every new build** using the development version, RimWorld target, workflow run number, and rerun attempt.
+
+- Example downloaded file: `Essencebound-v0.09-RW1.7-build7-attempt1.zip`
+- Inside: `Essencebound-v0.09-RW1.7-build7-attempt1-mod.zip`
+- After extraction, the folder installed into RimWorld is still called `Essencebound`.
+
+Starting another build (or rerunning a job) produces a new name. Re-downloading an old build does not. This prevents accidentally testing the wrong ZIP while keeping the mod's package ID stable.
+
 ## Install and test
 
 After a successful GitHub Actions build on `main`, download `Essencebound-1.7-compiled`, extract the enclosed mod, and replace the existing `Mods/Essencebound/` folder. Use a disposable test colony and back up any existing saves first.

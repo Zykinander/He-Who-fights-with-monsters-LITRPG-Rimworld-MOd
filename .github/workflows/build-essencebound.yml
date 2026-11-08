@@ -26,12 +26,17 @@ jobs:
         run: dotnet build Source/Essencebound.Core.csproj -c Release --nologo
       - name: Ensure DLL exists
         run: test -s 1.7/Assemblies/Essencebound.Core.dll
+      - name: Name this build
+        id: build_name
+        run: |
+          VERSION=$(python -c 'import json; print(json.load(open("manifest.json"))["version"])')
+          echo "name=Essencebound-v${VERSION}-RW1.7-build${GITHUB_RUN_NUMBER}-attempt${GITHUB_RUN_ATTEMPT}" >> "$GITHUB_OUTPUT"
       - name: Prepare distributable
         run: |
           mkdir -p build/Essencebound
           cp -r About 1.7 LoadFolders.xml build/Essencebound/
-          cd build && zip -qr ../Essencebound_1.7_COMPILED.zip Essencebound
+          cd build && zip -qr "../${{ steps.build_name.outputs.name }}-mod.zip" Essencebound
       - uses: actions/upload-artifact@v4
         with:
-          name: Essencebound-1.7-compiled
-          path: Essencebound_1.7_COMPILED.zip
+          name: ${{ steps.build_name.outputs.name }}
+          path: ${{ steps.build_name.outputs.name }}-mod.zip
