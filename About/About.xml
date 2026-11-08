@@ -1,10 +1,10 @@
 <?xml version='1.0' encoding='utf-8'?>
 <ModMetaData>
-  <name>Essencebound — Awakening Stone Source Prototype v0.6</name>
+  <name>Essencebound v0.08 — RimWorld 1.7</name>
   <author>Essencebound Project</author>
   <packageId>essencebound.core.prototype</packageId>
   <supportedVersions>
     <li>1.7</li>
   </supportedVersions>
-  <description>Experimental Essencebound RimWorld 1.7 prototype. 366 confluence recipes, 30 awakening stones, 12 initial powers. Requires a compiled Essencebound.Core.dll in 1.7/Assemblies. Not yet verified in-game; use on test saves.</description>
+  <description>Essencebound v0.08 experimental RimWorld 1.7 prototype: 366 confluence recipe rows, 30 awakening stones, 12 reusable power effects, and automatic essence starter abilities. Requires Essencebound.Core.dll in 1.7/Assemblies. Partial in-game smoke testing completed; please use test saves and report errors.</description>
 </ModMetaData>

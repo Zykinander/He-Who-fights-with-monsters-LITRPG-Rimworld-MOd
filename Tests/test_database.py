@@ -44,6 +44,12 @@ aspects_xml = definitions('1.7/Defs/AwakeningDefs/AwakeningAspects.xml','Essence
 stone_items = definitions('1.7/Defs/ThingDefs/AwakeningStones.xml')
 assert len(stones_xml)==30 and len(aspects_xml)==21
 assert len([e for e in stone_items if e.attrib.get('ParentName')=='EB_AwakeningStoneItemBase']) == 30
+# v0.08: RimWorld 1.7 requires stackable items to show their stack-count overlay.
+stone_base=next(e for e in stone_items if e.attrib.get('Name')=='EB_AwakeningStoneItemBase')
+assert stone_base.findtext('stackLimit')=='10'
+assert stone_base.findtext('drawGUIOverlay')=='true'
+assert all(e.findtext('drawGUIOverlay') != 'false' for e in stone_items if e.attrib.get('ParentName')=='EB_AwakeningStoneItemBase')
+
 
 def child_text(el,k):
     c=el.find(k)
@@ -108,3 +114,9 @@ for st in stones_data:
         assert image.mode == 'RGBA', (st['name'],image.mode)
         assert image.getpixel((0,0))[3] == 0
 print('PASS: all 30 icons unique path, 128px RGBA, transparent corners')
+
+# Release metadata must use the development-version scheme.
+metadata=ET.parse(ROOT/'About/About.xml').getroot()
+assert 'v0.08' in metadata.findtext('name')
+assert json.loads((ROOT/'manifest.json').read_text())['version']=='0.08'
+print('PASS: v0.08 metadata and inherited stack-count overlays')
