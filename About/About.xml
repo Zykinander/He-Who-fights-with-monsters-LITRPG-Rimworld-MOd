@@ -1,10 +1,10 @@
 <?xml version='1.0' encoding='utf-8'?>
 <ModMetaData>
-  <name>Essencebound v0.10 — RimWorld 1.7</name>
+  <name>Essencebound v0.11 — RimWorld 1.7</name>
   <author>Essencebound Project</author>
   <packageId>essencebound.core.prototype</packageId>
   <supportedVersions>
     <li>1.7</li>
   </supportedVersions>
-  <description>Essencebound v0.10 experimental RimWorld 1.7 prototype: a four-essence character profile, configurable 2-5 ability slots per essence, innate starter powers, awakening stones, and universal pawn targeting. Requires Essencebound.Core.dll in 1.7/Assemblies. Use test saves and report errors.</description>
+  <description>Essencebound v0.11 experimental RimWorld 1.7 prototype: individual ability progression, essence rank milestones, per-pawn weighted random Power/Speed/Spirit/Recovery affinities, a four-essence profile, and configurable 2-5 ability slots. Requires Essencebound.Core.dll in 1.7/Assemblies. Use test saves and report errors.</description>
 </ModMetaData>

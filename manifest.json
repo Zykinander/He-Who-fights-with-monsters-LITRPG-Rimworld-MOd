@@ -1,6 +1,6 @@
 {
   "project": "Essencebound",
-  "version": "0.10",
+  "version": "0.11",
   "target_game": "RimWorld 1.7",
   "requires_compilation": true,
   "compiled_assembly_included": false,
@@ -24,7 +24,10 @@
     "timed_power_effect_defs": 8,
     "min_awakening_slots_per_essence": 2,
     "max_awakening_slots_per_essence": 5,
-    "default_awakening_slots": 12
+    "default_awakening_slots": 12,
+    "essence_affinity_weights": 226,
+    "attribute_categories": 4,
+    "rank_tiers": 5
   },
   "unknown_confluence_handling": "no automatic confluence",
   "conflict_handling": "no automatic confluence",
@@ -34,8 +37,45 @@
   "awakening_stone_source_provenance": "12 community_listed_known_rarity; 3 community_listed_rarity_unknown; 15 mod_original_unverified; themes, affinities and imprint designs are mod-original",
   "artwork_status": "all_30_unique_png_sprites; editable_SVG_for_18_new",
   "power_count": 12,
-  "gameplay_power_status": "v0.09 pawn targeting field tested; v0.10 UI and settings pending compilation and in-game testing",
+  "gameplay_power_status": "v0.11 progression and random affinities pending GitHub Actions compilation and in-game validation",
   "stone_count": 30,
   "power_effect_definitions": 8,
-  "release_notes": "RimWorld mod settings allow 2-5 slots per essence (default 3). New four-panel character window, rank path, power descriptions and cooldowns. Existing abilities above a reduced limit are retained but paused."
+  "release_notes": "Individual ability progression from meaningful effect contributions; essence rank requires all configured ability slots at next tier. Every essence randomly rolls a saved weighted attribute affinity for each pawn.",
+  "progression": {
+    "attributes": [
+      "Power",
+      "Speed",
+      "Spirit",
+      "Recovery"
+    ],
+    "affinity_assignment": "weighted_random_once_per_pawn_per_essence_saved",
+    "affinity_weights": "Data/essence_attribute_weights.csv",
+    "ranks": [
+      "Iron",
+      "Bronze",
+      "Silver",
+      "Gold",
+      "Diamond"
+    ],
+    "requirements": "All highest-ever-configured ability slots within each essence must be awakened and reach the next rank.",
+    "xp_sources": {
+      "damage": "actual damage on hostile pawns",
+      "heal": "actual injury severity healed",
+      "buff": "60 ticks of sustained active buff",
+      "cleanse": "10 work per successful affliction removal",
+      "pulse": "actual total hostile damage"
+    },
+    "thresholds_by_tier": [
+      40,
+      120,
+      360,
+      1080
+    ],
+    "stat_bonus_per_tier": {
+      "Power": "4% essence ability damage",
+      "Speed": "2.5% ability cooldown reduction",
+      "Spirit": "5% beneficial buff duration",
+      "Recovery": "6% healing strength"
+    }
+  }
 }

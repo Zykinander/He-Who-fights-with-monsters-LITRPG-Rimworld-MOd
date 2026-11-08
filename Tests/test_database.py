@@ -117,9 +117,9 @@ print('PASS: all 30 icons unique path, 128px RGBA, transparent corners')
 
 # Release metadata must use the development-version scheme.
 metadata=ET.parse(ROOT/'About/About.xml').getroot()
-assert 'v0.10' in metadata.findtext('name')
-assert json.loads((ROOT/'manifest.json').read_text())['version']=='0.10'
-print('PASS: v0.10 metadata and inherited stack-count overlays')
+assert 'v0.11' in metadata.findtext('name')
+assert json.loads((ROOT/'manifest.json').read_text())['version']=='0.11'
+print('PASS: v0.11 metadata and inherited stack-count overlays')
 
 # Regression: each GitHub Actions run must have a unique versioned artifact name.
 workflow=(ROOT/'.github/workflows/build-essencebound.yml').read_text()
@@ -155,3 +155,34 @@ assert manifest['counts']['min_awakening_slots_per_essence']==2
 assert manifest['counts']['max_awakening_slots_per_essence']==5
 assert manifest['counts']['max_awakening_slots']==20
 print('PASS: v0.10 configurable ability slots 2-5 and four-panel profile')
+
+# v0.11 — every essence has positive attribute weights matching editable CSV.
+import csv
+attr_rows=list(csv.DictReader((ROOT/'Data/essence_attribute_weights.csv').open(encoding='utf-8')))
+assert len(attr_rows)==226
+csv_by_name={row['essence']:row for row in attr_rows}
+assert len(csv_by_name)==226 and set(csv_by_name)==all_essences
+for source_path in ('NormalEssences','ConfluenceEssences'):
+    defs=definitions('1.7/Defs/EssenceDefs/'+source_path+'.xml','Essencebound.EssenceDef')
+    for essence in defs:
+        key=child_text(essence,'defName')
+        row=csv_by_name[key]
+        for attribute in ['power','speed','spirit','recovery']:
+            xmlval=float(child_text(essence,attribute+'Weight'))
+            assert xmlval>0 and xmlval==float(row[attribute+'_weight'])
+assert [csv_by_name['EB_Fire'][x+'_weight'] for x in ['power','speed','spirit','recovery']]==['6','1','5','1']
+assert [csv_by_name['EB_Balance'][x+'_weight'] for x in ['power','speed','spirit','recovery']]==['3','3','3','3']
+progression_source=(ROOT/'Source/EssenceProgression.cs').read_text()
+rank_source=(ROOT/'Source/Hediff_EssenceUser.cs').read_text()
+slot_source=(ROOT/'Source/EssenceAbilitySlot.cs').read_text()
+assert 'Rand.Value * (power + speed + spirit + recovery)' in progression_source
+assert 'Scribe_Values.Look(ref attribute' in progression_source
+assert 'Scribe_Collections.Look(ref affinities, "essenceAffinities", LookMode.Deep)' in rank_source
+assert 'Scribe_Collections.Look(ref essenceRanks, "essenceRanks", LookMode.Deep)' in rank_source
+assert 'Scribe_Values.Look(ref abilityRankIndex' in slot_source
+assert 'Scribe_Values.Look(ref rankWork' in slot_source
+assert 'requiredSlotCount = Math.Max(record.requiredSlotCount, SlotsPerEssence)' in rank_source
+assert 'required.Any(s => !s.IsAwakened || s.abilityRankIndex <= record.rankIndex)' in rank_source
+assert 'TryAdvanceEssenceRank(essenceName)' in rank_source
+assert [40,120,360,1080] == [int(x) for x in __import__('re').findall(r'([0-9]+)f',progression_source.split('private static readonly float[] Thresholds = {',1)[1].split('}',1)[0])]
+print('PASS: 226 weighted random essence affinities and save-safe progression gates')
