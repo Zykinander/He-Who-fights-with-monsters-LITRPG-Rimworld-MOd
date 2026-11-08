@@ -1,0 +1,33 @@
+name: Compile Essencebound RimWorld 1.7
+on:
+  workflow_dispatch:
+  push:
+    branches: [ main ]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '10.0.x'
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Verify data and assets
+        run: |
+          python Tests/test_database.py
+          python Tests/test_powers.py
+      - name: Compile DLL
+        run: dotnet build Source/Essencebound.Core.csproj -c Release --nologo
+      - name: Ensure DLL exists
+        run: test -s 1.7/Assemblies/Essencebound.Core.dll
+      - name: Prepare distributable
+        run: |
+          mkdir -p build/Essencebound
+          cp -r About 1.7 LoadFolders.xml build/Essencebound/
+          cd build && zip -qr ../Essencebound_1.7_COMPILED.zip Essencebound
+      - uses: actions/upload-artifact@v4
+        with:
+          name: Essencebound-1.7-compiled
+          path: Essencebound_1.7_COMPILED.zip
