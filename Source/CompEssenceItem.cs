@@ -51,7 +51,7 @@ namespace Essencebound
                 {
                     if (parent.stackCount > 1) parent.stackCount--;
                     else parent.Destroy(DestroyMode.Vanish);
-                    Messages.Message(selPawn.LabelShort + " absorbed the " + essence.label + " essence.",
+                    Messages.Message(selPawn.LabelShort + " absorbed the " + essence.label + " essence." + reason,
                         MessageTypeDefOf.PositiveEvent, false);
                     if (Hediff_EssenceUser.ForPawn(selPawn)?.NormalEssences.Count == 3)
                         Messages.Message(Hediff_EssenceUser.ForPawn(selPawn).ProfileText(), MessageTypeDefOf.NeutralEvent, false);

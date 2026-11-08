@@ -81,10 +81,20 @@ namespace Essencebound
 
         private static bool Damage(Pawn caster, Pawn target, string damageName, float amount, out string message)
         {
-            var def = DefDatabase<DamageDef>.GetNamedSilentFail(damageName);
-            if (def == null) { message = "Missing damage definition: " + damageName; return false; }
-            target.TakeDamage(new DamageInfo(def, amount, 0f, -1f, caster));
-            message = "Power struck its target.";
+            // Backwards compatibility for v0.6's incorrect damage definition.
+            string resolvedDamageName = damageName == "Burn" ? "Flame" : damageName;
+            var def = DefDatabase<DamageDef>.GetNamedSilentFail(resolvedDamageName);
+            if (def == null)
+            {
+                message = "Missing RimWorld damage definition: " + resolvedDamageName;
+                Log.Warning("[Essencebound] " + message);
+                return false;
+            }
+            var result = target.TakeDamage(new DamageInfo(def, amount, 0f, -1f, caster));
+            float inflicted = result.totalDamageDealt;
+            message = inflicted > 0f
+                ? "Hit " + target.LabelShort + " for " + inflicted.ToString("0.#") + " damage."
+                : "Hit " + target.LabelShort + ", but the damage was resisted or absorbed.";
             return true;
         }
 

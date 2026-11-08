@@ -13,6 +13,8 @@ namespace Essencebound
         public string awakeningStoneDefName = "";
         public string awakeningAspectDefName = "";
         public int nextUseTick;
+        // "innate" for absorption-granted powers; "stone" for awakening stones.
+        public string sourceKind = "";
 
         public bool IsAwakened => !string.IsNullOrEmpty(awakeningAspectDefName)
                               || !string.IsNullOrEmpty(abilityDefName);
@@ -31,6 +33,7 @@ namespace Essencebound
             Scribe_Values.Look(ref awakeningStoneDefName, "awakeningStoneDefName", "");
             Scribe_Values.Look(ref awakeningAspectDefName, "awakeningAspectDefName", "");
             Scribe_Values.Look(ref nextUseTick, "nextUseTick", 0);
+            Scribe_Values.Look(ref sourceKind, "sourceKind", "");
         }
     }
 }

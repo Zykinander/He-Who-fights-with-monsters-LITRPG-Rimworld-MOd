@@ -3,14 +3,14 @@
   <Essencebound.EssencePowerDef>
     <defName>EB_Power_EmberBolt</defName>
     <label>ember bolt</label>
-    <description>A focused ember strike against a hostile pawn.</description>
+    <description>Instant magic flame damage to a hostile pawn. Damage appears in combat feedback.</description>
     <effectKind>damage</effectKind>
     <targetKind>hostile</targetKind>
     <range>10</range>
-    <magnitude>6</magnitude>
+    <magnitude>9</magnitude>
     <cooldownTicks>450</cooldownTicks>
     <durationTicks>0</durationTicks>
-    <damageDefName>Burn</damageDefName>
+    <damageDefName>Flame</damageDefName>
     <iconPath>Essencebound/AwakeningStones/StoneFire</iconPath>
     <compatibleAspects>
       <li>EB_Aspect_Assault</li>
