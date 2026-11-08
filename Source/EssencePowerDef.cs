@@ -4,6 +4,12 @@ using Verse;
 namespace Essencebound
 {
     // Reusable effect template. Multiple essence/stone combinations can select the same power.
+    public sealed class EssenceStarterPowerDef : Def
+    {
+        public EssenceDef essence;
+        public EssencePowerDef power;
+    }
+
     public sealed class EssencePowerDef : Def
     {
         public string effectKind = "";

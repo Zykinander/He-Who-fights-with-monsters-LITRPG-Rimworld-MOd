@@ -1,0 +1,1359 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Defs>
+  <Essencebound.EssenceStarterPowerDef>
+    <defName>EB_Starter_Action</defName>
+    <label>action starter ability</label>
+    <essence>EB_Action</essence>
+    <power>EB_Power_EmberBolt</power>
+  </Essencebound.EssenceStarterPowerDef>
+  <Essencebound.EssenceStarterPowerDef>
+    <defName>EB_Starter_Adept</defName>
+    <label>adept starter ability</label>
+    <essence>EB_Adept</essence>
+    <power>EB_Power_KeenSight</power>
+  </Essencebound.EssenceStarterPowerDef>
+  <Essencebound.EssenceStarterPowerDef>
+    <defName>EB_Starter_Alchemy</defName>
+    <label>alchemy starter ability</label>
+    <essence>EB_Alchemy</essence>
+    <power>EB_Power_VerdantMend</power>
+  </Essencebound.EssenceStarterPowerDef>
+  <Essencebound.EssenceStarterPowerDef>
+    <defName>EB_Starter_Ambush</defName>
+    <label>ambush starter ability</label>
+    <essence>EB_Ambush</essence>
+    <power>EB_Power_MistVeil</power>
+  </Essencebound.EssenceStarterPowerDef>
+  <Essencebound.EssenceStarterPowerDef>
+    <defName>EB_Starter_Animate</defName>
+    <label>animate starter ability</label>
+    <essence>EB_Animate</essence>
+    <power>EB_Power_RallyingSurge</power>
+  </Essencebound.EssenceStarterPowerDef>
+  <Essencebound.EssenceStarterPowerDef>
+    <defName>EB_Starter_Anzu</defName>
+    <label>anzu starter ability</label>
+    <essence>EB_Anzu</essence>
+    <power>EB_Power_StormSpark</power>
+  </Essencebound.EssenceStarterPowerDef>
+  <Essencebound.EssenceStarterPowerDef>
+    <defName>EB_Starter_Armour</defName>
+    <label>armour starter ability</label>
+    <essence>EB_Armour</essence>
+    <power>EB_Power_GuardianWard</power>
+  </Essencebound.EssenceStarterPowerDef>
+  <Essencebound.EssenceStarterPowerDef>
+    <defName>EB_Starter_Arsenal</defName>
+    <label>arsenal starter ability</label>
+    <essence>EB_Arsenal</essence>
+    <power>EB_Power_ForcePulse</power>
+  </Essencebound.EssenceStarterPowerDef>
+  <Essencebound.EssenceStarterPowerDef>
+    <defName>EB_Starter_Avatar</defName>
+    <label>avatar starter ability</label>
+    <essence>EB_Avatar</essence>
+    <power>EB_Power_RallyingSurge</power>
+  </Essencebound.EssenceStarterPowerDef>
+  <Essencebound.EssenceStarterPowerDef>
+    <defName>EB_Starter_Axe</defName>
+    <label>axe starter ability</label>
+    <essence>EB_Axe</essence>
+    <power>EB_Power_ForcePulse</power>
+  </Essencebound.EssenceStarterPowerDef>
+  <Essencebound.EssenceStarterPowerDef>
+    <defName>EB_Starter_Balance</defName>
+    <label>balance starter ability</label>
+    <essence>EB_Balance</essence>
+    <power>EB_Power_RallyingSurge</power>
+  </Essencebound.EssenceStarterPowerDef>
+  <Essencebound.EssenceStarterPowerDef>
+    <defName>EB_Starter_Bat</defName>
+    <label>bat starter ability</label>
+    <essence>EB_Bat</essence>
+    <power>EB_Power_KeenSight</power>
+  </Essencebound.EssenceStarterPowerDef>
+  <Essencebound.EssenceStarterPowerDef>
+    <defName>EB_Starter_Battlefield</defName>
+    <label>battlefield starter ability</label>
+    <essence>EB_Battlefield</essence>
+    <power>EB_Power_ForcePulse</power>
+  </Essencebound.EssenceStarterPowerDef>
+  <Essencebound.EssenceStarterPowerDef>
+    <defName>EB_Starter_Bear</defName>
+    <label>bear starter ability</label>
+    <essence>EB_Bear</essence>
+    <power>EB_Power_RallyingSurge</power>
+  </Essencebound.EssenceStarterPowerDef>
+  <Essencebound.EssenceStarterPowerDef>
+    <defName>EB_Starter_Behemoth</defName>
+    <label>behemoth starter ability</label>
+    <essence>EB_Behemoth</essence>
+    <power>EB_Power_StoneSkin</power>
+  </Essencebound.EssenceStarterPowerDef>
+  <Essencebound.EssenceStarterPowerDef>
+    <defName>EB_Starter_Bird</defName>
+    <label>bird starter ability</label>
+    <essence>EB_Bird</essence>
+    <power>EB_Power_SwiftStep</power>
+  </Essencebound.EssenceStarterPowerDef>
+  <Essencebound.EssenceStarterPowerDef>
+    <defName>EB_Starter_Blight</defName>
+    <label>blight starter ability</label>
+    <essence>EB_Blight</essence>
+    <power>EB_Power_ForcePulse</power>
+  </Essencebound.EssenceStarterPowerDef>
+  <Essencebound.EssenceStarterPowerDef>
+    <defName>EB_Starter_Blood</defName>
+    <label>blood starter ability</label>
+    <essence>EB_Blood</essence>
+    <power>EB_Power_VerdantMend</power>
+  </Essencebound.EssenceStarterPowerDef>
+  <Essencebound.EssenceStarterPowerDef>
+    <defName>EB_Starter_Bone</defName>
+    <label>bone starter ability</label>
+    <essence>EB_Bone</essence>
+    <power>EB_Power_StoneSkin</power>
+  </Essencebound.EssenceStarterPowerDef>
+  <Essencebound.EssenceStarterPowerDef>
+    <defName>EB_Starter_Boundary</defName>
+    <label>boundary starter ability</label>
+    <essence>EB_Boundary</essence>
+    <power>EB_Power_GuardianWard</power>
+  </Essencebound.EssenceStarterPowerDef>
+  <Essencebound.EssenceStarterPowerDef>
+    <defName>EB_Starter_Bounty</defName>
+    <label>bounty starter ability</label>
+    <essence>EB_Bounty</essence>
+    <power>EB_Power_KeenSight</power>
+  </Essencebound.EssenceStarterPowerDef>
+  <Essencebound.EssenceStarterPowerDef>
+    <defName>EB_Starter_Bow</defName>
+    <label>bow starter ability</label>
+    <essence>EB_Bow</essence>
+    <power>EB_Power_KeenSight</power>
+  </Essencebound.EssenceStarterPowerDef>
+  <Essencebound.EssenceStarterPowerDef>
+    <defName>EB_Starter_Cage</defName>
+    <label>cage starter ability</label>
+    <essence>EB_Cage</essence>
+    <power>EB_Power_GuardianWard</power>
+  </Essencebound.EssenceStarterPowerDef>
+  <Essencebound.EssenceStarterPowerDef>
+    <defName>EB_Starter_Cat</defName>
+    <label>cat starter ability</label>
+    <essence>EB_Cat</essence>
+    <power>EB_Power_SwiftStep</power>
+  </Essencebound.EssenceStarterPowerDef>
+  <Essencebound.EssenceStarterPowerDef>
+    <defName>EB_Starter_Cataclysm</defName>
+    <label>cataclysm starter ability</label>
+    <essence>EB_Cataclysm</essence>
+    <power>EB_Power_EmberBolt</power>
+  </Essencebound.EssenceStarterPowerDef>
+  <Essencebound.EssenceStarterPowerDef>
+    <defName>EB_Starter_Cattle</defName>
+    <label>cattle starter ability</label>
+    <essence>EB_Cattle</essence>
+    <power>EB_Power_RallyingSurge</power>
+  </Essencebound.EssenceStarterPowerDef>
+  <Essencebound.EssenceStarterPowerDef>
+    <defName>EB_Starter_Chain</defName>
+    <label>chain starter ability</label>
+    <essence>EB_Chain</essence>
+    <power>EB_Power_ForcePulse</power>
+  </Essencebound.EssenceStarterPowerDef>
+  <Essencebound.EssenceStarterPowerDef>
+    <defName>EB_Starter_Chaotic</defName>
+    <label>chaotic starter ability</label>
+    <essence>EB_Chaotic</essence>
+    <power>EB_Power_ForcePulse</power>
+  </Essencebound.EssenceStarterPowerDef>
+  <Essencebound.EssenceStarterPowerDef>
+    <defName>EB_Starter_Charlatan</defName>
+    <label>charlatan starter ability</label>
+    <essence>EB_Charlatan</essence>
+    <power>EB_Power_MistVeil</power>
+  </Essencebound.EssenceStarterPowerDef>
+  <Essencebound.EssenceStarterPowerDef>
+    <defName>EB_Starter_Chimera</defName>
+    <label>chimera starter ability</label>
+    <essence>EB_Chimera</essence>
+    <power>EB_Power_StoneSkin</power>
+  </Essencebound.EssenceStarterPowerDef>
+  <Essencebound.EssenceStarterPowerDef>
+    <defName>EB_Starter_Claw</defName>
+    <label>claw starter ability</label>
+    <essence>EB_Claw</essence>
+    <power>EB_Power_KeenSight</power>
+  </Essencebound.EssenceStarterPowerDef>
+  <Essencebound.EssenceStarterPowerDef>
+    <defName>EB_Starter_Cloth</defName>
+    <label>cloth starter ability</label>
+    <essence>EB_Cloth</essence>
+    <power>EB_Power_GuardianWard</power>
+  </Essencebound.EssenceStarterPowerDef>
+  <Essencebound.EssenceStarterPowerDef>
+    <defName>EB_Starter_Cloud</defName>
+    <label>cloud starter ability</label>
+    <essence>EB_Cloud</essence>
+    <power>EB_Power_StormSpark</power>
+  </Essencebound.EssenceStarterPowerDef>
+  <Essencebound.EssenceStarterPowerDef>
+    <defName>EB_Starter_Cold</defName>
+    <label>cold starter ability</label>
+    <essence>EB_Cold</essence>
+    <power>EB_Power_FrostShard</power>
+  </Essencebound.EssenceStarterPowerDef>
+  <Essencebound.EssenceStarterPowerDef>
+    <defName>EB_Starter_Corrupt</defName>
+    <label>corrupt starter ability</label>
+    <essence>EB_Corrupt</essence>
+    <power>EB_Power_ForcePulse</power>
+  </Essencebound.EssenceStarterPowerDef>
+  <Essencebound.EssenceStarterPowerDef>
+    <defName>EB_Starter_Crystal</defName>
+    <label>crystal starter ability</label>
+    <essence>EB_Crystal</essence>
+    <power>EB_Power_StoneSkin</power>
+  </Essencebound.EssenceStarterPowerDef>
+  <Essencebound.EssenceStarterPowerDef>
+    <defName>EB_Starter_Cyborg</defName>
+    <label>cyborg starter ability</label>
+    <essence>EB_Cyborg</essence>
+    <power>EB_Power_StoneSkin</power>
+  </Essencebound.EssenceStarterPowerDef>
+  <Essencebound.EssenceStarterPowerDef>
+    <defName>EB_Starter_Cycle</defName>
+    <label>cycle starter ability</label>
+    <essence>EB_Cycle</essence>
+    <power>EB_Power_PurifyingTouch</power>
+  </Essencebound.EssenceStarterPowerDef>
+  <Essencebound.EssenceStarterPowerDef>
+    <defName>EB_Starter_Dance</defName>
+    <label>dance starter ability</label>
+    <essence>EB_Dance</essence>
+    <power>EB_Power_SwiftStep</power>
+  </Essencebound.EssenceStarterPowerDef>
+  <Essencebound.EssenceStarterPowerDef>
+    <defName>EB_Starter_Dark</defName>
+    <label>dark starter ability</label>
+    <essence>EB_Dark</essence>
+    <power>EB_Power_MistVeil</power>
+  </Essencebound.EssenceStarterPowerDef>
+  <Essencebound.EssenceStarterPowerDef>
+    <defName>EB_Starter_Dawn</defName>
+    <label>dawn starter ability</label>
+    <essence>EB_Dawn</essence>
+    <power>EB_Power_EmberBolt</power>
+  </Essencebound.EssenceStarterPowerDef>
+  <Essencebound.EssenceStarterPowerDef>
+    <defName>EB_Starter_Death</defName>
+    <label>death starter ability</label>
+    <essence>EB_Death</essence>
+    <power>EB_Power_ForcePulse</power>
+  </Essencebound.EssenceStarterPowerDef>
+  <Essencebound.EssenceStarterPowerDef>
+    <defName>EB_Starter_Deep</defName>
+    <label>deep starter ability</label>
+    <essence>EB_Deep</essence>
+    <power>EB_Power_FrostShard</power>
+  </Essencebound.EssenceStarterPowerDef>
+  <Essencebound.EssenceStarterPowerDef>
+    <defName>EB_Starter_Deer</defName>
+    <label>deer starter ability</label>
+    <essence>EB_Deer</essence>
+    <power>EB_Power_SwiftStep</power>
+  </Essencebound.EssenceStarterPowerDef>
+  <Essencebound.EssenceStarterPowerDef>
+    <defName>EB_Starter_Desolate</defName>
+    <label>desolate starter ability</label>
+    <essence>EB_Desolate</essence>
+    <power>EB_Power_MistVeil</power>
+  </Essencebound.EssenceStarterPowerDef>
+  <Essencebound.EssenceStarterPowerDef>
+    <defName>EB_Starter_Dimension</defName>
+    <label>dimension starter ability</label>
+    <essence>EB_Dimension</essence>
+    <power>EB_Power_SwiftStep</power>
+  </Essencebound.EssenceStarterPowerDef>
+  <Essencebound.EssenceStarterPowerDef>
+    <defName>EB_Starter_Discord</defName>
+    <label>discord starter ability</label>
+    <essence>EB_Discord</essence>
+    <power>EB_Power_ForcePulse</power>
+  </Essencebound.EssenceStarterPowerDef>
+  <Essencebound.EssenceStarterPowerDef>
+    <defName>EB_Starter_Discordant</defName>
+    <label>discordant starter ability</label>
+    <essence>EB_Discordant</essence>
+    <power>EB_Power_ForcePulse</power>
+  </Essencebound.EssenceStarterPowerDef>
+  <Essencebound.EssenceStarterPowerDef>
+    <defName>EB_Starter_Doom</defName>
+    <label>doom starter ability</label>
+    <essence>EB_Doom</essence>
+    <power>EB_Power_ForcePulse</power>
+  </Essencebound.EssenceStarterPowerDef>
+  <Essencebound.EssenceStarterPowerDef>
+    <defName>EB_Starter_Doppelganger</defName>
+    <label>doppelganger starter ability</label>
+    <essence>EB_Doppelganger</essence>
+    <power>EB_Power_MistVeil</power>
+  </Essencebound.EssenceStarterPowerDef>
+  <Essencebound.EssenceStarterPowerDef>
+    <defName>EB_Starter_Dragon</defName>
+    <label>dragon starter ability</label>
+    <essence>EB_Dragon</essence>
+    <power>EB_Power_EmberBolt</power>
+  </Essencebound.EssenceStarterPowerDef>
+  <Essencebound.EssenceStarterPowerDef>
+    <defName>EB_Starter_Duck</defName>
+    <label>duck starter ability</label>
+    <essence>EB_Duck</essence>
+    <power>EB_Power_SwiftStep</power>
+  </Essencebound.EssenceStarterPowerDef>
+  <Essencebound.EssenceStarterPowerDef>
+    <defName>EB_Starter_Dust</defName>
+    <label>dust starter ability</label>
+    <essence>EB_Dust</essence>
+    <power>EB_Power_MistVeil</power>
+  </Essencebound.EssenceStarterPowerDef>
+  <Essencebound.EssenceStarterPowerDef>
+    <defName>EB_Starter_Earth</defName>
+    <label>earth starter ability</label>
+    <essence>EB_Earth</essence>
+    <power>EB_Power_StoneSkin</power>
+  </Essencebound.EssenceStarterPowerDef>
+  <Essencebound.EssenceStarterPowerDef>
+    <defName>EB_Starter_Echo</defName>
+    <label>echo starter ability</label>
+    <essence>EB_Echo</essence>
+    <power>EB_Power_StormSpark</power>
+  </Essencebound.EssenceStarterPowerDef>
+  <Essencebound.EssenceStarterPowerDef>
+    <defName>EB_Starter_Eclipse</defName>
+    <label>eclipse starter ability</label>
+    <essence>EB_Eclipse</essence>
+    <power>EB_Power_MistVeil</power>
+  </Essencebound.EssenceStarterPowerDef>
+  <Essencebound.EssenceStarterPowerDef>
+    <defName>EB_Starter_Edifice</defName>
+    <label>edifice starter ability</label>
+    <essence>EB_Edifice</essence>
+    <power>EB_Power_GuardianWard</power>
+  </Essencebound.EssenceStarterPowerDef>
+  <Essencebound.EssenceStarterPowerDef>
+    <defName>EB_Starter_Effigy</defName>
+    <label>effigy starter ability</label>
+    <essence>EB_Effigy</essence>
+    <power>EB_Power_GuardianWard</power>
+  </Essencebound.EssenceStarterPowerDef>
+  <Essencebound.EssenceStarterPowerDef>
+    <defName>EB_Starter_Elemental</defName>
+    <label>elemental starter ability</label>
+    <essence>EB_Elemental</essence>
+    <power>EB_Power_EmberBolt</power>
+  </Essencebound.EssenceStarterPowerDef>
+  <Essencebound.EssenceStarterPowerDef>
+    <defName>EB_Starter_Empower</defName>
+    <label>empower starter ability</label>
+    <essence>EB_Empower</essence>
+    <power>EB_Power_RallyingSurge</power>
+  </Essencebound.EssenceStarterPowerDef>
+  <Essencebound.EssenceStarterPowerDef>
+    <defName>EB_Starter_Eye</defName>
+    <label>eye starter ability</label>
+    <essence>EB_Eye</essence>
+    <power>EB_Power_KeenSight</power>
+  </Essencebound.EssenceStarterPowerDef>
+  <Essencebound.EssenceStarterPowerDef>
+    <defName>EB_Starter_Feast</defName>
+    <label>feast starter ability</label>
+    <essence>EB_Feast</essence>
+    <power>EB_Power_RallyingSurge</power>
+  </Essencebound.EssenceStarterPowerDef>
+  <Essencebound.EssenceStarterPowerDef>
+    <defName>EB_Starter_Fertile</defName>
+    <label>fertile starter ability</label>
+    <essence>EB_Fertile</essence>
+    <power>EB_Power_VerdantMend</power>
+  </Essencebound.EssenceStarterPowerDef>
+  <Essencebound.EssenceStarterPowerDef>
+    <defName>EB_Starter_Fey</defName>
+    <label>fey starter ability</label>
+    <essence>EB_Fey</essence>
+    <power>EB_Power_MistVeil</power>
+  </Essencebound.EssenceStarterPowerDef>
+  <Essencebound.EssenceStarterPowerDef>
+    <defName>EB_Starter_Fire</defName>
+    <label>fire starter ability</label>
+    <essence>EB_Fire</essence>
+    <power>EB_Power_EmberBolt</power>
+  </Essencebound.EssenceStarterPowerDef>
+  <Essencebound.EssenceStarterPowerDef>
+    <defName>EB_Starter_Firebird</defName>
+    <label>firebird starter ability</label>
+    <essence>EB_Firebird</essence>
+    <power>EB_Power_EmberBolt</power>
+  </Essencebound.EssenceStarterPowerDef>
+  <Essencebound.EssenceStarterPowerDef>
+    <defName>EB_Starter_Fish</defName>
+    <label>fish starter ability</label>
+    <essence>EB_Fish</essence>
+    <power>EB_Power_FrostShard</power>
+  </Essencebound.EssenceStarterPowerDef>
+  <Essencebound.EssenceStarterPowerDef>
+    <defName>EB_Starter_Flea</defName>
+    <label>flea starter ability</label>
+    <essence>EB_Flea</essence>
+    <power>EB_Power_KeenSight</power>
+  </Essencebound.EssenceStarterPowerDef>
+  <Essencebound.EssenceStarterPowerDef>
+    <defName>EB_Starter_Flesh</defName>
+    <label>flesh starter ability</label>
+    <essence>EB_Flesh</essence>
+    <power>EB_Power_StoneSkin</power>
+  </Essencebound.EssenceStarterPowerDef>
+  <Essencebound.EssenceStarterPowerDef>
+    <defName>EB_Starter_Foot</defName>
+    <label>foot starter ability</label>
+    <essence>EB_Foot</essence>
+    <power>EB_Power_SwiftStep</power>
+  </Essencebound.EssenceStarterPowerDef>
+  <Essencebound.EssenceStarterPowerDef>
+    <defName>EB_Starter_Force</defName>
+    <label>force starter ability</label>
+    <essence>EB_Force</essence>
+    <power>EB_Power_ForcePulse</power>
+  </Essencebound.EssenceStarterPowerDef>
+  <Essencebound.EssenceStarterPowerDef>
+    <defName>EB_Starter_Forge</defName>
+    <label>forge starter ability</label>
+    <essence>EB_Forge</essence>
+    <power>EB_Power_EmberBolt</power>
+  </Essencebound.EssenceStarterPowerDef>
+  <Essencebound.EssenceStarterPowerDef>
+    <defName>EB_Starter_Fortress</defName>
+    <label>fortress starter ability</label>
+    <essence>EB_Fortress</essence>
+    <power>EB_Power_GuardianWard</power>
+  </Essencebound.EssenceStarterPowerDef>
+  <Essencebound.EssenceStarterPowerDef>
+    <defName>EB_Starter_Frog</defName>
+    <label>frog starter ability</label>
+    <essence>EB_Frog</essence>
+    <power>EB_Power_SwiftStep</power>
+  </Essencebound.EssenceStarterPowerDef>
+  <Essencebound.EssenceStarterPowerDef>
+    <defName>EB_Starter_Fungus</defName>
+    <label>fungus starter ability</label>
+    <essence>EB_Fungus</essence>
+    <power>EB_Power_VerdantMend</power>
+  </Essencebound.EssenceStarterPowerDef>
+  <Essencebound.EssenceStarterPowerDef>
+    <defName>EB_Starter_Garuda</defName>
+    <label>garuda starter ability</label>
+    <essence>EB_Garuda</essence>
+    <power>EB_Power_SwiftStep</power>
+  </Essencebound.EssenceStarterPowerDef>
+  <Essencebound.EssenceStarterPowerDef>
+    <defName>EB_Starter_Gate</defName>
+    <label>gate starter ability</label>
+    <essence>EB_Gate</essence>
+    <power>EB_Power_SwiftStep</power>
+  </Essencebound.EssenceStarterPowerDef>
+  <Essencebound.EssenceStarterPowerDef>
+    <defName>EB_Starter_Gathering</defName>
+    <label>gathering starter ability</label>
+    <essence>EB_Gathering</essence>
+    <power>EB_Power_VerdantMend</power>
+  </Essencebound.EssenceStarterPowerDef>
+  <Essencebound.EssenceStarterPowerDef>
+    <defName>EB_Starter_Glass</defName>
+    <label>glass starter ability</label>
+    <essence>EB_Glass</essence>
+    <power>EB_Power_StoneSkin</power>
+  </Essencebound.EssenceStarterPowerDef>
+  <Essencebound.EssenceStarterPowerDef>
+    <defName>EB_Starter_Glimeron</defName>
+    <label>glimeron starter ability</label>
+    <essence>EB_Glimeron</essence>
+    <power>EB_Power_KeenSight</power>
+  </Essencebound.EssenceStarterPowerDef>
+  <Essencebound.EssenceStarterPowerDef>
+    <defName>EB_Starter_Goat</defName>
+    <label>goat starter ability</label>
+    <essence>EB_Goat</essence>
+    <power>EB_Power_RallyingSurge</power>
+  </Essencebound.EssenceStarterPowerDef>
+  <Essencebound.EssenceStarterPowerDef>
+    <defName>EB_Starter_Gorgon</defName>
+    <label>gorgon starter ability</label>
+    <essence>EB_Gorgon</essence>
+    <power>EB_Power_StoneSkin</power>
+  </Essencebound.EssenceStarterPowerDef>
+  <Essencebound.EssenceStarterPowerDef>
+    <defName>EB_Starter_Griffin</defName>
+    <label>griffin starter ability</label>
+    <essence>EB_Griffin</essence>
+    <power>EB_Power_SwiftStep</power>
+  </Essencebound.EssenceStarterPowerDef>
+  <Essencebound.EssenceStarterPowerDef>
+    <defName>EB_Starter_Growth</defName>
+    <label>growth starter ability</label>
+    <essence>EB_Growth</essence>
+    <power>EB_Power_VerdantMend</power>
+  </Essencebound.EssenceStarterPowerDef>
+  <Essencebound.EssenceStarterPowerDef>
+    <defName>EB_Starter_Guardian</defName>
+    <label>guardian starter ability</label>
+    <essence>EB_Guardian</essence>
+    <power>EB_Power_GuardianWard</power>
+  </Essencebound.EssenceStarterPowerDef>
+  <Essencebound.EssenceStarterPowerDef>
+    <defName>EB_Starter_Gun</defName>
+    <label>gun starter ability</label>
+    <essence>EB_Gun</essence>
+    <power>EB_Power_ForcePulse</power>
+  </Essencebound.EssenceStarterPowerDef>
+  <Essencebound.EssenceStarterPowerDef>
+    <defName>EB_Starter_Hair</defName>
+    <label>hair starter ability</label>
+    <essence>EB_Hair</essence>
+    <power>EB_Power_GuardianWard</power>
+  </Essencebound.EssenceStarterPowerDef>
+  <Essencebound.EssenceStarterPowerDef>
+    <defName>EB_Starter_Hammer</defName>
+    <label>hammer starter ability</label>
+    <essence>EB_Hammer</essence>
+    <power>EB_Power_ForcePulse</power>
+  </Essencebound.EssenceStarterPowerDef>
+  <Essencebound.EssenceStarterPowerDef>
+    <defName>EB_Starter_Hand</defName>
+    <label>hand starter ability</label>
+    <essence>EB_Hand</essence>
+    <power>EB_Power_ForcePulse</power>
+  </Essencebound.EssenceStarterPowerDef>
+  <Essencebound.EssenceStarterPowerDef>
+    <defName>EB_Starter_Harmonic</defName>
+    <label>harmonic starter ability</label>
+    <essence>EB_Harmonic</essence>
+    <power>EB_Power_RallyingSurge</power>
+  </Essencebound.EssenceStarterPowerDef>
+  <Essencebound.EssenceStarterPowerDef>
+    <defName>EB_Starter_Harpy</defName>
+    <label>harpy starter ability</label>
+    <essence>EB_Harpy</essence>
+    <power>EB_Power_SwiftStep</power>
+  </Essencebound.EssenceStarterPowerDef>
+  <Essencebound.EssenceStarterPowerDef>
+    <defName>EB_Starter_Harvest</defName>
+    <label>harvest starter ability</label>
+    <essence>EB_Harvest</essence>
+    <power>EB_Power_VerdantMend</power>
+  </Essencebound.EssenceStarterPowerDef>
+  <Essencebound.EssenceStarterPowerDef>
+    <defName>EB_Starter_Hunger</defName>
+    <label>hunger starter ability</label>
+    <essence>EB_Hunger</essence>
+    <power>EB_Power_ForcePulse</power>
+  </Essencebound.EssenceStarterPowerDef>
+  <Essencebound.EssenceStarterPowerDef>
+    <defName>EB_Starter_Hunt</defName>
+    <label>hunt starter ability</label>
+    <essence>EB_Hunt</essence>
+    <power>EB_Power_KeenSight</power>
+  </Essencebound.EssenceStarterPowerDef>
+  <Essencebound.EssenceStarterPowerDef>
+    <defName>EB_Starter_Hydra</defName>
+    <label>hydra starter ability</label>
+    <essence>EB_Hydra</essence>
+    <power>EB_Power_VerdantMend</power>
+  </Essencebound.EssenceStarterPowerDef>
+  <Essencebound.EssenceStarterPowerDef>
+    <defName>EB_Starter_Ice</defName>
+    <label>ice starter ability</label>
+    <essence>EB_Ice</essence>
+    <power>EB_Power_FrostShard</power>
+  </Essencebound.EssenceStarterPowerDef>
+  <Essencebound.EssenceStarterPowerDef>
+    <defName>EB_Starter_Immortal</defName>
+    <label>immortal starter ability</label>
+    <essence>EB_Immortal</essence>
+    <power>EB_Power_VerdantMend</power>
+  </Essencebound.EssenceStarterPowerDef>
+  <Essencebound.EssenceStarterPowerDef>
+    <defName>EB_Starter_Iron</defName>
+    <label>iron starter ability</label>
+    <essence>EB_Iron</essence>
+    <power>EB_Power_StoneSkin</power>
+  </Essencebound.EssenceStarterPowerDef>
+  <Essencebound.EssenceStarterPowerDef>
+    <defName>EB_Starter_Juggernaut</defName>
+    <label>juggernaut starter ability</label>
+    <essence>EB_Juggernaut</essence>
+    <power>EB_Power_StoneSkin</power>
+  </Essencebound.EssenceStarterPowerDef>
+  <Essencebound.EssenceStarterPowerDef>
+    <defName>EB_Starter_Karmic</defName>
+    <label>karmic starter ability</label>
+    <essence>EB_Karmic</essence>
+    <power>EB_Power_RallyingSurge</power>
+  </Essencebound.EssenceStarterPowerDef>
+  <Essencebound.EssenceStarterPowerDef>
+    <defName>EB_Starter_Knife</defName>
+    <label>knife starter ability</label>
+    <essence>EB_Knife</essence>
+    <power>EB_Power_ForcePulse</power>
+  </Essencebound.EssenceStarterPowerDef>
+  <Essencebound.EssenceStarterPowerDef>
+    <defName>EB_Starter_Knowledge</defName>
+    <label>knowledge starter ability</label>
+    <essence>EB_Knowledge</essence>
+    <power>EB_Power_KeenSight</power>
+  </Essencebound.EssenceStarterPowerDef>
+  <Essencebound.EssenceStarterPowerDef>
+    <defName>EB_Starter_Kraken</defName>
+    <label>kraken starter ability</label>
+    <essence>EB_Kraken</essence>
+    <power>EB_Power_FrostShard</power>
+  </Essencebound.EssenceStarterPowerDef>
+  <Essencebound.EssenceStarterPowerDef>
+    <defName>EB_Starter_Leviathan</defName>
+    <label>leviathan starter ability</label>
+    <essence>EB_Leviathan</essence>
+    <power>EB_Power_FrostShard</power>
+  </Essencebound.EssenceStarterPowerDef>
+  <Essencebound.EssenceStarterPowerDef>
+    <defName>EB_Starter_Life</defName>
+    <label>life starter ability</label>
+    <essence>EB_Life</essence>
+    <power>EB_Power_VerdantMend</power>
+  </Essencebound.EssenceStarterPowerDef>
+  <Essencebound.EssenceStarterPowerDef>
+    <defName>EB_Starter_Light</defName>
+    <label>light starter ability</label>
+    <essence>EB_Light</essence>
+    <power>EB_Power_PurifyingTouch</power>
+  </Essencebound.EssenceStarterPowerDef>
+  <Essencebound.EssenceStarterPowerDef>
+    <defName>EB_Starter_Lightning</defName>
+    <label>lightning starter ability</label>
+    <essence>EB_Lightning</essence>
+    <power>EB_Power_StormSpark</power>
+  </Essencebound.EssenceStarterPowerDef>
+  <Essencebound.EssenceStarterPowerDef>
+    <defName>EB_Starter_Lizard</defName>
+    <label>lizard starter ability</label>
+    <essence>EB_Lizard</essence>
+    <power>EB_Power_StoneSkin</power>
+  </Essencebound.EssenceStarterPowerDef>
+  <Essencebound.EssenceStarterPowerDef>
+    <defName>EB_Starter_Locust</defName>
+    <label>locust starter ability</label>
+    <essence>EB_Locust</essence>
+    <power>EB_Power_ForcePulse</power>
+  </Essencebound.EssenceStarterPowerDef>
+  <Essencebound.EssenceStarterPowerDef>
+    <defName>EB_Starter_Lotus</defName>
+    <label>lotus starter ability</label>
+    <essence>EB_Lotus</essence>
+    <power>EB_Power_VerdantMend</power>
+  </Essencebound.EssenceStarterPowerDef>
+  <Essencebound.EssenceStarterPowerDef>
+    <defName>EB_Starter_Magic</defName>
+    <label>magic starter ability</label>
+    <essence>EB_Magic</essence>
+    <power>EB_Power_StormSpark</power>
+  </Essencebound.EssenceStarterPowerDef>
+  <Essencebound.EssenceStarterPowerDef>
+    <defName>EB_Starter_Magitech</defName>
+    <label>magitech starter ability</label>
+    <essence>EB_Magitech</essence>
+    <power>EB_Power_StormSpark</power>
+  </Essencebound.EssenceStarterPowerDef>
+  <Essencebound.EssenceStarterPowerDef>
+    <defName>EB_Starter_Malign</defName>
+    <label>malign starter ability</label>
+    <essence>EB_Malign</essence>
+    <power>EB_Power_MistVeil</power>
+  </Essencebound.EssenceStarterPowerDef>
+  <Essencebound.EssenceStarterPowerDef>
+    <defName>EB_Starter_Manatee</defName>
+    <label>manatee starter ability</label>
+    <essence>EB_Manatee</essence>
+    <power>EB_Power_FrostShard</power>
+  </Essencebound.EssenceStarterPowerDef>
+  <Essencebound.EssenceStarterPowerDef>
+    <defName>EB_Starter_Manticore</defName>
+    <label>manticore starter ability</label>
+    <essence>EB_Manticore</essence>
+    <power>EB_Power_ForcePulse</power>
+  </Essencebound.EssenceStarterPowerDef>
+  <Essencebound.EssenceStarterPowerDef>
+    <defName>EB_Starter_Master</defName>
+    <label>master starter ability</label>
+    <essence>EB_Master</essence>
+    <power>EB_Power_KeenSight</power>
+  </Essencebound.EssenceStarterPowerDef>
+  <Essencebound.EssenceStarterPowerDef>
+    <defName>EB_Starter_Might</defName>
+    <label>might starter ability</label>
+    <essence>EB_Might</essence>
+    <power>EB_Power_RallyingSurge</power>
+  </Essencebound.EssenceStarterPowerDef>
+  <Essencebound.EssenceStarterPowerDef>
+    <defName>EB_Starter_Ministration</defName>
+    <label>ministration starter ability</label>
+    <essence>EB_Ministration</essence>
+    <power>EB_Power_VerdantMend</power>
+  </Essencebound.EssenceStarterPowerDef>
+  <Essencebound.EssenceStarterPowerDef>
+    <defName>EB_Starter_Minotaur</defName>
+    <label>minotaur starter ability</label>
+    <essence>EB_Minotaur</essence>
+    <power>EB_Power_StoneSkin</power>
+  </Essencebound.EssenceStarterPowerDef>
+  <Essencebound.EssenceStarterPowerDef>
+    <defName>EB_Starter_Mirage</defName>
+    <label>mirage starter ability</label>
+    <essence>EB_Mirage</essence>
+    <power>EB_Power_MistVeil</power>
+  </Essencebound.EssenceStarterPowerDef>
+  <Essencebound.EssenceStarterPowerDef>
+    <defName>EB_Starter_Mirror</defName>
+    <label>mirror starter ability</label>
+    <essence>EB_Mirror</essence>
+    <power>EB_Power_MistVeil</power>
+  </Essencebound.EssenceStarterPowerDef>
+  <Essencebound.EssenceStarterPowerDef>
+    <defName>EB_Starter_Monolith</defName>
+    <label>monolith starter ability</label>
+    <essence>EB_Monolith</essence>
+    <power>EB_Power_StoneSkin</power>
+  </Essencebound.EssenceStarterPowerDef>
+  <Essencebound.EssenceStarterPowerDef>
+    <defName>EB_Starter_Moon</defName>
+    <label>moon starter ability</label>
+    <essence>EB_Moon</essence>
+    <power>EB_Power_MistVeil</power>
+  </Essencebound.EssenceStarterPowerDef>
+  <Essencebound.EssenceStarterPowerDef>
+    <defName>EB_Starter_Mouse</defName>
+    <label>mouse starter ability</label>
+    <essence>EB_Mouse</essence>
+    <power>EB_Power_KeenSight</power>
+  </Essencebound.EssenceStarterPowerDef>
+  <Essencebound.EssenceStarterPowerDef>
+    <defName>EB_Starter_Myriad</defName>
+    <label>myriad starter ability</label>
+    <essence>EB_Myriad</essence>
+    <power>EB_Power_RallyingSurge</power>
+  </Essencebound.EssenceStarterPowerDef>
+  <Essencebound.EssenceStarterPowerDef>
+    <defName>EB_Starter_Mystic</defName>
+    <label>mystic starter ability</label>
+    <essence>EB_Mystic</essence>
+    <power>EB_Power_RallyingSurge</power>
+  </Essencebound.EssenceStarterPowerDef>
+  <Essencebound.EssenceStarterPowerDef>
+    <defName>EB_Starter_Nebula</defName>
+    <label>nebula starter ability</label>
+    <essence>EB_Nebula</essence>
+    <power>EB_Power_StormSpark</power>
+  </Essencebound.EssenceStarterPowerDef>
+  <Essencebound.EssenceStarterPowerDef>
+    <defName>EB_Starter_Needle</defName>
+    <label>needle starter ability</label>
+    <essence>EB_Needle</essence>
+    <power>EB_Power_ForcePulse</power>
+  </Essencebound.EssenceStarterPowerDef>
+  <Essencebound.EssenceStarterPowerDef>
+    <defName>EB_Starter_Nemesis</defName>
+    <label>nemesis starter ability</label>
+    <essence>EB_Nemesis</essence>
+    <power>EB_Power_ForcePulse</power>
+  </Essencebound.EssenceStarterPowerDef>
+  <Essencebound.EssenceStarterPowerDef>
+    <defName>EB_Starter_Network</defName>
+    <label>network starter ability</label>
+    <essence>EB_Network</essence>
+    <power>EB_Power_KeenSight</power>
+  </Essencebound.EssenceStarterPowerDef>
+  <Essencebound.EssenceStarterPowerDef>
+    <defName>EB_Starter_Oasis</defName>
+    <label>oasis starter ability</label>
+    <essence>EB_Oasis</essence>
+    <power>EB_Power_FrostShard</power>
+  </Essencebound.EssenceStarterPowerDef>
+  <Essencebound.EssenceStarterPowerDef>
+    <defName>EB_Starter_Ocean</defName>
+    <label>ocean starter ability</label>
+    <essence>EB_Ocean</essence>
+    <power>EB_Power_FrostShard</power>
+  </Essencebound.EssenceStarterPowerDef>
+  <Essencebound.EssenceStarterPowerDef>
+    <defName>EB_Starter_Octopus</defName>
+    <label>octopus starter ability</label>
+    <essence>EB_Octopus</essence>
+    <power>EB_Power_FrostShard</power>
+  </Essencebound.EssenceStarterPowerDef>
+  <Essencebound.EssenceStarterPowerDef>
+    <defName>EB_Starter_Omen</defName>
+    <label>omen starter ability</label>
+    <essence>EB_Omen</essence>
+    <power>EB_Power_MistVeil</power>
+  </Essencebound.EssenceStarterPowerDef>
+  <Essencebound.EssenceStarterPowerDef>
+    <defName>EB_Starter_Onslaught</defName>
+    <label>onslaught starter ability</label>
+    <essence>EB_Onslaught</essence>
+    <power>EB_Power_ForcePulse</power>
+  </Essencebound.EssenceStarterPowerDef>
+  <Essencebound.EssenceStarterPowerDef>
+    <defName>EB_Starter_Pangolin</defName>
+    <label>pangolin starter ability</label>
+    <essence>EB_Pangolin</essence>
+    <power>EB_Power_StoneSkin</power>
+  </Essencebound.EssenceStarterPowerDef>
+  <Essencebound.EssenceStarterPowerDef>
+    <defName>EB_Starter_Paper</defName>
+    <label>paper starter ability</label>
+    <essence>EB_Paper</essence>
+    <power>EB_Power_KeenSight</power>
+  </Essencebound.EssenceStarterPowerDef>
+  <Essencebound.EssenceStarterPowerDef>
+    <defName>EB_Starter_Phantasmagoria</defName>
+    <label>phantasmagoria starter ability</label>
+    <essence>EB_Phantasmagoria</essence>
+    <power>EB_Power_MistVeil</power>
+  </Essencebound.EssenceStarterPowerDef>
+  <Essencebound.EssenceStarterPowerDef>
+    <defName>EB_Starter_Phoenix</defName>
+    <label>phoenix starter ability</label>
+    <essence>EB_Phoenix</essence>
+    <power>EB_Power_EmberBolt</power>
+  </Essencebound.EssenceStarterPowerDef>
+  <Essencebound.EssenceStarterPowerDef>
+    <defName>EB_Starter_Plant</defName>
+    <label>plant starter ability</label>
+    <essence>EB_Plant</essence>
+    <power>EB_Power_VerdantMend</power>
+  </Essencebound.EssenceStarterPowerDef>
+  <Essencebound.EssenceStarterPowerDef>
+    <defName>EB_Starter_Potent</defName>
+    <label>potent starter ability</label>
+    <essence>EB_Potent</essence>
+    <power>EB_Power_RallyingSurge</power>
+  </Essencebound.EssenceStarterPowerDef>
+  <Essencebound.EssenceStarterPowerDef>
+    <defName>EB_Starter_Predatory</defName>
+    <label>predatory starter ability</label>
+    <essence>EB_Predatory</essence>
+    <power>EB_Power_ForcePulse</power>
+  </Essencebound.EssenceStarterPowerDef>
+  <Essencebound.EssenceStarterPowerDef>
+    <defName>EB_Starter_Prison</defName>
+    <label>prison starter ability</label>
+    <essence>EB_Prison</essence>
+    <power>EB_Power_GuardianWard</power>
+  </Essencebound.EssenceStarterPowerDef>
+  <Essencebound.EssenceStarterPowerDef>
+    <defName>EB_Starter_Prosperity</defName>
+    <label>prosperity starter ability</label>
+    <essence>EB_Prosperity</essence>
+    <power>EB_Power_RallyingSurge</power>
+  </Essencebound.EssenceStarterPowerDef>
+  <Essencebound.EssenceStarterPowerDef>
+    <defName>EB_Starter_Pure</defName>
+    <label>pure starter ability</label>
+    <essence>EB_Pure</essence>
+    <power>EB_Power_PurifyingTouch</power>
+  </Essencebound.EssenceStarterPowerDef>
+  <Essencebound.EssenceStarterPowerDef>
+    <defName>EB_Starter_Rabbit</defName>
+    <label>rabbit starter ability</label>
+    <essence>EB_Rabbit</essence>
+    <power>EB_Power_SwiftStep</power>
+  </Essencebound.EssenceStarterPowerDef>
+  <Essencebound.EssenceStarterPowerDef>
+    <defName>EB_Starter_Rake</defName>
+    <label>rake starter ability</label>
+    <essence>EB_Rake</essence>
+    <power>EB_Power_VerdantMend</power>
+  </Essencebound.EssenceStarterPowerDef>
+  <Essencebound.EssenceStarterPowerDef>
+    <defName>EB_Starter_Rat</defName>
+    <label>rat starter ability</label>
+    <essence>EB_Rat</essence>
+    <power>EB_Power_KeenSight</power>
+  </Essencebound.EssenceStarterPowerDef>
+  <Essencebound.EssenceStarterPowerDef>
+    <defName>EB_Starter_Refracting</defName>
+    <label>refracting starter ability</label>
+    <essence>EB_Refracting</essence>
+    <power>EB_Power_KeenSight</power>
+  </Essencebound.EssenceStarterPowerDef>
+  <Essencebound.EssenceStarterPowerDef>
+    <defName>EB_Starter_Renewal</defName>
+    <label>renewal starter ability</label>
+    <essence>EB_Renewal</essence>
+    <power>EB_Power_VerdantMend</power>
+  </Essencebound.EssenceStarterPowerDef>
+  <Essencebound.EssenceStarterPowerDef>
+    <defName>EB_Starter_Resolute</defName>
+    <label>resolute starter ability</label>
+    <essence>EB_Resolute</essence>
+    <power>EB_Power_GuardianWard</power>
+  </Essencebound.EssenceStarterPowerDef>
+  <Essencebound.EssenceStarterPowerDef>
+    <defName>EB_Starter_Resonating</defName>
+    <label>resonating starter ability</label>
+    <essence>EB_Resonating</essence>
+    <power>EB_Power_RallyingSurge</power>
+  </Essencebound.EssenceStarterPowerDef>
+  <Essencebound.EssenceStarterPowerDef>
+    <defName>EB_Starter_Roc</defName>
+    <label>roc starter ability</label>
+    <essence>EB_Roc</essence>
+    <power>EB_Power_StormSpark</power>
+  </Essencebound.EssenceStarterPowerDef>
+  <Essencebound.EssenceStarterPowerDef>
+    <defName>EB_Starter_Rune</defName>
+    <label>rune starter ability</label>
+    <essence>EB_Rune</essence>
+    <power>EB_Power_KeenSight</power>
+  </Essencebound.EssenceStarterPowerDef>
+  <Essencebound.EssenceStarterPowerDef>
+    <defName>EB_Starter_Sacrifice</defName>
+    <label>sacrifice starter ability</label>
+    <essence>EB_Sacrifice</essence>
+    <power>EB_Power_PurifyingTouch</power>
+  </Essencebound.EssenceStarterPowerDef>
+  <Essencebound.EssenceStarterPowerDef>
+    <defName>EB_Starter_Sand</defName>
+    <label>sand starter ability</label>
+    <essence>EB_Sand</essence>
+    <power>EB_Power_StoneSkin</power>
+  </Essencebound.EssenceStarterPowerDef>
+  <Essencebound.EssenceStarterPowerDef>
+    <defName>EB_Starter_Sceptre</defName>
+    <label>sceptre starter ability</label>
+    <essence>EB_Sceptre</essence>
+    <power>EB_Power_RallyingSurge</power>
+  </Essencebound.EssenceStarterPowerDef>
+  <Essencebound.EssenceStarterPowerDef>
+    <defName>EB_Starter_Scribe</defName>
+    <label>scribe starter ability</label>
+    <essence>EB_Scribe</essence>
+    <power>EB_Power_KeenSight</power>
+  </Essencebound.EssenceStarterPowerDef>
+  <Essencebound.EssenceStarterPowerDef>
+    <defName>EB_Starter_Serene</defName>
+    <label>serene starter ability</label>
+    <essence>EB_Serene</essence>
+    <power>EB_Power_PurifyingTouch</power>
+  </Essencebound.EssenceStarterPowerDef>
+  <Essencebound.EssenceStarterPowerDef>
+    <defName>EB_Starter_Serpent</defName>
+    <label>serpent starter ability</label>
+    <essence>EB_Serpent</essence>
+    <power>EB_Power_MistVeil</power>
+  </Essencebound.EssenceStarterPowerDef>
+  <Essencebound.EssenceStarterPowerDef>
+    <defName>EB_Starter_Shark</defName>
+    <label>shark starter ability</label>
+    <essence>EB_Shark</essence>
+    <power>EB_Power_ForcePulse</power>
+  </Essencebound.EssenceStarterPowerDef>
+  <Essencebound.EssenceStarterPowerDef>
+    <defName>EB_Starter_Shield</defName>
+    <label>shield starter ability</label>
+    <essence>EB_Shield</essence>
+    <power>EB_Power_GuardianWard</power>
+  </Essencebound.EssenceStarterPowerDef>
+  <Essencebound.EssenceStarterPowerDef>
+    <defName>EB_Starter_Shimmer</defName>
+    <label>shimmer starter ability</label>
+    <essence>EB_Shimmer</essence>
+    <power>EB_Power_MistVeil</power>
+  </Essencebound.EssenceStarterPowerDef>
+  <Essencebound.EssenceStarterPowerDef>
+    <defName>EB_Starter_Ship</defName>
+    <label>ship starter ability</label>
+    <essence>EB_Ship</essence>
+    <power>EB_Power_SwiftStep</power>
+  </Essencebound.EssenceStarterPowerDef>
+  <Essencebound.EssenceStarterPowerDef>
+    <defName>EB_Starter_Shovel</defName>
+    <label>shovel starter ability</label>
+    <essence>EB_Shovel</essence>
+    <power>EB_Power_StoneSkin</power>
+  </Essencebound.EssenceStarterPowerDef>
+  <Essencebound.EssenceStarterPowerDef>
+    <defName>EB_Starter_Sickle</defName>
+    <label>sickle starter ability</label>
+    <essence>EB_Sickle</essence>
+    <power>EB_Power_VerdantMend</power>
+  </Essencebound.EssenceStarterPowerDef>
+  <Essencebound.EssenceStarterPowerDef>
+    <defName>EB_Starter_Simulacrum</defName>
+    <label>simulacrum starter ability</label>
+    <essence>EB_Simulacrum</essence>
+    <power>EB_Power_MistVeil</power>
+  </Essencebound.EssenceStarterPowerDef>
+  <Essencebound.EssenceStarterPowerDef>
+    <defName>EB_Starter_Sin</defName>
+    <label>sin starter ability</label>
+    <essence>EB_Sin</essence>
+    <power>EB_Power_ForcePulse</power>
+  </Essencebound.EssenceStarterPowerDef>
+  <Essencebound.EssenceStarterPowerDef>
+    <defName>EB_Starter_Skirmish</defName>
+    <label>skirmish starter ability</label>
+    <essence>EB_Skirmish</essence>
+    <power>EB_Power_SwiftStep</power>
+  </Essencebound.EssenceStarterPowerDef>
+  <Essencebound.EssenceStarterPowerDef>
+    <defName>EB_Starter_Skunk</defName>
+    <label>skunk starter ability</label>
+    <essence>EB_Skunk</essence>
+    <power>EB_Power_MistVeil</power>
+  </Essencebound.EssenceStarterPowerDef>
+  <Essencebound.EssenceStarterPowerDef>
+    <defName>EB_Starter_Sky</defName>
+    <label>sky starter ability</label>
+    <essence>EB_Sky</essence>
+    <power>EB_Power_StormSpark</power>
+  </Essencebound.EssenceStarterPowerDef>
+  <Essencebound.EssenceStarterPowerDef>
+    <defName>EB_Starter_Smoke</defName>
+    <label>smoke starter ability</label>
+    <essence>EB_Smoke</essence>
+    <power>EB_Power_MistVeil</power>
+  </Essencebound.EssenceStarterPowerDef>
+  <Essencebound.EssenceStarterPowerDef>
+    <defName>EB_Starter_Snake</defName>
+    <label>snake starter ability</label>
+    <essence>EB_Snake</essence>
+    <power>EB_Power_MistVeil</power>
+  </Essencebound.EssenceStarterPowerDef>
+  <Essencebound.EssenceStarterPowerDef>
+    <defName>EB_Starter_Soaring</defName>
+    <label>soaring starter ability</label>
+    <essence>EB_Soaring</essence>
+    <power>EB_Power_SwiftStep</power>
+  </Essencebound.EssenceStarterPowerDef>
+  <Essencebound.EssenceStarterPowerDef>
+    <defName>EB_Starter_Song</defName>
+    <label>song starter ability</label>
+    <essence>EB_Song</essence>
+    <power>EB_Power_RallyingSurge</power>
+  </Essencebound.EssenceStarterPowerDef>
+  <Essencebound.EssenceStarterPowerDef>
+    <defName>EB_Starter_Sovereign</defName>
+    <label>sovereign starter ability</label>
+    <essence>EB_Sovereign</essence>
+    <power>EB_Power_GuardianWard</power>
+  </Essencebound.EssenceStarterPowerDef>
+  <Essencebound.EssenceStarterPowerDef>
+    <defName>EB_Starter_Spear</defName>
+    <label>spear starter ability</label>
+    <essence>EB_Spear</essence>
+    <power>EB_Power_ForcePulse</power>
+  </Essencebound.EssenceStarterPowerDef>
+  <Essencebound.EssenceStarterPowerDef>
+    <defName>EB_Starter_Spider</defName>
+    <label>spider starter ability</label>
+    <essence>EB_Spider</essence>
+    <power>EB_Power_KeenSight</power>
+  </Essencebound.EssenceStarterPowerDef>
+  <Essencebound.EssenceStarterPowerDef>
+    <defName>EB_Starter_Spike</defName>
+    <label>spike starter ability</label>
+    <essence>EB_Spike</essence>
+    <power>EB_Power_ForcePulse</power>
+  </Essencebound.EssenceStarterPowerDef>
+  <Essencebound.EssenceStarterPowerDef>
+    <defName>EB_Starter_Staff</defName>
+    <label>staff starter ability</label>
+    <essence>EB_Staff</essence>
+    <power>EB_Power_StormSpark</power>
+  </Essencebound.EssenceStarterPowerDef>
+  <Essencebound.EssenceStarterPowerDef>
+    <defName>EB_Starter_Star</defName>
+    <label>star starter ability</label>
+    <essence>EB_Star</essence>
+    <power>EB_Power_StormSpark</power>
+  </Essencebound.EssenceStarterPowerDef>
+  <Essencebound.EssenceStarterPowerDef>
+    <defName>EB_Starter_Stellar</defName>
+    <label>stellar starter ability</label>
+    <essence>EB_Stellar</essence>
+    <power>EB_Power_StormSpark</power>
+  </Essencebound.EssenceStarterPowerDef>
+  <Essencebound.EssenceStarterPowerDef>
+    <defName>EB_Starter_Storm</defName>
+    <label>storm starter ability</label>
+    <essence>EB_Storm</essence>
+    <power>EB_Power_StormSpark</power>
+  </Essencebound.EssenceStarterPowerDef>
+  <Essencebound.EssenceStarterPowerDef>
+    <defName>EB_Starter_Succubus</defName>
+    <label>succubus starter ability</label>
+    <essence>EB_Succubus</essence>
+    <power>EB_Power_MistVeil</power>
+  </Essencebound.EssenceStarterPowerDef>
+  <Essencebound.EssenceStarterPowerDef>
+    <defName>EB_Starter_Sun</defName>
+    <label>sun starter ability</label>
+    <essence>EB_Sun</essence>
+    <power>EB_Power_EmberBolt</power>
+  </Essencebound.EssenceStarterPowerDef>
+  <Essencebound.EssenceStarterPowerDef>
+    <defName>EB_Starter_Swarm</defName>
+    <label>swarm starter ability</label>
+    <essence>EB_Swarm</essence>
+    <power>EB_Power_ForcePulse</power>
+  </Essencebound.EssenceStarterPowerDef>
+  <Essencebound.EssenceStarterPowerDef>
+    <defName>EB_Starter_Swift</defName>
+    <label>swift starter ability</label>
+    <essence>EB_Swift</essence>
+    <power>EB_Power_SwiftStep</power>
+  </Essencebound.EssenceStarterPowerDef>
+  <Essencebound.EssenceStarterPowerDef>
+    <defName>EB_Starter_Sword</defName>
+    <label>sword starter ability</label>
+    <essence>EB_Sword</essence>
+    <power>EB_Power_ForcePulse</power>
+  </Essencebound.EssenceStarterPowerDef>
+  <Essencebound.EssenceStarterPowerDef>
+    <defName>EB_Starter_Talisman</defName>
+    <label>talisman starter ability</label>
+    <essence>EB_Talisman</essence>
+    <power>EB_Power_GuardianWard</power>
+  </Essencebound.EssenceStarterPowerDef>
+  <Essencebound.EssenceStarterPowerDef>
+    <defName>EB_Starter_Technology</defName>
+    <label>technology starter ability</label>
+    <essence>EB_Technology</essence>
+    <power>EB_Power_KeenSight</power>
+  </Essencebound.EssenceStarterPowerDef>
+  <Essencebound.EssenceStarterPowerDef>
+    <defName>EB_Starter_Tentacle</defName>
+    <label>tentacle starter ability</label>
+    <essence>EB_Tentacle</essence>
+    <power>EB_Power_ForcePulse</power>
+  </Essencebound.EssenceStarterPowerDef>
+  <Essencebound.EssenceStarterPowerDef>
+    <defName>EB_Starter_Thread</defName>
+    <label>thread starter ability</label>
+    <essence>EB_Thread</essence>
+    <power>EB_Power_GuardianWard</power>
+  </Essencebound.EssenceStarterPowerDef>
+  <Essencebound.EssenceStarterPowerDef>
+    <defName>EB_Starter_Thunderbird</defName>
+    <label>thunderbird starter ability</label>
+    <essence>EB_Thunderbird</essence>
+    <power>EB_Power_StormSpark</power>
+  </Essencebound.EssenceStarterPowerDef>
+  <Essencebound.EssenceStarterPowerDef>
+    <defName>EB_Starter_Time</defName>
+    <label>time starter ability</label>
+    <essence>EB_Time</essence>
+    <power>EB_Power_SwiftStep</power>
+  </Essencebound.EssenceStarterPowerDef>
+  <Essencebound.EssenceStarterPowerDef>
+    <defName>EB_Starter_Tranquil</defName>
+    <label>tranquil starter ability</label>
+    <essence>EB_Tranquil</essence>
+    <power>EB_Power_PurifyingTouch</power>
+  </Essencebound.EssenceStarterPowerDef>
+  <Essencebound.EssenceStarterPowerDef>
+    <defName>EB_Starter_Transfiguration</defName>
+    <label>transfiguration starter ability</label>
+    <essence>EB_Transfiguration</essence>
+    <power>EB_Power_PurifyingTouch</power>
+  </Essencebound.EssenceStarterPowerDef>
+  <Essencebound.EssenceStarterPowerDef>
+    <defName>EB_Starter_Transgression</defName>
+    <label>transgression starter ability</label>
+    <essence>EB_Transgression</essence>
+    <power>EB_Power_ForcePulse</power>
+  </Essencebound.EssenceStarterPowerDef>
+  <Essencebound.EssenceStarterPowerDef>
+    <defName>EB_Starter_Trap</defName>
+    <label>trap starter ability</label>
+    <essence>EB_Trap</essence>
+    <power>EB_Power_ForcePulse</power>
+  </Essencebound.EssenceStarterPowerDef>
+  <Essencebound.EssenceStarterPowerDef>
+    <defName>EB_Starter_Tree</defName>
+    <label>tree starter ability</label>
+    <essence>EB_Tree</essence>
+    <power>EB_Power_VerdantMend</power>
+  </Essencebound.EssenceStarterPowerDef>
+  <Essencebound.EssenceStarterPowerDef>
+    <defName>EB_Starter_Troll</defName>
+    <label>troll starter ability</label>
+    <essence>EB_Troll</essence>
+    <power>EB_Power_VerdantMend</power>
+  </Essencebound.EssenceStarterPowerDef>
+  <Essencebound.EssenceStarterPowerDef>
+    <defName>EB_Starter_Trowel</defName>
+    <label>trowel starter ability</label>
+    <essence>EB_Trowel</essence>
+    <power>EB_Power_VerdantMend</power>
+  </Essencebound.EssenceStarterPowerDef>
+  <Essencebound.EssenceStarterPowerDef>
+    <defName>EB_Starter_Twilight</defName>
+    <label>twilight starter ability</label>
+    <essence>EB_Twilight</essence>
+    <power>EB_Power_MistVeil</power>
+  </Essencebound.EssenceStarterPowerDef>
+  <Essencebound.EssenceStarterPowerDef>
+    <defName>EB_Starter_Undeath</defName>
+    <label>undeath starter ability</label>
+    <essence>EB_Undeath</essence>
+    <power>EB_Power_ForcePulse</power>
+  </Essencebound.EssenceStarterPowerDef>
+  <Essencebound.EssenceStarterPowerDef>
+    <defName>EB_Starter_Unity</defName>
+    <label>unity starter ability</label>
+    <essence>EB_Unity</essence>
+    <power>EB_Power_RallyingSurge</power>
+  </Essencebound.EssenceStarterPowerDef>
+  <Essencebound.EssenceStarterPowerDef>
+    <defName>EB_Starter_Vast</defName>
+    <label>vast starter ability</label>
+    <essence>EB_Vast</essence>
+    <power>EB_Power_RallyingSurge</power>
+  </Essencebound.EssenceStarterPowerDef>
+  <Essencebound.EssenceStarterPowerDef>
+    <defName>EB_Starter_Vehicle</defName>
+    <label>vehicle starter ability</label>
+    <essence>EB_Vehicle</essence>
+    <power>EB_Power_SwiftStep</power>
+  </Essencebound.EssenceStarterPowerDef>
+  <Essencebound.EssenceStarterPowerDef>
+    <defName>EB_Starter_Venom</defName>
+    <label>venom starter ability</label>
+    <essence>EB_Venom</essence>
+    <power>EB_Power_ForcePulse</power>
+  </Essencebound.EssenceStarterPowerDef>
+  <Essencebound.EssenceStarterPowerDef>
+    <defName>EB_Starter_Verdant</defName>
+    <label>verdant starter ability</label>
+    <essence>EB_Verdant</essence>
+    <power>EB_Power_VerdantMend</power>
+  </Essencebound.EssenceStarterPowerDef>
+  <Essencebound.EssenceStarterPowerDef>
+    <defName>EB_Starter_Vessel</defName>
+    <label>vessel starter ability</label>
+    <essence>EB_Vessel</essence>
+    <power>EB_Power_GuardianWard</power>
+  </Essencebound.EssenceStarterPowerDef>
+  <Essencebound.EssenceStarterPowerDef>
+    <defName>EB_Starter_Visage</defName>
+    <label>visage starter ability</label>
+    <essence>EB_Visage</essence>
+    <power>EB_Power_MistVeil</power>
+  </Essencebound.EssenceStarterPowerDef>
+  <Essencebound.EssenceStarterPowerDef>
+    <defName>EB_Starter_Vision</defName>
+    <label>vision starter ability</label>
+    <essence>EB_Vision</essence>
+    <power>EB_Power_KeenSight</power>
+  </Essencebound.EssenceStarterPowerDef>
+  <Essencebound.EssenceStarterPowerDef>
+    <defName>EB_Starter_Void</defName>
+    <label>void starter ability</label>
+    <essence>EB_Void</essence>
+    <power>EB_Power_MistVeil</power>
+  </Essencebound.EssenceStarterPowerDef>
+  <Essencebound.EssenceStarterPowerDef>
+    <defName>EB_Starter_Volcano</defName>
+    <label>volcano starter ability</label>
+    <essence>EB_Volcano</essence>
+    <power>EB_Power_EmberBolt</power>
+  </Essencebound.EssenceStarterPowerDef>
+  <Essencebound.EssenceStarterPowerDef>
+    <defName>EB_Starter_Vortex</defName>
+    <label>vortex starter ability</label>
+    <essence>EB_Vortex</essence>
+    <power>EB_Power_StormSpark</power>
+  </Essencebound.EssenceStarterPowerDef>
+  <Essencebound.EssenceStarterPowerDef>
+    <defName>EB_Starter_Wasp</defName>
+    <label>wasp starter ability</label>
+    <essence>EB_Wasp</essence>
+    <power>EB_Power_ForcePulse</power>
+  </Essencebound.EssenceStarterPowerDef>
+  <Essencebound.EssenceStarterPowerDef>
+    <defName>EB_Starter_Water</defName>
+    <label>water starter ability</label>
+    <essence>EB_Water</essence>
+    <power>EB_Power_FrostShard</power>
+  </Essencebound.EssenceStarterPowerDef>
+  <Essencebound.EssenceStarterPowerDef>
+    <defName>EB_Starter_Weave</defName>
+    <label>weave starter ability</label>
+    <essence>EB_Weave</essence>
+    <power>EB_Power_GuardianWard</power>
+  </Essencebound.EssenceStarterPowerDef>
+  <Essencebound.EssenceStarterPowerDef>
+    <defName>EB_Starter_Wendigo</defName>
+    <label>wendigo starter ability</label>
+    <essence>EB_Wendigo</essence>
+    <power>EB_Power_ForcePulse</power>
+  </Essencebound.EssenceStarterPowerDef>
+  <Essencebound.EssenceStarterPowerDef>
+    <defName>EB_Starter_Whale</defName>
+    <label>whale starter ability</label>
+    <essence>EB_Whale</essence>
+    <power>EB_Power_FrostShard</power>
+  </Essencebound.EssenceStarterPowerDef>
+  <Essencebound.EssenceStarterPowerDef>
+    <defName>EB_Starter_Whip</defName>
+    <label>whip starter ability</label>
+    <essence>EB_Whip</essence>
+    <power>EB_Power_ForcePulse</power>
+  </Essencebound.EssenceStarterPowerDef>
+  <Essencebound.EssenceStarterPowerDef>
+    <defName>EB_Starter_Wind</defName>
+    <label>wind starter ability</label>
+    <essence>EB_Wind</essence>
+    <power>EB_Power_StormSpark</power>
+  </Essencebound.EssenceStarterPowerDef>
+  <Essencebound.EssenceStarterPowerDef>
+    <defName>EB_Starter_Wing</defName>
+    <label>wing starter ability</label>
+    <essence>EB_Wing</essence>
+    <power>EB_Power_StormSpark</power>
+  </Essencebound.EssenceStarterPowerDef>
+  <Essencebound.EssenceStarterPowerDef>
+    <defName>EB_Starter_Wolf</defName>
+    <label>wolf starter ability</label>
+    <essence>EB_Wolf</essence>
+    <power>EB_Power_RallyingSurge</power>
+  </Essencebound.EssenceStarterPowerDef>
+  <Essencebound.EssenceStarterPowerDef>
+    <defName>EB_Starter_Wrath</defName>
+    <label>wrath starter ability</label>
+    <essence>EB_Wrath</essence>
+    <power>EB_Power_EmberBolt</power>
+  </Essencebound.EssenceStarterPowerDef>
+  <Essencebound.EssenceStarterPowerDef>
+    <defName>EB_Starter_Zeal</defName>
+    <label>zeal starter ability</label>
+    <essence>EB_Zeal</essence>
+    <power>EB_Power_RallyingSurge</power>
+  </Essencebound.EssenceStarterPowerDef>
+  <Essencebound.EssenceStarterPowerDef>
+    <defName>EB_Starter_Ziz</defName>
+    <label>ziz starter ability</label>
+    <essence>EB_Ziz</essence>
+    <power>EB_Power_StormSpark</power>
+  </Essencebound.EssenceStarterPowerDef>
+</Defs>

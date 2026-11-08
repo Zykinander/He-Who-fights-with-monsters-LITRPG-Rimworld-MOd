@@ -44,6 +44,8 @@ namespace Essencebound
                 rank ??= "Iron";
                 EnsureAbilitySlots();
                 EssencePowerCatalog.BackfillLegacyPowers(abilitySlots);
+                // Grant missing starter powers without replacing existing awakenings.
+                GrantMissingInnatePowers();
             }
         }
 
@@ -59,6 +61,28 @@ namespace Essencebound
                         abilitySlots.Add(new EssenceAbilitySlot(name, i));
                 }
             }
+        }
+
+        // One automatic starter per essence, consuming an ordinary ability slot.
+        private string GrantInnatePower(string essenceName)
+        {
+            var starter = DefDatabase<EssenceStarterPowerDef>.AllDefsListForReading
+                .FirstOrDefault(s => s.essence != null && s.essence.defName == essenceName);
+            if (starter?.power == null) return "";
+            var ownSlots = abilitySlots.Where(s => s != null && s.essenceDefName == essenceName).ToList();
+            if (ownSlots.Any(s => s.abilityDefName == starter.power.defName)) return "";
+            var free = ownSlots.Where(s => !s.IsAwakened).OrderBy(s => s.index).FirstOrDefault();
+            if (free == null) return "";
+            free.abilityDefName = starter.power.defName;
+            free.sourceKind = "innate";
+            free.nextUseTick = 0;
+            return starter.power.label;
+        }
+
+        private void GrantMissingInnatePowers()
+        {
+            foreach (string essenceName in OwnedEssenceNames)
+                GrantInnatePower(essenceName);
         }
 
         internal bool CanAbsorb(EssenceDef essence, out string reason)
@@ -95,7 +119,10 @@ namespace Essencebound
                 confluenceRestricted = outcome.restricted;
             }
             EnsureAbilitySlots();
-            reason = "";
+            string innate = GrantInnatePower(essence.defName);
+            string confluenceInnate = string.IsNullOrEmpty(confluenceName) ? "" : GrantInnatePower(confluenceName);
+            reason = (string.IsNullOrEmpty(innate) ? "" : " Innate ability: " + innate + ".") +
+                     (string.IsNullOrEmpty(confluenceInnate) ? "" : " Confluence ability: " + confluenceInnate + ".");
             return true;
         }
 
@@ -124,6 +151,7 @@ namespace Essencebound
             slot.awakeningStoneDefName = stone.defName;
             slot.awakeningAspectDefName = chosen.aspect.defName;
             slot.abilityDefName = chosen.power.defName;
+            slot.sourceKind = "stone";
             slot.nextUseTick = 0;
             var essence = DefDatabase<EssenceDef>.GetNamedSilentFail(essenceName);
             message = "awakened " + chosen.power.label + " (" + chosen.aspect.label + ") in " +
@@ -198,8 +226,8 @@ namespace Essencebound
                     var stone = DefDatabase<AwakeningStoneDef>.GetNamedSilentFail(slot.awakeningStoneDefName);
                     var power = DefDatabase<EssencePowerDef>.GetNamedSilentFail(slot.abilityDefName);
                     b.AppendLine("    " + (slot.index + 1) + ". " + (slot.IsAwakened
-                        ? (power?.label ?? "unresolved imprint") + " [" + (aspect?.label ?? "unknown aspect") +
-                          "; " + (stone?.label ?? "legacy") + "]" +
+                        ? (power?.label ?? "unresolved imprint") + " [" + (slot.sourceKind == "innate" ? "starter" : (aspect?.label ?? "unknown aspect")) +
+                          "; " + (slot.sourceKind == "innate" ? "innate" : (stone?.label ?? "legacy")) + "]" +
                           (slot.nextUseTick > Find.TickManager.TicksGame ? " (cooldown)" : "")
                         : "empty"));
                 }

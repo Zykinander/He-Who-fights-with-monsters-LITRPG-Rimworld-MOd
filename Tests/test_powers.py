@@ -44,3 +44,22 @@ assert 'nextUseTick' in slot_source and 'BackfillLegacyPowers' in hediff_source
 assert 'TryCastPower' in hediff_source and 'GetGizmos' in hediff_source
 print(f'PASS: {len(powers)} power defs, {len(buffdefs)} timed effect defs, '
       f'{len(stone_defs)} stones and {len(aspects)} aspects; all XML is well-formed.')
+
+# v0.7: deterministic innate starter for each known essence.
+import csv
+with (ROOT/'Data/essence_starter_abilities.csv').open(encoding='utf-8') as file:
+    rows=list(csv.DictReader(file))
+assert len(rows)==226
+starterdefs=list(ET.parse(ROOT/'1.7/Defs/PowerDefs/EssenceStarters.xml').getroot())
+assert len(starterdefs)==226
+by_essence={x.findtext('essence'):x.findtext('power') for x in starterdefs}
+assert len(by_essence)==226 and set(by_essence)==all_essences
+assert set(by_essence.values()) <= {p['defName'] for p in powers}
+assert by_essence['EB_Fire']=='EB_Power_EmberBolt'
+assert by_essence['EB_Phoenix']=='EB_Power_EmberBolt'
+assert next(x for x in powerdefs if x.findtext('defName')=='EB_Power_EmberBolt').findtext('damageDefName')=='Flame'
+source=(ROOT/'Source/Hediff_EssenceUser.cs').read_text()
+assert 'GrantInnatePower' in source and 'GrantMissingInnatePowers' in source
+assert 'slot.sourceKind = "stone"' in source and 'free.sourceKind = "innate"' in source
+assert 'if (free == null) return "";' in source
+print('PASS: 226 innate mappings and Ember Bolt fire damage definition')
