@@ -117,6 +117,6 @@ print('PASS: all 30 icons unique path, 128px RGBA, transparent corners')
 
 # Release metadata must use the development-version scheme.
 metadata=ET.parse(ROOT/'About/About.xml').getroot()
-assert 'v0.08' in metadata.findtext('name')
-assert json.loads((ROOT/'manifest.json').read_text())['version']=='0.08'
-print('PASS: v0.08 metadata and inherited stack-count overlays')
+assert 'v0.09' in metadata.findtext('name')
+assert json.loads((ROOT/'manifest.json').read_text())['version']=='0.09'
+print('PASS: v0.09 metadata and inherited stack-count overlays')

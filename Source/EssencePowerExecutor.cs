@@ -16,11 +16,14 @@ namespace Essencebound
             if (power.targetKind == "self") target = caster;
             if (target == null || target.Dead || !target.Spawned || target.Map != caster.Map)
             { reason = "Choose a living pawn on the same map."; return false; }
-            if (power.targetKind == "hostile" && !target.HostileTo(caster))
-            { reason = "This power only targets hostile pawns."; return false; }
-            if (power.targetKind == "ally" && target.Faction != caster.Faction)
-            { reason = "This power only targets friendly pawns."; return false; }
-            if (power.targetKind != "self")
+            // Every pawn-targeting ability can target allies, enemies, neutral pawns,
+            // and the caster. The legacy "ally"/"hostile" strings remain accepted
+            // for compatibility with third-party XML based on earlier prototypes.
+            bool pawnTargeted = power.targetKind == "pawn" ||
+                                power.targetKind == "hostile" || power.targetKind == "ally";
+            if (!pawnTargeted && power.targetKind != "self")
+            { reason = "Unknown power target kind: " + power.targetKind; return false; }
+            if (pawnTargeted && target != caster)
             {
                 if (caster.Position.DistanceTo(target.Position) > power.range)
                 { reason = "Target is out of range (" + power.range + " cells)."; return false; }
