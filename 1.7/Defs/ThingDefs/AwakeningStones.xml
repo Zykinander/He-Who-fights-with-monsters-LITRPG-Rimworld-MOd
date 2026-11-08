@@ -4,6 +4,7 @@
     <thingClass>ThingWithComps</thingClass>
     <category>Item</category>
     <stackLimit>10</stackLimit>
+    <drawGUIOverlay>true</drawGUIOverlay>
     <rotatable>false</rotatable>
     <alwaysHaulable>true</alwaysHaulable>
     <useHitPoints>false</useHitPoints>
