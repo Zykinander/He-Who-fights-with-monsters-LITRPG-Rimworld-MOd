@@ -28,14 +28,19 @@ When a pawn gains a normal or confluence essence, it receives one **random** aff
 
 Every essence has positive weights for all four attributes; the distribution is themed, not fixed. The 226 editable distributions are in `Data/essence_attribute_weights.csv` and embedded in the corresponding essence XML defs. These are mod-original choices and aren't canonical lore claims.
 
-| Affinity | Benefit for each rank tier of an essence with that affinity |
-|---|---|
-| Power | +4% essence ability damage |
-| Speed | -2.5% essence ability cooldown |
-| Spirit | +5% positive essence buff duration |
-| Recovery | +6% essence healing strength |
+### Doubled bonuses at each rank
 
-Iron counts as one tier, Bronze as two, and Diamond as five. Bonuses from multiple owned essences of the same attribute stack (capped at +80% combined). These bonuses currently affect Essencebound powers, **not all vanilla pawn stats**; a later pass can integrate melee stats, movement speed, psychic resources, or natural injury recovery.
+Each rank doubles the previous rank's **total** bonus from that essence. It is not a flat bonus added per rank-up.
+
+| Rank | Power damage | Speed cooldown reduction | Spirit buff duration | Recovery healing |
+|---|---:|---:|---:|---:|
+| Iron | +4% | -2.5% | +5% | +6% |
+| Bronze | +8% | -5% | +10% | +12% |
+| Silver | +16% | -10% | +20% | +24% |
+| Gold | +32% | -20% | +40% | +48% |
+| Diamond | +64% | -40% | +80% | +96% |
+
+All values are **per essence** with that affinity. Bonuses from different owned essences with the same attribute stack. Total **Speed** cooldown reduction is capped at 80% (abilities still have a minimum 30-tick cooldown). Other bonuses are capped at +400%, safely above the highest naturally attainable total from four Diamond essences, so a single Diamond Recovery essence receives the full +96%. These bonuses currently affect Essencebound powers, **not all vanilla pawn stats**; a later pass can integrate melee stats, movement speed, psychic resources, or natural injury recovery.
 
 A few illustrative base weights, in Power / Speed / Spirit / Recovery order:
 - **Fire:** 6 / 1 / 5 / 1 (Power and Spirit favored)

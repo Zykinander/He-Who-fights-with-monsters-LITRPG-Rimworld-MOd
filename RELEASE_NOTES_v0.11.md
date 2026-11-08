@@ -6,7 +6,8 @@
 - Each essence advances its own rank only after all *required* slots are unlocked and their abilities reach the next tier. A pawn's overall rank is the minimum rank across possessed essences.
 - The progression requirement persists the highest slot cap ever required for an essence, to stop an easy exploit by lowering the configured 2–5 slot limit.
 - All 226 essence types have weighted probabilities for Power/Speed/Spirit/Recovery; each pawn rolls independently and saves the result. No reroll on reloading.
-- Rank bonuses stack based on each essence's rolled affinity: Power +4% essence damage, Speed -2.5% ability cooldown, Spirit +5% positive buff duration, Recovery +6% essence healing per tier.
+- Rank bonuses **double** at each tier: Iron x1, Bronze x2, Silver x4, Gold x8, Diamond x16. Per-essence bonuses therefore reach Power +64%, Speed -40% cooldown, Spirit +80% buff duration and Recovery +96% healing at Diamond.
+- Identically rolled affinities still stack across essences. Speed reductions have an 80% total cap to prevent zero cooldown; other benefits have a high +400% stacking cap so no legal four-essence Diamond combination is truncated.
 - Existing v0.10 save data and unlocked abilities are preserved; missing affinity/rank records initialize when loading.
 - Attack training only counts damage to hostile targets, reducing friendly-fire XP farming.
 - New character UI shows per-essence affinity/rank and power XP bars.

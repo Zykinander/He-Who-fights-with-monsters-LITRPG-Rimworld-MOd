@@ -65,12 +65,28 @@ namespace Essencebound
         {
             switch (attribute)
             {
-                case "Power": return 0.04f;      // Damage dealt by essence abilities
-                case "Speed": return 0.025f;     // Ability cooldown reduction
-                case "Spirit": return 0.05f;     // Positive buff duration
-                case "Recovery": return 0.06f;   // Effective healing
+                case "Power": return 0.04f;      // Damage dealt by essence abilities at Iron
+                case "Speed": return 0.025f;     // Ability cooldown reduction at Iron
+                case "Spirit": return 0.05f;     // Positive buff duration at Iron
+                case "Recovery": return 0.06f;   // Effective healing at Iron
                 default: return 0f;
             }
+        }
+
+        // Iron=1, Bronze=2, Silver=4, Gold=8, Diamond=16.
+        // These are the total bonuses at each rank, not cumulative rank-ups.
+        public static int RankBonusMultiplier(int rankIndex)
+        {
+            int clamped = Math.Max(0, Math.Min(4, rankIndex));
+            return 1 << clamped;
+        }
+
+        // A pawn can possess multiple essences with the same attribute.
+        // Never let cooldown reduction reach 100%; other bonuses allow
+        // the full stacked values of four Diamond-rank essences.
+        public static float MaxAttributeBonus(string attribute)
+        {
+            return attribute == "Speed" ? 0.80f : 4.00f;
         }
 
         public static string WorkLabel(string effectKind)

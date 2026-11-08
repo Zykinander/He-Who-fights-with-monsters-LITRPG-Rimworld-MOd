@@ -40,7 +40,7 @@
   "gameplay_power_status": "v0.11 progression and random affinities pending GitHub Actions compilation and in-game validation",
   "stone_count": 30,
   "power_effect_definitions": 8,
-  "release_notes": "Individual ability progression from meaningful effect contributions; essence rank requires all configured ability slots at next tier. Every essence randomly rolls a saved weighted attribute affinity for each pawn.",
+  "release_notes": "Rank bonuses now double at every tier (Iron x1 through Diamond x16), with an 80% cap for stacked Speed cooldown reduction. Retains work-based advancement and weighted random per-pawn essence affinities.",
   "progression": {
     "attributes": [
       "Power",
@@ -72,10 +72,24 @@
       1080
     ],
     "stat_bonus_per_tier": {
-      "Power": "4% essence ability damage",
-      "Speed": "2.5% ability cooldown reduction",
-      "Spirit": "5% beneficial buff duration",
-      "Recovery": "6% healing strength"
+      "Power": "Iron 4%; Bronze 8%; Silver 16%; Gold 32%; Diamond 64% essence damage",
+      "Speed": "Iron 2.5%; Bronze 5%; Silver 10%; Gold 20%; Diamond 40% cooldown reduction",
+      "Spirit": "Iron 5%; Bronze 10%; Silver 20%; Gold 40%; Diamond 80% buff duration",
+      "Recovery": "Iron 6%; Bronze 12%; Silver 24%; Gold 48%; Diamond 96% healing"
+    },
+    "bonus_rank_multipliers": [
+      1,
+      2,
+      4,
+      8,
+      16
+    ],
+    "rank_bonus_behavior": "total per-essence affinity bonus doubles at every rank, not a flat additive amount",
+    "attribute_bonus_caps": {
+      "Speed": "80% total cooldown reduction",
+      "Power": "400% total ability damage bonus",
+      "Spirit": "400% total buff-duration bonus",
+      "Recovery": "400% total healing bonus"
     }
   }
 }

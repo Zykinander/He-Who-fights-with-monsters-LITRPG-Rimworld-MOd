@@ -43,13 +43,14 @@ namespace Essencebound
         public float GetAffinityBonus(string attribute)
         {
             EnsureProgressionRecords();
-            float tierCount = 0f;
+            float totalBonus = 0f;
             foreach (var a in affinities.Where(a => a.attribute == attribute))
             {
                 int tier = essenceRanks.FirstOrDefault(r => r.essenceDefName == a.essenceDefName)?.rankIndex ?? 0;
-                tierCount += tier + 1; // Iron contributes 1 tier; Diamond contributes 5.
+                totalBonus += EssenceProgression.RankBonusMultiplier(tier) *
+                              EssenceProgression.BonusPerTier(attribute);
             }
-            return Math.Min(0.8f, tierCount * EssenceProgression.BonusPerTier(attribute));
+            return Math.Min(EssenceProgression.MaxAttributeBonus(attribute), totalBonus);
         }
 
         public float NextWorkFor(EssenceAbilitySlot slot)

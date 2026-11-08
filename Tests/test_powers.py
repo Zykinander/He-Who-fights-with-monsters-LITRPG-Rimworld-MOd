@@ -117,3 +117,14 @@ assert 'state.GetAffinity(essenceName)' in ui
 assert 'GetEssenceRankIndex(essenceName)' in ui
 assert 'slot.rankWork' in ui and 'NextRankWork' in ui
 print('PASS: ability-type progression work tracking and rank-scaled bonuses')
+
+# The multiplier applies at the affinity contribution, before the existing
+# Power/Speed/Spirit/Recovery effect hooks consume the total.
+progression_source=(ROOT/'Source/EssenceProgression.cs').read_text()
+rank_source=(ROOT/'Source/Hediff_EssenceUser.cs').read_text()
+assert 'public static int RankBonusMultiplier(int rankIndex)' in progression_source
+assert 'EssenceProgression.RankBonusMultiplier(tier) *' in rank_source
+assert 'EssenceProgression.BonusPerTier(attribute)' in rank_source
+assert 'Math.Min(EssenceProgression.MaxAttributeBonus(attribute), totalBonus)' in rank_source
+assert 'GetAffinityBonus("Speed")' in rank_source
+print('PASS: effect scaling uses exponential rank bonus with safe Speed cap')
