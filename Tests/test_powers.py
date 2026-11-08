@@ -86,3 +86,13 @@ ui=(ROOT/'Source/Hediff_EssenceUser.cs').read_text()
 assert 'canTargetPawns = true' in ui and 'canTargetSelf = true' in ui
 assert 'Any living pawn (ally or enemy)' in ui
 print('PASS: v0.09 seven cross-faction targeted powers; five self-cast powers unchanged')
+
+# The redesigned profile is read-only; targeting and cooldown behavior still run through
+# the existing pawn gizmos, with a dynamic active-slot cap.
+src=(ROOT/'Source/Hediff_EssenceUser.cs').read_text()
+assert 's.index < SlotsPerEssence' in src
+assert 'slot.index >= SlotsPerEssence' in src
+assert 'if (!EssencePowerExecutor.Apply(pawn, power, target, out message)) return false;' in src
+assert 'Find.Targeter.BeginTargeting(targets' in src
+assert 'GrantInnatePower' in src
+print('PASS: old targeting and innate unlock pathways preserved with active slot limit')
