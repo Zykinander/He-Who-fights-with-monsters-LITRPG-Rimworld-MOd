@@ -22,7 +22,7 @@ all_essences={e.findtext('defName') for name in ('NormalEssences','ConfluenceEss
 for power in powers:
     assert (ROOT/'1.7/Textures'/ (power['icon']+'.png')).exists()
     assert power['effect'] in {'damage','damageDebuff','heal','buff','cleanse','pulse'}
-    assert power['target'] in {'self','ally','hostile'}
+    assert power['target'] in {'self','pawn'}
     assert power['cooldown_ticks']>0
     assert all('EB_Aspect_'+a in aspects for a in power['compatible_aspects'])
     assert all('EB_'+e in all_essences for e in power['favored_essences'])
@@ -63,3 +63,26 @@ assert 'GrantInnatePower' in source and 'GrantMissingInnatePowers' in source
 assert 'slot.sourceKind = "stone"' in source and 'free.sourceKind = "innate"' in source
 assert 'if (free == null) return "";' in source
 print('PASS: 226 innate mappings and Ember Bolt fire damage definition')
+
+# v0.09 — seven targeted abilities accept any living pawn, not just allies or enemies.
+pawn_powers={p['defName'] for p in powers if p['target']=='pawn'}
+self_powers={p['defName'] for p in powers if p['target']=='self'}
+assert len(pawn_powers)==7 and len(self_powers)==5
+xml_targets={e.findtext('defName'):e.findtext('targetKind') for e in powerdefs}
+for p in powers:
+    assert xml_targets[p['defName']] == p['target']
+    if p['target']=='pawn':
+        assert p['range_cells'] > 0
+assert {'EB_Power_EmberBolt','EB_Power_VerdantMend','EB_Power_GuardianWard','EB_Power_PurifyingTouch'} <= pawn_powers
+assert 'EB_Power_ForcePulse' in self_powers
+executor=(ROOT/'Source/EssencePowerExecutor.cs').read_text()
+validator=executor.split('public static bool ValidateTarget(',1)[1].split('public static bool Apply(',1)[0]
+assert 'power.targetKind == "pawn"' in validator
+assert 'target.HostileTo(caster)' not in validator
+assert 'target.Faction != caster.Faction' not in validator
+assert 'GenSight.LineOfSight(' in validator and 'power.range' in validator
+assert 'target != caster' in validator  # allow targetable self-healing without LOS from self to self
+ui=(ROOT/'Source/Hediff_EssenceUser.cs').read_text()
+assert 'canTargetPawns = true' in ui and 'canTargetSelf = true' in ui
+assert 'Any living pawn (ally or enemy)' in ui
+print('PASS: v0.09 seven cross-faction targeted powers; five self-cast powers unchanged')

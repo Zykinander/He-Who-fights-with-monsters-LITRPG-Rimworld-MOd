@@ -1,35 +1,48 @@
-# Essencebound v0.08 — RimWorld 1.7 early prototype
+# Essencebound v0.09 — universal pawn-targeting powers
 
-**Development version v0.08 | Target game RimWorld 1.7 | Experimental / test saves only**
+**Development release v0.09 | RimWorld compatibility: 1.7 | Early prototype**
 
-## Current features
-- 125 normal essence types and 101 confluence essence types.
-- 366 recipe rows; two conflicting confluence triples remain deliberately unresolved.
-- Three normal essence slots + one confluence, with three ability slots per essence (12 maximum).
-- Absorbing an essence grants one **innate starter power** automatically; awakening stones unlock up to two more.
-- 30 awakening stones with individual item artwork; 12 reusable prototype gameplay effects.
-- Pawns retain unlocked abilities and cooldown information through saving.
+## New in v0.09
 
-## v0.08 fixes
-- Fixed a RimWorld 1.7 configuration warning affecting **all 30 awakening stones**: `stackLimit > 1` together with `drawGUIOverlay = false`. The shared abstract stone item now enables `drawGUIOverlay`, preserving stack sizes of 10 while displaying their quantity.
-- Updated the in-game mod name from the outdated v0.6 label to **v0.08**.
-- Added a regression check for the stack overlay rule and synchronized development version metadata.
-- This release intentionally does **not** modify unrelated base-game, DLC, or third-party errors observed in `Player.log`.
+Any **pawn-targeted** essence power can be aimed at **any living pawn**: colonist, allied, neutral, or hostile. This includes accidentally or intentionally harming an ally or helping an enemy. There is no automatic friend-or-foe protection for targeted spells.
 
-## Build and install
-GitHub Actions on `main` uses .NET 10, runs structural tests, compiles `Essencebound.Core.dll`, and publishes `Essencebound-1.7-compiled` as an artifact. Source branches and pull requests do not automatically publish an installable DLL; merge after review, then download the successful workflow artifact.
+Targeted powers: Ember Bolt, Frost Shard, Storm Spark, Verdant Mend, Guardian Ward, Rallying Surge, and Purifying Touch.
 
-1. Download the latest successful GitHub Actions artifact from `main`.
-2. Extract `Essencebound_1.7_COMPILED.zip`, then install the enclosed `Essencebound` folder into RimWorld's `Mods` directory.
-3. Remove/replace the older installation first to avoid conflicting definitions.
-4. Test on a throwaway colony and inspect the startup log and pawn essence profile.
+The five **self-cast** powers remain unchanged: Stone Skin, Swift Step, Mist Veil, Keen Sight, and Force Pulse. Force Pulse still automatically affects nearby **hostile pawns**, not selected targets.
+
+Range, line of sight, cooldowns, empty-target rejection and same-map checks remain. Targeting a pawn with no healable injuries or no relevant removable debuff fails safely without spending cooldown.
+
+## Current prototype content
+
+- 125 normal essences, 101 confluence essences; 366 fixed-confluence recipe rows (two conflicting triples intentionally unresolved).
+- Three normal essences + one confluence; 3 power slots each = 12 maximum.
+- Absorbing a normal essence and gaining a confluence both grant an innate starter ability.
+- 30 awakening stones with distinct artwork and 12 reusable ability effect templates.
+
+## Versioned test downloads
+
+GitHub Actions automatically names **every new build** using the development version, RimWorld target, workflow run number, and rerun attempt.
+
+- Example downloaded file: `Essencebound-v0.09-RW1.7-build7-attempt1.zip`
+- Inside: `Essencebound-v0.09-RW1.7-build7-attempt1-mod.zip`
+- After extraction, the folder installed into RimWorld is still called `Essencebound`.
+
+Starting another build (or rerunning a job) produces a new name. Re-downloading an old build does not. This prevents accidentally testing the wrong ZIP while keeping the mod's package ID stable.
+
+## Install and test
+
+After a successful GitHub Actions build on `main`, download `Essencebound-1.7-compiled`, extract the enclosed mod, and replace the existing `Mods/Essencebound/` folder. Use a disposable test colony and back up any existing saves first.
+
+Test with two colonists and an enemy on the same map:
+1. Cast **Ember Bolt** on an enemy, then an allied pawn (expect damage to both).
+2. Cast **Verdant Mend** on an injured ally, then an injured enemy (expect healing to both).
+3. Cast **Guardian Ward** on an ally, then an enemy (expect its timed protective effect to apply to both).
+4. Select a distant pawn outside ability range, or one behind blocked line of sight (expect a rejection and no cooldown).
+5. Check that **Stone Skin** still casts instantly on its owner, without a targeting cursor.
+6. Check that **Force Pulse** still affects nearby hostiles only.
+7. Save/reload and confirm unlocked essence powers remain intact.
 
 ## Known limitations
-- Not all game effects have been tested after the v0.07 gameplay fixes. A successful compilation is not proof of in-game correctness.
-- The profile interface is a basic diagnostic dialog; a visual redesign is planned.
-- Spells lack custom projectile visual effects and rank scaling.
-- Automatic starter mappings are *mod gameplay defaults*, not claimed canon abilities.
-- Other games/DLC mods or local game files may still produce unrelated errors.
+This is a source-defined and compiled prototype, not yet fully verified with v0.09 in-game tests. Spells still lack projectile VFX; the pawn essence profile is a temporary diagnostic popup. Friendly fire and enemy healing are **intended** under these new targeting rules. All existing stone rarity, confluence and source-provenance caveats remain.
 
-## Versioning
-Early releases use `v0.01`, `v0.02`, … `v0.08`, `v0.09`, `v0.10`, and so on. `v1.0` is reserved for a more feature-complete, stable release. RimWorld `1.7` is the target game compatibility, not our development milestone.
+The mod's development version is **v0.09**; the supported RimWorld game version remains **1.7**.

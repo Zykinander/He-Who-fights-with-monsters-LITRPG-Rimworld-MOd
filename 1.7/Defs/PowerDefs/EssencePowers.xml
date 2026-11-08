@@ -3,9 +3,9 @@
   <Essencebound.EssencePowerDef>
     <defName>EB_Power_EmberBolt</defName>
     <label>ember bolt</label>
-    <description>Instant magic flame damage to a hostile pawn. Damage appears in combat feedback.</description>
+    <description>A focused flame strike. Can damage any targeted pawn, including allies.</description>
     <effectKind>damage</effectKind>
-    <targetKind>hostile</targetKind>
+    <targetKind>pawn</targetKind>
     <range>10</range>
     <magnitude>9</magnitude>
     <cooldownTicks>450</cooldownTicks>
@@ -28,9 +28,9 @@
   <Essencebound.EssencePowerDef>
     <defName>EB_Power_FrostShard</defName>
     <label>frost shard</label>
-    <description>A chilling shard that briefly slows a hostile pawn.</description>
+    <description>A chilling shard that deals damage and slows any targeted pawn.</description>
     <effectKind>damageDebuff</effectKind>
-    <targetKind>hostile</targetKind>
+    <targetKind>pawn</targetKind>
     <range>9</range>
     <magnitude>4</magnitude>
     <cooldownTicks>540</cooldownTicks>
@@ -53,9 +53,9 @@
   <Essencebound.EssencePowerDef>
     <defName>EB_Power_StormSpark</defName>
     <label>storm spark</label>
-    <description>A crackling spell that briefly disrupts a hostile pawn.</description>
+    <description>A crackling spell that deals damage and disrupts any targeted pawn.</description>
     <effectKind>damageDebuff</effectKind>
-    <targetKind>hostile</targetKind>
+    <targetKind>pawn</targetKind>
     <range>8</range>
     <magnitude>5</magnitude>
     <cooldownTicks>570</cooldownTicks>
@@ -80,9 +80,9 @@
   <Essencebound.EssencePowerDef>
     <defName>EB_Power_VerdantMend</defName>
     <label>verdant mend</label>
-    <description>Heal an injured friendly pawn.</description>
+    <description>Heal an injured pawn, whether ally or enemy.</description>
     <effectKind>heal</effectKind>
-    <targetKind>ally</targetKind>
+    <targetKind>pawn</targetKind>
     <range>7</range>
     <magnitude>6</magnitude>
     <cooldownTicks>900</cooldownTicks>
@@ -105,9 +105,9 @@
   <Essencebound.EssencePowerDef>
     <defName>EB_Power_GuardianWard</defName>
     <label>guardian ward</label>
-    <description>Grant a temporary protective ward to a friendly pawn.</description>
+    <description>Grant a temporary protective ward to any targeted pawn.</description>
     <effectKind>buff</effectKind>
-    <targetKind>ally</targetKind>
+    <targetKind>pawn</targetKind>
     <range>8</range>
     <magnitude>0</magnitude>
     <cooldownTicks>840</cooldownTicks>
@@ -234,9 +234,9 @@
   <Essencebound.EssencePowerDef>
     <defName>EB_Power_RallyingSurge</defName>
     <label>rallying surge</label>
-    <description>Improve a friendly pawn’s speed and work efficiency briefly.</description>
+    <description>Temporarily improve a targeted pawn's speed and work efficiency.</description>
     <effectKind>buff</effectKind>
-    <targetKind>ally</targetKind>
+    <targetKind>pawn</targetKind>
     <range>8</range>
     <magnitude>0</magnitude>
     <cooldownTicks>900</cooldownTicks>
@@ -262,9 +262,9 @@
   <Essencebound.EssencePowerDef>
     <defName>EB_Power_PurifyingTouch</defName>
     <label>purifying touch</label>
-    <description>Remove an Essencebound chill or static affliction from a friendly pawn.</description>
+    <description>Remove an Essencebound chill or static affliction from any targeted pawn.</description>
     <effectKind>cleanse</effectKind>
-    <targetKind>ally</targetKind>
+    <targetKind>pawn</targetKind>
     <range>6</range>
     <magnitude>0</magnitude>
     <cooldownTicks>780</cooldownTicks>

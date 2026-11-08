@@ -257,6 +257,7 @@ namespace Essencebound
                 {
                     defaultLabel = power.label.CapitalizeFirst(),
                     defaultDesc = power.description + "\nEssence: " + (essence?.label ?? slot.essenceDefName) +
+                        "\nTarget: " + (power.targetKind == "self" ? "Self" : "Any living pawn (ally or enemy)") +
                         "\nCooldown: " + (power.cooldownTicks / 60f).ToString("0.#") + " s",
                     icon = ContentFinder<UnityEngine.Texture2D>.Get(power.iconPath, false),
                     action = () => ActivatePower(captured, power)
