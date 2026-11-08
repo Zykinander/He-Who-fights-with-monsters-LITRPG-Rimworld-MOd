@@ -88,8 +88,8 @@ for st in stones_data:
 source=(ROOT/'Source/Hediff_EssenceUser.cs').read_text()
 slot=(ROOT/'Source/EssenceAbilitySlot.cs').read_text()
 stone_comp=(ROOT/'Source/CompAwakeningStoneItem.cs').read_text()
-assert 'i < 3' in source # only three slots per essence
-assert 'slots.Count != 3' in source
+assert 'i < SlotsPerEssence' in source # dynamic 2-5 slots per essence
+assert 'slots.Count != SlotsPerEssence' in source
 assert 's.IsAwakened' in source and 'slot.awakeningStoneDefName = stone.defName' in source
 assert 'slot.awakeningAspectDefName = chosen.aspect.defName' in source
 assert 'Scribe_Values.Look(ref awakeningStoneDefName' in slot
@@ -99,7 +99,7 @@ assert 'parent.Destroy(DestroyMode.Vanish)' in stone_comp
 assert 'current.TryAwaken(stone, capturedName' in stone_comp
 print('PASS: 366 recipes, 125 normal essences, 101 confluences; 2 unresolved conflicts')
 print('PASS: 30 stones, 21 aspects, 30 unique stone textures; XML source refs and rarities consistent')
-print('PASS: source includes 3-slot cap, persistent imprints, adjacency consume interaction')
+print('PASS: source includes 2-5 slot cap, persistent imprints, adjacency consume interaction')
 print('NOT CHECKED: C# build, runtime loading, game UX, in-game effects')
 
 # All stone sprites should have a dedicated unique file, correct dimensions and transparency.
@@ -117,9 +117,9 @@ print('PASS: all 30 icons unique path, 128px RGBA, transparent corners')
 
 # Release metadata must use the development-version scheme.
 metadata=ET.parse(ROOT/'About/About.xml').getroot()
-assert 'v0.09' in metadata.findtext('name')
-assert json.loads((ROOT/'manifest.json').read_text())['version']=='0.09'
-print('PASS: v0.09 metadata and inherited stack-count overlays')
+assert 'v0.10' in metadata.findtext('name')
+assert json.loads((ROOT/'manifest.json').read_text())['version']=='0.10'
+print('PASS: v0.10 metadata and inherited stack-count overlays')
 
 # Regression: each GitHub Actions run must have a unique versioned artifact name.
 workflow=(ROOT/'.github/workflows/build-essencebound.yml').read_text()
@@ -131,3 +131,27 @@ assert 'name: ${{ steps.build_name.outputs.name }}' in workflow
 assert 'path: ${{ steps.build_name.outputs.name }}-mod.zip' in workflow
 assert 'cd build && zip -qr "../${{ steps.build_name.outputs.name }}-mod.zip" Essencebound' in workflow
 print('PASS: versioned GitHub Actions test-build archive names')
+
+# v0.10: four essence panels with configurable per-essence slot count.
+setting_source=(ROOT/'Source/EssenceboundMod.cs').read_text()
+dialog_source=(ROOT/'Source/Dialog_EssenceProfile.cs').read_text()
+assert 'GetSettings<EssenceboundSettings>()' in setting_source
+assert 'Scribe_Values.Look(ref abilitySlotsPerEssence' in setting_source
+assert 'Math.Max(2, Math.Min(5' in setting_source
+assert 'public override string SettingsCategory()' in setting_source
+assert 'public override void DoSettingsWindowContents(Rect inRect)' in setting_source
+assert 'i < SlotsPerEssence' in source
+assert 's.index < SlotsPerEssence' in source
+assert 'slot.index >= SlotsPerEssence' in source
+assert 'var slots = GetActiveSlotsFor(essenceName)' in source
+assert 'new Dialog_EssenceProfile(this)' in source
+assert 'NORMAL ESSENCE I' in dialog_source and 'NORMAL ESSENCE II' in dialog_source
+assert 'NORMAL ESSENCE III' in dialog_source and 'CONFLUENCE ESSENCE' in dialog_source
+assert 'for (int index = 0; index < cap; index++)' in dialog_source
+assert all(rank in dialog_source for rank in ['Iron','Bronze','Silver','Gold','Diamond'])
+assert 'state.PausedPowersCount' in dialog_source
+manifest=json.loads((ROOT/'manifest.json').read_text())
+assert manifest['counts']['min_awakening_slots_per_essence']==2
+assert manifest['counts']['max_awakening_slots_per_essence']==5
+assert manifest['counts']['max_awakening_slots']==20
+print('PASS: v0.10 configurable ability slots 2-5 and four-panel profile')

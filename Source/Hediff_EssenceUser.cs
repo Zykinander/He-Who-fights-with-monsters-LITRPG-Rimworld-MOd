@@ -21,6 +21,23 @@ namespace Essencebound
         public string ConfluenceName => confluenceName;
         public string Rank => rank;
         public IReadOnlyList<EssenceAbilitySlot> AbilitySlots => abilitySlots;
+        public int SlotsPerEssence => EssenceboundMod.SlotsPerEssence;
+        public string ConfluenceStatus => confluenceStatus;
+        public bool ConfluenceRestricted => confluenceRestricted;
+
+        // Existing high-index slots are retained for save compatibility when the cap shrinks.
+        public void RefreshAbilitySlots() => EnsureAbilitySlots();
+
+        public IReadOnlyList<EssenceAbilitySlot> GetActiveSlotsFor(string essenceName)
+        {
+            EnsureAbilitySlots();
+            return abilitySlots.Where(s => s != null && s.essenceDefName == essenceName &&
+                                      s.index >= 0 && s.index < SlotsPerEssence)
+                               .OrderBy(s => s.index).ToList();
+        }
+
+        public int PausedPowersCount => abilitySlots.Count(s => s != null && s.IsAwakened &&
+                                                           s.index >= SlotsPerEssence);
         public IReadOnlyList<string> OwnedEssenceNames => normalEssenceNames
             .Concat(string.IsNullOrEmpty(confluenceName) ? Array.Empty<string>() : new[] { confluenceName })
             .ToList();
@@ -55,7 +72,7 @@ namespace Essencebound
             foreach (string name in normalEssenceNames.Concat(string.IsNullOrEmpty(confluenceName)
                          ? Array.Empty<string>() : new[] { confluenceName }))
             {
-                for (int i = 0; i < 3; i++)
+                for (int i = 0; i < SlotsPerEssence; i++)
                 {
                     if (!abilitySlots.Any(slot => slot != null && slot.essenceDefName == name && slot.index == i))
                         abilitySlots.Add(new EssenceAbilitySlot(name, i));
@@ -71,7 +88,8 @@ namespace Essencebound
             if (starter?.power == null) return "";
             var ownSlots = abilitySlots.Where(s => s != null && s.essenceDefName == essenceName).ToList();
             if (ownSlots.Any(s => s.abilityDefName == starter.power.defName)) return "";
-            var free = ownSlots.Where(s => !s.IsAwakened).OrderBy(s => s.index).FirstOrDefault();
+            var free = ownSlots.Where(s => s.index >= 0 && s.index < SlotsPerEssence && !s.IsAwakened)
+                               .OrderBy(s => s.index).FirstOrDefault();
             if (free == null) return "";
             free.abilityDefName = starter.power.defName;
             free.sourceKind = "innate";
@@ -132,9 +150,9 @@ namespace Essencebound
             { reason = "Stone has no awakening aspects."; return false; }
             if (!OwnedEssenceNames.Contains(essenceName))
             { reason = "Pawn does not possess that essence."; return false; }
-            var slots = abilitySlots.Where(s => s != null && s.essenceDefName == essenceName).ToList();
-            if (slots.Count != 3 || slots.All(s => s.IsAwakened))
-            { reason = "This essence already has its three awakened slots."; return false; }
+            var slots = GetActiveSlotsFor(essenceName).ToList();
+            if (slots.Count != SlotsPerEssence || slots.All(s => s.IsAwakened))
+            { reason = "This essence has no free slots within the configured limit (" + SlotsPerEssence + ")."; return false; }
             if (EssencePowerCatalog.GetOptions(stone, essenceName, slots).Count == 0)
             { reason = "No new compatible imprint or power remains for that stone."; return false; }
             reason = "";
@@ -144,7 +162,7 @@ namespace Essencebound
         internal bool TryAwaken(AwakeningStoneDef stone, string essenceName, out string message)
         {
             if (!CanAwaken(stone, essenceName, out message)) return false;
-            var slots = abilitySlots.Where(s => s != null && s.essenceDefName == essenceName).ToList();
+            var slots = GetActiveSlotsFor(essenceName).ToList();
             var chosen = EssencePowerCatalog.PickOption(stone, essenceName, slots);
             if (chosen == null) { message = "No compatible power remains."; return false; }
             var slot = slots.Where(s => !s.IsAwakened).OrderBy(s => s.index).First();
@@ -155,7 +173,7 @@ namespace Essencebound
             slot.nextUseTick = 0;
             var essence = DefDatabase<EssenceDef>.GetNamedSilentFail(essenceName);
             message = "awakened " + chosen.power.label + " (" + chosen.aspect.label + ") in " +
-                (essence?.label ?? essenceName) + " (slot " + (slot.index + 1) + "/3).";
+                (essence?.label ?? essenceName) + " (slot " + (slot.index + 1) + "/" + SlotsPerEssence + ").";
             return true;
         }
 
@@ -164,6 +182,8 @@ namespace Essencebound
             if (pawn == null || pawn.Faction != Faction.OfPlayer || slot == null ||
                 !abilitySlots.Contains(slot) || !slot.IsAwakened)
             { message = "That pawn cannot cast this power."; return false; }
+            if (slot.index < 0 || slot.index >= SlotsPerEssence)
+            { message = "This ability is paused by the configured slot limit."; return false; }
             var power = DefDatabase<EssencePowerDef>.GetNamedSilentFail(slot.abilityDefName);
             if (power == null) { message = "This imprint has no playable power definition."; return false; }
             int now = Find.TickManager.TicksGame;
@@ -203,50 +223,49 @@ namespace Essencebound
                 okay ? MessageTypeDefOf.PositiveEvent : MessageTypeDefOf.RejectInput, false);
         }
 
+        // Plain-text fallback for diagnostics; normal players use Dialog_EssenceProfile.
         public string ProfileText()
         {
+            EnsureAbilitySlots();
             var b = new StringBuilder();
             b.AppendLine("ESSENCEBOUND PROFILE");
-            b.AppendLine("Rank: " + rank);
-            b.AppendLine("Normal essences (" + normalEssenceNames.Count + "/3):");
-            foreach (var name in normalEssenceNames)
-                b.AppendLine("  • " + (DefDatabase<EssenceDef>.GetNamedSilentFail(name)?.label ?? name));
+            b.AppendLine("Rank: " + rank + " (rank progression mechanics not yet implemented)");
+            b.AppendLine("Normal essences (" + normalEssenceNames.Count + "/3)");
             b.AppendLine("Confluence: " + (string.IsNullOrEmpty(confluenceName) ? "None" :
                 DefDatabase<EssenceDef>.GetNamedSilentFail(confluenceName)?.label ?? confluenceName));
             b.AppendLine("Confluence state: " + confluenceStatus);
-            if (confluenceRestricted) b.AppendLine("Warning: the community list marks this combination as restricted.");
-            b.AppendLine("Awakened imprints: " + abilitySlots.Count(s => s.IsAwakened) + "/" + abilitySlots.Count + " (max 12)");
+            b.AppendLine("Slots per essence: " + SlotsPerEssence + " (configurable from 2 to 5)");
+            b.AppendLine("Total potential slots: " + (4 * SlotsPerEssence));
             foreach (string name in OwnedEssenceNames)
             {
                 var essence = DefDatabase<EssenceDef>.GetNamedSilentFail(name);
                 b.AppendLine("  " + (essence?.label ?? name) + ":");
-                foreach (var slot in abilitySlots.Where(s => s.essenceDefName == name).OrderBy(s => s.index))
+                foreach (var slot in GetActiveSlotsFor(name))
                 {
-                    var aspect = DefDatabase<AwakeningAspectDef>.GetNamedSilentFail(slot.awakeningAspectDefName);
-                    var stone = DefDatabase<AwakeningStoneDef>.GetNamedSilentFail(slot.awakeningStoneDefName);
                     var power = DefDatabase<EssencePowerDef>.GetNamedSilentFail(slot.abilityDefName);
-                    b.AppendLine("    " + (slot.index + 1) + ". " + (slot.IsAwakened
-                        ? (power?.label ?? "unresolved imprint") + " [" + (slot.sourceKind == "innate" ? "starter" : (aspect?.label ?? "unknown aspect")) +
-                          "; " + (slot.sourceKind == "innate" ? "innate" : (stone?.label ?? "legacy")) + "]" +
-                          (slot.nextUseTick > Find.TickManager.TicksGame ? " (cooldown)" : "")
-                        : "empty"));
+                    b.AppendLine("    " + (slot.index + 1) + ". " +
+                        (slot.IsAwakened ? (power?.label ?? "unresolved imprint") : "empty"));
                 }
             }
-            b.AppendLine("Awakened powers can be cast via pawn gizmos. Effects are experimental.");
+            if (PausedPowersCount > 0)
+                b.AppendLine("Stored powers paused by the current limit: " + PausedPowersCount);
             return b.ToString();
         }
 
         public override IEnumerable<Gizmo> GetGizmos()
         {
+            EnsureAbilitySlots();
             foreach (Gizmo gizmo in base.GetGizmos()) yield return gizmo;
             if (pawn == null || pawn.Faction != Faction.OfPlayer) yield break;
             yield return new Command_Action
             {
                 defaultLabel = "Essence profile",
-                defaultDesc = "Inspect this pawn's three normal essences, confluence, rank, and awakening slots.",
-                action = () => Find.WindowStack.Add(new Dialog_MessageBox(ProfileText()))
+                defaultDesc = "Open the Essencebound character interface: four essences, rank and configured ability slots.",
+                action = () => Find.WindowStack.Add(new Dialog_EssenceProfile(this))
             };
-            foreach (var slot in abilitySlots.Where(s => s != null && !string.IsNullOrEmpty(s.abilityDefName)))
+            foreach (var slot in abilitySlots.Where(s => s != null && s.index >= 0 &&
+                                                        s.index < SlotsPerEssence &&
+                                                        !string.IsNullOrEmpty(s.abilityDefName)))
             {
                 var captured = slot;
                 var power = DefDatabase<EssencePowerDef>.GetNamedSilentFail(slot.abilityDefName);

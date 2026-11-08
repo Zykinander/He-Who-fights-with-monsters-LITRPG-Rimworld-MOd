@@ -2,9 +2,10 @@ using Verse;
 
 namespace Essencebound
 {
-    // Three permanent slots per essence. An awakened slot currently stores a
-    // stone/aspect IMPRINT only; abilityDefName is reserved for working powers.
-    // Old v0.2 saves load with these new fields empty (not awakened).
+    // Two to five active slots per essence, set globally in Mod Settings.
+    // We preserve previously saved high-index slots if the cap is reduced,
+    // so restoring a higher cap brings their imprints back.
+    // Old v0.2 saves load with newer fields empty (not awakened).
     public sealed class EssenceAbilitySlot : IExposable
     {
         public string essenceDefName = "";
