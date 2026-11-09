@@ -418,3 +418,25 @@ assert meta['ability_plan']['remaining_to_implement']==0
 assert meta['ability_plan']['this_version_added']==30
 assert meta['version']=='0.19'
 print('PASS: v0.19 direct jump to 100 playable abilities and zero unimplemented roster items')
+
+
+# Taxonomy metadata only — no changes to rank, aspect or ability limits.
+import csv as _tag_csv
+with (ROOT/'Data/ability_roster_100.csv').open(encoding='utf-8',newline='') as fp:
+    tagged_roster=list(_tag_csv.DictReader(fp))
+taxonomy_meta=json.loads((ROOT/'manifest.json').read_text())['ability_taxonomy']
+assert len(tagged_roster)==100
+assert taxonomy_meta['abilities_tagged']==100
+assert sum(taxonomy_meta['primary_category_counts'].values())==100
+assert set(taxonomy_meta['allowed_primary_categories'])=={
+    'Attack','Defense','Healing','Mobility','Summoning','Control','Utility'
+}
+powers_by_id={p['id']:p for p in json.loads((ROOT/'Data/essence_powers.json').read_text())['powers']}
+for row in tagged_roster:
+    p=powers_by_id[row['id']]
+    assert row['primary_essence']==p['primary_essence']
+    assert row['primary_category']==p['primary_category']
+    assert row['tags']=='; '.join(p['tags'])
+    assert row['other_favored_essences']=='; '.join(p['favored_essences'][1:])
+assert (ROOT/'ABILITY_CATALOG_BY_ESSENCE_AND_TAGS.md').exists()
+print('PASS: 100-ability essence/category index and taxonomy manifest totals')

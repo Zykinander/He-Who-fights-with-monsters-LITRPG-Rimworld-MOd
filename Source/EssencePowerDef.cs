@@ -27,5 +27,10 @@ namespace Essencebound
         public string iconPath = "";
         public List<AwakeningAspectDef> compatibleAspects = new List<AwakeningAspectDef>();
         public List<EssenceDef> favoredEssences = new List<EssenceDef>();
+        // Informational taxonomy; casting and awakening continue to use the
+        // existing essence affinities and compatibleAspects.
+        public EssenceDef primaryEssence;
+        public string primaryCategory = "";
+        public List<string> abilityTags = new List<string>();
     }
 }

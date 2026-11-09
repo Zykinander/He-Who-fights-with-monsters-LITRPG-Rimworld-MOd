@@ -4,6 +4,12 @@
 
 We skipped the intermediate 90-power milestone. The active XML/C# catalog now contains **100 distinct castable essence powers**, compared with 70 in v0.18. Every original entry in `Data/ability_roster_100.csv` is marked **playable**; none remain merely planned. Every power has a valid effect handler, a usable existing icon, aspect-compatible awakening selection and a saved power identifier. This is an **automated-build-tested milestone**, not a guarantee that every mechanic has been exercised in the game.
 
+## Ability categories, essence associations and tags
+
+All **100 playable powers** have a main gameplay category (Attack, Defense, Healing, Mobility, Summoning, Control or Utility), a **primary favored essence**, and **multiple overlapping tags** (for example, Attack + Healing + Drain). See [the tagged ability catalog](ABILITY_CATALOG_BY_ESSENCE_AND_TAGS.md) to browse by category and primary essence.
+
+The same tags appear in the ability's in-game tooltip. These are informational labels only: existing awakening aspect compatibility, other favored essences, power IDs and save files are unchanged.
+
 ## All thirty new powers
 
 | Ability | Mechanic and progression |
