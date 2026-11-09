@@ -101,7 +101,9 @@ print('PASS: v0.09 seven cross-faction targeted powers; five self-cast powers un
 src=(ROOT/'Source/Hediff_EssenceUser.cs').read_text()
 assert 's.index < SlotsPerEssence' in src
 assert 'slot.index >= SlotsPerEssence' in src
-assert 'if (!EssencePowerExecutor.Apply(pawn, power, target, slot, out message, out float realWork)) return false;' in src
+assert 'EssencePowerExecutor.Apply(pawn, power, target.Thing as Pawn,' in src
+assert 'EssenceAdvancedAbilities.CastSpatial(pawn, power, target, slot,' in src
+assert 'if (!applied) return false;' in src
 assert 'Find.Targeter.BeginTargeting(targets' in src
 assert 'GrantInnatePower' in src
 print('PASS: old targeting and innate unlock pathways preserved with active slot limit')
