@@ -97,6 +97,16 @@ namespace Essencebound
                     .Select(e => e.summonedPawn).ToList();
         }
 
+        public List<Pawn> AlliedSummons(Pawn owner)
+        {
+            return effects == null || owner?.Faction == null ? new List<Pawn>() :
+                effects.Where(e => e != null && e.kind == "summon" &&
+                    e.caster != null && e.caster.Faction == owner.Faction &&
+                    e.summonedPawn != null && !e.summonedPawn.Dead &&
+                    e.summonedPawn.Spawned && e.summonedPawn.Map == map)
+                    .Select(e => e.summonedPawn).ToList();
+        }
+
         public override void MapComponentTick()
         {
             if (effects == null || effects.Count == 0 ||

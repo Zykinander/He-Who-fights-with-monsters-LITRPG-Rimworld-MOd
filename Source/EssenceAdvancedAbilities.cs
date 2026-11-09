@@ -83,7 +83,7 @@ namespace Essencebound
                 case "summonOrder":
                     if (target == null || !target.HostileTo(caster))
                     { message = "Select a hostile pawn for the summoned allies to attack."; return false; }
-                    var summons = world.SummonsOf(caster);
+                    var summons = world.AlliedSummons(caster);
                     int directed = 0;
                     foreach (Pawn ally in summons)
                     {
