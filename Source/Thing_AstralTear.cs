@@ -15,7 +15,7 @@ namespace Essencebound
             ticksUntilResolution = 900;
         }
 
-        public override void Tick()
+        protected override void Tick()
         {
             base.Tick();
             if (--ticksUntilResolution > 0 || Map == null) return;
