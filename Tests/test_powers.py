@@ -185,3 +185,40 @@ assert 'if (!TryFindNear(center, map, out IntVec3 cell))' in world
 assert 'cell = center;' in world
 assert player.index('if (!HasAstralLootMark(corpse))') < player.index('corpse.Destroy(DestroyMode.Vanish)')
 print('PASS: corpse targeting fallback, nearby menu and safe single extraction')
+
+# v0.15: universal major-rank mitigation applies to every Pawn's normal
+# damage path, not just to Essencebound spell definitions.
+rank=(ROOT/'Source/EssenceRankCombat.cs').read_text()
+project=(ROOT/'Source/Essencebound.Core.csproj').read_text()
+settings=(ROOT/'Source/EssenceboundMod.cs').read_text()
+assert '[HarmonyPatch(typeof(Pawn), nameof(Pawn.PreApplyDamage))]' in rank
+assert 'private static void Prefix(Pawn __instance, ref DamageInfo dinfo)' in rank
+assert 'dinfo.SetAmount(amount)' in rank
+assert 'EssenceRankCombat.RankOf(attacker)' in rank
+assert 'EssenceRankCombat.RankOf(__instance)' in rank
+assert 'essenceUser.OwnedEssenceNames' in rank
+assert 'Math.Pow(0.75f, gap)' in rank
+assert 'Math.Max(0.25f' in rank
+assert 'dinfo.Instigator is Pawn attacker' in rank
+assert 'manifestedAttacker != null' in rank
+assert 'MonsterOutgoingFactor(manifestedAttacker.rankIndex)' in rank
+assert 'new Harmony("essencebound.core.prototype.rankedcombat")' in settings
+assert 'PatchAll(typeof(Patch_EssenceRankIncomingDamage).Assembly)' in settings
+assert 'Lib.Harmony' in project and 'ExcludeAssets="runtime"' in project
+
+def mitigation(defender,attacker):
+    if defender < 0 or attacker >= defender: return 1.
+    return max(.25,.75**min(5,defender-attacker))
+assert [round(mitigation(rank,rank-1),5) for rank in range(5)] == [.75]*5
+assert abs(mitigation(2,0)-.5625)<1e-8
+assert abs(mitigation(4,0)-.31640625)<1e-8
+assert mitigation(4,-1)==.25
+assert mitigation(0,-1)==.75
+assert mitigation(-1,0)==1
+assert mitigation(0,4)==1
+assert mitigation(2,2)==1
+monster=(ROOT/'Source/EssenceMonsterRanks.cs').read_text()
+for rankMult in ('1.15f','1.35f','1.60f','2.00f'):
+    assert rankMult in rank
+assert 'return rank >= 3 ? 2 : 1;' in monster
+print('PASS: v0.15 universal rank gap mitigation, unranked attackers, monster scaling')

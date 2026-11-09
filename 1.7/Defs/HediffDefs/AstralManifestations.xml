@@ -6,6 +6,7 @@
     <description>Creature released from an astral tear. Its visible hediff shows its magical rank. Lower-ranked attackers deal reduced damage to it; higher-rank monsters also attack more strongly. A looting ability may extract an essence from its remains.</description>
     <hediffClass>Essencebound.Hediff_AstralManifestation</hediffClass>
     <isBad>false</isBad>
+    <maxSeverity>5</maxSeverity>
     <stages>
       <li>
         <label>Iron astral manifestation</label>
