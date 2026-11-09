@@ -30,7 +30,15 @@
         "Volcano"
       ],
       "icon": "Essencebound/AwakeningStones/StoneFire",
-      "source_status": "original_mod_gameplay_design"
+      "source_status": "original_mod_gameplay_design",
+      "primary_essence": "Fire",
+      "primary_category": "Attack",
+      "tags": [
+        "Attack",
+        "Ranged",
+        "Fire",
+        "Single Target"
+      ]
     },
     {
       "id": "FrostShard",
@@ -57,7 +65,16 @@
         "Water"
       ],
       "icon": "Essencebound/AwakeningStones/StoneWater",
-      "source_status": "original_mod_gameplay_design"
+      "source_status": "original_mod_gameplay_design",
+      "primary_essence": "Ice",
+      "primary_category": "Attack",
+      "tags": [
+        "Attack",
+        "Control",
+        "Debuff",
+        "Cold",
+        "Single Target"
+      ]
     },
     {
       "id": "StormSpark",
@@ -86,7 +103,16 @@
         "Wind"
       ],
       "icon": "Essencebound/AwakeningStones/StoneSurge",
-      "source_status": "original_mod_gameplay_design"
+      "source_status": "original_mod_gameplay_design",
+      "primary_essence": "Lightning",
+      "primary_category": "Attack",
+      "tags": [
+        "Attack",
+        "Control",
+        "Debuff",
+        "Lightning",
+        "Single Target"
+      ]
     },
     {
       "id": "VerdantMend",
@@ -115,7 +141,15 @@
         "Tree"
       ],
       "icon": "Essencebound/AwakeningStones/StonePlant",
-      "source_status": "original_mod_gameplay_design"
+      "source_status": "original_mod_gameplay_design",
+      "primary_essence": "Life",
+      "primary_category": "Healing",
+      "tags": [
+        "Healing",
+        "Support",
+        "Single Target",
+        "Injury Healing"
+      ]
     },
     {
       "id": "GuardianWard",
@@ -144,7 +178,15 @@
         "Pure"
       ],
       "icon": "Essencebound/AwakeningStones/StoneShield",
-      "source_status": "original_mod_gameplay_design"
+      "source_status": "original_mod_gameplay_design",
+      "primary_essence": "Shield",
+      "primary_category": "Defense",
+      "tags": [
+        "Defense",
+        "Support",
+        "Ward",
+        "Single Target"
+      ]
     },
     {
       "id": "StoneSkin",
@@ -173,7 +215,15 @@
         "Shield"
       ],
       "icon": "Essencebound/AwakeningStones/StoneStone",
-      "source_status": "original_mod_gameplay_design"
+      "source_status": "original_mod_gameplay_design",
+      "primary_essence": "Earth",
+      "primary_category": "Defense",
+      "tags": [
+        "Defense",
+        "Armor",
+        "Buff",
+        "Self"
+      ]
     },
     {
       "id": "SwiftStep",
@@ -203,7 +253,15 @@
         "Bird"
       ],
       "icon": "Essencebound/AwakeningStones/StoneWind",
-      "source_status": "original_mod_gameplay_design"
+      "source_status": "original_mod_gameplay_design",
+      "primary_essence": "Swift",
+      "primary_category": "Mobility",
+      "tags": [
+        "Mobility",
+        "Speed",
+        "Buff",
+        "Self"
+      ]
     },
     {
       "id": "MistVeil",
@@ -230,7 +288,15 @@
         "Smoke"
       ],
       "icon": "Essencebound/AwakeningStones/StoneMist",
-      "source_status": "original_mod_gameplay_design"
+      "source_status": "original_mod_gameplay_design",
+      "primary_essence": "Dark",
+      "primary_category": "Defense",
+      "tags": [
+        "Defense",
+        "Mobility",
+        "Evasion",
+        "Buff"
+      ]
     },
     {
       "id": "KeenSight",
@@ -259,7 +325,15 @@
         "Bird"
       ],
       "icon": "Essencebound/AwakeningStones/StoneFocus",
-      "source_status": "original_mod_gameplay_design"
+      "source_status": "original_mod_gameplay_design",
+      "primary_essence": "Eye",
+      "primary_category": "Utility",
+      "tags": [
+        "Utility",
+        "Support",
+        "Precision",
+        "Buff"
+      ]
     },
     {
       "id": "RallyingSurge",
@@ -290,7 +364,15 @@
         "Pure"
       ],
       "icon": "Essencebound/AwakeningStones/StoneGrace",
-      "source_status": "original_mod_gameplay_design"
+      "source_status": "original_mod_gameplay_design",
+      "primary_essence": "Might",
+      "primary_category": "Utility",
+      "tags": [
+        "Utility",
+        "Support",
+        "Mobility",
+        "Buff"
+      ]
     },
     {
       "id": "PurifyingTouch",
@@ -318,7 +400,15 @@
         "Renewal"
       ],
       "icon": "Essencebound/AwakeningStones/StoneLight",
-      "source_status": "original_mod_gameplay_design"
+      "source_status": "original_mod_gameplay_design",
+      "primary_essence": "Pure",
+      "primary_category": "Healing",
+      "tags": [
+        "Healing",
+        "Utility",
+        "Cleanse",
+        "Single Target"
+      ]
     },
     {
       "id": "ForcePulse",
@@ -347,7 +437,15 @@
         "Magic"
       ],
       "icon": "Essencebound/AwakeningStones/StoneChain",
-      "source_status": "original_mod_gameplay_design"
+      "source_status": "original_mod_gameplay_design",
+      "primary_essence": "Might",
+      "primary_category": "Attack",
+      "tags": [
+        "Attack",
+        "Control",
+        "Area",
+        "Pulse"
+      ]
     },
     {
       "id": "CinderNova",
@@ -374,7 +472,15 @@
         "Fire"
       ],
       "icon": "Essencebound/AwakeningStones/StoneFire",
-      "source_status": "original_mod_gameplay_design"
+      "source_status": "original_mod_gameplay_design",
+      "primary_essence": "Volcano",
+      "primary_category": "Attack",
+      "tags": [
+        "Attack",
+        "Area",
+        "Fire",
+        "Pulse"
+      ]
     },
     {
       "id": "ThunderChain",
@@ -403,7 +509,15 @@
         "Storm"
       ],
       "icon": "Essencebound/AwakeningStones/StoneSurge",
-      "source_status": "original_mod_gameplay_design"
+      "source_status": "original_mod_gameplay_design",
+      "primary_essence": "Lightning",
+      "primary_category": "Attack",
+      "tags": [
+        "Attack",
+        "Chain",
+        "Lightning",
+        "Multi Target"
+      ]
     },
     {
       "id": "BloodSiphon",
@@ -430,7 +544,15 @@
         "Feast"
       ],
       "icon": "Essencebound/AwakeningStones/StoneChain",
-      "source_status": "original_mod_gameplay_design"
+      "source_status": "original_mod_gameplay_design",
+      "primary_essence": "Blood",
+      "primary_category": "Attack",
+      "tags": [
+        "Attack",
+        "Healing",
+        "Drain",
+        "Single Target"
+      ]
     },
     {
       "id": "LifeBloom",
@@ -457,7 +579,15 @@
         "Growth"
       ],
       "icon": "Essencebound/AwakeningStones/StonePlant",
-      "source_status": "original_mod_gameplay_design"
+      "source_status": "original_mod_gameplay_design",
+      "primary_essence": "Life",
+      "primary_category": "Healing",
+      "tags": [
+        "Healing",
+        "Multi Wound",
+        "Single Target",
+        "Support"
+      ]
     },
     {
       "id": "RenewalSeed",
@@ -484,7 +614,15 @@
         "Plant"
       ],
       "icon": "Essencebound/AwakeningStones/StonePlant",
-      "source_status": "original_mod_gameplay_design"
+      "source_status": "original_mod_gameplay_design",
+      "primary_essence": "Renewal",
+      "primary_category": "Healing",
+      "tags": [
+        "Healing",
+        "Regeneration",
+        "Over Time",
+        "Support"
+      ]
     },
     {
       "id": "GroveShelter",
@@ -512,7 +650,16 @@
         "Plant"
       ],
       "icon": "Essencebound/AwakeningStones/StoneShield",
-      "source_status": "original_mod_gameplay_design"
+      "source_status": "original_mod_gameplay_design",
+      "primary_essence": "Tree",
+      "primary_category": "Defense",
+      "tags": [
+        "Defense",
+        "Support",
+        "Aura",
+        "Group",
+        "Ward"
+      ]
     },
     {
       "id": "PurgingWave",
@@ -540,7 +687,15 @@
         "Light"
       ],
       "icon": "Essencebound/AwakeningStones/StoneLight",
-      "source_status": "original_mod_gameplay_design"
+      "source_status": "original_mod_gameplay_design",
+      "primary_essence": "Pure",
+      "primary_category": "Healing",
+      "tags": [
+        "Healing",
+        "Utility",
+        "Cleanse",
+        "Area"
+      ]
     },
     {
       "id": "GravitySnare",
@@ -567,7 +722,15 @@
         "Prison"
       ],
       "icon": "Essencebound/AwakeningStones/StoneChain",
-      "source_status": "original_mod_gameplay_design"
+      "source_status": "original_mod_gameplay_design",
+      "primary_essence": "Vortex",
+      "primary_category": "Control",
+      "tags": [
+        "Control",
+        "Debuff",
+        "Slow",
+        "Single Target"
+      ]
     },
     {
       "id": "CorrosiveStrike",
@@ -594,7 +757,15 @@
         "Corrupt"
       ],
       "icon": "Essencebound/AwakeningStones/StoneSurge",
-      "source_status": "original_mod_gameplay_design"
+      "source_status": "original_mod_gameplay_design",
+      "primary_essence": "Blight",
+      "primary_category": "Attack",
+      "tags": [
+        "Attack",
+        "Control",
+        "Debuff",
+        "Armor Break"
+      ]
     },
     {
       "id": "EchoBurst",
@@ -622,7 +793,15 @@
         "Force"
       ],
       "icon": "Essencebound/AwakeningStones/StoneChain",
-      "source_status": "original_mod_gameplay_design"
+      "source_status": "original_mod_gameplay_design",
+      "primary_essence": "Echo",
+      "primary_category": "Attack",
+      "tags": [
+        "Attack",
+        "Area",
+        "Splash",
+        "Concussive"
+      ]
     },
     {
       "id": "SpiritBeacon",
@@ -649,7 +828,15 @@
         "Knowledge"
       ],
       "icon": "Essencebound/AwakeningStones/StoneFocus",
-      "source_status": "original_mod_gameplay_design"
+      "source_status": "original_mod_gameplay_design",
+      "primary_essence": "Mystic",
+      "primary_category": "Utility",
+      "tags": [
+        "Utility",
+        "Support",
+        "Precision",
+        "Buff"
+      ]
     },
     {
       "id": "MoonlitReprieve",
@@ -676,7 +863,15 @@
         "Tranquil"
       ],
       "icon": "Essencebound/AwakeningStones/StoneGrace",
-      "source_status": "original_mod_gameplay_design"
+      "source_status": "original_mod_gameplay_design",
+      "primary_essence": "Moon",
+      "primary_category": "Healing",
+      "tags": [
+        "Healing",
+        "Defense",
+        "Ward",
+        "Single Target"
+      ]
     },
     {
       "id": "InfernoLance",
@@ -703,7 +898,15 @@
         "Volcano"
       ],
       "icon": "Essencebound/AwakeningStones/StoneFire",
-      "source_status": "original_mod_gameplay_design"
+      "source_status": "original_mod_gameplay_design",
+      "primary_essence": "Fire",
+      "primary_category": "Attack",
+      "tags": [
+        "Attack",
+        "Ranged",
+        "Fire",
+        "Single Target"
+      ]
     },
     {
       "id": "FrostHalo",
@@ -730,7 +933,15 @@
         "Water"
       ],
       "icon": "Essencebound/AwakeningStones/StoneWater",
-      "source_status": "original_mod_gameplay_design"
+      "source_status": "original_mod_gameplay_design",
+      "primary_essence": "Ice",
+      "primary_category": "Attack",
+      "tags": [
+        "Attack",
+        "Control",
+        "Area",
+        "Cold"
+      ]
     },
     {
       "id": "Quakebreaker",
@@ -758,7 +969,15 @@
         "Behemoth"
       ],
       "icon": "Essencebound/AwakeningStones/StoneStone",
-      "source_status": "original_mod_gameplay_design"
+      "source_status": "original_mod_gameplay_design",
+      "primary_essence": "Earth",
+      "primary_category": "Attack",
+      "tags": [
+        "Attack",
+        "Area",
+        "Splash",
+        "Concussive"
+      ]
     },
     {
       "id": "ZephyrRicochet",
@@ -787,7 +1006,15 @@
         "Bird"
       ],
       "icon": "Essencebound/AwakeningStones/StoneWind",
-      "source_status": "original_mod_gameplay_design"
+      "source_status": "original_mod_gameplay_design",
+      "primary_essence": "Wind",
+      "primary_category": "Attack",
+      "tags": [
+        "Attack",
+        "Chain",
+        "Wind",
+        "Multi Target"
+      ]
     },
     {
       "id": "UmbralLeech",
@@ -814,7 +1041,15 @@
         "Twilight"
       ],
       "icon": "Essencebound/AwakeningStones/StoneMist",
-      "source_status": "original_mod_gameplay_design"
+      "source_status": "original_mod_gameplay_design",
+      "primary_essence": "Dark",
+      "primary_category": "Attack",
+      "tags": [
+        "Attack",
+        "Healing",
+        "Drain",
+        "Single Target"
+      ]
     },
     {
       "id": "VipersBite",
@@ -841,7 +1076,15 @@
         "Serpent"
       ],
       "icon": "Essencebound/AwakeningStones/StoneChain",
-      "source_status": "original_mod_gameplay_design"
+      "source_status": "original_mod_gameplay_design",
+      "primary_essence": "Venom",
+      "primary_category": "Attack",
+      "tags": [
+        "Attack",
+        "Control",
+        "Debuff",
+        "Slow"
+      ]
     },
     {
       "id": "ShardVolley",
@@ -870,7 +1113,15 @@
         "Refracting"
       ],
       "icon": "Essencebound/AwakeningStones/StoneFocus",
-      "source_status": "original_mod_gameplay_design"
+      "source_status": "original_mod_gameplay_design",
+      "primary_essence": "Crystal",
+      "primary_category": "Attack",
+      "tags": [
+        "Attack",
+        "Chain",
+        "Crystal",
+        "Multi Target"
+      ]
     },
     {
       "id": "BriarDetonation",
@@ -899,7 +1150,15 @@
         "Growth"
       ],
       "icon": "Essencebound/AwakeningStones/StonePlant",
-      "source_status": "original_mod_gameplay_design"
+      "source_status": "original_mod_gameplay_design",
+      "primary_essence": "Plant",
+      "primary_category": "Attack",
+      "tags": [
+        "Attack",
+        "Control",
+        "Area",
+        "Debuff"
+      ]
     },
     {
       "id": "Starfall",
@@ -927,7 +1186,15 @@
         "Nebula"
       ],
       "icon": "Essencebound/AwakeningStones/StoneFocus",
-      "source_status": "original_mod_gameplay_design"
+      "source_status": "original_mod_gameplay_design",
+      "primary_essence": "Star",
+      "primary_category": "Attack",
+      "tags": [
+        "Attack",
+        "Area",
+        "Splash",
+        "Celestial"
+      ]
     },
     {
       "id": "TidalRebuke",
@@ -954,7 +1221,15 @@
         "Deep"
       ],
       "icon": "Essencebound/AwakeningStones/StoneWater",
-      "source_status": "original_mod_gameplay_design"
+      "source_status": "original_mod_gameplay_design",
+      "primary_essence": "Water",
+      "primary_category": "Attack",
+      "tags": [
+        "Attack",
+        "Control",
+        "Area",
+        "Pulse"
+      ]
     },
     {
       "id": "IronBastion",
@@ -981,7 +1256,15 @@
         "Fortress"
       ],
       "icon": "Essencebound/AwakeningStones/StoneStone",
-      "source_status": "original_mod_gameplay_design"
+      "source_status": "original_mod_gameplay_design",
+      "primary_essence": "Iron",
+      "primary_category": "Defense",
+      "tags": [
+        "Defense",
+        "Armor",
+        "Buff",
+        "Self"
+      ]
     },
     {
       "id": "MirrorGuard",
@@ -1008,7 +1291,15 @@
         "Shimmer"
       ],
       "icon": "Essencebound/AwakeningStones/StoneMist",
-      "source_status": "original_mod_gameplay_design"
+      "source_status": "original_mod_gameplay_design",
+      "primary_essence": "Mirror",
+      "primary_category": "Defense",
+      "tags": [
+        "Defense",
+        "Evasion",
+        "Armor",
+        "Buff"
+      ]
     },
     {
       "id": "DawnChorus",
@@ -1036,7 +1327,15 @@
         "Light"
       ],
       "icon": "Essencebound/AwakeningStones/StoneGrace",
-      "source_status": "original_mod_gameplay_design"
+      "source_status": "original_mod_gameplay_design",
+      "primary_essence": "Dawn",
+      "primary_category": "Utility",
+      "tags": [
+        "Utility",
+        "Support",
+        "Aura",
+        "Group"
+      ]
     },
     {
       "id": "VerdantSanctuary",
@@ -1065,7 +1364,15 @@
         "Growth"
       ],
       "icon": "Essencebound/AwakeningStones/StonePlant",
-      "source_status": "original_mod_gameplay_design"
+      "source_status": "original_mod_gameplay_design",
+      "primary_essence": "Verdant",
+      "primary_category": "Healing",
+      "tags": [
+        "Healing",
+        "Area",
+        "Group",
+        "Injury Healing"
+      ]
     },
     {
       "id": "OceanRenewal",
@@ -1094,7 +1401,15 @@
         "Fish"
       ],
       "icon": "Essencebound/AwakeningStones/StoneWater",
-      "source_status": "original_mod_gameplay_design"
+      "source_status": "original_mod_gameplay_design",
+      "primary_essence": "Ocean",
+      "primary_category": "Healing",
+      "tags": [
+        "Healing",
+        "Area",
+        "Regeneration",
+        "Over Time"
+      ]
     },
     {
       "id": "CleansingRay",
@@ -1121,7 +1436,15 @@
         "Tranquil"
       ],
       "icon": "Essencebound/AwakeningStones/StoneLight",
-      "source_status": "original_mod_gameplay_design"
+      "source_status": "original_mod_gameplay_design",
+      "primary_essence": "Light",
+      "primary_category": "Healing",
+      "tags": [
+        "Healing",
+        "Utility",
+        "Cleanse",
+        "Single Target"
+      ]
     },
     {
       "id": "MercyThread",
@@ -1150,7 +1473,15 @@
         "Renewal"
       ],
       "icon": "Essencebound/AwakeningStones/StoneGrace",
-      "source_status": "original_mod_gameplay_design"
+      "source_status": "original_mod_gameplay_design",
+      "primary_essence": "Ministration",
+      "primary_category": "Healing",
+      "tags": [
+        "Healing",
+        "Chain",
+        "Multi Target",
+        "Injury Healing"
+      ]
     },
     {
       "id": "SoulHarvest",
@@ -1177,7 +1508,15 @@
         "Undeath"
       ],
       "icon": "Essencebound/AwakeningStones/StoneChain",
-      "source_status": "original_mod_gameplay_design"
+      "source_status": "original_mod_gameplay_design",
+      "primary_essence": "Death",
+      "primary_category": "Attack",
+      "tags": [
+        "Attack",
+        "Healing",
+        "Area",
+        "Drain"
+      ]
     },
     {
       "id": "RuneBind",
@@ -1204,7 +1543,15 @@
         "Scribe"
       ],
       "icon": "Essencebound/AwakeningStones/StoneFocus",
-      "source_status": "original_mod_gameplay_design"
+      "source_status": "original_mod_gameplay_design",
+      "primary_essence": "Rune",
+      "primary_category": "Control",
+      "tags": [
+        "Control",
+        "Debuff",
+        "Slow",
+        "Single Target"
+      ]
     },
     {
       "id": "OmenHex",
@@ -1231,7 +1578,15 @@
         "Malign"
       ],
       "icon": "Essencebound/AwakeningStones/StoneMist",
-      "source_status": "original_mod_gameplay_design"
+      "source_status": "original_mod_gameplay_design",
+      "primary_essence": "Omen",
+      "primary_category": "Control",
+      "tags": [
+        "Control",
+        "Debuff",
+        "Accuracy",
+        "Single Target"
+      ]
     },
     {
       "id": "TemporalHaste",
@@ -1258,7 +1613,15 @@
         "Action"
       ],
       "icon": "Essencebound/AwakeningStones/StoneWind",
-      "source_status": "original_mod_gameplay_design"
+      "source_status": "original_mod_gameplay_design",
+      "primary_essence": "Time",
+      "primary_category": "Mobility",
+      "tags": [
+        "Mobility",
+        "Utility",
+        "Speed",
+        "Buff"
+      ]
     },
     {
       "id": "BattlefieldFocus",
@@ -1285,7 +1648,15 @@
         "Resolute"
       ],
       "icon": "Essencebound/AwakeningStones/StoneFocus",
-      "source_status": "original_mod_gameplay_design"
+      "source_status": "original_mod_gameplay_design",
+      "primary_essence": "Battlefield",
+      "primary_category": "Utility",
+      "tags": [
+        "Utility",
+        "Defense",
+        "Precision",
+        "Buff"
+      ]
     },
     {
       "id": "BladeTempest",
@@ -1312,7 +1683,15 @@
         "Onslaught"
       ],
       "icon": "Essencebound/AwakeningStones/StoneChain",
-      "source_status": "original_mod_gameplay_design"
+      "source_status": "original_mod_gameplay_design",
+      "primary_essence": "Sword",
+      "primary_category": "Attack",
+      "tags": [
+        "Attack",
+        "Area",
+        "Close Range",
+        "Pulse"
+      ]
     },
     {
       "id": "NemesisStrike",
@@ -1339,7 +1718,15 @@
         "Wrath"
       ],
       "icon": "Essencebound/AwakeningStones/StoneChain",
-      "source_status": "original_mod_gameplay_design"
+      "source_status": "original_mod_gameplay_design",
+      "primary_essence": "Nemesis",
+      "primary_category": "Attack",
+      "tags": [
+        "Attack",
+        "Finisher",
+        "Single Target",
+        "Injury Scaling"
+      ]
     },
     {
       "id": "ThreadSnare",
@@ -1366,7 +1753,15 @@
         "Spider"
       ],
       "icon": "Essencebound/AwakeningStones/StoneChain",
-      "source_status": "original_mod_gameplay_design"
+      "source_status": "original_mod_gameplay_design",
+      "primary_essence": "Thread",
+      "primary_category": "Control",
+      "tags": [
+        "Control",
+        "Attack",
+        "Debuff",
+        "Slow"
+      ]
     },
     {
       "id": "GlassWard",
@@ -1393,7 +1788,15 @@
         "Crystal"
       ],
       "icon": "Essencebound/AwakeningStones/StoneShield",
-      "source_status": "original_mod_gameplay_design"
+      "source_status": "original_mod_gameplay_design",
+      "primary_essence": "Glass",
+      "primary_category": "Defense",
+      "tags": [
+        "Defense",
+        "Healing",
+        "Ward",
+        "Armor"
+      ]
     },
     {
       "id": "AshenComet",
@@ -1419,7 +1822,15 @@
         "Phoenix"
       ],
       "icon": "Essencebound/AwakeningStones/StoneFire",
-      "source_status": "original_mod_gameplay_design"
+      "source_status": "original_mod_gameplay_design",
+      "primary_essence": "Phoenix",
+      "primary_category": "Attack",
+      "tags": [
+        "Attack",
+        "Area",
+        "Delayed",
+        "Fire"
+      ]
     },
     {
       "id": "PrismaticDeflection",
@@ -1444,7 +1855,15 @@
         "Refracting"
       ],
       "icon": "Essencebound/AwakeningStones/StoneShield",
-      "source_status": "original_mod_gameplay_design"
+      "source_status": "original_mod_gameplay_design",
+      "primary_essence": "Refracting",
+      "primary_category": "Defense",
+      "tags": [
+        "Defense",
+        "Counter",
+        "Reflection",
+        "Reactive"
+      ]
     },
     {
       "id": "LotusSanctum",
@@ -1470,7 +1889,15 @@
         "Lotus"
       ],
       "icon": "Essencebound/AwakeningStones/StonePlant",
-      "source_status": "original_mod_gameplay_design"
+      "source_status": "original_mod_gameplay_design",
+      "primary_essence": "Lotus",
+      "primary_category": "Healing",
+      "tags": [
+        "Healing",
+        "Area",
+        "Zone",
+        "Regeneration"
+      ]
     },
     {
       "id": "ChronoAnchor",
@@ -1495,7 +1922,15 @@
         "Time"
       ],
       "icon": "Essencebound/AwakeningStones/StoneFocus",
-      "source_status": "original_mod_gameplay_design"
+      "source_status": "original_mod_gameplay_design",
+      "primary_essence": "Time",
+      "primary_category": "Mobility",
+      "tags": [
+        "Mobility",
+        "Teleport",
+        "Return",
+        "Utility"
+      ]
     },
     {
       "id": "WolfpackCall",
@@ -1521,7 +1956,15 @@
         "Wolf"
       ],
       "icon": "Essencebound/AwakeningStones/StoneChain",
-      "source_status": "original_mod_gameplay_design"
+      "source_status": "original_mod_gameplay_design",
+      "primary_essence": "Wolf",
+      "primary_category": "Summoning",
+      "tags": [
+        "Summoning",
+        "Familiar",
+        "Combat",
+        "Timed"
+      ]
     },
     {
       "id": "SpectralHand",
@@ -1546,7 +1989,15 @@
         "Hand"
       ],
       "icon": "Essencebound/AwakeningStones/StoneFocus",
-      "source_status": "original_mod_gameplay_design"
+      "source_status": "original_mod_gameplay_design",
+      "primary_essence": "Hand",
+      "primary_category": "Utility",
+      "tags": [
+        "Utility",
+        "Item Manipulation",
+        "Ranged",
+        "Exploration"
+      ]
     },
     {
       "id": "ChimericAspect",
@@ -1571,7 +2022,15 @@
         "Chimera"
       ],
       "icon": "Essencebound/AwakeningStones/StoneStone",
-      "source_status": "original_mod_gameplay_design"
+      "source_status": "original_mod_gameplay_design",
+      "primary_essence": "Chimera",
+      "primary_category": "Defense",
+      "tags": [
+        "Defense",
+        "Mobility",
+        "Adaptive",
+        "Buff"
+      ]
     },
     {
       "id": "VoidSlip",
@@ -1596,7 +2055,15 @@
         "Void"
       ],
       "icon": "Essencebound/AwakeningStones/StoneMist",
-      "source_status": "original_mod_gameplay_design"
+      "source_status": "original_mod_gameplay_design",
+      "primary_essence": "Void",
+      "primary_category": "Mobility",
+      "tags": [
+        "Mobility",
+        "Teleport",
+        "Short Range",
+        "Exploration"
+      ]
     },
     {
       "id": "Fleshweave",
@@ -1621,7 +2088,15 @@
         "Flesh"
       ],
       "icon": "Essencebound/AwakeningStones/StonePlant",
-      "source_status": "original_mod_gameplay_design"
+      "source_status": "original_mod_gameplay_design",
+      "primary_essence": "Flesh",
+      "primary_category": "Healing",
+      "tags": [
+        "Healing",
+        "Resource Cost",
+        "Single Target",
+        "Injury Healing"
+      ]
     },
     {
       "id": "TidalWall",
@@ -1646,7 +2121,15 @@
         "Ocean"
       ],
       "icon": "Essencebound/AwakeningStones/StoneWater",
-      "source_status": "original_mod_gameplay_design"
+      "source_status": "original_mod_gameplay_design",
+      "primary_essence": "Ocean",
+      "primary_category": "Defense",
+      "tags": [
+        "Defense",
+        "Control",
+        "Barrier",
+        "Area"
+      ]
     },
     {
       "id": "LightningStep",
@@ -1672,7 +2155,15 @@
         "Lightning"
       ],
       "icon": "Essencebound/AwakeningStones/StoneSurge",
-      "source_status": "original_mod_gameplay_design"
+      "source_status": "original_mod_gameplay_design",
+      "primary_essence": "Lightning",
+      "primary_category": "Mobility",
+      "tags": [
+        "Mobility",
+        "Attack",
+        "Teleport",
+        "Area"
+      ]
     },
     {
       "id": "SovereignCommand",
@@ -1697,7 +2188,15 @@
         "Sovereign"
       ],
       "icon": "Essencebound/AwakeningStones/StoneGrace",
-      "source_status": "original_mod_gameplay_design"
+      "source_status": "original_mod_gameplay_design",
+      "primary_essence": "Sovereign",
+      "primary_category": "Summoning",
+      "tags": [
+        "Summoning",
+        "Utility",
+        "Command",
+        "Combat"
+      ]
     },
     {
       "id": "StarMap",
@@ -1723,7 +2222,15 @@
         "Star"
       ],
       "icon": "Essencebound/AwakeningStones/StoneFocus",
-      "source_status": "original_mod_gameplay_design"
+      "source_status": "original_mod_gameplay_design",
+      "primary_essence": "Star",
+      "primary_category": "Utility",
+      "tags": [
+        "Utility",
+        "Exploration",
+        "Map Reveal",
+        "Ranged"
+      ]
     },
     {
       "id": "PredatorMark",
@@ -1748,7 +2255,15 @@
         "Predatory"
       ],
       "icon": "Essencebound/AwakeningStones/StoneChain",
-      "source_status": "original_mod_gameplay_design"
+      "source_status": "original_mod_gameplay_design",
+      "primary_essence": "Predatory",
+      "primary_category": "Control",
+      "tags": [
+        "Control",
+        "Attack",
+        "Mark",
+        "Debuff"
+      ]
     },
     {
       "id": "HydraBloom",
@@ -1775,7 +2290,15 @@
         "Hydra"
       ],
       "icon": "Essencebound/AwakeningStones/StonePlant",
-      "source_status": "original_mod_gameplay_design"
+      "source_status": "original_mod_gameplay_design",
+      "primary_essence": "Hydra",
+      "primary_category": "Healing",
+      "tags": [
+        "Healing",
+        "Area",
+        "Regeneration",
+        "Group"
+      ]
     },
     {
       "id": "CrystalPrison",
@@ -1800,7 +2323,15 @@
         "Crystal"
       ],
       "icon": "Essencebound/AwakeningStones/StoneShield",
-      "source_status": "original_mod_gameplay_design"
+      "source_status": "original_mod_gameplay_design",
+      "primary_essence": "Crystal",
+      "primary_category": "Control",
+      "tags": [
+        "Control",
+        "Defense",
+        "Barrier",
+        "Restraint"
+      ]
     },
     {
       "id": "EchoTwin",
@@ -1825,7 +2356,15 @@
         "Doppelganger"
       ],
       "icon": "Essencebound/AwakeningStones/StoneMist",
-      "source_status": "original_mod_gameplay_design"
+      "source_status": "original_mod_gameplay_design",
+      "primary_essence": "Doppelganger",
+      "primary_category": "Summoning",
+      "tags": [
+        "Summoning",
+        "Decoy",
+        "Illusion",
+        "Timed"
+      ]
     },
     {
       "id": "ResonanceField",
@@ -1851,7 +2390,15 @@
         "Resonating"
       ],
       "icon": "Essencebound/AwakeningStones/StoneSurge",
-      "source_status": "original_mod_gameplay_design"
+      "source_status": "original_mod_gameplay_design",
+      "primary_essence": "Resonating",
+      "primary_category": "Utility",
+      "tags": [
+        "Utility",
+        "Attack",
+        "Support",
+        "Aura"
+      ]
     },
     {
       "id": "GuardianBastion",
@@ -1877,7 +2424,15 @@
         "Guardian"
       ],
       "icon": "Essencebound/AwakeningStones/StoneShield",
-      "source_status": "original_mod_gameplay_design"
+      "source_status": "original_mod_gameplay_design",
+      "primary_essence": "Guardian",
+      "primary_category": "Defense",
+      "tags": [
+        "Defense",
+        "Area",
+        "Ward",
+        "Aura"
+      ]
     },
     {
       "id": "MoltenRain",
@@ -1903,7 +2458,16 @@
         "Volcano"
       ],
       "icon": "Essencebound/AwakeningStones/StoneFire",
-      "source_status": "original_mod_gameplay_design"
+      "source_status": "original_mod_gameplay_design",
+      "primary_essence": "Volcano",
+      "primary_category": "Attack",
+      "tags": [
+        "Attack",
+        "Area",
+        "Over Time",
+        "Zone",
+        "Fire"
+      ]
     },
     {
       "id": "OasisWell",
@@ -1929,7 +2493,15 @@
         "Oasis"
       ],
       "icon": "Essencebound/AwakeningStones/StoneFocus",
-      "source_status": "original_mod_gameplay_design"
+      "source_status": "original_mod_gameplay_design",
+      "primary_essence": "Oasis",
+      "primary_category": "Healing",
+      "tags": [
+        "Healing",
+        "Area",
+        "Zone",
+        "Sanctuary"
+      ]
     },
     {
       "id": "BoneFamiliar",
@@ -1954,7 +2526,15 @@
         "Bone"
       ],
       "icon": "Essencebound/AwakeningStones/StoneFocus",
-      "source_status": "original_mod_gameplay_design"
+      "source_status": "original_mod_gameplay_design",
+      "primary_essence": "Bone",
+      "primary_category": "Summoning",
+      "tags": [
+        "Summoning",
+        "Defense",
+        "Familiar",
+        "Combat"
+      ]
     },
     {
       "id": "Mistwalk",
@@ -1979,7 +2559,15 @@
         "Cloud"
       ],
       "icon": "Essencebound/AwakeningStones/StoneMist",
-      "source_status": "original_mod_gameplay_design"
+      "source_status": "original_mod_gameplay_design",
+      "primary_essence": "Cloud",
+      "primary_category": "Mobility",
+      "tags": [
+        "Mobility",
+        "Defense",
+        "Evasion",
+        "Concealment"
+      ]
     },
     {
       "id": "MirrorStep",
@@ -2004,7 +2592,15 @@
         "Mirror"
       ],
       "icon": "Essencebound/AwakeningStones/StoneMist",
-      "source_status": "original_mod_gameplay_design"
+      "source_status": "original_mod_gameplay_design",
+      "primary_essence": "Mirror",
+      "primary_category": "Mobility",
+      "tags": [
+        "Mobility",
+        "Teleport",
+        "Ally",
+        "Swap"
+      ]
     },
     {
       "id": "WebWeaver",
@@ -2030,7 +2626,15 @@
         "Spider"
       ],
       "icon": "Essencebound/AwakeningStones/StoneChain",
-      "source_status": "original_mod_gameplay_design"
+      "source_status": "original_mod_gameplay_design",
+      "primary_essence": "Spider",
+      "primary_category": "Control",
+      "tags": [
+        "Control",
+        "Zone",
+        "Slow",
+        "Over Time"
+      ]
     },
     {
       "id": "SonicLance",
@@ -2055,7 +2659,15 @@
         "Song"
       ],
       "icon": "Essencebound/AwakeningStones/StoneFocus",
-      "source_status": "original_mod_gameplay_design"
+      "source_status": "original_mod_gameplay_design",
+      "primary_essence": "Song",
+      "primary_category": "Attack",
+      "tags": [
+        "Attack",
+        "Piercing",
+        "Ranged",
+        "Single Target"
+      ]
     },
     {
       "id": "SunwardFlare",
@@ -2081,7 +2693,15 @@
         "Sun"
       ],
       "icon": "Essencebound/AwakeningStones/StoneFire",
-      "source_status": "original_mod_gameplay_design"
+      "source_status": "original_mod_gameplay_design",
+      "primary_essence": "Sun",
+      "primary_category": "Attack",
+      "tags": [
+        "Attack",
+        "Healing",
+        "Area",
+        "Cleanse"
+      ]
     },
     {
       "id": "Moonshadow",
@@ -2106,7 +2726,15 @@
         "Moon"
       ],
       "icon": "Essencebound/AwakeningStones/StoneGrace",
-      "source_status": "original_mod_gameplay_design"
+      "source_status": "original_mod_gameplay_design",
+      "primary_essence": "Moon",
+      "primary_category": "Defense",
+      "tags": [
+        "Defense",
+        "Mobility",
+        "Evasion",
+        "Conditional"
+      ]
     },
     {
       "id": "HungerField",
@@ -2132,7 +2760,15 @@
         "Hunger"
       ],
       "icon": "Essencebound/AwakeningStones/StoneChain",
-      "source_status": "original_mod_gameplay_design"
+      "source_status": "original_mod_gameplay_design",
+      "primary_essence": "Hunger",
+      "primary_category": "Attack",
+      "tags": [
+        "Attack",
+        "Healing",
+        "Drain",
+        "Zone"
+      ]
     },
     {
       "id": "ShatterArmor",
@@ -2157,7 +2793,15 @@
         "Hammer"
       ],
       "icon": "Essencebound/AwakeningStones/StoneFocus",
-      "source_status": "original_mod_gameplay_design"
+      "source_status": "original_mod_gameplay_design",
+      "primary_essence": "Hammer",
+      "primary_category": "Attack",
+      "tags": [
+        "Attack",
+        "Control",
+        "Armor Break",
+        "Debuff"
+      ]
     },
     {
       "id": "HarvestBlessing",
@@ -2183,7 +2827,15 @@
         "Harvest"
       ],
       "icon": "Essencebound/AwakeningStones/StoneFocus",
-      "source_status": "original_mod_gameplay_design"
+      "source_status": "original_mod_gameplay_design",
+      "primary_essence": "Harvest",
+      "primary_category": "Utility",
+      "tags": [
+        "Utility",
+        "Support",
+        "Farming",
+        "Aura"
+      ]
     },
     {
       "id": "WeaveWard",
@@ -2208,7 +2860,15 @@
         "Weave"
       ],
       "icon": "Essencebound/AwakeningStones/StoneChain",
-      "source_status": "original_mod_gameplay_design"
+      "source_status": "original_mod_gameplay_design",
+      "primary_essence": "Weave",
+      "primary_category": "Defense",
+      "tags": [
+        "Defense",
+        "Support",
+        "Linked",
+        "Damage Sharing"
+      ]
     },
     {
       "id": "RuneBeacon",
@@ -2234,7 +2894,15 @@
         "Rune"
       ],
       "icon": "Essencebound/AwakeningStones/StoneFocus",
-      "source_status": "original_mod_gameplay_design"
+      "source_status": "original_mod_gameplay_design",
+      "primary_essence": "Rune",
+      "primary_category": "Defense",
+      "tags": [
+        "Defense",
+        "Zone",
+        "Ward",
+        "Area"
+      ]
     },
     {
       "id": "IronReprisal",
@@ -2259,7 +2927,15 @@
         "Iron"
       ],
       "icon": "Essencebound/AwakeningStones/StoneStone",
-      "source_status": "original_mod_gameplay_design"
+      "source_status": "original_mod_gameplay_design",
+      "primary_essence": "Iron",
+      "primary_category": "Defense",
+      "tags": [
+        "Defense",
+        "Attack",
+        "Counter",
+        "Melee"
+      ]
     },
     {
       "id": "SerpentCoil",
@@ -2284,7 +2960,15 @@
         "Serpent"
       ],
       "icon": "Essencebound/AwakeningStones/StoneChain",
-      "source_status": "original_mod_gameplay_design"
+      "source_status": "original_mod_gameplay_design",
+      "primary_essence": "Serpent",
+      "primary_category": "Control",
+      "tags": [
+        "Control",
+        "Debuff",
+        "Restraint",
+        "Accuracy"
+      ]
     },
     {
       "id": "DawnRebirth",
@@ -2309,7 +2993,15 @@
         "Dawn"
       ],
       "icon": "Essencebound/AwakeningStones/StoneGrace",
-      "source_status": "original_mod_gameplay_design"
+      "source_status": "original_mod_gameplay_design",
+      "primary_essence": "Dawn",
+      "primary_category": "Healing",
+      "tags": [
+        "Healing",
+        "Reactive",
+        "Emergency",
+        "Self"
+      ]
     },
     {
       "id": "AdeptConvergence",
@@ -2334,7 +3026,15 @@
         "Adept"
       ],
       "icon": "Essencebound/AwakeningStones/StoneFocus",
-      "source_status": "original_mod_gameplay_design"
+      "source_status": "original_mod_gameplay_design",
+      "primary_essence": "Adept",
+      "primary_category": "Utility",
+      "tags": [
+        "Utility",
+        "Buff",
+        "Attributes",
+        "Conversion"
+      ]
     },
     {
       "id": "FeyGlamour",
@@ -2359,7 +3059,15 @@
         "Fey"
       ],
       "icon": "Essencebound/AwakeningStones/StoneFocus",
-      "source_status": "original_mod_gameplay_design"
+      "source_status": "original_mod_gameplay_design",
+      "primary_essence": "Fey",
+      "primary_category": "Control",
+      "tags": [
+        "Control",
+        "Illusion",
+        "Debuff",
+        "Accuracy"
+      ]
     },
     {
       "id": "NimbusGuard",
@@ -2384,7 +3092,15 @@
         "Sky"
       ],
       "icon": "Essencebound/AwakeningStones/StoneFocus",
-      "source_status": "original_mod_gameplay_design"
+      "source_status": "original_mod_gameplay_design",
+      "primary_essence": "Sky",
+      "primary_category": "Defense",
+      "tags": [
+        "Defense",
+        "Mobility",
+        "Ward",
+        "Single Target"
+      ]
     },
     {
       "id": "BladeOrbit",
@@ -2410,7 +3126,15 @@
         "Sword"
       ],
       "icon": "Essencebound/AwakeningStones/StoneChain",
-      "source_status": "original_mod_gameplay_design"
+      "source_status": "original_mod_gameplay_design",
+      "primary_essence": "Sword",
+      "primary_category": "Attack",
+      "tags": [
+        "Attack",
+        "Area",
+        "Sustained",
+        "Moving"
+      ]
     },
     {
       "id": "GravityWell",
@@ -2436,7 +3160,15 @@
         "Vortex"
       ],
       "icon": "Essencebound/AwakeningStones/StoneChain",
-      "source_status": "original_mod_gameplay_design"
+      "source_status": "original_mod_gameplay_design",
+      "primary_essence": "Vortex",
+      "primary_category": "Control",
+      "tags": [
+        "Control",
+        "Area",
+        "Pull",
+        "Zone"
+      ]
     },
     {
       "id": "CorruptingSeed",
@@ -2461,7 +3193,15 @@
         "Corrupt"
       ],
       "icon": "Essencebound/AwakeningStones/StoneSurge",
-      "source_status": "original_mod_gameplay_design"
+      "source_status": "original_mod_gameplay_design",
+      "primary_essence": "Corrupt",
+      "primary_category": "Attack",
+      "tags": [
+        "Attack",
+        "Control",
+        "Over Time",
+        "Armor Break"
+      ]
     },
     {
       "id": "TalismanSeal",
@@ -2486,7 +3226,15 @@
         "Talisman"
       ],
       "icon": "Essencebound/AwakeningStones/StoneFocus",
-      "source_status": "original_mod_gameplay_design"
+      "source_status": "original_mod_gameplay_design",
+      "primary_essence": "Talisman",
+      "primary_category": "Defense",
+      "tags": [
+        "Defense",
+        "Reactive",
+        "Trigger",
+        "Ward"
+      ]
     },
     {
       "id": "PactOfUnity",
@@ -2512,7 +3260,15 @@
         "Unity"
       ],
       "icon": "Essencebound/AwakeningStones/StoneFocus",
-      "source_status": "original_mod_gameplay_design"
+      "source_status": "original_mod_gameplay_design",
+      "primary_essence": "Unity",
+      "primary_category": "Utility",
+      "tags": [
+        "Utility",
+        "Support",
+        "Aura",
+        "Group"
+      ]
     },
     {
       "id": "PhoenixAshes",
@@ -2537,7 +3293,15 @@
         "Firebird"
       ],
       "icon": "Essencebound/AwakeningStones/StoneFocus",
-      "source_status": "original_mod_gameplay_design"
+      "source_status": "original_mod_gameplay_design",
+      "primary_essence": "Firebird",
+      "primary_category": "Healing",
+      "tags": [
+        "Healing",
+        "Defense",
+        "Reactive",
+        "Emergency"
+      ]
     },
     {
       "id": "Worldstep",
@@ -2562,7 +3326,15 @@
         "Dimension"
       ],
       "icon": "Essencebound/AwakeningStones/StoneFocus",
-      "source_status": "original_mod_gameplay_design"
+      "source_status": "original_mod_gameplay_design",
+      "primary_essence": "Dimension",
+      "primary_category": "Mobility",
+      "tags": [
+        "Mobility",
+        "Teleport",
+        "Channeled",
+        "Exploration"
+      ]
     },
     {
       "id": "FeralClaw",
@@ -2587,7 +3359,15 @@
         "Claw"
       ],
       "icon": "Essencebound/AwakeningStones/StoneFocus",
-      "source_status": "original_mod_gameplay_design"
+      "source_status": "original_mod_gameplay_design",
+      "primary_essence": "Claw",
+      "primary_category": "Attack",
+      "tags": [
+        "Attack",
+        "Melee",
+        "Combo",
+        "Close Range"
+      ]
     },
     {
       "id": "WardEcho",
@@ -2612,7 +3392,15 @@
         "Boundary"
       ],
       "icon": "Essencebound/AwakeningStones/StoneChain",
-      "source_status": "original_mod_gameplay_design"
+      "source_status": "original_mod_gameplay_design",
+      "primary_essence": "Boundary",
+      "primary_category": "Defense",
+      "tags": [
+        "Defense",
+        "Control",
+        "Cleanse",
+        "Counter"
+      ]
     },
     {
       "id": "SandsOfStillness",
@@ -2638,7 +3426,15 @@
         "Sand"
       ],
       "icon": "Essencebound/AwakeningStones/StoneFocus",
-      "source_status": "original_mod_gameplay_design"
+      "source_status": "original_mod_gameplay_design",
+      "primary_essence": "Sand",
+      "primary_category": "Control",
+      "tags": [
+        "Control",
+        "Area",
+        "Slow",
+        "Zone"
+      ]
     },
     {
       "id": "TempestFlock",
@@ -2664,7 +3460,28 @@
         "Bird"
       ],
       "icon": "Essencebound/AwakeningStones/StoneWind",
-      "source_status": "original_mod_gameplay_design"
+      "source_status": "original_mod_gameplay_design",
+      "primary_essence": "Bird",
+      "primary_category": "Summoning",
+      "tags": [
+        "Summoning",
+        "Decoy",
+        "Familiar",
+        "Group"
+      ]
     }
-  ]
+  ],
+  "taxonomy": {
+    "primary_categories": [
+      "Attack",
+      "Defense",
+      "Healing",
+      "Mobility",
+      "Summoning",
+      "Control",
+      "Utility"
+    ],
+    "description": "Primary category identifies the main use; tags can include multiple categories and mechanics. Primary essence is the first favored essence, not a learning restriction.",
+    "gameplay_affinity_rule": "Existing compatibleAspects and favoredEssences remain unchanged; taxonomy is presentation metadata only."
+  }
 }

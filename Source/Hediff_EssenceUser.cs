@@ -634,6 +634,9 @@ namespace Essencebound
                 {
                     defaultLabel = power.label.CapitalizeFirst(),
                     defaultDesc = power.description + "\nEssence: " + (essence?.label ?? slot.essenceDefName) +
+                        "\nPrimary affinity: " + (power.primaryEssence?.label ?? "Unclassified") +
+                        "\nCategory: " + (string.IsNullOrEmpty(power.primaryCategory) ? "Unclassified" : power.primaryCategory) +
+                        "\nTags: " + (power.abilityTags == null ? "" : string.Join(", ", power.abilityTags)) +
                         "\nTarget: " + (power.targetKind == "self" ? "Self" :
                         power.targetKind == "cell" ? "Map location" :
                         power.targetKind == "thing" ? "Loose item" :

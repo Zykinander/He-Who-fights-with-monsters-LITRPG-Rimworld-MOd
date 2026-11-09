@@ -611,3 +611,39 @@ for id in batch19:
     p=jsonbyid[id]
     assert by_essence['EB_'+p['favored_essences'][0]]==p['defName']
 print('PASS: v0.19 all 100 powers match data, XML, progression and active C# handlers')
+
+
+# All 100 v0.19 powers have consistent, multi-valued gameplay labels.
+categories={'Attack','Defense','Healing','Mobility','Summoning','Control','Utility'}
+assert len(powers)==100
+assert all(p['primary_category'] in categories for p in powers)
+assert all(p['primary_essence']==p['favored_essences'][0] for p in powers)
+assert all(len(p['tags'])>=2 and p['primary_category']==p['tags'][0]
+           and len(p['tags'])==len(set(p['tags'])) for p in powers)
+assert all(t and isinstance(t,str) for p in powers for t in p['tags'])
+assert set(p['primary_category'] for p in powers)==categories
+assert len({p['id'] for p in powers})==100
+# XML labels match canonical JSON (display-only metadata).
+for p in powers:
+    definition=xmlmap[p['defName']]
+    assert definition.findtext('primaryEssence')=='EB_'+p['primary_essence']
+    assert definition.findtext('primaryCategory')==p['primary_category']
+    assert [t.text for t in definition.find('abilityTags')]==p['tags']
+source=(ROOT/'Source/EssencePowerDef.cs').read_text()
+tooltip=(ROOT/'Source/Hediff_EssenceUser.cs').read_text()
+assert 'public EssenceDef primaryEssence;' in source
+assert 'public string primaryCategory' in source
+assert 'public List<string> abilityTags' in source
+for field in ('power.primaryEssence?.label','power.primaryCategory',
+              'power.abilityTags'):
+    assert field in tooltip
+with (ROOT/'Data/essence_powers.csv').open(encoding='utf-8',newline='') as fh:
+    enriched=list(_csv.DictReader(fh))
+assert len(enriched)==100
+j={p['id']:p for p in powers}
+for r in enriched:
+    p=j[r['id']]
+    assert r['primary_essence']==p['primary_essence']
+    assert r['primary_category']==p['primary_category']
+    assert r['tags']=='; '.join(p['tags'])
+print('PASS: 100 primary essences, gameplay categories and multi-tag tooltips match JSON/XML/CSV')

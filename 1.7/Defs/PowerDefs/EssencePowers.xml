@@ -12,6 +12,14 @@
     <durationTicks>0</durationTicks>
     <damageDefName>Flame</damageDefName>
     <iconPath>Essencebound/AwakeningStones/StoneFire</iconPath>
+    <primaryEssence>EB_Fire</primaryEssence>
+    <primaryCategory>Attack</primaryCategory>
+    <abilityTags>
+      <li>Attack</li>
+      <li>Ranged</li>
+      <li>Fire</li>
+      <li>Single Target</li>
+    </abilityTags>
     <compatibleAspects>
       <li>EB_Aspect_Assault</li>
       <li>EB_Aspect_Spell</li>
@@ -38,6 +46,15 @@
     <buffHediffDefName>EB_Debuff_Chilled</buffHediffDefName>
     <damageDefName>Blunt</damageDefName>
     <iconPath>Essencebound/AwakeningStones/StoneWater</iconPath>
+    <primaryEssence>EB_Ice</primaryEssence>
+    <primaryCategory>Attack</primaryCategory>
+    <abilityTags>
+      <li>Attack</li>
+      <li>Control</li>
+      <li>Debuff</li>
+      <li>Cold</li>
+      <li>Single Target</li>
+    </abilityTags>
     <compatibleAspects>
       <li>EB_Aspect_Control</li>
       <li>EB_Aspect_Assault</li>
@@ -63,6 +80,15 @@
     <buffHediffDefName>EB_Debuff_Static</buffHediffDefName>
     <damageDefName>Blunt</damageDefName>
     <iconPath>Essencebound/AwakeningStones/StoneSurge</iconPath>
+    <primaryEssence>EB_Lightning</primaryEssence>
+    <primaryCategory>Attack</primaryCategory>
+    <abilityTags>
+      <li>Attack</li>
+      <li>Control</li>
+      <li>Debuff</li>
+      <li>Lightning</li>
+      <li>Single Target</li>
+    </abilityTags>
     <compatibleAspects>
       <li>EB_Aspect_Spell</li>
       <li>EB_Aspect_Precision</li>
@@ -88,6 +114,14 @@
     <cooldownTicks>900</cooldownTicks>
     <durationTicks>0</durationTicks>
     <iconPath>Essencebound/AwakeningStones/StonePlant</iconPath>
+    <primaryEssence>EB_Life</primaryEssence>
+    <primaryCategory>Healing</primaryCategory>
+    <abilityTags>
+      <li>Healing</li>
+      <li>Support</li>
+      <li>Single Target</li>
+      <li>Injury Healing</li>
+    </abilityTags>
     <compatibleAspects>
       <li>EB_Aspect_Recovery</li>
       <li>EB_Aspect_Growth</li>
@@ -114,6 +148,14 @@
     <durationTicks>900</durationTicks>
     <buffHediffDefName>EB_Buff_GuardianWard</buffHediffDefName>
     <iconPath>Essencebound/AwakeningStones/StoneShield</iconPath>
+    <primaryEssence>EB_Shield</primaryEssence>
+    <primaryCategory>Defense</primaryCategory>
+    <abilityTags>
+      <li>Defense</li>
+      <li>Support</li>
+      <li>Ward</li>
+      <li>Single Target</li>
+    </abilityTags>
     <compatibleAspects>
       <li>EB_Aspect_Ward</li>
       <li>EB_Aspect_Ritual</li>
@@ -140,6 +182,14 @@
     <durationTicks>900</durationTicks>
     <buffHediffDefName>EB_Buff_StoneSkin</buffHediffDefName>
     <iconPath>Essencebound/AwakeningStones/StoneStone</iconPath>
+    <primaryEssence>EB_Earth</primaryEssence>
+    <primaryCategory>Defense</primaryCategory>
+    <abilityTags>
+      <li>Defense</li>
+      <li>Armor</li>
+      <li>Buff</li>
+      <li>Self</li>
+    </abilityTags>
     <compatibleAspects>
       <li>EB_Aspect_Ward</li>
       <li>EB_Aspect_Counter</li>
@@ -166,6 +216,14 @@
     <durationTicks>660</durationTicks>
     <buffHediffDefName>EB_Buff_SwiftStep</buffHediffDefName>
     <iconPath>Essencebound/AwakeningStones/StoneWind</iconPath>
+    <primaryEssence>EB_Swift</primaryEssence>
+    <primaryCategory>Mobility</primaryCategory>
+    <abilityTags>
+      <li>Mobility</li>
+      <li>Speed</li>
+      <li>Buff</li>
+      <li>Self</li>
+    </abilityTags>
     <compatibleAspects>
       <li>EB_Aspect_Mobility</li>
       <li>EB_Aspect_Surge</li>
@@ -193,6 +251,14 @@
     <durationTicks>720</durationTicks>
     <buffHediffDefName>EB_Buff_MistVeil</buffHediffDefName>
     <iconPath>Essencebound/AwakeningStones/StoneMist</iconPath>
+    <primaryEssence>EB_Dark</primaryEssence>
+    <primaryCategory>Defense</primaryCategory>
+    <abilityTags>
+      <li>Defense</li>
+      <li>Mobility</li>
+      <li>Evasion</li>
+      <li>Buff</li>
+    </abilityTags>
     <compatibleAspects>
       <li>EB_Aspect_Veil</li>
       <li>EB_Aspect_Mobility</li>
@@ -217,6 +283,14 @@
     <durationTicks>900</durationTicks>
     <buffHediffDefName>EB_Buff_KeenSight</buffHediffDefName>
     <iconPath>Essencebound/AwakeningStones/StoneFocus</iconPath>
+    <primaryEssence>EB_Eye</primaryEssence>
+    <primaryCategory>Utility</primaryCategory>
+    <abilityTags>
+      <li>Utility</li>
+      <li>Support</li>
+      <li>Precision</li>
+      <li>Buff</li>
+    </abilityTags>
     <compatibleAspects>
       <li>EB_Aspect_Precision</li>
       <li>EB_Aspect_Exploration</li>
@@ -243,6 +317,14 @@
     <durationTicks>600</durationTicks>
     <buffHediffDefName>EB_Buff_RallyingSurge</buffHediffDefName>
     <iconPath>Essencebound/AwakeningStones/StoneGrace</iconPath>
+    <primaryEssence>EB_Might</primaryEssence>
+    <primaryCategory>Utility</primaryCategory>
+    <abilityTags>
+      <li>Utility</li>
+      <li>Support</li>
+      <li>Mobility</li>
+      <li>Buff</li>
+    </abilityTags>
     <compatibleAspects>
       <li>EB_Aspect_Surge</li>
       <li>EB_Aspect_Aura</li>
@@ -270,6 +352,14 @@
     <cooldownTicks>780</cooldownTicks>
     <durationTicks>0</durationTicks>
     <iconPath>Essencebound/AwakeningStones/StoneLight</iconPath>
+    <primaryEssence>EB_Pure</primaryEssence>
+    <primaryCategory>Healing</primaryCategory>
+    <abilityTags>
+      <li>Healing</li>
+      <li>Utility</li>
+      <li>Cleanse</li>
+      <li>Single Target</li>
+    </abilityTags>
     <compatibleAspects>
       <li>EB_Aspect_Recovery</li>
       <li>EB_Aspect_Judgement</li>
@@ -295,6 +385,14 @@
     <durationTicks>0</durationTicks>
     <damageDefName>Blunt</damageDefName>
     <iconPath>Essencebound/AwakeningStones/StoneChain</iconPath>
+    <primaryEssence>EB_Might</primaryEssence>
+    <primaryCategory>Attack</primaryCategory>
+    <abilityTags>
+      <li>Attack</li>
+      <li>Control</li>
+      <li>Area</li>
+      <li>Pulse</li>
+    </abilityTags>
     <compatibleAspects>
       <li>EB_Aspect_Control</li>
       <li>EB_Aspect_Assault</li>
@@ -321,6 +419,14 @@
     <durationTicks>0</durationTicks>
     <damageDefName>Flame</damageDefName>
     <iconPath>Essencebound/AwakeningStones/StoneFire</iconPath>
+    <primaryEssence>EB_Volcano</primaryEssence>
+    <primaryCategory>Attack</primaryCategory>
+    <abilityTags>
+      <li>Attack</li>
+      <li>Area</li>
+      <li>Fire</li>
+      <li>Pulse</li>
+    </abilityTags>
     <compatibleAspects>
       <li>EB_Aspect_Assault</li>
       <li>EB_Aspect_Spell</li>
@@ -347,6 +453,14 @@
     <maxExtraTargets>2</maxExtraTargets>
     <damageDefName>Blunt</damageDefName>
     <iconPath>Essencebound/AwakeningStones/StoneSurge</iconPath>
+    <primaryEssence>EB_Lightning</primaryEssence>
+    <primaryCategory>Attack</primaryCategory>
+    <abilityTags>
+      <li>Attack</li>
+      <li>Chain</li>
+      <li>Lightning</li>
+      <li>Multi Target</li>
+    </abilityTags>
     <compatibleAspects>
       <li>EB_Aspect_Spell</li>
       <li>EB_Aspect_Reach</li>
@@ -371,6 +485,14 @@
     <durationTicks>0</durationTicks>
     <damageDefName>Blunt</damageDefName>
     <iconPath>Essencebound/AwakeningStones/StoneChain</iconPath>
+    <primaryEssence>EB_Blood</primaryEssence>
+    <primaryCategory>Attack</primaryCategory>
+    <abilityTags>
+      <li>Attack</li>
+      <li>Healing</li>
+      <li>Drain</li>
+      <li>Single Target</li>
+    </abilityTags>
     <compatibleAspects>
       <li>EB_Aspect_Reaper</li>
       <li>EB_Aspect_Assault</li>
@@ -394,6 +516,14 @@
     <cooldownTicks>1080</cooldownTicks>
     <durationTicks>0</durationTicks>
     <iconPath>Essencebound/AwakeningStones/StonePlant</iconPath>
+    <primaryEssence>EB_Life</primaryEssence>
+    <primaryCategory>Healing</primaryCategory>
+    <abilityTags>
+      <li>Healing</li>
+      <li>Multi Wound</li>
+      <li>Single Target</li>
+      <li>Support</li>
+    </abilityTags>
     <compatibleAspects>
       <li>EB_Aspect_Recovery</li>
       <li>EB_Aspect_Growth</li>
@@ -418,6 +548,14 @@
     <durationTicks>1200</durationTicks>
     <buffHediffDefName>EB_Buff_RenewalSeed</buffHediffDefName>
     <iconPath>Essencebound/AwakeningStones/StonePlant</iconPath>
+    <primaryEssence>EB_Renewal</primaryEssence>
+    <primaryCategory>Healing</primaryCategory>
+    <abilityTags>
+      <li>Healing</li>
+      <li>Regeneration</li>
+      <li>Over Time</li>
+      <li>Support</li>
+    </abilityTags>
     <compatibleAspects>
       <li>EB_Aspect_Recovery</li>
       <li>EB_Aspect_Growth</li>
@@ -443,6 +581,15 @@
     <areaRadius>5</areaRadius>
     <buffHediffDefName>EB_Buff_GroveShelter</buffHediffDefName>
     <iconPath>Essencebound/AwakeningStones/StoneShield</iconPath>
+    <primaryEssence>EB_Tree</primaryEssence>
+    <primaryCategory>Defense</primaryCategory>
+    <abilityTags>
+      <li>Defense</li>
+      <li>Support</li>
+      <li>Aura</li>
+      <li>Group</li>
+      <li>Ward</li>
+    </abilityTags>
     <compatibleAspects>
       <li>EB_Aspect_Aura</li>
       <li>EB_Aspect_Ward</li>
@@ -467,6 +614,14 @@
     <durationTicks>0</durationTicks>
     <areaRadius>6</areaRadius>
     <iconPath>Essencebound/AwakeningStones/StoneLight</iconPath>
+    <primaryEssence>EB_Pure</primaryEssence>
+    <primaryCategory>Healing</primaryCategory>
+    <abilityTags>
+      <li>Healing</li>
+      <li>Utility</li>
+      <li>Cleanse</li>
+      <li>Area</li>
+    </abilityTags>
     <compatibleAspects>
       <li>EB_Aspect_Recovery</li>
       <li>EB_Aspect_Ritual</li>
@@ -491,6 +646,14 @@
     <durationTicks>900</durationTicks>
     <buffHediffDefName>EB_Debuff_GravitySnare</buffHediffDefName>
     <iconPath>Essencebound/AwakeningStones/StoneChain</iconPath>
+    <primaryEssence>EB_Vortex</primaryEssence>
+    <primaryCategory>Control</primaryCategory>
+    <abilityTags>
+      <li>Control</li>
+      <li>Debuff</li>
+      <li>Slow</li>
+      <li>Single Target</li>
+    </abilityTags>
     <compatibleAspects>
       <li>EB_Aspect_Control</li>
       <li>EB_Aspect_Spell</li>
@@ -516,6 +679,14 @@
     <buffHediffDefName>EB_Debuff_CorrodedArmor</buffHediffDefName>
     <damageDefName>Blunt</damageDefName>
     <iconPath>Essencebound/AwakeningStones/StoneSurge</iconPath>
+    <primaryEssence>EB_Blight</primaryEssence>
+    <primaryCategory>Attack</primaryCategory>
+    <abilityTags>
+      <li>Attack</li>
+      <li>Control</li>
+      <li>Debuff</li>
+      <li>Armor Break</li>
+    </abilityTags>
     <compatibleAspects>
       <li>EB_Aspect_Assault</li>
       <li>EB_Aspect_Reaper</li>
@@ -541,6 +712,14 @@
     <areaRadius>3</areaRadius>
     <damageDefName>Blunt</damageDefName>
     <iconPath>Essencebound/AwakeningStones/StoneChain</iconPath>
+    <primaryEssence>EB_Echo</primaryEssence>
+    <primaryCategory>Attack</primaryCategory>
+    <abilityTags>
+      <li>Attack</li>
+      <li>Area</li>
+      <li>Splash</li>
+      <li>Concussive</li>
+    </abilityTags>
     <compatibleAspects>
       <li>EB_Aspect_Assault</li>
       <li>EB_Aspect_Spell</li>
@@ -565,6 +744,14 @@
     <durationTicks>1200</durationTicks>
     <buffHediffDefName>EB_Buff_SpiritBeacon</buffHediffDefName>
     <iconPath>Essencebound/AwakeningStones/StoneFocus</iconPath>
+    <primaryEssence>EB_Mystic</primaryEssence>
+    <primaryCategory>Utility</primaryCategory>
+    <abilityTags>
+      <li>Utility</li>
+      <li>Support</li>
+      <li>Precision</li>
+      <li>Buff</li>
+    </abilityTags>
     <compatibleAspects>
       <li>EB_Aspect_Preparation</li>
       <li>EB_Aspect_Familiar</li>
@@ -589,6 +776,14 @@
     <durationTicks>900</durationTicks>
     <buffHediffDefName>EB_Buff_MoonlitReprieve</buffHediffDefName>
     <iconPath>Essencebound/AwakeningStones/StoneGrace</iconPath>
+    <primaryEssence>EB_Moon</primaryEssence>
+    <primaryCategory>Healing</primaryCategory>
+    <abilityTags>
+      <li>Healing</li>
+      <li>Defense</li>
+      <li>Ward</li>
+      <li>Single Target</li>
+    </abilityTags>
     <compatibleAspects>
       <li>EB_Aspect_Recovery</li>
       <li>EB_Aspect_Ward</li>
@@ -613,6 +808,14 @@
     <durationTicks>0</durationTicks>
     <damageDefName>Flame</damageDefName>
     <iconPath>Essencebound/AwakeningStones/StoneFire</iconPath>
+    <primaryEssence>EB_Fire</primaryEssence>
+    <primaryCategory>Attack</primaryCategory>
+    <abilityTags>
+      <li>Attack</li>
+      <li>Ranged</li>
+      <li>Fire</li>
+      <li>Single Target</li>
+    </abilityTags>
     <compatibleAspects>
       <li>EB_Aspect_Assault</li>
       <li>EB_Aspect_Spell</li>
@@ -637,6 +840,14 @@
     <durationTicks>0</durationTicks>
     <damageDefName>Blunt</damageDefName>
     <iconPath>Essencebound/AwakeningStones/StoneWater</iconPath>
+    <primaryEssence>EB_Ice</primaryEssence>
+    <primaryCategory>Attack</primaryCategory>
+    <abilityTags>
+      <li>Attack</li>
+      <li>Control</li>
+      <li>Area</li>
+      <li>Cold</li>
+    </abilityTags>
     <compatibleAspects>
       <li>EB_Aspect_Control</li>
       <li>EB_Aspect_Spell</li>
@@ -662,6 +873,14 @@
     <areaRadius>3.5</areaRadius>
     <damageDefName>Blunt</damageDefName>
     <iconPath>Essencebound/AwakeningStones/StoneStone</iconPath>
+    <primaryEssence>EB_Earth</primaryEssence>
+    <primaryCategory>Attack</primaryCategory>
+    <abilityTags>
+      <li>Attack</li>
+      <li>Area</li>
+      <li>Splash</li>
+      <li>Concussive</li>
+    </abilityTags>
     <compatibleAspects>
       <li>EB_Aspect_Assault</li>
       <li>EB_Aspect_Control</li>
@@ -688,6 +907,14 @@
     <maxExtraTargets>3</maxExtraTargets>
     <damageDefName>Blunt</damageDefName>
     <iconPath>Essencebound/AwakeningStones/StoneWind</iconPath>
+    <primaryEssence>EB_Wind</primaryEssence>
+    <primaryCategory>Attack</primaryCategory>
+    <abilityTags>
+      <li>Attack</li>
+      <li>Chain</li>
+      <li>Wind</li>
+      <li>Multi Target</li>
+    </abilityTags>
     <compatibleAspects>
       <li>EB_Aspect_Reach</li>
       <li>EB_Aspect_Surge</li>
@@ -712,6 +939,14 @@
     <durationTicks>0</durationTicks>
     <damageDefName>Blunt</damageDefName>
     <iconPath>Essencebound/AwakeningStones/StoneMist</iconPath>
+    <primaryEssence>EB_Dark</primaryEssence>
+    <primaryCategory>Attack</primaryCategory>
+    <abilityTags>
+      <li>Attack</li>
+      <li>Healing</li>
+      <li>Drain</li>
+      <li>Single Target</li>
+    </abilityTags>
     <compatibleAspects>
       <li>EB_Aspect_Reaper</li>
       <li>EB_Aspect_Spell</li>
@@ -737,6 +972,14 @@
     <buffHediffDefName>EB_Debuff_VenomHaze</buffHediffDefName>
     <damageDefName>Blunt</damageDefName>
     <iconPath>Essencebound/AwakeningStones/StoneChain</iconPath>
+    <primaryEssence>EB_Venom</primaryEssence>
+    <primaryCategory>Attack</primaryCategory>
+    <abilityTags>
+      <li>Attack</li>
+      <li>Control</li>
+      <li>Debuff</li>
+      <li>Slow</li>
+    </abilityTags>
     <compatibleAspects>
       <li>EB_Aspect_Assault</li>
       <li>EB_Aspect_Reaper</li>
@@ -763,6 +1006,14 @@
     <maxExtraTargets>3</maxExtraTargets>
     <damageDefName>Blunt</damageDefName>
     <iconPath>Essencebound/AwakeningStones/StoneFocus</iconPath>
+    <primaryEssence>EB_Crystal</primaryEssence>
+    <primaryCategory>Attack</primaryCategory>
+    <abilityTags>
+      <li>Attack</li>
+      <li>Chain</li>
+      <li>Crystal</li>
+      <li>Multi Target</li>
+    </abilityTags>
     <compatibleAspects>
       <li>EB_Aspect_Assault</li>
       <li>EB_Aspect_Spell</li>
@@ -790,6 +1041,14 @@
     <buffHediffDefName>EB_Debuff_BriarBind</buffHediffDefName>
     <damageDefName>Blunt</damageDefName>
     <iconPath>Essencebound/AwakeningStones/StonePlant</iconPath>
+    <primaryEssence>EB_Plant</primaryEssence>
+    <primaryCategory>Attack</primaryCategory>
+    <abilityTags>
+      <li>Attack</li>
+      <li>Control</li>
+      <li>Area</li>
+      <li>Debuff</li>
+    </abilityTags>
     <compatibleAspects>
       <li>EB_Aspect_Growth</li>
       <li>EB_Aspect_Assault</li>
@@ -815,6 +1074,14 @@
     <areaRadius>3</areaRadius>
     <damageDefName>Blunt</damageDefName>
     <iconPath>Essencebound/AwakeningStones/StoneFocus</iconPath>
+    <primaryEssence>EB_Star</primaryEssence>
+    <primaryCategory>Attack</primaryCategory>
+    <abilityTags>
+      <li>Attack</li>
+      <li>Area</li>
+      <li>Splash</li>
+      <li>Celestial</li>
+    </abilityTags>
     <compatibleAspects>
       <li>EB_Aspect_Stars</li>
       <li>EB_Aspect_Spell</li>
@@ -839,6 +1106,14 @@
     <durationTicks>0</durationTicks>
     <damageDefName>Blunt</damageDefName>
     <iconPath>Essencebound/AwakeningStones/StoneWater</iconPath>
+    <primaryEssence>EB_Water</primaryEssence>
+    <primaryCategory>Attack</primaryCategory>
+    <abilityTags>
+      <li>Attack</li>
+      <li>Control</li>
+      <li>Area</li>
+      <li>Pulse</li>
+    </abilityTags>
     <compatibleAspects>
       <li>EB_Aspect_Control</li>
       <li>EB_Aspect_Surge</li>
@@ -863,6 +1138,14 @@
     <durationTicks>1200</durationTicks>
     <buffHediffDefName>EB_Buff_IronBastion</buffHediffDefName>
     <iconPath>Essencebound/AwakeningStones/StoneStone</iconPath>
+    <primaryEssence>EB_Iron</primaryEssence>
+    <primaryCategory>Defense</primaryCategory>
+    <abilityTags>
+      <li>Defense</li>
+      <li>Armor</li>
+      <li>Buff</li>
+      <li>Self</li>
+    </abilityTags>
     <compatibleAspects>
       <li>EB_Aspect_Ward</li>
       <li>EB_Aspect_Preparation</li>
@@ -887,6 +1170,14 @@
     <durationTicks>960</durationTicks>
     <buffHediffDefName>EB_Buff_MirrorGuard</buffHediffDefName>
     <iconPath>Essencebound/AwakeningStones/StoneMist</iconPath>
+    <primaryEssence>EB_Mirror</primaryEssence>
+    <primaryCategory>Defense</primaryCategory>
+    <abilityTags>
+      <li>Defense</li>
+      <li>Evasion</li>
+      <li>Armor</li>
+      <li>Buff</li>
+    </abilityTags>
     <compatibleAspects>
       <li>EB_Aspect_Ward</li>
       <li>EB_Aspect_Veil</li>
@@ -912,6 +1203,14 @@
     <areaRadius>6</areaRadius>
     <buffHediffDefName>EB_Buff_DawnChorus</buffHediffDefName>
     <iconPath>Essencebound/AwakeningStones/StoneGrace</iconPath>
+    <primaryEssence>EB_Dawn</primaryEssence>
+    <primaryCategory>Utility</primaryCategory>
+    <abilityTags>
+      <li>Utility</li>
+      <li>Support</li>
+      <li>Aura</li>
+      <li>Group</li>
+    </abilityTags>
     <compatibleAspects>
       <li>EB_Aspect_Aura</li>
       <li>EB_Aspect_Ritual</li>
@@ -937,6 +1236,14 @@
     <areaRadius>6</areaRadius>
     <maxExtraTargets>3</maxExtraTargets>
     <iconPath>Essencebound/AwakeningStones/StonePlant</iconPath>
+    <primaryEssence>EB_Verdant</primaryEssence>
+    <primaryCategory>Healing</primaryCategory>
+    <abilityTags>
+      <li>Healing</li>
+      <li>Area</li>
+      <li>Group</li>
+      <li>Injury Healing</li>
+    </abilityTags>
     <compatibleAspects>
       <li>EB_Aspect_Recovery</li>
       <li>EB_Aspect_Growth</li>
@@ -963,6 +1270,14 @@
     <maxExtraTargets>3</maxExtraTargets>
     <buffHediffDefName>EB_Buff_RenewalSeed</buffHediffDefName>
     <iconPath>Essencebound/AwakeningStones/StoneWater</iconPath>
+    <primaryEssence>EB_Ocean</primaryEssence>
+    <primaryCategory>Healing</primaryCategory>
+    <abilityTags>
+      <li>Healing</li>
+      <li>Area</li>
+      <li>Regeneration</li>
+      <li>Over Time</li>
+    </abilityTags>
     <compatibleAspects>
       <li>EB_Aspect_Recovery</li>
       <li>EB_Aspect_Ritual</li>
@@ -986,6 +1301,14 @@
     <cooldownTicks>960</cooldownTicks>
     <durationTicks>0</durationTicks>
     <iconPath>Essencebound/AwakeningStones/StoneLight</iconPath>
+    <primaryEssence>EB_Light</primaryEssence>
+    <primaryCategory>Healing</primaryCategory>
+    <abilityTags>
+      <li>Healing</li>
+      <li>Utility</li>
+      <li>Cleanse</li>
+      <li>Single Target</li>
+    </abilityTags>
     <compatibleAspects>
       <li>EB_Aspect_Recovery</li>
       <li>EB_Aspect_Judgement</li>
@@ -1011,6 +1334,14 @@
     <areaRadius>5</areaRadius>
     <maxExtraTargets>2</maxExtraTargets>
     <iconPath>Essencebound/AwakeningStones/StoneGrace</iconPath>
+    <primaryEssence>EB_Ministration</primaryEssence>
+    <primaryCategory>Healing</primaryCategory>
+    <abilityTags>
+      <li>Healing</li>
+      <li>Chain</li>
+      <li>Multi Target</li>
+      <li>Injury Healing</li>
+    </abilityTags>
     <compatibleAspects>
       <li>EB_Aspect_Recovery</li>
       <li>EB_Aspect_Familiar</li>
@@ -1035,6 +1366,14 @@
     <durationTicks>0</durationTicks>
     <damageDefName>Blunt</damageDefName>
     <iconPath>Essencebound/AwakeningStones/StoneChain</iconPath>
+    <primaryEssence>EB_Death</primaryEssence>
+    <primaryCategory>Attack</primaryCategory>
+    <abilityTags>
+      <li>Attack</li>
+      <li>Healing</li>
+      <li>Area</li>
+      <li>Drain</li>
+    </abilityTags>
     <compatibleAspects>
       <li>EB_Aspect_Reaper</li>
       <li>EB_Aspect_Spell</li>
@@ -1059,6 +1398,14 @@
     <durationTicks>960</durationTicks>
     <buffHediffDefName>EB_Debuff_RuneBind</buffHediffDefName>
     <iconPath>Essencebound/AwakeningStones/StoneFocus</iconPath>
+    <primaryEssence>EB_Rune</primaryEssence>
+    <primaryCategory>Control</primaryCategory>
+    <abilityTags>
+      <li>Control</li>
+      <li>Debuff</li>
+      <li>Slow</li>
+      <li>Single Target</li>
+    </abilityTags>
     <compatibleAspects>
       <li>EB_Aspect_Control</li>
       <li>EB_Aspect_Ritual</li>
@@ -1083,6 +1430,14 @@
     <durationTicks>900</durationTicks>
     <buffHediffDefName>EB_Debuff_OmenHex</buffHediffDefName>
     <iconPath>Essencebound/AwakeningStones/StoneMist</iconPath>
+    <primaryEssence>EB_Omen</primaryEssence>
+    <primaryCategory>Control</primaryCategory>
+    <abilityTags>
+      <li>Control</li>
+      <li>Debuff</li>
+      <li>Accuracy</li>
+      <li>Single Target</li>
+    </abilityTags>
     <compatibleAspects>
       <li>EB_Aspect_Control</li>
       <li>EB_Aspect_Veil</li>
@@ -1107,6 +1462,14 @@
     <durationTicks>720</durationTicks>
     <buffHediffDefName>EB_Buff_TemporalHaste</buffHediffDefName>
     <iconPath>Essencebound/AwakeningStones/StoneWind</iconPath>
+    <primaryEssence>EB_Time</primaryEssence>
+    <primaryCategory>Mobility</primaryCategory>
+    <abilityTags>
+      <li>Mobility</li>
+      <li>Utility</li>
+      <li>Speed</li>
+      <li>Buff</li>
+    </abilityTags>
     <compatibleAspects>
       <li>EB_Aspect_Mobility</li>
       <li>EB_Aspect_Surge</li>
@@ -1131,6 +1494,14 @@
     <durationTicks>900</durationTicks>
     <buffHediffDefName>EB_Buff_BattlefieldFocus</buffHediffDefName>
     <iconPath>Essencebound/AwakeningStones/StoneFocus</iconPath>
+    <primaryEssence>EB_Battlefield</primaryEssence>
+    <primaryCategory>Utility</primaryCategory>
+    <abilityTags>
+      <li>Utility</li>
+      <li>Defense</li>
+      <li>Precision</li>
+      <li>Buff</li>
+    </abilityTags>
     <compatibleAspects>
       <li>EB_Aspect_Precision</li>
       <li>EB_Aspect_Preparation</li>
@@ -1155,6 +1526,14 @@
     <durationTicks>0</durationTicks>
     <damageDefName>Blunt</damageDefName>
     <iconPath>Essencebound/AwakeningStones/StoneChain</iconPath>
+    <primaryEssence>EB_Sword</primaryEssence>
+    <primaryCategory>Attack</primaryCategory>
+    <abilityTags>
+      <li>Attack</li>
+      <li>Area</li>
+      <li>Close Range</li>
+      <li>Pulse</li>
+    </abilityTags>
     <compatibleAspects>
       <li>EB_Aspect_Assault</li>
       <li>EB_Aspect_Reaper</li>
@@ -1179,6 +1558,14 @@
     <durationTicks>0</durationTicks>
     <damageDefName>Blunt</damageDefName>
     <iconPath>Essencebound/AwakeningStones/StoneChain</iconPath>
+    <primaryEssence>EB_Nemesis</primaryEssence>
+    <primaryCategory>Attack</primaryCategory>
+    <abilityTags>
+      <li>Attack</li>
+      <li>Finisher</li>
+      <li>Single Target</li>
+      <li>Injury Scaling</li>
+    </abilityTags>
     <compatibleAspects>
       <li>EB_Aspect_Reaper</li>
       <li>EB_Aspect_Assault</li>
@@ -1204,6 +1591,14 @@
     <buffHediffDefName>EB_Debuff_ThreadSnare</buffHediffDefName>
     <damageDefName>Blunt</damageDefName>
     <iconPath>Essencebound/AwakeningStones/StoneChain</iconPath>
+    <primaryEssence>EB_Thread</primaryEssence>
+    <primaryCategory>Control</primaryCategory>
+    <abilityTags>
+      <li>Control</li>
+      <li>Attack</li>
+      <li>Debuff</li>
+      <li>Slow</li>
+    </abilityTags>
     <compatibleAspects>
       <li>EB_Aspect_Control</li>
       <li>EB_Aspect_Spell</li>
@@ -1228,6 +1623,14 @@
     <durationTicks>870</durationTicks>
     <buffHediffDefName>EB_Buff_GlassWard</buffHediffDefName>
     <iconPath>Essencebound/AwakeningStones/StoneShield</iconPath>
+    <primaryEssence>EB_Glass</primaryEssence>
+    <primaryCategory>Defense</primaryCategory>
+    <abilityTags>
+      <li>Defense</li>
+      <li>Healing</li>
+      <li>Ward</li>
+      <li>Armor</li>
+    </abilityTags>
     <compatibleAspects>
       <li>EB_Aspect_Ward</li>
       <li>EB_Aspect_Recovery</li>
@@ -1253,6 +1656,14 @@
     <areaRadius>3</areaRadius>
     <damageDefName>Flame</damageDefName>
     <iconPath>Essencebound/AwakeningStones/StoneFire</iconPath>
+    <primaryEssence>EB_Phoenix</primaryEssence>
+    <primaryCategory>Attack</primaryCategory>
+    <abilityTags>
+      <li>Attack</li>
+      <li>Area</li>
+      <li>Delayed</li>
+      <li>Fire</li>
+    </abilityTags>
     <compatibleAspects>
       <li>EB_Aspect_Assault</li>
       <li>EB_Aspect_Spell</li>
@@ -1275,6 +1686,14 @@
     <durationTicks>900</durationTicks>
     <buffHediffDefName>EB_Buff_PrismaticDeflection</buffHediffDefName>
     <iconPath>Essencebound/AwakeningStones/StoneShield</iconPath>
+    <primaryEssence>EB_Refracting</primaryEssence>
+    <primaryCategory>Defense</primaryCategory>
+    <abilityTags>
+      <li>Defense</li>
+      <li>Counter</li>
+      <li>Reflection</li>
+      <li>Reactive</li>
+    </abilityTags>
     <compatibleAspects>
       <li>EB_Aspect_Ward</li>
       <li>EB_Aspect_Counter</li>
@@ -1297,6 +1716,14 @@
     <durationTicks>1200</durationTicks>
     <areaRadius>5</areaRadius>
     <iconPath>Essencebound/AwakeningStones/StonePlant</iconPath>
+    <primaryEssence>EB_Lotus</primaryEssence>
+    <primaryCategory>Healing</primaryCategory>
+    <abilityTags>
+      <li>Healing</li>
+      <li>Area</li>
+      <li>Zone</li>
+      <li>Regeneration</li>
+    </abilityTags>
     <compatibleAspects>
       <li>EB_Aspect_Recovery</li>
       <li>EB_Aspect_Ritual</li>
@@ -1319,6 +1746,14 @@
     <durationTicks>1800</durationTicks>
     <buffHediffDefName>EB_Buff_ChronoAnchor</buffHediffDefName>
     <iconPath>Essencebound/AwakeningStones/StoneFocus</iconPath>
+    <primaryEssence>EB_Time</primaryEssence>
+    <primaryCategory>Mobility</primaryCategory>
+    <abilityTags>
+      <li>Mobility</li>
+      <li>Teleport</li>
+      <li>Return</li>
+      <li>Utility</li>
+    </abilityTags>
     <compatibleAspects>
       <li>EB_Aspect_Mobility</li>
       <li>EB_Aspect_Preparation</li>
@@ -1341,6 +1776,14 @@
     <durationTicks>1200</durationTicks>
     <maxExtraTargets>1</maxExtraTargets>
     <iconPath>Essencebound/AwakeningStones/StoneChain</iconPath>
+    <primaryEssence>EB_Wolf</primaryEssence>
+    <primaryCategory>Summoning</primaryCategory>
+    <abilityTags>
+      <li>Summoning</li>
+      <li>Familiar</li>
+      <li>Combat</li>
+      <li>Timed</li>
+    </abilityTags>
     <compatibleAspects>
       <li>EB_Aspect_Familiar</li>
       <li>EB_Aspect_Adventure</li>
@@ -1362,6 +1805,14 @@
     <cooldownTicks>480</cooldownTicks>
     <durationTicks>0</durationTicks>
     <iconPath>Essencebound/AwakeningStones/StoneFocus</iconPath>
+    <primaryEssence>EB_Hand</primaryEssence>
+    <primaryCategory>Utility</primaryCategory>
+    <abilityTags>
+      <li>Utility</li>
+      <li>Item Manipulation</li>
+      <li>Ranged</li>
+      <li>Exploration</li>
+    </abilityTags>
     <compatibleAspects>
       <li>EB_Aspect_Reach</li>
       <li>EB_Aspect_Exploration</li>
@@ -1383,6 +1834,14 @@
     <cooldownTicks>1080</cooldownTicks>
     <durationTicks>900</durationTicks>
     <iconPath>Essencebound/AwakeningStones/StoneStone</iconPath>
+    <primaryEssence>EB_Chimera</primaryEssence>
+    <primaryCategory>Defense</primaryCategory>
+    <abilityTags>
+      <li>Defense</li>
+      <li>Mobility</li>
+      <li>Adaptive</li>
+      <li>Buff</li>
+    </abilityTags>
     <compatibleAspects>
       <li>EB_Aspect_Ward</li>
       <li>EB_Aspect_Surge</li>
@@ -1404,6 +1863,14 @@
     <cooldownTicks>720</cooldownTicks>
     <durationTicks>0</durationTicks>
     <iconPath>Essencebound/AwakeningStones/StoneMist</iconPath>
+    <primaryEssence>EB_Void</primaryEssence>
+    <primaryCategory>Mobility</primaryCategory>
+    <abilityTags>
+      <li>Mobility</li>
+      <li>Teleport</li>
+      <li>Short Range</li>
+      <li>Exploration</li>
+    </abilityTags>
     <compatibleAspects>
       <li>EB_Aspect_Mobility</li>
       <li>EB_Aspect_Veil</li>
@@ -1425,6 +1892,14 @@
     <cooldownTicks>1140</cooldownTicks>
     <durationTicks>0</durationTicks>
     <iconPath>Essencebound/AwakeningStones/StonePlant</iconPath>
+    <primaryEssence>EB_Flesh</primaryEssence>
+    <primaryCategory>Healing</primaryCategory>
+    <abilityTags>
+      <li>Healing</li>
+      <li>Resource Cost</li>
+      <li>Single Target</li>
+      <li>Injury Healing</li>
+    </abilityTags>
     <compatibleAspects>
       <li>EB_Aspect_Recovery</li>
       <li>EB_Aspect_Reaper</li>
@@ -1446,6 +1921,14 @@
     <cooldownTicks>1260</cooldownTicks>
     <durationTicks>780</durationTicks>
     <iconPath>Essencebound/AwakeningStones/StoneWater</iconPath>
+    <primaryEssence>EB_Ocean</primaryEssence>
+    <primaryCategory>Defense</primaryCategory>
+    <abilityTags>
+      <li>Defense</li>
+      <li>Control</li>
+      <li>Barrier</li>
+      <li>Area</li>
+    </abilityTags>
     <compatibleAspects>
       <li>EB_Aspect_Ward</li>
       <li>EB_Aspect_Control</li>
@@ -1469,6 +1952,14 @@
     <areaRadius>2.5</areaRadius>
     <damageDefName>Blunt</damageDefName>
     <iconPath>Essencebound/AwakeningStones/StoneSurge</iconPath>
+    <primaryEssence>EB_Lightning</primaryEssence>
+    <primaryCategory>Mobility</primaryCategory>
+    <abilityTags>
+      <li>Mobility</li>
+      <li>Attack</li>
+      <li>Teleport</li>
+      <li>Area</li>
+    </abilityTags>
     <compatibleAspects>
       <li>EB_Aspect_Mobility</li>
       <li>EB_Aspect_Surge</li>
@@ -1490,6 +1981,14 @@
     <cooldownTicks>540</cooldownTicks>
     <durationTicks>0</durationTicks>
     <iconPath>Essencebound/AwakeningStones/StoneGrace</iconPath>
+    <primaryEssence>EB_Sovereign</primaryEssence>
+    <primaryCategory>Summoning</primaryCategory>
+    <abilityTags>
+      <li>Summoning</li>
+      <li>Utility</li>
+      <li>Command</li>
+      <li>Combat</li>
+    </abilityTags>
     <compatibleAspects>
       <li>EB_Aspect_Familiar</li>
       <li>EB_Aspect_Judgement</li>
@@ -1512,6 +2011,14 @@
     <durationTicks>0</durationTicks>
     <areaRadius>7</areaRadius>
     <iconPath>Essencebound/AwakeningStones/StoneFocus</iconPath>
+    <primaryEssence>EB_Star</primaryEssence>
+    <primaryCategory>Utility</primaryCategory>
+    <abilityTags>
+      <li>Utility</li>
+      <li>Exploration</li>
+      <li>Map Reveal</li>
+      <li>Ranged</li>
+    </abilityTags>
     <compatibleAspects>
       <li>EB_Aspect_Exploration</li>
       <li>EB_Aspect_Stars</li>
@@ -1534,6 +2041,14 @@
     <durationTicks>960</durationTicks>
     <buffHediffDefName>EB_Debuff_PredatorMark</buffHediffDefName>
     <iconPath>Essencebound/AwakeningStones/StoneChain</iconPath>
+    <primaryEssence>EB_Predatory</primaryEssence>
+    <primaryCategory>Control</primaryCategory>
+    <abilityTags>
+      <li>Control</li>
+      <li>Attack</li>
+      <li>Mark</li>
+      <li>Debuff</li>
+    </abilityTags>
     <compatibleAspects>
       <li>EB_Aspect_Reaper</li>
       <li>EB_Aspect_Precision</li>
@@ -1558,6 +2073,14 @@
     <maxExtraTargets>4</maxExtraTargets>
     <buffHediffDefName>EB_Buff_RenewalSeed</buffHediffDefName>
     <iconPath>Essencebound/AwakeningStones/StonePlant</iconPath>
+    <primaryEssence>EB_Hydra</primaryEssence>
+    <primaryCategory>Healing</primaryCategory>
+    <abilityTags>
+      <li>Healing</li>
+      <li>Area</li>
+      <li>Regeneration</li>
+      <li>Group</li>
+    </abilityTags>
     <compatibleAspects>
       <li>EB_Aspect_Growth</li>
       <li>EB_Aspect_Recovery</li>
@@ -1580,6 +2103,14 @@
     <durationTicks>720</durationTicks>
     <buffHediffDefName>EB_Debuff_CrystalPrison</buffHediffDefName>
     <iconPath>Essencebound/AwakeningStones/StoneShield</iconPath>
+    <primaryEssence>EB_Crystal</primaryEssence>
+    <primaryCategory>Control</primaryCategory>
+    <abilityTags>
+      <li>Control</li>
+      <li>Defense</li>
+      <li>Barrier</li>
+      <li>Restraint</li>
+    </abilityTags>
     <compatibleAspects>
       <li>EB_Aspect_Ward</li>
       <li>EB_Aspect_Control</li>
@@ -1601,6 +2132,14 @@
     <cooldownTicks>1500</cooldownTicks>
     <durationTicks>900</durationTicks>
     <iconPath>Essencebound/AwakeningStones/StoneMist</iconPath>
+    <primaryEssence>EB_Doppelganger</primaryEssence>
+    <primaryCategory>Summoning</primaryCategory>
+    <abilityTags>
+      <li>Summoning</li>
+      <li>Decoy</li>
+      <li>Illusion</li>
+      <li>Timed</li>
+    </abilityTags>
     <compatibleAspects>
       <li>EB_Aspect_Veil</li>
       <li>EB_Aspect_Familiar</li>
@@ -1624,6 +2163,14 @@
     <areaRadius>6</areaRadius>
     <buffHediffDefName>EB_Buff_ResonanceField</buffHediffDefName>
     <iconPath>Essencebound/AwakeningStones/StoneSurge</iconPath>
+    <primaryEssence>EB_Resonating</primaryEssence>
+    <primaryCategory>Utility</primaryCategory>
+    <abilityTags>
+      <li>Utility</li>
+      <li>Attack</li>
+      <li>Support</li>
+      <li>Aura</li>
+    </abilityTags>
     <compatibleAspects>
       <li>EB_Aspect_Aura</li>
       <li>EB_Aspect_Spell</li>
@@ -1647,6 +2194,14 @@
     <areaRadius>6</areaRadius>
     <buffHediffDefName>EB_Buff_GuardianBastion</buffHediffDefName>
     <iconPath>Essencebound/AwakeningStones/StoneShield</iconPath>
+    <primaryEssence>EB_Guardian</primaryEssence>
+    <primaryCategory>Defense</primaryCategory>
+    <abilityTags>
+      <li>Defense</li>
+      <li>Area</li>
+      <li>Ward</li>
+      <li>Aura</li>
+    </abilityTags>
     <compatibleAspects>
       <li>EB_Aspect_Ward</li>
       <li>EB_Aspect_Aura</li>
@@ -1670,6 +2225,15 @@
     <areaRadius>3.5</areaRadius>
     <damageDefName>Flame</damageDefName>
     <iconPath>Essencebound/AwakeningStones/StoneFire</iconPath>
+    <primaryEssence>EB_Volcano</primaryEssence>
+    <primaryCategory>Attack</primaryCategory>
+    <abilityTags>
+      <li>Attack</li>
+      <li>Area</li>
+      <li>Over Time</li>
+      <li>Zone</li>
+      <li>Fire</li>
+    </abilityTags>
     <compatibleAspects>
       <li>EB_Aspect_Assault</li>
       <li>EB_Aspect_Spell</li>
@@ -1692,6 +2256,14 @@
     <durationTicks>1500</durationTicks>
     <areaRadius>5</areaRadius>
     <iconPath>Essencebound/AwakeningStones/StoneFocus</iconPath>
+    <primaryEssence>EB_Oasis</primaryEssence>
+    <primaryCategory>Healing</primaryCategory>
+    <abilityTags>
+      <li>Healing</li>
+      <li>Area</li>
+      <li>Zone</li>
+      <li>Sanctuary</li>
+    </abilityTags>
     <compatibleAspects>
       <li>EB_Aspect_Recovery</li>
       <li>EB_Aspect_Ritual</li>
@@ -1713,6 +2285,14 @@
     <cooldownTicks>1800</cooldownTicks>
     <durationTicks>1500</durationTicks>
     <iconPath>Essencebound/AwakeningStones/StoneFocus</iconPath>
+    <primaryEssence>EB_Bone</primaryEssence>
+    <primaryCategory>Summoning</primaryCategory>
+    <abilityTags>
+      <li>Summoning</li>
+      <li>Defense</li>
+      <li>Familiar</li>
+      <li>Combat</li>
+    </abilityTags>
     <compatibleAspects>
       <li>EB_Aspect_Familiar</li>
       <li>EB_Aspect_Ward</li>
@@ -1735,6 +2315,14 @@
     <durationTicks>1050</durationTicks>
     <buffHediffDefName>EB_Buff_Mistwalk</buffHediffDefName>
     <iconPath>Essencebound/AwakeningStones/StoneMist</iconPath>
+    <primaryEssence>EB_Cloud</primaryEssence>
+    <primaryCategory>Mobility</primaryCategory>
+    <abilityTags>
+      <li>Mobility</li>
+      <li>Defense</li>
+      <li>Evasion</li>
+      <li>Concealment</li>
+    </abilityTags>
     <compatibleAspects>
       <li>EB_Aspect_Veil</li>
       <li>EB_Aspect_Mobility</li>
@@ -1756,6 +2344,14 @@
     <cooldownTicks>1000</cooldownTicks>
     <durationTicks>0</durationTicks>
     <iconPath>Essencebound/AwakeningStones/StoneMist</iconPath>
+    <primaryEssence>EB_Mirror</primaryEssence>
+    <primaryCategory>Mobility</primaryCategory>
+    <abilityTags>
+      <li>Mobility</li>
+      <li>Teleport</li>
+      <li>Ally</li>
+      <li>Swap</li>
+    </abilityTags>
     <compatibleAspects>
       <li>EB_Aspect_Mobility</li>
       <li>EB_Aspect_Veil</li>
@@ -1779,6 +2375,14 @@
     <areaRadius>4</areaRadius>
     <buffHediffDefName>EB_Debuff_Webbed</buffHediffDefName>
     <iconPath>Essencebound/AwakeningStones/StoneChain</iconPath>
+    <primaryEssence>EB_Spider</primaryEssence>
+    <primaryCategory>Control</primaryCategory>
+    <abilityTags>
+      <li>Control</li>
+      <li>Zone</li>
+      <li>Slow</li>
+      <li>Over Time</li>
+    </abilityTags>
     <compatibleAspects>
       <li>EB_Aspect_Control</li>
       <li>EB_Aspect_Growth</li>
@@ -1801,6 +2405,14 @@
     <durationTicks>0</durationTicks>
     <damageDefName>Blunt</damageDefName>
     <iconPath>Essencebound/AwakeningStones/StoneFocus</iconPath>
+    <primaryEssence>EB_Song</primaryEssence>
+    <primaryCategory>Attack</primaryCategory>
+    <abilityTags>
+      <li>Attack</li>
+      <li>Piercing</li>
+      <li>Ranged</li>
+      <li>Single Target</li>
+    </abilityTags>
     <compatibleAspects>
       <li>EB_Aspect_Assault</li>
       <li>EB_Aspect_Spell</li>
@@ -1824,6 +2436,14 @@
     <areaRadius>5</areaRadius>
     <damageDefName>Flame</damageDefName>
     <iconPath>Essencebound/AwakeningStones/StoneFire</iconPath>
+    <primaryEssence>EB_Sun</primaryEssence>
+    <primaryCategory>Attack</primaryCategory>
+    <abilityTags>
+      <li>Attack</li>
+      <li>Healing</li>
+      <li>Area</li>
+      <li>Cleanse</li>
+    </abilityTags>
     <compatibleAspects>
       <li>EB_Aspect_Judgement</li>
       <li>EB_Aspect_Spell</li>
@@ -1846,6 +2466,14 @@
     <durationTicks>1200</durationTicks>
     <buffHediffDefName>EB_Buff_Moonshadow</buffHediffDefName>
     <iconPath>Essencebound/AwakeningStones/StoneGrace</iconPath>
+    <primaryEssence>EB_Moon</primaryEssence>
+    <primaryCategory>Defense</primaryCategory>
+    <abilityTags>
+      <li>Defense</li>
+      <li>Mobility</li>
+      <li>Evasion</li>
+      <li>Conditional</li>
+    </abilityTags>
     <compatibleAspects>
       <li>EB_Aspect_Veil</li>
       <li>EB_Aspect_Mobility</li>
@@ -1869,6 +2497,14 @@
     <areaRadius>4</areaRadius>
     <damageDefName>Blunt</damageDefName>
     <iconPath>Essencebound/AwakeningStones/StoneChain</iconPath>
+    <primaryEssence>EB_Hunger</primaryEssence>
+    <primaryCategory>Attack</primaryCategory>
+    <abilityTags>
+      <li>Attack</li>
+      <li>Healing</li>
+      <li>Drain</li>
+      <li>Zone</li>
+    </abilityTags>
     <compatibleAspects>
       <li>EB_Aspect_Reaper</li>
       <li>EB_Aspect_Aura</li>
@@ -1892,6 +2528,14 @@
     <buffHediffDefName>EB_Debuff_ShatteredArmor</buffHediffDefName>
     <damageDefName>Blunt</damageDefName>
     <iconPath>Essencebound/AwakeningStones/StoneFocus</iconPath>
+    <primaryEssence>EB_Hammer</primaryEssence>
+    <primaryCategory>Attack</primaryCategory>
+    <abilityTags>
+      <li>Attack</li>
+      <li>Control</li>
+      <li>Armor Break</li>
+      <li>Debuff</li>
+    </abilityTags>
     <compatibleAspects>
       <li>EB_Aspect_Assault</li>
       <li>EB_Aspect_Reaper</li>
@@ -1915,6 +2559,14 @@
     <areaRadius>6</areaRadius>
     <buffHediffDefName>EB_Buff_HarvestBlessing</buffHediffDefName>
     <iconPath>Essencebound/AwakeningStones/StoneFocus</iconPath>
+    <primaryEssence>EB_Harvest</primaryEssence>
+    <primaryCategory>Utility</primaryCategory>
+    <abilityTags>
+      <li>Utility</li>
+      <li>Support</li>
+      <li>Farming</li>
+      <li>Aura</li>
+    </abilityTags>
     <compatibleAspects>
       <li>EB_Aspect_Growth</li>
       <li>EB_Aspect_Ritual</li>
@@ -1937,6 +2589,14 @@
     <durationTicks>1000</durationTicks>
     <buffHediffDefName>EB_Buff_WeaveWard</buffHediffDefName>
     <iconPath>Essencebound/AwakeningStones/StoneChain</iconPath>
+    <primaryEssence>EB_Weave</primaryEssence>
+    <primaryCategory>Defense</primaryCategory>
+    <abilityTags>
+      <li>Defense</li>
+      <li>Support</li>
+      <li>Linked</li>
+      <li>Damage Sharing</li>
+    </abilityTags>
     <compatibleAspects>
       <li>EB_Aspect_Ward</li>
       <li>EB_Aspect_Ritual</li>
@@ -1960,6 +2620,14 @@
     <areaRadius>5</areaRadius>
     <buffHediffDefName>EB_Buff_RuneBeacon</buffHediffDefName>
     <iconPath>Essencebound/AwakeningStones/StoneFocus</iconPath>
+    <primaryEssence>EB_Rune</primaryEssence>
+    <primaryCategory>Defense</primaryCategory>
+    <abilityTags>
+      <li>Defense</li>
+      <li>Zone</li>
+      <li>Ward</li>
+      <li>Area</li>
+    </abilityTags>
     <compatibleAspects>
       <li>EB_Aspect_Ward</li>
       <li>EB_Aspect_Spell</li>
@@ -1982,6 +2650,14 @@
     <durationTicks>960</durationTicks>
     <buffHediffDefName>EB_Buff_IronReprisal</buffHediffDefName>
     <iconPath>Essencebound/AwakeningStones/StoneStone</iconPath>
+    <primaryEssence>EB_Iron</primaryEssence>
+    <primaryCategory>Defense</primaryCategory>
+    <abilityTags>
+      <li>Defense</li>
+      <li>Attack</li>
+      <li>Counter</li>
+      <li>Melee</li>
+    </abilityTags>
     <compatibleAspects>
       <li>EB_Aspect_Counter</li>
       <li>EB_Aspect_Ward</li>
@@ -2004,6 +2680,14 @@
     <durationTicks>900</durationTicks>
     <buffHediffDefName>EB_Debuff_SerpentCoil</buffHediffDefName>
     <iconPath>Essencebound/AwakeningStones/StoneChain</iconPath>
+    <primaryEssence>EB_Serpent</primaryEssence>
+    <primaryCategory>Control</primaryCategory>
+    <abilityTags>
+      <li>Control</li>
+      <li>Debuff</li>
+      <li>Restraint</li>
+      <li>Accuracy</li>
+    </abilityTags>
     <compatibleAspects>
       <li>EB_Aspect_Control</li>
       <li>EB_Aspect_Spell</li>
@@ -2026,6 +2710,14 @@
     <durationTicks>1500</durationTicks>
     <buffHediffDefName>EB_Buff_DawnRebirth</buffHediffDefName>
     <iconPath>Essencebound/AwakeningStones/StoneGrace</iconPath>
+    <primaryEssence>EB_Dawn</primaryEssence>
+    <primaryCategory>Healing</primaryCategory>
+    <abilityTags>
+      <li>Healing</li>
+      <li>Reactive</li>
+      <li>Emergency</li>
+      <li>Self</li>
+    </abilityTags>
     <compatibleAspects>
       <li>EB_Aspect_Recovery</li>
       <li>EB_Aspect_Stars</li>
@@ -2048,6 +2740,14 @@
     <durationTicks>1020</durationTicks>
     <buffHediffDefName>EB_Buff_AdeptConvergence</buffHediffDefName>
     <iconPath>Essencebound/AwakeningStones/StoneFocus</iconPath>
+    <primaryEssence>EB_Adept</primaryEssence>
+    <primaryCategory>Utility</primaryCategory>
+    <abilityTags>
+      <li>Utility</li>
+      <li>Buff</li>
+      <li>Attributes</li>
+      <li>Conversion</li>
+    </abilityTags>
     <compatibleAspects>
       <li>EB_Aspect_Preparation</li>
       <li>EB_Aspect_Spell</li>
@@ -2070,6 +2770,14 @@
     <durationTicks>900</durationTicks>
     <buffHediffDefName>EB_Debuff_FeyGlamour</buffHediffDefName>
     <iconPath>Essencebound/AwakeningStones/StoneFocus</iconPath>
+    <primaryEssence>EB_Fey</primaryEssence>
+    <primaryCategory>Control</primaryCategory>
+    <abilityTags>
+      <li>Control</li>
+      <li>Illusion</li>
+      <li>Debuff</li>
+      <li>Accuracy</li>
+    </abilityTags>
     <compatibleAspects>
       <li>EB_Aspect_Veil</li>
       <li>EB_Aspect_Control</li>
@@ -2092,6 +2800,14 @@
     <durationTicks>1200</durationTicks>
     <buffHediffDefName>EB_Buff_NimbusGuard</buffHediffDefName>
     <iconPath>Essencebound/AwakeningStones/StoneFocus</iconPath>
+    <primaryEssence>EB_Sky</primaryEssence>
+    <primaryCategory>Defense</primaryCategory>
+    <abilityTags>
+      <li>Defense</li>
+      <li>Mobility</li>
+      <li>Ward</li>
+      <li>Single Target</li>
+    </abilityTags>
     <compatibleAspects>
       <li>EB_Aspect_Ward</li>
       <li>EB_Aspect_Mobility</li>
@@ -2115,6 +2831,14 @@
     <areaRadius>3.5</areaRadius>
     <damageDefName>Blunt</damageDefName>
     <iconPath>Essencebound/AwakeningStones/StoneChain</iconPath>
+    <primaryEssence>EB_Sword</primaryEssence>
+    <primaryCategory>Attack</primaryCategory>
+    <abilityTags>
+      <li>Attack</li>
+      <li>Area</li>
+      <li>Sustained</li>
+      <li>Moving</li>
+    </abilityTags>
     <compatibleAspects>
       <li>EB_Aspect_Assault</li>
       <li>EB_Aspect_Counter</li>
@@ -2138,6 +2862,14 @@
     <areaRadius>4</areaRadius>
     <buffHediffDefName>EB_Debuff_GravitySnare</buffHediffDefName>
     <iconPath>Essencebound/AwakeningStones/StoneChain</iconPath>
+    <primaryEssence>EB_Vortex</primaryEssence>
+    <primaryCategory>Control</primaryCategory>
+    <abilityTags>
+      <li>Control</li>
+      <li>Area</li>
+      <li>Pull</li>
+      <li>Zone</li>
+    </abilityTags>
     <compatibleAspects>
       <li>EB_Aspect_Control</li>
       <li>EB_Aspect_Spell</li>
@@ -2160,6 +2892,14 @@
     <durationTicks>1200</durationTicks>
     <buffHediffDefName>EB_Debuff_CorruptingSeed</buffHediffDefName>
     <iconPath>Essencebound/AwakeningStones/StoneSurge</iconPath>
+    <primaryEssence>EB_Corrupt</primaryEssence>
+    <primaryCategory>Attack</primaryCategory>
+    <abilityTags>
+      <li>Attack</li>
+      <li>Control</li>
+      <li>Over Time</li>
+      <li>Armor Break</li>
+    </abilityTags>
     <compatibleAspects>
       <li>EB_Aspect_Reaper</li>
       <li>EB_Aspect_Control</li>
@@ -2182,6 +2922,14 @@
     <durationTicks>1800</durationTicks>
     <buffHediffDefName>EB_Buff_TalismanSeal</buffHediffDefName>
     <iconPath>Essencebound/AwakeningStones/StoneFocus</iconPath>
+    <primaryEssence>EB_Talisman</primaryEssence>
+    <primaryCategory>Defense</primaryCategory>
+    <abilityTags>
+      <li>Defense</li>
+      <li>Reactive</li>
+      <li>Trigger</li>
+      <li>Ward</li>
+    </abilityTags>
     <compatibleAspects>
       <li>EB_Aspect_Ward</li>
       <li>EB_Aspect_Counter</li>
@@ -2205,6 +2953,14 @@
     <areaRadius>6</areaRadius>
     <buffHediffDefName>EB_Buff_PactOfUnity</buffHediffDefName>
     <iconPath>Essencebound/AwakeningStones/StoneFocus</iconPath>
+    <primaryEssence>EB_Unity</primaryEssence>
+    <primaryCategory>Utility</primaryCategory>
+    <abilityTags>
+      <li>Utility</li>
+      <li>Support</li>
+      <li>Aura</li>
+      <li>Group</li>
+    </abilityTags>
     <compatibleAspects>
       <li>EB_Aspect_Familiar</li>
       <li>EB_Aspect_Ritual</li>
@@ -2227,6 +2983,14 @@
     <durationTicks>1800</durationTicks>
     <buffHediffDefName>EB_Buff_PhoenixAshes</buffHediffDefName>
     <iconPath>Essencebound/AwakeningStones/StoneFocus</iconPath>
+    <primaryEssence>EB_Firebird</primaryEssence>
+    <primaryCategory>Healing</primaryCategory>
+    <abilityTags>
+      <li>Healing</li>
+      <li>Defense</li>
+      <li>Reactive</li>
+      <li>Emergency</li>
+    </abilityTags>
     <compatibleAspects>
       <li>EB_Aspect_Recovery</li>
       <li>EB_Aspect_Ward</li>
@@ -2248,6 +3012,14 @@
     <cooldownTicks>1800</cooldownTicks>
     <durationTicks>330</durationTicks>
     <iconPath>Essencebound/AwakeningStones/StoneFocus</iconPath>
+    <primaryEssence>EB_Dimension</primaryEssence>
+    <primaryCategory>Mobility</primaryCategory>
+    <abilityTags>
+      <li>Mobility</li>
+      <li>Teleport</li>
+      <li>Channeled</li>
+      <li>Exploration</li>
+    </abilityTags>
     <compatibleAspects>
       <li>EB_Aspect_Mobility</li>
       <li>EB_Aspect_Exploration</li>
@@ -2271,6 +3043,14 @@
     <buffHediffDefName>EB_Buff_FeralCombo</buffHediffDefName>
     <damageDefName>Blunt</damageDefName>
     <iconPath>Essencebound/AwakeningStones/StoneFocus</iconPath>
+    <primaryEssence>EB_Claw</primaryEssence>
+    <primaryCategory>Attack</primaryCategory>
+    <abilityTags>
+      <li>Attack</li>
+      <li>Melee</li>
+      <li>Combo</li>
+      <li>Close Range</li>
+    </abilityTags>
     <compatibleAspects>
       <li>EB_Aspect_Assault</li>
       <li>EB_Aspect_Reaper</li>
@@ -2293,6 +3073,14 @@
     <durationTicks>1260</durationTicks>
     <buffHediffDefName>EB_Buff_WardEcho</buffHediffDefName>
     <iconPath>Essencebound/AwakeningStones/StoneChain</iconPath>
+    <primaryEssence>EB_Boundary</primaryEssence>
+    <primaryCategory>Defense</primaryCategory>
+    <abilityTags>
+      <li>Defense</li>
+      <li>Control</li>
+      <li>Cleanse</li>
+      <li>Counter</li>
+    </abilityTags>
     <compatibleAspects>
       <li>EB_Aspect_Counter</li>
       <li>EB_Aspect_Ward</li>
@@ -2316,6 +3104,14 @@
     <areaRadius>4</areaRadius>
     <buffHediffDefName>EB_Debuff_Stillness</buffHediffDefName>
     <iconPath>Essencebound/AwakeningStones/StoneFocus</iconPath>
+    <primaryEssence>EB_Sand</primaryEssence>
+    <primaryCategory>Control</primaryCategory>
+    <abilityTags>
+      <li>Control</li>
+      <li>Area</li>
+      <li>Slow</li>
+      <li>Zone</li>
+    </abilityTags>
     <compatibleAspects>
       <li>EB_Aspect_Control</li>
       <li>EB_Aspect_Spell</li>
@@ -2338,6 +3134,14 @@
     <durationTicks>1200</durationTicks>
     <maxExtraTargets>2</maxExtraTargets>
     <iconPath>Essencebound/AwakeningStones/StoneWind</iconPath>
+    <primaryEssence>EB_Bird</primaryEssence>
+    <primaryCategory>Summoning</primaryCategory>
+    <abilityTags>
+      <li>Summoning</li>
+      <li>Decoy</li>
+      <li>Familiar</li>
+      <li>Group</li>
+    </abilityTags>
     <compatibleAspects>
       <li>EB_Aspect_Familiar</li>
       <li>EB_Aspect_Surge</li>

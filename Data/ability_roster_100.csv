@@ -1,101 +1,101 @@
-id,name,status,role,primary_essence,mechanic,target_milestone,source_status
-EmberBolt,Ember Bolt,playable,damage,Fire,"A focused flame strike. Can damage any targeted pawn, including allies.",v0.17,original_mod_gameplay_design
-FrostShard,Frost Shard,playable,damageDebuff,Ice,A chilling shard that deals damage and slows any targeted pawn.,v0.17,original_mod_gameplay_design
-StormSpark,Storm Spark,playable,damageDebuff,Lightning,A crackling spell that deals damage and disrupts any targeted pawn.,v0.17,original_mod_gameplay_design
-VerdantMend,Verdant Mend,playable,heal,Life,"Heal an injured pawn, whether ally or enemy.",v0.17,original_mod_gameplay_design
-GuardianWard,Guardian Ward,playable,buff,Shield,Grant a temporary protective ward to any targeted pawn.,v0.17,original_mod_gameplay_design
-StoneSkin,Stone Skin,playable,buff,Earth,Gain temporary armor with a small movement penalty.,v0.17,original_mod_gameplay_design
-SwiftStep,Swift Step,playable,buff,Swift,Move faster for a short time.,v0.17,original_mod_gameplay_design
-MistVeil,Mist Veil,playable,buff,Dark,Gain short-lived evasive footwork; does not grant invisibility.,v0.17,original_mod_gameplay_design
-KeenSight,Keen Sight,playable,buff,Eye,Improve aiming and awareness for a short time.,v0.17,original_mod_gameplay_design
-RallyingSurge,Rallying Surge,playable,buff,Might,Temporarily improve a targeted pawn's speed and work efficiency.,v0.17,original_mod_gameplay_design
-PurifyingTouch,Purifying Touch,playable,cleanse,Pure,Remove an Essencebound chill or static affliction from any targeted pawn.,v0.17,original_mod_gameplay_design
-ForcePulse,Force Pulse,playable,pulse,Might,Release a brief close-range pulse affecting nearby hostile pawns.,v0.17,original_mod_gameplay_design
-CinderNova,Cinder Nova,playable,pulse,Volcano,An expanding ring of burning essence damages hostile pawns around the caster.,v0.17,original_mod_gameplay_design
-ThunderChain,Thunder Chain,playable,chain,Lightning,Lightning leaps from the selected pawn to up to two nearby hostile pawns.,v0.17,original_mod_gameplay_design
-BloodSiphon,Blood Siphon,playable,drain,Blood,Deal damage to a chosen pawn and restore some of the caster's existing wounds from effective damage.,v0.17,original_mod_gameplay_design
-LifeBloom,Life Bloom,playable,healGroup,Life,Spread restorative essence across several wounds on a targeted pawn.,v0.17,original_mod_gameplay_design
-RenewalSeed,Renewal Seed,playable,regeneration,Renewal,Plant a regeneration blessing that heals actual wounds every two seconds while active.,v0.17,original_mod_gameplay_design
-GroveShelter,Grove Shelter,playable,auraBuff,Tree,Create a protective aura around nearby nonhostile pawns that persists as independent wards.,v0.17,original_mod_gameplay_design
-PurgingWave,Purging Wave,playable,areaCleanse,Pure,Clear Essencebound afflictions from nearby nonhostile pawns; no effect on healthy targets.,v0.17,original_mod_gameplay_design
-GravitySnare,Gravity Snare,playable,debuff,Vortex,Bind a hostile pawn in slow-moving magical gravity; progress accrues while restrained.,v0.17,original_mod_gameplay_design
-CorrosiveStrike,Corrosive Strike,playable,damageDebuff,Blight,Damage a pawn and briefly reduce sharp and blunt armor with a corrosive affliction.,v0.17,original_mod_gameplay_design
-EchoBurst,Echo Burst,playable,splash,Echo,Strike a selected pawn and damage nearby hostile pawns with a weaker concussive echo.,v0.17,original_mod_gameplay_design
-SpiritBeacon,Spirit Beacon,playable,buff,Mystic,Temporarily focus a pawn's accuracy and general work efficiency.,v0.17,original_mod_gameplay_design
-MoonlitReprieve,Moonlit Reprieve,playable,healWard,Moon,Mend an injury and grant a modest protective blessing to the same pawn.,v0.17,original_mod_gameplay_design
-InfernoLance,Inferno Lance,playable,damage,Fire,Focused long-range flame strikes a single pawn.,v0.17,original_mod_gameplay_design
-FrostHalo,Frost Halo,playable,pulse,Ice,A freezing impact ring strikes hostile pawns near the caster.,v0.17,original_mod_gameplay_design
-Quakebreaker,Quakebreaker,playable,splash,Earth,A targeted ground strike sends weaker tremors to visible nearby enemies.,v0.17,original_mod_gameplay_design
-ZephyrRicochet,Zephyr Ricochet,playable,chain,Wind,Air blades jump from one pawn to three visible nearby hostiles.,v0.17,original_mod_gameplay_design
-UmbralLeech,Umbral Leech,playable,drain,Dark,Drain vigor from a pawn and repair some of the caster's real injuries.,v0.17,original_mod_gameplay_design
-VipersBite,Viper's Bite,playable,damageDebuff,Venom,Damage a pawn and leave a slowing venom haze.,v0.17,original_mod_gameplay_design
-ShardVolley,Shard Volley,playable,chain,Crystal,Hardened crystal shards ricochet toward three visible nearby hostiles.,v0.17,original_mod_gameplay_design
-BriarDetonation,Briar Detonation,playable,damageAreaDebuff,Plant,Explosive briars damage a selected pawn and entangle nearby visible hostiles.,v0.17,original_mod_gameplay_design
-Starfall,Starfall,playable,splash,Star,Celestial impact strikes a selected pawn and concusses nearby hostiles.,v0.17,original_mod_gameplay_design
-TidalRebuke,Tidal Rebuke,playable,pulse,Water,A short-range tidal shockwave affects hostile pawns near the caster.,v0.17,original_mod_gameplay_design
-IronBastion,Iron Bastion,playable,buff,Iron,Harden the caster's armor at the cost of some mobility.,v0.17,original_mod_gameplay_design
-MirrorGuard,Mirror Guard,playable,buff,Mirror,Distort reflections around the caster for better dodge and light armor.,v0.17,original_mod_gameplay_design
-DawnChorus,Dawn Chorus,playable,auraBuff,Dawn,Boost nearby nonhostile pawns with a shared movement and work focus.,v0.17,original_mod_gameplay_design
-VerdantSanctuary,Verdant Sanctuary,playable,areaHeal,Verdant,Restore real injuries on up to four nearby wounded allies.,v0.17,original_mod_gameplay_design
-OceanRenewal,Ocean Renewal,playable,areaRegen,Ocean,Apply gradual regeneration to up to four nearby wounded allies.,v0.17,original_mod_gameplay_design
-CleansingRay,Cleansing Ray,playable,purgeHeal,Light,Heal a selected pawn and remove temporary Essencebound afflictions.,v0.17,original_mod_gameplay_design
-MercyThread,Mercy Thread,playable,chainHeal,Ministration,Heal a chosen pawn and then two nearby wounded allies at lesser strength.,v0.17,original_mod_gameplay_design
-SoulHarvest,Soul Harvest,playable,leechPulse,Death,Drain nearby visible hostiles and restore some of the caster's injuries.,v0.17,original_mod_gameplay_design
-RuneBind,Rune Bind,playable,debuff,Rune,Bind a hostile pawn's movement with a temporary controlling rune.,v0.17,original_mod_gameplay_design
-OmenHex,Omen Hex,playable,debuff,Omen,Hex a hostile pawn to impair shooting accuracy and work speed.,v0.17,original_mod_gameplay_design
-TemporalHaste,Temporal Haste,playable,buff,Time,Speed the caster's movement and work briefly.,v0.17,original_mod_gameplay_design
-BattlefieldFocus,Battlefield Focus,playable,buff,Battlefield,Improve ranged accuracy and evasive movement through combat focus.,v0.17,original_mod_gameplay_design
-BladeTempest,Blade Tempest,playable,pulse,Sword,Emit a close-range ring of cutting essence pressure against hostiles.,v0.17,original_mod_gameplay_design
-NemesisStrike,Nemesis Strike,playable,execute,Nemesis,Strike a pawn with greater force when it already has significant injuries.,v0.17,original_mod_gameplay_design
-ThreadSnare,Thread Snare,playable,damageDebuff,Thread,Strike a pawn with tangled essence that briefly slows its movement.,v0.17,original_mod_gameplay_design
-GlassWard,Glass Ward,playable,healWard,Glass,Mend a pawn and surround it with protective crystalline armor.,v0.17,original_mod_gameplay_design
-AshenComet,Ashen Comet,playable,delayedBlast,Phoenix,Telegraph a falling fiery impact before it hits the map,v0.18,original_mod_gameplay_design
-PrismaticDeflection,Prismatic Deflection,playable,reflect,Refracting,Reflect part of an incoming projectile toward its source,v0.18,original_mod_gameplay_design
-LotusSanctum,Lotus Sanctum,playable,healingZone,Lotus,Establish a sanctuary that heals wounded allies over time,v0.18,original_mod_gameplay_design
-ChronoAnchor,Chrono Anchor,playable,returnTeleport,Time,Mark a safe tile and return there once before the mark expires,v0.18,original_mod_gameplay_design
-WolfpackCall,Wolfpack Call,playable,summon,Wolf,Summon spectral wolves with a limited lifetime,v0.18,original_mod_gameplay_design
-SpectralHand,Spectral Hand,playable,remoteManipulation,Hand,Manipulate an eligible nearby object at a distance,v0.18,original_mod_gameplay_design
-ChimericAspect,Chimeric Aspect,playable,adaptiveBuff,Chimera,Adapt defense or offense to the most recent threat,v0.18,original_mod_gameplay_design
-VoidSlip,Void Slip,playable,teleport,Void,Blink to a reachable safe tile in line of sight,v0.18,original_mod_gameplay_design
-Fleshweave,Fleshweave,playable,transfusion,Flesh,Spend temporary stamina to mend an allied injury,v0.18,original_mod_gameplay_design
-TidalWall,Tidal Wall,playable,tileBarrier,Ocean,Place a short-lived water obstruction along a chosen line,v0.18,original_mod_gameplay_design
-LightningStep,Lightning Step,playable,blinkStrike,Lightning,Reposition and release a shock at the landing point,v0.18,original_mod_gameplay_design
-SovereignCommand,Sovereign Command,playable,summonOrder,Sovereign,Order controlled allies or summons to focus on a target,v0.18,original_mod_gameplay_design
-StarMap,Star Map,playable,survey,Star,Briefly reveal faraway terrain features and points of interest,v0.18,original_mod_gameplay_design
-PredatorMark,Predator Mark,playable,markedTarget,Predatory,Mark a foe to improve allied precision against that foe,v0.18,original_mod_gameplay_design
-HydraBloom,Hydra Bloom,playable,branchingHeal,Hydra,Send regeneration pulses to multiple wounded pawns,v0.18,original_mod_gameplay_design
-CrystalPrison,Crystal Prison,playable,containment,Crystal,Surround a hostile pawn with temporary crystal obstacles,v0.18,original_mod_gameplay_design
-EchoTwin,Echo Twin,playable,decoy,Doppelganger,Create a short-lived echo decoy to distract hostiles,v0.18,original_mod_gameplay_design
-ResonanceField,Resonance Field,playable,powerAura,Resonating,Strengthen essence damage for allies within a limited field,v0.18,original_mod_gameplay_design
-GuardianBastion,Guardian Bastion,playable,wardDome,Guardian,Create a dome that reduces incoming ranged attacks,v0.18,original_mod_gameplay_design
-MoltenRain,Molten Rain,playable,hazardZone,Volcano,Create a temporary burning hazard on selected ground,v0.18,original_mod_gameplay_design
-OasisWell,Oasis Well,playable,restorationZone,Oasis,Create an out-of-combat restorative site for nearby allies,v0.19,original_mod_gameplay_design
-BoneFamiliar,Bone Familiar,playable,familiar,Bone,Summon a small defensive magical construct companion,v0.19,original_mod_gameplay_design
-Mistwalk,Mistwalk,playable,concealment,Cloud,Temporarily make movement between cover harder to detect,v0.19,original_mod_gameplay_design
-MirrorStep,Mirror Step,playable,swapTeleport,Mirror,Swap safe positions with a consenting allied pawn,v0.19,original_mod_gameplay_design
-WebWeaver,Web Weaver,playable,webZone,Spider,Spread temporary webbing that slows hostile passage,v0.19,original_mod_gameplay_design
-SonicLance,Sonic Lance,playable,piercingSound,Song,Release a focused sonic attack effective against light armor,v0.19,original_mod_gameplay_design
-SunwardFlare,Sunward Flare,playable,radiantPurge,Sun,Remove darkness afflictions and emit a radiant burst,v0.19,original_mod_gameplay_design
-Moonshadow,Moonshadow,playable,conditionalBuff,Moon,Gain additional evasion under dim light,v0.19,original_mod_gameplay_design
-HungerField,Hunger Field,playable,sustainedLeech,Hunger,Drain nearby hostile life while a channelled field lasts,v0.19,original_mod_gameplay_design
-ShatterArmor,Shatter Armor,playable,armorBreak,Hammer,Reduce target armor durability based on a direct blow,v0.19,original_mod_gameplay_design
-HarvestBlessing,Harvest Blessing,playable,harvestAura,Harvest,Improve nearby plant harvest efficiency for a short time,v0.19,original_mod_gameplay_design
-WeaveWard,Weave Ward,playable,linkedDefense,Weave,Link two allies so protective boons share incoming harm,v0.19,original_mod_gameplay_design
-RuneBeacon,Rune Beacon,playable,groundWard,Rune,Place a rune that grants defense to pawns within range,v0.19,original_mod_gameplay_design
-IronReprisal,Iron Reprisal,playable,counterStance,Iron,Retaliate against nearby hostile melee attacks for a duration,v0.19,original_mod_gameplay_design
-SerpentCoil,Serpent Coil,playable,grapple,Serpent,Restrict enemy movement and offensive accuracy,v0.19,original_mod_gameplay_design
-DawnRebirth,Dawn Rebirth,playable,emergencyHeal,Dawn,Trigger an emergency healing surge during a dangerous fight,v0.19,original_mod_gameplay_design
-AdeptConvergence,Adept Convergence,playable,attributeShift,Adept,Temporarily redirect one attribute bonus into another,v0.19,original_mod_gameplay_design
-FeyGlamour,Fey Glamour,playable,confusion,Fey,Disrupt hostile targeting through illusory movement,v0.19,original_mod_gameplay_design
-NimbusGuard,Nimbus Guard,playable,mobileWard,Sky,Protect a moving pawn with a limited-duration storm shield,v0.19,original_mod_gameplay_design
-BladeOrbit,Blade Orbit,playable,orbitStrike,Sword,Orbit enchanted blades that hit nearby hostiles periodically,v0.19,original_mod_gameplay_design
-GravityWell,Gravity Well,playable,pullZone,Vortex,Draw hostiles toward the center of a short-lived gravity field,v0.19,original_mod_gameplay_design
-CorruptingSeed,Corrupting Seed,playable,sustainedDebuff,Corrupt,Deal periodic damage while reducing target armor,v0.19,original_mod_gameplay_design
-TalismanSeal,Talisman Seal,playable,storedTrigger,Talisman,Store a defensive spell that triggers at the next threat,v0.19,original_mod_gameplay_design
-PactOfUnity,Pact of Unity,playable,teamLink,Unity,Connect nearby allies for a temporary cooperative skill bonus,v0.19,original_mod_gameplay_design
-PhoenixAshes,Phoenix Ashes,playable,survivalBoon,Firebird,Aid a severely injured pawn with a protective renewal boon,v0.19,original_mod_gameplay_design
-Worldstep,Worldstep,playable,longTeleport,Dimension,Travel to a marked safe cell after a longer channel,v0.19,original_mod_gameplay_design
-FeralClaw,Feral Claw,playable,meleeCombo,Claw,Reward successive close attacks with a stacking offensive bonus,v0.19,original_mod_gameplay_design
-WardEcho,Ward Echo,playable,debuffReflect,Boundary,Return a portion of enemy control effects back to their caster,v0.19,original_mod_gameplay_design
-SandsOfStillness,Sands of Stillness,playable,slowField,Sand,Create a temporary zone that slows hostile movement,v0.19,original_mod_gameplay_design
-TempestFlock,Tempest Flock,playable,summonFlock,Bird,Conjure a flock of distracting magical birds,v0.19,original_mod_gameplay_design
+id,name,status,role,primary_essence,mechanic,target_milestone,source_status,primary_category,tags,other_favored_essences
+EmberBolt,Ember Bolt,playable,damage,Fire,"""A focused flame strike. Can damage any targeted pawn"," including allies.""",v0.17,original_mod_gameplay_design,Attack,Attack; Ranged; Fire; Single Target,Sun; Elemental; Volcano
+FrostShard,Frost Shard,playable,damageDebuff,Ice,A chilling shard that deals damage and slows any targeted pawn.,v0.17,original_mod_gameplay_design,Attack,Attack; Control; Debuff; Cold; Single Target,Water
+StormSpark,Storm Spark,playable,damageDebuff,Lightning,A crackling spell that deals damage and disrupts any targeted pawn.,v0.17,original_mod_gameplay_design,Attack,Attack; Control; Debuff; Lightning; Single Target,Storm; Magic; Wind
+VerdantMend,Verdant Mend,playable,heal,Life,"""Heal an injured pawn"," whether ally or enemy.""",v0.17,original_mod_gameplay_design,Healing,Healing; Support; Single Target; Injury Healing,Plant; Renewal; Growth; Tree
+GuardianWard,Guardian Ward,playable,buff,Shield,Grant a temporary protective ward to any targeted pawn.,v0.17,original_mod_gameplay_design,Defense,Defense; Support; Ward; Single Target,Magic; Light; Pure
+StoneSkin,Stone Skin,playable,buff,Earth,Gain temporary armor with a small movement penalty.,v0.17,original_mod_gameplay_design,Defense,Defense; Armor; Buff; Self,Iron; Might; Shield
+SwiftStep,Swift Step,playable,buff,Swift,Move faster for a short time.,v0.17,original_mod_gameplay_design,Mobility,Mobility; Speed; Buff; Self,Wind; Wing; Balance; Bird
+MistVeil,Mist Veil,playable,buff,Dark,Gain short-lived evasive footwork; does not grant invisibility.,v0.17,original_mod_gameplay_design,Defense,Defense; Mobility; Evasion; Buff,Cloud; Smoke
+KeenSight,Keen Sight,playable,buff,Eye,Improve aiming and awareness for a short time.,v0.17,original_mod_gameplay_design,Utility,Utility; Support; Precision; Buff,Vision; Bird
+RallyingSurge,Rallying Surge,playable,buff,Might,Temporarily improve a targeted pawn's speed and work efficiency.,v0.17,original_mod_gameplay_design,Utility,Utility; Support; Mobility; Buff,Life; Renewal; Balance; Pure
+PurifyingTouch,Purifying Touch,playable,cleanse,Pure,Remove an Essencebound chill or static affliction from any targeted pawn.,v0.17,original_mod_gameplay_design,Healing,Healing; Utility; Cleanse; Single Target,Life; Light; Renewal
+ForcePulse,Force Pulse,playable,pulse,Might,Release a brief close-range pulse affecting nearby hostile pawns.,v0.17,original_mod_gameplay_design,Attack,Attack; Control; Area; Pulse,Force; Potent; Magic
+CinderNova,Cinder Nova,playable,pulse,Volcano,An expanding ring of burning essence damages hostile pawns around the caster.,v0.17,original_mod_gameplay_design,Attack,Attack; Area; Fire; Pulse,Sun; Fire
+ThunderChain,Thunder Chain,playable,chain,Lightning,Lightning leaps from the selected pawn to up to two nearby hostile pawns.,v0.17,original_mod_gameplay_design,Attack,Attack; Chain; Lightning; Multi Target,Thunderbird; Storm
+BloodSiphon,Blood Siphon,playable,drain,Blood,Deal damage to a chosen pawn and restore some of the caster's existing wounds from effective damage.,v0.17,original_mod_gameplay_design,Attack,Attack; Healing; Drain; Single Target,Hunger; Feast
+LifeBloom,Life Bloom,playable,healGroup,Life,Spread restorative essence across several wounds on a targeted pawn.,v0.17,original_mod_gameplay_design,Healing,Healing; Multi Wound; Single Target; Support,Fertile; Growth
+RenewalSeed,Renewal Seed,playable,regeneration,Renewal,Plant a regeneration blessing that heals actual wounds every two seconds while active.,v0.17,original_mod_gameplay_design,Healing,Healing; Regeneration; Over Time; Support,Tree; Plant
+GroveShelter,Grove Shelter,playable,auraBuff,Tree,Create a protective aura around nearby nonhostile pawns that persists as independent wards.,v0.17,original_mod_gameplay_design,Defense,Defense; Support; Aura; Group; Ward,Guardian; Plant
+PurgingWave,Purging Wave,playable,areaCleanse,Pure,Clear Essencebound afflictions from nearby nonhostile pawns; no effect on healthy targets.,v0.17,original_mod_gameplay_design,Healing,Healing; Utility; Cleanse; Area,Serene; Light
+GravitySnare,Gravity Snare,playable,debuff,Vortex,Bind a hostile pawn in slow-moving magical gravity; progress accrues while restrained.,v0.17,original_mod_gameplay_design,Control,Control; Debuff; Slow; Single Target,Boundary; Prison
+CorrosiveStrike,Corrosive Strike,playable,damageDebuff,Blight,Damage a pawn and briefly reduce sharp and blunt armor with a corrosive affliction.,v0.17,original_mod_gameplay_design,Attack,Attack; Control; Debuff; Armor Break,Venom; Corrupt
+EchoBurst,Echo Burst,playable,splash,Echo,Strike a selected pawn and damage nearby hostile pawns with a weaker concussive echo.,v0.17,original_mod_gameplay_design,Attack,Attack; Area; Splash; Concussive,Resonating; Force
+SpiritBeacon,Spirit Beacon,playable,buff,Mystic,Temporarily focus a pawn's accuracy and general work efficiency.,v0.17,original_mod_gameplay_design,Utility,Utility; Support; Precision; Buff,Magic; Knowledge
+MoonlitReprieve,Moonlit Reprieve,playable,healWard,Moon,Mend an injury and grant a modest protective blessing to the same pawn.,v0.17,original_mod_gameplay_design,Healing,Healing; Defense; Ward; Single Target,Serene; Tranquil
+InfernoLance,Inferno Lance,playable,damage,Fire,Focused long-range flame strikes a single pawn.,v0.17,original_mod_gameplay_design,Attack,Attack; Ranged; Fire; Single Target,Sun; Volcano
+FrostHalo,Frost Halo,playable,pulse,Ice,A freezing impact ring strikes hostile pawns near the caster.,v0.17,original_mod_gameplay_design,Attack,Attack; Control; Area; Cold,Cold; Water
+Quakebreaker,Quakebreaker,playable,splash,Earth,A targeted ground strike sends weaker tremors to visible nearby enemies.,v0.17,original_mod_gameplay_design,Attack,Attack; Area; Splash; Concussive,Monolith; Behemoth
+ZephyrRicochet,Zephyr Ricochet,playable,chain,Wind,Air blades jump from one pawn to three visible nearby hostiles.,v0.17,original_mod_gameplay_design,Attack,Attack; Chain; Wind; Multi Target,Wing; Bird
+UmbralLeech,Umbral Leech,playable,drain,Dark,Drain vigor from a pawn and repair some of the caster's real injuries.,v0.17,original_mod_gameplay_design,Attack,Attack; Healing; Drain; Single Target,Void; Twilight
+VipersBite,Viper's Bite,playable,damageDebuff,Venom,Damage a pawn and leave a slowing venom haze.,v0.17,original_mod_gameplay_design,Attack,Attack; Control; Debuff; Slow,Snake; Serpent
+ShardVolley,Shard Volley,playable,chain,Crystal,Hardened crystal shards ricochet toward three visible nearby hostiles.,v0.17,original_mod_gameplay_design,Attack,Attack; Chain; Crystal; Multi Target,Glass; Refracting
+BriarDetonation,Briar Detonation,playable,damageAreaDebuff,Plant,Explosive briars damage a selected pawn and entangle nearby visible hostiles.,v0.17,original_mod_gameplay_design,Attack,Attack; Control; Area; Debuff,Tree; Growth
+Starfall,Starfall,playable,splash,Star,Celestial impact strikes a selected pawn and concusses nearby hostiles.,v0.17,original_mod_gameplay_design,Attack,Attack; Area; Splash; Celestial,Stellar; Nebula
+TidalRebuke,Tidal Rebuke,playable,pulse,Water,A short-range tidal shockwave affects hostile pawns near the caster.,v0.17,original_mod_gameplay_design,Attack,Attack; Control; Area; Pulse,Ocean; Deep
+IronBastion,Iron Bastion,playable,buff,Iron,Harden the caster's armor at the cost of some mobility.,v0.17,original_mod_gameplay_design,Defense,Defense; Armor; Buff; Self,Armour; Fortress
+MirrorGuard,Mirror Guard,playable,buff,Mirror,Distort reflections around the caster for better dodge and light armor.,v0.17,original_mod_gameplay_design,Defense,Defense; Evasion; Armor; Buff,Refracting; Shimmer
+DawnChorus,Dawn Chorus,playable,auraBuff,Dawn,Boost nearby nonhostile pawns with a shared movement and work focus.,v0.17,original_mod_gameplay_design,Utility,Utility; Support; Aura; Group,Sun; Light
+VerdantSanctuary,Verdant Sanctuary,playable,areaHeal,Verdant,Restore real injuries on up to four nearby wounded allies.,v0.17,original_mod_gameplay_design,Healing,Healing; Area; Group; Injury Healing,Life; Growth
+OceanRenewal,Ocean Renewal,playable,areaRegen,Ocean,Apply gradual regeneration to up to four nearby wounded allies.,v0.17,original_mod_gameplay_design,Healing,Healing; Area; Regeneration; Over Time,Water; Fish
+CleansingRay,Cleansing Ray,playable,purgeHeal,Light,Heal a selected pawn and remove temporary Essencebound afflictions.,v0.17,original_mod_gameplay_design,Healing,Healing; Utility; Cleanse; Single Target,Pure; Tranquil
+MercyThread,Mercy Thread,playable,chainHeal,Ministration,Heal a chosen pawn and then two nearby wounded allies at lesser strength.,v0.17,original_mod_gameplay_design,Healing,Healing; Chain; Multi Target; Injury Healing,Life; Renewal
+SoulHarvest,Soul Harvest,playable,leechPulse,Death,Drain nearby visible hostiles and restore some of the caster's injuries.,v0.17,original_mod_gameplay_design,Attack,Attack; Healing; Area; Drain,Hunger; Undeath
+RuneBind,Rune Bind,playable,debuff,Rune,Bind a hostile pawn's movement with a temporary controlling rune.,v0.17,original_mod_gameplay_design,Control,Control; Debuff; Slow; Single Target,Magic; Scribe
+OmenHex,Omen Hex,playable,debuff,Omen,Hex a hostile pawn to impair shooting accuracy and work speed.,v0.17,original_mod_gameplay_design,Control,Control; Debuff; Accuracy; Single Target,Doom; Malign
+TemporalHaste,Temporal Haste,playable,buff,Time,Speed the caster's movement and work briefly.,v0.17,original_mod_gameplay_design,Mobility,Mobility; Utility; Speed; Buff,Swift; Action
+BattlefieldFocus,Battlefield Focus,playable,buff,Battlefield,Improve ranged accuracy and evasive movement through combat focus.,v0.17,original_mod_gameplay_design,Utility,Utility; Defense; Precision; Buff,Arsenal; Resolute
+BladeTempest,Blade Tempest,playable,pulse,Sword,Emit a close-range ring of cutting essence pressure against hostiles.,v0.17,original_mod_gameplay_design,Attack,Attack; Area; Close Range; Pulse,Whip; Onslaught
+NemesisStrike,Nemesis Strike,playable,execute,Nemesis,Strike a pawn with greater force when it already has significant injuries.,v0.17,original_mod_gameplay_design,Attack,Attack; Finisher; Single Target; Injury Scaling,Bounty; Wrath
+ThreadSnare,Thread Snare,playable,damageDebuff,Thread,Strike a pawn with tangled essence that briefly slows its movement.,v0.17,original_mod_gameplay_design,Control,Control; Attack; Debuff; Slow,Weave; Spider
+GlassWard,Glass Ward,playable,healWard,Glass,Mend a pawn and surround it with protective crystalline armor.,v0.17,original_mod_gameplay_design,Defense,Defense; Healing; Ward; Armor,Shield; Crystal
+AshenComet,Ashen Comet,playable,delayedBlast,Phoenix,Telegraph a falling fiery impact before it hits the map,v0.18,original_mod_gameplay_design,Attack,Attack; Area; Delayed; Fire,
+PrismaticDeflection,Prismatic Deflection,playable,reflect,Refracting,Reflect part of an incoming projectile toward its source,v0.18,original_mod_gameplay_design,Defense,Defense; Counter; Reflection; Reactive,
+LotusSanctum,Lotus Sanctum,playable,healingZone,Lotus,Establish a sanctuary that heals wounded allies over time,v0.18,original_mod_gameplay_design,Healing,Healing; Area; Zone; Regeneration,
+ChronoAnchor,Chrono Anchor,playable,returnTeleport,Time,Mark a safe tile and return there once before the mark expires,v0.18,original_mod_gameplay_design,Mobility,Mobility; Teleport; Return; Utility,
+WolfpackCall,Wolfpack Call,playable,summon,Wolf,Summon spectral wolves with a limited lifetime,v0.18,original_mod_gameplay_design,Summoning,Summoning; Familiar; Combat; Timed,
+SpectralHand,Spectral Hand,playable,remoteManipulation,Hand,Manipulate an eligible nearby object at a distance,v0.18,original_mod_gameplay_design,Utility,Utility; Item Manipulation; Ranged; Exploration,
+ChimericAspect,Chimeric Aspect,playable,adaptiveBuff,Chimera,Adapt defense or offense to the most recent threat,v0.18,original_mod_gameplay_design,Defense,Defense; Mobility; Adaptive; Buff,
+VoidSlip,Void Slip,playable,teleport,Void,Blink to a reachable safe tile in line of sight,v0.18,original_mod_gameplay_design,Mobility,Mobility; Teleport; Short Range; Exploration,
+Fleshweave,Fleshweave,playable,transfusion,Flesh,Spend temporary stamina to mend an allied injury,v0.18,original_mod_gameplay_design,Healing,Healing; Resource Cost; Single Target; Injury Healing,
+TidalWall,Tidal Wall,playable,tileBarrier,Ocean,Place a short-lived water obstruction along a chosen line,v0.18,original_mod_gameplay_design,Defense,Defense; Control; Barrier; Area,
+LightningStep,Lightning Step,playable,blinkStrike,Lightning,Reposition and release a shock at the landing point,v0.18,original_mod_gameplay_design,Mobility,Mobility; Attack; Teleport; Area,
+SovereignCommand,Sovereign Command,playable,summonOrder,Sovereign,Order controlled allies or summons to focus on a target,v0.18,original_mod_gameplay_design,Summoning,Summoning; Utility; Command; Combat,
+StarMap,Star Map,playable,survey,Star,Briefly reveal faraway terrain features and points of interest,v0.18,original_mod_gameplay_design,Utility,Utility; Exploration; Map Reveal; Ranged,
+PredatorMark,Predator Mark,playable,markedTarget,Predatory,Mark a foe to improve allied precision against that foe,v0.18,original_mod_gameplay_design,Control,Control; Attack; Mark; Debuff,
+HydraBloom,Hydra Bloom,playable,branchingHeal,Hydra,Send regeneration pulses to multiple wounded pawns,v0.18,original_mod_gameplay_design,Healing,Healing; Area; Regeneration; Group,
+CrystalPrison,Crystal Prison,playable,containment,Crystal,Surround a hostile pawn with temporary crystal obstacles,v0.18,original_mod_gameplay_design,Control,Control; Defense; Barrier; Restraint,
+EchoTwin,Echo Twin,playable,decoy,Doppelganger,Create a short-lived echo decoy to distract hostiles,v0.18,original_mod_gameplay_design,Summoning,Summoning; Decoy; Illusion; Timed,
+ResonanceField,Resonance Field,playable,powerAura,Resonating,Strengthen essence damage for allies within a limited field,v0.18,original_mod_gameplay_design,Utility,Utility; Attack; Support; Aura,
+GuardianBastion,Guardian Bastion,playable,wardDome,Guardian,Create a dome that reduces incoming ranged attacks,v0.18,original_mod_gameplay_design,Defense,Defense; Area; Ward; Aura,
+MoltenRain,Molten Rain,playable,hazardZone,Volcano,Create a temporary burning hazard on selected ground,v0.18,original_mod_gameplay_design,Attack,Attack; Area; Over Time; Zone; Fire,
+OasisWell,Oasis Well,playable,restorationZone,Oasis,Create an out-of-combat restorative site for nearby allies,v0.19,original_mod_gameplay_design,Healing,Healing; Area; Zone; Sanctuary,
+BoneFamiliar,Bone Familiar,playable,familiar,Bone,Summon a small defensive magical construct companion,v0.19,original_mod_gameplay_design,Summoning,Summoning; Defense; Familiar; Combat,
+Mistwalk,Mistwalk,playable,concealment,Cloud,Temporarily make movement between cover harder to detect,v0.19,original_mod_gameplay_design,Mobility,Mobility; Defense; Evasion; Concealment,
+MirrorStep,Mirror Step,playable,swapTeleport,Mirror,Swap safe positions with a consenting allied pawn,v0.19,original_mod_gameplay_design,Mobility,Mobility; Teleport; Ally; Swap,
+WebWeaver,Web Weaver,playable,webZone,Spider,Spread temporary webbing that slows hostile passage,v0.19,original_mod_gameplay_design,Control,Control; Zone; Slow; Over Time,
+SonicLance,Sonic Lance,playable,piercingSound,Song,Release a focused sonic attack effective against light armor,v0.19,original_mod_gameplay_design,Attack,Attack; Piercing; Ranged; Single Target,
+SunwardFlare,Sunward Flare,playable,radiantPurge,Sun,Remove darkness afflictions and emit a radiant burst,v0.19,original_mod_gameplay_design,Attack,Attack; Healing; Area; Cleanse,
+Moonshadow,Moonshadow,playable,conditionalBuff,Moon,Gain additional evasion under dim light,v0.19,original_mod_gameplay_design,Defense,Defense; Mobility; Evasion; Conditional,
+HungerField,Hunger Field,playable,sustainedLeech,Hunger,Drain nearby hostile life while a channelled field lasts,v0.19,original_mod_gameplay_design,Attack,Attack; Healing; Drain; Zone,
+ShatterArmor,Shatter Armor,playable,armorBreak,Hammer,Reduce target armor durability based on a direct blow,v0.19,original_mod_gameplay_design,Attack,Attack; Control; Armor Break; Debuff,
+HarvestBlessing,Harvest Blessing,playable,harvestAura,Harvest,Improve nearby plant harvest efficiency for a short time,v0.19,original_mod_gameplay_design,Utility,Utility; Support; Farming; Aura,
+WeaveWard,Weave Ward,playable,linkedDefense,Weave,Link two allies so protective boons share incoming harm,v0.19,original_mod_gameplay_design,Defense,Defense; Support; Linked; Damage Sharing,
+RuneBeacon,Rune Beacon,playable,groundWard,Rune,Place a rune that grants defense to pawns within range,v0.19,original_mod_gameplay_design,Defense,Defense; Zone; Ward; Area,
+IronReprisal,Iron Reprisal,playable,counterStance,Iron,Retaliate against nearby hostile melee attacks for a duration,v0.19,original_mod_gameplay_design,Defense,Defense; Attack; Counter; Melee,
+SerpentCoil,Serpent Coil,playable,grapple,Serpent,Restrict enemy movement and offensive accuracy,v0.19,original_mod_gameplay_design,Control,Control; Debuff; Restraint; Accuracy,
+DawnRebirth,Dawn Rebirth,playable,emergencyHeal,Dawn,Trigger an emergency healing surge during a dangerous fight,v0.19,original_mod_gameplay_design,Healing,Healing; Reactive; Emergency; Self,
+AdeptConvergence,Adept Convergence,playable,attributeShift,Adept,Temporarily redirect one attribute bonus into another,v0.19,original_mod_gameplay_design,Utility,Utility; Buff; Attributes; Conversion,
+FeyGlamour,Fey Glamour,playable,confusion,Fey,Disrupt hostile targeting through illusory movement,v0.19,original_mod_gameplay_design,Control,Control; Illusion; Debuff; Accuracy,
+NimbusGuard,Nimbus Guard,playable,mobileWard,Sky,Protect a moving pawn with a limited-duration storm shield,v0.19,original_mod_gameplay_design,Defense,Defense; Mobility; Ward; Single Target,
+BladeOrbit,Blade Orbit,playable,orbitStrike,Sword,Orbit enchanted blades that hit nearby hostiles periodically,v0.19,original_mod_gameplay_design,Attack,Attack; Area; Sustained; Moving,
+GravityWell,Gravity Well,playable,pullZone,Vortex,Draw hostiles toward the center of a short-lived gravity field,v0.19,original_mod_gameplay_design,Control,Control; Area; Pull; Zone,
+CorruptingSeed,Corrupting Seed,playable,sustainedDebuff,Corrupt,Deal periodic damage while reducing target armor,v0.19,original_mod_gameplay_design,Attack,Attack; Control; Over Time; Armor Break,
+TalismanSeal,Talisman Seal,playable,storedTrigger,Talisman,Store a defensive spell that triggers at the next threat,v0.19,original_mod_gameplay_design,Defense,Defense; Reactive; Trigger; Ward,
+PactOfUnity,Pact of Unity,playable,teamLink,Unity,Connect nearby allies for a temporary cooperative skill bonus,v0.19,original_mod_gameplay_design,Utility,Utility; Support; Aura; Group,
+PhoenixAshes,Phoenix Ashes,playable,survivalBoon,Firebird,Aid a severely injured pawn with a protective renewal boon,v0.19,original_mod_gameplay_design,Healing,Healing; Defense; Reactive; Emergency,
+Worldstep,Worldstep,playable,longTeleport,Dimension,Travel to a marked safe cell after a longer channel,v0.19,original_mod_gameplay_design,Mobility,Mobility; Teleport; Channeled; Exploration,
+FeralClaw,Feral Claw,playable,meleeCombo,Claw,Reward successive close attacks with a stacking offensive bonus,v0.19,original_mod_gameplay_design,Attack,Attack; Melee; Combo; Close Range,
+WardEcho,Ward Echo,playable,debuffReflect,Boundary,Return a portion of enemy control effects back to their caster,v0.19,original_mod_gameplay_design,Defense,Defense; Control; Cleanse; Counter,
+SandsOfStillness,Sands of Stillness,playable,slowField,Sand,Create a temporary zone that slows hostile movement,v0.19,original_mod_gameplay_design,Control,Control; Area; Slow; Zone,
+TempestFlock,Tempest Flock,playable,summonFlock,Bird,Conjure a flock of distracting magical birds,v0.19,original_mod_gameplay_design,Summoning,Summoning; Decoy; Familiar; Group,
