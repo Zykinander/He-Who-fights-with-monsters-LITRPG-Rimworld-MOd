@@ -318,9 +318,13 @@
     "ability_concepts": 100,
     "finished_unique_icon_assets": 0,
     "finished_unique_vfx_assets": 0,
-    "status": "concept_art_direction_only",
+    "status": "first_pass_procedural_icons_and_sigils_generated_in_CI",
     "icon_target": "transparent 128x128 PNG with 64x64 and 32x32 previews",
     "future_asset_directory": "1.7/Textures/Essencebound/AbilityIcons",
-    "gameplay_untouched": true
+    "gameplay_untouched": true,
+    "generated_icon_assets_in_packaged_build": 100,
+    "generated_cast_sigil_assets_in_packaged_build": 100,
+    "produced_assets_stored_in_git": false,
+    "production_source": "Tools/generate_ability_icons.py"
   }
 }

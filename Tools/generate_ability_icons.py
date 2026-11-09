@@ -16,6 +16,7 @@ from PIL import Image, ImageDraw, ImageFilter
 ROOT = Path(__file__).resolve().parents[1]
 DATA = ROOT / "Data" / "ability_visual_designs.json"
 OUT = ROOT / "1.7" / "Textures" / "Essencebound" / "AbilityIcons"
+SIGILS = ROOT / "1.7" / "Textures" / "Essencebound" / "AbilitySigils"
 SCALE = 4
 SIZE = 128 * SCALE
 
@@ -418,26 +419,48 @@ def render(entry):
     return img
 
 
+def render_sigil(entry):
+    """Transparent casting/impact symbol without the round UI medallion."""
+    seed=int.from_bytes(hashlib.sha256(entry["id"].encode("utf8")).digest()[:4],"big")
+    primary=color(entry["palette"]["primary"])
+    light=color(entry["palette"]["highlight"])
+    shadow=color(entry["palette"]["shadow"])
+    subject=Image.new("RGBA",(SIZE,SIZE),(0,0,0,0))
+    draw_motif(ImageDraw.Draw(subject,"RGBA"),
+               pick_motif(entry),primary,light,shadow,seed)
+    glow=subject.filter(ImageFilter.GaussianBlur(3*SCALE))
+    glow.putalpha(glow.getchannel("A").point(lambda v: int(v*.48)))
+    return Image.alpha_composite(glow,subject).resize(
+        (128,128),Image.Resampling.LANCZOS)
+
+
 def main():
     visual=json.loads(DATA.read_text(encoding="utf-8"))
     entries=visual["abilities"]
     assert len(entries)==100 and len({e["id"] for e in entries})==100
     OUT.mkdir(parents=True,exist_ok=True)
-    hashes=set()
+    SIGILS.mkdir(parents=True,exist_ok=True)
+    icon_hashes=set()
+    sigil_hashes=set()
     for e in entries:
         target=OUT/(e["id"]+".png")
-        im=render(e)
-        im.save(target,optimize=True)
+        sigil_target=SIGILS/(e["id"]+".png")
+        render(e).save(target,optimize=True)
         assert target.is_file() and target.stat().st_size>1500, target
         digest=hashlib.sha256(target.read_bytes()).hexdigest()
-        assert digest not in hashes, "Duplicate icon art"
-        hashes.add(digest)
-    # Generate no unreferenced images: stale exported files are removed.
+        assert digest not in icon_hashes, "Duplicate icon art"
+        icon_hashes.add(digest)
+        render_sigil(e).save(sigil_target,optimize=True)
+        assert sigil_target.is_file() and sigil_target.stat().st_size>800, sigil_target
+        sdigest=hashlib.sha256(sigil_target.read_bytes()).hexdigest()
+        assert sdigest not in sigil_hashes, "Duplicate sigil art"
+        sigil_hashes.add(sdigest)
     expected={e["id"]+".png" for e in entries}
-    for p in OUT.glob("*.png"):
-        if p.name not in expected:
-            p.unlink()
-    print(f"PASS: generated {len(hashes)} distinct transparent 128x128 icons in {OUT.relative_to(ROOT)}")
+    for directory in (OUT,SIGILS):
+        for p in directory.glob("*.png"):
+            if p.name not in expected:
+                p.unlink()
+    print(f"PASS: generated {len(icon_hashes)} icons and {len(sigil_hashes)} sigils at 128x128 transparent RGBA")
 
 
 if __name__=="__main__":
