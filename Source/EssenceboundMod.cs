@@ -108,8 +108,25 @@ namespace Essencebound
                 settings.densityPreset = (settings.densityPreset + 1) % 3;
                 WriteSettings();
             }
-            list.Label("A map's density is saved; this setting scales the effective density.");
-            list.Label("A tear can crystallize an essence or release a magical monster.");
+            list.Label("Density now tracks wealth, population, combat skills and essence ranks.");
+            list.Label("The Low/Normal/High setting multiplies the colony-derived density.");
+            var currentMap = Find.CurrentMap;
+            if (currentMap != null)
+            {
+                var report = currentMap.GetComponent<MapComponent_EssenceWorld>()?.DensityReport;
+                if (report.HasValue)
+                {
+                    list.Gap(6f);
+                    list.Label("Current colony magic density: " +
+                        (report.Value.FinalDensity * 100f).ToString("0.#") + "%");
+                    list.Label("Contributions (0-100): wealth " +
+                        (report.Value.WealthFactor * 100f).ToString("0") +
+                        ", population " + (report.Value.PopulationFactor * 100f).ToString("0") +
+                        ", combat " + (report.Value.CombatFactor * 100f).ToString("0") +
+                        ", essence " + (report.Value.EssenceFactor * 100f).ToString("0"));
+                }
+            }
+            list.Label("Stronger colonies attract more and deadlier manifestations.");
             list.End();
         }
     }

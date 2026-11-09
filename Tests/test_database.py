@@ -117,8 +117,8 @@ print('PASS: all 30 icons unique path, 128px RGBA, transparent corners')
 
 # Release metadata must use the development-version scheme.
 metadata=ET.parse(ROOT/'About/About.xml').getroot()
-assert 'v0.13' in metadata.findtext('name')
-assert json.loads((ROOT/'manifest.json').read_text())['version']=='0.13'
+assert 'v0.14' in metadata.findtext('name')
+assert json.loads((ROOT/'manifest.json').read_text())['version']=='0.14'
 print('PASS: v0.13 metadata and inherited stack-count overlays')
 
 # Regression: each GitHub Actions run must have a unique versioned artifact name.
@@ -255,9 +255,10 @@ assert child_text(marks[0],'hediffClass')=='Essencebound.Hediff_AstralManifestat
 assert (ROOT/'1.7/Textures/Essencebound/AwakeningStones/StoneMagus.png').exists()
 assert 'public sealed class MapComponent_EssenceWorld : MapComponent' in world
 assert 'public override void MapComponentTick()' in world
-assert 'ebAmbientDensity' in world and 'ebNextManifestationCheck' in world
+assert 'ebNextManifestationCheck' in world and 'ebAmbientDensity' in world
+assert 'private float ambientDensity' not in world
 assert 'map.IsPlayerHome' in world and 'FreeColonistsSpawned.Count == 0' in world
-assert 'EssenceboundMod.MagicDensityMultiplier' in world
+assert 'EssenceboundMod.MagicDensityMultiplier' in (ROOT/'Source/EssenceDensityCalculator.cs').read_text()
 assert '0.15f + 0.65f * intensity' in world
 assert 'Rand.Value < chance' in world
 assert 'monster.mindState.mentalStateHandler.TryStartMentalState' in world
@@ -268,5 +269,54 @@ assert 'Scribe_Values.Look(ref magicDensity' in marker
 for setting in ('manifestationsEnabled','manifestationMonstersEnabled',
                 'manifestationFrequency','densityPreset'):
     assert setting in settings
-assert json.loads((ROOT/'manifest.json').read_text())['version']=='0.13'
+assert json.loads((ROOT/'manifest.json').read_text())['version']=='0.14'
 print('PASS: v0.13 saveable magic density, tears, monster tiering and XML')
+
+# v0.14: monster danger follows actual colony progression, not random base magic.
+import math
+world_source=(ROOT/'Source/EssenceWorld.cs').read_text()
+density_source=(ROOT/'Source/EssenceDensityCalculator.cs').read_text()
+settings_source=(ROOT/'Source/EssenceboundMod.cs').read_text()
+assert 'EssenceDensityCalculator.ForMap(map)' in world_source
+assert 'public float MagicDensity => DensityReport.FinalDensity' in world_source
+assert 'tear.Initialize(densityAtOpening)' in world_source
+assert 'float chance = Math.Min(0.8f' in world_source
+assert '0.15f + 0.65f * intensity' in world_source
+assert 'private float ambientDensity' not in world_source
+assert 'Rand.Value' not in density_source
+assert 'map.wealthWatcher?.WealthTotal' in density_source
+assert 'map.mapPawns.FreeColonistsSpawned' in density_source
+assert 'SkillDefOf.Shooting' in density_source and 'SkillDefOf.Melee' in density_source
+assert 'Hediff_EssenceUser.ForPawn(pawn)' in density_source
+assert 'user.GetEssenceRankIndex(essence)' in density_source
+assert 'user.GetEssenceSublevel(essence)' in density_source
+assert '0.23f * wealthFactor' in density_source
+assert '0.14f * populationFactor' in density_source
+assert '0.12f * combatFactor' in density_source
+assert '0.42f * essenceFactor' in density_source
+assert 'report.Value.FinalDensity' in settings_source
+assert 'report.Value.EssenceFactor' in settings_source
+
+def density_for(wealth, people, combat, magic, multiplier=1):
+    clamp=lambda v:max(0,min(1,v))
+    w=clamp(math.sqrt(max(0,wealth)/200000))
+    p=clamp(math.sqrt(max(0,people)/12))
+    c=clamp(combat/20)
+    e=clamp(magic/18)
+    base=(0.09+0.23*w+0.14*p+0.12*c+0.42*e) if people else 0.05
+    return max(0.05,min(1,base*max(0,multiplier)))
+
+starter=density_for(10000,2,4,0.5)
+midgame=density_for(70000,5,9,5)
+late=density_for(250000,12,17,18)
+assert 0.05 < starter < midgame < late <= 1
+assert density_for(70000,5,9,9)>density_for(70000,5,9,5)
+assert density_for(70000,5,9,5,1.45)>midgame
+assert density_for(70000,5,9,5,0.65)<midgame
+assert density_for(70000,5,9,5)==density_for(70000,5,9,5)
+assert density_for(0,0,0,0)>=0.05
+assert density_for(10**9,100,20,100)<=1
+manifest=json.loads((ROOT/'manifest.json').read_text())
+assert manifest['version']=='0.14'
+assert manifest['world_integration']['density_weights']['essence']==0.42
+print('PASS: v0.14 deterministic strength-based density scales up with colony strength')
