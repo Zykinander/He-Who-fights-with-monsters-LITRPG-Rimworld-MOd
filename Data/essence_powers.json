@@ -1,8 +1,8 @@
 {
-  "version": "0.17",
+  "version": "0.18",
   "target": "RimWorld 1.7",
-  "count": 50,
-  "note": "50 playable of at least 100 planned. Mod-original designs, not verified novel canon.",
+  "count": 70,
+  "note": "70 playable abilities of at least 100 planned; original mod designs. Mechanical prototypes await in-game testing.",
   "powers": [
     {
       "id": "EmberBolt",
@@ -1393,6 +1393,516 @@
         "Crystal"
       ],
       "icon": "Essencebound/AwakeningStones/StoneShield",
+      "source_status": "original_mod_gameplay_design"
+    },
+    {
+      "id": "AshenComet",
+      "defName": "EB_Power_AshenComet",
+      "name": "Ashen Comet",
+      "description": "Telegraph a falling fiery impact before it hits the map.",
+      "effect": "delayedBlast",
+      "target": "pawn",
+      "range_cells": 11,
+      "magnitude": 9,
+      "cooldown_ticks": 1020,
+      "duration_ticks": 300,
+      "status_hediff": "",
+      "damage_def": "Flame",
+      "area_radius": 3,
+      "compatible_aspects": [
+        "Assault",
+        "Spell",
+        "Stars",
+        "Reaper"
+      ],
+      "favored_essences": [
+        "Phoenix"
+      ],
+      "icon": "Essencebound/AwakeningStones/StoneFire",
+      "source_status": "original_mod_gameplay_design"
+    },
+    {
+      "id": "PrismaticDeflection",
+      "defName": "EB_Power_PrismaticDeflection",
+      "name": "Prismatic Deflection",
+      "description": "Reflect part of an incoming projectile toward its source.",
+      "effect": "reflect",
+      "target": "self",
+      "range_cells": 0,
+      "magnitude": 0,
+      "cooldown_ticks": 1200,
+      "duration_ticks": 900,
+      "status_hediff": "EB_Buff_PrismaticDeflection",
+      "damage_def": "",
+      "compatible_aspects": [
+        "Ward",
+        "Counter",
+        "Veil",
+        "Preparation"
+      ],
+      "favored_essences": [
+        "Refracting"
+      ],
+      "icon": "Essencebound/AwakeningStones/StoneShield",
+      "source_status": "original_mod_gameplay_design"
+    },
+    {
+      "id": "LotusSanctum",
+      "defName": "EB_Power_LotusSanctum",
+      "name": "Lotus Sanctum",
+      "description": "Establish a sanctuary that heals wounded allies over time.",
+      "effect": "healingZone",
+      "target": "self",
+      "range_cells": 0,
+      "magnitude": 1.4,
+      "cooldown_ticks": 1560,
+      "duration_ticks": 1200,
+      "status_hediff": "",
+      "damage_def": "",
+      "area_radius": 5,
+      "compatible_aspects": [
+        "Recovery",
+        "Ritual",
+        "Growth",
+        "Aura"
+      ],
+      "favored_essences": [
+        "Lotus"
+      ],
+      "icon": "Essencebound/AwakeningStones/StonePlant",
+      "source_status": "original_mod_gameplay_design"
+    },
+    {
+      "id": "ChronoAnchor",
+      "defName": "EB_Power_ChronoAnchor",
+      "name": "Chrono Anchor",
+      "description": "Mark a safe tile and return there once before the mark expires.",
+      "effect": "returnTeleport",
+      "target": "self",
+      "range_cells": 0,
+      "magnitude": 0,
+      "cooldown_ticks": 240,
+      "duration_ticks": 1800,
+      "status_hediff": "EB_Buff_ChronoAnchor",
+      "damage_def": "",
+      "compatible_aspects": [
+        "Mobility",
+        "Preparation",
+        "Exploration",
+        "Adventure"
+      ],
+      "favored_essences": [
+        "Time"
+      ],
+      "icon": "Essencebound/AwakeningStones/StoneFocus",
+      "source_status": "original_mod_gameplay_design"
+    },
+    {
+      "id": "WolfpackCall",
+      "defName": "EB_Power_WolfpackCall",
+      "name": "Wolfpack Call",
+      "description": "Summon spectral wolves with a limited lifetime.",
+      "effect": "summon",
+      "target": "self",
+      "range_cells": 0,
+      "magnitude": 0,
+      "cooldown_ticks": 1680,
+      "duration_ticks": 1200,
+      "status_hediff": "",
+      "damage_def": "",
+      "max_extra_targets": 1,
+      "compatible_aspects": [
+        "Familiar",
+        "Adventure",
+        "Ritual",
+        "Aura"
+      ],
+      "favored_essences": [
+        "Wolf"
+      ],
+      "icon": "Essencebound/AwakeningStones/StoneChain",
+      "source_status": "original_mod_gameplay_design"
+    },
+    {
+      "id": "SpectralHand",
+      "defName": "EB_Power_SpectralHand",
+      "name": "Spectral Hand",
+      "description": "Manipulate an eligible nearby object at a distance.",
+      "effect": "remoteManipulation",
+      "target": "thing",
+      "range_cells": 10,
+      "magnitude": 0,
+      "cooldown_ticks": 480,
+      "duration_ticks": 0,
+      "status_hediff": "",
+      "damage_def": "",
+      "compatible_aspects": [
+        "Reach",
+        "Exploration",
+        "Precision",
+        "Spell"
+      ],
+      "favored_essences": [
+        "Hand"
+      ],
+      "icon": "Essencebound/AwakeningStones/StoneFocus",
+      "source_status": "original_mod_gameplay_design"
+    },
+    {
+      "id": "ChimericAspect",
+      "defName": "EB_Power_ChimericAspect",
+      "name": "Chimeric Aspect",
+      "description": "Adapt defense or offense to the most recent threat.",
+      "effect": "adaptiveBuff",
+      "target": "self",
+      "range_cells": 0,
+      "magnitude": 0,
+      "cooldown_ticks": 1080,
+      "duration_ticks": 900,
+      "status_hediff": "",
+      "damage_def": "",
+      "compatible_aspects": [
+        "Ward",
+        "Surge",
+        "Counter",
+        "Preparation"
+      ],
+      "favored_essences": [
+        "Chimera"
+      ],
+      "icon": "Essencebound/AwakeningStones/StoneStone",
+      "source_status": "original_mod_gameplay_design"
+    },
+    {
+      "id": "VoidSlip",
+      "defName": "EB_Power_VoidSlip",
+      "name": "Void Slip",
+      "description": "Blink to a reachable safe tile in line of sight.",
+      "effect": "teleport",
+      "target": "cell",
+      "range_cells": 9,
+      "magnitude": 0,
+      "cooldown_ticks": 720,
+      "duration_ticks": 0,
+      "status_hediff": "",
+      "damage_def": "",
+      "compatible_aspects": [
+        "Mobility",
+        "Veil",
+        "Exploration",
+        "Reach"
+      ],
+      "favored_essences": [
+        "Void"
+      ],
+      "icon": "Essencebound/AwakeningStones/StoneMist",
+      "source_status": "original_mod_gameplay_design"
+    },
+    {
+      "id": "Fleshweave",
+      "defName": "EB_Power_Fleshweave",
+      "name": "Fleshweave",
+      "description": "Spend temporary stamina to mend an allied injury.",
+      "effect": "transfusion",
+      "target": "pawn",
+      "range_cells": 8,
+      "magnitude": 8,
+      "cooldown_ticks": 1140,
+      "duration_ticks": 0,
+      "status_hediff": "",
+      "damage_def": "",
+      "compatible_aspects": [
+        "Recovery",
+        "Reaper",
+        "Growth",
+        "Ritual"
+      ],
+      "favored_essences": [
+        "Flesh"
+      ],
+      "icon": "Essencebound/AwakeningStones/StonePlant",
+      "source_status": "original_mod_gameplay_design"
+    },
+    {
+      "id": "TidalWall",
+      "defName": "EB_Power_TidalWall",
+      "name": "Tidal Wall",
+      "description": "Place a short-lived water obstruction along a chosen line.",
+      "effect": "tileBarrier",
+      "target": "cell",
+      "range_cells": 10,
+      "magnitude": 0,
+      "cooldown_ticks": 1260,
+      "duration_ticks": 780,
+      "status_hediff": "",
+      "damage_def": "",
+      "compatible_aspects": [
+        "Ward",
+        "Control",
+        "Spell",
+        "Preparation"
+      ],
+      "favored_essences": [
+        "Ocean"
+      ],
+      "icon": "Essencebound/AwakeningStones/StoneWater",
+      "source_status": "original_mod_gameplay_design"
+    },
+    {
+      "id": "LightningStep",
+      "defName": "EB_Power_LightningStep",
+      "name": "Lightning Step",
+      "description": "Reposition and release a shock at the landing point.",
+      "effect": "blinkStrike",
+      "target": "cell",
+      "range_cells": 9,
+      "magnitude": 5,
+      "cooldown_ticks": 840,
+      "duration_ticks": 0,
+      "status_hediff": "",
+      "damage_def": "Blunt",
+      "area_radius": 2.5,
+      "compatible_aspects": [
+        "Mobility",
+        "Surge",
+        "Assault",
+        "Spell"
+      ],
+      "favored_essences": [
+        "Lightning"
+      ],
+      "icon": "Essencebound/AwakeningStones/StoneSurge",
+      "source_status": "original_mod_gameplay_design"
+    },
+    {
+      "id": "SovereignCommand",
+      "defName": "EB_Power_SovereignCommand",
+      "name": "Sovereign Command",
+      "description": "Order controlled allies or summons to focus on a target.",
+      "effect": "summonOrder",
+      "target": "pawn",
+      "range_cells": 13,
+      "magnitude": 0,
+      "cooldown_ticks": 540,
+      "duration_ticks": 0,
+      "status_hediff": "",
+      "damage_def": "",
+      "compatible_aspects": [
+        "Familiar",
+        "Judgement",
+        "Adventure",
+        "Control"
+      ],
+      "favored_essences": [
+        "Sovereign"
+      ],
+      "icon": "Essencebound/AwakeningStones/StoneGrace",
+      "source_status": "original_mod_gameplay_design"
+    },
+    {
+      "id": "StarMap",
+      "defName": "EB_Power_StarMap",
+      "name": "Star Map",
+      "description": "Briefly reveal faraway terrain features and points of interest.",
+      "effect": "survey",
+      "target": "cell",
+      "range_cells": 24,
+      "magnitude": 0,
+      "cooldown_ticks": 900,
+      "duration_ticks": 0,
+      "status_hediff": "",
+      "damage_def": "",
+      "area_radius": 7,
+      "compatible_aspects": [
+        "Exploration",
+        "Stars",
+        "Precision",
+        "Preparation"
+      ],
+      "favored_essences": [
+        "Star"
+      ],
+      "icon": "Essencebound/AwakeningStones/StoneFocus",
+      "source_status": "original_mod_gameplay_design"
+    },
+    {
+      "id": "PredatorMark",
+      "defName": "EB_Power_PredatorMark",
+      "name": "Predator Mark",
+      "description": "Mark a foe to improve allied precision against that foe.",
+      "effect": "markedTarget",
+      "target": "pawn",
+      "range_cells": 12,
+      "magnitude": 0,
+      "cooldown_ticks": 1020,
+      "duration_ticks": 960,
+      "status_hediff": "EB_Debuff_PredatorMark",
+      "damage_def": "",
+      "compatible_aspects": [
+        "Reaper",
+        "Precision",
+        "Control",
+        "Judgement"
+      ],
+      "favored_essences": [
+        "Predatory"
+      ],
+      "icon": "Essencebound/AwakeningStones/StoneChain",
+      "source_status": "original_mod_gameplay_design"
+    },
+    {
+      "id": "HydraBloom",
+      "defName": "EB_Power_HydraBloom",
+      "name": "Hydra Bloom",
+      "description": "Send regeneration pulses to multiple wounded pawns.",
+      "effect": "branchingHeal",
+      "target": "self",
+      "range_cells": 0,
+      "magnitude": 0.9,
+      "cooldown_ticks": 1860,
+      "duration_ticks": 1200,
+      "status_hediff": "EB_Buff_RenewalSeed",
+      "damage_def": "",
+      "area_radius": 6,
+      "max_extra_targets": 4,
+      "compatible_aspects": [
+        "Growth",
+        "Recovery",
+        "Familiar",
+        "Aura"
+      ],
+      "favored_essences": [
+        "Hydra"
+      ],
+      "icon": "Essencebound/AwakeningStones/StonePlant",
+      "source_status": "original_mod_gameplay_design"
+    },
+    {
+      "id": "CrystalPrison",
+      "defName": "EB_Power_CrystalPrison",
+      "name": "Crystal Prison",
+      "description": "Surround a hostile pawn with temporary crystal obstacles.",
+      "effect": "containment",
+      "target": "pawn",
+      "range_cells": 9,
+      "magnitude": 0,
+      "cooldown_ticks": 1260,
+      "duration_ticks": 720,
+      "status_hediff": "EB_Debuff_CrystalPrison",
+      "damage_def": "",
+      "compatible_aspects": [
+        "Ward",
+        "Control",
+        "Spell",
+        "Counter"
+      ],
+      "favored_essences": [
+        "Crystal"
+      ],
+      "icon": "Essencebound/AwakeningStones/StoneShield",
+      "source_status": "original_mod_gameplay_design"
+    },
+    {
+      "id": "EchoTwin",
+      "defName": "EB_Power_EchoTwin",
+      "name": "Echo Twin",
+      "description": "Create a short-lived echo decoy to distract hostiles.",
+      "effect": "decoy",
+      "target": "self",
+      "range_cells": 0,
+      "magnitude": 0,
+      "cooldown_ticks": 1500,
+      "duration_ticks": 900,
+      "status_hediff": "",
+      "damage_def": "",
+      "compatible_aspects": [
+        "Veil",
+        "Familiar",
+        "Exploration",
+        "Counter"
+      ],
+      "favored_essences": [
+        "Doppelganger"
+      ],
+      "icon": "Essencebound/AwakeningStones/StoneMist",
+      "source_status": "original_mod_gameplay_design"
+    },
+    {
+      "id": "ResonanceField",
+      "defName": "EB_Power_ResonanceField",
+      "name": "Resonance Field",
+      "description": "Strengthen essence damage for allies within a limited field.",
+      "effect": "powerAura",
+      "target": "self",
+      "range_cells": 0,
+      "magnitude": 0,
+      "cooldown_ticks": 1440,
+      "duration_ticks": 960,
+      "status_hediff": "EB_Buff_ResonanceField",
+      "damage_def": "",
+      "area_radius": 6,
+      "compatible_aspects": [
+        "Aura",
+        "Spell",
+        "Ritual",
+        "Stars"
+      ],
+      "favored_essences": [
+        "Resonating"
+      ],
+      "icon": "Essencebound/AwakeningStones/StoneSurge",
+      "source_status": "original_mod_gameplay_design"
+    },
+    {
+      "id": "GuardianBastion",
+      "defName": "EB_Power_GuardianBastion",
+      "name": "Guardian Bastion",
+      "description": "Create a dome that reduces incoming ranged attacks.",
+      "effect": "wardDome",
+      "target": "self",
+      "range_cells": 0,
+      "magnitude": 0,
+      "cooldown_ticks": 1440,
+      "duration_ticks": 1020,
+      "status_hediff": "EB_Buff_GuardianBastion",
+      "damage_def": "",
+      "area_radius": 6,
+      "compatible_aspects": [
+        "Ward",
+        "Aura",
+        "Ritual",
+        "Counter"
+      ],
+      "favored_essences": [
+        "Guardian"
+      ],
+      "icon": "Essencebound/AwakeningStones/StoneShield",
+      "source_status": "original_mod_gameplay_design"
+    },
+    {
+      "id": "MoltenRain",
+      "defName": "EB_Power_MoltenRain",
+      "name": "Molten Rain",
+      "description": "Create a temporary burning hazard on selected ground.",
+      "effect": "hazardZone",
+      "target": "cell",
+      "range_cells": 12,
+      "magnitude": 3.2,
+      "cooldown_ticks": 1560,
+      "duration_ticks": 900,
+      "status_hediff": "",
+      "damage_def": "Flame",
+      "area_radius": 3.5,
+      "compatible_aspects": [
+        "Assault",
+        "Spell",
+        "Stars",
+        "Surge"
+      ],
+      "favored_essences": [
+        "Volcano"
+      ],
+      "icon": "Essencebound/AwakeningStones/StoneFire",
       "source_status": "original_mod_gameplay_design"
     }
   ]
