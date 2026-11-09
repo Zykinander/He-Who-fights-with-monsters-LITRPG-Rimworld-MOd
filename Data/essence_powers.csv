@@ -49,3 +49,23 @@ BladeTempest,Blade Tempest,pulse,self,4,6.5,1020,0,,Assault; Reaper; Counter; Su
 NemesisStrike,Nemesis Strike,execute,pawn,8,7.5,900,0,,Reaper; Assault; Precision; Judgement,Nemesis; Bounty; Wrath,original_mod_gameplay_design
 ThreadSnare,Thread Snare,damageDebuff,pawn,9,4.2,780,720,EB_Debuff_ThreadSnare,Control; Spell; Reach; Veil,Thread; Weave; Spider,original_mod_gameplay_design
 GlassWard,Glass Ward,healWard,pawn,8,3.5,1110,870,EB_Buff_GlassWard,Ward; Recovery; Preparation; Ritual,Glass; Shield; Crystal,original_mod_gameplay_design
+AshenComet,Ashen Comet,delayedBlast,pawn,11,9,1020,300,,Assault; Spell; Stars; Reaper,Phoenix,original_mod_gameplay_design
+PrismaticDeflection,Prismatic Deflection,reflect,self,0,0,1200,900,EB_Buff_PrismaticDeflection,Ward; Counter; Veil; Preparation,Refracting,original_mod_gameplay_design
+LotusSanctum,Lotus Sanctum,healingZone,self,0,1.4,1560,1200,,Recovery; Ritual; Growth; Aura,Lotus,original_mod_gameplay_design
+ChronoAnchor,Chrono Anchor,returnTeleport,self,0,0,240,1800,EB_Buff_ChronoAnchor,Mobility; Preparation; Exploration; Adventure,Time,original_mod_gameplay_design
+WolfpackCall,Wolfpack Call,summon,self,0,0,1680,1200,,Familiar; Adventure; Ritual; Aura,Wolf,original_mod_gameplay_design
+SpectralHand,Spectral Hand,remoteManipulation,thing,10,0,480,0,,Reach; Exploration; Precision; Spell,Hand,original_mod_gameplay_design
+ChimericAspect,Chimeric Aspect,adaptiveBuff,self,0,0,1080,900,,Ward; Surge; Counter; Preparation,Chimera,original_mod_gameplay_design
+VoidSlip,Void Slip,teleport,cell,9,0,720,0,,Mobility; Veil; Exploration; Reach,Void,original_mod_gameplay_design
+Fleshweave,Fleshweave,transfusion,pawn,8,8,1140,0,,Recovery; Reaper; Growth; Ritual,Flesh,original_mod_gameplay_design
+TidalWall,Tidal Wall,tileBarrier,cell,10,0,1260,780,,Ward; Control; Spell; Preparation,Ocean,original_mod_gameplay_design
+LightningStep,Lightning Step,blinkStrike,cell,9,5,840,0,,Mobility; Surge; Assault; Spell,Lightning,original_mod_gameplay_design
+SovereignCommand,Sovereign Command,summonOrder,pawn,13,0,540,0,,Familiar; Judgement; Adventure; Control,Sovereign,original_mod_gameplay_design
+StarMap,Star Map,survey,cell,24,0,900,0,,Exploration; Stars; Precision; Preparation,Star,original_mod_gameplay_design
+PredatorMark,Predator Mark,markedTarget,pawn,12,0,1020,960,EB_Debuff_PredatorMark,Reaper; Precision; Control; Judgement,Predatory,original_mod_gameplay_design
+HydraBloom,Hydra Bloom,branchingHeal,self,0,0.9,1860,1200,EB_Buff_RenewalSeed,Growth; Recovery; Familiar; Aura,Hydra,original_mod_gameplay_design
+CrystalPrison,Crystal Prison,containment,pawn,9,0,1260,720,EB_Debuff_CrystalPrison,Ward; Control; Spell; Counter,Crystal,original_mod_gameplay_design
+EchoTwin,Echo Twin,decoy,self,0,0,1500,900,,Veil; Familiar; Exploration; Counter,Doppelganger,original_mod_gameplay_design
+ResonanceField,Resonance Field,powerAura,self,0,0,1440,960,EB_Buff_ResonanceField,Aura; Spell; Ritual; Stars,Resonating,original_mod_gameplay_design
+GuardianBastion,Guardian Bastion,wardDome,self,0,0,1440,1020,EB_Buff_GuardianBastion,Ward; Aura; Ritual; Counter,Guardian,original_mod_gameplay_design
+MoltenRain,Molten Rain,hazardZone,cell,12,3.2,1560,900,,Assault; Spell; Stars; Surge,Volcano,original_mod_gameplay_design

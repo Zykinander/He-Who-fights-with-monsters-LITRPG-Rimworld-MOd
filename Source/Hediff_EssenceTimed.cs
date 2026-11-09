@@ -13,6 +13,7 @@ namespace Essencebound
         private int creditSlot = -1;
         private int benefitTicks;
         private bool trainOnlyAgainstHostile;
+        public Pawn CreditCaster => creditCaster;
 
         public void Refresh(int durationTicks, Pawn caster, EssenceAbilitySlot slot,
             bool hostileOnly = false)

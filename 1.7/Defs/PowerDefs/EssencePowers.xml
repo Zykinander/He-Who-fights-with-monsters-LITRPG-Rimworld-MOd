@@ -1240,4 +1240,444 @@
       <li>EB_Crystal</li>
     </favoredEssences>
   </Essencebound.EssencePowerDef>
+  <Essencebound.EssencePowerDef>
+    <defName>EB_Power_AshenComet</defName>
+    <label>ashen comet</label>
+    <description>Telegraph a falling fiery impact before it hits the map.</description>
+    <effectKind>delayedBlast</effectKind>
+    <targetKind>pawn</targetKind>
+    <range>11</range>
+    <magnitude>9</magnitude>
+    <cooldownTicks>1020</cooldownTicks>
+    <durationTicks>300</durationTicks>
+    <areaRadius>3</areaRadius>
+    <damageDefName>Flame</damageDefName>
+    <iconPath>Essencebound/AwakeningStones/StoneFire</iconPath>
+    <compatibleAspects>
+      <li>EB_Aspect_Assault</li>
+      <li>EB_Aspect_Spell</li>
+      <li>EB_Aspect_Stars</li>
+      <li>EB_Aspect_Reaper</li>
+    </compatibleAspects>
+    <favoredEssences>
+      <li>EB_Phoenix</li>
+    </favoredEssences>
+  </Essencebound.EssencePowerDef>
+  <Essencebound.EssencePowerDef>
+    <defName>EB_Power_PrismaticDeflection</defName>
+    <label>prismatic deflection</label>
+    <description>Reflect part of an incoming projectile toward its source.</description>
+    <effectKind>reflect</effectKind>
+    <targetKind>self</targetKind>
+    <range>0</range>
+    <magnitude>0</magnitude>
+    <cooldownTicks>1200</cooldownTicks>
+    <durationTicks>900</durationTicks>
+    <buffHediffDefName>EB_Buff_PrismaticDeflection</buffHediffDefName>
+    <iconPath>Essencebound/AwakeningStones/StoneShield</iconPath>
+    <compatibleAspects>
+      <li>EB_Aspect_Ward</li>
+      <li>EB_Aspect_Counter</li>
+      <li>EB_Aspect_Veil</li>
+      <li>EB_Aspect_Preparation</li>
+    </compatibleAspects>
+    <favoredEssences>
+      <li>EB_Refracting</li>
+    </favoredEssences>
+  </Essencebound.EssencePowerDef>
+  <Essencebound.EssencePowerDef>
+    <defName>EB_Power_LotusSanctum</defName>
+    <label>lotus sanctum</label>
+    <description>Establish a sanctuary that heals wounded allies over time.</description>
+    <effectKind>healingZone</effectKind>
+    <targetKind>self</targetKind>
+    <range>0</range>
+    <magnitude>1.4</magnitude>
+    <cooldownTicks>1560</cooldownTicks>
+    <durationTicks>1200</durationTicks>
+    <areaRadius>5</areaRadius>
+    <iconPath>Essencebound/AwakeningStones/StonePlant</iconPath>
+    <compatibleAspects>
+      <li>EB_Aspect_Recovery</li>
+      <li>EB_Aspect_Ritual</li>
+      <li>EB_Aspect_Growth</li>
+      <li>EB_Aspect_Aura</li>
+    </compatibleAspects>
+    <favoredEssences>
+      <li>EB_Lotus</li>
+    </favoredEssences>
+  </Essencebound.EssencePowerDef>
+  <Essencebound.EssencePowerDef>
+    <defName>EB_Power_ChronoAnchor</defName>
+    <label>chrono anchor</label>
+    <description>Mark a safe tile and return there once before the mark expires.</description>
+    <effectKind>returnTeleport</effectKind>
+    <targetKind>self</targetKind>
+    <range>0</range>
+    <magnitude>0</magnitude>
+    <cooldownTicks>240</cooldownTicks>
+    <durationTicks>1800</durationTicks>
+    <buffHediffDefName>EB_Buff_ChronoAnchor</buffHediffDefName>
+    <iconPath>Essencebound/AwakeningStones/StoneFocus</iconPath>
+    <compatibleAspects>
+      <li>EB_Aspect_Mobility</li>
+      <li>EB_Aspect_Preparation</li>
+      <li>EB_Aspect_Exploration</li>
+      <li>EB_Aspect_Adventure</li>
+    </compatibleAspects>
+    <favoredEssences>
+      <li>EB_Time</li>
+    </favoredEssences>
+  </Essencebound.EssencePowerDef>
+  <Essencebound.EssencePowerDef>
+    <defName>EB_Power_WolfpackCall</defName>
+    <label>wolfpack call</label>
+    <description>Summon spectral wolves with a limited lifetime.</description>
+    <effectKind>summon</effectKind>
+    <targetKind>self</targetKind>
+    <range>0</range>
+    <magnitude>0</magnitude>
+    <cooldownTicks>1680</cooldownTicks>
+    <durationTicks>1200</durationTicks>
+    <maxExtraTargets>1</maxExtraTargets>
+    <iconPath>Essencebound/AwakeningStones/StoneChain</iconPath>
+    <compatibleAspects>
+      <li>EB_Aspect_Familiar</li>
+      <li>EB_Aspect_Adventure</li>
+      <li>EB_Aspect_Ritual</li>
+      <li>EB_Aspect_Aura</li>
+    </compatibleAspects>
+    <favoredEssences>
+      <li>EB_Wolf</li>
+    </favoredEssences>
+  </Essencebound.EssencePowerDef>
+  <Essencebound.EssencePowerDef>
+    <defName>EB_Power_SpectralHand</defName>
+    <label>spectral hand</label>
+    <description>Manipulate an eligible nearby object at a distance.</description>
+    <effectKind>remoteManipulation</effectKind>
+    <targetKind>thing</targetKind>
+    <range>10</range>
+    <magnitude>0</magnitude>
+    <cooldownTicks>480</cooldownTicks>
+    <durationTicks>0</durationTicks>
+    <iconPath>Essencebound/AwakeningStones/StoneFocus</iconPath>
+    <compatibleAspects>
+      <li>EB_Aspect_Reach</li>
+      <li>EB_Aspect_Exploration</li>
+      <li>EB_Aspect_Precision</li>
+      <li>EB_Aspect_Spell</li>
+    </compatibleAspects>
+    <favoredEssences>
+      <li>EB_Hand</li>
+    </favoredEssences>
+  </Essencebound.EssencePowerDef>
+  <Essencebound.EssencePowerDef>
+    <defName>EB_Power_ChimericAspect</defName>
+    <label>chimeric aspect</label>
+    <description>Adapt defense or offense to the most recent threat.</description>
+    <effectKind>adaptiveBuff</effectKind>
+    <targetKind>self</targetKind>
+    <range>0</range>
+    <magnitude>0</magnitude>
+    <cooldownTicks>1080</cooldownTicks>
+    <durationTicks>900</durationTicks>
+    <iconPath>Essencebound/AwakeningStones/StoneStone</iconPath>
+    <compatibleAspects>
+      <li>EB_Aspect_Ward</li>
+      <li>EB_Aspect_Surge</li>
+      <li>EB_Aspect_Counter</li>
+      <li>EB_Aspect_Preparation</li>
+    </compatibleAspects>
+    <favoredEssences>
+      <li>EB_Chimera</li>
+    </favoredEssences>
+  </Essencebound.EssencePowerDef>
+  <Essencebound.EssencePowerDef>
+    <defName>EB_Power_VoidSlip</defName>
+    <label>void slip</label>
+    <description>Blink to a reachable safe tile in line of sight.</description>
+    <effectKind>teleport</effectKind>
+    <targetKind>cell</targetKind>
+    <range>9</range>
+    <magnitude>0</magnitude>
+    <cooldownTicks>720</cooldownTicks>
+    <durationTicks>0</durationTicks>
+    <iconPath>Essencebound/AwakeningStones/StoneMist</iconPath>
+    <compatibleAspects>
+      <li>EB_Aspect_Mobility</li>
+      <li>EB_Aspect_Veil</li>
+      <li>EB_Aspect_Exploration</li>
+      <li>EB_Aspect_Reach</li>
+    </compatibleAspects>
+    <favoredEssences>
+      <li>EB_Void</li>
+    </favoredEssences>
+  </Essencebound.EssencePowerDef>
+  <Essencebound.EssencePowerDef>
+    <defName>EB_Power_Fleshweave</defName>
+    <label>fleshweave</label>
+    <description>Spend temporary stamina to mend an allied injury.</description>
+    <effectKind>transfusion</effectKind>
+    <targetKind>pawn</targetKind>
+    <range>8</range>
+    <magnitude>8</magnitude>
+    <cooldownTicks>1140</cooldownTicks>
+    <durationTicks>0</durationTicks>
+    <iconPath>Essencebound/AwakeningStones/StonePlant</iconPath>
+    <compatibleAspects>
+      <li>EB_Aspect_Recovery</li>
+      <li>EB_Aspect_Reaper</li>
+      <li>EB_Aspect_Growth</li>
+      <li>EB_Aspect_Ritual</li>
+    </compatibleAspects>
+    <favoredEssences>
+      <li>EB_Flesh</li>
+    </favoredEssences>
+  </Essencebound.EssencePowerDef>
+  <Essencebound.EssencePowerDef>
+    <defName>EB_Power_TidalWall</defName>
+    <label>tidal wall</label>
+    <description>Place a short-lived water obstruction along a chosen line.</description>
+    <effectKind>tileBarrier</effectKind>
+    <targetKind>cell</targetKind>
+    <range>10</range>
+    <magnitude>0</magnitude>
+    <cooldownTicks>1260</cooldownTicks>
+    <durationTicks>780</durationTicks>
+    <iconPath>Essencebound/AwakeningStones/StoneWater</iconPath>
+    <compatibleAspects>
+      <li>EB_Aspect_Ward</li>
+      <li>EB_Aspect_Control</li>
+      <li>EB_Aspect_Spell</li>
+      <li>EB_Aspect_Preparation</li>
+    </compatibleAspects>
+    <favoredEssences>
+      <li>EB_Ocean</li>
+    </favoredEssences>
+  </Essencebound.EssencePowerDef>
+  <Essencebound.EssencePowerDef>
+    <defName>EB_Power_LightningStep</defName>
+    <label>lightning step</label>
+    <description>Reposition and release a shock at the landing point.</description>
+    <effectKind>blinkStrike</effectKind>
+    <targetKind>cell</targetKind>
+    <range>9</range>
+    <magnitude>5</magnitude>
+    <cooldownTicks>840</cooldownTicks>
+    <durationTicks>0</durationTicks>
+    <areaRadius>2.5</areaRadius>
+    <damageDefName>Blunt</damageDefName>
+    <iconPath>Essencebound/AwakeningStones/StoneSurge</iconPath>
+    <compatibleAspects>
+      <li>EB_Aspect_Mobility</li>
+      <li>EB_Aspect_Surge</li>
+      <li>EB_Aspect_Assault</li>
+      <li>EB_Aspect_Spell</li>
+    </compatibleAspects>
+    <favoredEssences>
+      <li>EB_Lightning</li>
+    </favoredEssences>
+  </Essencebound.EssencePowerDef>
+  <Essencebound.EssencePowerDef>
+    <defName>EB_Power_SovereignCommand</defName>
+    <label>sovereign command</label>
+    <description>Order controlled allies or summons to focus on a target.</description>
+    <effectKind>summonOrder</effectKind>
+    <targetKind>pawn</targetKind>
+    <range>13</range>
+    <magnitude>0</magnitude>
+    <cooldownTicks>540</cooldownTicks>
+    <durationTicks>0</durationTicks>
+    <iconPath>Essencebound/AwakeningStones/StoneGrace</iconPath>
+    <compatibleAspects>
+      <li>EB_Aspect_Familiar</li>
+      <li>EB_Aspect_Judgement</li>
+      <li>EB_Aspect_Adventure</li>
+      <li>EB_Aspect_Control</li>
+    </compatibleAspects>
+    <favoredEssences>
+      <li>EB_Sovereign</li>
+    </favoredEssences>
+  </Essencebound.EssencePowerDef>
+  <Essencebound.EssencePowerDef>
+    <defName>EB_Power_StarMap</defName>
+    <label>star map</label>
+    <description>Briefly reveal faraway terrain features and points of interest.</description>
+    <effectKind>survey</effectKind>
+    <targetKind>cell</targetKind>
+    <range>24</range>
+    <magnitude>0</magnitude>
+    <cooldownTicks>900</cooldownTicks>
+    <durationTicks>0</durationTicks>
+    <areaRadius>7</areaRadius>
+    <iconPath>Essencebound/AwakeningStones/StoneFocus</iconPath>
+    <compatibleAspects>
+      <li>EB_Aspect_Exploration</li>
+      <li>EB_Aspect_Stars</li>
+      <li>EB_Aspect_Precision</li>
+      <li>EB_Aspect_Preparation</li>
+    </compatibleAspects>
+    <favoredEssences>
+      <li>EB_Star</li>
+    </favoredEssences>
+  </Essencebound.EssencePowerDef>
+  <Essencebound.EssencePowerDef>
+    <defName>EB_Power_PredatorMark</defName>
+    <label>predator mark</label>
+    <description>Mark a foe to improve allied precision against that foe.</description>
+    <effectKind>markedTarget</effectKind>
+    <targetKind>pawn</targetKind>
+    <range>12</range>
+    <magnitude>0</magnitude>
+    <cooldownTicks>1020</cooldownTicks>
+    <durationTicks>960</durationTicks>
+    <buffHediffDefName>EB_Debuff_PredatorMark</buffHediffDefName>
+    <iconPath>Essencebound/AwakeningStones/StoneChain</iconPath>
+    <compatibleAspects>
+      <li>EB_Aspect_Reaper</li>
+      <li>EB_Aspect_Precision</li>
+      <li>EB_Aspect_Control</li>
+      <li>EB_Aspect_Judgement</li>
+    </compatibleAspects>
+    <favoredEssences>
+      <li>EB_Predatory</li>
+    </favoredEssences>
+  </Essencebound.EssencePowerDef>
+  <Essencebound.EssencePowerDef>
+    <defName>EB_Power_HydraBloom</defName>
+    <label>hydra bloom</label>
+    <description>Send regeneration pulses to multiple wounded pawns.</description>
+    <effectKind>branchingHeal</effectKind>
+    <targetKind>self</targetKind>
+    <range>0</range>
+    <magnitude>0.9</magnitude>
+    <cooldownTicks>1860</cooldownTicks>
+    <durationTicks>1200</durationTicks>
+    <areaRadius>6</areaRadius>
+    <maxExtraTargets>4</maxExtraTargets>
+    <buffHediffDefName>EB_Buff_RenewalSeed</buffHediffDefName>
+    <iconPath>Essencebound/AwakeningStones/StonePlant</iconPath>
+    <compatibleAspects>
+      <li>EB_Aspect_Growth</li>
+      <li>EB_Aspect_Recovery</li>
+      <li>EB_Aspect_Familiar</li>
+      <li>EB_Aspect_Aura</li>
+    </compatibleAspects>
+    <favoredEssences>
+      <li>EB_Hydra</li>
+    </favoredEssences>
+  </Essencebound.EssencePowerDef>
+  <Essencebound.EssencePowerDef>
+    <defName>EB_Power_CrystalPrison</defName>
+    <label>crystal prison</label>
+    <description>Surround a hostile pawn with temporary crystal obstacles.</description>
+    <effectKind>containment</effectKind>
+    <targetKind>pawn</targetKind>
+    <range>9</range>
+    <magnitude>0</magnitude>
+    <cooldownTicks>1260</cooldownTicks>
+    <durationTicks>720</durationTicks>
+    <buffHediffDefName>EB_Debuff_CrystalPrison</buffHediffDefName>
+    <iconPath>Essencebound/AwakeningStones/StoneShield</iconPath>
+    <compatibleAspects>
+      <li>EB_Aspect_Ward</li>
+      <li>EB_Aspect_Control</li>
+      <li>EB_Aspect_Spell</li>
+      <li>EB_Aspect_Counter</li>
+    </compatibleAspects>
+    <favoredEssences>
+      <li>EB_Crystal</li>
+    </favoredEssences>
+  </Essencebound.EssencePowerDef>
+  <Essencebound.EssencePowerDef>
+    <defName>EB_Power_EchoTwin</defName>
+    <label>echo twin</label>
+    <description>Create a short-lived echo decoy to distract hostiles.</description>
+    <effectKind>decoy</effectKind>
+    <targetKind>self</targetKind>
+    <range>0</range>
+    <magnitude>0</magnitude>
+    <cooldownTicks>1500</cooldownTicks>
+    <durationTicks>900</durationTicks>
+    <iconPath>Essencebound/AwakeningStones/StoneMist</iconPath>
+    <compatibleAspects>
+      <li>EB_Aspect_Veil</li>
+      <li>EB_Aspect_Familiar</li>
+      <li>EB_Aspect_Exploration</li>
+      <li>EB_Aspect_Counter</li>
+    </compatibleAspects>
+    <favoredEssences>
+      <li>EB_Doppelganger</li>
+    </favoredEssences>
+  </Essencebound.EssencePowerDef>
+  <Essencebound.EssencePowerDef>
+    <defName>EB_Power_ResonanceField</defName>
+    <label>resonance field</label>
+    <description>Strengthen essence damage for allies within a limited field.</description>
+    <effectKind>powerAura</effectKind>
+    <targetKind>self</targetKind>
+    <range>0</range>
+    <magnitude>0</magnitude>
+    <cooldownTicks>1440</cooldownTicks>
+    <durationTicks>960</durationTicks>
+    <areaRadius>6</areaRadius>
+    <buffHediffDefName>EB_Buff_ResonanceField</buffHediffDefName>
+    <iconPath>Essencebound/AwakeningStones/StoneSurge</iconPath>
+    <compatibleAspects>
+      <li>EB_Aspect_Aura</li>
+      <li>EB_Aspect_Spell</li>
+      <li>EB_Aspect_Ritual</li>
+      <li>EB_Aspect_Stars</li>
+    </compatibleAspects>
+    <favoredEssences>
+      <li>EB_Resonating</li>
+    </favoredEssences>
+  </Essencebound.EssencePowerDef>
+  <Essencebound.EssencePowerDef>
+    <defName>EB_Power_GuardianBastion</defName>
+    <label>guardian bastion</label>
+    <description>Create a dome that reduces incoming ranged attacks.</description>
+    <effectKind>wardDome</effectKind>
+    <targetKind>self</targetKind>
+    <range>0</range>
+    <magnitude>0</magnitude>
+    <cooldownTicks>1440</cooldownTicks>
+    <durationTicks>1020</durationTicks>
+    <areaRadius>6</areaRadius>
+    <buffHediffDefName>EB_Buff_GuardianBastion</buffHediffDefName>
+    <iconPath>Essencebound/AwakeningStones/StoneShield</iconPath>
+    <compatibleAspects>
+      <li>EB_Aspect_Ward</li>
+      <li>EB_Aspect_Aura</li>
+      <li>EB_Aspect_Ritual</li>
+      <li>EB_Aspect_Counter</li>
+    </compatibleAspects>
+    <favoredEssences>
+      <li>EB_Guardian</li>
+    </favoredEssences>
+  </Essencebound.EssencePowerDef>
+  <Essencebound.EssencePowerDef>
+    <defName>EB_Power_MoltenRain</defName>
+    <label>molten rain</label>
+    <description>Create a temporary burning hazard on selected ground.</description>
+    <effectKind>hazardZone</effectKind>
+    <targetKind>cell</targetKind>
+    <range>12</range>
+    <magnitude>3.2</magnitude>
+    <cooldownTicks>1560</cooldownTicks>
+    <durationTicks>900</durationTicks>
+    <areaRadius>3.5</areaRadius>
+    <damageDefName>Flame</damageDefName>
+    <iconPath>Essencebound/AwakeningStones/StoneFire</iconPath>
+    <compatibleAspects>
+      <li>EB_Aspect_Assault</li>
+      <li>EB_Aspect_Spell</li>
+      <li>EB_Aspect_Stars</li>
+      <li>EB_Aspect_Surge</li>
+    </compatibleAspects>
+    <favoredEssences>
+      <li>EB_Volcano</li>
+    </favoredEssences>
+  </Essencebound.EssencePowerDef>
 </Defs>

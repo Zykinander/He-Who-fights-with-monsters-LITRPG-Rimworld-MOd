@@ -371,6 +371,11 @@ namespace Essencebound
 
         public bool TryCastPower(EssenceAbilitySlot slot, Pawn target, out string message)
         {
+            return TryCastPower(slot, new LocalTargetInfo(target), out message);
+        }
+
+        public bool TryCastPower(EssenceAbilitySlot slot, LocalTargetInfo target, out string message)
+        {
             if (pawn == null || pawn.Faction != Faction.OfPlayer || slot == null ||
                 !abilitySlots.Contains(slot) || !slot.IsAwakened)
             { message = "That pawn cannot cast this power."; return false; }
@@ -381,7 +386,13 @@ namespace Essencebound
             int now = Find.TickManager.TicksGame;
             if (slot.nextUseTick > now)
             { message = "Cooldown: " + ((slot.nextUseTick - now + 59) / 60) + " seconds left."; return false; }
-            if (!EssencePowerExecutor.Apply(pawn, power, target, slot, out message, out float realWork)) return false;
+            float realWork;
+            bool applied = power.targetKind == "cell" || power.targetKind == "thing"
+                ? EssenceAdvancedAbilities.CastSpatial(pawn, power, target, slot,
+                    out message, out realWork)
+                : EssencePowerExecutor.Apply(pawn, power, target.Thing as Pawn,
+                    slot, out message, out realWork);
+            if (!applied) return false;
             float credited = realWork > 0f ?
                 AddAbilityWork(slot.essenceDefName, slot.index, realWork) : 0f;
             message += "  Progress +" + credited.ToString("0.#") +
@@ -498,24 +509,26 @@ namespace Essencebound
         {
             if (power.targetKind == "self")
             {
-                NotifyUse(slot, pawn);
+                NotifyUse(slot, new LocalTargetInfo(pawn));
                 return;
             }
+            bool items = power.targetKind == "thing";
+            bool locations = power.targetKind == "cell";
             var targets = new TargetingParameters
             {
-                canTargetPawns = true,
-                canTargetSelf = true,
+                canTargetPawns = !items && !locations,
+                canTargetSelf = !items && !locations,
                 canTargetBuildings = false,
-                canTargetItems = false,
-                canTargetLocations = false
+                canTargetItems = items,
+                canTargetLocations = locations
             };
             Find.Targeter.BeginTargeting(targets, (LocalTargetInfo local) =>
             {
-                NotifyUse(slot, local.Thing as Pawn);
+                NotifyUse(slot, local);
             });
         }
 
-        private void NotifyUse(EssenceAbilitySlot slot, Pawn target)
+        private void NotifyUse(EssenceAbilitySlot slot, LocalTargetInfo target)
         {
             bool okay = TryCastPower(slot, target, out string message);
             Messages.Message((pawn?.LabelShort ?? "Pawn") + ": " + message,
@@ -609,7 +622,10 @@ namespace Essencebound
                 {
                     defaultLabel = power.label.CapitalizeFirst(),
                     defaultDesc = power.description + "\nEssence: " + (essence?.label ?? slot.essenceDefName) +
-                        "\nTarget: " + (power.targetKind == "self" ? "Self" : "Any living pawn (ally or enemy)") +
+                        "\nTarget: " + (power.targetKind == "self" ? "Self" :
+                        power.targetKind == "cell" ? "Map location" :
+                        power.targetKind == "thing" ? "Loose item" :
+                        "Any living pawn (ally or enemy)") +
                         "\nRank: " + EssenceProgression.RankWithLevel(slot.abilityRankIndex,
                             slot.abilitySublevel) +
                         "\nTraining: " + EssenceProgression.WorkLabel(power.effectKind) +

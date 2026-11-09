@@ -49,26 +49,26 @@ BladeTempest,Blade Tempest,playable,pulse,Sword,Emit a close-range ring of cutti
 NemesisStrike,Nemesis Strike,playable,execute,Nemesis,Strike a pawn with greater force when it already has significant injuries.,v0.17,original_mod_gameplay_design
 ThreadSnare,Thread Snare,playable,damageDebuff,Thread,Strike a pawn with tangled essence that briefly slows its movement.,v0.17,original_mod_gameplay_design
 GlassWard,Glass Ward,playable,healWard,Glass,Mend a pawn and surround it with protective crystalline armor.,v0.17,original_mod_gameplay_design
-AshenComet,Ashen Comet,planned,delayedBlast,Phoenix,Telegraph a falling fiery impact before it hits the map,v0.18,original_mod_gameplay_design
-PrismaticDeflection,Prismatic Deflection,planned,reflect,Refracting,Reflect part of an incoming projectile toward its source,v0.18,original_mod_gameplay_design
-LotusSanctum,Lotus Sanctum,planned,healingZone,Lotus,Establish a sanctuary that heals wounded allies over time,v0.18,original_mod_gameplay_design
-ChronoAnchor,Chrono Anchor,planned,returnTeleport,Time,Mark a safe tile and return there once before the mark expires,v0.18,original_mod_gameplay_design
-WolfpackCall,Wolfpack Call,planned,summon,Wolf,Summon spectral wolves with a limited lifetime,v0.18,original_mod_gameplay_design
-SpectralHand,Spectral Hand,planned,remoteManipulation,Hand,Manipulate an eligible nearby object at a distance,v0.18,original_mod_gameplay_design
-ChimericAspect,Chimeric Aspect,planned,adaptiveBuff,Chimera,Adapt defense or offense to the most recent threat,v0.18,original_mod_gameplay_design
-VoidSlip,Void Slip,planned,teleport,Void,Blink to a reachable safe tile in line of sight,v0.18,original_mod_gameplay_design
-Fleshweave,Fleshweave,planned,transfusion,Flesh,Spend temporary stamina to mend an allied injury,v0.18,original_mod_gameplay_design
-TidalWall,Tidal Wall,planned,tileBarrier,Ocean,Place a short-lived water obstruction along a chosen line,v0.18,original_mod_gameplay_design
-LightningStep,Lightning Step,planned,blinkStrike,Lightning,Reposition and release a shock at the landing point,v0.18,original_mod_gameplay_design
-SovereignCommand,Sovereign Command,planned,summonOrder,Sovereign,Order controlled allies or summons to focus on a target,v0.18,original_mod_gameplay_design
-StarMap,Star Map,planned,survey,Star,Briefly reveal faraway terrain features and points of interest,v0.18,original_mod_gameplay_design
-PredatorMark,Predator Mark,planned,markedTarget,Predatory,Mark a foe to improve allied precision against that foe,v0.18,original_mod_gameplay_design
-HydraBloom,Hydra Bloom,planned,branchingHeal,Hydra,Send regeneration pulses to multiple wounded pawns,v0.18,original_mod_gameplay_design
-CrystalPrison,Crystal Prison,planned,containment,Crystal,Surround a hostile pawn with temporary crystal obstacles,v0.18,original_mod_gameplay_design
-EchoTwin,Echo Twin,planned,decoy,Doppelganger,Create a short-lived echo decoy to distract hostiles,v0.18,original_mod_gameplay_design
-ResonanceField,Resonance Field,planned,powerAura,Resonating,Strengthen essence damage for allies within a limited field,v0.18,original_mod_gameplay_design
-GuardianBastion,Guardian Bastion,planned,wardDome,Guardian,Create a dome that reduces incoming ranged attacks,v0.18,original_mod_gameplay_design
-MoltenRain,Molten Rain,planned,hazardZone,Volcano,Create a temporary burning hazard on selected ground,v0.18,original_mod_gameplay_design
+AshenComet,Ashen Comet,playable,delayedBlast,Phoenix,Telegraph a falling fiery impact before it hits the map,v0.18,original_mod_gameplay_design
+PrismaticDeflection,Prismatic Deflection,playable,reflect,Refracting,Reflect part of an incoming projectile toward its source,v0.18,original_mod_gameplay_design
+LotusSanctum,Lotus Sanctum,playable,healingZone,Lotus,Establish a sanctuary that heals wounded allies over time,v0.18,original_mod_gameplay_design
+ChronoAnchor,Chrono Anchor,playable,returnTeleport,Time,Mark a safe tile and return there once before the mark expires,v0.18,original_mod_gameplay_design
+WolfpackCall,Wolfpack Call,playable,summon,Wolf,Summon spectral wolves with a limited lifetime,v0.18,original_mod_gameplay_design
+SpectralHand,Spectral Hand,playable,remoteManipulation,Hand,Manipulate an eligible nearby object at a distance,v0.18,original_mod_gameplay_design
+ChimericAspect,Chimeric Aspect,playable,adaptiveBuff,Chimera,Adapt defense or offense to the most recent threat,v0.18,original_mod_gameplay_design
+VoidSlip,Void Slip,playable,teleport,Void,Blink to a reachable safe tile in line of sight,v0.18,original_mod_gameplay_design
+Fleshweave,Fleshweave,playable,transfusion,Flesh,Spend temporary stamina to mend an allied injury,v0.18,original_mod_gameplay_design
+TidalWall,Tidal Wall,playable,tileBarrier,Ocean,Place a short-lived water obstruction along a chosen line,v0.18,original_mod_gameplay_design
+LightningStep,Lightning Step,playable,blinkStrike,Lightning,Reposition and release a shock at the landing point,v0.18,original_mod_gameplay_design
+SovereignCommand,Sovereign Command,playable,summonOrder,Sovereign,Order controlled allies or summons to focus on a target,v0.18,original_mod_gameplay_design
+StarMap,Star Map,playable,survey,Star,Briefly reveal faraway terrain features and points of interest,v0.18,original_mod_gameplay_design
+PredatorMark,Predator Mark,playable,markedTarget,Predatory,Mark a foe to improve allied precision against that foe,v0.18,original_mod_gameplay_design
+HydraBloom,Hydra Bloom,playable,branchingHeal,Hydra,Send regeneration pulses to multiple wounded pawns,v0.18,original_mod_gameplay_design
+CrystalPrison,Crystal Prison,playable,containment,Crystal,Surround a hostile pawn with temporary crystal obstacles,v0.18,original_mod_gameplay_design
+EchoTwin,Echo Twin,playable,decoy,Doppelganger,Create a short-lived echo decoy to distract hostiles,v0.18,original_mod_gameplay_design
+ResonanceField,Resonance Field,playable,powerAura,Resonating,Strengthen essence damage for allies within a limited field,v0.18,original_mod_gameplay_design
+GuardianBastion,Guardian Bastion,playable,wardDome,Guardian,Create a dome that reduces incoming ranged attacks,v0.18,original_mod_gameplay_design
+MoltenRain,Molten Rain,playable,hazardZone,Volcano,Create a temporary burning hazard on selected ground,v0.18,original_mod_gameplay_design
 OasisWell,Oasis Well,planned,restorationZone,Oasis,Create an out-of-combat restorative site for nearby allies,v0.19,original_mod_gameplay_design
 BoneFamiliar,Bone Familiar,planned,familiar,Bone,Summon a small defensive magical construct companion,v0.19,original_mod_gameplay_design
 Mistwalk,Mistwalk,planned,concealment,Cloud,Temporarily make movement between cover harder to detect,v0.19,original_mod_gameplay_design

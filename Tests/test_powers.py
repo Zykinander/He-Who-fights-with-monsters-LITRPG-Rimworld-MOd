@@ -6,13 +6,13 @@ from collections import Counter
 ROOT = Path(__file__).resolve().parents[1]
 powers=json.loads((ROOT/'Data/essence_powers.json').read_text())['powers']
 stones=json.loads((ROOT/'Data/awakening_stones.json').read_text())['stones']
-assert len(powers)==50
-assert len({p['defName'] for p in powers})==50
+assert len(powers)==70
+assert len({p['defName'] for p in powers})==70
 assert len(stones)==30
 powerdefs=list(ET.parse(ROOT/'1.7/Defs/PowerDefs/EssencePowers.xml').getroot())
-assert len(powerdefs)==50
+assert len(powerdefs)==70
 buffdefs=list(ET.parse(ROOT/'1.7/Defs/HediffDefs/EssencePowerEffects.xml').getroot())
-assert len(buffdefs)==25
+assert len(buffdefs)==33
 for node in list((ROOT/'1.7/Defs').rglob('*.xml')):
     ET.parse(node)
 stone_defs=list(ET.parse(ROOT/'1.7/Defs/AwakeningDefs/AwakeningStones.xml').getroot())
@@ -25,8 +25,13 @@ for power in powers:
                                'chain','drain','healGroup','regeneration','auraBuff',
                                'areaCleanse','debuff','splash','healWard',
                                'areaHeal','chainHeal','areaRegen','purgeHeal',
-                               'damageAreaDebuff','leechPulse','execute'}
-    assert power['target'] in {'self','pawn'}
+                               'damageAreaDebuff','leechPulse','execute',
+                               'delayedBlast','reflect','healingZone','returnTeleport',
+                               'summon','remoteManipulation','adaptiveBuff','teleport',
+                               'transfusion','tileBarrier','blinkStrike','summonOrder',
+                               'survey','markedTarget','branchingHeal','containment',
+                               'decoy','powerAura','wardDome','hazardZone'}
+    assert power['target'] in {'self','pawn','cell','thing'}
     assert power['cooldown_ticks']>0
     assert all('EB_Aspect_'+a in aspects for a in power['compatible_aspects'])
     assert all('EB_'+e in all_essences for e in power['favored_essences'])
@@ -60,7 +65,7 @@ by_essence={x.findtext('essence'):x.findtext('power') for x in starterdefs}
 assert len(by_essence)==226 and set(by_essence)==all_essences
 assert set(by_essence.values()) <= {p['defName'] for p in powers}
 assert by_essence['EB_Fire']=='EB_Power_EmberBolt'
-assert by_essence['EB_Phoenix']=='EB_Power_EmberBolt'
+assert by_essence['EB_Phoenix']=='EB_Power_AshenComet'
 assert next(x for x in powerdefs if x.findtext('defName')=='EB_Power_EmberBolt').findtext('damageDefName')=='Flame'
 source=(ROOT/'Source/Hediff_EssenceUser.cs').read_text()
 assert 'GrantInnatePower' in source and 'GrantMissingInnatePowers' in source
@@ -71,7 +76,7 @@ print('PASS: 226 innate mappings and Ember Bolt fire damage definition')
 # v0.09 — seven targeted abilities accept any living pawn, not just allies or enemies.
 pawn_powers={p['defName'] for p in powers if p['target']=='pawn'}
 self_powers={p['defName'] for p in powers if p['target']=='self'}
-assert len(pawn_powers)==31 and len(self_powers)==19
+assert len(pawn_powers)==36 and len(self_powers)==28
 xml_targets={e.findtext('defName'):e.findtext('targetKind') for e in powerdefs}
 for p in powers:
     assert xml_targets[p['defName']] == p['target']
@@ -87,7 +92,7 @@ assert 'target.Faction != caster.Faction' not in validator
 assert 'GenSight.LineOfSight(' in validator and 'power.range' in validator
 assert 'target != caster' in validator  # allow targetable self-healing without LOS from self to self
 ui=(ROOT/'Source/Hediff_EssenceUser.cs').read_text()
-assert 'canTargetPawns = true' in ui and 'canTargetSelf = true' in ui
+assert 'canTargetPawns = !items && !locations' in ui and 'canTargetSelf = !items && !locations' in ui
 assert 'Any living pawn (ally or enemy)' in ui
 print('PASS: v0.09 seven cross-faction targeted powers; five self-cast powers unchanged')
 
@@ -96,7 +101,9 @@ print('PASS: v0.09 seven cross-faction targeted powers; five self-cast powers un
 src=(ROOT/'Source/Hediff_EssenceUser.cs').read_text()
 assert 's.index < SlotsPerEssence' in src
 assert 'slot.index >= SlotsPerEssence' in src
-assert 'if (!EssencePowerExecutor.Apply(pawn, power, target, slot, out message, out float realWork)) return false;' in src
+assert 'EssencePowerExecutor.Apply(pawn, power, target.Thing as Pawn,' in src
+assert 'EssenceAdvancedAbilities.CastSpatial(pawn, power, target, slot,' in src
+assert 'if (!applied) return false;' in src
 assert 'Find.Targeter.BeginTargeting(targets' in src
 assert 'GrantInnatePower' in src
 print('PASS: old targeting and innate unlock pathways preserved with active slot limit')
@@ -338,7 +345,7 @@ for essence,power in starter_map.items():
     assert by_essence['EB_'+essence]=='EB_Power_'+power
     assert any(row['essence']==essence and row['starter_power']=='EB_Power_'+power for row in rows)
 assert by_essence['EB_Fire']=='EB_Power_EmberBolt'
-assert by_essence['EB_Phoenix']=='EB_Power_EmberBolt'
+assert by_essence['EB_Phoenix']=='EB_Power_AshenComet'
 print('PASS: v0.16 24 powers, 14 status defs, 9 new handlers and 12 themed starter assignments')
 
 # v0.16 follow-up: secondary blasts cannot pass through walls.
@@ -359,7 +366,7 @@ new_batch={
 }
 assert len(new_batch)==26
 assert new_batch <= {p['id'] for p in powers}
-assert len({p['id'] for p in powers}-new_batch)==24
+assert len({p['id'] for p in powers}-new_batch)==44  # Original 24 plus 20 v0.18 abilities
 jsonbyid={p['id']:p for p in powers}
 xmlbyid={x.findtext('defName'):x for x in powerdefs}
 for p in powers:
@@ -382,7 +389,7 @@ for id in ('EB_Debuff_VenomHaze','EB_Debuff_BriarBind','EB_Debuff_RuneBind',
            'EB_Buff_MirrorGuard','EB_Buff_DawnChorus','EB_Buff_TemporalHaste',
            'EB_Buff_BattlefieldFocus','EB_Buff_GlassWard'):
     assert id in statusids
-assert len(statusids)==25
+assert len(statusids)==33
 assert all((p['status_hediff'] in statusids) if p['status_hediff'] else True
            for p in powers)
 source=(ROOT/'Source/EssencePowerExecutor.cs').read_text()
@@ -407,9 +414,9 @@ assert 'No injured allies are within the regenerative area.' in source
 import csv as _csv
 with (ROOT/'Data/essence_powers.csv').open(newline='',encoding='utf-8') as fh:
     csvrows=list(_csv.DictReader(fh))
-assert len(csvrows)==50
+assert len(csvrows)==70
 csvmap={row['id']:row for row in csvrows}
-assert len(csvmap)==50 and set(csvmap)==set(jsonbyid)
+assert len(csvmap)==70 and set(csvmap)==set(jsonbyid)
 for power_id,p in jsonbyid.items():
     row=csvmap[power_id]
     assert row['effect']==p['effect']
@@ -431,5 +438,73 @@ for essence,ability in starterMap.items():
     assert by_essence['EB_'+essence]=='EB_Power_'+ability
     assert any(r['essence']==essence and r['starter_power']=='EB_Power_'+ability for r in rows)
 assert by_essence['EB_Fire']=='EB_Power_EmberBolt'
-assert by_essence['EB_Phoenix']=='EB_Power_EmberBolt'
+assert by_essence['EB_Phoenix']=='EB_Power_AshenComet'
 print('PASS: v0.17 50 playable powers, 25 statuses, 26 new starters, validated mechanics and CSV')
+
+# v0.18 20 new, genuinely wired gameplay abilities. The older 50 remain.
+batch18={'AshenComet','PrismaticDeflection','LotusSanctum','ChronoAnchor',
+ 'WolfpackCall','SpectralHand','ChimericAspect','VoidSlip','Fleshweave',
+ 'TidalWall','LightningStep','SovereignCommand','StarMap','PredatorMark',
+ 'HydraBloom','CrystalPrison','EchoTwin','ResonanceField','GuardianBastion','MoltenRain'}
+assert len(batch18)==20 and batch18 <= {p['id'] for p in powers}
+assert len({p['id'] for p in powers}-batch18)==50
+assert sum(p['target']=='cell' for p in powers)==5
+assert sum(p['target']=='thing' for p in powers)==1
+newstatus={'EB_Buff_PrismaticDeflection','EB_Buff_ChronoAnchor',
+ 'EB_Buff_ChimeraCarapace','EB_Buff_ChimeraAgility','EB_Debuff_PredatorMark',
+ 'EB_Debuff_CrystalPrison','EB_Buff_ResonanceField','EB_Buff_GuardianBastion'}
+assert newstatus <= statusids and len(statusids)==33
+statusmap={s.findtext('defName'):s for s in buffdefs}
+assert statusmap['EB_Buff_PrismaticDeflection'].findtext('hediffClass')==(
+ 'Essencebound.Hediff_EssenceReflection')
+assert statusmap['EB_Buff_ChronoAnchor'].findtext('hediffClass')==(
+ 'Essencebound.Hediff_EssenceChronoAnchor')
+src=(ROOT/'Source/EssenceAdvancedAbilities.cs').read_text()
+player=(ROOT/'Source/Hediff_EssenceUser.cs').read_text()
+world=(ROOT/'Source/MapComponent_EssenceAbilityWorld.cs').read_text()
+executor=(ROOT/'Source/EssencePowerExecutor.cs').read_text()
+for kind in ('delayedBlast','reflect','healingZone','returnTeleport','summon',
+ 'adaptiveBuff','transfusion','summonOrder','markedTarget','branchingHeal',
+ 'containment','decoy','powerAura','wardDome','teleport','blinkStrike',
+ 'tileBarrier','survey','hazardZone'):
+    assert 'case "'+kind+'":' in src, kind
+assert 'power.effectKind != "remoteManipulation"' in src
+assert 'public static bool CastSpatial(' in src
+assert 'public static bool CastPawn(' in src
+assert 'public bool TryCastPower(EssenceAbilitySlot slot, LocalTargetInfo target, out string message)' in player
+assert 'canTargetItems = items' in player
+assert 'canTargetLocations = locations' in player
+assert 'power.targetKind == "cell" || power.targetKind == "thing"' in player
+assert 'EssenceAdvancedAbilities.CastSpatial(' in player
+assert 'EssenceAdvancedAbilities.CastPawn(' in executor
+assert 'GenPlace.TryPlaceThing' in src
+assert 'caster.Map.fogGrid.Unfog(c)' in src
+assert 'world.TrackSummon(' in src
+assert 'world.AlliedSummons(caster)' in src
+assert 'CreateWall(' in src and 'CreatePrison(' in src
+assert 'MovePawn(caster, cell)' in src
+reflect=(ROOT/'Source/Hediff_EssenceReflection.cs').read_text()
+anchor=(ROOT/'Source/Hediff_EssenceChronoAnchor.cs').read_text()
+mark=(ROOT/'Source/Patch_EssencePredatorMark.cs').read_text()
+assert '[ThreadStatic] private static bool reflecting;' in reflect
+assert 'shield.Award(' in reflect
+assert 'ebReflectionCaster' in reflect and 'ebReflectionSlot' in reflect
+assert 'ebChronoAnchorCell' in anchor and 'ebChronoAnchorTicks' in anchor
+assert 'dinfo.SetAmount(dinfo.Amount * 1.18f)' in mark
+xmlmap={x.findtext('defName'):x for x in powerdefs}
+assert len(xmlmap)==70
+for p in powers:
+    x=xmlmap[p['defName']]
+    assert x.findtext('effectKind')==p['effect']
+    assert x.findtext('targetKind')==p['target']
+    assert int(x.findtext('cooldownTicks'))==p['cooldown_ticks']
+    assert int(x.findtext('durationTicks'))==p['duration_ticks']
+    assert float(x.findtext('magnitude'))==p['magnitude']
+    assert x.findtext('buffHediffDefName','')==p['status_hediff']
+    assert x.findtext('damageDefName','')==p['damage_def']
+for ess,ability in {'Phoenix':'AshenComet','Lotus':'LotusSanctum',
+ 'Hand':'SpectralHand','Wolf':'WolfpackCall','Hydra':'HydraBloom',
+ 'Guardian':'GuardianBastion','Prison':'CrystalPrison',
+ 'Resonating':'ResonanceField','Cataclysm':'MoltenRain'}.items():
+    assert by_essence['EB_'+ess]=='EB_Power_'+ability
+print('PASS: v0.18 70 playable powers, new targeting, statuses and world effects')
