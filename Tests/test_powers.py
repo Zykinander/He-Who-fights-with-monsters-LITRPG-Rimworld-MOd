@@ -114,7 +114,7 @@ assert 'AddAbilityWork(' in timed
 assert 'Scribe_References.Look(ref creditCaster, "ebCreditCaster")' in timed
 ui=(ROOT/'Source/Dialog_EssenceProfile.cs').read_text()
 assert 'state.GetAffinity(essenceName)' in ui
-assert 'GetEssenceRankIndex(essenceName)' in ui
+assert 'state.GetEssenceRankDisplay(essenceName)' in ui
 assert 'slot.rankWork' in ui and 'NextSublevelWork' in ui
 print('PASS: ability-type progression work tracking and rank-scaled bonuses')
 
@@ -144,3 +144,10 @@ assert 'state.IsTierTrainingStalled(slot.abilityRankIndex)' in profile
 assert 'NextSublevelWork(slot.abilityRankIndex)' in profile
 assert 'RankWithLevel(slot.abilityRankIndex, slot.abilitySublevel)' in profile
 print('PASS: v0.12 faction-independent real-damage work and cast feedback')
+
+# Real credited XP is bounded at a major-tier boundary so displays are truthful.
+assert 'float remainingToTier = Math.Max(0f,' in src
+assert 'float credited = Math.Min(amount, remainingToTier)' in src
+assert 'slot.rankWork += credited;' in src
+assert 'slot.rankWork += amount;' not in src
+print('PASS: no extra XP is banked beyond a locked major-rank boundary')

@@ -221,8 +221,13 @@ namespace Essencebound
                 IsTierTrainingStalled(slot.abilityRankIndex))
                 return 0f;
 
-            float credited = amount;
-            slot.rankWork += amount;
+            // One cast cannot spend XP beyond a major-tier boundary. This
+            // prevents hidden XP banking during cross-essence synchronization.
+            float eachStep = EssenceProgression.NextSublevelWork(slot.abilityRankIndex);
+            float remainingToTier = Math.Max(0f,
+                eachStep * (10 - slot.abilitySublevel) - slot.rankWork);
+            float credited = Math.Min(amount, remainingToTier);
+            slot.rankWork += credited;
             while (slot.abilityRankIndex < 4 && !IsTierTrainingStalled(slot.abilityRankIndex))
             {
                 float step = EssenceProgression.NextSublevelWork(slot.abilityRankIndex);

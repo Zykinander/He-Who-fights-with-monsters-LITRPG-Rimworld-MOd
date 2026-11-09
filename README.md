@@ -40,7 +40,7 @@ The four attribute affinities are still randomly rolled for each essence with it
 
 ## Damage progression fix
 
-Previously, even though targeting was unrestricted, **friendly and neutral hits earned zero progression**, because the executor required `HostileTo(caster)`. Now valid hits earn actual reported damage on **any pawn**, with an injury-severity fallback for damage handlers that report no direct damage result. Hits that do no damage grant zero work. The cast feedback reports **Progress +X** and the current ability level. If a rank gate blocks training, the message explicitly reports that.
+Previously, even though targeting was unrestricted, **friendly and neutral hits earned zero progression**, because the executor required `HostileTo(caster)`. Now valid hits earn actual reported damage on **any pawn**, with an injury-severity fallback for damage handlers that report no direct damage result. Hits that do no damage grant zero work. The cast feedback reports **Progress +X** and the current ability level. If a rank gate blocks training, the message explicitly reports that. If a strong hit crosses a major-tier boundary, only the work needed to reach that boundary is credited, so no hidden XP banks while other essences are waiting.
 
 No explicit Essencebound exception appeared in the provided Player.log; this addresses a concrete inconsistency in the code rather than claiming every possible lack-of-XP issue is resolved.
 
