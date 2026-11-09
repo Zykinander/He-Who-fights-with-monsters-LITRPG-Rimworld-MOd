@@ -57,6 +57,23 @@ namespace Essencebound
 
             switch (power.effectKind)
             {
+                case "areaHeal":
+                    return HealNearbyAllies(caster, power, recoveryScale, out reason, out work);
+                case "chainHeal":
+                    return ChainHeal(caster, target, power, recoveryScale, out reason, out work);
+                case "areaRegen":
+                    return RegenerateNearbyAllies(caster, power, slot, buffDuration,
+                        recoveryScale, out reason);
+                case "purgeHeal":
+                    return PurgeAndHeal(target, power, recoveryScale, out reason, out work);
+                case "damageAreaDebuff":
+                    return BurstAndWeaken(caster, target, power, powerScale, buffDuration,
+                        out reason, out work);
+                case "leechPulse":
+                    return LifeDrainingPulse(caster, power, powerScale, recoveryScale,
+                        out reason, out work);
+                case "execute":
+                    return ExecuteWounded(caster, target, power, powerScale, out reason, out work);
                 case "chain":
                     return ChainDamage(caster, target, power, powerScale, out reason, out work);
                 case "splash":
@@ -147,6 +164,199 @@ namespace Essencebound
                     reason = "Unknown effect kind: " + power.effectKind;
                     return false;
             }
+        }
+
+        // Area heal: up to (1 + maxExtraTargets) actually wounded nearby allies.
+        // Only severity restored counts toward the originating ability's XP.
+        private static bool HealNearbyAllies(Pawn caster, EssencePowerDef power,
+            float recoveryScale, out string reason, out float work)
+        {
+            work = 0f;
+            int count = 0;
+            var injured = caster.Map.mapPawns.AllPawnsSpawned
+                .Where(p => p != null && !p.Dead && !p.HostileTo(caster) &&
+                    p.Position.DistanceTo(caster.Position) <= power.areaRadius &&
+                    GenSight.LineOfSight(caster.Position, p.Position, caster.Map) &&
+                    p.health.hediffSet.hediffs.OfType<Hediff_Injury>()
+                        .Any(i => !i.IsPermanent()))
+                .OrderByDescending(p => p.health.hediffSet.hediffs
+                    .OfType<Hediff_Injury>().Where(i => !i.IsPermanent()).Sum(i => i.Severity))
+                .Take(Math.Max(1, Math.Min(6, power.maxExtraTargets + 1)))
+                .ToList();
+            foreach (Pawn ally in injured)
+            {
+                if (HealInjuries(ally, power.magnitude * recoveryScale, out _, out float healed))
+                { work += healed; count++; }
+            }
+            reason = count > 0 ? "Restored " + work.ToString("0.#") +
+                " injury severity across " + count + " pawn(s)." :
+                "No wounded allies nearby to heal.";
+            return count > 0;
+        }
+
+        // Chain healing starts on the selected pawn, then jumps to nearby
+        // nonhostile injured pawns. Unlike a blanket heal, it prioritizes the
+        // highest injury severity in line of sight of the primary target.
+        private static bool ChainHeal(Pawn caster, Pawn target, EssencePowerDef power,
+            float recoveryScale, out string reason, out float work)
+        {
+            work = 0f;
+            int count = 0;
+            if (HealInjuries(target, power.magnitude * recoveryScale, out _, out float first))
+            { work += first; count++; }
+            var secondary = caster.Map.mapPawns.AllPawnsSpawned
+                .Where(p => p != null && p != target && !p.Dead && !p.HostileTo(caster) &&
+                    p.Position.DistanceTo(target.Position) <= power.areaRadius &&
+                    GenSight.LineOfSight(target.Position, p.Position, caster.Map) &&
+                    p.health.hediffSet.hediffs.OfType<Hediff_Injury>()
+                        .Any(i => !i.IsPermanent()))
+                .OrderBy(p => p.Position.DistanceTo(target.Position))
+                .Take(Math.Max(0, Math.Min(5, power.maxExtraTargets)))
+                .ToList();
+            foreach (Pawn ally in secondary)
+            {
+                if (HealInjuries(ally, power.magnitude * 0.65f * recoveryScale,
+                    out _, out float restored))
+                { work += restored; count++; }
+            }
+            reason = count > 0 ? "Chain-healed " + count + " pawn(s), restoring " +
+                work.ToString("0.#") + " injury severity." :
+                "No reachable healing targets have treatable wounds.";
+            return count > 0;
+        }
+
+        // A group regeneration only sticks to injured nearby allies, giving
+        // no free progress for casting on fully healthy pawns.
+        private static bool RegenerateNearbyAllies(Pawn caster, EssencePowerDef power,
+            EssenceAbilitySlot slot, int duration, float recoveryScale, out string reason)
+        {
+            int count = 0;
+            var injured = caster.Map.mapPawns.AllPawnsSpawned
+                .Where(p => p != null && !p.Dead && !p.HostileTo(caster) &&
+                    p.Position.DistanceTo(caster.Position) <= power.areaRadius &&
+                    GenSight.LineOfSight(caster.Position, p.Position, caster.Map) &&
+                    p.health.hediffSet.hediffs.OfType<Hediff_Injury>()
+                        .Any(i => !i.IsPermanent()))
+                .Take(Math.Max(1, Math.Min(6, power.maxExtraTargets + 1)))
+                .ToList();
+            foreach (Pawn ally in injured)
+            {
+                if (ApplyRegeneration(caster, ally, power, slot, duration, recoveryScale,
+                    out _)) count++;
+            }
+            reason = count > 0 ? "Regeneration seeded on " + count +
+                " injured pawn(s); real healing earns progress over time." :
+                "No injured allies are within the regenerative area.";
+            return count > 0;
+        }
+
+        private static bool PurgeAndHeal(Pawn target, EssencePowerDef power,
+            float recoveryScale, out string reason, out float work)
+        {
+            HealInjuries(target, power.magnitude * recoveryScale, out _, out float healed);
+            int removed = CleanseTarget(target);
+            work = healed + removed * 10f;
+            reason = work > 0f ? "Healed " + healed.ToString("0.#") +
+                " injury severity and dispelled " + removed + " debuff(s)." :
+                "Target has neither treatable wounds nor Essencebound debuffs.";
+            return work > 0f;
+        }
+
+        private static readonly HashSet<string> RemovableDebuffs =
+            new HashSet<string> {
+                "EB_Debuff_Chilled", "EB_Debuff_Static",
+                "EB_Debuff_GravitySnare", "EB_Debuff_CorrodedArmor",
+                "EB_Debuff_VenomHaze", "EB_Debuff_BriarBind",
+                "EB_Debuff_RuneBind", "EB_Debuff_OmenHex",
+                "EB_Debuff_ThreadSnare"
+            };
+
+        private static int CleanseTarget(Pawn target)
+        {
+            if (target?.health?.hediffSet == null) return 0;
+            var ailments = target.health.hediffSet.hediffs
+                .Where(h => h?.def != null && RemovableDebuffs.Contains(h.def.defName))
+                .ToList();
+            foreach (Hediff ailment in ailments)
+                target.health.RemoveHediff(ailment);
+            return ailments.Count;
+        }
+
+        // Primary strike works on any pawn as before. Only nearby hostile
+        // pawns with line of sight from the impact are hit by secondary
+        // effects and receive the area debuff.
+        private static bool BurstAndWeaken(Pawn caster, Pawn target, EssencePowerDef power,
+            float powerScale, int duration, out string reason, out float work)
+        {
+            work = 0f;
+            if (!Damage(caster, target, power.damageDefName,
+                power.magnitude * powerScale, out _, out float primary))
+            { reason = "Burst attack failed to resolve."; return false; }
+            work += primary;
+            int affected = 1;
+            if (!target.Dead && target.HostileTo(caster))
+                ApplyTimed(target, power.buffHediffDefName, duration, null, null, false);
+            var nearby = caster.Map.mapPawns.AllPawnsSpawned
+                .Where(p => p != caster && p != target && !p.Dead && p.HostileTo(caster) &&
+                    p.Position.DistanceTo(target.Position) <= power.areaRadius &&
+                    GenSight.LineOfSight(target.Position, p.Position, caster.Map))
+                .Take(Math.Max(0, Math.Min(8, power.maxExtraTargets)))
+                .ToList();
+            foreach (Pawn other in nearby)
+            {
+                if (Damage(caster, other, power.damageDefName,
+                    power.magnitude * 0.45f * powerScale, out _, out float dealt))
+                {
+                    work += dealt;
+                    affected++;
+                    if (!other.Dead)
+                        ApplyTimed(other, power.buffHediffDefName, duration,
+                            null, null, false);
+                }
+            }
+            reason = "Burst touched " + affected + " pawn(s) and dealt " +
+                work.ToString("0.#") + " effective damage.";
+            return true;
+        }
+
+        private static bool LifeDrainingPulse(Pawn caster, EssencePowerDef power,
+            float powerScale, float recoveryScale, out string reason, out float work)
+        {
+            work = 0f;
+            int hits = 0;
+            foreach (Pawn enemy in caster.Map.mapPawns.AllPawnsSpawned
+                .Where(p => p != caster && !p.Dead && p.HostileTo(caster) &&
+                    p.Position.DistanceTo(caster.Position) <= power.range &&
+                    GenSight.LineOfSight(caster.Position, p.Position, caster.Map)).ToList())
+            {
+                if (Damage(caster, enemy, power.damageDefName,
+                    power.magnitude * powerScale, out _, out float dealt))
+                { hits++; work += dealt; }
+            }
+            if (hits == 0)
+            { reason = "No hostiles are visible inside the draining pulse."; return false; }
+            float restored = 0f;
+            if (work > 0f && !caster.Dead)
+                HealInjuries(caster, work * 0.3f * recoveryScale, out _, out restored);
+            reason = "Draining pulse hit " + hits + " foe(s) for " +
+                work.ToString("0.#") + " damage and healed " +
+                restored.ToString("0.#") + " injury severity.";
+            return true;
+        }
+
+        // Finishing strikes reward real damage, not casting or repeatedly
+        // hitting a target that has no remaining wounds.
+        private static bool ExecuteWounded(Pawn caster, Pawn target, EssencePowerDef power,
+            float powerScale, out string reason, out float work)
+        {
+            float previousWounds = target.health.hediffSet.hediffs
+                .OfType<Hediff_Injury>().Sum(i => i.Severity);
+            float finisher = previousWounds >= 5f ? 1.6f : 1f;
+            if (!Damage(caster, target, power.damageDefName,
+                power.magnitude * finisher * powerScale, out reason, out work))
+                return false;
+            if (finisher > 1f) reason += " Injured-target finisher bonus applied.";
+            return true;
         }
 
         private static bool HealInjuries(Pawn target, float budget, out string reason, out float work)

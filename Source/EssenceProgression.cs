@@ -121,16 +121,23 @@ namespace Essencebound
                 case "pulse":
                 case "chain":
                 case "splash":
-                case "drain": return "effective damage";
+                case "drain":
+                case "damageAreaDebuff":
+                case "leechPulse":
+                case "execute": return "effective damage";
                 case "heal":
                 case "healGroup":
-                case "regeneration": return "injuries healed";
+                case "regeneration":
+                case "areaHeal":
+                case "chainHeal":
+                case "areaRegen": return "injuries healed";
                 case "healWard": return "healing plus ward duration";
                 case "buff":
                 case "auraBuff": return "seconds of active benefit";
                 case "debuff": return "seconds of hostile restraint";
                 case "cleanse":
-                case "areaCleanse": return "cleansing work";
+                case "areaCleanse":
+                case "purgeHeal": return "healing and cleansing work";
                 default: return "progress";
             }
         }
