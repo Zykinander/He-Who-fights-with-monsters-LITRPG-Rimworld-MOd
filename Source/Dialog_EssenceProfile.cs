@@ -91,7 +91,7 @@ namespace Essencebound
                 "/" + possible + "    •    " + cap + " slots per essence");
 
             float step = (rect.width - 8f) / RankNames.Length;
-            int activeRank = Array.IndexOf(RankNames, state.Rank);
+            int activeRank = Array.FindIndex(RankNames, rank => state.Rank.StartsWith(rank));
             for (int i = 0; i < RankNames.Length; i++)
             {
                 Rect tile = new Rect(rect.x + i * step, rect.y + 66f, step - 6f, 26f);
@@ -135,7 +135,7 @@ namespace Essencebound
 
             string countText = unlocked
                 ? awakened + "/" + cap + " awakened   •   " +
-                  EssenceProgression.RankLabel(state.GetEssenceRankIndex(essenceName)) +
+                  state.GetEssenceRankDisplay(essenceName) +
                   "   •   " + state.GetAffinity(essenceName) +
                   "   •   needs " + state.GetRequiredSlotCount(essenceName) + " slots"
                 : (confluence ? "Complete a known three-essence recipe" : "Absorb an essence to unlock");
@@ -202,9 +202,11 @@ namespace Essencebound
             Widgets.Label(new Rect(left, rect.y + 24f, contentWidth, 33f), description);
             Color previousColor = GUI.color;
             GUI.color = Muted;
-            float needed = EssenceProgression.NextRankWork(slot.abilityRankIndex);
+            float needed = EssenceProgression.NextSublevelWork(slot.abilityRankIndex);
+            bool stalled = state.IsTierTrainingStalled(slot.abilityRankIndex);
             string training = needed > 0f
-                ? EssenceProgression.RankLabel(slot.abilityRankIndex) + "  •  " +
+                ? EssenceProgression.RankWithLevel(slot.abilityRankIndex, slot.abilitySublevel) +
+                  (stalled ? " [WAITING FOR OTHER ESSENCES]" : "") + "  •  " +
                   slot.rankWork.ToString("0.#") + "/" + needed.ToString("0.#") + " " +
                   EssenceProgression.WorkLabel(power?.effectKind ?? "")
                 : "Diamond rank  •  mastered";

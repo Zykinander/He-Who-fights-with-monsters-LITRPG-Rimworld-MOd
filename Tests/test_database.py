@@ -117,9 +117,9 @@ print('PASS: all 30 icons unique path, 128px RGBA, transparent corners')
 
 # Release metadata must use the development-version scheme.
 metadata=ET.parse(ROOT/'About/About.xml').getroot()
-assert 'v0.11' in metadata.findtext('name')
-assert json.loads((ROOT/'manifest.json').read_text())['version']=='0.11'
-print('PASS: v0.11 metadata and inherited stack-count overlays')
+assert 'v0.12' in metadata.findtext('name')
+assert json.loads((ROOT/'manifest.json').read_text())['version']=='0.12'
+print('PASS: v0.12 metadata and inherited stack-count overlays')
 
 # Regression: each GitHub Actions run must have a unique versioned artifact name.
 workflow=(ROOT/'.github/workflows/build-essencebound.yml').read_text()
@@ -192,8 +192,8 @@ bonus_source=(ROOT/'Source/EssenceProgression.cs').read_text()
 rank_source=(ROOT/'Source/Hediff_EssenceUser.cs').read_text()
 assert 'return 1 << clamped;' in bonus_source
 assert 'Math.Max(0, Math.Min(4, rankIndex))' in bonus_source
-assert 'EssenceProgression.RankBonusMultiplier(tier)' in rank_source
-assert 'totalBonus += EssenceProgression.RankBonusMultiplier(tier)' in rank_source
+assert 'EssenceProgression.RankBonusMultiplier(tier, level)' in rank_source
+assert 'totalBonus += EssenceProgression.RankBonusMultiplier(tier, level)' in rank_source
 assert 'EssenceProgression.MaxAttributeBonus(attribute)' in rank_source
 assert 'attribute == "Speed" ? 0.80f : 4.00f' in bonus_source
 metadata=json.loads((ROOT/'manifest.json').read_text())
@@ -207,3 +207,34 @@ for attribute,base in bases.items():
 assert abs(bases['Recovery']*16-0.96)<1e-8
 assert abs(bases['Power']*16-0.64)<1e-8
 print('PASS: exponential x1/x2/x4/x8/x16 affinity bonuses, including Diamond Recovery')
+
+# v0.12: 0-9 sublevels, cross-essence tier gating and smooth per-level bonuses.
+sublevel_src=(ROOT/'Source/EssenceAbilitySlot.cs').read_text()
+progress_src=(ROOT/'Source/EssenceProgression.cs').read_text()
+rank_src=(ROOT/'Source/Hediff_EssenceUser.cs').read_text()
+profile_src=(ROOT/'Source/Dialog_EssenceProfile.cs').read_text()
+assert 'Scribe_Values.Look(ref abilitySublevel, "abilitySublevel", -1)' in sublevel_src
+assert 'LoadSaveMode.PostLoadInit' in sublevel_src
+assert 'rankWork - abilitySublevel * step' in sublevel_src
+assert 'return NextRankWork(currentRank) / 10f;' in progress_src
+assert 'public static string RankWithLevel(int majorRank, int sublevel)' in progress_src
+assert 'public static float RankBonusMultiplier(int rankIndex, int sublevel)' in progress_src
+assert 'major * (1f + Math.Max(0, Math.Min(9, sublevel)) / 10f)' in progress_src
+assert 'GetEssenceSublevel(string essenceName)' in rank_src
+assert 'GetEssenceRankDisplay(string essenceName)' in rank_src
+assert 'required.Min(s => s.abilityRankIndex > record.rankIndex ? 9 : s.abilitySublevel)' in rank_src
+assert 'IsTierTrainingStalled(int abilityTier)' in rank_src
+assert 'OwnedEssenceNames.Any(name' in rank_src
+assert 'slot.abilitySublevel < 9' in rank_src and 'slot.abilityRankIndex++' in rank_src
+assert 'state.GetEssenceRankDisplay(essenceName)' in profile_src
+assert 'WAITING FOR OTHER ESSENCES' in profile_src
+progress_meta=json.loads((ROOT/'manifest.json').read_text())['progression']
+assert progress_meta['sublevels_per_major_rank']==10
+assert [(x/10) for x in [40,120,360,1080]]==[4,12,36,108]
+for tier_base in [1,2,4,8]:
+    assert abs(tier_base*(1+1/10)-tier_base*1.1)<1e-8
+    assert tier_base*(1+9/10)<tier_base*2
+assert abs(0.04*1.1-0.044)<1e-8
+assert abs(0.04*1.9-0.076)<1e-8
+assert abs(0.04*2.0-0.08)<1e-8
+print('PASS: v0.12 rank sublevels, synchronized tiers, smooth attribute bonuses')

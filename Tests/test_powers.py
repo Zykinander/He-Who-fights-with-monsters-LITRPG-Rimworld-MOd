@@ -101,7 +101,7 @@ print('PASS: old targeting and innate unlock pathways preserved with active slot
 executor=(ROOT/'Source/EssencePowerExecutor.cs').read_text()
 timed=(ROOT/'Source/Hediff_EssenceTimed.cs').read_text()
 assert 'work = Math.Max(0f, before - injury.Severity)' in executor
-assert 'work = target.HostileTo(caster) ? inflicted : 0f' in executor
+assert 'work = inflicted;' in executor
 assert 'work = 10f' in executor
 assert 'work += dealt' in executor
 assert 'float powerScale = 1f + (user?.GetAffinityBonus("Power") ?? 0f)' in executor
@@ -115,7 +115,7 @@ assert 'Scribe_References.Look(ref creditCaster, "ebCreditCaster")' in timed
 ui=(ROOT/'Source/Dialog_EssenceProfile.cs').read_text()
 assert 'state.GetAffinity(essenceName)' in ui
 assert 'GetEssenceRankIndex(essenceName)' in ui
-assert 'slot.rankWork' in ui and 'NextRankWork' in ui
+assert 'slot.rankWork' in ui and 'NextSublevelWork' in ui
 print('PASS: ability-type progression work tracking and rank-scaled bonuses')
 
 # The multiplier applies at the affinity contribution, before the existing
@@ -123,8 +123,24 @@ print('PASS: ability-type progression work tracking and rank-scaled bonuses')
 progression_source=(ROOT/'Source/EssenceProgression.cs').read_text()
 rank_source=(ROOT/'Source/Hediff_EssenceUser.cs').read_text()
 assert 'public static int RankBonusMultiplier(int rankIndex)' in progression_source
-assert 'EssenceProgression.RankBonusMultiplier(tier) *' in rank_source
+assert 'EssenceProgression.RankBonusMultiplier(tier, level) *' in rank_source
 assert 'EssenceProgression.BonusPerTier(attribute)' in rank_source
 assert 'Math.Min(EssenceProgression.MaxAttributeBonus(attribute), totalBonus)' in rank_source
 assert 'GetAffinityBonus("Speed")' in rank_source
 print('PASS: effect scaling uses exponential rank bonus with safe Speed cap')
+
+# v0.12: credit real damage from any faction and expose the credited work.
+executor=(ROOT/'Source/EssencePowerExecutor.cs').read_text()
+src=(ROOT/'Source/Hediff_EssenceUser.cs').read_text()
+profile=(ROOT/'Source/Dialog_EssenceProfile.cs').read_text()
+assert 'work = target.HostileTo(caster)' not in executor
+assert 'work = inflicted;' in executor
+assert 'result.totalDamageDealt' in executor
+assert 'woundsAfter - woundsBefore' in executor
+assert 'message += "  Progress +" + credited.ToString("0.#")' in src
+assert 'AddAbilityWork(slot.essenceDefName, slot.index, realWork)' in src
+assert 'IsTierTrainingStalled(slot.abilityRankIndex)' in src
+assert 'state.IsTierTrainingStalled(slot.abilityRankIndex)' in profile
+assert 'NextSublevelWork(slot.abilityRankIndex)' in profile
+assert 'RankWithLevel(slot.abilityRankIndex, slot.abilitySublevel)' in profile
+print('PASS: v0.12 faction-independent real-damage work and cast feedback')
