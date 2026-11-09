@@ -124,20 +124,40 @@ namespace Essencebound
                 case "drain":
                 case "damageAreaDebuff":
                 case "leechPulse":
-                case "execute": return "effective damage";
+                case "execute":
+                case "delayedBlast":
+                case "blinkStrike":
+                case "hazardZone": return "effective damage";
                 case "heal":
                 case "healGroup":
                 case "regeneration":
                 case "areaHeal":
                 case "chainHeal":
-                case "areaRegen": return "injuries healed";
+                case "areaRegen":
+                case "healingZone":
+                case "branchingHeal":
+                case "transfusion": return "injuries healed";
                 case "healWard": return "healing plus ward duration";
                 case "buff":
-                case "auraBuff": return "seconds of active benefit";
-                case "debuff": return "seconds of hostile restraint";
+                case "auraBuff":
+                case "reflect":
+                case "adaptiveBuff":
+                case "powerAura":
+                case "wardDome":
+                case "markedTarget": return "active support and reflected damage";
+                case "debuff":
+                case "containment":
+                case "summonOrder": return "active control";
                 case "cleanse":
                 case "areaCleanse":
                 case "purgeHeal": return "healing and cleansing work";
+                case "summon":
+                case "decoy": return "active summoned assistance";
+                case "returnTeleport":
+                case "teleport":
+                case "remoteManipulation":
+                case "tileBarrier":
+                case "survey": return "successful utility work";
                 default: return "progress";
             }
         }

@@ -69,7 +69,8 @@ namespace Essencebound
                 center = center, radius = radius, magnitude = magnitude,
                 expireTick = now + Math.Max(1, duration),
                 nextPulseTick = now + Math.Max(1, delay),
-                pulseTicks = 120, damageDef = damageDef, buffDef = buffDef
+                pulseTicks = kind == "powerAura" || kind == "wardDome" ? 180 : 120,
+                damageDef = damageDef, buffDef = buffDef
             });
         }
 
@@ -170,7 +171,7 @@ namespace Essencebound
                 case "powerAura":
                 case "wardDome":
                     foreach (Pawn ally in pawns.Where(p => !p.HostileTo(effect.caster)))
-                        EssencePowerExecutor.FieldBuff(ally, effect.buffDef, 180,
+                        EssencePowerExecutor.FieldBuff(ally, effect.buffDef, 240,
                             effect.caster, effect.essenceName, effect.slotIndex);
                     break;
             }

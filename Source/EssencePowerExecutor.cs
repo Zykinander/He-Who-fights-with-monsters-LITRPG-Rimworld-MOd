@@ -51,12 +51,33 @@ namespace Essencebound
 
             var user = Hediff_EssenceUser.ForPawn(caster);
             float powerScale = 1f + (user?.GetAffinityBonus("Power") ?? 0f);
+            // Resonance zones amplify Essencebound damage rather than merely
+            // displaying an unused hediff icon.
+            if (caster.health?.hediffSet?.hediffs.Any(h =>
+                h.def.defName == "EB_Buff_ResonanceField") == true)
+                powerScale *= 1.18f;
             float recoveryScale = 1f + (user?.GetAffinityBonus("Recovery") ?? 0f);
             float spiritScale = 1f + (user?.GetAffinityBonus("Spirit") ?? 0f);
             int buffDuration = Math.Max(1, (int)(power.durationTicks * spiritScale));
 
             switch (power.effectKind)
             {
+                case "delayedBlast":
+                case "reflect":
+                case "healingZone":
+                case "returnTeleport":
+                case "summon":
+                case "adaptiveBuff":
+                case "transfusion":
+                case "summonOrder":
+                case "markedTarget":
+                case "branchingHeal":
+                case "containment":
+                case "decoy":
+                case "powerAura":
+                case "wardDome":
+                    return EssenceAdvancedAbilities.CastPawn(caster, power, target, slot,
+                        powerScale, recoveryScale, buffDuration, out reason, out work);
                 case "areaHeal":
                     return HealNearbyAllies(caster, power, recoveryScale, out reason, out work);
                 case "chainHeal":
@@ -355,6 +376,50 @@ namespace Essencebound
                 return false;
             if (finisher > 1f) reason += " Injured-target finisher bonus applied.";
             return true;
+        }
+
+        // Integration points for delayed fields and advanced powers; the
+        // existing validated effects still own their single-target rules.
+        internal static bool FieldDamage(Pawn caster, Pawn target, string damageName,
+            float amount, out float work)
+        {
+            return Damage(caster, target, damageName, amount, out _, out work);
+        }
+
+        internal static bool FieldHealing(Pawn target, float amount, out float work)
+        {
+            return HealInjuries(target, amount, out _, out work);
+        }
+
+        internal static bool FieldBuff(Pawn target, string buffDef, int duration,
+            Pawn caster, string essenceName, int slotIndex)
+        {
+            EssenceAbilitySlot slot = Hediff_EssenceUser.ForPawn(caster)
+                ?.GetActiveSlotsFor(essenceName)
+                .FirstOrDefault(s => s.index == slotIndex);
+            return ApplyTimed(target, buffDef, duration, caster, slot, slot != null);
+        }
+
+        internal static bool AdvancedTimed(Pawn target, string defName, int duration,
+            Pawn caster, EssenceAbilitySlot slot, bool hostileOnly = false)
+        {
+            return ApplyTimed(target, defName, duration, caster, slot,
+                slot != null, hostileOnly);
+        }
+
+        internal static bool AdvancedRegeneration(Pawn caster, Pawn target,
+            EssencePowerDef power, EssenceAbilitySlot slot, int duration,
+            float recovery, out string message)
+        {
+            return ApplyRegeneration(caster, target, power, slot,
+                duration, recovery, out message);
+        }
+
+        internal static bool AdvancedAreaRegeneration(Pawn caster, EssencePowerDef power,
+            EssenceAbilitySlot slot, int duration, float recovery, out string message)
+        {
+            return RegenerateNearbyAllies(caster, power, slot,
+                duration, recovery, out message);
         }
 
         private static bool HealInjuries(Pawn target, float budget, out string reason, out float work)
