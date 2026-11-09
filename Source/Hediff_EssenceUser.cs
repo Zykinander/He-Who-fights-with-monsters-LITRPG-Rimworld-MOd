@@ -509,12 +509,15 @@ namespace Essencebound
             { reason = "Line of sight to the remains is blocked."; return false; }
             if (!HasAstralLootMark(corpse))
             { reason = "These remains are not from an astral-tear monster (or the marker was lost)."; return false; }
-            if (!MapComponent_EssenceWorld.SpawnEssence(corpse.Position, pawn.Map,
-                out string essenceLabel))
-            { reason = "No space was found to place the condensed essence."; return false; }
-            corpse.Destroy(DestroyMode.Vanish); // One successful extraction per monster.
+            // The initial death already rolled normal loot. Astral Loot offers
+            // one extra, weaker roll, even when the remains yield nothing.
+            int rank = EssenceRankCombat.RankOf(corpse.InnerPawn);
+            bool foundLoot = EssenceCreatureLoot.RollDrops(rank, true,
+                corpse.Position, pawn.Map, out string description, 0.60f);
+            corpse.Destroy(DestroyMode.Vanish); // No reroll on failed extraction.
             nextAstralLootTick = now + 3600;
-            reason = "Astral Loot extracted a " + essenceLabel + " essence.";
+            reason = foundLoot ? "Astral Loot extracted " + description + "." :
+                "Astral Loot found no additional essence or awakening stone in these remains.";
             return true;
         }
 
@@ -601,8 +604,9 @@ namespace Essencebound
             {
                 defaultLabel = "Astral Loot",
                 defaultDesc = "Choose a nearby marked astral corpse from a list, or target " +
-                              "its map cell directly. Extracts one normal essence and consumes " +
-                              "the remains. Only monsters released by astral tears qualify.",
+                              "its map cell directly. Make a bonus chance-based roll for " +
+                              "an essence and/or awakening stone, then consume the remains. " +
+                              "Only monsters released by astral tears qualify.",
                 icon = ContentFinder<UnityEngine.Texture2D>.Get(
                     "Essencebound/AwakeningStones/StoneFocus", false),
                 action = BeginAstralLoot
