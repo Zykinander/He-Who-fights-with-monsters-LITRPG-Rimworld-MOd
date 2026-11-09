@@ -5,6 +5,10 @@ from pathlib import Path
 from collections import Counter
 ROOT = Path(__file__).resolve().parents[1]
 powers=json.loads((ROOT/'Data/essence_powers.json').read_text())['powers']
+# Later milestones intentionally replace starters for newly absorbed essences.
+# Historical power IDs must remain valid even when the latest imprint changes.
+final_overrides={p['favored_essences'][0] for p in powers[-30:]}
+assert len(final_overrides)==30
 stones=json.loads((ROOT/'Data/awakening_stones.json').read_text())['stones']
 assert len(powers)==100
 assert len({p['defName'] for p in powers})==100
@@ -351,8 +355,10 @@ starter_map={
   'Mystic':'SpiritBeacon','Moon':'MoonlitReprieve'
 }
 for essence,power in starter_map.items():
-    assert by_essence['EB_'+essence]=='EB_Power_'+power
-    assert any(row['essence']==essence and row['starter_power']=='EB_Power_'+power for row in rows)
+    assert 'EB_Power_'+power in {p['defName'] for p in powers}
+    if essence not in final_overrides:
+        assert by_essence['EB_'+essence]=='EB_Power_'+power
+        assert any(row['essence']==essence and row['starter_power']=='EB_Power_'+power for row in rows)
 assert by_essence['EB_Fire']=='EB_Power_EmberBolt'
 assert by_essence['EB_Phoenix']=='EB_Power_AshenComet'
 print('PASS: v0.16 24 powers, 14 status defs, 9 new handlers and 12 themed starter assignments')
@@ -444,8 +450,10 @@ starterMap={
  'Nemesis':'NemesisStrike','Thread':'ThreadSnare','Glass':'GlassWard'}
 assert len(starterMap)==26
 for essence,ability in starterMap.items():
-    assert by_essence['EB_'+essence]=='EB_Power_'+ability
-    assert any(r['essence']==essence and r['starter_power']=='EB_Power_'+ability for r in rows)
+    assert 'EB_Power_'+ability in {p['defName'] for p in powers}
+    if essence not in final_overrides:
+        assert by_essence['EB_'+essence]=='EB_Power_'+ability
+        assert any(r['essence']==essence and r['starter_power']=='EB_Power_'+ability for r in rows)
 assert by_essence['EB_Fire']=='EB_Power_EmberBolt'
 assert by_essence['EB_Phoenix']=='EB_Power_AshenComet'
 print('PASS: v0.17 50 playable powers, 25 statuses, 26 new starters, validated mechanics and CSV')
