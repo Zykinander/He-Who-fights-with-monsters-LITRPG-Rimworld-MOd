@@ -118,7 +118,9 @@ namespace Essencebound
                     reason = "Temporary boon applied; training accumulates while active.";
                     return true;
                 case "cleanse":
-                    var badNames = new HashSet<string> { "EB_Debuff_Chilled", "EB_Debuff_Static" };
+                    var badNames = new HashSet<string> {
+                        "EB_Debuff_Chilled", "EB_Debuff_Static",
+                        "EB_Debuff_GravitySnare", "EB_Debuff_CorrodedArmor" };
                     var affliction = target.health.hediffSet.hediffs.FirstOrDefault(h => badNames.Contains(h.def.defName));
                     if (affliction == null)
                     { reason = "Target has no Essencebound affliction to cleanse."; return false; }

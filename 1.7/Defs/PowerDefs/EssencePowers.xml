@@ -309,4 +309,296 @@
       <li>EB_Magic</li>
     </favoredEssences>
   </Essencebound.EssencePowerDef>
+  <Essencebound.EssencePowerDef>
+    <defName>EB_Power_CinderNova</defName>
+    <label>cinder nova</label>
+    <description>An expanding ring of burning essence damages hostile pawns around the caster.</description>
+    <effectKind>pulse</effectKind>
+    <targetKind>self</targetKind>
+    <range>4</range>
+    <magnitude>5</magnitude>
+    <cooldownTicks>900</cooldownTicks>
+    <durationTicks>0</durationTicks>
+    <damageDefName>Flame</damageDefName>
+    <iconPath>Essencebound/AwakeningStones/StoneFire</iconPath>
+    <compatibleAspects>
+      <li>EB_Aspect_Assault</li>
+      <li>EB_Aspect_Spell</li>
+      <li>EB_Aspect_Surge</li>
+      <li>EB_Aspect_Reaper</li>
+    </compatibleAspects>
+    <favoredEssences>
+      <li>EB_Volcano</li>
+      <li>EB_Sun</li>
+      <li>EB_Fire</li>
+    </favoredEssences>
+  </Essencebound.EssencePowerDef>
+  <Essencebound.EssencePowerDef>
+    <defName>EB_Power_ThunderChain</defName>
+    <label>thunder chain</label>
+    <description>Lightning leaps from the selected pawn to up to two nearby hostile pawns.</description>
+    <effectKind>chain</effectKind>
+    <targetKind>pawn</targetKind>
+    <range>10</range>
+    <magnitude>5</magnitude>
+    <cooldownTicks>690</cooldownTicks>
+    <durationTicks>0</durationTicks>
+    <areaRadius>4</areaRadius>
+    <maxExtraTargets>2</maxExtraTargets>
+    <damageDefName>Blunt</damageDefName>
+    <iconPath>Essencebound/AwakeningStones/StoneSurge</iconPath>
+    <compatibleAspects>
+      <li>EB_Aspect_Spell</li>
+      <li>EB_Aspect_Reach</li>
+      <li>EB_Aspect_Surge</li>
+      <li>EB_Aspect_Precision</li>
+    </compatibleAspects>
+    <favoredEssences>
+      <li>EB_Lightning</li>
+      <li>EB_Thunderbird</li>
+      <li>EB_Storm</li>
+    </favoredEssences>
+  </Essencebound.EssencePowerDef>
+  <Essencebound.EssencePowerDef>
+    <defName>EB_Power_BloodSiphon</defName>
+    <label>blood siphon</label>
+    <description>Deal damage to a chosen pawn and restore some of the caster's existing wounds from effective damage.</description>
+    <effectKind>drain</effectKind>
+    <targetKind>pawn</targetKind>
+    <range>8</range>
+    <magnitude>6</magnitude>
+    <cooldownTicks>780</cooldownTicks>
+    <durationTicks>0</durationTicks>
+    <damageDefName>Blunt</damageDefName>
+    <iconPath>Essencebound/AwakeningStones/StoneChain</iconPath>
+    <compatibleAspects>
+      <li>EB_Aspect_Reaper</li>
+      <li>EB_Aspect_Assault</li>
+      <li>EB_Aspect_Spell</li>
+      <li>EB_Aspect_Recovery</li>
+    </compatibleAspects>
+    <favoredEssences>
+      <li>EB_Blood</li>
+      <li>EB_Hunger</li>
+      <li>EB_Feast</li>
+    </favoredEssences>
+  </Essencebound.EssencePowerDef>
+  <Essencebound.EssencePowerDef>
+    <defName>EB_Power_LifeBloom</defName>
+    <label>life bloom</label>
+    <description>Spread restorative essence across several wounds on a targeted pawn.</description>
+    <effectKind>healGroup</effectKind>
+    <targetKind>pawn</targetKind>
+    <range>8</range>
+    <magnitude>9</magnitude>
+    <cooldownTicks>1080</cooldownTicks>
+    <durationTicks>0</durationTicks>
+    <iconPath>Essencebound/AwakeningStones/StonePlant</iconPath>
+    <compatibleAspects>
+      <li>EB_Aspect_Recovery</li>
+      <li>EB_Aspect_Growth</li>
+      <li>EB_Aspect_Ritual</li>
+      <li>EB_Aspect_Familiar</li>
+    </compatibleAspects>
+    <favoredEssences>
+      <li>EB_Life</li>
+      <li>EB_Fertile</li>
+      <li>EB_Growth</li>
+    </favoredEssences>
+  </Essencebound.EssencePowerDef>
+  <Essencebound.EssencePowerDef>
+    <defName>EB_Power_RenewalSeed</defName>
+    <label>renewal seed</label>
+    <description>Plant a regeneration blessing that heals actual wounds every two seconds while active.</description>
+    <effectKind>regeneration</effectKind>
+    <targetKind>pawn</targetKind>
+    <range>8</range>
+    <magnitude>1.1</magnitude>
+    <cooldownTicks>1500</cooldownTicks>
+    <durationTicks>1200</durationTicks>
+    <buffHediffDefName>EB_Buff_RenewalSeed</buffHediffDefName>
+    <iconPath>Essencebound/AwakeningStones/StonePlant</iconPath>
+    <compatibleAspects>
+      <li>EB_Aspect_Recovery</li>
+      <li>EB_Aspect_Growth</li>
+      <li>EB_Aspect_Familiar</li>
+      <li>EB_Aspect_Preparation</li>
+    </compatibleAspects>
+    <favoredEssences>
+      <li>EB_Renewal</li>
+      <li>EB_Tree</li>
+      <li>EB_Plant</li>
+    </favoredEssences>
+  </Essencebound.EssencePowerDef>
+  <Essencebound.EssencePowerDef>
+    <defName>EB_Power_GroveShelter</defName>
+    <label>grove shelter</label>
+    <description>Create a protective aura around nearby nonhostile pawns that persists as independent wards.</description>
+    <effectKind>auraBuff</effectKind>
+    <targetKind>self</targetKind>
+    <range>0</range>
+    <magnitude>0</magnitude>
+    <cooldownTicks>1200</cooldownTicks>
+    <durationTicks>900</durationTicks>
+    <areaRadius>5</areaRadius>
+    <buffHediffDefName>EB_Buff_GroveShelter</buffHediffDefName>
+    <iconPath>Essencebound/AwakeningStones/StoneShield</iconPath>
+    <compatibleAspects>
+      <li>EB_Aspect_Aura</li>
+      <li>EB_Aspect_Ward</li>
+      <li>EB_Aspect_Growth</li>
+      <li>EB_Aspect_Ritual</li>
+    </compatibleAspects>
+    <favoredEssences>
+      <li>EB_Tree</li>
+      <li>EB_Guardian</li>
+      <li>EB_Plant</li>
+    </favoredEssences>
+  </Essencebound.EssencePowerDef>
+  <Essencebound.EssencePowerDef>
+    <defName>EB_Power_PurgingWave</defName>
+    <label>purging wave</label>
+    <description>Clear Essencebound afflictions from nearby nonhostile pawns; no effect on healthy targets.</description>
+    <effectKind>areaCleanse</effectKind>
+    <targetKind>self</targetKind>
+    <range>0</range>
+    <magnitude>0</magnitude>
+    <cooldownTicks>960</cooldownTicks>
+    <durationTicks>0</durationTicks>
+    <areaRadius>6</areaRadius>
+    <iconPath>Essencebound/AwakeningStones/StoneLight</iconPath>
+    <compatibleAspects>
+      <li>EB_Aspect_Recovery</li>
+      <li>EB_Aspect_Ritual</li>
+      <li>EB_Aspect_Aura</li>
+      <li>EB_Aspect_Judgement</li>
+    </compatibleAspects>
+    <favoredEssences>
+      <li>EB_Pure</li>
+      <li>EB_Serene</li>
+      <li>EB_Light</li>
+    </favoredEssences>
+  </Essencebound.EssencePowerDef>
+  <Essencebound.EssencePowerDef>
+    <defName>EB_Power_GravitySnare</defName>
+    <label>gravity snare</label>
+    <description>Bind a hostile pawn in slow-moving magical gravity; progress accrues while restrained.</description>
+    <effectKind>debuff</effectKind>
+    <targetKind>pawn</targetKind>
+    <range>9</range>
+    <magnitude>0</magnitude>
+    <cooldownTicks>1020</cooldownTicks>
+    <durationTicks>900</durationTicks>
+    <buffHediffDefName>EB_Debuff_GravitySnare</buffHediffDefName>
+    <iconPath>Essencebound/AwakeningStones/StoneChain</iconPath>
+    <compatibleAspects>
+      <li>EB_Aspect_Control</li>
+      <li>EB_Aspect_Spell</li>
+      <li>EB_Aspect_Reach</li>
+      <li>EB_Aspect_Counter</li>
+    </compatibleAspects>
+    <favoredEssences>
+      <li>EB_Vortex</li>
+      <li>EB_Boundary</li>
+      <li>EB_Prison</li>
+    </favoredEssences>
+  </Essencebound.EssencePowerDef>
+  <Essencebound.EssencePowerDef>
+    <defName>EB_Power_CorrosiveStrike</defName>
+    <label>corrosive strike</label>
+    <description>Damage a pawn and briefly reduce sharp and blunt armor with a corrosive affliction.</description>
+    <effectKind>damageDebuff</effectKind>
+    <targetKind>pawn</targetKind>
+    <range>9</range>
+    <magnitude>5</magnitude>
+    <cooldownTicks>690</cooldownTicks>
+    <durationTicks>720</durationTicks>
+    <buffHediffDefName>EB_Debuff_CorrodedArmor</buffHediffDefName>
+    <damageDefName>Blunt</damageDefName>
+    <iconPath>Essencebound/AwakeningStones/StoneSurge</iconPath>
+    <compatibleAspects>
+      <li>EB_Aspect_Assault</li>
+      <li>EB_Aspect_Reaper</li>
+      <li>EB_Aspect_Control</li>
+      <li>EB_Aspect_Spell</li>
+    </compatibleAspects>
+    <favoredEssences>
+      <li>EB_Blight</li>
+      <li>EB_Venom</li>
+      <li>EB_Corrupt</li>
+    </favoredEssences>
+  </Essencebound.EssencePowerDef>
+  <Essencebound.EssencePowerDef>
+    <defName>EB_Power_EchoBurst</defName>
+    <label>echo burst</label>
+    <description>Strike a selected pawn and damage nearby hostile pawns with a weaker concussive echo.</description>
+    <effectKind>splash</effectKind>
+    <targetKind>pawn</targetKind>
+    <range>9</range>
+    <magnitude>6</magnitude>
+    <cooldownTicks>840</cooldownTicks>
+    <durationTicks>0</durationTicks>
+    <areaRadius>3</areaRadius>
+    <damageDefName>Blunt</damageDefName>
+    <iconPath>Essencebound/AwakeningStones/StoneChain</iconPath>
+    <compatibleAspects>
+      <li>EB_Aspect_Assault</li>
+      <li>EB_Aspect_Spell</li>
+      <li>EB_Aspect_Surge</li>
+      <li>EB_Aspect_Reach</li>
+    </compatibleAspects>
+    <favoredEssences>
+      <li>EB_Echo</li>
+      <li>EB_Resonating</li>
+      <li>EB_Force</li>
+    </favoredEssences>
+  </Essencebound.EssencePowerDef>
+  <Essencebound.EssencePowerDef>
+    <defName>EB_Power_SpiritBeacon</defName>
+    <label>spirit beacon</label>
+    <description>Temporarily focus a pawn's accuracy and general work efficiency.</description>
+    <effectKind>buff</effectKind>
+    <targetKind>pawn</targetKind>
+    <range>9</range>
+    <magnitude>0</magnitude>
+    <cooldownTicks>1200</cooldownTicks>
+    <durationTicks>1200</durationTicks>
+    <buffHediffDefName>EB_Buff_SpiritBeacon</buffHediffDefName>
+    <iconPath>Essencebound/AwakeningStones/StoneFocus</iconPath>
+    <compatibleAspects>
+      <li>EB_Aspect_Preparation</li>
+      <li>EB_Aspect_Familiar</li>
+      <li>EB_Aspect_Stars</li>
+      <li>EB_Aspect_Ritual</li>
+    </compatibleAspects>
+    <favoredEssences>
+      <li>EB_Mystic</li>
+      <li>EB_Magic</li>
+      <li>EB_Knowledge</li>
+    </favoredEssences>
+  </Essencebound.EssencePowerDef>
+  <Essencebound.EssencePowerDef>
+    <defName>EB_Power_MoonlitReprieve</defName>
+    <label>moonlit reprieve</label>
+    <description>Mend an injury and grant a modest protective blessing to the same pawn.</description>
+    <effectKind>healWard</effectKind>
+    <targetKind>pawn</targetKind>
+    <range>7</range>
+    <magnitude>4</magnitude>
+    <cooldownTicks>1140</cooldownTicks>
+    <durationTicks>900</durationTicks>
+    <buffHediffDefName>EB_Buff_MoonlitReprieve</buffHediffDefName>
+    <iconPath>Essencebound/AwakeningStones/StoneGrace</iconPath>
+    <compatibleAspects>
+      <li>EB_Aspect_Recovery</li>
+      <li>EB_Aspect_Ward</li>
+      <li>EB_Aspect_Ritual</li>
+      <li>EB_Aspect_Familiar</li>
+    </compatibleAspects>
+    <favoredEssences>
+      <li>EB_Moon</li>
+      <li>EB_Serene</li>
+      <li>EB_Tranquil</li>
+    </favoredEssences>
+  </Essencebound.EssencePowerDef>
 </Defs>

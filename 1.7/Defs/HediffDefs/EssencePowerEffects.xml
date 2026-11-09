@@ -125,4 +125,95 @@
       </li>
     </stages>
   </HediffDef>
+  <HediffDef>
+    <defName>EB_Buff_RenewalSeed</defName>
+    <label>renewal seed</label>
+    <description>Continuous magical renewal gradually repairs injuries.</description>
+    <hediffClass>Essencebound.Hediff_EssenceRegeneration</hediffClass>
+    <isBad>false</isBad>
+    <initialSeverity>0.1</initialSeverity>
+    <stages>
+      <li>
+      </li>
+    </stages>
+  </HediffDef>
+  <HediffDef>
+    <defName>EB_Buff_GroveShelter</defName>
+    <label>grove shelter</label>
+    <description>Roots of protection harden nearby allies against injuries.</description>
+    <hediffClass>Essencebound.Hediff_EssenceTimed</hediffClass>
+    <isBad>false</isBad>
+    <initialSeverity>0.1</initialSeverity>
+    <stages>
+      <li>
+        <statOffsets>
+          <ArmorRating_Sharp>0.12</ArmorRating_Sharp>
+          <ArmorRating_Blunt>0.12</ArmorRating_Blunt>
+        </statOffsets>
+      </li>
+    </stages>
+  </HediffDef>
+  <HediffDef>
+    <defName>EB_Debuff_GravitySnare</defName>
+    <label>gravity snare</label>
+    <description>A binding field slows the affected enemy.</description>
+    <hediffClass>Essencebound.Hediff_EssenceTimed</hediffClass>
+    <isBad>true</isBad>
+    <initialSeverity>0.1</initialSeverity>
+    <stages>
+      <li>
+        <statOffsets>
+          <MoveSpeed>-0.8</MoveSpeed>
+        </statOffsets>
+      </li>
+    </stages>
+  </HediffDef>
+  <HediffDef>
+    <defName>EB_Debuff_CorrodedArmor</defName>
+    <label>corroded armor</label>
+    <description>A corrosive essence effect temporarily lowers armor.</description>
+    <hediffClass>Essencebound.Hediff_EssenceTimed</hediffClass>
+    <isBad>true</isBad>
+    <initialSeverity>0.1</initialSeverity>
+    <stages>
+      <li>
+        <statOffsets>
+          <ArmorRating_Sharp>-0.2</ArmorRating_Sharp>
+          <ArmorRating_Blunt>-0.15</ArmorRating_Blunt>
+        </statOffsets>
+      </li>
+    </stages>
+  </HediffDef>
+  <HediffDef>
+    <defName>EB_Buff_SpiritBeacon</defName>
+    <label>spirit beacon</label>
+    <description>Focused spirit improves work efficiency and accuracy.</description>
+    <hediffClass>Essencebound.Hediff_EssenceTimed</hediffClass>
+    <isBad>false</isBad>
+    <initialSeverity>0.1</initialSeverity>
+    <stages>
+      <li>
+        <statOffsets>
+          <WorkSpeedGlobal>0.16</WorkSpeedGlobal>
+          <ShootingAccuracyPawn>0.6</ShootingAccuracyPawn>
+        </statOffsets>
+      </li>
+    </stages>
+  </HediffDef>
+  <HediffDef>
+    <defName>EB_Buff_MoonlitReprieve</defName>
+    <label>moonlit reprieve</label>
+    <description>Gentle protection follows a healing reprieve.</description>
+    <hediffClass>Essencebound.Hediff_EssenceTimed</hediffClass>
+    <isBad>false</isBad>
+    <initialSeverity>0.1</initialSeverity>
+    <stages>
+      <li>
+        <statOffsets>
+          <ArmorRating_Blunt>0.1</ArmorRating_Blunt>
+          <MoveSpeed>0.1</MoveSpeed>
+        </statOffsets>
+      </li>
+    </stages>
+  </HediffDef>
 </Defs>
