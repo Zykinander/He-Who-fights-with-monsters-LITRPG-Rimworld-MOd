@@ -29,9 +29,36 @@ Third-party creature mods can put an `Essencebound.EssenceCreatureRankExtension`
 
 The range is -1 = Unranked, 0 = Iron, 1 = Bronze, 2 = Silver, 3 = Gold, 4 = Diamond.
 
-**Priority**: astral-manifestation rank (saved on each manifested creature) > explicit species extension > built-in species mapping > combat-power/body-size fallback. Manifestation ranks stay density-driven. Rank inheritance does not make ordinary wildlife drop awakening stones; loot behavior can be introduced in a separate change.
+**Priority**: astral-manifestation rank (saved on each manifested creature) > explicit species extension > built-in species mapping > combat-power/body-size fallback. Manifestation ranks stay density-driven.
+
+## Random essence and awakening-stone loot
+
+Ranked creatures roll **two independent drops** once when they die on a map and leave a corpse. Both are optional: one creature can drop an essence, an awakening stone, both, or neither.
+
+| Rank | Essence drop | Awakening stone drop | Available stone rarities |
+| --- | ---: | ---: | --- |
+| Unranked | 2% | 1% | Common |
+| Iron | 16% | 8% | Common, Uncommon |
+| Bronze | 27% | 16% | Common, Uncommon, Rare |
+| Silver | 40% | 26% | Common through Epic |
+| Gold | 58% | 40% | Common through Legendary |
+| Diamond | 78% | 60% | Common through Legendary (strongest Epic/Legendary weighting) |
+
+- Each success produces one random **normal** essence or one random awakening stone of a rank-eligible rarity.
+- The 30 awakening stones are chosen from matching XML items, with rank-weighted rarity and random stone type.
+- Astral manifestations use their saved manifestation rank and get a 20% relative boost to both drop probabilities (capped at 95% essence / 80% stone).
+- The existing **Astral Loot** gizmo offers a separate bonus extraction from an astral corpse at 60% of that rank's boosted normal chance. It consumes the corpse and starts its cooldown even if nothing is recovered. This prevents repeat attempts on the same corpse.
+- Death drops are rolled once, when `Pawn.Kill` successfully creates a spawned corpse. Hauling or reloading the corpse does not roll more drops. Creatures killed without a corpse or outside a map yield no automatic drop.
+- The old guaranteed essence from manually looted astral remains has been replaced with these probabilities. Standalone astral tears that resolve directly into a crystal are unchanged.
+
 
 ## Game testing needed
+
+- Kill several same-species creatures in a test colony; drops should vary from one corpse to another (including none), without spawning on save/reload.
+- Use both essence and stone rewards; verify the items are the real existing `ThingDef` items that pawns can absorb/awaken with.
+- Repeated Iron/Thrumbo tests: the observed aggregate rates should approach the tables; ensure no Legendary stone comes from Iron creatures.
+- Kill a manifested creature, confirm the direct drops and then use Astral Loot; no rerolls after its corpse is consumed.
+- Test a corpse destroyed without spawning, and a dead creature arriving on a map; these should not trigger unexpected extra rewards.
 
 - Compare an unranked colonist attacking a squirrel, warg, elephant, and thrumbo. Damage to Diamond thrumbos should use the existing 99% reduction against unranked attackers.
 - Confirm two creatures of the same species receive the same inherent rank.
