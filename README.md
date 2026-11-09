@@ -1,78 +1,62 @@
-# Essencebound v0.17 — halfway to 100 playable abilities
+# Essencebound v0.18 — 70 playable powers
 
-**RimWorld 1.7 | Requires Harmony | Test build; back up saves**
+**RimWorld 1.7 | Harmony required | Experimental release, test with backups**
 
-## The 100-ability target
+This release adds **20 executable abilities** from our 100-entry roadmap, increasing the playable catalog from 50 to **70**. Thirty additional designs remain planned.
 
-We now have **50 playable abilities**, up from 24 in v0.16. Another **50 named, themed designs** are tracked in [Data/ability_roster_100.csv](Data/ability_roster_100.csv), for a total of **100 distinct planned ability identities**. The remaining 50 are **designs only**, not yet functional game abilities.
+## New techniques
 
-The roster records each ability's identity, target essence, role, intended mechanic and target milestone. It preserves the goal without inflating the current playable count or promising the designs are already implemented.
+| Ability | Gameplay effect |
+|---|---|
+| Ashen Comet | Delayed hostile-only impact near a selected enemy |
+| Prismatic Deflection | Reduces ranged pawn damage and reflects part back |
+| Lotus Sanctum | Stationary area that gradually heals wounded allies |
+| Chrono Anchor | Records a location, then returns the caster there when recast |
+| Wolfpack Call | Two temporary allied wolf summons |
+| Spectral Hand | Pulls a visible loose haulable item closer |
+| Chimeric Aspect | Defensive adaptation near hostiles, agility boost otherwise |
+| Void Slip | Short-range line-of-sight teleport to open ground |
+| Fleshweave | Uses caster fatigue to heal existing injuries |
+| Tidal Wall | Places temporary impassable magical barriers |
+| Lightning Step | Blink plus a hostile-only area impact |
+| Sovereign Command | Commands allied temporary summons to attack an enemy |
+| Star Map | Reveals fogged map cells around a selected location |
+| Predator Mark | Makes a hostile more vulnerable to same-faction attacks |
+| Hydra Bloom | Regeneration applied to several wounded allies |
+| Crystal Prison | Temporary surrounding barriers and a slowing debuff |
+| Echo Twin | Temporary allied decoy creature |
+| Resonance Field | Stationary aura increasing Essencebound damage |
+| Guardian Bastion | Stationary defensive field that boosts armor |
+| Molten Rain | Persistent area periodically damaging visible hostiles |
 
-| Stage | New playable powers planned | Cumulative playable target |
-|---|---:|---:|
-| v0.17 | 26 | **50** |
-| v0.18 | 20 | 70 |
-| v0.19 | 20 | 90 |
-| v0.20 | 10 | **100** |
+### Power mechanics and progression
 
-## The 26 new playable abilities
+New abilities can select map cells and loose items, as well as the existing living-pawn targets. Temporary map fields and summoned companions persist relevant state through save/load. Delayed and area attacks award progression from real damage inflicted; healing fields from actual injury severity repaired; mobility and other utility powers from meaningful successful actions.
 
-| Ability | Example favored essence | Actual implementation |
-|---|---|---|
-| Inferno Lance | Fire / Sun | Longer-ranged focused flame damage |
-| Frost Halo | Ice / Cold | Circular hostile-only impact |
-| Quakebreaker | Earth | Main strike + visible nearby hostile splash |
-| Zephyr Ricochet | Wind | Chain attack with up to three secondary targets |
-| Umbral Leech | Dark / Void | Damage converted into existing injury healing |
-| Viper's Bite | Venom | Damage plus slowing / work-disrupting venom |
-| Shard Volley | Crystal | Shard chain attacks |
-| Briar Detonation | Plant | Burst damage + area entangling debuff |
-| Starfall | Star / Stellar | Focused celestial impact + splash |
-| Tidal Rebuke | Water | Short-range hostile shockwave |
-| Iron Bastion | Iron | Heavier armor with a modest speed cost |
-| Mirror Guard | Mirror | Evasive buff and light armor |
-| Dawn Chorus | Dawn | Group speed and work-support aura |
-| Verdant Sanctuary | Verdant | Area healing for up to four actually injured allies |
-| Ocean Renewal | Ocean | Gradual healing for up to four injured allies |
-| Cleansing Ray | Light | Single-target healing plus affliction removal |
-| Mercy Thread | Ministration | Chain healing across a selected pawn and two nearby allies |
-| Soul Harvest | Death | Hostile-only draining pulse that restores injuries |
-| Rune Bind | Rune | Hostile control debuff earning duration progress |
-| Omen Hex | Omen | Hostile accuracy / work disruption over time |
-| Temporal Haste | Time | Accelerates the caster's movement and work |
-| Battlefield Focus | Battlefield | Improves ranged accuracy and dodging |
-| Blade Tempest | Sword | Close-range hostile-only damage ring |
-| Nemesis Strike | Nemesis | Increased damage if the target has significant wounds |
-| Thread Snare | Thread | Impact plus slowing snare |
-| Glass Ward | Glass | Healing followed by protective armor |
+Some current mechanics are still prototypes: Echo Twin is a temporary animal decoy, summons are vanilla creatures, and temporary barriers use placeholder stone art. Unique animations and monster assets remain future work.
 
-**Seven new effect families** support group healing, chain healing, group regeneration, cleansing with healing, area damage with status effects, life-draining area pulses, and injury-aware finishing strikes. Their XP tracking follows the actual work performed. Buff and control effects continue granting work during meaningful active duration.
+## Compatibility
 
-## Access and compatibility
+Existing 50 abilities retain their saved identifiers, slots, rank/sublevel progression, affinity rolls, and cooldowns. Eighteen essence starter mappings have been added or updated for **new absorptions only**. The current 100-power roster consists of **70 playable and 30 planned** abilities.
 
-Every new power has compatible Awakening Stone aspects and favored essence themes, allowing the existing 30 awakening stones to select them. Twenty-six selected essences have new innate starter mappings when first absorbed. Previously awakened or innate powers in old saves are **not replaced**.
+## Gameplay test priorities
 
-The existing Iron 0–9 rank progression, rank synchronization, random Power/Speed/Spirit/Recovery attributes, 2–5 slots per essence, Gold/Diamond resistance, and astral manifestations remain.
+1. Open a fresh test colony with Harmony enabled, and check for errors at startup.
+2. Try Void Slip, Lightning Step, and Star Map on map cells; Spectral Hand on loose items.
+3. Check the second Chrono Anchor cast returns to the original cell.
+4. Save/reload while Lotus Sanctum, Molten Rain, Tidal Wall, or temporary summons are active.
+5. Check Prismatic Deflection against ranged attacks without reflecting indefinitely.
+6. Summon allied wolves and try Sovereign Command on an enemy.
+7. Check Predator Mark benefits allied pawn attacks, and area healing grants XP only for actual recovery.
+8. Compare Gold/Diamond lower-rank damage protection with v0.17.
+9. Share Player.log if any powers fail to cast, load or display.
 
-Power icons currently reuse existing awakening-stone artwork. This milestone prioritizes gameplay and reliable power definitions over unique sprite animations.
+Automated tests and C# compilation are not substitutes for in-game verification.
 
-## Gameplay test checklist
+## Next milestones
 
-1. On a disposable colony, try newly absorbing Sun, Earth, Dawn, Verdant, Ocean, Nemesis, Rune and Glass. Confirm each receives its matching new starter.
-2. Cast **Verdant Sanctuary** with multiple injured allies. Verify total progress equals effective healing and that casting near healthy allies fails without spending cooldown.
-3. Cast **Ocean Renewal** with multiple injured allies. Verify regeneration ticks and resulting XP after saving and reloading.
-4. Cast **Cleansing Ray** on a pawn with Venom Haze, Rune Bind or an older Essencebound debuff. Verify cleansing and healing work.
-5. Cast **Briar Detonation** on a pack of hostiles, and test that blocked secondary targets do not take area damage.
-6. Cast **Soul Harvest** with wounded caster, then with healthy caster. It may earn damage XP with no restorative effect, but never creates new wounds.
-7. Apply **Rune Bind** or **Omen Hex** to a hostile. Confirm the status and progress while active; casting on an ally should be rejected.
-8. Confirm previously learned v0.15/v0.16 powers, attribute rolls and ranks are unchanged after load.
-9. Test Gold and Diamond rank mitigation on new powers (all damage flows through RimWorld's pawn damage pipeline).
-10. Check Player.log for missing XML def names, statuses, or runtime exceptions and share any new errors.
+- **v0.18:** 70 playable
+- **v0.19 planned:** 90 playable
+- **v0.20 planned:** 100 playable
 
-## Roster integrity
-
-The repository runs tests ensuring all 100 identities are unique, all 50 playable entries exist in the active XML/JSON catalog, and the 50 future entries are clearly labelled as planned. It also verifies all new abilities' status definitions, aspects, starter mappings and work-handling code.
-
-**Not a claim of canon accuracy.** Names, mechanics and future ability ideas are original mod-development designs inspired by the setting.
-
-A separate v0.17 draft is based on the current **v0.16 development branch**, so PR #11 should be merged first, then the v0.17 PR, to preserve all 24 existing v0.16 powers.
+The tracked roster is in Data/ability_roster_100.csv. All these abilities are original mod-gameplay designs, not verified book-canon power names.
