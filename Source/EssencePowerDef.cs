@@ -18,6 +18,10 @@ namespace Essencebound
         public float magnitude;
         public int cooldownTicks;
         public int durationTicks;
+        // Radius around a target or caster for chain, splash and aura powers.
+        public float areaRadius;
+        // Number of extra hostile chain targets beyond the primary pawn.
+        public int maxExtraTargets = 2;
         public string buffHediffDefName = "";
         public string damageDefName = "";
         public string iconPath = "";

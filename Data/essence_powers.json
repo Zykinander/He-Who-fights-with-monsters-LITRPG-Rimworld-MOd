@@ -1,7 +1,7 @@
 {
-  "version": "0.6",
+  "version": "0.16",
   "target": "RimWorld 1.7",
-  "count": 12,
+  "count": 24,
   "note": "All effects are original mod-design templates, not book canon.",
   "powers": [
     {
@@ -347,6 +347,335 @@
         "Magic"
       ],
       "icon": "Essencebound/AwakeningStones/StoneChain",
+      "source_status": "original_mod_gameplay_design"
+    },
+    {
+      "id": "CinderNova",
+      "defName": "EB_Power_CinderNova",
+      "name": "Cinder Nova",
+      "description": "An expanding ring of burning essence damages hostile pawns around the caster.",
+      "effect": "pulse",
+      "target": "self",
+      "range_cells": 4,
+      "magnitude": 5,
+      "cooldown_ticks": 900,
+      "duration_ticks": 0,
+      "status_hediff": "",
+      "damage_def": "Flame",
+      "compatible_aspects": [
+        "Assault",
+        "Spell",
+        "Surge",
+        "Reaper"
+      ],
+      "favored_essences": [
+        "Volcano",
+        "Sun",
+        "Fire"
+      ],
+      "icon": "Essencebound/AwakeningStones/StoneFire",
+      "source_status": "original_mod_gameplay_design"
+    },
+    {
+      "id": "ThunderChain",
+      "defName": "EB_Power_ThunderChain",
+      "name": "Thunder Chain",
+      "description": "Lightning leaps from the selected pawn to up to two nearby hostile pawns.",
+      "effect": "chain",
+      "target": "pawn",
+      "range_cells": 10,
+      "magnitude": 5,
+      "cooldown_ticks": 690,
+      "duration_ticks": 0,
+      "status_hediff": "",
+      "damage_def": "Blunt",
+      "area_radius": 4,
+      "max_extra_targets": 2,
+      "compatible_aspects": [
+        "Spell",
+        "Reach",
+        "Surge",
+        "Precision"
+      ],
+      "favored_essences": [
+        "Lightning",
+        "Thunderbird",
+        "Storm"
+      ],
+      "icon": "Essencebound/AwakeningStones/StoneSurge",
+      "source_status": "original_mod_gameplay_design"
+    },
+    {
+      "id": "BloodSiphon",
+      "defName": "EB_Power_BloodSiphon",
+      "name": "Blood Siphon",
+      "description": "Deal damage to a chosen pawn and restore some of the caster's existing wounds from effective damage.",
+      "effect": "drain",
+      "target": "pawn",
+      "range_cells": 8,
+      "magnitude": 6,
+      "cooldown_ticks": 780,
+      "duration_ticks": 0,
+      "status_hediff": "",
+      "damage_def": "Blunt",
+      "compatible_aspects": [
+        "Reaper",
+        "Assault",
+        "Spell",
+        "Recovery"
+      ],
+      "favored_essences": [
+        "Blood",
+        "Hunger",
+        "Feast"
+      ],
+      "icon": "Essencebound/AwakeningStones/StoneChain",
+      "source_status": "original_mod_gameplay_design"
+    },
+    {
+      "id": "LifeBloom",
+      "defName": "EB_Power_LifeBloom",
+      "name": "Life Bloom",
+      "description": "Spread restorative essence across several wounds on a targeted pawn.",
+      "effect": "healGroup",
+      "target": "pawn",
+      "range_cells": 8,
+      "magnitude": 9,
+      "cooldown_ticks": 1080,
+      "duration_ticks": 0,
+      "status_hediff": "",
+      "damage_def": "",
+      "compatible_aspects": [
+        "Recovery",
+        "Growth",
+        "Ritual",
+        "Familiar"
+      ],
+      "favored_essences": [
+        "Life",
+        "Fertile",
+        "Growth"
+      ],
+      "icon": "Essencebound/AwakeningStones/StonePlant",
+      "source_status": "original_mod_gameplay_design"
+    },
+    {
+      "id": "RenewalSeed",
+      "defName": "EB_Power_RenewalSeed",
+      "name": "Renewal Seed",
+      "description": "Plant a regeneration blessing that heals actual wounds every two seconds while active.",
+      "effect": "regeneration",
+      "target": "pawn",
+      "range_cells": 8,
+      "magnitude": 1.1,
+      "cooldown_ticks": 1500,
+      "duration_ticks": 1200,
+      "status_hediff": "EB_Buff_RenewalSeed",
+      "damage_def": "",
+      "compatible_aspects": [
+        "Recovery",
+        "Growth",
+        "Familiar",
+        "Preparation"
+      ],
+      "favored_essences": [
+        "Renewal",
+        "Tree",
+        "Plant"
+      ],
+      "icon": "Essencebound/AwakeningStones/StonePlant",
+      "source_status": "original_mod_gameplay_design"
+    },
+    {
+      "id": "GroveShelter",
+      "defName": "EB_Power_GroveShelter",
+      "name": "Grove Shelter",
+      "description": "Create a protective aura around nearby nonhostile pawns that persists as independent wards.",
+      "effect": "auraBuff",
+      "target": "self",
+      "range_cells": 0,
+      "magnitude": 0,
+      "cooldown_ticks": 1200,
+      "duration_ticks": 900,
+      "status_hediff": "EB_Buff_GroveShelter",
+      "damage_def": "",
+      "area_radius": 5,
+      "compatible_aspects": [
+        "Aura",
+        "Ward",
+        "Growth",
+        "Ritual"
+      ],
+      "favored_essences": [
+        "Tree",
+        "Guardian",
+        "Plant"
+      ],
+      "icon": "Essencebound/AwakeningStones/StoneShield",
+      "source_status": "original_mod_gameplay_design"
+    },
+    {
+      "id": "PurgingWave",
+      "defName": "EB_Power_PurgingWave",
+      "name": "Purging Wave",
+      "description": "Clear Essencebound afflictions from nearby nonhostile pawns; no effect on healthy targets.",
+      "effect": "areaCleanse",
+      "target": "self",
+      "range_cells": 0,
+      "magnitude": 0,
+      "cooldown_ticks": 960,
+      "duration_ticks": 0,
+      "status_hediff": "",
+      "damage_def": "",
+      "area_radius": 6,
+      "compatible_aspects": [
+        "Recovery",
+        "Ritual",
+        "Aura",
+        "Judgement"
+      ],
+      "favored_essences": [
+        "Pure",
+        "Serene",
+        "Light"
+      ],
+      "icon": "Essencebound/AwakeningStones/StoneLight",
+      "source_status": "original_mod_gameplay_design"
+    },
+    {
+      "id": "GravitySnare",
+      "defName": "EB_Power_GravitySnare",
+      "name": "Gravity Snare",
+      "description": "Bind a hostile pawn in slow-moving magical gravity; progress accrues while restrained.",
+      "effect": "debuff",
+      "target": "pawn",
+      "range_cells": 9,
+      "magnitude": 0,
+      "cooldown_ticks": 1020,
+      "duration_ticks": 900,
+      "status_hediff": "EB_Debuff_GravitySnare",
+      "damage_def": "",
+      "compatible_aspects": [
+        "Control",
+        "Spell",
+        "Reach",
+        "Counter"
+      ],
+      "favored_essences": [
+        "Vortex",
+        "Boundary",
+        "Prison"
+      ],
+      "icon": "Essencebound/AwakeningStones/StoneChain",
+      "source_status": "original_mod_gameplay_design"
+    },
+    {
+      "id": "CorrosiveStrike",
+      "defName": "EB_Power_CorrosiveStrike",
+      "name": "Corrosive Strike",
+      "description": "Damage a pawn and briefly reduce sharp and blunt armor with a corrosive affliction.",
+      "effect": "damageDebuff",
+      "target": "pawn",
+      "range_cells": 9,
+      "magnitude": 5,
+      "cooldown_ticks": 690,
+      "duration_ticks": 720,
+      "status_hediff": "EB_Debuff_CorrodedArmor",
+      "damage_def": "Blunt",
+      "compatible_aspects": [
+        "Assault",
+        "Reaper",
+        "Control",
+        "Spell"
+      ],
+      "favored_essences": [
+        "Blight",
+        "Venom",
+        "Corrupt"
+      ],
+      "icon": "Essencebound/AwakeningStones/StoneSurge",
+      "source_status": "original_mod_gameplay_design"
+    },
+    {
+      "id": "EchoBurst",
+      "defName": "EB_Power_EchoBurst",
+      "name": "Echo Burst",
+      "description": "Strike a selected pawn and damage nearby hostile pawns with a weaker concussive echo.",
+      "effect": "splash",
+      "target": "pawn",
+      "range_cells": 9,
+      "magnitude": 6,
+      "cooldown_ticks": 840,
+      "duration_ticks": 0,
+      "status_hediff": "",
+      "damage_def": "Blunt",
+      "area_radius": 3,
+      "compatible_aspects": [
+        "Assault",
+        "Spell",
+        "Surge",
+        "Reach"
+      ],
+      "favored_essences": [
+        "Echo",
+        "Resonating",
+        "Force"
+      ],
+      "icon": "Essencebound/AwakeningStones/StoneChain",
+      "source_status": "original_mod_gameplay_design"
+    },
+    {
+      "id": "SpiritBeacon",
+      "defName": "EB_Power_SpiritBeacon",
+      "name": "Spirit Beacon",
+      "description": "Temporarily focus a pawn's accuracy and general work efficiency.",
+      "effect": "buff",
+      "target": "pawn",
+      "range_cells": 9,
+      "magnitude": 0,
+      "cooldown_ticks": 1200,
+      "duration_ticks": 1200,
+      "status_hediff": "EB_Buff_SpiritBeacon",
+      "damage_def": "",
+      "compatible_aspects": [
+        "Preparation",
+        "Familiar",
+        "Stars",
+        "Ritual"
+      ],
+      "favored_essences": [
+        "Mystic",
+        "Magic",
+        "Knowledge"
+      ],
+      "icon": "Essencebound/AwakeningStones/StoneFocus",
+      "source_status": "original_mod_gameplay_design"
+    },
+    {
+      "id": "MoonlitReprieve",
+      "defName": "EB_Power_MoonlitReprieve",
+      "name": "Moonlit Reprieve",
+      "description": "Mend an injury and grant a modest protective blessing to the same pawn.",
+      "effect": "healWard",
+      "target": "pawn",
+      "range_cells": 7,
+      "magnitude": 4,
+      "cooldown_ticks": 1140,
+      "duration_ticks": 900,
+      "status_hediff": "EB_Buff_MoonlitReprieve",
+      "damage_def": "",
+      "compatible_aspects": [
+        "Recovery",
+        "Ward",
+        "Ritual",
+        "Familiar"
+      ],
+      "favored_essences": [
+        "Moon",
+        "Serene",
+        "Tranquil"
+      ],
+      "icon": "Essencebound/AwakeningStones/StoneGrace",
       "source_status": "original_mod_gameplay_design"
     }
   ]

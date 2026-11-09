@@ -6,13 +6,13 @@ from collections import Counter
 ROOT = Path(__file__).resolve().parents[1]
 powers=json.loads((ROOT/'Data/essence_powers.json').read_text())['powers']
 stones=json.loads((ROOT/'Data/awakening_stones.json').read_text())['stones']
-assert len(powers)==12
-assert len({p['defName'] for p in powers})==12
+assert len(powers)==24
+assert len({p['defName'] for p in powers})==24
 assert len(stones)==30
 powerdefs=list(ET.parse(ROOT/'1.7/Defs/PowerDefs/EssencePowers.xml').getroot())
-assert len(powerdefs)==12
+assert len(powerdefs)==24
 buffdefs=list(ET.parse(ROOT/'1.7/Defs/HediffDefs/EssencePowerEffects.xml').getroot())
-assert len(buffdefs)==8
+assert len(buffdefs)==14
 for node in list((ROOT/'1.7/Defs').rglob('*.xml')):
     ET.parse(node)
 stone_defs=list(ET.parse(ROOT/'1.7/Defs/AwakeningDefs/AwakeningStones.xml').getroot())
@@ -21,7 +21,9 @@ all_essences={e.findtext('defName') for name in ('NormalEssences','ConfluenceEss
  for e in ET.parse(ROOT/f'1.7/Defs/EssenceDefs/{name}.xml').getroot()}
 for power in powers:
     assert (ROOT/'1.7/Textures'/ (power['icon']+'.png')).exists()
-    assert power['effect'] in {'damage','damageDebuff','heal','buff','cleanse','pulse'}
+    assert power['effect'] in {'damage','damageDebuff','heal','buff','cleanse','pulse',
+                               'chain','drain','healGroup','regeneration','auraBuff',
+                               'areaCleanse','debuff','splash','healWard'}
     assert power['target'] in {'self','pawn'}
     assert power['cooldown_ticks']>0
     assert all('EB_Aspect_'+a in aspects for a in power['compatible_aspects'])
@@ -67,7 +69,7 @@ print('PASS: 226 innate mappings and Ember Bolt fire damage definition')
 # v0.09 — seven targeted abilities accept any living pawn, not just allies or enemies.
 pawn_powers={p['defName'] for p in powers if p['target']=='pawn'}
 self_powers={p['defName'] for p in powers if p['target']=='self'}
-assert len(pawn_powers)==7 and len(self_powers)==5
+assert len(pawn_powers)==16 and len(self_powers)==8
 xml_targets={e.findtext('defName'):e.findtext('targetKind') for e in powerdefs}
 for p in powers:
     assert xml_targets[p['defName']] == p['target']
@@ -239,3 +241,103 @@ for rankMult in ('1.15f','1.35f','1.60f','2.00f'):
     assert rankMult in rank
 assert 'return rank >= 3 ? 2 : 1;' in monster
 print('PASS: v0.15 intensified rank defense: Gold -80%, Diamond -99% vs unranked')
+ 
+
+# v0.16: new powers work through distinct effect handlers, new statuses and
+# the established aspect + awakening selection mechanism.
+new_power_ids={
+    'CinderNova','ThunderChain','BloodSiphon','LifeBloom',
+    'RenewalSeed','GroveShelter','PurgingWave','GravitySnare',
+    'CorrosiveStrike','EchoBurst','SpiritBeacon','MoonlitReprieve'
+}
+old_ids={p['id'] for p in powers if p['id'] not in new_power_ids}
+assert len(old_ids)==12
+assert new_power_ids <= {p['id'] for p in powers}
+effects={p['id']:p['effect'] for p in powers}
+for ability,kind in {
+    'ThunderChain':'chain','BloodSiphon':'drain','LifeBloom':'healGroup',
+    'RenewalSeed':'regeneration','GroveShelter':'auraBuff',
+    'PurgingWave':'areaCleanse','GravitySnare':'debuff',
+    'EchoBurst':'splash','MoonlitReprieve':'healWard'
+}.items():
+    assert effects[ability]==kind
+powerxml={e.findtext('defName'):e for e in powerdefs}
+statusxml={e.findtext('defName'):e for e in buffdefs}
+for p in powers:
+    e=powerxml[p['defName']]
+    assert e.findtext('effectKind')==p['effect']
+    assert e.findtext('targetKind')==p['target']
+    assert float(e.findtext('magnitude'))==float(p['magnitude'])
+    assert int(e.findtext('cooldownTicks'))==p['cooldown_ticks']
+    assert int(e.findtext('durationTicks'))==p['duration_ticks']
+    assert [x.text for x in e.find('compatibleAspects')]==[
+        'EB_Aspect_'+a for a in p['compatible_aspects']]
+    assert [x.text for x in e.find('favoredEssences')]==[
+        'EB_'+ess for ess in p['favored_essences']]
+    if p.get('area_radius'):
+        assert float(e.findtext('areaRadius'))==p['area_radius']
+    if p.get('max_extra_targets'):
+        assert int(e.findtext('maxExtraTargets'))==p['max_extra_targets']
+
+for status in ('EB_Buff_RenewalSeed','EB_Buff_GroveShelter',
+               'EB_Debuff_GravitySnare','EB_Debuff_CorrodedArmor',
+               'EB_Buff_SpiritBeacon','EB_Buff_MoonlitReprieve'):
+    assert status in statusxml
+assert statusxml['EB_Buff_RenewalSeed'].findtext('hediffClass')==(
+    'Essencebound.Hediff_EssenceRegeneration')
+assert statusxml['EB_Debuff_GravitySnare'].findtext('isBad')=='true'
+assert statusxml['EB_Debuff_CorrodedArmor'].findtext('isBad')=='true'
+
+executor=(ROOT/'Source/EssencePowerExecutor.cs').read_text()
+regen=(ROOT/'Source/Hediff_EssenceRegeneration.cs').read_text()
+timed=(ROOT/'Source/Hediff_EssenceTimed.cs').read_text()
+progression=(ROOT/'Source/EssenceProgression.cs').read_text()
+for kind in ('chain','splash','drain','healGroup','regeneration',
+             'auraBuff','areaCleanse','debuff','healWard'):
+    assert 'case "'+kind+'":' in executor,kind
+for handler in ('ChainDamage','SplashDamage','DrainHealth',
+                'HealInjuries','ApplyRegeneration','ApplyAuraBuff','CleanseArea'):
+    assert 'private static bool '+handler+'(' in executor
+assert 'work += dealt' in executor
+assert 'power.maxExtraTargets' in executor
+assert 'power.areaRadius' in executor
+assert 'caster.Map.mapPawns.AllPawnsSpawned' in executor
+assert 'out float first' in executor
+assert 'Math.Min(budget, before)' in executor
+assert 'work += healed' in executor
+assert 'work += 10f;' in executor
+assert 'if (!target.HostileTo(caster))' in executor
+assert 'Hediff_EssenceRegeneration' in executor
+assert 'healingPerPulse' in regen and 'ticksSinceHeal >= 120' in regen
+assert 'wound.Heal(healingPerPulse)' in regen
+assert 'AddAbilityWork(' in regen
+for required in ('ebRegenCaster','ebRegenEssence','ebRegenSlot',
+                 'ebRegenTicksRemaining','ebRegenPulseTick'):
+    assert required in regen
+assert 'trainOnlyAgainstHostile' in timed
+assert 'pawn.HostileTo(creditCaster)' in timed
+assert 'ebHostileTraining' in timed
+assert 'case "healGroup":' in progression
+assert 'case "areaCleanse":' in progression
+
+# New starter imprints are available to freshly absorbed themed essences.
+starter_map={
+  'Volcano':'CinderNova','Thunderbird':'ThunderChain',
+  'Blood':'BloodSiphon','Fertile':'LifeBloom','Renewal':'RenewalSeed',
+  'Tree':'GroveShelter','Pure':'PurgingWave','Vortex':'GravitySnare',
+  'Blight':'CorrosiveStrike','Echo':'EchoBurst',
+  'Mystic':'SpiritBeacon','Moon':'MoonlitReprieve'
+}
+for essence,power in starter_map.items():
+    assert by_essence['EB_'+essence]=='EB_Power_'+power
+    assert any(row['essence']==essence and row['starter_power']=='EB_Power_'+power for row in rows)
+assert by_essence['EB_Fire']=='EB_Power_EmberBolt'
+assert by_essence['EB_Phoenix']=='EB_Power_EmberBolt'
+print('PASS: v0.16 24 powers, 14 status defs, 9 new handlers and 12 themed starter assignments')
+
+# v0.16 follow-up: secondary blasts cannot pass through walls.
+executor=(ROOT/'Source/EssencePowerExecutor.cs').read_text()
+timed=(ROOT/'Source/Hediff_EssenceTimed.cs').read_text()
+assert executor.count('GenSight.LineOfSight(center, p.Position, caster.Map)')==2
+assert 'using RimWorld;' in timed
+print('PASS: v0.16 LOS gating for secondary impacts and hostile-control API namespace')

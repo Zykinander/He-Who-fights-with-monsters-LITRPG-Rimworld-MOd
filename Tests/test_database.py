@@ -117,8 +117,8 @@ print('PASS: all 30 icons unique path, 128px RGBA, transparent corners')
 
 # Release metadata must use the development-version scheme.
 metadata=ET.parse(ROOT/'About/About.xml').getroot()
-assert 'v0.15' in metadata.findtext('name')
-assert json.loads((ROOT/'manifest.json').read_text())['version']=='0.15'
+assert 'v0.16' in metadata.findtext('name')
+assert json.loads((ROOT/'manifest.json').read_text())['version']=='0.16'
 print('PASS: v0.13 metadata and inherited stack-count overlays')
 
 # Regression: each GitHub Actions run must have a unique versioned artifact name.
@@ -269,7 +269,7 @@ assert 'Scribe_Values.Look(ref magicDensity' in marker
 for setting in ('manifestationsEnabled','manifestationMonstersEnabled',
                 'manifestationFrequency','densityPreset'):
     assert setting in settings
-assert json.loads((ROOT/'manifest.json').read_text())['version']=='0.15'
+assert json.loads((ROOT/'manifest.json').read_text())['version']=='0.16'
 print('PASS: v0.13 saveable magic density, tears, monster tiering and XML')
 
 # v0.14: monster danger follows actual colony progression, not random base magic.
@@ -317,7 +317,7 @@ assert density_for(70000,5,9,5)==density_for(70000,5,9,5)
 assert density_for(0,0,0,0)>=0.05
 assert density_for(10**9,100,20,100)<=1
 manifest=json.loads((ROOT/'manifest.json').read_text())
-assert manifest['version']=='0.15'
+assert manifest['version']=='0.16'
 assert manifest['world_integration']['density_weights']['essence']==0.42
 print('PASS: v0.14 deterministic strength-based density scales up with colony strength')
 
@@ -349,7 +349,7 @@ assert 'EssenceMonsterRanks.GroupSize(monsterRank)' in world
 assert 'ebMonsterRankIndex' in mark
 assert 'Scribe_Values.Look(ref magicDensity' in mark
 meta=json.loads((ROOT/'manifest.json').read_text())
-assert meta['version']=='0.15'
+assert meta['version']=='0.16'
 assert meta['monster_progression']['ranks']==['Iron','Bronze','Silver','Gold','Diamond']
 assert all(sum(weights)==100 for weights in meta['monster_progression']['rank_weights_by_magic_density'].values())
 assert meta['requires_harmony']
