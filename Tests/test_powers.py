@@ -151,3 +151,18 @@ assert 'float credited = Math.Min(amount, remainingToTier)' in src
 assert 'slot.rankWork += credited;' in src
 assert 'slot.rankWork += amount;' not in src
 print('PASS: no extra XP is banked beyond a locked major-rank boundary')
+
+# v0.13: only tagged astral monsters can yield an essence through Astral Loot.
+player=(ROOT/'Source/Hediff_EssenceUser.cs').read_text()
+world=(ROOT/'Source/EssenceWorld.cs').read_text()
+assert 'BeginAstralLoot' in player
+assert 'TryLootAstralRemains(Corpse corpse, out string reason)' in player
+assert 'Hediff_AstralManifestation' in player and 'corpse.InnerPawn?' in player
+assert 'Scribe_Values.Look(ref nextAstralLootTick' in player
+assert 'GenSight.LineOfSight(pawn.Position, corpse.Position, pawn.Map)' in player
+assert 'corpse.Destroy(DestroyMode.Vanish)' in player
+assert 'MapComponent_EssenceWorld.SpawnEssence' in player
+assert 'GetNamedSilentFail("EB_AstralManifestation")' in world
+assert 'monster.health.AddHediff(marker)' in world
+assert 'if (Prefs.DevMode)' in player and 'TryOpenTear()' in player
+print('PASS: v0.13 tagged monster corpse loot is single-use, range checked and saved')
