@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <ThingDef>
+    <defName>EB_TemporaryEssenceBarrier</defName>
+    <label>temporary essence barrier</label>
+    <description>A temporary magical obstruction that expires naturally.</description>
+    <thingClass>Essencebound.Thing_EssenceBarrier</thingClass>
+    <category>Building</category>
+    <tickerType>Normal</tickerType>
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>Impassable</passability>
+    <fillPercent>1</fillPercent>
+    <size>(1,1)</size>
+    <selectable>true</selectable>
+    <rotatable>false</rotatable>
+    <useHitPoints>false</useHitPoints>
+    <graphicData>
+      <texPath>Essencebound/AwakeningStones/StoneShield</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(1,1)</drawSize>
+    </graphicData>
+    <statBases>
+      <MarketValue>0</MarketValue>
+      <Mass>1</Mass>
+      <Flammability>0</Flammability>
+    </statBases>
+    <building>
+      <isEdifice>true</isEdifice>
+    </building>
+  </ThingDef>
+</Defs>

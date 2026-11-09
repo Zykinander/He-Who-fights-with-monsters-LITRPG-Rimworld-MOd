@@ -1,10 +1,11 @@
 using System;
+using RimWorld;
 using Verse;
 
 namespace Essencebound
 {
     // Temporary placed obstruction. Destroying or expiring it restores access.
-    public sealed class Thing_EssenceBarrier : ThingWithComps
+    public sealed class Thing_EssenceBarrier : Building
     {
         private int remainingTicks = 720;
 
