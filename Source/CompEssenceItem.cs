@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using RimWorld;
 using Verse;
 
@@ -40,6 +41,21 @@ namespace Essencebound
             {
                 yield return new FloatMenuOption(label + " (not available)", null);
                 yield break;
+            }
+
+            // On the third unique essence, preview the exact confluence
+            // before consuming the crystal. Preview and absorption share the
+            // same order-independent resolver, including generated outcomes.
+            if (state != null && state.NormalEssences.Count == 2)
+            {
+                var inputs = state.NormalEssences
+                    .Select(DefDatabase<EssenceDef>.GetNamedSilentFail)
+                    .Concat(new[] { essence }).ToList();
+                var outcome = ConfluenceResolver.Resolve(inputs);
+                if (outcome.essence != null)
+                    label += " (confluence: " + outcome.essence.label +
+                        (outcome.state == ConfluenceState.Generated ? ", generated" :
+                         outcome.state == ConfluenceState.ConflictResolved ? ", disputed recipe" : "") + ")";
             }
 
             yield return new FloatMenuOption(label, () =>
