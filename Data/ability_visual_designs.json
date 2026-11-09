@@ -1,0 +1,2423 @@
+{
+  "version": "1.0",
+  "source_version": "0.19",
+  "ability_count": 100,
+  "status": "visual_concept_only",
+  "scope": "One silhouette, primary/highlight/shadow colors, casting cue, resulting effect and sound direction per power. No finished game art.",
+  "technical_targets": {
+    "icon_resolution_px": 128,
+    "preview_resolutions_px": [
+      64,
+      32
+    ],
+    "background": "transparent",
+    "planned_texture_directory": "1.7/Textures/Essencebound/AbilityIcons",
+    "requires_export_and_implementation": true
+  },
+  "abilities": [
+    {
+      "id": "EmberBolt",
+      "name": "Ember Bolt",
+      "primary_category": "Attack",
+      "primary_essence": "Fire",
+      "tags": [
+        "Attack",
+        "Ranged",
+        "Fire",
+        "Single Target"
+      ],
+      "existing_effect_kind": "damage",
+      "design_status": "concept_only",
+      "asset_path": "Essencebound/AbilityIcons/EmberBolt",
+      "icon_silhouette": "A flaming arrowhead enclosing one coal",
+      "palette": {
+        "primary": "#F47738",
+        "highlight": "#FFE0A0",
+        "shadow": "#5A273D"
+      },
+      "cast_vfx": "A bright orange rune sparks in the caster's palm",
+      "result_vfx": "A narrow ember streak ends in one compact fire burst",
+      "sound_direction": "Short dry crackle"
+    },
+    {
+      "id": "FrostShard",
+      "name": "Frost Shard",
+      "primary_category": "Attack",
+      "primary_essence": "Ice",
+      "tags": [
+        "Attack",
+        "Control",
+        "Debuff",
+        "Cold",
+        "Single Target"
+      ],
+      "existing_effect_kind": "damageDebuff",
+      "design_status": "concept_only",
+      "asset_path": "Essencebound/AbilityIcons/FrostShard",
+      "icon_silhouette": "A jagged six-point icicle splitting a snowflake",
+      "palette": {
+        "primary": "#67D5ED",
+        "highlight": "#F0FBFF",
+        "shadow": "#37638D"
+      },
+      "cast_vfx": "Three icy facets crystallize above the hand",
+      "result_vfx": "The shard strikes with a frostflake snap and a thin slowing ring",
+      "sound_direction": "Glasslike chime"
+    },
+    {
+      "id": "StormSpark",
+      "name": "Storm Spark",
+      "primary_category": "Attack",
+      "primary_essence": "Lightning",
+      "tags": [
+        "Attack",
+        "Control",
+        "Debuff",
+        "Lightning",
+        "Single Target"
+      ],
+      "existing_effect_kind": "damageDebuff",
+      "design_status": "concept_only",
+      "asset_path": "Essencebound/AbilityIcons/StormSpark",
+      "icon_silhouette": "A forked lightning bolt inside an open circle",
+      "palette": {
+        "primary": "#A498FF",
+        "highlight": "#FFF0A5",
+        "shadow": "#343E78"
+      },
+      "cast_vfx": "Violet sparks gather between three floating nodes",
+      "result_vfx": "A short zigzag flashes and a static halo clings to the target",
+      "sound_direction": "Sharp electrical click"
+    },
+    {
+      "id": "VerdantMend",
+      "name": "Verdant Mend",
+      "primary_category": "Healing",
+      "primary_essence": "Life",
+      "tags": [
+        "Healing",
+        "Support",
+        "Single Target",
+        "Injury Healing"
+      ],
+      "existing_effect_kind": "heal",
+      "design_status": "concept_only",
+      "asset_path": "Essencebound/AbilityIcons/VerdantMend",
+      "icon_silhouette": "A split leaf stitched by a glowing thread",
+      "palette": {
+        "primary": "#57B877",
+        "highlight": "#D9FFA4",
+        "shadow": "#235847"
+      },
+      "cast_vfx": "A leaf-shaped ribbon circles the caster's fingertips",
+      "result_vfx": "Soft green stitches close visible wound marks on the target",
+      "sound_direction": "Gentle leaf rustle"
+    },
+    {
+      "id": "GuardianWard",
+      "name": "Guardian Ward",
+      "primary_category": "Defense",
+      "primary_essence": "Shield",
+      "tags": [
+        "Defense",
+        "Support",
+        "Ward",
+        "Single Target"
+      ],
+      "existing_effect_kind": "buff",
+      "design_status": "concept_only",
+      "asset_path": "Essencebound/AbilityIcons/GuardianWard",
+      "icon_silhouette": "A tall shield with a tiny central sun",
+      "palette": {
+        "primary": "#69BACF",
+        "highlight": "#FFDCAB",
+        "shadow": "#345C7C"
+      },
+      "cast_vfx": "A shield outline traces itself around the hand",
+      "result_vfx": "A translucent single-pawn shield shell pulses once",
+      "sound_direction": "Low resonant bell"
+    },
+    {
+      "id": "StoneSkin",
+      "name": "Stone Skin",
+      "primary_category": "Defense",
+      "primary_essence": "Earth",
+      "tags": [
+        "Defense",
+        "Armor",
+        "Buff",
+        "Self"
+      ],
+      "existing_effect_kind": "buff",
+      "design_status": "concept_only",
+      "asset_path": "Essencebound/AbilityIcons/StoneSkin",
+      "icon_silhouette": "A human silhouette covered in hexagonal stone plates",
+      "palette": {
+        "primary": "#AAA49A",
+        "highlight": "#F4E4C5",
+        "shadow": "#51596A"
+      },
+      "cast_vfx": "Dust motes spiral inward onto the caster",
+      "result_vfx": "Chunky rock plates click into place and a heavy footprint ripple fades",
+      "sound_direction": "Stone grinding"
+    },
+    {
+      "id": "SwiftStep",
+      "name": "Swift Step",
+      "primary_category": "Mobility",
+      "primary_essence": "Swift",
+      "tags": [
+        "Mobility",
+        "Speed",
+        "Buff",
+        "Self"
+      ],
+      "existing_effect_kind": "buff",
+      "design_status": "concept_only",
+      "asset_path": "Essencebound/AbilityIcons/SwiftStep",
+      "icon_silhouette": "Two opposing arrowhead boots crossing a wind ribbon",
+      "palette": {
+        "primary": "#76D7C8",
+        "highlight": "#F5FFF0",
+        "shadow": "#326B87"
+      },
+      "cast_vfx": "Thin green speed lines collect at the feet",
+      "result_vfx": "Twin parallel aftertrails follow a short rapid movement",
+      "sound_direction": "Light, crisp footstep swish"
+    },
+    {
+      "id": "MistVeil",
+      "name": "Mist Veil",
+      "primary_category": "Defense",
+      "primary_essence": "Dark",
+      "tags": [
+        "Defense",
+        "Mobility",
+        "Evasion",
+        "Buff"
+      ],
+      "existing_effect_kind": "buff",
+      "design_status": "concept_only",
+      "asset_path": "Essencebound/AbilityIcons/MistVeil",
+      "icon_silhouette": "A half-hidden eye behind three curled fog strands",
+      "palette": {
+        "primary": "#7169A8",
+        "highlight": "#DDC8FF",
+        "shadow": "#2F2A54"
+      },
+      "cast_vfx": "Shadow vapor rises from the shoulders",
+      "result_vfx": "A translucent edge haze shimmers around the moving pawn",
+      "sound_direction": "Muted breathy hush"
+    },
+    {
+      "id": "KeenSight",
+      "name": "Keen Sight",
+      "primary_category": "Utility",
+      "primary_essence": "Eye",
+      "tags": [
+        "Utility",
+        "Support",
+        "Precision",
+        "Buff"
+      ],
+      "existing_effect_kind": "buff",
+      "design_status": "concept_only",
+      "asset_path": "Essencebound/AbilityIcons/KeenSight",
+      "icon_silhouette": "A round iris with four compass ticks",
+      "palette": {
+        "primary": "#699AF1",
+        "highlight": "#FFF3BF",
+        "shadow": "#344D85"
+      },
+      "cast_vfx": "A blue aperture focuses in front of the caster",
+      "result_vfx": "One clean crosshair glint blinks over the affected pawn",
+      "sound_direction": "Fine focusing ping"
+    },
+    {
+      "id": "RallyingSurge",
+      "name": "Rallying Surge",
+      "primary_category": "Utility",
+      "primary_essence": "Might",
+      "tags": [
+        "Utility",
+        "Support",
+        "Mobility",
+        "Buff"
+      ],
+      "existing_effect_kind": "buff",
+      "design_status": "concept_only",
+      "asset_path": "Essencebound/AbilityIcons/RallyingSurge",
+      "icon_silhouette": "A raised banner topped by two speed chevrons",
+      "palette": {
+        "primary": "#D9A578",
+        "highlight": "#F7E4AD",
+        "shadow": "#77505B"
+      },
+      "cast_vfx": "Amber light sweeps from the caster toward the target",
+      "result_vfx": "Amber lines flare on the pawn's arms and feet then settle into a warm aura",
+      "sound_direction": "Confident drumbeat"
+    },
+    {
+      "id": "PurifyingTouch",
+      "name": "Purifying Touch",
+      "primary_category": "Healing",
+      "primary_essence": "Pure",
+      "tags": [
+        "Healing",
+        "Utility",
+        "Cleanse",
+        "Single Target"
+      ],
+      "existing_effect_kind": "cleanse",
+      "design_status": "concept_only",
+      "asset_path": "Essencebound/AbilityIcons/PurifyingTouch",
+      "icon_silhouette": "An open palm holding a four-point white star",
+      "palette": {
+        "primary": "#FFF1BF",
+        "highlight": "#83E5D0",
+        "shadow": "#467F9B"
+      },
+      "cast_vfx": "A cream-white sigil unfolds over the palm",
+      "result_vfx": "A dark status glyph unravels into clear teal flecks",
+      "sound_direction": "Soft cleansing bell"
+    },
+    {
+      "id": "ForcePulse",
+      "name": "Force Pulse",
+      "primary_category": "Attack",
+      "primary_essence": "Might",
+      "tags": [
+        "Attack",
+        "Control",
+        "Area",
+        "Pulse"
+      ],
+      "existing_effect_kind": "pulse",
+      "design_status": "concept_only",
+      "asset_path": "Essencebound/AbilityIcons/ForcePulse",
+      "icon_silhouette": "A clenched fist inside three concentric rings",
+      "palette": {
+        "primary": "#D9A578",
+        "highlight": "#F7E4AD",
+        "shadow": "#77505B"
+      },
+      "cast_vfx": "Energy compresses into a small ochre sphere at chest level",
+      "result_vfx": "One outward circular shockwave crosses nearby hostile tiles",
+      "sound_direction": "Deep bass thump"
+    },
+    {
+      "id": "CinderNova",
+      "name": "Cinder Nova",
+      "primary_category": "Attack",
+      "primary_essence": "Volcano",
+      "tags": [
+        "Attack",
+        "Area",
+        "Fire",
+        "Pulse"
+      ],
+      "existing_effect_kind": "pulse",
+      "design_status": "concept_only",
+      "asset_path": "Essencebound/AbilityIcons/CinderNova",
+      "icon_silhouette": "An erupting crater surrounded by a burning sunring",
+      "palette": {
+        "primary": "#FF6538",
+        "highlight": "#FEC46C",
+        "shadow": "#73263C"
+      },
+      "cast_vfx": "A rotating molten ring builds around the caster",
+      "result_vfx": "A fiery circular wave expands outward with scattered falling embers",
+      "sound_direction": "Rumbling flame bloom"
+    },
+    {
+      "id": "ThunderChain",
+      "name": "Thunder Chain",
+      "primary_category": "Attack",
+      "primary_essence": "Lightning",
+      "tags": [
+        "Attack",
+        "Chain",
+        "Lightning",
+        "Multi Target"
+      ],
+      "existing_effect_kind": "chain",
+      "design_status": "concept_only",
+      "asset_path": "Essencebound/AbilityIcons/ThunderChain",
+      "icon_silhouette": "Three connected lightning nodes forming an angled fork",
+      "palette": {
+        "primary": "#A498FF",
+        "highlight": "#FFF0A5",
+        "shadow": "#343E78"
+      },
+      "cast_vfx": "Three electric beads orbit the casting hand",
+      "result_vfx": "Lightning branches from the first target toward two nearby hostiles",
+      "sound_direction": "Triple crackling snap"
+    },
+    {
+      "id": "BloodSiphon",
+      "name": "Blood Siphon",
+      "primary_category": "Attack",
+      "primary_essence": "Blood",
+      "tags": [
+        "Attack",
+        "Healing",
+        "Drain",
+        "Single Target"
+      ],
+      "existing_effect_kind": "drain",
+      "design_status": "concept_only",
+      "asset_path": "Essencebound/AbilityIcons/BloodSiphon",
+      "icon_silhouette": "Two inward crescents joined by a red droplet",
+      "palette": {
+        "primary": "#CE4C79",
+        "highlight": "#F6B3A5",
+        "shadow": "#541E51"
+      },
+      "cast_vfx": "A crimson tether extends toward the target",
+      "result_vfx": "A red stream returns to the caster and fades into healed wound marks",
+      "sound_direction": "Hollow pulse and inhale"
+    },
+    {
+      "id": "LifeBloom",
+      "name": "Life Bloom",
+      "primary_category": "Healing",
+      "primary_essence": "Life",
+      "tags": [
+        "Healing",
+        "Multi Wound",
+        "Single Target",
+        "Support"
+      ],
+      "existing_effect_kind": "healGroup",
+      "design_status": "concept_only",
+      "asset_path": "Essencebound/AbilityIcons/LifeBloom",
+      "icon_silhouette": "A flower whose petals are small healing crosses",
+      "palette": {
+        "primary": "#57B877",
+        "highlight": "#D9FFA4",
+        "shadow": "#235847"
+      },
+      "cast_vfx": "A closed green bud opens over the target",
+      "result_vfx": "Separate petals glide to different injury spots and dissolve",
+      "sound_direction": "Opening blossom chime"
+    },
+    {
+      "id": "RenewalSeed",
+      "name": "Renewal Seed",
+      "primary_category": "Healing",
+      "primary_essence": "Renewal",
+      "tags": [
+        "Healing",
+        "Regeneration",
+        "Over Time",
+        "Support"
+      ],
+      "existing_effect_kind": "regeneration",
+      "design_status": "concept_only",
+      "asset_path": "Essencebound/AbilityIcons/RenewalSeed",
+      "icon_silhouette": "A small seed with a spiral sprout at its center",
+      "palette": {
+        "primary": "#57B877",
+        "highlight": "#D9FFA4",
+        "shadow": "#235847"
+      },
+      "cast_vfx": "A glowing seed descends onto the target",
+      "result_vfx": "The sprout pulses gently with each delayed healing tick",
+      "sound_direction": "Slow rhythmic dew tones"
+    },
+    {
+      "id": "GroveShelter",
+      "name": "Grove Shelter",
+      "primary_category": "Defense",
+      "primary_essence": "Tree",
+      "tags": [
+        "Defense",
+        "Support",
+        "Aura",
+        "Group",
+        "Ward"
+      ],
+      "existing_effect_kind": "auraBuff",
+      "design_status": "concept_only",
+      "asset_path": "Essencebound/AbilityIcons/GroveShelter",
+      "icon_silhouette": "A broad tree canopy forming an overhead shield",
+      "palette": {
+        "primary": "#57B877",
+        "highlight": "#D9FFA4",
+        "shadow": "#235847"
+      },
+      "cast_vfx": "Root-shaped lines spread outward from the caster",
+      "result_vfx": "Individual leafy protective shells appear on nearby allies",
+      "sound_direction": "Wood creak and leaves"
+    },
+    {
+      "id": "PurgingWave",
+      "name": "Purging Wave",
+      "primary_category": "Healing",
+      "primary_essence": "Pure",
+      "tags": [
+        "Healing",
+        "Utility",
+        "Cleanse",
+        "Area"
+      ],
+      "existing_effect_kind": "areaCleanse",
+      "design_status": "concept_only",
+      "asset_path": "Essencebound/AbilityIcons/PurgingWave",
+      "icon_silhouette": "A breaking chain inside a circular water ripple",
+      "palette": {
+        "primary": "#FFF1BF",
+        "highlight": "#83E5D0",
+        "shadow": "#467F9B"
+      },
+      "cast_vfx": "A broad pale ring gathers at the caster's feet",
+      "result_vfx": "A clear wave strips dark debuff flecks from nearby allies",
+      "sound_direction": "Rising water-bell"
+    },
+    {
+      "id": "GravitySnare",
+      "name": "Gravity Snare",
+      "primary_category": "Control",
+      "primary_essence": "Vortex",
+      "tags": [
+        "Control",
+        "Debuff",
+        "Slow",
+        "Single Target"
+      ],
+      "existing_effect_kind": "debuff",
+      "design_status": "concept_only",
+      "asset_path": "Essencebound/AbilityIcons/GravitySnare",
+      "icon_silhouette": "A weighted sphere caught in four inward arrows",
+      "palette": {
+        "primary": "#75A5D0",
+        "highlight": "#FFE8B4",
+        "shadow": "#2E4A73"
+      },
+      "cast_vfx": "Four blue geometric anchors lock around the target",
+      "result_vfx": "A compact gravity grid drags downward around the hostile's steps",
+      "sound_direction": "Deep metallic hum"
+    },
+    {
+      "id": "CorrosiveStrike",
+      "name": "Corrosive Strike",
+      "primary_category": "Attack",
+      "primary_essence": "Blight",
+      "tags": [
+        "Attack",
+        "Control",
+        "Debuff",
+        "Armor Break"
+      ],
+      "existing_effect_kind": "damageDebuff",
+      "design_status": "concept_only",
+      "asset_path": "Essencebound/AbilityIcons/CorrosiveStrike",
+      "icon_silhouette": "A sword tip dissolving into acidic droplets",
+      "palette": {
+        "primary": "#98C95E",
+        "highlight": "#ECF097",
+        "shadow": "#395942"
+      },
+      "cast_vfx": "Yellow-green liquid light coats the caster's focus",
+      "result_vfx": "A corrosive splatter leaves cracked armor outlines on the target",
+      "sound_direction": "Faint acidic hiss"
+    },
+    {
+      "id": "EchoBurst",
+      "name": "Echo Burst",
+      "primary_category": "Attack",
+      "primary_essence": "Echo",
+      "tags": [
+        "Attack",
+        "Area",
+        "Splash",
+        "Concussive"
+      ],
+      "existing_effect_kind": "splash",
+      "design_status": "concept_only",
+      "asset_path": "Essencebound/AbilityIcons/EchoBurst",
+      "icon_silhouette": "A broken sound ring striking a small central orb",
+      "palette": {
+        "primary": "#9BA6ED",
+        "highlight": "#F3E8FF",
+        "shadow": "#414578"
+      },
+      "cast_vfx": "Two violet rings contract toward the chosen target",
+      "result_vfx": "A main impact produces smaller concentric shock rings around nearby hostiles",
+      "sound_direction": "Layered echo clap"
+    },
+    {
+      "id": "SpiritBeacon",
+      "name": "Spirit Beacon",
+      "primary_category": "Utility",
+      "primary_essence": "Mystic",
+      "tags": [
+        "Utility",
+        "Support",
+        "Precision",
+        "Buff"
+      ],
+      "existing_effect_kind": "buff",
+      "design_status": "concept_only",
+      "asset_path": "Essencebound/AbilityIcons/SpiritBeacon",
+      "icon_silhouette": "A tall beacon with an eight-ray eye at its peak",
+      "palette": {
+        "primary": "#699AF1",
+        "highlight": "#FFF3BF",
+        "shadow": "#344D85"
+      },
+      "cast_vfx": "A blue pinprick of light rises above the target",
+      "result_vfx": "A narrow steady pillar highlights the pawn's hands and aim",
+      "sound_direction": "Clear ascending ping"
+    },
+    {
+      "id": "MoonlitReprieve",
+      "name": "Moonlit Reprieve",
+      "primary_category": "Healing",
+      "primary_essence": "Moon",
+      "tags": [
+        "Healing",
+        "Defense",
+        "Ward",
+        "Single Target"
+      ],
+      "existing_effect_kind": "healWard",
+      "design_status": "concept_only",
+      "asset_path": "Essencebound/AbilityIcons/MoonlitReprieve",
+      "icon_silhouette": "A crescent moon cradling a small shield and drop",
+      "palette": {
+        "primary": "#97A9F0",
+        "highlight": "#F6EDFF",
+        "shadow": "#47588C"
+      },
+      "cast_vfx": "A pale lunar arc crosses the selected pawn",
+      "result_vfx": "One wound glows shut and a thin moon-shaped shield appears",
+      "sound_direction": "Quiet lunar bell"
+    },
+    {
+      "id": "InfernoLance",
+      "name": "Inferno Lance",
+      "primary_category": "Attack",
+      "primary_essence": "Fire",
+      "tags": [
+        "Attack",
+        "Ranged",
+        "Fire",
+        "Single Target"
+      ],
+      "existing_effect_kind": "damage",
+      "design_status": "concept_only",
+      "asset_path": "Essencebound/AbilityIcons/InfernoLance",
+      "icon_silhouette": "A needle-thin spear with a flame-shaped spearhead",
+      "palette": {
+        "primary": "#F47738",
+        "highlight": "#FFE0A0",
+        "shadow": "#5A273D"
+      },
+      "cast_vfx": "A sharp golden spear forms horizontally before the hand",
+      "result_vfx": "A fast straight orange lance leaves a long fading heat streak",
+      "sound_direction": "High whistling flare"
+    },
+    {
+      "id": "FrostHalo",
+      "name": "Frost Halo",
+      "primary_category": "Attack",
+      "primary_essence": "Ice",
+      "tags": [
+        "Attack",
+        "Control",
+        "Area",
+        "Cold"
+      ],
+      "existing_effect_kind": "pulse",
+      "design_status": "concept_only",
+      "asset_path": "Essencebound/AbilityIcons/FrostHalo",
+      "icon_silhouette": "A frosted circular crown with four hanging icicles",
+      "palette": {
+        "primary": "#67D5ED",
+        "highlight": "#F0FBFF",
+        "shadow": "#37638D"
+      },
+      "cast_vfx": "Cold mist compresses around the caster's feet",
+      "result_vfx": "A blue-white ring bursts outward with ice dust on enemy tiles",
+      "sound_direction": "Crystalline ring ping"
+    },
+    {
+      "id": "Quakebreaker",
+      "name": "Quakebreaker",
+      "primary_category": "Attack",
+      "primary_essence": "Earth",
+      "tags": [
+        "Attack",
+        "Area",
+        "Splash",
+        "Concussive"
+      ],
+      "existing_effect_kind": "splash",
+      "design_status": "concept_only",
+      "asset_path": "Essencebound/AbilityIcons/Quakebreaker",
+      "icon_silhouette": "A hammer fracturing a concentric stone disc",
+      "palette": {
+        "primary": "#AAA49A",
+        "highlight": "#F4E4C5",
+        "shadow": "#51596A"
+      },
+      "cast_vfx": "Square stones hover and shake around the casting hand",
+      "result_vfx": "A main ground crack radiates short secondary cracks toward nearby hostiles",
+      "sound_direction": "Layered rock crack"
+    },
+    {
+      "id": "ZephyrRicochet",
+      "name": "Zephyr Ricochet",
+      "primary_category": "Attack",
+      "primary_essence": "Wind",
+      "tags": [
+        "Attack",
+        "Chain",
+        "Wind",
+        "Multi Target"
+      ],
+      "existing_effect_kind": "chain",
+      "design_status": "concept_only",
+      "asset_path": "Essencebound/AbilityIcons/ZephyrRicochet",
+      "icon_silhouette": "Three curved wind blades joined by tiny bounce arrows",
+      "palette": {
+        "primary": "#84D5BD",
+        "highlight": "#FEF8DE",
+        "shadow": "#498DA1"
+      },
+      "cast_vfx": "Three small mint blades spin beside the hand",
+      "result_vfx": "A blade darts between targets in angled ricochets",
+      "sound_direction": "Three light metallic zips"
+    },
+    {
+      "id": "UmbralLeech",
+      "name": "Umbral Leech",
+      "primary_category": "Attack",
+      "primary_essence": "Dark",
+      "tags": [
+        "Attack",
+        "Healing",
+        "Drain",
+        "Single Target"
+      ],
+      "existing_effect_kind": "drain",
+      "design_status": "concept_only",
+      "asset_path": "Essencebound/AbilityIcons/UmbralLeech",
+      "icon_silhouette": "A black crescent funnel drawing in a purple droplet",
+      "palette": {
+        "primary": "#7169A8",
+        "highlight": "#DDC8FF",
+        "shadow": "#2F2A54"
+      },
+      "cast_vfx": "Shadow wisps narrow into a thread at the hand",
+      "result_vfx": "Violet energy siphons backward from target to caster as small wound marks fade",
+      "sound_direction": "Low reversed whoosh"
+    },
+    {
+      "id": "VipersBite",
+      "name": "Viper's Bite",
+      "primary_category": "Attack",
+      "primary_essence": "Venom",
+      "tags": [
+        "Attack",
+        "Control",
+        "Debuff",
+        "Slow"
+      ],
+      "existing_effect_kind": "damageDebuff",
+      "design_status": "concept_only",
+      "asset_path": "Essencebound/AbilityIcons/VipersBite",
+      "icon_silhouette": "A coiled viper head bearing two glowing fangs",
+      "palette": {
+        "primary": "#87BE57",
+        "highlight": "#E2F2A0",
+        "shadow": "#385448"
+      },
+      "cast_vfx": "A green fang outline snaps over the hand",
+      "result_vfx": "A short fang flash leaves slow-moving green toxin wisps",
+      "sound_direction": "Dry serpent hiss"
+    },
+    {
+      "id": "ShardVolley",
+      "name": "Shard Volley",
+      "primary_category": "Attack",
+      "primary_essence": "Crystal",
+      "tags": [
+        "Attack",
+        "Chain",
+        "Crystal",
+        "Multi Target"
+      ],
+      "existing_effect_kind": "chain",
+      "design_status": "concept_only",
+      "asset_path": "Essencebound/AbilityIcons/ShardVolley",
+      "icon_silhouette": "Four diamond shards arranged like a fan of arrows",
+      "palette": {
+        "primary": "#6ED3DB",
+        "highlight": "#F6FFFF",
+        "shadow": "#387F9D"
+      },
+      "cast_vfx": "Prisms assemble from clear fragments around the wrist",
+      "result_vfx": "Crystalline darts strike in branching bright cyan streaks",
+      "sound_direction": "Bright shard tinkling"
+    },
+    {
+      "id": "BriarDetonation",
+      "name": "Briar Detonation",
+      "primary_category": "Attack",
+      "primary_essence": "Plant",
+      "tags": [
+        "Attack",
+        "Control",
+        "Area",
+        "Debuff"
+      ],
+      "existing_effect_kind": "damageAreaDebuff",
+      "design_status": "concept_only",
+      "asset_path": "Essencebound/AbilityIcons/BriarDetonation",
+      "icon_silhouette": "An exploding thorned seed pod with four outward spikes",
+      "palette": {
+        "primary": "#57B877",
+        "highlight": "#D9FFA4",
+        "shadow": "#235847"
+      },
+      "cast_vfx": "A prickled seed brightens above the chosen pawn",
+      "result_vfx": "Briar vines burst outward and wrap affected enemies briefly",
+      "sound_direction": "Brittle thorn snap"
+    },
+    {
+      "id": "Starfall",
+      "name": "Starfall",
+      "primary_category": "Attack",
+      "primary_essence": "Star",
+      "tags": [
+        "Attack",
+        "Area",
+        "Splash",
+        "Celestial"
+      ],
+      "existing_effect_kind": "splash",
+      "design_status": "concept_only",
+      "asset_path": "Essencebound/AbilityIcons/Starfall",
+      "icon_silhouette": "A falling four-point star with a long comet-tail slash",
+      "palette": {
+        "primary": "#B1A9F1",
+        "highlight": "#FFF0B7",
+        "shadow": "#3F5285"
+      },
+      "cast_vfx": "A tiny star glyph flashes overhead",
+      "result_vfx": "A vertical violet-gold beam lands and sends out star-dust ripples",
+      "sound_direction": "Celestial boom"
+    },
+    {
+      "id": "TidalRebuke",
+      "name": "Tidal Rebuke",
+      "primary_category": "Attack",
+      "primary_essence": "Water",
+      "tags": [
+        "Attack",
+        "Control",
+        "Area",
+        "Pulse"
+      ],
+      "existing_effect_kind": "pulse",
+      "design_status": "concept_only",
+      "asset_path": "Essencebound/AbilityIcons/TidalRebuke",
+      "icon_silhouette": "A curling tidal crest inside a shield-shaped wave",
+      "palette": {
+        "primary": "#449FCA",
+        "highlight": "#A1E8F5",
+        "shadow": "#325777"
+      },
+      "cast_vfx": "Water coils around the caster's knees",
+      "result_vfx": "A foamy blue arc surges outward across nearby hostile tiles",
+      "sound_direction": "Rolling splash"
+    },
+    {
+      "id": "IronBastion",
+      "name": "Iron Bastion",
+      "primary_category": "Defense",
+      "primary_essence": "Iron",
+      "tags": [
+        "Defense",
+        "Armor",
+        "Buff",
+        "Self"
+      ],
+      "existing_effect_kind": "buff",
+      "design_status": "concept_only",
+      "asset_path": "Essencebound/AbilityIcons/IronBastion",
+      "icon_silhouette": "An iron tower gate crossed by two heavy plates",
+      "palette": {
+        "primary": "#9AA6B8",
+        "highlight": "#FFE2A3",
+        "shadow": "#3C5267"
+      },
+      "cast_vfx": "Iron rivet points light up across the caster's shoulders",
+      "result_vfx": "Thick segmented armor panels lock into position",
+      "sound_direction": "Heavy iron clang"
+    },
+    {
+      "id": "MirrorGuard",
+      "name": "Mirror Guard",
+      "primary_category": "Defense",
+      "primary_essence": "Mirror",
+      "tags": [
+        "Defense",
+        "Evasion",
+        "Armor",
+        "Buff"
+      ],
+      "existing_effect_kind": "buff",
+      "design_status": "concept_only",
+      "asset_path": "Essencebound/AbilityIcons/MirrorGuard",
+      "icon_silhouette": "A faceted upright mirror displaying a shifted silhouette",
+      "palette": {
+        "primary": "#B3D5E6",
+        "highlight": "#F6E9FF",
+        "shadow": "#4D6484"
+      },
+      "cast_vfx": "Silver-blue facets rotate above the caster",
+      "result_vfx": "Brief duplicate outline slips sideways as a mirrored armor gleam appears",
+      "sound_direction": "Glassy shimmer"
+    },
+    {
+      "id": "DawnChorus",
+      "name": "Dawn Chorus",
+      "primary_category": "Utility",
+      "primary_essence": "Dawn",
+      "tags": [
+        "Utility",
+        "Support",
+        "Aura",
+        "Group"
+      ],
+      "existing_effect_kind": "auraBuff",
+      "design_status": "concept_only",
+      "asset_path": "Essencebound/AbilityIcons/DawnChorus",
+      "icon_silhouette": "A rising sun made of five musical notes",
+      "palette": {
+        "primary": "#F9BE74",
+        "highlight": "#FFF0B7",
+        "shadow": "#AE6686"
+      },
+      "cast_vfx": "Warm orange-gold notes float upward from the caster",
+      "result_vfx": "Synchronized light rings gently appear under nearby allies",
+      "sound_direction": "Bright chord shimmer"
+    },
+    {
+      "id": "VerdantSanctuary",
+      "name": "Verdant Sanctuary",
+      "primary_category": "Healing",
+      "primary_essence": "Verdant",
+      "tags": [
+        "Healing",
+        "Area",
+        "Group",
+        "Injury Healing"
+      ],
+      "existing_effect_kind": "areaHeal",
+      "design_status": "concept_only",
+      "asset_path": "Essencebound/AbilityIcons/VerdantSanctuary",
+      "icon_silhouette": "An open four-leaf canopy over a healing cross",
+      "palette": {
+        "primary": "#57B877",
+        "highlight": "#D9FFA4",
+        "shadow": "#235847"
+      },
+      "cast_vfx": "Four leaves unfold around the caster",
+      "result_vfx": "Green healing threads branch to several nearby wounded allies",
+      "sound_direction": "Four-note growth melody"
+    },
+    {
+      "id": "OceanRenewal",
+      "name": "Ocean Renewal",
+      "primary_category": "Healing",
+      "primary_essence": "Ocean",
+      "tags": [
+        "Healing",
+        "Area",
+        "Regeneration",
+        "Over Time"
+      ],
+      "existing_effect_kind": "areaRegen",
+      "design_status": "concept_only",
+      "asset_path": "Essencebound/AbilityIcons/OceanRenewal",
+      "icon_silhouette": "A wave cradle carrying four small raindrops",
+      "palette": {
+        "primary": "#449FCA",
+        "highlight": "#A1E8F5",
+        "shadow": "#325777"
+      },
+      "cast_vfx": "Small blue droplets orbit the caster",
+      "result_vfx": "Each wounded ally receives a slow pulsing wave-ring",
+      "sound_direction": "Soft repeating surf"
+    },
+    {
+      "id": "CleansingRay",
+      "name": "Cleansing Ray",
+      "primary_category": "Healing",
+      "primary_essence": "Light",
+      "tags": [
+        "Healing",
+        "Utility",
+        "Cleanse",
+        "Single Target"
+      ],
+      "existing_effect_kind": "purgeHeal",
+      "design_status": "concept_only",
+      "asset_path": "Essencebound/AbilityIcons/CleansingRay",
+      "icon_silhouette": "A narrow white ray splitting a broken dark rune",
+      "palette": {
+        "primary": "#FFF1BF",
+        "highlight": "#83E5D0",
+        "shadow": "#467F9B"
+      },
+      "cast_vfx": "A white line sharpens from the caster's hand",
+      "result_vfx": "The beam removes dark glyphs and closes a faint injury mark",
+      "sound_direction": "Tonal pure chime"
+    },
+    {
+      "id": "MercyThread",
+      "name": "Mercy Thread",
+      "primary_category": "Healing",
+      "primary_essence": "Ministration",
+      "tags": [
+        "Healing",
+        "Chain",
+        "Multi Target",
+        "Injury Healing"
+      ],
+      "existing_effect_kind": "chainHeal",
+      "design_status": "concept_only",
+      "asset_path": "Essencebound/AbilityIcons/MercyThread",
+      "icon_silhouette": "Three linked gold needles threaded with one light ribbon",
+      "palette": {
+        "primary": "#F9BE74",
+        "highlight": "#FFF0B7",
+        "shadow": "#AE6686"
+      },
+      "cast_vfx": "A golden filament winds around the first target",
+      "result_vfx": "Healing light stitches from the main target to two nearby allies",
+      "sound_direction": "Three successive harp notes"
+    },
+    {
+      "id": "SoulHarvest",
+      "name": "Soul Harvest",
+      "primary_category": "Attack",
+      "primary_essence": "Death",
+      "tags": [
+        "Attack",
+        "Healing",
+        "Area",
+        "Drain"
+      ],
+      "existing_effect_kind": "leechPulse",
+      "design_status": "concept_only",
+      "asset_path": "Essencebound/AbilityIcons/SoulHarvest",
+      "icon_silhouette": "A dark sickle surrounding a returning light seed",
+      "palette": {
+        "primary": "#8577A3",
+        "highlight": "#E6D0E8",
+        "shadow": "#37334F"
+      },
+      "cast_vfx": "A purple circle blooms at the caster's feet",
+      "result_vfx": "Wisps rise from nearby hostiles and converge on the caster as healing flecks",
+      "sound_direction": "Deep echoing draw"
+    },
+    {
+      "id": "RuneBind",
+      "name": "Rune Bind",
+      "primary_category": "Control",
+      "primary_essence": "Rune",
+      "tags": [
+        "Control",
+        "Debuff",
+        "Slow",
+        "Single Target"
+      ],
+      "existing_effect_kind": "debuff",
+      "design_status": "concept_only",
+      "asset_path": "Essencebound/AbilityIcons/RuneBind",
+      "icon_silhouette": "A square rune stamped over two crossed chains",
+      "palette": {
+        "primary": "#75A5D0",
+        "highlight": "#FFE8B4",
+        "shadow": "#2E4A73"
+      },
+      "cast_vfx": "A bright square seal rotates above the hand",
+      "result_vfx": "The rune locks around the hostile's ankles as grid lines",
+      "sound_direction": "Solid runic click"
+    },
+    {
+      "id": "OmenHex",
+      "name": "Omen Hex",
+      "primary_category": "Control",
+      "primary_essence": "Omen",
+      "tags": [
+        "Control",
+        "Debuff",
+        "Accuracy",
+        "Single Target"
+      ],
+      "existing_effect_kind": "debuff",
+      "design_status": "concept_only",
+      "asset_path": "Essencebound/AbilityIcons/OmenHex",
+      "icon_silhouette": "A cracked purple eye with a falling star pupil",
+      "palette": {
+        "primary": "#A66BB5",
+        "highlight": "#ECD5EC",
+        "shadow": "#4D305D"
+      },
+      "cast_vfx": "A shadow-purple sigil unrolls toward the pawn",
+      "result_vfx": "A floating eye blinks once above the hostile before dissolving into static",
+      "sound_direction": "Uneasy dissonant whisper"
+    },
+    {
+      "id": "TemporalHaste",
+      "name": "Temporal Haste",
+      "primary_category": "Mobility",
+      "primary_essence": "Time",
+      "tags": [
+        "Mobility",
+        "Utility",
+        "Speed",
+        "Buff"
+      ],
+      "existing_effect_kind": "buff",
+      "design_status": "concept_only",
+      "asset_path": "Essencebound/AbilityIcons/TemporalHaste",
+      "icon_silhouette": "An hourglass crossed by forward chevrons",
+      "palette": {
+        "primary": "#72CDB9",
+        "highlight": "#FCE1A4",
+        "shadow": "#3D6B81"
+      },
+      "cast_vfx": "The hourglass grains reverse and accelerate",
+      "result_vfx": "Thin clock-tick trails follow the caster's movement",
+      "sound_direction": "Quick ticking"
+    },
+    {
+      "id": "BattlefieldFocus",
+      "name": "Battlefield Focus",
+      "primary_category": "Utility",
+      "primary_essence": "Battlefield",
+      "tags": [
+        "Utility",
+        "Defense",
+        "Precision",
+        "Buff"
+      ],
+      "existing_effect_kind": "buff",
+      "design_status": "concept_only",
+      "asset_path": "Essencebound/AbilityIcons/BattlefieldFocus",
+      "icon_silhouette": "A tactical reticle framing a crossed blade and arrow",
+      "palette": {
+        "primary": "#699AF1",
+        "highlight": "#FFF3BF",
+        "shadow": "#344D85"
+      },
+      "cast_vfx": "An angular aiming grid focuses over the caster",
+      "result_vfx": "A clean reticle glint pulses at the eyes and weapon",
+      "sound_direction": "Single tactical click"
+    },
+    {
+      "id": "BladeTempest",
+      "name": "Blade Tempest",
+      "primary_category": "Attack",
+      "primary_essence": "Sword",
+      "tags": [
+        "Attack",
+        "Area",
+        "Close Range",
+        "Pulse"
+      ],
+      "existing_effect_kind": "pulse",
+      "design_status": "concept_only",
+      "asset_path": "Essencebound/AbilityIcons/BladeTempest",
+      "icon_silhouette": "Four swords spinning around an empty central circle",
+      "palette": {
+        "primary": "#A4B2CB",
+        "highlight": "#FFE9AE",
+        "shadow": "#40556E"
+      },
+      "cast_vfx": "Sword silhouettes orbit the caster for half a turn",
+      "result_vfx": "A fast outward ring of blade streaks strikes nearby hostiles",
+      "sound_direction": "Circular steel rush"
+    },
+    {
+      "id": "NemesisStrike",
+      "name": "Nemesis Strike",
+      "primary_category": "Attack",
+      "primary_essence": "Nemesis",
+      "tags": [
+        "Attack",
+        "Finisher",
+        "Single Target",
+        "Injury Scaling"
+      ],
+      "existing_effect_kind": "execute",
+      "design_status": "concept_only",
+      "asset_path": "Essencebound/AbilityIcons/NemesisStrike",
+      "icon_silhouette": "A downward blade passing through a broken target seal",
+      "palette": {
+        "primary": "#CE4C79",
+        "highlight": "#F6B3A5",
+        "shadow": "#541E51"
+      },
+      "cast_vfx": "A small red target glyph marks the injured foe",
+      "result_vfx": "The finisher leaves a sharp descending crimson-white impact slash",
+      "sound_direction": "Decisive heavy strike"
+    },
+    {
+      "id": "ThreadSnare",
+      "name": "Thread Snare",
+      "primary_category": "Control",
+      "primary_essence": "Thread",
+      "tags": [
+        "Control",
+        "Attack",
+        "Debuff",
+        "Slow"
+      ],
+      "existing_effect_kind": "damageDebuff",
+      "design_status": "concept_only",
+      "asset_path": "Essencebound/AbilityIcons/ThreadSnare",
+      "icon_silhouette": "A single hooked needle drawing a looped cord",
+      "palette": {
+        "primary": "#937ABD",
+        "highlight": "#F5D9E4",
+        "shadow": "#4B4D70"
+      },
+      "cast_vfx": "Silver strands twist between the caster's fingers",
+      "result_vfx": "A taut knot snaps around the hostile's legs",
+      "sound_direction": "Twang and snap"
+    },
+    {
+      "id": "GlassWard",
+      "name": "Glass Ward",
+      "primary_category": "Defense",
+      "primary_essence": "Glass",
+      "tags": [
+        "Defense",
+        "Healing",
+        "Ward",
+        "Armor"
+      ],
+      "existing_effect_kind": "healWard",
+      "design_status": "concept_only",
+      "asset_path": "Essencebound/AbilityIcons/GlassWard",
+      "icon_silhouette": "A glass prism shield with a tiny healing droplet",
+      "palette": {
+        "primary": "#AFE0E8",
+        "highlight": "#FFFFFF",
+        "shadow": "#677B9E"
+      },
+      "cast_vfx": "A transparent crystal forms above the target",
+      "result_vfx": "A wound gleams closed beneath faceted protective panels",
+      "sound_direction": "Shimmering glass bell"
+    },
+    {
+      "id": "AshenComet",
+      "name": "Ashen Comet",
+      "primary_category": "Attack",
+      "primary_essence": "Phoenix",
+      "tags": [
+        "Attack",
+        "Area",
+        "Delayed",
+        "Fire"
+      ],
+      "existing_effect_kind": "delayedBlast",
+      "design_status": "concept_only",
+      "asset_path": "Essencebound/AbilityIcons/AshenComet",
+      "icon_silhouette": "A black-red comet with a phoenix-feather tail",
+      "palette": {
+        "primary": "#FF6538",
+        "highlight": "#FEC46C",
+        "shadow": "#73263C"
+      },
+      "cast_vfx": "A thin ember ring marks the target's ground position",
+      "result_vfx": "A delayed blazing comet hits the marked location with a short fireburst",
+      "sound_direction": "Falling ember roar"
+    },
+    {
+      "id": "PrismaticDeflection",
+      "name": "Prismatic Deflection",
+      "primary_category": "Defense",
+      "primary_essence": "Refracting",
+      "tags": [
+        "Defense",
+        "Counter",
+        "Reflection",
+        "Reactive"
+      ],
+      "existing_effect_kind": "reflect",
+      "design_status": "concept_only",
+      "asset_path": "Essencebound/AbilityIcons/PrismaticDeflection",
+      "icon_silhouette": "A triangular prism reflecting one incoming arrow",
+      "palette": {
+        "primary": "#6ED3DB",
+        "highlight": "#F6FFFF",
+        "shadow": "#387F9D"
+      },
+      "cast_vfx": "A rotating rainbow-edged prism appears by the caster",
+      "result_vfx": "An incoming ranged hit splinters into a returning beam",
+      "sound_direction": "Sharp crystalline rebound"
+    },
+    {
+      "id": "LotusSanctum",
+      "name": "Lotus Sanctum",
+      "primary_category": "Healing",
+      "primary_essence": "Lotus",
+      "tags": [
+        "Healing",
+        "Area",
+        "Zone",
+        "Regeneration"
+      ],
+      "existing_effect_kind": "healingZone",
+      "design_status": "concept_only",
+      "asset_path": "Essencebound/AbilityIcons/LotusSanctum",
+      "icon_silhouette": "A lotus blossom enclosing a pool and tiny cross",
+      "palette": {
+        "primary": "#6CC5B0",
+        "highlight": "#F5E7A4",
+        "shadow": "#3A818A"
+      },
+      "cast_vfx": "A pale lotus opens on the ground",
+      "result_vfx": "Transparent petals rise in a stationary zone and healing pulses ripple outward",
+      "sound_direction": "Water-drop temple chime"
+    },
+    {
+      "id": "ChronoAnchor",
+      "name": "Chrono Anchor",
+      "primary_category": "Mobility",
+      "primary_essence": "Time",
+      "tags": [
+        "Mobility",
+        "Teleport",
+        "Return",
+        "Utility"
+      ],
+      "existing_effect_kind": "returnTeleport",
+      "design_status": "concept_only",
+      "asset_path": "Essencebound/AbilityIcons/ChronoAnchor",
+      "icon_silhouette": "A clock dial tied to a fixed map pin",
+      "palette": {
+        "primary": "#72CDB9",
+        "highlight": "#FCE1A4",
+        "shadow": "#3D6B81"
+      },
+      "cast_vfx": "A glowing pin stamps below the caster",
+      "result_vfx": "A later recast folds the pawn into a clock ring and restores the pinned position",
+      "sound_direction": "Reverse clock tick"
+    },
+    {
+      "id": "WolfpackCall",
+      "name": "Wolfpack Call",
+      "primary_category": "Summoning",
+      "primary_essence": "Wolf",
+      "tags": [
+        "Summoning",
+        "Familiar",
+        "Combat",
+        "Timed"
+      ],
+      "existing_effect_kind": "summon",
+      "design_status": "concept_only",
+      "asset_path": "Essencebound/AbilityIcons/WolfpackCall",
+      "icon_silhouette": "Two wolf heads emerging from one spiral portal",
+      "palette": {
+        "primary": "#DDD0BC",
+        "highlight": "#AFE6CE",
+        "shadow": "#67686E"
+      },
+      "cast_vfx": "Two spectral pawprints glow near the caster",
+      "result_vfx": "Temporary wolves emerge from spiraling green-white light",
+      "sound_direction": "Twin distant howls"
+    },
+    {
+      "id": "SpectralHand",
+      "name": "Spectral Hand",
+      "primary_category": "Utility",
+      "primary_essence": "Hand",
+      "tags": [
+        "Utility",
+        "Item Manipulation",
+        "Ranged",
+        "Exploration"
+      ],
+      "existing_effect_kind": "remoteManipulation",
+      "design_status": "concept_only",
+      "asset_path": "Essencebound/AbilityIcons/SpectralHand",
+      "icon_silhouette": "A translucent extended hand lifting a small cube",
+      "palette": {
+        "primary": "#699AF1",
+        "highlight": "#FFF3BF",
+        "shadow": "#344D85"
+      },
+      "cast_vfx": "A ghostly hand outline floats beside the caster",
+      "result_vfx": "The targeted loose item slides back on a faint tether",
+      "sound_direction": "Soft telekinetic pluck"
+    },
+    {
+      "id": "ChimericAspect",
+      "name": "Chimeric Aspect",
+      "primary_category": "Defense",
+      "primary_essence": "Chimera",
+      "tags": [
+        "Defense",
+        "Mobility",
+        "Adaptive",
+        "Buff"
+      ],
+      "existing_effect_kind": "adaptiveBuff",
+      "design_status": "concept_only",
+      "asset_path": "Essencebound/AbilityIcons/ChimericAspect",
+      "icon_silhouette": "A split chimera mask with plated and feathered halves",
+      "palette": {
+        "primary": "#98C95E",
+        "highlight": "#ECF097",
+        "shadow": "#395942"
+      },
+      "cast_vfx": "The central mask rotates to select a side",
+      "result_vfx": "Near threats evoke bronze armor plates; safety evokes swift green streaks",
+      "sound_direction": "Two-tone morph chime"
+    },
+    {
+      "id": "VoidSlip",
+      "name": "Void Slip",
+      "primary_category": "Mobility",
+      "primary_essence": "Void",
+      "tags": [
+        "Mobility",
+        "Teleport",
+        "Short Range",
+        "Exploration"
+      ],
+      "existing_effect_kind": "teleport",
+      "design_status": "concept_only",
+      "asset_path": "Essencebound/AbilityIcons/VoidSlip",
+      "icon_silhouette": "A hollow doorway cut through a black crescent",
+      "palette": {
+        "primary": "#7169A8",
+        "highlight": "#DDC8FF",
+        "shadow": "#2F2A54"
+      },
+      "cast_vfx": "A dark ring briefly compresses at the caster",
+      "result_vfx": "The pawn vanishes into a pinhole and reappears from a second ring",
+      "sound_direction": "Compressed airy pop"
+    },
+    {
+      "id": "Fleshweave",
+      "name": "Fleshweave",
+      "primary_category": "Healing",
+      "primary_essence": "Flesh",
+      "tags": [
+        "Healing",
+        "Resource Cost",
+        "Single Target",
+        "Injury Healing"
+      ],
+      "existing_effect_kind": "transfusion",
+      "design_status": "concept_only",
+      "asset_path": "Essencebound/AbilityIcons/Fleshweave",
+      "icon_silhouette": "An open palm sewing a branching pink thread",
+      "palette": {
+        "primary": "#CE4C79",
+        "highlight": "#F6B3A5",
+        "shadow": "#541E51"
+      },
+      "cast_vfx": "A crimson stitch ribbon stretches from caster to target",
+      "result_vfx": "Threads mend wounds while the caster's glow visibly dims",
+      "sound_direction": "Warm pulse then tired exhale"
+    },
+    {
+      "id": "TidalWall",
+      "name": "Tidal Wall",
+      "primary_category": "Defense",
+      "primary_essence": "Ocean",
+      "tags": [
+        "Defense",
+        "Control",
+        "Barrier",
+        "Area"
+      ],
+      "existing_effect_kind": "tileBarrier",
+      "design_status": "concept_only",
+      "asset_path": "Essencebound/AbilityIcons/TidalWall",
+      "icon_silhouette": "Five rising water tiles forming a crenelated line",
+      "palette": {
+        "primary": "#449FCA",
+        "highlight": "#A1E8F5",
+        "shadow": "#325777"
+      },
+      "cast_vfx": "A blue line sketches itself over the selected cells",
+      "result_vfx": "Temporary translucent water-brick barriers rise in a row",
+      "sound_direction": "Five rolling splashes"
+    },
+    {
+      "id": "LightningStep",
+      "name": "Lightning Step",
+      "primary_category": "Mobility",
+      "primary_essence": "Lightning",
+      "tags": [
+        "Mobility",
+        "Attack",
+        "Teleport",
+        "Area"
+      ],
+      "existing_effect_kind": "blinkStrike",
+      "design_status": "concept_only",
+      "asset_path": "Essencebound/AbilityIcons/LightningStep",
+      "icon_silhouette": "A zigzag boot striking a circular lightning impact",
+      "palette": {
+        "primary": "#A498FF",
+        "highlight": "#FFF0A5",
+        "shadow": "#343E78"
+      },
+      "cast_vfx": "Electricity gathers around the caster's boots",
+      "result_vfx": "A brief blink ends with a radial lightning shock on landing",
+      "sound_direction": "Electric snap and thud"
+    },
+    {
+      "id": "SovereignCommand",
+      "name": "Sovereign Command",
+      "primary_category": "Summoning",
+      "primary_essence": "Sovereign",
+      "tags": [
+        "Summoning",
+        "Utility",
+        "Command",
+        "Combat"
+      ],
+      "existing_effect_kind": "summonOrder",
+      "design_status": "concept_only",
+      "asset_path": "Essencebound/AbilityIcons/SovereignCommand",
+      "icon_silhouette": "A crown above three directional banners",
+      "palette": {
+        "primary": "#EFCB77",
+        "highlight": "#FFF5D2",
+        "shadow": "#75586E"
+      },
+      "cast_vfx": "A gold command rune flares over the caster",
+      "result_vfx": "Matching tiny crown pips pulse above summoned allies as they receive the order",
+      "sound_direction": "Short horn accent"
+    },
+    {
+      "id": "StarMap",
+      "name": "Star Map",
+      "primary_category": "Utility",
+      "primary_essence": "Star",
+      "tags": [
+        "Utility",
+        "Exploration",
+        "Map Reveal",
+        "Ranged"
+      ],
+      "existing_effect_kind": "survey",
+      "design_status": "concept_only",
+      "asset_path": "Essencebound/AbilityIcons/StarMap",
+      "icon_silhouette": "A folded map with a glowing eight-point star",
+      "palette": {
+        "primary": "#B1A9F1",
+        "highlight": "#FFF0B7",
+        "shadow": "#3F5285"
+      },
+      "cast_vfx": "An orbit of map-grid dots forms over the caster",
+      "result_vfx": "Fog peels back in a soft outward star-grid sweep around the chosen cell",
+      "sound_direction": "Light surveying harp"
+    },
+    {
+      "id": "PredatorMark",
+      "name": "Predator Mark",
+      "primary_category": "Control",
+      "primary_essence": "Predatory",
+      "tags": [
+        "Control",
+        "Attack",
+        "Mark",
+        "Debuff"
+      ],
+      "existing_effect_kind": "markedTarget",
+      "design_status": "concept_only",
+      "asset_path": "Essencebound/AbilityIcons/PredatorMark",
+      "icon_silhouette": "A clawed aiming sigil enclosing a red eye",
+      "palette": {
+        "primary": "#CE4C79",
+        "highlight": "#F6B3A5",
+        "shadow": "#541E51"
+      },
+      "cast_vfx": "A crimson triangle briefly aligns over the hostile",
+      "result_vfx": "A small target emblem tracks the marked pawn",
+      "sound_direction": "Focused hunting whistle"
+    },
+    {
+      "id": "HydraBloom",
+      "name": "Hydra Bloom",
+      "primary_category": "Healing",
+      "primary_essence": "Hydra",
+      "tags": [
+        "Healing",
+        "Area",
+        "Regeneration",
+        "Group"
+      ],
+      "existing_effect_kind": "branchingHeal",
+      "design_status": "concept_only",
+      "asset_path": "Essencebound/AbilityIcons/HydraBloom",
+      "icon_silhouette": "Three sprouting heads rising from one healing stem",
+      "palette": {
+        "primary": "#57B877",
+        "highlight": "#D9FFA4",
+        "shadow": "#235847"
+      },
+      "cast_vfx": "Three green buds glow on the caster's hand",
+      "result_vfx": "Branching regenerative vines curl around multiple wounded allies",
+      "sound_direction": "Layered gentle bloom"
+    },
+    {
+      "id": "CrystalPrison",
+      "name": "Crystal Prison",
+      "primary_category": "Control",
+      "primary_essence": "Crystal",
+      "tags": [
+        "Control",
+        "Defense",
+        "Barrier",
+        "Restraint"
+      ],
+      "existing_effect_kind": "containment",
+      "design_status": "concept_only",
+      "asset_path": "Essencebound/AbilityIcons/CrystalPrison",
+      "icon_silhouette": "A pawn silhouette inside four giant gemstone bars",
+      "palette": {
+        "primary": "#6ED3DB",
+        "highlight": "#F6FFFF",
+        "shadow": "#387F9D"
+      },
+      "cast_vfx": "Four faceted corner posts blink around a selected foe",
+      "result_vfx": "A small crystal cage rises and a blue binding grid shimmers inside",
+      "sound_direction": "Four bright crystal locks"
+    },
+    {
+      "id": "EchoTwin",
+      "name": "Echo Twin",
+      "primary_category": "Summoning",
+      "primary_essence": "Doppelganger",
+      "tags": [
+        "Summoning",
+        "Decoy",
+        "Illusion",
+        "Timed"
+      ],
+      "existing_effect_kind": "decoy",
+      "design_status": "concept_only",
+      "asset_path": "Essencebound/AbilityIcons/EchoTwin",
+      "icon_silhouette": "Two offset matching masks with one fading edge",
+      "palette": {
+        "primary": "#9BA6ED",
+        "highlight": "#F3E8FF",
+        "shadow": "#414578"
+      },
+      "cast_vfx": "A lavender mirrored outline peels away from the caster",
+      "result_vfx": "A ghostlike decoy silhouette appears with a ripple before settling into its temporary stand-in",
+      "sound_direction": "Double echo flutter"
+    },
+    {
+      "id": "ResonanceField",
+      "name": "Resonance Field",
+      "primary_category": "Utility",
+      "primary_essence": "Resonating",
+      "tags": [
+        "Utility",
+        "Attack",
+        "Support",
+        "Aura"
+      ],
+      "existing_effect_kind": "powerAura",
+      "design_status": "concept_only",
+      "asset_path": "Essencebound/AbilityIcons/ResonanceField",
+      "icon_silhouette": "Three waveforms crossing a bright central crystal",
+      "palette": {
+        "primary": "#A4B9E7",
+        "highlight": "#FFE4B8",
+        "shadow": "#5A65A1"
+      },
+      "cast_vfx": "An indigo sound ring forms beneath the caster",
+      "result_vfx": "A stationary circular lattice pulses when allied essence attacks occur",
+      "sound_direction": "Sustained harmonic note"
+    },
+    {
+      "id": "GuardianBastion",
+      "name": "Guardian Bastion",
+      "primary_category": "Defense",
+      "primary_essence": "Guardian",
+      "tags": [
+        "Defense",
+        "Area",
+        "Ward",
+        "Aura"
+      ],
+      "existing_effect_kind": "wardDome",
+      "design_status": "concept_only",
+      "asset_path": "Essencebound/AbilityIcons/GuardianBastion",
+      "icon_silhouette": "A vaulted dome with a central guardian diamond",
+      "palette": {
+        "primary": "#69BACF",
+        "highlight": "#FFDCAB",
+        "shadow": "#345C7C"
+      },
+      "cast_vfx": "A golden diamond rotates above the caster",
+      "result_vfx": "A stationary translucent shield dome overlays nearby allies",
+      "sound_direction": "Low protective gong"
+    },
+    {
+      "id": "MoltenRain",
+      "name": "Molten Rain",
+      "primary_category": "Attack",
+      "primary_essence": "Volcano",
+      "tags": [
+        "Attack",
+        "Area",
+        "Over Time",
+        "Zone",
+        "Fire"
+      ],
+      "existing_effect_kind": "hazardZone",
+      "design_status": "concept_only",
+      "asset_path": "Essencebound/AbilityIcons/MoltenRain",
+      "icon_silhouette": "Three dripping meteors above a cracked ground tile",
+      "palette": {
+        "primary": "#FF6538",
+        "highlight": "#FEC46C",
+        "shadow": "#73263C"
+      },
+      "cast_vfx": "A glowing hot zone outline appears on the ground",
+      "result_vfx": "Repeated molten streaks fall into the marked area",
+      "sound_direction": "Scattered ember impacts"
+    },
+    {
+      "id": "OasisWell",
+      "name": "Oasis Well",
+      "primary_category": "Healing",
+      "primary_essence": "Oasis",
+      "tags": [
+        "Healing",
+        "Area",
+        "Zone",
+        "Sanctuary"
+      ],
+      "existing_effect_kind": "restorationZone",
+      "design_status": "concept_only",
+      "asset_path": "Essencebound/AbilityIcons/OasisWell",
+      "icon_silhouette": "A small well with lotus leaves and a bright water drop",
+      "palette": {
+        "primary": "#6CC5B0",
+        "highlight": "#F5E7A4",
+        "shadow": "#3A818A"
+      },
+      "cast_vfx": "A turquoise circle traces a stone-well silhouette on open ground",
+      "result_vfx": "A stationary spring shimmer heals injured allies in slow ripples",
+      "sound_direction": "Quiet water trickle"
+    },
+    {
+      "id": "BoneFamiliar",
+      "name": "Bone Familiar",
+      "primary_category": "Summoning",
+      "primary_essence": "Bone",
+      "tags": [
+        "Summoning",
+        "Defense",
+        "Familiar",
+        "Combat"
+      ],
+      "existing_effect_kind": "familiar",
+      "design_status": "concept_only",
+      "asset_path": "Essencebound/AbilityIcons/BoneFamiliar",
+      "icon_silhouette": "A small bone-shelled beetle inside a summoning ring",
+      "palette": {
+        "primary": "#DDD0BC",
+        "highlight": "#AFE6CE",
+        "shadow": "#67686E"
+      },
+      "cast_vfx": "Ivory segmented markings rotate near the caster",
+      "result_vfx": "A compact summoned insect emerges in pale ghostdust",
+      "sound_direction": "Dry bone rattle"
+    },
+    {
+      "id": "Mistwalk",
+      "name": "Mistwalk",
+      "primary_category": "Mobility",
+      "primary_essence": "Cloud",
+      "tags": [
+        "Mobility",
+        "Defense",
+        "Evasion",
+        "Concealment"
+      ],
+      "existing_effect_kind": "concealment",
+      "design_status": "concept_only",
+      "asset_path": "Essencebound/AbilityIcons/Mistwalk",
+      "icon_silhouette": "A hood-shaped cloud with a fading footpath",
+      "palette": {
+        "primary": "#9FCDDF",
+        "highlight": "#F6FAF6",
+        "shadow": "#718AAE"
+      },
+      "cast_vfx": "Cloud wisps pool around the caster's feet",
+      "result_vfx": "Thin mist trails soften the pawn outline while the movement and evasion buff lasts",
+      "sound_direction": "Soft diffuse swish"
+    },
+    {
+      "id": "MirrorStep",
+      "name": "Mirror Step",
+      "primary_category": "Mobility",
+      "primary_essence": "Mirror",
+      "tags": [
+        "Mobility",
+        "Teleport",
+        "Ally",
+        "Swap"
+      ],
+      "existing_effect_kind": "swapTeleport",
+      "design_status": "concept_only",
+      "asset_path": "Essencebound/AbilityIcons/MirrorStep",
+      "icon_silhouette": "Two figures connected through an hourglass-shaped mirror",
+      "palette": {
+        "primary": "#B3D5E6",
+        "highlight": "#F6E9FF",
+        "shadow": "#4D6484"
+      },
+      "cast_vfx": "Matching mirror glyphs flash under two allies",
+      "result_vfx": "Both figures fracture into reflections and trade positions",
+      "sound_direction": "Two simultaneous glass pings"
+    },
+    {
+      "id": "WebWeaver",
+      "name": "Web Weaver",
+      "primary_category": "Control",
+      "primary_essence": "Spider",
+      "tags": [
+        "Control",
+        "Zone",
+        "Slow",
+        "Over Time"
+      ],
+      "existing_effect_kind": "webZone",
+      "design_status": "concept_only",
+      "asset_path": "Essencebound/AbilityIcons/WebWeaver",
+      "icon_silhouette": "A central spider knot inside a seven-strand web",
+      "palette": {
+        "primary": "#937ABD",
+        "highlight": "#F5D9E4",
+        "shadow": "#4B4D70"
+      },
+      "cast_vfx": "A purple web grid draws over a targeted area",
+      "result_vfx": "Web strands fade in and pulse at slowed enemy feet",
+      "sound_direction": "Sticky silken pluck"
+    },
+    {
+      "id": "SonicLance",
+      "name": "Sonic Lance",
+      "primary_category": "Attack",
+      "primary_essence": "Song",
+      "tags": [
+        "Attack",
+        "Piercing",
+        "Ranged",
+        "Single Target"
+      ],
+      "existing_effect_kind": "piercingSound",
+      "design_status": "concept_only",
+      "asset_path": "Essencebound/AbilityIcons/SonicLance",
+      "icon_silhouette": "A narrow tuning fork spear striking a circular note",
+      "palette": {
+        "primary": "#A4B9E7",
+        "highlight": "#FFE4B8",
+        "shadow": "#5A65A1"
+      },
+      "cast_vfx": "A pale blue tuning fork oscillates by the caster",
+      "result_vfx": "A focused straight sound-wave lance lands with tight concentric rings",
+      "sound_direction": "High-pitched resonant ping"
+    },
+    {
+      "id": "SunwardFlare",
+      "name": "Sunward Flare",
+      "primary_category": "Attack",
+      "primary_essence": "Sun",
+      "tags": [
+        "Attack",
+        "Healing",
+        "Area",
+        "Cleanse"
+      ],
+      "existing_effect_kind": "radiantPurge",
+      "design_status": "concept_only",
+      "asset_path": "Essencebound/AbilityIcons/SunwardFlare",
+      "icon_silhouette": "A rising sun split by a clean white spear of light",
+      "palette": {
+        "primary": "#F9BE74",
+        "highlight": "#FFF0B7",
+        "shadow": "#AE6686"
+      },
+      "cast_vfx": "The caster lifts a small golden sun halo",
+      "result_vfx": "A sharp radial flare damages hostiles and burns away dark curse sigils from allies",
+      "sound_direction": "Bright shining burst"
+    },
+    {
+      "id": "Moonshadow",
+      "name": "Moonshadow",
+      "primary_category": "Defense",
+      "primary_essence": "Moon",
+      "tags": [
+        "Defense",
+        "Mobility",
+        "Evasion",
+        "Conditional"
+      ],
+      "existing_effect_kind": "conditionalBuff",
+      "design_status": "concept_only",
+      "asset_path": "Essencebound/AbilityIcons/Moonshadow",
+      "icon_silhouette": "A dark crescent moon hiding a single silver eye",
+      "palette": {
+        "primary": "#97A9F0",
+        "highlight": "#F6EDFF",
+        "shadow": "#47588C"
+      },
+      "cast_vfx": "Dim silver particles gather under the caster's hoodline",
+      "result_vfx": "A faint crescent afterimage appears only in low light",
+      "sound_direction": "Subtle nocturnal chime"
+    },
+    {
+      "id": "HungerField",
+      "name": "Hunger Field",
+      "primary_category": "Attack",
+      "primary_essence": "Hunger",
+      "tags": [
+        "Attack",
+        "Healing",
+        "Drain",
+        "Zone"
+      ],
+      "existing_effect_kind": "sustainedLeech",
+      "design_status": "concept_only",
+      "asset_path": "Essencebound/AbilityIcons/HungerField",
+      "icon_silhouette": "A hollow mouth-shaped vortex with inward arrows",
+      "palette": {
+        "primary": "#8577A3",
+        "highlight": "#E6D0E8",
+        "shadow": "#37334F"
+      },
+      "cast_vfx": "Dark ribbons spiral inward at the caster's feet",
+      "result_vfx": "A moving violet ring draws thin life wisps from nearby hostiles",
+      "sound_direction": "Steady low inhaling hum"
+    },
+    {
+      "id": "ShatterArmor",
+      "name": "Shatter Armor",
+      "primary_category": "Attack",
+      "primary_essence": "Hammer",
+      "tags": [
+        "Attack",
+        "Control",
+        "Armor Break",
+        "Debuff"
+      ],
+      "existing_effect_kind": "armorBreak",
+      "design_status": "concept_only",
+      "asset_path": "Essencebound/AbilityIcons/ShatterArmor",
+      "icon_silhouette": "A hammer smashing an armored breastplate into three pieces",
+      "palette": {
+        "primary": "#9AA6B8",
+        "highlight": "#FFE2A3",
+        "shadow": "#3C5267"
+      },
+      "cast_vfx": "A steel-white crack line forms on the target",
+      "result_vfx": "An impact fractures a shield outline and leaves chipped armor flecks",
+      "sound_direction": "Hard armor fracture"
+    },
+    {
+      "id": "HarvestBlessing",
+      "name": "Harvest Blessing",
+      "primary_category": "Utility",
+      "primary_essence": "Harvest",
+      "tags": [
+        "Utility",
+        "Support",
+        "Farming",
+        "Aura"
+      ],
+      "existing_effect_kind": "harvestAura",
+      "design_status": "concept_only",
+      "asset_path": "Essencebound/AbilityIcons/HarvestBlessing",
+      "icon_silhouette": "A sheaf of golden wheat behind a small work hand",
+      "palette": {
+        "primary": "#A4C26B",
+        "highlight": "#F2D68A",
+        "shadow": "#617B4A"
+      },
+      "cast_vfx": "Gold grain motes rise around the caster",
+      "result_vfx": "A wheat-green buff ring appears near allied growers",
+      "sound_direction": "Soft wheat rustle"
+    },
+    {
+      "id": "WeaveWard",
+      "name": "Weave Ward",
+      "primary_category": "Defense",
+      "primary_essence": "Weave",
+      "tags": [
+        "Defense",
+        "Support",
+        "Linked",
+        "Damage Sharing"
+      ],
+      "existing_effect_kind": "linkedDefense",
+      "design_status": "concept_only",
+      "asset_path": "Essencebound/AbilityIcons/WeaveWard",
+      "icon_silhouette": "Two shield knots joined by a taut silver thread",
+      "palette": {
+        "primary": "#937ABD",
+        "highlight": "#F5D9E4",
+        "shadow": "#4B4D70"
+      },
+      "cast_vfx": "A thread passes between caster and ally",
+      "result_vfx": "A slim silver tether flashes as damage is shared",
+      "sound_direction": "Gentle thread hum"
+    },
+    {
+      "id": "RuneBeacon",
+      "name": "Rune Beacon",
+      "primary_category": "Defense",
+      "primary_essence": "Rune",
+      "tags": [
+        "Defense",
+        "Zone",
+        "Ward",
+        "Area"
+      ],
+      "existing_effect_kind": "groundWard",
+      "design_status": "concept_only",
+      "asset_path": "Essencebound/AbilityIcons/RuneBeacon",
+      "icon_silhouette": "A triangular stone rune standing inside a shield circle",
+      "palette": {
+        "primary": "#75A5D0",
+        "highlight": "#FFE8B4",
+        "shadow": "#2E4A73"
+      },
+      "cast_vfx": "A rune is stamped onto the selected open tile",
+      "result_vfx": "A stationary circular ward glyph pulses under nearby allies",
+      "sound_direction": "Stone rune toll"
+    },
+    {
+      "id": "IronReprisal",
+      "name": "Iron Reprisal",
+      "primary_category": "Defense",
+      "primary_essence": "Iron",
+      "tags": [
+        "Defense",
+        "Attack",
+        "Counter",
+        "Melee"
+      ],
+      "existing_effect_kind": "counterStance",
+      "design_status": "concept_only",
+      "asset_path": "Essencebound/AbilityIcons/IronReprisal",
+      "icon_silhouette": "A shield backed by an outward-pointing spear",
+      "palette": {
+        "primary": "#9AA6B8",
+        "highlight": "#FFE2A3",
+        "shadow": "#3C5267"
+      },
+      "cast_vfx": "An iron guard plate locks across the caster's arm",
+      "result_vfx": "On a close hit, a steel counter-spark flashes back at the attacker",
+      "sound_direction": "Two-step clang reply"
+    },
+    {
+      "id": "SerpentCoil",
+      "name": "Serpent Coil",
+      "primary_category": "Control",
+      "primary_essence": "Serpent",
+      "tags": [
+        "Control",
+        "Debuff",
+        "Restraint",
+        "Accuracy"
+      ],
+      "existing_effect_kind": "grapple",
+      "design_status": "concept_only",
+      "asset_path": "Essencebound/AbilityIcons/SerpentCoil",
+      "icon_silhouette": "A coiled serpent encircling a boot and crosshair",
+      "palette": {
+        "primary": "#87BE57",
+        "highlight": "#E2F2A0",
+        "shadow": "#385448"
+      },
+      "cast_vfx": "A green serpentine loop forms around the targeted pawn",
+      "result_vfx": "The loop tightens around legs while a green aiming sigil distorts",
+      "sound_direction": "Brief constricting hiss"
+    },
+    {
+      "id": "DawnRebirth",
+      "name": "Dawn Rebirth",
+      "primary_category": "Healing",
+      "primary_essence": "Dawn",
+      "tags": [
+        "Healing",
+        "Reactive",
+        "Emergency",
+        "Self"
+      ],
+      "existing_effect_kind": "emergencyHeal",
+      "design_status": "concept_only",
+      "asset_path": "Essencebound/AbilityIcons/DawnRebirth",
+      "icon_silhouette": "A sunbird rising from a small healing cross",
+      "palette": {
+        "primary": "#F9BE74",
+        "highlight": "#FFF0B7",
+        "shadow": "#AE6686"
+      },
+      "cast_vfx": "A golden sunrise sigil rests over the caster",
+      "result_vfx": "When triggered, warm rays pour into wound marks as a quick restorative flare",
+      "sound_direction": "Hopeful rising chord"
+    },
+    {
+      "id": "AdeptConvergence",
+      "name": "Adept Convergence",
+      "primary_category": "Utility",
+      "primary_essence": "Adept",
+      "tags": [
+        "Utility",
+        "Buff",
+        "Attributes",
+        "Conversion"
+      ],
+      "existing_effect_kind": "attributeShift",
+      "design_status": "concept_only",
+      "asset_path": "Essencebound/AbilityIcons/AdeptConvergence",
+      "icon_silhouette": "Two attribute arrows trading positions through a central prism",
+      "palette": {
+        "primary": "#699AF1",
+        "highlight": "#FFF3BF",
+        "shadow": "#344D85"
+      },
+      "cast_vfx": "One blue and one gold rune rotate around the caster",
+      "result_vfx": "The Power-side rune brightens while the Speed-side dims",
+      "sound_direction": "Balanced dual-tone click"
+    },
+    {
+      "id": "FeyGlamour",
+      "name": "Fey Glamour",
+      "primary_category": "Control",
+      "primary_essence": "Fey",
+      "tags": [
+        "Control",
+        "Illusion",
+        "Debuff",
+        "Accuracy"
+      ],
+      "existing_effect_kind": "confusion",
+      "design_status": "concept_only",
+      "asset_path": "Essencebound/AbilityIcons/FeyGlamour",
+      "icon_silhouette": "A smiling fae mask with three offset eye trails",
+      "palette": {
+        "primary": "#AF9BDD",
+        "highlight": "#F0D7EA",
+        "shadow": "#5E70A0"
+      },
+      "cast_vfx": "Pink-violet motes swirl around the hostile's head",
+      "result_vfx": "False afterimages and wobbling aim lines confuse the enemy",
+      "sound_direction": "Playful warped bell"
+    },
+    {
+      "id": "NimbusGuard",
+      "name": "Nimbus Guard",
+      "primary_category": "Defense",
+      "primary_essence": "Sky",
+      "tags": [
+        "Defense",
+        "Mobility",
+        "Ward",
+        "Single Target"
+      ],
+      "existing_effect_kind": "mobileWard",
+      "design_status": "concept_only",
+      "asset_path": "Essencebound/AbilityIcons/NimbusGuard",
+      "icon_silhouette": "A cloud shield with one curved wind feather",
+      "palette": {
+        "primary": "#87CFE9",
+        "highlight": "#FCF5E1",
+        "shadow": "#5B8FBE"
+      },
+      "cast_vfx": "A blue-cloud ribbon wraps around the selected pawn",
+      "result_vfx": "The protective cloud tracks the moving pawn with subtle sparks",
+      "sound_direction": "Soft sky rumble"
+    },
+    {
+      "id": "BladeOrbit",
+      "name": "Blade Orbit",
+      "primary_category": "Attack",
+      "primary_essence": "Sword",
+      "tags": [
+        "Attack",
+        "Area",
+        "Sustained",
+        "Moving"
+      ],
+      "existing_effect_kind": "orbitStrike",
+      "design_status": "concept_only",
+      "asset_path": "Essencebound/AbilityIcons/BladeOrbit",
+      "icon_silhouette": "Three blade tips orbiting an empty crescent center",
+      "palette": {
+        "primary": "#A4B2CB",
+        "highlight": "#FFE9AE",
+        "shadow": "#40556E"
+      },
+      "cast_vfx": "Three slender sword silhouettes rise around the caster",
+      "result_vfx": "Moving orbit blades leave repeatable short strike arcs against close hostiles",
+      "sound_direction": "Metallic revolving whirr"
+    },
+    {
+      "id": "GravityWell",
+      "name": "Gravity Well",
+      "primary_category": "Control",
+      "primary_essence": "Vortex",
+      "tags": [
+        "Control",
+        "Area",
+        "Pull",
+        "Zone"
+      ],
+      "existing_effect_kind": "pullZone",
+      "design_status": "concept_only",
+      "asset_path": "Essencebound/AbilityIcons/GravityWell",
+      "icon_silhouette": "A dark center orb with four spiraling inward arrows",
+      "palette": {
+        "primary": "#75A5D0",
+        "highlight": "#FFE8B4",
+        "shadow": "#2E4A73"
+      },
+      "cast_vfx": "A circular grid appears over selected ground",
+      "result_vfx": "Nearby enemies slide inward as lines curve toward the center",
+      "sound_direction": "Deep gravitational swell"
+    },
+    {
+      "id": "CorruptingSeed",
+      "name": "Corrupting Seed",
+      "primary_category": "Attack",
+      "primary_essence": "Corrupt",
+      "tags": [
+        "Attack",
+        "Control",
+        "Over Time",
+        "Armor Break"
+      ],
+      "existing_effect_kind": "sustainedDebuff",
+      "design_status": "concept_only",
+      "asset_path": "Essencebound/AbilityIcons/CorruptingSeed",
+      "icon_silhouette": "A black seed splitting a cracked armored leaf",
+      "palette": {
+        "primary": "#8D6FA8",
+        "highlight": "#DAF09A",
+        "shadow": "#49445F"
+      },
+      "cast_vfx": "A violet seed lodges over the target",
+      "result_vfx": "Slow pulses shed sickly light and thin armor-crack flecks",
+      "sound_direction": "Faint thorny ticking"
+    },
+    {
+      "id": "TalismanSeal",
+      "name": "Talisman Seal",
+      "primary_category": "Defense",
+      "primary_essence": "Talisman",
+      "tags": [
+        "Defense",
+        "Reactive",
+        "Trigger",
+        "Ward"
+      ],
+      "existing_effect_kind": "storedTrigger",
+      "design_status": "concept_only",
+      "asset_path": "Essencebound/AbilityIcons/TalismanSeal",
+      "icon_silhouette": "A hanging scroll seal protecting a small shield",
+      "palette": {
+        "primary": "#D0AA76",
+        "highlight": "#B4E6DB",
+        "shadow": "#73607D"
+      },
+      "cast_vfx": "A paper-like rune folds around the caster",
+      "result_vfx": "The seal flares once on the next attack then breaks into gold paper flecks",
+      "sound_direction": "Paper snap and chime"
+    },
+    {
+      "id": "PactOfUnity",
+      "name": "Pact of Unity",
+      "primary_category": "Utility",
+      "primary_essence": "Unity",
+      "tags": [
+        "Utility",
+        "Support",
+        "Aura",
+        "Group"
+      ],
+      "existing_effect_kind": "teamLink",
+      "design_status": "concept_only",
+      "asset_path": "Essencebound/AbilityIcons/PactOfUnity",
+      "icon_silhouette": "Four hands connected in a bright central knot",
+      "palette": {
+        "primary": "#EFCB77",
+        "highlight": "#FFF5D2",
+        "shadow": "#75586E"
+      },
+      "cast_vfx": "Four golden nodes form around the caster",
+      "result_vfx": "Linked circles pulse briefly below nearby allied pawns",
+      "sound_direction": "Unified chord"
+    },
+    {
+      "id": "PhoenixAshes",
+      "name": "Phoenix Ashes",
+      "primary_category": "Healing",
+      "primary_essence": "Firebird",
+      "tags": [
+        "Healing",
+        "Defense",
+        "Reactive",
+        "Emergency"
+      ],
+      "existing_effect_kind": "survivalBoon",
+      "design_status": "concept_only",
+      "asset_path": "Essencebound/AbilityIcons/PhoenixAshes",
+      "icon_silhouette": "A phoenix feather curling around a healing ember",
+      "palette": {
+        "primary": "#FF6538",
+        "highlight": "#FEC46C",
+        "shadow": "#73263C"
+      },
+      "cast_vfx": "A single glowing feather lands on the selected ally",
+      "result_vfx": "When triggered, a gentle ash plume turns into a bright restorative spark",
+      "sound_direction": "Flame-soft renewal note"
+    },
+    {
+      "id": "Worldstep",
+      "name": "Worldstep",
+      "primary_category": "Mobility",
+      "primary_essence": "Dimension",
+      "tags": [
+        "Mobility",
+        "Teleport",
+        "Channeled",
+        "Exploration"
+      ],
+      "existing_effect_kind": "longTeleport",
+      "design_status": "concept_only",
+      "asset_path": "Essencebound/AbilityIcons/Worldstep",
+      "icon_silhouette": "A distant doorway framed by a winding star-road",
+      "palette": {
+        "primary": "#72CDB9",
+        "highlight": "#FCE1A4",
+        "shadow": "#3D6B81"
+      },
+      "cast_vfx": "A long spiral clock pathway traces toward the target cell",
+      "result_vfx": "After channeling, the caster folds into a tunnel of light at the destination",
+      "sound_direction": "Long rising warp hum"
+    },
+    {
+      "id": "FeralClaw",
+      "name": "Feral Claw",
+      "primary_category": "Attack",
+      "primary_essence": "Claw",
+      "tags": [
+        "Attack",
+        "Melee",
+        "Combo",
+        "Close Range"
+      ],
+      "existing_effect_kind": "meleeCombo",
+      "design_status": "concept_only",
+      "asset_path": "Essencebound/AbilityIcons/FeralClaw",
+      "icon_silhouette": "Four claw slashes arranged as ascending steps",
+      "palette": {
+        "primary": "#CE4C79",
+        "highlight": "#F6B3A5",
+        "shadow": "#541E51"
+      },
+      "cast_vfx": "A reddish claw aura charges over the caster's hands",
+      "result_vfx": "Each successive close hit draws another brighter claw streak",
+      "sound_direction": "Escalating claw swipes"
+    },
+    {
+      "id": "WardEcho",
+      "name": "Ward Echo",
+      "primary_category": "Defense",
+      "primary_essence": "Boundary",
+      "tags": [
+        "Defense",
+        "Control",
+        "Cleanse",
+        "Counter"
+      ],
+      "existing_effect_kind": "debuffReflect",
+      "design_status": "concept_only",
+      "asset_path": "Essencebound/AbilityIcons/WardEcho",
+      "icon_silhouette": "A shield reflecting a bent curse arrow outward",
+      "palette": {
+        "primary": "#69BACF",
+        "highlight": "#FFDCAB",
+        "shadow": "#345C7C"
+      },
+      "cast_vfx": "A pale mirror ring settles around the caster",
+      "result_vfx": "Hostile curse wisps reverse into outward-traveling blue sigils",
+      "sound_direction": "Reversed chime"
+    },
+    {
+      "id": "SandsOfStillness",
+      "name": "Sands of Stillness",
+      "primary_category": "Control",
+      "primary_essence": "Sand",
+      "tags": [
+        "Control",
+        "Area",
+        "Slow",
+        "Zone"
+      ],
+      "existing_effect_kind": "slowField",
+      "design_status": "concept_only",
+      "asset_path": "Essencebound/AbilityIcons/SandsOfStillness",
+      "icon_silhouette": "A stopped hourglass half buried in rippling dunes",
+      "palette": {
+        "primary": "#DCBB8A",
+        "highlight": "#F8E6BE",
+        "shadow": "#94785E"
+      },
+      "cast_vfx": "Golden sand forms a level circular boundary",
+      "result_vfx": "Gentle sand bands thicken around hostile feet within the zone",
+      "sound_direction": "Dry muffled drift"
+    },
+    {
+      "id": "TempestFlock",
+      "name": "Tempest Flock",
+      "primary_category": "Summoning",
+      "primary_essence": "Bird",
+      "tags": [
+        "Summoning",
+        "Decoy",
+        "Familiar",
+        "Group"
+      ],
+      "existing_effect_kind": "summonFlock",
+      "design_status": "concept_only",
+      "asset_path": "Essencebound/AbilityIcons/TempestFlock",
+      "icon_silhouette": "Three bird wings crossing a storm spiral",
+      "palette": {
+        "primary": "#91C4DF",
+        "highlight": "#FBE6BC",
+        "shadow": "#5B75A2"
+      },
+      "cast_vfx": "Three pale storm feathers circle the caster",
+      "result_vfx": "A small flock emerges in windswept light and then fights or distracts nearby foes",
+      "sound_direction": "Wingbeats with windchime"
+    }
+  ]
+}
