@@ -138,7 +138,7 @@ namespace Essencebound
                   state.GetEssenceRankDisplay(essenceName) +
                   "   •   " + state.GetAffinity(essenceName) +
                   "   •   needs " + state.GetRequiredSlotCount(essenceName) + " slots"
-                : (confluence ? "Complete a known three-essence recipe" : "Absorb an essence to unlock");
+                : (confluence ? "Absorb three different normal essences" : "Absorb an essence to unlock");
             Widgets.Label(new Rect(panel.x + 12f, panel.y + 56f, panel.width - 24f, 17f), countText);
 
             for (int index = 0; index < cap; index++)
