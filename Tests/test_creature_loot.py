@@ -20,6 +20,10 @@ assert all(0 < a < b < 1 for a, b in zip(essences, essences[1:]))
 assert all(0 < a < b < 1 for a, b in zip(stones, stones[1:]))
 assert essences[0] < 0.05 and stones[0] < 0.05, "Unranked loot should be extremely rare."
 assert essences[-1] < 1 and stones[-1] < 1, "No guaranteed drop."
+assert essences == [0.001, 0.01, 0.02, 0.04, 0.07, 0.12], "Rare essence rate changed unexpectedly"
+assert all(essence * 5 <= stone + 1e-9 for essence, stone in zip(essences, stones)), (
+    "Every creature rank should drop awakening stones at least five times as often as essences"
+)
 assert "Rand.Value < EssenceChance" in source
 assert "Rand.Value < StoneChance" in source
 assert "RankOf(__instance)" in source
