@@ -1,10 +1,10 @@
 {
   "project": "Essencebound",
-  "version": "0.16",
+  "version": "0.17",
   "target_game": "RimWorld 1.7",
   "requires_compilation": true,
   "compiled_assembly_included": false,
-  "playtested": true,
+  "playtested": false,
   "counts": {
     "recipe_rows": 366,
     "unique_recipe_triples": 364,
@@ -20,8 +20,8 @@
     "awakening_aspect_defs": 21,
     "original_awakening_stone_textures": 30,
     "generic_placeholder_stone_textures": 0,
-    "playable_power_defs": 24,
-    "timed_power_effect_defs": 14,
+    "playable_power_defs": 50,
+    "timed_power_effect_defs": 25,
     "min_awakening_slots_per_essence": 2,
     "max_awakening_slots_per_essence": 5,
     "default_awakening_slots": 12,
@@ -31,7 +31,8 @@
     "astral_tear_definitions": 1,
     "manifestation_marker_defs": 1,
     "manifestation_rank_tiers": 5,
-    "unique_starter_power_overrides": 12
+    "unique_starter_power_overrides": 38,
+    "ability_design_roster": 100
   },
   "unknown_confluence_handling": "no automatic confluence",
   "conflict_handling": "no automatic confluence",
@@ -40,11 +41,11 @@
   "awakening_implementation": "30 awakening stones; essence acquisition grants one innate starter per essence; stones fill remaining two slots",
   "awakening_stone_source_provenance": "12 community_listed_known_rarity; 3 community_listed_rarity_unknown; 15 mod_original_unverified; themes, affinities and imprint designs are mod-original",
   "artwork_status": "all_30_unique_png_sprites; editable_SVG_for_18_new",
-  "power_count": 24,
-  "gameplay_power_status": "v0.16 expanded to 24 powers with new distinct effects and actual-work progression; awaiting CI and in-game validation",
+  "power_count": 50,
+  "gameplay_power_status": "v0.17 50 playable powers of 100 minimum goal; 50 additional original designs documented but not implemented; pending CI and game testing",
   "stone_count": 30,
-  "power_effect_definitions": 14,
-  "release_notes": "Add 12 playable powers (24 total), 9 new effect mechanics, 6 status effects, and 12 thematic starter mappings while retaining existing power IDs and saves.",
+  "power_effect_definitions": 25,
+  "release_notes": "Add 26 playable powers with seven added effect families, eleven status effects, 26 new thematic starter mappings, and a 100-design roster (50 playable, 50 planned).",
   "progression": {
     "attributes": [
       "Power",
@@ -233,11 +234,37 @@
       "healWard"
     ],
     "new_status_defs": 6,
-    "total_powers": 24,
-    "total_status_defs": 14,
-    "starter_reassignments": 12,
+    "total_powers": 50,
+    "total_status_defs": 25,
+    "starter_reassignments": 38,
     "awakenings": "new powers integrate with existing aspect-matching weighted stone selection",
     "progression": "damage spells credit effective damage; restoration actual injury healing; cleansing only removed statuses; buffs and enemy control active duration",
     "save_compatibility": "existing ability IDs, rank fields and unlocked powers preserved; new starters only for newly absorbed essences"
+  },
+  "ability_plan": {
+    "minimum_playable_target": 100,
+    "current_playable": 50,
+    "remaining_to_implement": 50,
+    "documented_designs": 100,
+    "design_roster": "Data/ability_roster_100.csv",
+    "future_batches": {
+      "v0.18": 20,
+      "v0.19": 20,
+      "v0.20": 10
+    },
+    "target_semantics": "a planned design is not playable until it has a working effect implementation, XML def, valid awakening mappings and tests",
+    "this_version_added": 26,
+    "new_mechanics": [
+      "areaHeal",
+      "chainHeal",
+      "areaRegen",
+      "purgeHeal",
+      "damageAreaDebuff",
+      "leechPulse",
+      "execute"
+    ],
+    "new_timed_status_defs": 11,
+    "new_thematic_starter_assignments": 26,
+    "existing_v0_16_power_ids_preserved": true
   }
 }

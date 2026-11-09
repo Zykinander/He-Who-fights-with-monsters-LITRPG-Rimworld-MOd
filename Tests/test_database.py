@@ -117,8 +117,8 @@ print('PASS: all 30 icons unique path, 128px RGBA, transparent corners')
 
 # Release metadata must use the development-version scheme.
 metadata=ET.parse(ROOT/'About/About.xml').getroot()
-assert 'v0.16' in metadata.findtext('name')
-assert json.loads((ROOT/'manifest.json').read_text())['version']=='0.16'
+assert 'v0.17' in metadata.findtext('name')
+assert json.loads((ROOT/'manifest.json').read_text())['version']=='0.17'
 print('PASS: v0.13 metadata and inherited stack-count overlays')
 
 # Regression: each GitHub Actions run must have a unique versioned artifact name.
@@ -269,7 +269,7 @@ assert 'Scribe_Values.Look(ref magicDensity' in marker
 for setting in ('manifestationsEnabled','manifestationMonstersEnabled',
                 'manifestationFrequency','densityPreset'):
     assert setting in settings
-assert json.loads((ROOT/'manifest.json').read_text())['version']=='0.16'
+assert json.loads((ROOT/'manifest.json').read_text())['version']=='0.17'
 print('PASS: v0.13 saveable magic density, tears, monster tiering and XML')
 
 # v0.14: monster danger follows actual colony progression, not random base magic.
@@ -317,7 +317,7 @@ assert density_for(70000,5,9,5)==density_for(70000,5,9,5)
 assert density_for(0,0,0,0)>=0.05
 assert density_for(10**9,100,20,100)<=1
 manifest=json.loads((ROOT/'manifest.json').read_text())
-assert manifest['version']=='0.16'
+assert manifest['version']=='0.17'
 assert manifest['world_integration']['density_weights']['essence']==0.42
 print('PASS: v0.14 deterministic strength-based density scales up with colony strength')
 
@@ -349,10 +349,32 @@ assert 'EssenceMonsterRanks.GroupSize(monsterRank)' in world
 assert 'ebMonsterRankIndex' in mark
 assert 'Scribe_Values.Look(ref magicDensity' in mark
 meta=json.loads((ROOT/'manifest.json').read_text())
-assert meta['version']=='0.16'
+assert meta['version']=='0.17'
 assert meta['monster_progression']['ranks']==['Iron','Bronze','Silver','Gold','Diamond']
 assert all(sum(weights)==100 for weights in meta['monster_progression']['rank_weights_by_magic_density'].values())
 assert meta['requires_harmony']
 modxml=ET.parse(ROOT/'About/About.xml').getroot()
 assert modxml.findtext('modDependencies/li/packageId') == 'brrainz.harmony'
 print('PASS: v0.15 5 ranked manifestation tiers, persistent rank label, Harmony requirement')
+
+# v0.17 — milestone tracks 100 unique ability designs; 50 are executable now.
+import csv as _roster_csv
+with (ROOT/'Data/ability_roster_100.csv').open(encoding='utf-8',newline='') as _file:
+    _roster=list(_roster_csv.DictReader(_file))
+assert len(_roster)==100
+assert len({r['id'] for r in _roster})==100
+assert sum(r['status']=='playable' for r in _roster)==50
+assert sum(r['status']=='planned' for r in _roster)==50
+assert set(r['id'] for r in _roster if r['status']=='playable')=={
+    p['id'] for p in json.loads((ROOT/'Data/essence_powers.json').read_text())['powers']}
+assert all(r['primary_essence'] in {
+    e.findtext('defName').removeprefix('EB_')
+    for n in ['NormalEssences','ConfluenceEssences']
+    for e in definitions('1.7/Defs/EssenceDefs/'+n+'.xml')} for r in _roster)
+assert {r['target_milestone'] for r in _roster}=={'v0.17','v0.18','v0.19','v0.20'}
+assert sum(r['target_milestone']=='v0.18' for r in _roster)==20
+assert sum(r['target_milestone']=='v0.19' for r in _roster)==20
+assert sum(r['target_milestone']=='v0.20' for r in _roster)==10
+assert all(r['mechanic'] and r['source_status']=='original_mod_gameplay_design' for r in _roster)
+assert json.loads((ROOT/'manifest.json').read_text())['ability_plan']['minimum_playable_target']==100
+print('PASS: v0.17 100 unique themed designs, 50 playable and 50 future milestones')

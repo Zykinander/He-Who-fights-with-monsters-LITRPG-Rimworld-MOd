@@ -1,57 +1,78 @@
-# Essencebound v0.16 — Unique ability expansion
+# Essencebound v0.17 — halfway to 100 playable abilities
 
-**RimWorld 1.7 | Test release | Requires Harmony | Back up saves before upgrading**
+**RimWorld 1.7 | Requires Harmony | Test build; back up saves**
 
-## Twelve new playable powers (24 total)
+## The 100-ability target
 
-This update expands our previous 12 general power templates to **24 distinct abilities**. It adds **nine new effect mechanics** instead of just changing spell names. Every new power is available through the existing Awakening Stone aspect system and uses the same 2–5 ability slot limit per essence.
+We now have **50 playable abilities**, up from 24 in v0.16. Another **50 named, themed designs** are tracked in [Data/ability_roster_100.csv](Data/ability_roster_100.csv), for a total of **100 distinct planned ability identities**. The remaining 50 are **designs only**, not yet functional game abilities.
 
-| Power | Role | What it actually does | Essence theme |
-|---|---|---|---|
-| Cinder Nova | Area damage | Burning pulse hurts hostile pawns near caster | Volcano |
-| Thunder Chain | Chain attack | Hits the selected pawn plus up to two visible nearby hostiles | Thunderbird |
-| Blood Siphon | Damage + self-healing | Damages target and heals the caster by a portion of effective damage | Blood |
-| Life Bloom | Grouped injury healing | Spends a healing pool across several of one pawn's injuries | Fertile |
-| Renewal Seed | Heal over time | Repairs actual injuries once every 120 ticks during its duration | Renewal |
-| Grove Shelter | Group ward | Gives nearby nonhostile pawns temporary armor buffs | Tree |
-| Purging Wave | Area cleansing | Removes Essencebound debuffs from nearby nonhostile pawns | Pure |
-| Gravity Snare | Battlefield control | Slows a hostile pawn; progress follows active restraint | Vortex |
-| Corrosive Strike | Armor debuff | Damages target and temporarily lowers its armor | Blight |
-| Echo Burst | Splash attack | Damages selected pawn plus nearby hostile pawns at half magnitude | Echo |
-| Spirit Beacon | Support buff | Temporarily improves work speed and ranged accuracy | Mystic |
-| Moonlit Reprieve | Healing + ward | Repairs an injury and grants a protective buff | Moon |
+The roster records each ability's identity, target essence, role, intended mechanic and target milestone. It preserves the goal without inflating the current playable count or promising the designs are already implemented.
 
-These abilities are **original mod-gameplay interpretations**, not claims about specific canonical abilities from the books.
+| Stage | New playable powers planned | Cumulative playable target |
+|---|---:|---:|
+| v0.17 | 26 | **50** |
+| v0.18 | 20 | 70 |
+| v0.19 | 20 | 90 |
+| v0.20 | 10 | **100** |
 
-## Progression is tied to real results
+## The 26 new playable abilities
 
-New attack abilities earn XP from **effective damage dealt**. Life Bloom and Renewal Seed award XP only for **injuries actually healed**. Gravity Snare gains work while it genuinely affects a hostile pawn; Purging Wave only grants work for debuffs removed. Group wards grant periodic training while their benefits remain active. This carries forward the Iron 0–9 and per-essence synchronized rank requirements.
+| Ability | Example favored essence | Actual implementation |
+|---|---|---|
+| Inferno Lance | Fire / Sun | Longer-ranged focused flame damage |
+| Frost Halo | Ice / Cold | Circular hostile-only impact |
+| Quakebreaker | Earth | Main strike + visible nearby hostile splash |
+| Zephyr Ricochet | Wind | Chain attack with up to three secondary targets |
+| Umbral Leech | Dark / Void | Damage converted into existing injury healing |
+| Viper's Bite | Venom | Damage plus slowing / work-disrupting venom |
+| Shard Volley | Crystal | Shard chain attacks |
+| Briar Detonation | Plant | Burst damage + area entangling debuff |
+| Starfall | Star / Stellar | Focused celestial impact + splash |
+| Tidal Rebuke | Water | Short-range hostile shockwave |
+| Iron Bastion | Iron | Heavier armor with a modest speed cost |
+| Mirror Guard | Mirror | Evasive buff and light armor |
+| Dawn Chorus | Dawn | Group speed and work-support aura |
+| Verdant Sanctuary | Verdant | Area healing for up to four actually injured allies |
+| Ocean Renewal | Ocean | Gradual healing for up to four injured allies |
+| Cleansing Ray | Light | Single-target healing plus affliction removal |
+| Mercy Thread | Ministration | Chain healing across a selected pawn and two nearby allies |
+| Soul Harvest | Death | Hostile-only draining pulse that restores injuries |
+| Rune Bind | Rune | Hostile control debuff earning duration progress |
+| Omen Hex | Omen | Hostile accuracy / work disruption over time |
+| Temporal Haste | Time | Accelerates the caster's movement and work |
+| Battlefield Focus | Battlefield | Improves ranged accuracy and dodging |
+| Blade Tempest | Sword | Close-range hostile-only damage ring |
+| Nemesis Strike | Nemesis | Increased damage if the target has significant wounds |
+| Thread Snare | Thread | Impact plus slowing snare |
+| Glass Ward | Glass | Healing followed by protective armor |
 
-Rank resistance from v0.15 still applies to damage through the shared RimWorld damage pipeline; a Diamond defender continues taking **99% less damage from unranked attackers**.
+**Seven new effect families** support group healing, chain healing, group regeneration, cleansing with healing, area damage with status effects, life-draining area pulses, and injury-aware finishing strikes. Their XP tracking follows the actual work performed. Buff and control effects continue granting work during meaningful active duration.
 
-## How to obtain the new powers
+## Access and compatibility
 
-For new characters, 12 selected essences now grant one of these new abilities as their **innate starter** when first absorbed (for example, Volcano → Cinder Nova, Blood → Blood Siphon, Renewal → Renewal Seed). The other 214 essence starter mappings are unchanged.
+Every new power has compatible Awakening Stone aspects and favored essence themes, allowing the existing 30 awakening stones to select them. Twenty-six selected essences have new innate starter mappings when first absorbed. Previously awakened or innate powers in old saves are **not replaced**.
 
-All 24 powers can also appear as compatible Awakening Stone choices using their associated aspects. An essence favors powers aligned with its theme, but the stone/aspect system still allows unusual combinations.
+The existing Iron 0–9 rank progression, rank synchronization, random Power/Speed/Spirit/Recovery attributes, 2–5 slots per essence, Gold/Diamond resistance, and astral manifestations remain.
 
-**Existing saves:** Already awakened powers, cooldowns, affinity rolls and ranks are not rewritten. An essence absorbed *before* this release retains its original innate power. Only newly absorbed essences get the revised starter mapping.
+Power icons currently reuse existing awakening-stone artwork. This milestone prioritizes gameplay and reliable power definitions over unique sprite animations.
 
-## Testing checklist
+## Gameplay test checklist
 
-1. On a temporary colony, absorb **Volcano**, **Blood**, **Renewal** or **Vortex** on new Essencebound pawns and check the new innate powers appear.
-2. Use Thunder Chain against a target surrounded by other hostiles; verify the secondary hits and actual damage XP.
-3. Test Life Bloom on a pawn with multiple wounds; the total healing should not exceed its configured budget.
-4. Apply Renewal Seed to an injured pawn; watch wounds recover over time, with XP awarded only for healing.
-5. Apply Grove Shelter and Spirit Beacon to allies. Confirm the hediff and periodic training persist across a save/reload.
-6. Use Purging Wave on allies affected by Chilled, Static, Gravity Snare or Corroded Armor. No afflicted pawn means no cleanse XP.
-7. Apply Gravity Snare to a hostile and verify it slows that pawn and grants duration-based work. Try it on an ally; the spell should be rejected.
-8. Use Blood Siphon with and without wounds on the caster. Effective damage earns attack XP, and healing is limited to existing injuries.
-9. Check that Stone awakenings now select from the wider pool, and that existing v0.15 powers still cast normally.
-10. Examine Player.log for new missing-def, targeting, or save/load errors.
+1. On a disposable colony, try newly absorbing Sun, Earth, Dawn, Verdant, Ocean, Nemesis, Rune and Glass. Confirm each receives its matching new starter.
+2. Cast **Verdant Sanctuary** with multiple injured allies. Verify total progress equals effective healing and that casting near healthy allies fails without spending cooldown.
+3. Cast **Ocean Renewal** with multiple injured allies. Verify regeneration ticks and resulting XP after saving and reloading.
+4. Cast **Cleansing Ray** on a pawn with Venom Haze, Rune Bind or an older Essencebound debuff. Verify cleansing and healing work.
+5. Cast **Briar Detonation** on a pack of hostiles, and test that blocked secondary targets do not take area damage.
+6. Cast **Soul Harvest** with wounded caster, then with healthy caster. It may earn damage XP with no restorative effect, but never creates new wounds.
+7. Apply **Rune Bind** or **Omen Hex** to a hostile. Confirm the status and progress while active; casting on an ally should be rejected.
+8. Confirm previously learned v0.15/v0.16 powers, attribute rolls and ranks are unchanged after load.
+9. Test Gold and Diamond rank mitigation on new powers (all damage flows through RimWorld's pawn damage pipeline).
+10. Check Player.log for missing XML def names, statuses, or runtime exceptions and share any new errors.
 
-## Known limitations
+## Roster integrity
 
-New powers initially reuse existing awakening-stone icon art; unique sprites and animations are future work. Area effects select valid nearby pawns rather than producing visible projectile animations. The first wave favors breadth and mechanical diversity; we can add lore-specific abilities and distinctive animation passes next.
+The repository runs tests ensuring all 100 identities are unique, all 50 playable entries exist in the active XML/JSON catalog, and the 50 future entries are clearly labelled as planned. It also verifies all new abilities' status definitions, aspects, starter mappings and work-handling code.
 
-This is an experimental compiled release, not yet tested in-game. Install only one copy of `Mods/Essencebound`, with Harmony enabled first.
+**Not a claim of canon accuracy.** Names, mechanics and future ability ideas are original mod-development designs inspired by the setting.
+
+A separate v0.17 draft is based on the current **v0.16 development branch**, so PR #11 should be merged first, then the v0.17 PR, to preserve all 24 existing v0.16 powers.
