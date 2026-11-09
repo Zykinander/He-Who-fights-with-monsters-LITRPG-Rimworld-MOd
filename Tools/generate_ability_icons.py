@@ -426,8 +426,19 @@ def render_sigil(entry):
     light=color(entry["palette"]["highlight"])
     shadow=color(entry["palette"]["shadow"])
     subject=Image.new("RGBA",(SIZE,SIZE),(0,0,0,0))
-    draw_motif(ImageDraw.Draw(subject,"RGBA"),
-               pick_motif(entry),primary,light,shadow,seed)
+    draw=ImageDraw.Draw(subject,"RGBA")
+    draw_motif(draw,pick_motif(entry),primary,light,shadow,seed)
+    # Twenty-four tiny outer runes encode a unique, readable signature.
+    # Motif relatives can share a symbol, but never the same finished sigil.
+    for j in range(24):
+        angle=(j*math.tau/24)-math.pi/2
+        radius=52
+        x=64+radius*math.cos(angle)
+        y=64+radius*math.sin(angle)
+        on=bool(seed & (1 << j))
+        tint=(*light[:3],180) if on else (*primary[:3],75)
+        dot=2.0 if on else 0.95
+        ellipse(draw,(x-dot,y-dot,x+dot,y+dot),tint)
     glow=subject.filter(ImageFilter.GaussianBlur(3*SCALE))
     glow.putalpha(glow.getchannel("A").point(lambda v: int(v*.48)))
     return Image.alpha_composite(glow,subject).resize(
