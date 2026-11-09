@@ -13,8 +13,10 @@ namespace Essencebound
     public static class EssenceCreatureLoot
     {
         // Indices 0..5 correspond to Unranked, Iron, Bronze, Silver, Gold, Diamond.
+        // Essence crystals are much rarer than awakening stones at every tier:
+        // approximately 5-10 times less likely from ordinary creature deaths.
         private static readonly float[] EssenceChances =
-            { 0.02f, 0.16f, 0.27f, 0.40f, 0.58f, 0.78f };
+            { 0.001f, 0.01f, 0.02f, 0.04f, 0.07f, 0.12f };
         private static readonly float[] StoneChances =
             { 0.01f, 0.08f, 0.16f, 0.26f, 0.40f, 0.60f };
 
