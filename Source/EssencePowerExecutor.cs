@@ -316,7 +316,13 @@ namespace Essencebound
                 "EB_Debuff_RuneBind", "EB_Debuff_OmenHex",
                 "EB_Debuff_ThreadSnare",
                 "EB_Debuff_PredatorMark",
-                "EB_Debuff_CrystalPrison"
+                "EB_Debuff_CrystalPrison",
+                "EB_Debuff_Webbed",
+                "EB_Debuff_ShatteredArmor",
+                "EB_Debuff_SerpentCoil",
+                "EB_Debuff_FeyGlamour",
+                "EB_Debuff_CorruptingSeed",
+                "EB_Debuff_Stillness"
             };
 
         private static int CleanseTarget(Pawn target)

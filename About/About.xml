@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='utf-8'?>
 <ModMetaData>
-  <name>Essencebound v0.18 — RimWorld 1.7</name>
+  <name>Essencebound v0.19 — RimWorld 1.7</name>
   <author>Essencebound Project</author>
   <packageId>essencebound.core.prototype</packageId>
   <supportedVersions>
@@ -12,5 +12,5 @@
       <displayName>Harmony</displayName>
     </li>
   </modDependencies>
-  <description>Essencebound v0.18: 70 playable powers toward the 100-ability goal, including delayed blasts, damage reflection, healing fields, teleportation, summoned companions, temporary barriers and area defenses. Requires Harmony. Experimental RimWorld 1.7 mod; use a test save.</description>
+  <description>Essencebound v0.19: all 100 planned Essencebound abilities now have gameplay implementations. Adds thirty more powers including familiar summons, gravity wells, reaction wards, combat combos, regeneration sanctuaries and channeled teleportation. Requires Harmony. Experimental RimWorld 1.7 mod; verify in a test save.</description>
 </ModMetaData>
