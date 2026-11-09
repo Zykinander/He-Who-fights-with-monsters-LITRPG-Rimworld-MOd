@@ -10,6 +10,10 @@ All **100 playable powers** have a main gameplay category (Attack, Defense, Heal
 
 The same tags appear in the ability's in-game tooltip. These are informational labels only: existing awakening aspect compatibility, other favored essences, power IDs and save files are unchanged.
 
+## Unique art concepts for all 100 abilities
+
+[The complete visual design guide](ABILITY_VISUAL_DESIGN_GUIDE.md) now specifies a **unique icon silhouette, color palette, cast animation, effect animation and sound direction for every one of the 100 powers**. These are design briefs only: the 100 finished icon PNGs and animation assets have **not yet** been created or installed. Existing awakening-stone placeholder art remains active until the assets are produced.
+
 ## All thirty new powers
 
 | Ability | Mechanic and progression |

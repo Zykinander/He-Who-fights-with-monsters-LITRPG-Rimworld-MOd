@@ -311,5 +311,16 @@
     "source": "Data/essence_powers.json",
     "human_readable_catalog": "ABILITY_CATALOG_BY_ESSENCE_AND_TAGS.md",
     "gameplay_effect": "presentation_only; keeps awakening and save eligibility unchanged"
+  },
+  "visual_design_plan": {
+    "visual_guide": "ABILITY_VISUAL_DESIGN_GUIDE.md",
+    "structured_data": "Data/ability_visual_designs.json",
+    "ability_concepts": 100,
+    "finished_unique_icon_assets": 0,
+    "finished_unique_vfx_assets": 0,
+    "status": "concept_art_direction_only",
+    "icon_target": "transparent 128x128 PNG with 64x64 and 32x32 previews",
+    "future_asset_directory": "1.7/Textures/Essencebound/AbilityIcons",
+    "gameplay_untouched": true
   }
 }
