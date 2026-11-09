@@ -34,16 +34,19 @@ Ranked monsters retain their rank when they die, so the same corpse remains elig
 
 **Any pawn with an Essencebound major rank**, including colonists and astral manifestations, takes less damage from **lower-ranked pawns**. This applies to RimWorld pawn-instigated attacks and Essencebound ability damage, not only custom spells.
 
-| Defending rank advantage | Incoming damage relative to same-rank attack |
-|---|---:|
-| Equal rank or defender lower | 100% |
-| 1 rank higher | 75% |
-| 2 ranks higher | 56.25% |
-| 3 ranks higher | 42.2% |
-| 4 ranks higher | 31.6% |
-| 5 ranks higher (Diamond vs unranked) | 25% |
+### Intensified rank-resistance balance update
 
-Each rank gap multiplies the incoming damage by 0.75, with a minimum 25% damage floor. **Unranked attackers count as below Iron**, so even Iron essences have a defensive benefit against ordinary unranked pawns. A colonist's defensive rank is their **lowest ranked owned essence**, matching the profile's overall tier. Higher-ranked attackers do not lose damage merely for targeting a lower-ranked pawn.
+| Defender rank | Damage taken from unranked attacker | Reduction |
+|---|---:|---:|
+| Iron | 80% | 20% |
+| Bronze | 60% | 40% |
+| Silver | 40% | 60% |
+| Gold | **20%** | **80%** |
+| Diamond | **1%** | **99%** |
+
+These are the exact damage multipliers against an **unranked attacker**. For attacks between ranked pawns, damage is the ratio of the defender's baseline to the attacker's baseline. Examples: Iron attacking Bronze deals 75% damage; Silver attacking Gold deals 50%; Gold attacking Diamond deals only 5%; and Iron attacking Diamond deals 1.25%. **An attacker at the same or a higher rank gets no rank-based penalty.**
+
+This rule applies to all pawn-instigated hits through the existing Harmony damage hook. A colonist's defensive rank is their **lowest-ranked owned essence**, matching the overall rank in the profile. Ordinary armor and other health mechanics still apply after the rank-based damage adjustment. Diamond's extreme protection is deliberate and may require further gameplay tuning.
 
 Damage from fires, weather and other hazards without a pawn instigator remains unchanged. Healing and recovery are not treated as attacks.
 
@@ -55,7 +58,7 @@ RimWorld 1.7 needs the **Harmony** mod (package ID `brrainz.harmony`) enabled be
 
 1. Enable Harmony first, load a temporary test colony, and confirm v0.15 appears in the mod list.
 2. Generate multiple tears at Low/Normal/High magic density and observe the rank in each spawn alert and the monster's Health tab.
-3. Check that an unranked colonist attacks an Iron monster for ~75% the expected damage before ordinary armor calculations.
+3. Check that an unranked colonist hits an Iron monster for ~80% normal damage, a Gold monster for ~20%, and a Diamond monster for ~1%, before ordinary armor calculations.
 4. Check an Iron essence user fighting a Bronze monster for ~75% damage and a Bronze user fighting an Iron monster for normal damage.
 5. Reverse the matchup: Bronze defenders should resist Iron attackers; Iron defenders should not resist Bronze attackers.
 6. Check damage to ranked colonists from unranked enemies (even ordinary animals).

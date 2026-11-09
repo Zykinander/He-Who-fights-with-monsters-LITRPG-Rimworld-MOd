@@ -197,8 +197,10 @@ assert 'dinfo.SetAmount(amount)' in rank
 assert 'EssenceRankCombat.RankOf(attacker)' in rank
 assert 'EssenceRankCombat.RankOf(__instance)' in rank
 assert 'essenceUser.OwnedEssenceNames' in rank
-assert 'Math.Pow(0.75f, gap)' in rank
-assert 'Math.Max(0.25f' in rank
+assert 'public static float UnrankedDamageFactor(int targetRank)' in rank
+assert 'case 3: return 0.20f;' in rank
+assert 'case 4: return 0.01f;' in rank
+assert 'defenderBaseline / Math.Max(0.01f, attackerBaseline)' in rank
 assert 'dinfo.Instigator is Pawn attacker' in rank
 assert 'manifestedAttacker != null' in rank
 assert 'MonsterOutgoingFactor(manifestedAttacker.rankIndex)' in rank
@@ -206,19 +208,34 @@ assert 'new Harmony("essencebound.core.prototype.rankedcombat")' in settings
 assert 'PatchAll(typeof(Patch_EssenceRankIncomingDamage).Assembly)' in settings
 assert 'Lib.Harmony' in project and 'ExcludeAssets="runtime"' in project
 
+rank_baseline={-1:1.,0:.8,1:.6,2:.4,3:.2,4:.01}
 def mitigation(defender,attacker):
     if defender < 0 or attacker >= defender: return 1.
-    return max(.25,.75**min(5,defender-attacker))
-assert [round(mitigation(rank,rank-1),5) for rank in range(5)] == [.75]*5
-assert abs(mitigation(2,0)-.5625)<1e-8
-assert abs(mitigation(4,0)-.31640625)<1e-8
-assert mitigation(4,-1)==.25
-assert mitigation(0,-1)==.75
+    return max(.01,min(1.,rank_baseline[defender]/rank_baseline[attacker]))
+# Exact requested benchmarks, plus monotonicity and ranked matchups.
+for defender,damage_fraction in [(0,.80),(1,.60),(2,.40),(3,.20),(4,.01)]:
+    assert abs(mitigation(defender,-1)-damage_fraction)<1e-8
+assert abs(mitigation(1,0)-.75)<1e-8  # Iron -> Bronze
+assert abs(mitigation(2,0)-.50)<1e-8  # Iron -> Silver
+assert abs(mitigation(3,2)-.50)<1e-8  # Silver -> Gold
+assert abs(mitigation(4,3)-.05)<1e-8  # Gold -> Diamond
+assert abs(mitigation(4,0)-.0125)<1e-8 # Iron -> Diamond
 assert mitigation(-1,0)==1
 assert mitigation(0,4)==1
 assert mitigation(2,2)==1
+for defender in range(5):
+    for attacker in range(-1,5):
+        damage=mitigation(defender,attacker)
+        assert .01-1e-8 <= damage <= 1
+        if attacker < defender:
+            assert damage < 1
+        else:
+            assert damage == 1
+# The real game hook must still operate on all pawn instigators, including
+# pawns attacking Essencebound users and astral monster pawns.
+assert 'amount *= EssenceRankCombat.LowerRankDamageFactor(targetRank, attackerRank);' in rank
 monster=(ROOT/'Source/EssenceMonsterRanks.cs').read_text()
 for rankMult in ('1.15f','1.35f','1.60f','2.00f'):
     assert rankMult in rank
 assert 'return rank >= 3 ? 2 : 1;' in monster
-print('PASS: v0.15 universal rank gap mitigation, unranked attackers, monster scaling')
+print('PASS: v0.15 intensified rank defense: Gold -80%, Diamond -99% vs unranked')
