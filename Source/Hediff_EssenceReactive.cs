@@ -81,7 +81,7 @@ namespace Essencebound
                 {
                     var negatives = pawn.health.hediffSet.hediffs
                         .OfType<Hediff_EssenceTimed>()
-                        .Where(h => h != this && h.def.isBad &&
+                        .Where(h => h.def.isBad &&
                             h.def.defName.StartsWith("EB_Debuff_"))
                         .Take(2).ToList();
                     foreach (var negative in negatives)

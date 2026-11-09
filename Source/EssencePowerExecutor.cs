@@ -62,6 +62,33 @@ namespace Essencebound
 
             switch (power.effectKind)
             {
+                case "restorationZone":
+                case "familiar":
+                case "summonFlock":
+                case "concealment":
+                case "swapTeleport":
+                case "piercingSound":
+                case "radiantPurge":
+                case "conditionalBuff":
+                case "sustainedLeech":
+                case "armorBreak":
+                case "harvestAura":
+                case "linkedDefense":
+                case "counterStance":
+                case "grapple":
+                case "emergencyHeal":
+                case "attributeShift":
+                case "confusion":
+                case "mobileWard":
+                case "orbitStrike":
+                case "sustainedDebuff":
+                case "storedTrigger":
+                case "teamLink":
+                case "survivalBoon":
+                case "meleeCombo":
+                case "debuffReflect":
+                    return EssenceHundredAbilities.CastPawn(caster, power, target, slot,
+                        powerScale, recoveryScale, buffDuration, out reason, out work);
                 case "delayedBlast":
                 case "reflect":
                 case "healingZone":
@@ -386,6 +413,24 @@ namespace Essencebound
             float amount, out float work)
         {
             return Damage(caster, target, damageName, amount, out _, out work);
+        }
+
+        internal static bool FieldPiercingDamage(Pawn caster, Pawn target,
+            string damageName, float amount, float armorPen, out float work)
+        {
+            work = 0f;
+            var def = DefDatabase<DamageDef>.GetNamedSilentFail(damageName);
+            if (def == null || caster == null || target == null || target.Dead)
+                return false;
+            float before = target.health.hediffSet.hediffs
+                .OfType<Hediff_Injury>().Sum(i => i.Severity);
+            var result = target.TakeDamage(new DamageInfo(def, amount, armorPen,
+                -1f, caster));
+            work = Math.Max(0f, result.totalDamageDealt);
+            if (work <= 0f)
+                work = Math.Max(0f, target.health.hediffSet.hediffs
+                    .OfType<Hediff_Injury>().Sum(i => i.Severity) - before);
+            return true;
         }
 
         internal static bool FieldHealing(Pawn target, float amount, out float work)

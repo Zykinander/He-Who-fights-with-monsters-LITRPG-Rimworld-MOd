@@ -13,6 +13,13 @@ namespace Essencebound
     /// </summary>
     public static class EssenceHundredAbilities
     {
+        public static bool IsSpatial(string kind)
+        {
+            return kind == "webZone" || kind == "slowField" ||
+                kind == "pullZone" || kind == "groundWard" ||
+                kind == "longTeleport";
+        }
+
         public static bool CastPawn(Pawn caster, EssencePowerDef power, Pawn target,
             EssenceAbilitySlot slot, float powerScale, float recoveryScale,
             int duration, out string message, out float work)
