@@ -1,13 +1,51 @@
 id,name,effect,target,range_cells,magnitude,cooldown_ticks,duration_ticks,status_hediff,compatible_aspects,favored_essences,source_status
-EmberBolt,Ember Bolt,damage,hostile,10,6,450,0,,Assault; Spell; Reach; Reaper,Fire; Sun; Elemental; Volcano,original_mod_gameplay_design
-FrostShard,Frost Shard,damageDebuff,hostile,9,4,540,360,EB_Debuff_Chilled,Control; Assault; Spell; Reach; Stars,Ice; Water,original_mod_gameplay_design
-StormSpark,Storm Spark,damageDebuff,hostile,8,5,570,240,EB_Debuff_Static,Spell; Precision; Surge; Stars; Assault,Lightning; Storm; Magic; Wind,original_mod_gameplay_design
-VerdantMend,Verdant Mend,heal,ally,7,6,900,0,,Recovery; Growth; Familiar; Adventure,Life; Plant; Renewal; Growth; Tree,original_mod_gameplay_design
-GuardianWard,Guardian Ward,buff,ally,8,0,840,900,EB_Buff_GuardianWard,Ward; Ritual; Preparation; Counter; Aura,Shield; Magic; Light; Pure,original_mod_gameplay_design
+EmberBolt,Ember Bolt,damage,pawn,10,9,450,0,,Assault; Spell; Reach; Reaper,Fire; Sun; Elemental; Volcano,original_mod_gameplay_design
+FrostShard,Frost Shard,damageDebuff,pawn,9,4,540,360,EB_Debuff_Chilled,Control; Assault; Spell; Reach; Stars,Ice; Water,original_mod_gameplay_design
+StormSpark,Storm Spark,damageDebuff,pawn,8,5,570,240,EB_Debuff_Static,Spell; Precision; Surge; Stars; Assault,Lightning; Storm; Magic; Wind,original_mod_gameplay_design
+VerdantMend,Verdant Mend,heal,pawn,7,6,900,0,,Recovery; Growth; Familiar; Adventure,Life; Plant; Renewal; Growth; Tree,original_mod_gameplay_design
+GuardianWard,Guardian Ward,buff,pawn,8,0,840,900,EB_Buff_GuardianWard,Ward; Ritual; Preparation; Counter; Aura,Shield; Magic; Light; Pure,original_mod_gameplay_design
 StoneSkin,Stone Skin,buff,self,0,0,900,900,EB_Buff_StoneSkin,Ward; Counter; Growth; Preparation; Aura,Earth; Iron; Might; Shield,original_mod_gameplay_design
 SwiftStep,Swift Step,buff,self,0,0,720,660,EB_Buff_SwiftStep,Mobility; Surge; Adventure; Exploration; Reach,Swift; Wind; Wing; Balance; Bird,original_mod_gameplay_design
 MistVeil,Mist Veil,buff,self,0,0,900,720,EB_Buff_MistVeil,Veil; Mobility; Exploration; Counter,Dark; Cloud; Smoke,original_mod_gameplay_design
 KeenSight,Keen Sight,buff,self,0,0,900,900,EB_Buff_KeenSight,Precision; Exploration; Preparation; Judgement; Familiar; Reach,Eye; Vision; Bird,original_mod_gameplay_design
-RallyingSurge,Rallying Surge,buff,ally,8,0,900,600,EB_Buff_RallyingSurge,Surge; Aura; Ritual; Familiar; Adventure; Stars,Might; Life; Renewal; Balance; Pure,original_mod_gameplay_design
-PurifyingTouch,Purifying Touch,cleanse,ally,6,0,780,0,,Recovery; Judgement; Reaper; Ritual,Pure; Life; Light; Renewal,original_mod_gameplay_design
+RallyingSurge,Rallying Surge,buff,pawn,8,0,900,600,EB_Buff_RallyingSurge,Surge; Aura; Ritual; Familiar; Adventure; Stars,Might; Life; Renewal; Balance; Pure,original_mod_gameplay_design
+PurifyingTouch,Purifying Touch,cleanse,pawn,6,0,780,0,,Recovery; Judgement; Reaper; Ritual,Pure; Life; Light; Renewal,original_mod_gameplay_design
 ForcePulse,Force Pulse,pulse,self,3,3,720,0,,Control; Assault; Counter; Reaper; Judgement,Might; Force; Potent; Magic,original_mod_gameplay_design
+CinderNova,Cinder Nova,pulse,self,4,5,900,0,,Assault; Spell; Surge; Reaper,Volcano; Sun; Fire,original_mod_gameplay_design
+ThunderChain,Thunder Chain,chain,pawn,10,5,690,0,,Spell; Reach; Surge; Precision,Lightning; Thunderbird; Storm,original_mod_gameplay_design
+BloodSiphon,Blood Siphon,drain,pawn,8,6,780,0,,Reaper; Assault; Spell; Recovery,Blood; Hunger; Feast,original_mod_gameplay_design
+LifeBloom,Life Bloom,healGroup,pawn,8,9,1080,0,,Recovery; Growth; Ritual; Familiar,Life; Fertile; Growth,original_mod_gameplay_design
+RenewalSeed,Renewal Seed,regeneration,pawn,8,1.1,1500,1200,EB_Buff_RenewalSeed,Recovery; Growth; Familiar; Preparation,Renewal; Tree; Plant,original_mod_gameplay_design
+GroveShelter,Grove Shelter,auraBuff,self,0,0,1200,900,EB_Buff_GroveShelter,Aura; Ward; Growth; Ritual,Tree; Guardian; Plant,original_mod_gameplay_design
+PurgingWave,Purging Wave,areaCleanse,self,0,0,960,0,,Recovery; Ritual; Aura; Judgement,Pure; Serene; Light,original_mod_gameplay_design
+GravitySnare,Gravity Snare,debuff,pawn,9,0,1020,900,EB_Debuff_GravitySnare,Control; Spell; Reach; Counter,Vortex; Boundary; Prison,original_mod_gameplay_design
+CorrosiveStrike,Corrosive Strike,damageDebuff,pawn,9,5,690,720,EB_Debuff_CorrodedArmor,Assault; Reaper; Control; Spell,Blight; Venom; Corrupt,original_mod_gameplay_design
+EchoBurst,Echo Burst,splash,pawn,9,6,840,0,,Assault; Spell; Surge; Reach,Echo; Resonating; Force,original_mod_gameplay_design
+SpiritBeacon,Spirit Beacon,buff,pawn,9,0,1200,1200,EB_Buff_SpiritBeacon,Preparation; Familiar; Stars; Ritual,Mystic; Magic; Knowledge,original_mod_gameplay_design
+MoonlitReprieve,Moonlit Reprieve,healWard,pawn,7,4,1140,900,EB_Buff_MoonlitReprieve,Recovery; Ward; Ritual; Familiar,Moon; Serene; Tranquil,original_mod_gameplay_design
+InfernoLance,Inferno Lance,damage,pawn,13,11,780,0,,Assault; Spell; Reach; Precision,Fire; Sun; Volcano,original_mod_gameplay_design
+FrostHalo,Frost Halo,pulse,self,4,5,900,0,,Control; Spell; Counter; Aura,Ice; Cold; Water,original_mod_gameplay_design
+Quakebreaker,Quakebreaker,splash,pawn,8,8,930,0,,Assault; Control; Spell; Reaper,Earth; Monolith; Behemoth,original_mod_gameplay_design
+ZephyrRicochet,Zephyr Ricochet,chain,pawn,11,5,630,0,,Reach; Surge; Spell; Precision,Wind; Wing; Bird,original_mod_gameplay_design
+UmbralLeech,Umbral Leech,drain,pawn,9,7,900,0,,Reaper; Spell; Recovery; Veil,Dark; Void; Twilight,original_mod_gameplay_design
+VipersBite,Viper's Bite,damageDebuff,pawn,7,6,720,780,EB_Debuff_VenomHaze,Assault; Reaper; Control; Spell,Venom; Snake; Serpent,original_mod_gameplay_design
+ShardVolley,Shard Volley,chain,pawn,11,7,840,0,,Assault; Spell; Precision; Reach,Crystal; Glass; Refracting,original_mod_gameplay_design
+BriarDetonation,Briar Detonation,damageAreaDebuff,pawn,8,5,1080,750,EB_Debuff_BriarBind,Growth; Assault; Control; Spell,Plant; Tree; Growth,original_mod_gameplay_design
+Starfall,Starfall,splash,pawn,12,10,1200,0,,Stars; Spell; Reaper; Reach,Star; Stellar; Nebula,original_mod_gameplay_design
+TidalRebuke,Tidal Rebuke,pulse,self,5,4.5,840,0,,Control; Surge; Counter; Aura,Water; Ocean; Deep,original_mod_gameplay_design
+IronBastion,Iron Bastion,buff,self,0,0,1320,1200,EB_Buff_IronBastion,Ward; Preparation; Counter; Growth,Iron; Armour; Fortress,original_mod_gameplay_design
+MirrorGuard,Mirror Guard,buff,self,0,0,1140,960,EB_Buff_MirrorGuard,Ward; Veil; Counter; Preparation,Mirror; Refracting; Shimmer,original_mod_gameplay_design
+DawnChorus,Dawn Chorus,auraBuff,self,0,0,1440,960,EB_Buff_DawnChorus,Aura; Ritual; Stars; Familiar,Dawn; Sun; Light,original_mod_gameplay_design
+VerdantSanctuary,Verdant Sanctuary,areaHeal,self,0,4.5,1260,0,,Recovery; Growth; Aura; Familiar,Verdant; Life; Growth,original_mod_gameplay_design
+OceanRenewal,Ocean Renewal,areaRegen,self,0,0.8,1800,1200,EB_Buff_RenewalSeed,Recovery; Ritual; Aura; Growth,Ocean; Water; Fish,original_mod_gameplay_design
+CleansingRay,Cleansing Ray,purgeHeal,pawn,9,4,960,0,,Recovery; Judgement; Spell; Ritual,Light; Pure; Tranquil,original_mod_gameplay_design
+MercyThread,Mercy Thread,chainHeal,pawn,9,5.5,1260,0,,Recovery; Familiar; Reach; Growth,Ministration; Life; Renewal,original_mod_gameplay_design
+SoulHarvest,Soul Harvest,leechPulse,self,4,3.2,1200,0,,Reaper; Spell; Aura; Recovery,Death; Hunger; Undeath,original_mod_gameplay_design
+RuneBind,Rune Bind,debuff,pawn,10,0,1050,960,EB_Debuff_RuneBind,Control; Ritual; Spell; Judgement,Rune; Magic; Scribe,original_mod_gameplay_design
+OmenHex,Omen Hex,debuff,pawn,10,0,1050,900,EB_Debuff_OmenHex,Control; Veil; Spell; Stars,Omen; Doom; Malign,original_mod_gameplay_design
+TemporalHaste,Temporal Haste,buff,self,0,0,1140,720,EB_Buff_TemporalHaste,Mobility; Surge; Preparation; Adventure,Time; Swift; Action,original_mod_gameplay_design
+BattlefieldFocus,Battlefield Focus,buff,self,0,0,1140,900,EB_Buff_BattlefieldFocus,Precision; Preparation; Assault; Judgement,Battlefield; Arsenal; Resolute,original_mod_gameplay_design
+BladeTempest,Blade Tempest,pulse,self,4,6.5,1020,0,,Assault; Reaper; Counter; Surge,Sword; Whip; Onslaught,original_mod_gameplay_design
+NemesisStrike,Nemesis Strike,execute,pawn,8,7.5,900,0,,Reaper; Assault; Precision; Judgement,Nemesis; Bounty; Wrath,original_mod_gameplay_design
+ThreadSnare,Thread Snare,damageDebuff,pawn,9,4.2,780,720,EB_Debuff_ThreadSnare,Control; Spell; Reach; Veil,Thread; Weave; Spider,original_mod_gameplay_design
+GlassWard,Glass Ward,healWard,pawn,8,3.5,1110,870,EB_Buff_GlassWard,Ward; Recovery; Preparation; Ritual,Glass; Shield; Crystal,original_mod_gameplay_design

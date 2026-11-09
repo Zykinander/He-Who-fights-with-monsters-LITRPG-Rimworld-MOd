@@ -1,8 +1,8 @@
 {
-  "version": "0.16",
+  "version": "0.17",
   "target": "RimWorld 1.7",
-  "count": 24,
-  "note": "All effects are original mod-design templates, not book canon.",
+  "count": 50,
+  "note": "50 playable of at least 100 planned. Mod-original designs, not verified novel canon.",
   "powers": [
     {
       "id": "EmberBolt",
@@ -676,6 +676,723 @@
         "Tranquil"
       ],
       "icon": "Essencebound/AwakeningStones/StoneGrace",
+      "source_status": "original_mod_gameplay_design"
+    },
+    {
+      "id": "InfernoLance",
+      "defName": "EB_Power_InfernoLance",
+      "name": "Inferno Lance",
+      "description": "Focused long-range flame strikes a single pawn.",
+      "effect": "damage",
+      "target": "pawn",
+      "range_cells": 13,
+      "magnitude": 11,
+      "cooldown_ticks": 780,
+      "duration_ticks": 0,
+      "status_hediff": "",
+      "damage_def": "Flame",
+      "compatible_aspects": [
+        "Assault",
+        "Spell",
+        "Reach",
+        "Precision"
+      ],
+      "favored_essences": [
+        "Fire",
+        "Sun",
+        "Volcano"
+      ],
+      "icon": "Essencebound/AwakeningStones/StoneFire",
+      "source_status": "original_mod_gameplay_design"
+    },
+    {
+      "id": "FrostHalo",
+      "defName": "EB_Power_FrostHalo",
+      "name": "Frost Halo",
+      "description": "A freezing impact ring strikes hostile pawns near the caster.",
+      "effect": "pulse",
+      "target": "self",
+      "range_cells": 4,
+      "magnitude": 5,
+      "cooldown_ticks": 900,
+      "duration_ticks": 0,
+      "status_hediff": "",
+      "damage_def": "Blunt",
+      "compatible_aspects": [
+        "Control",
+        "Spell",
+        "Counter",
+        "Aura"
+      ],
+      "favored_essences": [
+        "Ice",
+        "Cold",
+        "Water"
+      ],
+      "icon": "Essencebound/AwakeningStones/StoneWater",
+      "source_status": "original_mod_gameplay_design"
+    },
+    {
+      "id": "Quakebreaker",
+      "defName": "EB_Power_Quakebreaker",
+      "name": "Quakebreaker",
+      "description": "A targeted ground strike sends weaker tremors to visible nearby enemies.",
+      "effect": "splash",
+      "target": "pawn",
+      "range_cells": 8,
+      "magnitude": 8,
+      "cooldown_ticks": 930,
+      "duration_ticks": 0,
+      "status_hediff": "",
+      "damage_def": "Blunt",
+      "area_radius": 3.5,
+      "compatible_aspects": [
+        "Assault",
+        "Control",
+        "Spell",
+        "Reaper"
+      ],
+      "favored_essences": [
+        "Earth",
+        "Monolith",
+        "Behemoth"
+      ],
+      "icon": "Essencebound/AwakeningStones/StoneStone",
+      "source_status": "original_mod_gameplay_design"
+    },
+    {
+      "id": "ZephyrRicochet",
+      "defName": "EB_Power_ZephyrRicochet",
+      "name": "Zephyr Ricochet",
+      "description": "Air blades jump from one pawn to three visible nearby hostiles.",
+      "effect": "chain",
+      "target": "pawn",
+      "range_cells": 11,
+      "magnitude": 5,
+      "cooldown_ticks": 630,
+      "duration_ticks": 0,
+      "status_hediff": "",
+      "damage_def": "Blunt",
+      "area_radius": 5,
+      "max_extra_targets": 3,
+      "compatible_aspects": [
+        "Reach",
+        "Surge",
+        "Spell",
+        "Precision"
+      ],
+      "favored_essences": [
+        "Wind",
+        "Wing",
+        "Bird"
+      ],
+      "icon": "Essencebound/AwakeningStones/StoneWind",
+      "source_status": "original_mod_gameplay_design"
+    },
+    {
+      "id": "UmbralLeech",
+      "defName": "EB_Power_UmbralLeech",
+      "name": "Umbral Leech",
+      "description": "Drain vigor from a pawn and repair some of the caster's real injuries.",
+      "effect": "drain",
+      "target": "pawn",
+      "range_cells": 9,
+      "magnitude": 7,
+      "cooldown_ticks": 900,
+      "duration_ticks": 0,
+      "status_hediff": "",
+      "damage_def": "Blunt",
+      "compatible_aspects": [
+        "Reaper",
+        "Spell",
+        "Recovery",
+        "Veil"
+      ],
+      "favored_essences": [
+        "Dark",
+        "Void",
+        "Twilight"
+      ],
+      "icon": "Essencebound/AwakeningStones/StoneMist",
+      "source_status": "original_mod_gameplay_design"
+    },
+    {
+      "id": "VipersBite",
+      "defName": "EB_Power_VipersBite",
+      "name": "Viper's Bite",
+      "description": "Damage a pawn and leave a slowing venom haze.",
+      "effect": "damageDebuff",
+      "target": "pawn",
+      "range_cells": 7,
+      "magnitude": 6,
+      "cooldown_ticks": 720,
+      "duration_ticks": 780,
+      "status_hediff": "EB_Debuff_VenomHaze",
+      "damage_def": "Blunt",
+      "compatible_aspects": [
+        "Assault",
+        "Reaper",
+        "Control",
+        "Spell"
+      ],
+      "favored_essences": [
+        "Venom",
+        "Snake",
+        "Serpent"
+      ],
+      "icon": "Essencebound/AwakeningStones/StoneChain",
+      "source_status": "original_mod_gameplay_design"
+    },
+    {
+      "id": "ShardVolley",
+      "defName": "EB_Power_ShardVolley",
+      "name": "Shard Volley",
+      "description": "Hardened crystal shards ricochet toward three visible nearby hostiles.",
+      "effect": "chain",
+      "target": "pawn",
+      "range_cells": 11,
+      "magnitude": 7,
+      "cooldown_ticks": 840,
+      "duration_ticks": 0,
+      "status_hediff": "",
+      "damage_def": "Blunt",
+      "area_radius": 3.5,
+      "max_extra_targets": 3,
+      "compatible_aspects": [
+        "Assault",
+        "Spell",
+        "Precision",
+        "Reach"
+      ],
+      "favored_essences": [
+        "Crystal",
+        "Glass",
+        "Refracting"
+      ],
+      "icon": "Essencebound/AwakeningStones/StoneFocus",
+      "source_status": "original_mod_gameplay_design"
+    },
+    {
+      "id": "BriarDetonation",
+      "defName": "EB_Power_BriarDetonation",
+      "name": "Briar Detonation",
+      "description": "Explosive briars damage a selected pawn and entangle nearby visible hostiles.",
+      "effect": "damageAreaDebuff",
+      "target": "pawn",
+      "range_cells": 8,
+      "magnitude": 5,
+      "cooldown_ticks": 1080,
+      "duration_ticks": 750,
+      "status_hediff": "EB_Debuff_BriarBind",
+      "damage_def": "Blunt",
+      "area_radius": 3.5,
+      "max_extra_targets": 4,
+      "compatible_aspects": [
+        "Growth",
+        "Assault",
+        "Control",
+        "Spell"
+      ],
+      "favored_essences": [
+        "Plant",
+        "Tree",
+        "Growth"
+      ],
+      "icon": "Essencebound/AwakeningStones/StonePlant",
+      "source_status": "original_mod_gameplay_design"
+    },
+    {
+      "id": "Starfall",
+      "defName": "EB_Power_Starfall",
+      "name": "Starfall",
+      "description": "Celestial impact strikes a selected pawn and concusses nearby hostiles.",
+      "effect": "splash",
+      "target": "pawn",
+      "range_cells": 12,
+      "magnitude": 10,
+      "cooldown_ticks": 1200,
+      "duration_ticks": 0,
+      "status_hediff": "",
+      "damage_def": "Blunt",
+      "area_radius": 3,
+      "compatible_aspects": [
+        "Stars",
+        "Spell",
+        "Reaper",
+        "Reach"
+      ],
+      "favored_essences": [
+        "Star",
+        "Stellar",
+        "Nebula"
+      ],
+      "icon": "Essencebound/AwakeningStones/StoneFocus",
+      "source_status": "original_mod_gameplay_design"
+    },
+    {
+      "id": "TidalRebuke",
+      "defName": "EB_Power_TidalRebuke",
+      "name": "Tidal Rebuke",
+      "description": "A short-range tidal shockwave affects hostile pawns near the caster.",
+      "effect": "pulse",
+      "target": "self",
+      "range_cells": 5,
+      "magnitude": 4.5,
+      "cooldown_ticks": 840,
+      "duration_ticks": 0,
+      "status_hediff": "",
+      "damage_def": "Blunt",
+      "compatible_aspects": [
+        "Control",
+        "Surge",
+        "Counter",
+        "Aura"
+      ],
+      "favored_essences": [
+        "Water",
+        "Ocean",
+        "Deep"
+      ],
+      "icon": "Essencebound/AwakeningStones/StoneWater",
+      "source_status": "original_mod_gameplay_design"
+    },
+    {
+      "id": "IronBastion",
+      "defName": "EB_Power_IronBastion",
+      "name": "Iron Bastion",
+      "description": "Harden the caster's armor at the cost of some mobility.",
+      "effect": "buff",
+      "target": "self",
+      "range_cells": 0,
+      "magnitude": 0,
+      "cooldown_ticks": 1320,
+      "duration_ticks": 1200,
+      "status_hediff": "EB_Buff_IronBastion",
+      "damage_def": "",
+      "compatible_aspects": [
+        "Ward",
+        "Preparation",
+        "Counter",
+        "Growth"
+      ],
+      "favored_essences": [
+        "Iron",
+        "Armour",
+        "Fortress"
+      ],
+      "icon": "Essencebound/AwakeningStones/StoneStone",
+      "source_status": "original_mod_gameplay_design"
+    },
+    {
+      "id": "MirrorGuard",
+      "defName": "EB_Power_MirrorGuard",
+      "name": "Mirror Guard",
+      "description": "Distort reflections around the caster for better dodge and light armor.",
+      "effect": "buff",
+      "target": "self",
+      "range_cells": 0,
+      "magnitude": 0,
+      "cooldown_ticks": 1140,
+      "duration_ticks": 960,
+      "status_hediff": "EB_Buff_MirrorGuard",
+      "damage_def": "",
+      "compatible_aspects": [
+        "Ward",
+        "Veil",
+        "Counter",
+        "Preparation"
+      ],
+      "favored_essences": [
+        "Mirror",
+        "Refracting",
+        "Shimmer"
+      ],
+      "icon": "Essencebound/AwakeningStones/StoneMist",
+      "source_status": "original_mod_gameplay_design"
+    },
+    {
+      "id": "DawnChorus",
+      "defName": "EB_Power_DawnChorus",
+      "name": "Dawn Chorus",
+      "description": "Boost nearby nonhostile pawns with a shared movement and work focus.",
+      "effect": "auraBuff",
+      "target": "self",
+      "range_cells": 0,
+      "magnitude": 0,
+      "cooldown_ticks": 1440,
+      "duration_ticks": 960,
+      "status_hediff": "EB_Buff_DawnChorus",
+      "damage_def": "",
+      "area_radius": 6,
+      "compatible_aspects": [
+        "Aura",
+        "Ritual",
+        "Stars",
+        "Familiar"
+      ],
+      "favored_essences": [
+        "Dawn",
+        "Sun",
+        "Light"
+      ],
+      "icon": "Essencebound/AwakeningStones/StoneGrace",
+      "source_status": "original_mod_gameplay_design"
+    },
+    {
+      "id": "VerdantSanctuary",
+      "defName": "EB_Power_VerdantSanctuary",
+      "name": "Verdant Sanctuary",
+      "description": "Restore real injuries on up to four nearby wounded allies.",
+      "effect": "areaHeal",
+      "target": "self",
+      "range_cells": 0,
+      "magnitude": 4.5,
+      "cooldown_ticks": 1260,
+      "duration_ticks": 0,
+      "status_hediff": "",
+      "damage_def": "",
+      "area_radius": 6,
+      "max_extra_targets": 3,
+      "compatible_aspects": [
+        "Recovery",
+        "Growth",
+        "Aura",
+        "Familiar"
+      ],
+      "favored_essences": [
+        "Verdant",
+        "Life",
+        "Growth"
+      ],
+      "icon": "Essencebound/AwakeningStones/StonePlant",
+      "source_status": "original_mod_gameplay_design"
+    },
+    {
+      "id": "OceanRenewal",
+      "defName": "EB_Power_OceanRenewal",
+      "name": "Ocean Renewal",
+      "description": "Apply gradual regeneration to up to four nearby wounded allies.",
+      "effect": "areaRegen",
+      "target": "self",
+      "range_cells": 0,
+      "magnitude": 0.8,
+      "cooldown_ticks": 1800,
+      "duration_ticks": 1200,
+      "status_hediff": "EB_Buff_RenewalSeed",
+      "damage_def": "",
+      "area_radius": 5,
+      "max_extra_targets": 3,
+      "compatible_aspects": [
+        "Recovery",
+        "Ritual",
+        "Aura",
+        "Growth"
+      ],
+      "favored_essences": [
+        "Ocean",
+        "Water",
+        "Fish"
+      ],
+      "icon": "Essencebound/AwakeningStones/StoneWater",
+      "source_status": "original_mod_gameplay_design"
+    },
+    {
+      "id": "CleansingRay",
+      "defName": "EB_Power_CleansingRay",
+      "name": "Cleansing Ray",
+      "description": "Heal a selected pawn and remove temporary Essencebound afflictions.",
+      "effect": "purgeHeal",
+      "target": "pawn",
+      "range_cells": 9,
+      "magnitude": 4,
+      "cooldown_ticks": 960,
+      "duration_ticks": 0,
+      "status_hediff": "",
+      "damage_def": "",
+      "compatible_aspects": [
+        "Recovery",
+        "Judgement",
+        "Spell",
+        "Ritual"
+      ],
+      "favored_essences": [
+        "Light",
+        "Pure",
+        "Tranquil"
+      ],
+      "icon": "Essencebound/AwakeningStones/StoneLight",
+      "source_status": "original_mod_gameplay_design"
+    },
+    {
+      "id": "MercyThread",
+      "defName": "EB_Power_MercyThread",
+      "name": "Mercy Thread",
+      "description": "Heal a chosen pawn and then two nearby wounded allies at lesser strength.",
+      "effect": "chainHeal",
+      "target": "pawn",
+      "range_cells": 9,
+      "magnitude": 5.5,
+      "cooldown_ticks": 1260,
+      "duration_ticks": 0,
+      "status_hediff": "",
+      "damage_def": "",
+      "area_radius": 5,
+      "max_extra_targets": 2,
+      "compatible_aspects": [
+        "Recovery",
+        "Familiar",
+        "Reach",
+        "Growth"
+      ],
+      "favored_essences": [
+        "Ministration",
+        "Life",
+        "Renewal"
+      ],
+      "icon": "Essencebound/AwakeningStones/StoneGrace",
+      "source_status": "original_mod_gameplay_design"
+    },
+    {
+      "id": "SoulHarvest",
+      "defName": "EB_Power_SoulHarvest",
+      "name": "Soul Harvest",
+      "description": "Drain nearby visible hostiles and restore some of the caster's injuries.",
+      "effect": "leechPulse",
+      "target": "self",
+      "range_cells": 4,
+      "magnitude": 3.2,
+      "cooldown_ticks": 1200,
+      "duration_ticks": 0,
+      "status_hediff": "",
+      "damage_def": "Blunt",
+      "compatible_aspects": [
+        "Reaper",
+        "Spell",
+        "Aura",
+        "Recovery"
+      ],
+      "favored_essences": [
+        "Death",
+        "Hunger",
+        "Undeath"
+      ],
+      "icon": "Essencebound/AwakeningStones/StoneChain",
+      "source_status": "original_mod_gameplay_design"
+    },
+    {
+      "id": "RuneBind",
+      "defName": "EB_Power_RuneBind",
+      "name": "Rune Bind",
+      "description": "Bind a hostile pawn's movement with a temporary controlling rune.",
+      "effect": "debuff",
+      "target": "pawn",
+      "range_cells": 10,
+      "magnitude": 0,
+      "cooldown_ticks": 1050,
+      "duration_ticks": 960,
+      "status_hediff": "EB_Debuff_RuneBind",
+      "damage_def": "",
+      "compatible_aspects": [
+        "Control",
+        "Ritual",
+        "Spell",
+        "Judgement"
+      ],
+      "favored_essences": [
+        "Rune",
+        "Magic",
+        "Scribe"
+      ],
+      "icon": "Essencebound/AwakeningStones/StoneFocus",
+      "source_status": "original_mod_gameplay_design"
+    },
+    {
+      "id": "OmenHex",
+      "defName": "EB_Power_OmenHex",
+      "name": "Omen Hex",
+      "description": "Hex a hostile pawn to impair shooting accuracy and work speed.",
+      "effect": "debuff",
+      "target": "pawn",
+      "range_cells": 10,
+      "magnitude": 0,
+      "cooldown_ticks": 1050,
+      "duration_ticks": 900,
+      "status_hediff": "EB_Debuff_OmenHex",
+      "damage_def": "",
+      "compatible_aspects": [
+        "Control",
+        "Veil",
+        "Spell",
+        "Stars"
+      ],
+      "favored_essences": [
+        "Omen",
+        "Doom",
+        "Malign"
+      ],
+      "icon": "Essencebound/AwakeningStones/StoneMist",
+      "source_status": "original_mod_gameplay_design"
+    },
+    {
+      "id": "TemporalHaste",
+      "defName": "EB_Power_TemporalHaste",
+      "name": "Temporal Haste",
+      "description": "Speed the caster's movement and work briefly.",
+      "effect": "buff",
+      "target": "self",
+      "range_cells": 0,
+      "magnitude": 0,
+      "cooldown_ticks": 1140,
+      "duration_ticks": 720,
+      "status_hediff": "EB_Buff_TemporalHaste",
+      "damage_def": "",
+      "compatible_aspects": [
+        "Mobility",
+        "Surge",
+        "Preparation",
+        "Adventure"
+      ],
+      "favored_essences": [
+        "Time",
+        "Swift",
+        "Action"
+      ],
+      "icon": "Essencebound/AwakeningStones/StoneWind",
+      "source_status": "original_mod_gameplay_design"
+    },
+    {
+      "id": "BattlefieldFocus",
+      "defName": "EB_Power_BattlefieldFocus",
+      "name": "Battlefield Focus",
+      "description": "Improve ranged accuracy and evasive movement through combat focus.",
+      "effect": "buff",
+      "target": "self",
+      "range_cells": 0,
+      "magnitude": 0,
+      "cooldown_ticks": 1140,
+      "duration_ticks": 900,
+      "status_hediff": "EB_Buff_BattlefieldFocus",
+      "damage_def": "",
+      "compatible_aspects": [
+        "Precision",
+        "Preparation",
+        "Assault",
+        "Judgement"
+      ],
+      "favored_essences": [
+        "Battlefield",
+        "Arsenal",
+        "Resolute"
+      ],
+      "icon": "Essencebound/AwakeningStones/StoneFocus",
+      "source_status": "original_mod_gameplay_design"
+    },
+    {
+      "id": "BladeTempest",
+      "defName": "EB_Power_BladeTempest",
+      "name": "Blade Tempest",
+      "description": "Emit a close-range ring of cutting essence pressure against hostiles.",
+      "effect": "pulse",
+      "target": "self",
+      "range_cells": 4,
+      "magnitude": 6.5,
+      "cooldown_ticks": 1020,
+      "duration_ticks": 0,
+      "status_hediff": "",
+      "damage_def": "Blunt",
+      "compatible_aspects": [
+        "Assault",
+        "Reaper",
+        "Counter",
+        "Surge"
+      ],
+      "favored_essences": [
+        "Sword",
+        "Whip",
+        "Onslaught"
+      ],
+      "icon": "Essencebound/AwakeningStones/StoneChain",
+      "source_status": "original_mod_gameplay_design"
+    },
+    {
+      "id": "NemesisStrike",
+      "defName": "EB_Power_NemesisStrike",
+      "name": "Nemesis Strike",
+      "description": "Strike a pawn with greater force when it already has significant injuries.",
+      "effect": "execute",
+      "target": "pawn",
+      "range_cells": 8,
+      "magnitude": 7.5,
+      "cooldown_ticks": 900,
+      "duration_ticks": 0,
+      "status_hediff": "",
+      "damage_def": "Blunt",
+      "compatible_aspects": [
+        "Reaper",
+        "Assault",
+        "Precision",
+        "Judgement"
+      ],
+      "favored_essences": [
+        "Nemesis",
+        "Bounty",
+        "Wrath"
+      ],
+      "icon": "Essencebound/AwakeningStones/StoneChain",
+      "source_status": "original_mod_gameplay_design"
+    },
+    {
+      "id": "ThreadSnare",
+      "defName": "EB_Power_ThreadSnare",
+      "name": "Thread Snare",
+      "description": "Strike a pawn with tangled essence that briefly slows its movement.",
+      "effect": "damageDebuff",
+      "target": "pawn",
+      "range_cells": 9,
+      "magnitude": 4.2,
+      "cooldown_ticks": 780,
+      "duration_ticks": 720,
+      "status_hediff": "EB_Debuff_ThreadSnare",
+      "damage_def": "Blunt",
+      "compatible_aspects": [
+        "Control",
+        "Spell",
+        "Reach",
+        "Veil"
+      ],
+      "favored_essences": [
+        "Thread",
+        "Weave",
+        "Spider"
+      ],
+      "icon": "Essencebound/AwakeningStones/StoneChain",
+      "source_status": "original_mod_gameplay_design"
+    },
+    {
+      "id": "GlassWard",
+      "defName": "EB_Power_GlassWard",
+      "name": "Glass Ward",
+      "description": "Mend a pawn and surround it with protective crystalline armor.",
+      "effect": "healWard",
+      "target": "pawn",
+      "range_cells": 8,
+      "magnitude": 3.5,
+      "cooldown_ticks": 1110,
+      "duration_ticks": 870,
+      "status_hediff": "EB_Buff_GlassWard",
+      "damage_def": "",
+      "compatible_aspects": [
+        "Ward",
+        "Recovery",
+        "Preparation",
+        "Ritual"
+      ],
+      "favored_essences": [
+        "Glass",
+        "Shield",
+        "Crystal"
+      ],
+      "icon": "Essencebound/AwakeningStones/StoneShield",
       "source_status": "original_mod_gameplay_design"
     }
   ]

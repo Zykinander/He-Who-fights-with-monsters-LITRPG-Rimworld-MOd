@@ -76,7 +76,7 @@
     <defName>EB_Starter_Battlefield</defName>
     <label>battlefield starter ability</label>
     <essence>EB_Battlefield</essence>
-    <power>EB_Power_ForcePulse</power>
+    <power>EB_Power_BattlefieldFocus</power>
   </Essencebound.EssenceStarterPowerDef>
   <Essencebound.EssenceStarterPowerDef>
     <defName>EB_Starter_Bear</defName>
@@ -202,7 +202,7 @@
     <defName>EB_Starter_Cold</defName>
     <label>cold starter ability</label>
     <essence>EB_Cold</essence>
-    <power>EB_Power_FrostShard</power>
+    <power>EB_Power_FrostHalo</power>
   </Essencebound.EssenceStarterPowerDef>
   <Essencebound.EssenceStarterPowerDef>
     <defName>EB_Starter_Corrupt</defName>
@@ -214,7 +214,7 @@
     <defName>EB_Starter_Crystal</defName>
     <label>crystal starter ability</label>
     <essence>EB_Crystal</essence>
-    <power>EB_Power_StoneSkin</power>
+    <power>EB_Power_ShardVolley</power>
   </Essencebound.EssenceStarterPowerDef>
   <Essencebound.EssenceStarterPowerDef>
     <defName>EB_Starter_Cyborg</defName>
@@ -244,13 +244,13 @@
     <defName>EB_Starter_Dawn</defName>
     <label>dawn starter ability</label>
     <essence>EB_Dawn</essence>
-    <power>EB_Power_EmberBolt</power>
+    <power>EB_Power_DawnChorus</power>
   </Essencebound.EssenceStarterPowerDef>
   <Essencebound.EssenceStarterPowerDef>
     <defName>EB_Starter_Death</defName>
     <label>death starter ability</label>
     <essence>EB_Death</essence>
-    <power>EB_Power_ForcePulse</power>
+    <power>EB_Power_SoulHarvest</power>
   </Essencebound.EssenceStarterPowerDef>
   <Essencebound.EssenceStarterPowerDef>
     <defName>EB_Starter_Deep</defName>
@@ -322,7 +322,7 @@
     <defName>EB_Starter_Earth</defName>
     <label>earth starter ability</label>
     <essence>EB_Earth</essence>
-    <power>EB_Power_StoneSkin</power>
+    <power>EB_Power_Quakebreaker</power>
   </Essencebound.EssenceStarterPowerDef>
   <Essencebound.EssenceStarterPowerDef>
     <defName>EB_Starter_Echo</defName>
@@ -472,7 +472,7 @@
     <defName>EB_Starter_Glass</defName>
     <label>glass starter ability</label>
     <essence>EB_Glass</essence>
-    <power>EB_Power_StoneSkin</power>
+    <power>EB_Power_GlassWard</power>
   </Essencebound.EssenceStarterPowerDef>
   <Essencebound.EssenceStarterPowerDef>
     <defName>EB_Starter_Glimeron</defName>
@@ -586,7 +586,7 @@
     <defName>EB_Starter_Iron</defName>
     <label>iron starter ability</label>
     <essence>EB_Iron</essence>
-    <power>EB_Power_StoneSkin</power>
+    <power>EB_Power_IronBastion</power>
   </Essencebound.EssenceStarterPowerDef>
   <Essencebound.EssenceStarterPowerDef>
     <defName>EB_Starter_Juggernaut</defName>
@@ -634,7 +634,7 @@
     <defName>EB_Starter_Light</defName>
     <label>light starter ability</label>
     <essence>EB_Light</essence>
-    <power>EB_Power_PurifyingTouch</power>
+    <power>EB_Power_CleansingRay</power>
   </Essencebound.EssenceStarterPowerDef>
   <Essencebound.EssenceStarterPowerDef>
     <defName>EB_Starter_Lightning</defName>
@@ -706,7 +706,7 @@
     <defName>EB_Starter_Ministration</defName>
     <label>ministration starter ability</label>
     <essence>EB_Ministration</essence>
-    <power>EB_Power_VerdantMend</power>
+    <power>EB_Power_MercyThread</power>
   </Essencebound.EssenceStarterPowerDef>
   <Essencebound.EssenceStarterPowerDef>
     <defName>EB_Starter_Minotaur</defName>
@@ -724,7 +724,7 @@
     <defName>EB_Starter_Mirror</defName>
     <label>mirror starter ability</label>
     <essence>EB_Mirror</essence>
-    <power>EB_Power_MistVeil</power>
+    <power>EB_Power_MirrorGuard</power>
   </Essencebound.EssenceStarterPowerDef>
   <Essencebound.EssenceStarterPowerDef>
     <defName>EB_Starter_Monolith</defName>
@@ -772,7 +772,7 @@
     <defName>EB_Starter_Nemesis</defName>
     <label>nemesis starter ability</label>
     <essence>EB_Nemesis</essence>
-    <power>EB_Power_ForcePulse</power>
+    <power>EB_Power_NemesisStrike</power>
   </Essencebound.EssenceStarterPowerDef>
   <Essencebound.EssenceStarterPowerDef>
     <defName>EB_Starter_Network</defName>
@@ -790,7 +790,7 @@
     <defName>EB_Starter_Ocean</defName>
     <label>ocean starter ability</label>
     <essence>EB_Ocean</essence>
-    <power>EB_Power_FrostShard</power>
+    <power>EB_Power_OceanRenewal</power>
   </Essencebound.EssenceStarterPowerDef>
   <Essencebound.EssenceStarterPowerDef>
     <defName>EB_Starter_Octopus</defName>
@@ -802,7 +802,7 @@
     <defName>EB_Starter_Omen</defName>
     <label>omen starter ability</label>
     <essence>EB_Omen</essence>
-    <power>EB_Power_MistVeil</power>
+    <power>EB_Power_OmenHex</power>
   </Essencebound.EssenceStarterPowerDef>
   <Essencebound.EssenceStarterPowerDef>
     <defName>EB_Starter_Onslaught</defName>
@@ -838,7 +838,7 @@
     <defName>EB_Starter_Plant</defName>
     <label>plant starter ability</label>
     <essence>EB_Plant</essence>
-    <power>EB_Power_VerdantMend</power>
+    <power>EB_Power_BriarDetonation</power>
   </Essencebound.EssenceStarterPowerDef>
   <Essencebound.EssenceStarterPowerDef>
     <defName>EB_Starter_Potent</defName>
@@ -922,7 +922,7 @@
     <defName>EB_Starter_Rune</defName>
     <label>rune starter ability</label>
     <essence>EB_Rune</essence>
-    <power>EB_Power_KeenSight</power>
+    <power>EB_Power_RuneBind</power>
   </Essencebound.EssenceStarterPowerDef>
   <Essencebound.EssenceStarterPowerDef>
     <defName>EB_Starter_Sacrifice</defName>
@@ -1090,7 +1090,7 @@
     <defName>EB_Starter_Stellar</defName>
     <label>stellar starter ability</label>
     <essence>EB_Stellar</essence>
-    <power>EB_Power_StormSpark</power>
+    <power>EB_Power_Starfall</power>
   </Essencebound.EssenceStarterPowerDef>
   <Essencebound.EssenceStarterPowerDef>
     <defName>EB_Starter_Storm</defName>
@@ -1108,7 +1108,7 @@
     <defName>EB_Starter_Sun</defName>
     <label>sun starter ability</label>
     <essence>EB_Sun</essence>
-    <power>EB_Power_EmberBolt</power>
+    <power>EB_Power_InfernoLance</power>
   </Essencebound.EssenceStarterPowerDef>
   <Essencebound.EssenceStarterPowerDef>
     <defName>EB_Starter_Swarm</defName>
@@ -1126,7 +1126,7 @@
     <defName>EB_Starter_Sword</defName>
     <label>sword starter ability</label>
     <essence>EB_Sword</essence>
-    <power>EB_Power_ForcePulse</power>
+    <power>EB_Power_BladeTempest</power>
   </Essencebound.EssenceStarterPowerDef>
   <Essencebound.EssenceStarterPowerDef>
     <defName>EB_Starter_Talisman</defName>
@@ -1150,7 +1150,7 @@
     <defName>EB_Starter_Thread</defName>
     <label>thread starter ability</label>
     <essence>EB_Thread</essence>
-    <power>EB_Power_GuardianWard</power>
+    <power>EB_Power_ThreadSnare</power>
   </Essencebound.EssenceStarterPowerDef>
   <Essencebound.EssenceStarterPowerDef>
     <defName>EB_Starter_Thunderbird</defName>
@@ -1162,7 +1162,7 @@
     <defName>EB_Starter_Time</defName>
     <label>time starter ability</label>
     <essence>EB_Time</essence>
-    <power>EB_Power_SwiftStep</power>
+    <power>EB_Power_TemporalHaste</power>
   </Essencebound.EssenceStarterPowerDef>
   <Essencebound.EssenceStarterPowerDef>
     <defName>EB_Starter_Tranquil</defName>
@@ -1240,13 +1240,13 @@
     <defName>EB_Starter_Venom</defName>
     <label>venom starter ability</label>
     <essence>EB_Venom</essence>
-    <power>EB_Power_ForcePulse</power>
+    <power>EB_Power_VipersBite</power>
   </Essencebound.EssenceStarterPowerDef>
   <Essencebound.EssenceStarterPowerDef>
     <defName>EB_Starter_Verdant</defName>
     <label>verdant starter ability</label>
     <essence>EB_Verdant</essence>
-    <power>EB_Power_VerdantMend</power>
+    <power>EB_Power_VerdantSanctuary</power>
   </Essencebound.EssenceStarterPowerDef>
   <Essencebound.EssenceStarterPowerDef>
     <defName>EB_Starter_Vessel</defName>
@@ -1270,7 +1270,7 @@
     <defName>EB_Starter_Void</defName>
     <label>void starter ability</label>
     <essence>EB_Void</essence>
-    <power>EB_Power_MistVeil</power>
+    <power>EB_Power_UmbralLeech</power>
   </Essencebound.EssenceStarterPowerDef>
   <Essencebound.EssenceStarterPowerDef>
     <defName>EB_Starter_Volcano</defName>
@@ -1294,7 +1294,7 @@
     <defName>EB_Starter_Water</defName>
     <label>water starter ability</label>
     <essence>EB_Water</essence>
-    <power>EB_Power_FrostShard</power>
+    <power>EB_Power_TidalRebuke</power>
   </Essencebound.EssenceStarterPowerDef>
   <Essencebound.EssenceStarterPowerDef>
     <defName>EB_Starter_Weave</defName>
@@ -1324,7 +1324,7 @@
     <defName>EB_Starter_Wind</defName>
     <label>wind starter ability</label>
     <essence>EB_Wind</essence>
-    <power>EB_Power_StormSpark</power>
+    <power>EB_Power_ZephyrRicochet</power>
   </Essencebound.EssenceStarterPowerDef>
   <Essencebound.EssenceStarterPowerDef>
     <defName>EB_Starter_Wing</defName>
