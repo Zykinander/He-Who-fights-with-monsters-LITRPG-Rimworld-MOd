@@ -2,6 +2,11 @@
 
 **RimWorld 1.7 | Harmony required | Experimental: use a backup or test save.**
 
+## v0.21 development: every unique triple forms a confluence
+
+Three **different** normal essences now always grant a fourth, playable confluence essence. The 364 catalogued combinations are preserved (including deterministic handling of two disputed triples); other combinations choose a deterministic, theme-informed result from the 101 existing confluences. The third-essence absorption menu previews the outcome, and older saves missing a confluence can recover theirs when loaded. Generated syntheses are original mod content, not verified novel recipes. See [confluence rules](CONFLUENCE_RULES.md) for the exact behavior and validation details.
+
+
 We skipped the intermediate 90-power milestone. The active XML/C# catalog now contains **100 distinct castable essence powers**, compared with 70 in v0.18. Every original entry in `Data/ability_roster_100.csv` is marked **playable**; none remain merely planned. Every power has a valid effect handler, a usable existing icon, aspect-compatible awakening selection and a saved power identifier. This is an **automated-build-tested milestone**, not a guarantee that every mechanic has been exercised in the game.
 
 ## Ability categories, essence associations and tags
