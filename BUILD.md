@@ -15,3 +15,8 @@ The repository includes C# source, XML definitions, and textures. It does not in
 5. Copy `About/`, `1.7/`, and `LoadFolders.xml` into `Mods/Essencebound/`. Back up saves and test on a temporary colony.
 
 The game requires RimWorld 1.7; the mod development version is v0.19. A successful build is not a substitute for in-game validation.
+
+## First-pass ability art
+
+To build from a raw repository checkout, install Pillow with `python -m pip install Pillow`, then run `python Tools/generate_ability_icons.py` before compiling or packaging. This creates the 100 `AbilityIcons/*.png` and 100 `AbilitySigils/*.png` files under `1.7/Textures/Essencebound/`. Verify with `python Tests/test_generated_ability_art.py`. GitHub Actions generates and includes these automatically. Download the **full Actions build ZIP** for the actual artwork; the Git repository does not store generated binary PNGs.
+

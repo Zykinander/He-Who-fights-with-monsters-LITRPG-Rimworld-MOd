@@ -405,6 +405,7 @@ namespace Essencebound
                 : EssencePowerExecutor.Apply(pawn, power, target.Thing as Pawn,
                     slot, out message, out realWork);
             if (!applied) return false;
+            EssenceAbilityVisuals.OnSuccessfulCast(pawn, power, target);
             float credited = realWork > 0f ?
                 AddAbilityWork(slot.essenceDefName, slot.index, realWork) : 0f;
             message += "  Progress +" + credited.ToString("0.#") +

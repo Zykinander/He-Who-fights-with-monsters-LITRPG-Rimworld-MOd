@@ -18,11 +18,14 @@ jobs:
           python-version: '3.12'
       - name: Install Python image dependencies
         run: python -m pip install Pillow
+      - name: Generate 100 ability icons and sigils
+        run: python Tools/generate_ability_icons.py
       - name: Verify data and assets
         run: |
           python Tests/test_database.py
           python Tests/test_powers.py
           python Tests/test_ability_visual_designs.py
+          python Tests/test_generated_ability_art.py
       - name: Compile DLL
         run: dotnet build Source/Essencebound.Core.csproj -c Release --nologo
       - name: Ensure DLL exists

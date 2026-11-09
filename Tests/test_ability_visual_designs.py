@@ -6,7 +6,7 @@ source=json.loads((ROOT/"Data/essence_powers.json").read_text(encoding="utf-8"))
 visual=json.loads((ROOT/"Data/ability_visual_designs.json").read_text(encoding="utf-8"))
 manifest=json.loads((ROOT/"manifest.json").read_text(encoding="utf-8"))
 assert visual["ability_count"] == 100
-assert visual["status"] == "visual_concept_only"
+assert visual["status"] == "procedural_first_pass_generated_in_build"
 assert len(visual["abilities"])==100
 lookup={p["id"]:p for p in source["powers"]}
 assert len(lookup)==100
@@ -21,7 +21,10 @@ for d in visual["abilities"]:
     assert d["primary_essence"]==p["primary_essence"]
     assert d["tags"]==p["tags"]
     assert d["existing_effect_kind"]==p["effect"]
-    assert d["design_status"]=="concept_only"
+    assert d["design_status"]=="procedural_first_pass"
+    assert d["icon_asset_status"]=="generated_in_mod_zip"
+    assert d["sigil_asset_path"]=="Essencebound/AbilitySigils/"+d["id"]
+    assert d["audio_asset_status"]=="not_implemented"
     assert d["asset_path"]=="Essencebound/AbilityIcons/"+d["id"]
     for c in ("primary","highlight","shadow"):
         value=d["palette"][c]
@@ -31,6 +34,6 @@ for d in visual["abilities"]:
         assert len(d[field])>=13, (d["id"],field)
     assert len(d["cast_vfx"])>=26 and len(d["result_vfx"])>=33
 assert manifest["visual_design_plan"]["ability_concepts"]==100
-assert manifest["visual_design_plan"]["finished_unique_icon_assets"]==0
+assert manifest["visual_design_plan"]["finished_unique_icon_assets"]==100
 assert (ROOT/"ABILITY_VISUAL_DESIGN_GUIDE.md").exists()
 print("PASS: exactly 100 unique visual design concepts; correct IDs, palette, cast, impact and status")
