@@ -11,14 +11,17 @@ namespace Essencebound
         private string creditEssence = "";
         private int creditSlot = -1;
         private int benefitTicks;
+        private bool trainOnlyAgainstHostile;
 
-        public void Refresh(int durationTicks, Pawn caster, EssenceAbilitySlot slot)
+        public void Refresh(int durationTicks, Pawn caster, EssenceAbilitySlot slot,
+            bool hostileOnly = false)
         {
             ticksRemaining = durationTicks > 0 ? durationTicks : 1;
             creditCaster = caster;
             creditEssence = caster != null && slot != null ? slot.essenceDefName : "";
             creditSlot = caster != null && slot != null ? slot.index : -1;
             benefitTicks = 0;
+            trainOnlyAgainstHostile = hostileOnly;
         }
 
         public override void Tick()
@@ -26,7 +29,8 @@ namespace Essencebound
             base.Tick();
             if (ticksRemaining <= 0) return;
             if (creditCaster != null && pawn != null && pawn.Spawned && !pawn.Dead &&
-                !creditCaster.Dead && !string.IsNullOrEmpty(creditEssence))
+                !creditCaster.Dead && !string.IsNullOrEmpty(creditEssence) &&
+                (!trainOnlyAgainstHostile || pawn.HostileTo(creditCaster)))
             {
                 // Buffs accrue one unit per 60 ticks of real, active duration.
                 // Recasting before duration passes gives no instant training.
@@ -49,6 +53,7 @@ namespace Essencebound
             Scribe_Values.Look(ref creditEssence, "ebCreditEssence", "");
             Scribe_Values.Look(ref creditSlot, "ebCreditSlot", -1);
             Scribe_Values.Look(ref benefitTicks, "ebBenefitTicks", 0);
+            Scribe_Values.Look(ref trainOnlyAgainstHostile, "ebHostileTraining", false);
         }
     }
 }

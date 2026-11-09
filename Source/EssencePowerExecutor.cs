@@ -57,6 +57,39 @@ namespace Essencebound
 
             switch (power.effectKind)
             {
+                case "chain":
+                    return ChainDamage(caster, target, power, powerScale, out reason, out work);
+                case "splash":
+                    return SplashDamage(caster, target, power, powerScale, out reason, out work);
+                case "drain":
+                    return DrainHealth(caster, target, power, powerScale, recoveryScale, out reason, out work);
+                case "healGroup":
+                    return HealInjuries(target, power.magnitude * recoveryScale, out reason, out work);
+                case "regeneration":
+                    return ApplyRegeneration(caster, target, power, slot, buffDuration,
+                        recoveryScale, out reason);
+                case "auraBuff":
+                    return ApplyAuraBuff(caster, power, slot, buffDuration, out reason);
+                case "areaCleanse":
+                    return CleanseArea(caster, power, out reason, out work);
+                case "debuff":
+                    if (!target.HostileTo(caster))
+                    { reason = "This control power needs a hostile target."; return false; }
+                    if (!ApplyTimed(target, power.buffHediffDefName, buffDuration,
+                        caster, slot, true, true))
+                    { reason = "Missing control effect definition."; return false; }
+                    reason = "Target restrained; training accrues while the hostile remains affected.";
+                    return true;
+                case "healWard":
+                    float healed = 0f;
+                    HealInjuries(target, power.magnitude * recoveryScale, out _, out healed);
+                    work = healed;
+                    if (!ApplyTimed(target, power.buffHediffDefName, buffDuration,
+                        caster, slot, true))
+                    { reason = "Missing protective boon definition."; return false; }
+                    reason = "Restored " + work.ToString("0.#") +
+                        " injury severity and applied a protective boon.";
+                    return true;
                 case "damage":
                     return Damage(caster, target, power.damageDefName,
                         power.magnitude * powerScale, out reason, out work);
@@ -114,6 +147,157 @@ namespace Essencebound
             }
         }
 
+        private static bool HealInjuries(Pawn target, float budget, out string reason, out float work)
+        {
+            work = 0f;
+            if (target?.health?.hediffSet == null || budget <= 0f)
+            { reason = "No healing was possible."; return false; }
+
+            var wounds = target.health.hediffSet.hediffs.OfType<Hediff_Injury>()
+                .Where(i => !i.IsPermanent())
+                .OrderByDescending(i => i.Severity).ToList();
+            foreach (var injury in wounds)
+            {
+                if (budget <= 0f) break;
+                float before = injury.Severity;
+                injury.Heal(Math.Min(budget, before));
+                float healed = Math.Max(0f, before - injury.Severity);
+                work += healed;
+                budget -= healed;
+            }
+            reason = "Restored " + work.ToString("0.#") + " total injury severity.";
+            return work > 0f;
+        }
+
+        private static bool DrainHealth(Pawn caster, Pawn target, EssencePowerDef power,
+            float powerScale, float recoveryScale, out string reason, out float work)
+        {
+            if (!Damage(caster, target, power.damageDefName,
+                    power.magnitude * powerScale, out reason, out work)) return false;
+            float transferred = 0f;
+            if (work > 0f && !caster.Dead)
+                HealInjuries(caster, work * 0.5f * recoveryScale, out _, out transferred);
+            reason += " Life siphoned: " + transferred.ToString("0.#") + ".";
+            // Damage work is awarded even when the caster is already healthy.
+            return true;
+        }
+
+        private static bool ChainDamage(Pawn caster, Pawn target, EssencePowerDef power,
+            float powerScale, out string reason, out float work)
+        {
+            work = 0f;
+            IntVec3 center = target.Position;
+            if (!Damage(caster, target, power.damageDefName,
+                    power.magnitude * powerScale, out _, out float first)) 
+            { reason = "Primary chain strike failed."; return false; }
+            work += first;
+            var nearby = caster.Map.mapPawns.AllPawnsSpawned
+                .Where(p => p != caster && p != target && !p.Dead && p.HostileTo(caster) &&
+                    p.Position.DistanceTo(center) <= power.areaRadius)
+                .OrderBy(p => p.Position.DistanceTo(center))
+                .Take(Math.Max(0, Math.Min(5, power.maxExtraTargets))).ToList();
+            int hitCount = 1;
+            foreach (var other in nearby)
+            {
+                if (Damage(caster, other, power.damageDefName,
+                    power.magnitude * 0.7f * powerScale, out _, out float dealt))
+                { work += dealt; hitCount++; }
+            }
+            reason = "Chain struck " + hitCount + " pawn(s) for " +
+                work.ToString("0.#") + " effective damage.";
+            return true;
+        }
+
+        private static bool SplashDamage(Pawn caster, Pawn target, EssencePowerDef power,
+            float powerScale, out string reason, out float work)
+        {
+            work = 0f;
+            IntVec3 center = target.Position;
+            if (!Damage(caster, target, power.damageDefName,
+                    power.magnitude * powerScale, out _, out float first))
+            { reason = "Primary area strike failed."; return false; }
+            work += first;
+            int hitCount = 1;
+            var nearby = caster.Map.mapPawns.AllPawnsSpawned
+                .Where(p => p != caster && p != target && !p.Dead && p.HostileTo(caster) &&
+                    p.Position.DistanceTo(center) <= power.areaRadius).ToList();
+            foreach (Pawn other in nearby)
+            {
+                if (Damage(caster, other, power.damageDefName,
+                    power.magnitude * 0.5f * powerScale, out _, out float dealt))
+                { work += dealt; hitCount++; }
+            }
+            reason = "Burst struck " + hitCount + " pawn(s) for " +
+                work.ToString("0.#") + " effective damage.";
+            return true;
+        }
+
+        private static bool ApplyRegeneration(Pawn caster, Pawn target, EssencePowerDef power,
+            EssenceAbilitySlot slot, int duration, float recoveryScale, out string reason)
+        {
+            var def = DefDatabase<HediffDef>.GetNamedSilentFail(power.buffHediffDefName);
+            if (def == null)
+            { reason = "Missing regeneration effect."; return false; }
+            var effect = target.health.hediffSet.GetFirstHediffOfDef(def) as Hediff_EssenceRegeneration;
+            if (effect == null)
+            {
+                effect = HediffMaker.MakeHediff(def, target) as Hediff_EssenceRegeneration;
+                if (effect == null)
+                { reason = "Regeneration effect is not available."; return false; }
+                target.health.AddHediff(effect);
+            }
+            effect.Refresh(duration, power.magnitude * recoveryScale, caster, slot);
+            reason = "Regeneration applied; training is earned only when injuries actually heal.";
+            return true;
+        }
+
+        private static bool ApplyAuraBuff(Pawn caster, EssencePowerDef power,
+            EssenceAbilitySlot slot, int duration, out string reason)
+        {
+            var friends = caster.Map.mapPawns.AllPawnsSpawned
+                .Where(p => !p.Dead && !p.HostileTo(caster) &&
+                    p.Position.DistanceTo(caster.Position) <= power.areaRadius).ToList();
+            int applied = 0;
+            foreach (Pawn ally in friends)
+            {
+                if (ApplyTimed(ally, power.buffHediffDefName, duration, caster, slot, true))
+                    applied++;
+            }
+            reason = applied > 0
+                ? "Protected " + applied + " nearby pawn(s); training accrues while active."
+                : "No valid pawns received the aura.";
+            return applied > 0;
+        }
+
+        private static bool CleanseArea(Pawn caster, EssencePowerDef power,
+            out string reason, out float work)
+        {
+            work = 0f;
+            var debuffs = new HashSet<string> {
+                "EB_Debuff_Chilled", "EB_Debuff_Static",
+                "EB_Debuff_GravitySnare", "EB_Debuff_CorrodedArmor"
+            };
+            int removed = 0;
+            var friends = caster.Map.mapPawns.AllPawnsSpawned
+                .Where(p => !p.Dead && !p.HostileTo(caster) &&
+                    p.Position.DistanceTo(caster.Position) <= power.areaRadius).ToList();
+            foreach (Pawn ally in friends)
+            {
+                var active = ally.health.hediffSet.hediffs
+                    .Where(h => debuffs.Contains(h.def.defName)).ToList();
+                foreach (Hediff affliction in active)
+                {
+                    ally.health.RemoveHediff(affliction);
+                    removed++;
+                    work += 10f;
+                }
+            }
+            reason = removed > 0
+                ? "Cleansed " + removed + " essence affliction(s)."
+                : "No removable Essencebound afflictions nearby.";
+            return removed > 0;
+        }
+
         private static bool Damage(Pawn caster, Pawn target, string damageName,
             float amount, out string message, out float work)
         {
@@ -147,7 +331,8 @@ namespace Essencebound
         }
 
         private static bool ApplyTimed(Pawn pawn, string defName, int durationTicks,
-            Pawn caster, EssenceAbilitySlot slot, bool trainSupport)
+            Pawn caster, EssenceAbilitySlot slot, bool trainSupport,
+            bool hostileOnly = false)
         {
             var def = DefDatabase<HediffDef>.GetNamedSilentFail(defName);
             if (def == null) return false;
@@ -159,7 +344,7 @@ namespace Essencebound
                 pawn.health.AddHediff(active);
             }
             active.Refresh(durationTicks, trainSupport ? caster : null,
-                trainSupport ? slot : null);
+                trainSupport ? slot : null, hostileOnly);
             return true;
         }
     }
