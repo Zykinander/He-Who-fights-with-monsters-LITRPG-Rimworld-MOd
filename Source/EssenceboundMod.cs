@@ -9,12 +9,22 @@ namespace Essencebound
     public sealed class EssenceboundSettings : ModSettings
     {
         public int abilitySlotsPerEssence = 3;
+        public bool manifestationsEnabled = true;
+        public bool manifestationMonstersEnabled = true;
+        public int manifestationFrequency = 2;
+        public int densityPreset = 1;
 
         public override void ExposeData()
         {
             base.ExposeData();
             Scribe_Values.Look(ref abilitySlotsPerEssence, "abilitySlotsPerEssence", 3);
             abilitySlotsPerEssence = Math.Max(2, Math.Min(5, abilitySlotsPerEssence));
+            Scribe_Values.Look(ref manifestationsEnabled, "manifestationsEnabled", true);
+            Scribe_Values.Look(ref manifestationMonstersEnabled, "manifestationMonstersEnabled", true);
+            Scribe_Values.Look(ref manifestationFrequency, "manifestationFrequency", 2);
+            Scribe_Values.Look(ref densityPreset, "densityPreset", 1);
+            manifestationFrequency = Math.Max(0, Math.Min(3, manifestationFrequency));
+            densityPreset = Math.Max(0, Math.Min(2, densityPreset));
         }
     }
 
@@ -28,6 +38,20 @@ namespace Essencebound
             {
                 int amount = settings == null ? 3 : settings.abilitySlotsPerEssence;
                 return Math.Max(2, Math.Min(5, amount));
+            }
+        }
+
+        public static bool ManifestationsEnabled => settings == null || settings.manifestationsEnabled;
+        public static bool ManifestationMonstersEnabled =>
+            settings == null || settings.manifestationMonstersEnabled;
+        public static int ManifestationFrequency =>
+            settings == null ? 2 : Math.Max(0, Math.Min(3, settings.manifestationFrequency));
+        public static float MagicDensityMultiplier
+        {
+            get
+            {
+                int preset = settings == null ? 1 : settings.densityPreset;
+                return preset == 0 ? 0.65f : preset == 2 ? 1.45f : 1f;
             }
         }
 
@@ -56,6 +80,36 @@ namespace Essencebound
             list.Label("Reducing the limit pauses abilities in slots above the limit.");
             list.Label("Those abilities are not deleted; raise the limit to restore them.");
             list.Label("Each absorbed essence still grants its innate starter ability.");
+            list.GapLine();
+            list.Label("Astral manifestations and magic density");
+            if (list.ButtonText("Astral tears: " +
+                (settings.manifestationsEnabled ? "Enabled" : "Disabled")))
+            {
+                settings.manifestationsEnabled = !settings.manifestationsEnabled;
+                WriteSettings();
+            }
+            if (list.ButtonText("Monsters from tears: " +
+                (settings.manifestationMonstersEnabled ? "Enabled" : "Essence only")))
+            {
+                settings.manifestationMonstersEnabled = !settings.manifestationMonstersEnabled;
+                WriteSettings();
+            }
+            string[] frequencies = { "Off", "Rare", "Normal", "Frequent" };
+            if (list.ButtonText("Manifestation frequency: " +
+                frequencies[ManifestationFrequency]))
+            {
+                settings.manifestationFrequency = (ManifestationFrequency + 1) % 4;
+                WriteSettings();
+            }
+            string[] densities = { "Low", "Normal", "High" };
+            if (list.ButtonText("Map magic density: " +
+                densities[Math.Max(0, Math.Min(2, settings.densityPreset))]))
+            {
+                settings.densityPreset = (settings.densityPreset + 1) % 3;
+                WriteSettings();
+            }
+            list.Label("A map's density is saved; this setting scales the effective density.");
+            list.Label("A tear can crystallize an essence or release a magical monster.");
             list.End();
         }
     }

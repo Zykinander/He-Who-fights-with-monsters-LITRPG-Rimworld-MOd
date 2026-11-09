@@ -15,6 +15,7 @@ namespace Essencebound
         private string confluenceStatus = "incomplete";
         private bool confluenceRestricted;
         private string rank = "Iron";
+        private int nextAstralLootTick;
         private List<EssenceAbilitySlot> abilitySlots = new List<EssenceAbilitySlot>();
         private List<EssenceAffinityRecord> affinities = new List<EssenceAffinityRecord>();
         private List<EssenceRankRecord> essenceRanks = new List<EssenceRankRecord>();
@@ -122,6 +123,7 @@ namespace Essencebound
             Scribe_Values.Look(ref confluenceStatus, "confluenceStatus", "incomplete");
             Scribe_Values.Look(ref confluenceRestricted, "confluenceRestricted", false);
             Scribe_Values.Look(ref rank, "essenceRank", "Iron");
+            Scribe_Values.Look(ref nextAstralLootTick, "nextAstralLootTick", 0);
             Scribe_Collections.Look(ref abilitySlots, "abilitySlots", LookMode.Deep);
             Scribe_Collections.Look(ref affinities, "essenceAffinities", LookMode.Deep);
             Scribe_Collections.Look(ref essenceRanks, "essenceRanks", LookMode.Deep);
@@ -392,6 +394,47 @@ namespace Essencebound
             return true;
         }
 
+        private void BeginAstralLoot()
+        {
+            var targets = new TargetingParameters
+            {
+                canTargetItems = true,
+                canTargetPawns = false,
+                canTargetBuildings = false,
+                canTargetLocations = false
+            };
+            Find.Targeter.BeginTargeting(targets, (LocalTargetInfo local) =>
+            {
+                bool ok = TryLootAstralRemains(local.Thing as Corpse, out string reason);
+                Messages.Message((pawn?.LabelShort ?? "Pawn") + ": " + reason,
+                    ok ? MessageTypeDefOf.PositiveEvent : MessageTypeDefOf.RejectInput, false);
+            });
+        }
+
+        public bool TryLootAstralRemains(Corpse corpse, out string reason)
+        {
+            if (pawn == null || pawn.Dead || !pawn.Spawned || pawn.Faction != Faction.OfPlayer ||
+                corpse == null || !corpse.Spawned || corpse.Map != pawn.Map)
+            { reason = "Choose a manifested monster corpse on the same map."; return false; }
+            int now = Find.TickManager.TicksGame;
+            if (now < nextAstralLootTick)
+            { reason = "Astral Loot is on cooldown."; return false; }
+            if (pawn.Position.DistanceTo(corpse.Position) > 10f ||
+                !GenSight.LineOfSight(pawn.Position, corpse.Position, pawn.Map))
+            { reason = "Move within 10 cells and establish line of sight."; return false; }
+            var mark = corpse.InnerPawn?.health?.hediffSet?.hediffs
+                ?.OfType<Hediff_AstralManifestation>().FirstOrDefault();
+            if (mark == null)
+            { reason = "These remains were not created by an astral tear."; return false; }
+            if (!MapComponent_EssenceWorld.SpawnEssence(corpse.Position, pawn.Map,
+                out string essenceLabel))
+            { reason = "No space was found to place the condensed essence."; return false; }
+            corpse.Destroy(DestroyMode.Vanish); // One successful extraction per monster.
+            nextAstralLootTick = now + 3600;
+            reason = "Astral Loot extracted a " + essenceLabel + " essence.";
+            return true;
+        }
+
         private void ActivatePower(EssenceAbilitySlot slot, EssencePowerDef power)
         {
             if (power.targetKind == "self")
@@ -466,6 +509,34 @@ namespace Essencebound
                 defaultDesc = "Open the Essencebound character interface: four essences, rank and configured ability slots.",
                 action = () => Find.WindowStack.Add(new Dialog_EssenceProfile(this))
             };
+            // Prototype universal looting technique. Later versions can add
+            // essence- or stone-specific looting abilities.
+            int lootRemaining = nextAstralLootTick - Find.TickManager.TicksGame;
+            var lootCmd = new Command_Action
+            {
+                defaultLabel = "Astral Loot",
+                defaultDesc = "Target the corpse of a monster released by an astral tear. " +
+                              "Extracts one random normal essence and consumes the remains. " +
+                              "Prototype power available to any Essencebound pawn.",
+                icon = ContentFinder<UnityEngine.Texture2D>.Get(
+                    "Essencebound/AwakeningStones/StoneFocus", false),
+                action = BeginAstralLoot
+            };
+            if (lootRemaining > 0)
+                lootCmd.Disable("Astral Loot cooldown: " + ((lootRemaining + 59) / 60) + " s");
+            yield return lootCmd;
+            if (Prefs.DevMode)
+                yield return new Command_Action
+                {
+                    defaultLabel = "DEV: Astral tear",
+                    defaultDesc = "Test a tear near this pawn, using the current map magic density.",
+                    action = () =>
+                    {
+                        if (pawn.Map?.GetComponent<MapComponent_EssenceWorld>()?.TryOpenTear() != true)
+                            Messages.Message("Could not place an astral tear near this pawn.",
+                                MessageTypeDefOf.RejectInput, false);
+                    }
+                };
             foreach (var slot in abilitySlots.Where(s => s != null && s.index >= 0 &&
                                                         s.index < SlotsPerEssence &&
                                                         !string.IsNullOrEmpty(s.abilityDefName)))
