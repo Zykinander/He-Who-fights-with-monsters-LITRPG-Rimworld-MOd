@@ -5,49 +5,30 @@ using Verse;
 
 namespace Essencebound
 {
-    // Per-map density is rolled once, persisted, and scaled by Mod Settings.
+    // Magic density follows live colony strength; only the tear event schedule
+    // is saved per map. Already opened tears retain their opening snapshot.
     public sealed class MapComponent_EssenceWorld : MapComponent
     {
-        private float ambientDensity = -1f;
         private int nextManifestationCheck = -1;
         public MapComponent_EssenceWorld(Map map) : base(map) { }
 
-        public float MagicDensity
-        {
-            get
-            {
-                InitializeIfNeeded();
-                return Math.Max(0.05f, Math.Min(1f,
-                    ambientDensity * EssenceboundMod.MagicDensityMultiplier));
-            }
-        }
-
-        private void InitializeIfNeeded()
-        {
-            if (ambientDensity < 0f)
-            {
-                float baseline = 0.25f + Rand.Value * 0.5f;
-                string biome = map.Biome?.defName ?? "";
-                if (biome.Contains("Tropical")) baseline += 0.12f;
-                if (biome.Contains("IceSheet") || biome.Contains("ExtremeDesert")) baseline -= 0.08f;
-                ambientDensity = Math.Max(0.1f, Math.Min(0.9f, baseline));
-            }
-            if (nextManifestationCheck < 0)
-                nextManifestationCheck = Find.TickManager.TicksGame + 60000;
-        }
+        public EssenceDensityReport DensityReport => EssenceDensityCalculator.ForMap(map);
+        public float MagicDensity => DensityReport.FinalDensity;
 
         public override void ExposeData()
         {
             base.ExposeData();
-            Scribe_Values.Look(ref ambientDensity, "ebAmbientDensity", -1f);
+            // v0.13 saves may contain ebAmbientDensity. That obsolete value
+            // is ignored: density is now determined by the current colony.
             Scribe_Values.Look(ref nextManifestationCheck, "ebNextManifestationCheck", -1);
         }
 
         public override void MapComponentTick()
         {
             if (Find.TickManager == null) return;
-            InitializeIfNeeded();
             int now = Find.TickManager.TicksGame;
+            if (nextManifestationCheck < 0)
+                nextManifestationCheck = now + 60000;
             if (now < nextManifestationCheck) return;
             nextManifestationCheck = now + 60000;
             if (!EssenceboundMod.ManifestationsEnabled || EssenceboundMod.ManifestationFrequency == 0 ||
@@ -66,10 +47,11 @@ namespace Essencebound
             if (!TryFindOpenCell(out IntVec3 cell)) return false;
             var tear = ThingMaker.MakeThing(def) as Thing_AstralTear;
             if (tear == null) return false;
-            tear.Initialize(MagicDensity);
+            float densityAtOpening = MagicDensity;
+            tear.Initialize(densityAtOpening);
             GenSpawn.Spawn(tear, cell, map);
-            Messages.Message("An astral tear is opening! Local magic density: " +
-                (MagicDensity * 100f).ToString("0") + "%.",
+            Messages.Message("An astral tear is opening! Colony-driven magic density: " +
+                (densityAtOpening * 100f).ToString("0") + "%.",
                 MessageTypeDefOf.ThreatSmall, false);
             return true;
         }

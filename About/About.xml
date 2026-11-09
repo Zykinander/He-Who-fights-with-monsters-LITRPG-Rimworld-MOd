@@ -1,10 +1,10 @@
 <?xml version='1.0' encoding='utf-8'?>
 <ModMetaData>
-  <name>Essencebound v0.13 — RimWorld 1.7</name>
+  <name>Essencebound v0.14 — RimWorld 1.7</name>
   <author>Essencebound Project</author>
   <packageId>essencebound.core.prototype</packageId>
   <supportedVersions>
     <li>1.7</li>
   </supportedVersions>
-  <description>Essencebound v0.13: local magic density, timed astral tears, manifestations that yield essences or hostile monsters, and Astral Loot to extract an essence from a manifested monster corpse. Also features ranked progression, randomized attributes and configurable 2–5 slots per essence. Experimental RimWorld 1.7 mod; test saves recommended.</description>
+  <description>Essencebound v0.14: colony-strength-driven magic density based on wealth, population, combat skill and Essencebound essence advancement. Astral tear frequency and monster danger now scale with colony progression. Includes manifestation monsters, Astral Loot, ranked abilities and configurable slots. Experimental RimWorld 1.7; test saves recommended.</description>
 </ModMetaData>

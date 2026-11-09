@@ -1,6 +1,6 @@
 {
   "project": "Essencebound",
-  "version": "0.13",
+  "version": "0.14",
   "target_game": "RimWorld 1.7",
   "requires_compilation": true,
   "compiled_assembly_included": false,
@@ -39,10 +39,10 @@
   "awakening_stone_source_provenance": "12 community_listed_known_rarity; 3 community_listed_rarity_unknown; 15 mod_original_unverified; themes, affinities and imprint designs are mod-original",
   "artwork_status": "all_30_unique_png_sprites; editable_SVG_for_18_new",
   "power_count": 12,
-  "gameplay_power_status": "v0.13 world event, monster AI and corpse-looting prototype pending GitHub Actions and RimWorld test",
+  "gameplay_power_status": "v0.14 colony-strength-based magic density pending GitHub Actions and in-game validation; v0.13 looting mechanics unchanged",
   "stone_count": 30,
   "power_effect_definitions": 8,
-  "release_notes": "Ambient map magic density and configurable astral manifestations; a tear may crystallize an essence or summon 1–2 hostile magical monsters, whose corpses can be looted with Astral Loot. Astral Loot hotfix: nearby corpse menu, map-cell targeting fallback, and clearer failures.",
+  "release_notes": "Replace once-randomized map magic density with a deterministic, live colony-strength calculation: wealth, pawn count, combat experience and essence advancement. Density drives tear chance and monster danger; density multiplier settings and existing save timers remain.",
   "progression": {
     "attributes": [
       "Power",
@@ -100,7 +100,7 @@
     "migration": "Existing rankWork from v0.11 converted to saved 0..9 sublevels and fractional work without rerolling existing affinity."
   },
   "world_integration": {
-    "magic_density": "rolled and saved per map, biome-adjusted and scaled by Mod Settings",
+    "magic_density": "computed live from colony wealth, population, average best combat skill, and the rank/sublevels of owned essences; not rolled per map",
     "auto_event": "per player home map, one random check per in-game day, density-scaled",
     "tear": "visible 900-tick open countdown, one active tear per map",
     "monster_chance": "15%-80% based on density, if monsters are enabled",
@@ -112,10 +112,25 @@
       "enable/disable astral tears",
       "enable/disable monsters",
       "frequency 0–3",
-      "magic density 3 presets"
+      "colony-derived magic density multiplier: low/normal/high"
     ],
-    "qa": "dev-mode pawn button forces a tear for in-game testing",
+    "qa": "Mod Settings display live density and factors; Dev Mode pawn button forces a tear using the latest density",
     "loot_targeting": "nearby marked corpse FloatMenu plus map-cell targeting fallback",
-    "loot_troubleshooting": "distinct rejection reasons for unmarked, out-of-range or obstructed remains"
+    "loot_troubleshooting": "distinct rejection reasons for unmarked, out-of-range or obstructed remains",
+    "density_weights": {
+      "base": 0.09,
+      "wealth": 0.23,
+      "population": 0.14,
+      "combat": 0.12,
+      "essence": 0.42
+    },
+    "density_normalizers": {
+      "wealth_silver": 200000,
+      "population": 12,
+      "combat_skill": 20,
+      "essence_strength": 18
+    },
+    "dynamic_density": "recomputed when density is queried; affects the next tear event roll and future tears; active tears retain their opening-density snapshot",
+    "saved_compatibility": "v0.13 ebAmbientDensity ignored; ebNextManifestationCheck preserved, no save schema change for essence users"
   }
 }

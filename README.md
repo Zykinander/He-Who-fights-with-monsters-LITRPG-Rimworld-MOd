@@ -1,59 +1,58 @@
-# Essencebound v0.13 — Astral tears, magic density and manifestation loot
+# Essencebound v0.14 — Colony strength drives magical density
 
-**Development version v0.13 | RimWorld 1.7 | Experimental, use test saves**
+**Development version v0.14 | RimWorld 1.7 | Experimental — test on backed-up saves**
 
-## The new gameplay loop
+## Magical density now follows your colony
 
-A map now has a **saved ambient magic density** (some biomes influence the initial roll). Every in-game day, player-home maps with colonists may develop an astral tear. A tear stays visible for about 15 game seconds before it resolves:
+Instead of assigning each map a random magic-density value when first created, **Essencebound recalculates local magic density from the strength of the colony on that map**.
 
-1. **Magical condensation:** The tear collapses into a randomly selected normal essence crystal, which an eligible pawn can absorb.
-2. **Monster manifestation:** The tear releases one or more hostile magical monsters. The stronger the local magic density, the greater the chance and danger.
+| Source of colony strength | Maximum contribution |
+|---|---:|
+| Starting magical background | 9 percentage points |
+| Colony wealth (gear, buildings, resources) | 23 percentage points |
+| Number of spawned free colonists | 14 percentage points |
+| Colonists' Shooting or Melee skills (whichever is higher) | 12 percentage points |
+| Absorbed essence count and the rank/sublevels of each essence | 42 percentage points |
 
-In this first version, manifested monsters use vanilla RimWorld creatures as **visual placeholders**, not yet custom-made HWFWM magical monster sprites or abilities.
+These add up to 100% at very high strength and are subject to the **Low (0.65×), Normal (1×), High (1.45×)** multiplier and a final 5%–100% clamp. The displayed percentages for each strength factor in settings indicate *how close that factor is to its full contribution*, not its percentage-point contribution.
 
-| Density | Current creature placeholder | Approximate behavior |
-|---|---|---|
-| Low | Megascarab | One manhunter |
-| Medium | Warg | One manhunter |
-| High (78%+) | Thrumbo | Two manhunters |
+The weights are early gameplay balancing choices, not canonical book formulas. A new colony starts at relatively low magic density, while a wealthy, experienced, essence-rich colony attracts far more magic.
 
-Monster chance grows from about 15% at zero intensity to 80% at maximum intensity. The density values are random per map and modified by Mod Settings, not by real-world geography.
+### How progression affects encounters
 
-## Astral Loot power
+- The map's daily astral-tear roll now uses the **current** colony-derived density. More developed colonies have a higher chance of a tear, subject to the existing event-frequency setting.
+- A tear takes a **snapshot** of the density when it opens. If your colony changes while the tear is already open, that tear's outcome remains based on the earlier reading.
+- The chance that a tear releases a hostile magical monster still increases with density.
+- Existing monster placeholders continue to scale from Megascarab (low) → Warg (medium) → Thrumbo and two monsters (high).
+- When your pawns level their Iron 0–9, Bronze, Silver, Gold and Diamond essences, their growing magical ability contributes directly to colony density. More Essencebound pawns contribute more.
 
-Each Essencebound pawn temporarily has a **universal Astral Loot** gizmo. Select the ability to open a menu listing eligible **marked monster corpses within 10 cells and line of sight**. Select one to extract its essence. Alternatively choose **Target a corpse on the map** and click its tile; this works even if the game treats the corpse as a cell instead of an item. The power consumes the remains and produces one random normal essence crystal, with a 60-second game cooldown. Ordinary animals cannot be looted by this power, nor can a manifested monster be looted twice.
+## See your colony's actual density
 
-**Loot troubleshooting:** If no remains appear in the menu, move the pawn closer, check line of sight and confirm the target came from a tear rather than a normally spawned animal. A failed map-target attempt now provides a specific reason. Only a fully dead pawn with a spawned corpse can be extracted.
+Open **Options → Mod Settings → Essencebound** while playing a colony. Under *Astral manifestations and magic density*, you will see:
 
-This is a **prototype utility power**, not yet an awakened ability occupying one of the 2–5 slots. Future releases can introduce distinct looting powers from essences or awakening stones with their own rarity and effects.
+- Current colony magic density as a percentage.
+- Wealth, population, combat-skill and essence-rank factors, each on a 0–100 scale.
 
-## Mod Settings
+The density changes as your population, wealth, skills, and essence power grow. The setting changes the multiplier, not the underlying strength.
 
-In **Options → Mod Settings → Essencebound**:
+## Existing colonies and saves
 
-- **Astral tears**: enabled/disabled.
-- **Monsters from tears**: enabled/disabled; when off, every tear crystallizes an essence.
-- **Manifestation frequency**: off, rare, normal, frequent.
-- **Map magic density**: low, normal or high multiplier.
+Existing v0.13 saves can upgrade to v0.14 without resetting any pawn's essences, ranks, powers or affinities. The old map-wide random `ebAmbientDensity` is simply ignored; the map's next scheduled manifestation check remains saved. **Already-open astral tears** retain the density they recorded when they appeared.
 
-Automatic tears roll once per in-game day and may take multiple days to occur, even at high frequency. Only one tear is allowed to remain open on a map at a time.
+No changes to Astral Loot's nearby-corpse menu, mark requirement, 10-cell range or cooldown.
 
-## Testing
+## Testing checklist
 
-With **Development Mode** enabled, select a colonist who has absorbed an essence. Use **DEV: Astral tear** to immediately open a test tear near the pawn; this bypasses the event-frequency roll, not the density-based outcome.
+1. Open a newly founded colony and check the displayed magic-density value in Mod Settings.
+2. Add wealth or recruit colonists; the density should rise.
+3. Absorb essences into a colonist and advance an essence from Iron 0 to Iron 1; the essence contribution should rise, even if slightly.
+4. Try the density preset Low → Normal → High; the total should change immediately.
+5. In Dev Mode, open a tear and inspect its density. Increase colony strength while it is open; the tear should still resolve at its recorded opening density.
+6. Save and reload; check that the current density reflects colony strength and that the scheduled tear and pawn progress remain intact.
+7. On a mature test colony, check whether stronger monster manifestations become more likely than on the starter colony.
 
-1. Confirm the tear appears on the map, shows a density percentage, and persists for roughly 900 ticks.
-2. Verify it leaves a crystal or releases a creature. Use the density and monster toggles to test both cases.
-3. Defeat a manifested monster in a disposable colony, select an essence user, activate **Astral Loot**, and choose its remains from the nearby list. Also test the **Target a corpse on the map** fallback.
-4. Verify an essence crystal appears, the corpse disappears, and the 60-second cooldown starts.
-5. Confirm targeting an ordinary corpse cannot yield an essence.
-6. Save/reload during an open tear and verify its timer and density persist.
-7. Inspect the error log for issues and share any exceptions.
+## Still in development
 
-**Warning:** High-density encounters intentionally can summon dangerous creatures. Test with development mode and a backup rather than an important colony.
+The manifestation creatures, tear sprites and loot pool are still prototypes; custom creatures, progression-adjusted loot and unique abilities come later. All existing configurable 2–5 ability slots, Iron 0–9 advancement, weighted Power/Speed/Spirit/Recovery affinities and Astral Loot controls remain.
 
-## Deferred work
-
-Astral tears currently use an enlarged existing magical-stone sprite as a temporary portal marker; custom portal animation, purpose-built monsters, unique drops/rarity weighting, quest integration, specialized looting powers and magic-density environmental dynamics belong in later versions. All existing rank, affinity and configurable slot mechanics remain.
-
-GitHub Actions names each compiled test download with its version and build number; the installed folder stays `Essencebound`.
+GitHub Actions creates uniquely named build archives (e.g. `Essencebound-v0.14-RW1.7-build23-attempt1`); the installed folder remains `Essencebound`.
