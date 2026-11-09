@@ -21,6 +21,7 @@ namespace Essencebound
         public int pulseTicks = 120;
         public Pawn caster;
         public string essenceName = "";
+        public string powerDefName = "";
         public int slotIndex = -1;
         public Pawn summonedPawn;
 
@@ -37,6 +38,7 @@ namespace Essencebound
             Scribe_Values.Look(ref pulseTicks, "ebFieldPulsePeriod", 120);
             Scribe_References.Look(ref caster, "ebFieldCaster");
             Scribe_Values.Look(ref essenceName, "ebFieldEssence", "");
+            Scribe_Values.Look(ref powerDefName, "ebFieldPower", "");
             Scribe_Values.Look(ref slotIndex, "ebFieldSlot", -1);
             Scribe_References.Look(ref summonedPawn, "ebSummonedPawn");
         }
@@ -65,6 +67,7 @@ namespace Essencebound
             {
                 kind = kind, caster = caster,
                 essenceName = slot?.essenceDefName ?? "",
+                powerDefName = slot?.abilityDefName ?? "",
                 slotIndex = slot?.index ?? -1,
                 center = center, radius = radius, magnitude = magnitude,
                 expireTick = now + Math.Max(1, duration),
@@ -81,6 +84,7 @@ namespace Essencebound
             {
                 kind = "summon", caster = owner, summonedPawn = pawn,
                 essenceName = slot?.essenceDefName ?? "",
+                powerDefName = slot?.abilityDefName ?? "",
                 slotIndex = slot?.index ?? -1,
                 expireTick = Find.TickManager.TicksGame + Math.Max(60, duration),
                 nextPulseTick = Find.TickManager.TicksGame + 180,
@@ -136,6 +140,7 @@ namespace Essencebound
                             effect.caster != null && p.HostileTo(effect.caster) &&
                             p.Position.DistanceTo(effect.summonedPawn.Position) <= 10f))
                             Credit(effect, 1f);
+                        EssenceAbilityVisuals.OnFieldPulse(effect, map);
                         effect.nextPulseTick = now + effect.pulseTicks;
                     }
                     continue;
@@ -239,6 +244,7 @@ namespace Essencebound
                     break;
             }
             Credit(effect, work);
+            EssenceAbilityVisuals.OnFieldPulse(effect, map);
         }
 
         private static void Credit(EssenceWorldEffect effect, float amount)
