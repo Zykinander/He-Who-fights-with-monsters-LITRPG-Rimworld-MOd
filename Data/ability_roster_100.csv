@@ -69,33 +69,33 @@ EchoTwin,Echo Twin,playable,decoy,Doppelganger,Create a short-lived echo decoy t
 ResonanceField,Resonance Field,playable,powerAura,Resonating,Strengthen essence damage for allies within a limited field,v0.18,original_mod_gameplay_design
 GuardianBastion,Guardian Bastion,playable,wardDome,Guardian,Create a dome that reduces incoming ranged attacks,v0.18,original_mod_gameplay_design
 MoltenRain,Molten Rain,playable,hazardZone,Volcano,Create a temporary burning hazard on selected ground,v0.18,original_mod_gameplay_design
-OasisWell,Oasis Well,planned,restorationZone,Oasis,Create an out-of-combat restorative site for nearby allies,v0.19,original_mod_gameplay_design
-BoneFamiliar,Bone Familiar,planned,familiar,Bone,Summon a small defensive magical construct companion,v0.19,original_mod_gameplay_design
-Mistwalk,Mistwalk,planned,concealment,Cloud,Temporarily make movement between cover harder to detect,v0.19,original_mod_gameplay_design
-MirrorStep,Mirror Step,planned,swapTeleport,Mirror,Swap safe positions with a consenting allied pawn,v0.19,original_mod_gameplay_design
-WebWeaver,Web Weaver,planned,webZone,Spider,Spread temporary webbing that slows hostile passage,v0.19,original_mod_gameplay_design
-SonicLance,Sonic Lance,planned,piercingSound,Song,Release a focused sonic attack effective against light armor,v0.19,original_mod_gameplay_design
-SunwardFlare,Sunward Flare,planned,radiantPurge,Sun,Remove darkness afflictions and emit a radiant burst,v0.19,original_mod_gameplay_design
-Moonshadow,Moonshadow,planned,conditionalBuff,Moon,Gain additional evasion under dim light,v0.19,original_mod_gameplay_design
-HungerField,Hunger Field,planned,sustainedLeech,Hunger,Drain nearby hostile life while a channelled field lasts,v0.19,original_mod_gameplay_design
-ShatterArmor,Shatter Armor,planned,armorBreak,Hammer,Reduce target armor durability based on a direct blow,v0.19,original_mod_gameplay_design
-HarvestBlessing,Harvest Blessing,planned,harvestAura,Harvest,Improve nearby plant harvest efficiency for a short time,v0.19,original_mod_gameplay_design
-WeaveWard,Weave Ward,planned,linkedDefense,Weave,Link two allies so protective boons share incoming harm,v0.19,original_mod_gameplay_design
-RuneBeacon,Rune Beacon,planned,groundWard,Rune,Place a rune that grants defense to pawns within range,v0.19,original_mod_gameplay_design
-IronReprisal,Iron Reprisal,planned,counterStance,Iron,Retaliate against nearby hostile melee attacks for a duration,v0.19,original_mod_gameplay_design
-SerpentCoil,Serpent Coil,planned,grapple,Serpent,Restrict enemy movement and offensive accuracy,v0.19,original_mod_gameplay_design
-DawnRebirth,Dawn Rebirth,planned,emergencyHeal,Dawn,Trigger an emergency healing surge during a dangerous fight,v0.19,original_mod_gameplay_design
-AdeptConvergence,Adept Convergence,planned,attributeShift,Adept,Temporarily redirect one attribute bonus into another,v0.19,original_mod_gameplay_design
-FeyGlamour,Fey Glamour,planned,confusion,Fey,Disrupt hostile targeting through illusory movement,v0.19,original_mod_gameplay_design
-NimbusGuard,Nimbus Guard,planned,mobileWard,Sky,Protect a moving pawn with a limited-duration storm shield,v0.19,original_mod_gameplay_design
-BladeOrbit,Blade Orbit,planned,orbitStrike,Sword,Orbit enchanted blades that hit nearby hostiles periodically,v0.19,original_mod_gameplay_design
-GravityWell,Gravity Well,planned,pullZone,Vortex,Draw hostiles toward the center of a short-lived gravity field,v0.20,original_mod_gameplay_design
-CorruptingSeed,Corrupting Seed,planned,sustainedDebuff,Corrupt,Deal periodic damage while reducing target armor,v0.20,original_mod_gameplay_design
-TalismanSeal,Talisman Seal,planned,storedTrigger,Talisman,Store a defensive spell that triggers at the next threat,v0.20,original_mod_gameplay_design
-PactOfUnity,Pact of Unity,planned,teamLink,Unity,Connect nearby allies for a temporary cooperative skill bonus,v0.20,original_mod_gameplay_design
-PhoenixAshes,Phoenix Ashes,planned,survivalBoon,Firebird,Aid a severely injured pawn with a protective renewal boon,v0.20,original_mod_gameplay_design
-Worldstep,Worldstep,planned,longTeleport,Dimension,Travel to a marked safe cell after a longer channel,v0.20,original_mod_gameplay_design
-FeralClaw,Feral Claw,planned,meleeCombo,Claw,Reward successive close attacks with a stacking offensive bonus,v0.20,original_mod_gameplay_design
-WardEcho,Ward Echo,planned,debuffReflect,Boundary,Return a portion of enemy control effects back to their caster,v0.20,original_mod_gameplay_design
-SandsOfStillness,Sands of Stillness,planned,slowField,Sand,Create a temporary zone that slows hostile movement,v0.20,original_mod_gameplay_design
-TempestFlock,Tempest Flock,planned,summonFlock,Bird,Conjure a flock of distracting magical birds,v0.20,original_mod_gameplay_design
+OasisWell,Oasis Well,playable,restorationZone,Oasis,Create an out-of-combat restorative site for nearby allies,v0.19,original_mod_gameplay_design
+BoneFamiliar,Bone Familiar,playable,familiar,Bone,Summon a small defensive magical construct companion,v0.19,original_mod_gameplay_design
+Mistwalk,Mistwalk,playable,concealment,Cloud,Temporarily make movement between cover harder to detect,v0.19,original_mod_gameplay_design
+MirrorStep,Mirror Step,playable,swapTeleport,Mirror,Swap safe positions with a consenting allied pawn,v0.19,original_mod_gameplay_design
+WebWeaver,Web Weaver,playable,webZone,Spider,Spread temporary webbing that slows hostile passage,v0.19,original_mod_gameplay_design
+SonicLance,Sonic Lance,playable,piercingSound,Song,Release a focused sonic attack effective against light armor,v0.19,original_mod_gameplay_design
+SunwardFlare,Sunward Flare,playable,radiantPurge,Sun,Remove darkness afflictions and emit a radiant burst,v0.19,original_mod_gameplay_design
+Moonshadow,Moonshadow,playable,conditionalBuff,Moon,Gain additional evasion under dim light,v0.19,original_mod_gameplay_design
+HungerField,Hunger Field,playable,sustainedLeech,Hunger,Drain nearby hostile life while a channelled field lasts,v0.19,original_mod_gameplay_design
+ShatterArmor,Shatter Armor,playable,armorBreak,Hammer,Reduce target armor durability based on a direct blow,v0.19,original_mod_gameplay_design
+HarvestBlessing,Harvest Blessing,playable,harvestAura,Harvest,Improve nearby plant harvest efficiency for a short time,v0.19,original_mod_gameplay_design
+WeaveWard,Weave Ward,playable,linkedDefense,Weave,Link two allies so protective boons share incoming harm,v0.19,original_mod_gameplay_design
+RuneBeacon,Rune Beacon,playable,groundWard,Rune,Place a rune that grants defense to pawns within range,v0.19,original_mod_gameplay_design
+IronReprisal,Iron Reprisal,playable,counterStance,Iron,Retaliate against nearby hostile melee attacks for a duration,v0.19,original_mod_gameplay_design
+SerpentCoil,Serpent Coil,playable,grapple,Serpent,Restrict enemy movement and offensive accuracy,v0.19,original_mod_gameplay_design
+DawnRebirth,Dawn Rebirth,playable,emergencyHeal,Dawn,Trigger an emergency healing surge during a dangerous fight,v0.19,original_mod_gameplay_design
+AdeptConvergence,Adept Convergence,playable,attributeShift,Adept,Temporarily redirect one attribute bonus into another,v0.19,original_mod_gameplay_design
+FeyGlamour,Fey Glamour,playable,confusion,Fey,Disrupt hostile targeting through illusory movement,v0.19,original_mod_gameplay_design
+NimbusGuard,Nimbus Guard,playable,mobileWard,Sky,Protect a moving pawn with a limited-duration storm shield,v0.19,original_mod_gameplay_design
+BladeOrbit,Blade Orbit,playable,orbitStrike,Sword,Orbit enchanted blades that hit nearby hostiles periodically,v0.19,original_mod_gameplay_design
+GravityWell,Gravity Well,playable,pullZone,Vortex,Draw hostiles toward the center of a short-lived gravity field,v0.19,original_mod_gameplay_design
+CorruptingSeed,Corrupting Seed,playable,sustainedDebuff,Corrupt,Deal periodic damage while reducing target armor,v0.19,original_mod_gameplay_design
+TalismanSeal,Talisman Seal,playable,storedTrigger,Talisman,Store a defensive spell that triggers at the next threat,v0.19,original_mod_gameplay_design
+PactOfUnity,Pact of Unity,playable,teamLink,Unity,Connect nearby allies for a temporary cooperative skill bonus,v0.19,original_mod_gameplay_design
+PhoenixAshes,Phoenix Ashes,playable,survivalBoon,Firebird,Aid a severely injured pawn with a protective renewal boon,v0.19,original_mod_gameplay_design
+Worldstep,Worldstep,playable,longTeleport,Dimension,Travel to a marked safe cell after a longer channel,v0.19,original_mod_gameplay_design
+FeralClaw,Feral Claw,playable,meleeCombo,Claw,Reward successive close attacks with a stacking offensive bonus,v0.19,original_mod_gameplay_design
+WardEcho,Ward Echo,playable,debuffReflect,Boundary,Return a portion of enemy control effects back to their caster,v0.19,original_mod_gameplay_design
+SandsOfStillness,Sands of Stillness,playable,slowField,Sand,Create a temporary zone that slows hostile movement,v0.19,original_mod_gameplay_design
+TempestFlock,Tempest Flock,playable,summonFlock,Bird,Conjure a flock of distracting magical birds,v0.19,original_mod_gameplay_design

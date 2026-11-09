@@ -505,4 +505,242 @@
       </li>
     </stages>
   </HediffDef>
+  <HediffDef>
+    <defName>EB_Buff_Mistwalk</defName>
+    <label>mistwalk</label>
+    <description>Essencebound mistwalk status created by a magical ability.</description>
+    <hediffClass>Essencebound.Hediff_EssenceTimed</hediffClass>
+    <isBad>false</isBad>
+    <initialSeverity>0.1</initialSeverity>
+    <stages><li>
+      <statOffsets>
+        <MoveSpeed>0.24</MoveSpeed>
+        <MeleeDodgeChance>0.14</MeleeDodgeChance>
+      </statOffsets>
+    </li></stages>
+  </HediffDef>
+  <HediffDef>
+    <defName>EB_Debuff_Webbed</defName>
+    <label>webbed</label>
+    <description>Essencebound webbed status created by a magical ability.</description>
+    <hediffClass>Essencebound.Hediff_EssenceTimed</hediffClass>
+    <isBad>true</isBad>
+    <initialSeverity>0.1</initialSeverity>
+    <stages><li>
+      <statOffsets>
+        <MoveSpeed>-0.65</MoveSpeed>
+      </statOffsets>
+    </li></stages>
+  </HediffDef>
+  <HediffDef>
+    <defName>EB_Buff_Moonshadow</defName>
+    <label>moonshadow</label>
+    <description>Essencebound moonshadow status created by a magical ability.</description>
+    <hediffClass>Essencebound.Hediff_EssenceTimed</hediffClass>
+    <isBad>false</isBad>
+    <initialSeverity>0.1</initialSeverity>
+    <stages><li>
+      <statOffsets>
+        <MeleeDodgeChance>0.22</MeleeDodgeChance>
+        <ArmorRating_Sharp>0.08</ArmorRating_Sharp>
+      </statOffsets>
+    </li></stages>
+  </HediffDef>
+  <HediffDef>
+    <defName>EB_Debuff_ShatteredArmor</defName>
+    <label>shattered armor</label>
+    <description>Essencebound shattered armor status created by a magical ability.</description>
+    <hediffClass>Essencebound.Hediff_EssenceTimed</hediffClass>
+    <isBad>true</isBad>
+    <initialSeverity>0.1</initialSeverity>
+    <stages><li>
+      <statOffsets>
+        <ArmorRating_Sharp>-0.35</ArmorRating_Sharp>
+        <ArmorRating_Blunt>-0.25</ArmorRating_Blunt>
+      </statOffsets>
+    </li></stages>
+  </HediffDef>
+  <HediffDef>
+    <defName>EB_Buff_HarvestBlessing</defName>
+    <label>harvest blessing</label>
+    <description>Essencebound harvest blessing status created by a magical ability.</description>
+    <hediffClass>Essencebound.Hediff_EssenceTimed</hediffClass>
+    <isBad>false</isBad>
+    <initialSeverity>0.1</initialSeverity>
+    <stages><li>
+      <statOffsets>
+        <PlantHarvestYield>0.1</PlantHarvestYield>
+        <WorkSpeedGlobal>0.08</WorkSpeedGlobal>
+      </statOffsets>
+    </li></stages>
+  </HediffDef>
+  <HediffDef>
+    <defName>EB_Buff_WeaveWard</defName>
+    <label>weave ward</label>
+    <description>Essencebound weave ward status created by a magical ability.</description>
+    <hediffClass>Essencebound.Hediff_EssenceReactive</hediffClass>
+    <isBad>false</isBad>
+    <initialSeverity>0.1</initialSeverity>
+    <stages><li></li></stages>
+  </HediffDef>
+  <HediffDef>
+    <defName>EB_Buff_RuneBeacon</defName>
+    <label>rune beacon</label>
+    <description>Essencebound rune beacon status created by a magical ability.</description>
+    <hediffClass>Essencebound.Hediff_EssenceTimed</hediffClass>
+    <isBad>false</isBad>
+    <initialSeverity>0.1</initialSeverity>
+    <stages><li>
+      <statOffsets>
+        <ArmorRating_Sharp>0.16</ArmorRating_Sharp>
+        <ArmorRating_Blunt>0.15</ArmorRating_Blunt>
+      </statOffsets>
+    </li></stages>
+  </HediffDef>
+  <HediffDef>
+    <defName>EB_Buff_IronReprisal</defName>
+    <label>iron reprisal</label>
+    <description>Essencebound iron reprisal status created by a magical ability.</description>
+    <hediffClass>Essencebound.Hediff_EssenceReactive</hediffClass>
+    <isBad>false</isBad>
+    <initialSeverity>0.1</initialSeverity>
+    <stages><li></li></stages>
+  </HediffDef>
+  <HediffDef>
+    <defName>EB_Debuff_SerpentCoil</defName>
+    <label>serpent coil</label>
+    <description>Essencebound serpent coil status created by a magical ability.</description>
+    <hediffClass>Essencebound.Hediff_EssenceTimed</hediffClass>
+    <isBad>true</isBad>
+    <initialSeverity>0.1</initialSeverity>
+    <stages><li>
+      <statOffsets>
+        <MoveSpeed>-0.7</MoveSpeed>
+        <ShootingAccuracyPawn>-0.4</ShootingAccuracyPawn>
+      </statOffsets>
+    </li></stages>
+  </HediffDef>
+  <HediffDef>
+    <defName>EB_Buff_DawnRebirth</defName>
+    <label>dawn rebirth</label>
+    <description>Essencebound dawn rebirth status created by a magical ability.</description>
+    <hediffClass>Essencebound.Hediff_EssenceReactive</hediffClass>
+    <isBad>false</isBad>
+    <initialSeverity>0.1</initialSeverity>
+    <stages><li></li></stages>
+  </HediffDef>
+  <HediffDef>
+    <defName>EB_Buff_AdeptConvergence</defName>
+    <label>adept convergence</label>
+    <description>Essencebound adept convergence status created by a magical ability.</description>
+    <hediffClass>Essencebound.Hediff_EssenceTimed</hediffClass>
+    <isBad>false</isBad>
+    <initialSeverity>0.1</initialSeverity>
+    <stages><li></li></stages>
+  </HediffDef>
+  <HediffDef>
+    <defName>EB_Debuff_FeyGlamour</defName>
+    <label>fey glamour</label>
+    <description>Essencebound fey glamour status created by a magical ability.</description>
+    <hediffClass>Essencebound.Hediff_EssenceTimed</hediffClass>
+    <isBad>true</isBad>
+    <initialSeverity>0.1</initialSeverity>
+    <stages><li>
+      <statOffsets>
+        <ShootingAccuracyPawn>-1</ShootingAccuracyPawn>
+        <WorkSpeedGlobal>-0.15</WorkSpeedGlobal>
+      </statOffsets>
+    </li></stages>
+  </HediffDef>
+  <HediffDef>
+    <defName>EB_Buff_NimbusGuard</defName>
+    <label>nimbus guard</label>
+    <description>Essencebound nimbus guard status created by a magical ability.</description>
+    <hediffClass>Essencebound.Hediff_EssenceTimed</hediffClass>
+    <isBad>false</isBad>
+    <initialSeverity>0.1</initialSeverity>
+    <stages><li>
+      <statOffsets>
+        <ArmorRating_Sharp>0.15</ArmorRating_Sharp>
+        <MeleeDodgeChance>0.1</MeleeDodgeChance>
+      </statOffsets>
+    </li></stages>
+  </HediffDef>
+  <HediffDef>
+    <defName>EB_Debuff_CorruptingSeed</defName>
+    <label>corrupting seed</label>
+    <description>Essencebound corrupting seed status created by a magical ability.</description>
+    <hediffClass>Essencebound.Hediff_EssenceCorruption</hediffClass>
+    <isBad>true</isBad>
+    <initialSeverity>0.1</initialSeverity>
+    <stages><li>
+      <statOffsets>
+        <ArmorRating_Sharp>-0.2</ArmorRating_Sharp>
+        <ArmorRating_Blunt>-0.15</ArmorRating_Blunt>
+      </statOffsets>
+    </li></stages>
+  </HediffDef>
+  <HediffDef>
+    <defName>EB_Buff_TalismanSeal</defName>
+    <label>talisman seal</label>
+    <description>Essencebound talisman seal status created by a magical ability.</description>
+    <hediffClass>Essencebound.Hediff_EssenceReactive</hediffClass>
+    <isBad>false</isBad>
+    <initialSeverity>0.1</initialSeverity>
+    <stages><li></li></stages>
+  </HediffDef>
+  <HediffDef>
+    <defName>EB_Buff_PactOfUnity</defName>
+    <label>pact of unity</label>
+    <description>Essencebound pact of unity status created by a magical ability.</description>
+    <hediffClass>Essencebound.Hediff_EssenceTimed</hediffClass>
+    <isBad>false</isBad>
+    <initialSeverity>0.1</initialSeverity>
+    <stages><li>
+      <statOffsets>
+        <WorkSpeedGlobal>0.14</WorkSpeedGlobal>
+        <MeleeDodgeChance>0.04</MeleeDodgeChance>
+      </statOffsets>
+    </li></stages>
+  </HediffDef>
+  <HediffDef>
+    <defName>EB_Buff_PhoenixAshes</defName>
+    <label>phoenix ashes</label>
+    <description>Essencebound phoenix ashes status created by a magical ability.</description>
+    <hediffClass>Essencebound.Hediff_EssenceReactive</hediffClass>
+    <isBad>false</isBad>
+    <initialSeverity>0.1</initialSeverity>
+    <stages><li></li></stages>
+  </HediffDef>
+  <HediffDef>
+    <defName>EB_Buff_FeralCombo</defName>
+    <label>feral combo</label>
+    <description>Essencebound feral combo status created by a magical ability.</description>
+    <hediffClass>Essencebound.Hediff_EssenceReactive</hediffClass>
+    <isBad>false</isBad>
+    <initialSeverity>0.1</initialSeverity>
+    <stages><li></li></stages>
+  </HediffDef>
+  <HediffDef>
+    <defName>EB_Buff_WardEcho</defName>
+    <label>ward echo</label>
+    <description>Essencebound ward echo status created by a magical ability.</description>
+    <hediffClass>Essencebound.Hediff_EssenceReactive</hediffClass>
+    <isBad>false</isBad>
+    <initialSeverity>0.1</initialSeverity>
+    <stages><li></li></stages>
+  </HediffDef>
+  <HediffDef>
+    <defName>EB_Debuff_Stillness</defName>
+    <label>stillness</label>
+    <description>Essencebound stillness status created by a magical ability.</description>
+    <hediffClass>Essencebound.Hediff_EssenceTimed</hediffClass>
+    <isBad>true</isBad>
+    <initialSeverity>0.1</initialSeverity>
+    <stages><li>
+      <statOffsets>
+        <MoveSpeed>-0.78</MoveSpeed>
+      </statOffsets>
+    </li></stages>
+  </HediffDef>
 </Defs>
