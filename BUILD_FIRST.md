@@ -11,3 +11,8 @@ The preferred route is **GitHub Actions** because the working repository has alr
 The release remains experimental. Back up important saves before upgrading. The `v0.19` label is our development version, while `1.7` is the RimWorld game version.
 
 To compile locally, install .NET 10 SDK and Python+Pillow, then run `BUILD_WINDOWS.cmd` or `BUILD_UNIX.sh` (see `BUILD.md`).
+
+## First-pass ability art
+
+To build from a raw repository checkout, install Pillow with `python -m pip install Pillow`, then run `python Tools/generate_ability_icons.py` before compiling or packaging. This creates the 100 `AbilityIcons/*.png` and 100 `AbilitySigils/*.png` files under `1.7/Textures/Essencebound/`. Verify with `python Tests/test_generated_ability_art.py`. GitHub Actions generates and includes these automatically. Download the **full Actions build ZIP** for the actual artwork; the Git repository does not store generated binary PNGs.
+

@@ -1,6 +1,6 @@
 # Essencebound — 100 Unique Ability Visual Designs
 
-**Status: design concepts, not rendered sprites.** This is the art-production blueprint for all 100 v0.19 ability definitions. The existing mod still reuses awakening-stone icons. No PNG art or particle systems are claimed to exist yet.
+**Status: 100 first-pass rendered transparent icons and 100 matching animated sigil flecks are included in CI-built releases.** These remain the art-production blueprints for later hand-painted revisions. The generator creates unique 128×128 procedural emblems; spell casting and active fields play short fading/growing per-power sigils. Custom audio and individually hand-animated sequences are not implemented.
 
 ## Unified art direction
 
@@ -11,7 +11,7 @@
 - **Telegraphing:** delayed blasts and damaging fields must mark their affected ground before dealing damage; healing and friendly buffs should read differently from hostile debuffs.
 - **Accessibility:** danger cannot be indicated by red alone; use angular spiked silhouettes for hostile effects and circles/leaves/shields for positive effects. Prefer consistent outline and contrast.
 - **Performance:** short casts should minimize persistent particles; zones and summons should reuse sprite assets rather than creating independent animated effects every tick.
-- **Assets are not wired yet:** future image exports belong under `1.7/Textures/Essencebound/AbilityIcons/<PowerId>.png`; only then change the corresponding XML `iconPath`.
+- **Assets are wired in packaged builds:** `Tools/generate_ability_icons.py` generates `AbilityIcons/<PowerId>.png` and `AbilitySigils/<PowerId>.png` under `1.7/Textures/Essencebound/`. XML power paths and corresponding fleck definitions point at these files.
 - **Original designs:** color, motifs and audio cues are art direction, not verified canon from the novels. Sound direction is a production note, not a supplied audio file.
 
 ## Complete ability visual guide
@@ -153,12 +153,13 @@
 
 ## Production checklist
 
-- [ ] Render 100 transparent unique icon PNGs following the silhouettes above.
+- [x] Generate 100 transparent unique first-pass icons and 100 spell sigils from the art briefs.
 - [ ] Check each at 32 × 32 size in bright and dark UI.
-- [ ] Add casting cue and impact/persistent effect to every actual handler.
+- [x] Show matching growing/fading sigils on successful casts and active field pulses.
+- [ ] Expand those into fully bespoke directional projectile paths, layered particles, and multi-frame individual sequences.
 - [ ] Add hostile-zone danger markers and summon/teleport entry-exit cues.
 - [ ] Test light/dark, color accessibility and particle performance in RimWorld 1.7.
-- [ ] After the art exists, update XML iconPath and add missing-file validation before packaging.
+- [x] Wire XML iconPath to generated PNGs and validate missing files before packaging.
 
-**No gameplay data changed in this PR.** These are visual plans only; rank mitigation, cast behavior, cooldowns, awakening compatibility and saves remain as before.
+**The first-pass rendered icons and sigils are included in CI build artifacts**, not committed as PNG binaries. Only visuals changed: rank mitigation, cast rules, cooldowns, awakening compatibility and save records remain unchanged.
 

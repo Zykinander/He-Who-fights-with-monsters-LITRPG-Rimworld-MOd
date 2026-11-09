@@ -12,7 +12,7 @@ The same tags appear in the ability's in-game tooltip. These are informational l
 
 ## Unique art concepts for all 100 abilities
 
-[The complete visual design guide](ABILITY_VISUAL_DESIGN_GUIDE.md) now specifies a **unique icon silhouette, color palette, cast animation, effect animation and sound direction for every one of the 100 powers**. These are design briefs only: the 100 finished icon PNGs and animation assets have **not yet** been created or installed. Existing awakening-stone placeholder art remains active until the assets are produced.
+[The complete visual design guide](ABILITY_VISUAL_DESIGN_GUIDE.md) now specifies a **unique icon silhouette, color palette, cast animation, effect animation and sound direction for every one of the 100 powers**. These designs now drive the generated 128×128 game icons and corresponding animated fleck sigils in the GitHub Actions mod ZIP. These are first-pass procedural illustrations, not hand-painted artwork, unique frame-by-frame animations or custom sound files.
 
 ## First-pass generated icon assets
 
