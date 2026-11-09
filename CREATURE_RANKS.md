@@ -37,14 +37,14 @@ Ranked creatures roll **two independent drops** once when they die on a map and 
 
 | Rank | Essence drop | Awakening stone drop | Available stone rarities |
 | --- | ---: | ---: | --- |
-| Unranked | 2% | 1% | Common |
-| Iron | 16% | 8% | Common, Uncommon |
-| Bronze | 27% | 16% | Common, Uncommon, Rare |
-| Silver | 40% | 26% | Common through Epic |
-| Gold | 58% | 40% | Common through Legendary |
-| Diamond | 78% | 60% | Common through Legendary (strongest Epic/Legendary weighting) |
+| Unranked | 0.1% | 1% | Common |
+| Iron | 1% | 8% | Common, Uncommon |
+| Bronze | 2% | 16% | Common, Uncommon, Rare |
+| Silver | 4% | 26% | Common through Epic |
+| Gold | 7% | 40% | Common through Legendary |
+| Diamond | 12% | 60% | Common through Legendary (strongest Epic/Legendary weighting) |
 
-- Each success produces one random **normal** essence or one random awakening stone of a rank-eligible rarity.
+- Essence crystals are intentionally **5–10 times less likely** than awakening stones at every rank. Each successful roll produces one random **normal** essence or one random awakening stone of a rank-eligible rarity.
 - The 30 awakening stones are chosen from matching XML items, with rank-weighted rarity and random stone type.
 - Astral manifestations use their saved manifestation rank and get a 20% relative boost to both drop probabilities (capped at 95% essence / 80% stone).
 - The existing **Astral Loot** gizmo offers a separate bonus extraction from an astral corpse at 60% of that rank's boosted normal chance. It consumes the corpse and starts its cooldown even if nothing is recovered. This prevents repeat attempts on the same corpse.
