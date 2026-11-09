@@ -216,4 +216,178 @@
       </li>
     </stages>
   </HediffDef>
+  <HediffDef>
+    <defName>EB_Debuff_VenomHaze</defName>
+    <label>venom haze</label>
+    <description>Toxic essence impedes movement and routine work.</description>
+    <hediffClass>Essencebound.Hediff_EssenceTimed</hediffClass>
+    <isBad>true</isBad>
+    <initialSeverity>0.1</initialSeverity>
+    <stages>
+      <li>
+        <statOffsets>
+          <MoveSpeed>-0.32</MoveSpeed>
+          <WorkSpeedGlobal>-0.1</WorkSpeedGlobal>
+        </statOffsets>
+      </li>
+    </stages>
+  </HediffDef>
+  <HediffDef>
+    <defName>EB_Debuff_BriarBind</defName>
+    <label>briar bind</label>
+    <description>Living briars restrain the victim's movement.</description>
+    <hediffClass>Essencebound.Hediff_EssenceTimed</hediffClass>
+    <isBad>true</isBad>
+    <initialSeverity>0.1</initialSeverity>
+    <stages>
+      <li>
+        <statOffsets>
+          <MoveSpeed>-0.58</MoveSpeed>
+        </statOffsets>
+      </li>
+    </stages>
+  </HediffDef>
+  <HediffDef>
+    <defName>EB_Debuff_RuneBind</defName>
+    <label>rune bind</label>
+    <description>A controlling rune binds a pawn to sluggish motion.</description>
+    <hediffClass>Essencebound.Hediff_EssenceTimed</hediffClass>
+    <isBad>true</isBad>
+    <initialSeverity>0.1</initialSeverity>
+    <stages>
+      <li>
+        <statOffsets>
+          <MoveSpeed>-0.68</MoveSpeed>
+        </statOffsets>
+      </li>
+    </stages>
+  </HediffDef>
+  <HediffDef>
+    <defName>EB_Debuff_OmenHex</defName>
+    <label>omen hex</label>
+    <description>A spectral omen disrupts accuracy and concentration.</description>
+    <hediffClass>Essencebound.Hediff_EssenceTimed</hediffClass>
+    <isBad>true</isBad>
+    <initialSeverity>0.1</initialSeverity>
+    <stages>
+      <li>
+        <statOffsets>
+          <ShootingAccuracyPawn>-0.65</ShootingAccuracyPawn>
+          <WorkSpeedGlobal>-0.14</WorkSpeedGlobal>
+        </statOffsets>
+      </li>
+    </stages>
+  </HediffDef>
+  <HediffDef>
+    <defName>EB_Debuff_ThreadSnare</defName>
+    <label>thread snare</label>
+    <description>Arcane threads entangle the pawn's steps.</description>
+    <hediffClass>Essencebound.Hediff_EssenceTimed</hediffClass>
+    <isBad>true</isBad>
+    <initialSeverity>0.1</initialSeverity>
+    <stages>
+      <li>
+        <statOffsets>
+          <MoveSpeed>-0.46</MoveSpeed>
+        </statOffsets>
+      </li>
+    </stages>
+  </HediffDef>
+  <HediffDef>
+    <defName>EB_Buff_IronBastion</defName>
+    <label>iron bastion</label>
+    <description>Heavy essence plates grant armor with a speed cost.</description>
+    <hediffClass>Essencebound.Hediff_EssenceTimed</hediffClass>
+    <isBad>false</isBad>
+    <initialSeverity>0.1</initialSeverity>
+    <stages>
+      <li>
+        <statOffsets>
+          <ArmorRating_Sharp>0.3</ArmorRating_Sharp>
+          <ArmorRating_Blunt>0.28</ArmorRating_Blunt>
+          <MoveSpeed>-0.15</MoveSpeed>
+        </statOffsets>
+      </li>
+    </stages>
+  </HediffDef>
+  <HediffDef>
+    <defName>EB_Buff_MirrorGuard</defName>
+    <label>mirror guard</label>
+    <description>Reflective distortions improve evasiveness.</description>
+    <hediffClass>Essencebound.Hediff_EssenceTimed</hediffClass>
+    <isBad>false</isBad>
+    <initialSeverity>0.1</initialSeverity>
+    <stages>
+      <li>
+        <statOffsets>
+          <MeleeDodgeChance>0.13</MeleeDodgeChance>
+          <ArmorRating_Sharp>0.1</ArmorRating_Sharp>
+        </statOffsets>
+      </li>
+    </stages>
+  </HediffDef>
+  <HediffDef>
+    <defName>EB_Buff_DawnChorus</defName>
+    <label>dawn chorus</label>
+    <description>A choir of light boosts movement and productivity.</description>
+    <hediffClass>Essencebound.Hediff_EssenceTimed</hediffClass>
+    <isBad>false</isBad>
+    <initialSeverity>0.1</initialSeverity>
+    <stages>
+      <li>
+        <statOffsets>
+          <MoveSpeed>0.22</MoveSpeed>
+          <WorkSpeedGlobal>0.12</WorkSpeedGlobal>
+        </statOffsets>
+      </li>
+    </stages>
+  </HediffDef>
+  <HediffDef>
+    <defName>EB_Buff_TemporalHaste</defName>
+    <label>temporal haste</label>
+    <description>Briefly quickens movement and work.</description>
+    <hediffClass>Essencebound.Hediff_EssenceTimed</hediffClass>
+    <isBad>false</isBad>
+    <initialSeverity>0.1</initialSeverity>
+    <stages>
+      <li>
+        <statOffsets>
+          <MoveSpeed>0.62</MoveSpeed>
+          <WorkSpeedGlobal>0.12</WorkSpeedGlobal>
+        </statOffsets>
+      </li>
+    </stages>
+  </HediffDef>
+  <HediffDef>
+    <defName>EB_Buff_BattlefieldFocus</defName>
+    <label>battlefield focus</label>
+    <description>Heightens accuracy and defensive awareness.</description>
+    <hediffClass>Essencebound.Hediff_EssenceTimed</hediffClass>
+    <isBad>false</isBad>
+    <initialSeverity>0.1</initialSeverity>
+    <stages>
+      <li>
+        <statOffsets>
+          <ShootingAccuracyPawn>1</ShootingAccuracyPawn>
+          <MeleeDodgeChance>0.06</MeleeDodgeChance>
+        </statOffsets>
+      </li>
+    </stages>
+  </HediffDef>
+  <HediffDef>
+    <defName>EB_Buff_GlassWard</defName>
+    <label>glass ward</label>
+    <description>A crystalline barrier offers lightweight protection.</description>
+    <hediffClass>Essencebound.Hediff_EssenceTimed</hediffClass>
+    <isBad>false</isBad>
+    <initialSeverity>0.1</initialSeverity>
+    <stages>
+      <li>
+        <statOffsets>
+          <ArmorRating_Sharp>0.16</ArmorRating_Sharp>
+          <ArmorRating_Blunt>0.1</ArmorRating_Blunt>
+        </statOffsets>
+      </li>
+    </stages>
+  </HediffDef>
 </Defs>

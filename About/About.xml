@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='utf-8'?>
 <ModMetaData>
-  <name>Essencebound v0.16 — RimWorld 1.7</name>
+  <name>Essencebound v0.17 — RimWorld 1.7</name>
   <author>Essencebound Project</author>
   <packageId>essencebound.core.prototype</packageId>
   <supportedVersions>
@@ -12,5 +12,5 @@
       <displayName>Harmony</displayName>
     </li>
   </modDependencies>
-  <description>Essencebound v0.16: 24 playable powers spanning chain attacks, area blasts, draining strikes, multi-injury healing, gradual regeneration, protective auras, cleansing waves, restraining debuffs, and restorative wards. Includes ranked monsters, astral tears, random essence attributes and rank progression. Requires Harmony for rank combat. Experimental RimWorld 1.7 mod; test saves recommended.</description>
+  <description>Essencebound v0.17: fifty playable Essencebound abilities and a structured roadmap for at least 100. New powers include area healing, chaining restoration, group regeneration, draining pulses, area debuffs, finishing attacks, and thematic defensive buffs. Includes ranked monsters, astral tears and rank progression. Requires Harmony. Experimental RimWorld 1.7 mod; test saves recommended.</description>
 </ModMetaData>

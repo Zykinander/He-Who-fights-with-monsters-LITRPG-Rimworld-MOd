@@ -11,7 +11,7 @@ Avatar,confluence,EB_Power_RallyingSurge,strength/leadership boon,mod_gameplay_p
 Axe,normal,EB_Power_ForcePulse,physical force shockwave,mod_gameplay_provisional
 Balance,normal,EB_Power_RallyingSurge,strength/leadership boon,mod_gameplay_provisional
 Bat,normal,EB_Power_KeenSight,perception/precision enhancement,mod_gameplay_provisional
-Battlefield,confluence,EB_Power_ForcePulse,physical force shockwave,mod_gameplay_provisional
+Battlefield,confluence,EB_Power_BattlefieldFocus,v0.17 thematic innate power,mod_gameplay_provisional
 Bear,normal,EB_Power_RallyingSurge,strength/leadership boon,mod_gameplay_provisional
 Behemoth,confluence,EB_Power_StoneSkin,durability/armor enhancement,mod_gameplay_provisional
 Bird,normal,EB_Power_SwiftStep,speed/agility enhancement,mod_gameplay_provisional
@@ -32,15 +32,15 @@ Chimera,confluence,EB_Power_StoneSkin,durability/armor enhancement,mod_gameplay_
 Claw,normal,EB_Power_KeenSight,perception/precision enhancement,mod_gameplay_provisional
 Cloth,normal,EB_Power_GuardianWard,protective ward,mod_gameplay_provisional
 Cloud,normal,EB_Power_StormSpark,lightning/energy themed strike,mod_gameplay_provisional
-Cold,normal,EB_Power_FrostShard,cold/water themed control blast,mod_gameplay_provisional
+Cold,normal,EB_Power_FrostHalo,v0.17 thematic innate power,mod_gameplay_provisional
 Corrupt,normal,EB_Power_ForcePulse,physical force shockwave,mod_gameplay_provisional
-Crystal,normal,EB_Power_StoneSkin,durability/armor enhancement,mod_gameplay_provisional
+Crystal,normal,EB_Power_ShardVolley,v0.17 thematic innate power,mod_gameplay_provisional
 Cyborg,confluence,EB_Power_StoneSkin,durability/armor enhancement,mod_gameplay_provisional
 Cycle,confluence,EB_Power_PurifyingTouch,purification/cleansing,mod_gameplay_provisional
 Dance,normal,EB_Power_SwiftStep,speed/agility enhancement,mod_gameplay_provisional
 Dark,normal,EB_Power_MistVeil,concealment/evasion enhancement,mod_gameplay_provisional
-Dawn,confluence,EB_Power_EmberBolt,fire/heat themed ranged blast,mod_gameplay_provisional
-Death,normal,EB_Power_ForcePulse,physical force shockwave,mod_gameplay_provisional
+Dawn,confluence,EB_Power_DawnChorus,v0.17 thematic innate power,mod_gameplay_provisional
+Death,normal,EB_Power_SoulHarvest,v0.17 thematic innate power,mod_gameplay_provisional
 Deep,normal,EB_Power_FrostShard,cold/water themed control blast,mod_gameplay_provisional
 Deer,normal,EB_Power_SwiftStep,speed/agility enhancement,mod_gameplay_provisional
 Desolate,confluence,EB_Power_MistVeil,concealment/evasion enhancement,mod_gameplay_provisional
@@ -52,7 +52,7 @@ Doppelganger,confluence,EB_Power_MistVeil,concealment/evasion enhancement,mod_ga
 Dragon,confluence,EB_Power_EmberBolt,fire/heat themed ranged blast,mod_gameplay_provisional
 Duck,normal,EB_Power_SwiftStep,speed/agility enhancement,mod_gameplay_provisional
 Dust,normal,EB_Power_MistVeil,concealment/evasion enhancement,mod_gameplay_provisional
-Earth,normal,EB_Power_StoneSkin,durability/armor enhancement,mod_gameplay_provisional
+Earth,normal,EB_Power_Quakebreaker,v0.17 thematic innate power,mod_gameplay_provisional
 Echo,normal,EB_Power_EchoBurst,distinct EchoBurst starter power,mod_gameplay_provisional
 Eclipse,confluence,EB_Power_MistVeil,concealment/evasion enhancement,mod_gameplay_provisional
 Edifice,confluence,EB_Power_GuardianWard,protective ward,mod_gameplay_provisional
@@ -77,7 +77,7 @@ Fungus,normal,EB_Power_VerdantMend,growth/restoration healing,mod_gameplay_provi
 Garuda,confluence,EB_Power_SwiftStep,speed/agility enhancement,mod_gameplay_provisional
 Gate,confluence,EB_Power_SwiftStep,speed/agility enhancement,mod_gameplay_provisional
 Gathering,normal,EB_Power_VerdantMend,growth/restoration healing,mod_gameplay_provisional
-Glass,normal,EB_Power_StoneSkin,durability/armor enhancement,mod_gameplay_provisional
+Glass,normal,EB_Power_GlassWard,v0.17 thematic innate power,mod_gameplay_provisional
 Glimeron,confluence,EB_Power_KeenSight,perception/precision enhancement,mod_gameplay_provisional
 Goat,normal,EB_Power_RallyingSurge,strength/leadership boon,mod_gameplay_provisional
 Gorgon,confluence,EB_Power_StoneSkin,durability/armor enhancement,mod_gameplay_provisional
@@ -96,7 +96,7 @@ Hunt,normal,EB_Power_KeenSight,perception/precision enhancement,mod_gameplay_pro
 Hydra,confluence,EB_Power_VerdantMend,growth/restoration healing,mod_gameplay_provisional
 Ice,normal,EB_Power_FrostShard,cold/water themed control blast,mod_gameplay_provisional
 Immortal,confluence,EB_Power_VerdantMend,growth/restoration healing,mod_gameplay_provisional
-Iron,normal,EB_Power_StoneSkin,durability/armor enhancement,mod_gameplay_provisional
+Iron,normal,EB_Power_IronBastion,v0.17 thematic innate power,mod_gameplay_provisional
 Juggernaut,confluence,EB_Power_StoneSkin,durability/armor enhancement,mod_gameplay_provisional
 Karmic,confluence,EB_Power_RallyingSurge,strength/leadership boon,mod_gameplay_provisional
 Knife,normal,EB_Power_ForcePulse,physical force shockwave,mod_gameplay_provisional
@@ -104,7 +104,7 @@ Knowledge,normal,EB_Power_KeenSight,perception/precision enhancement,mod_gamepla
 Kraken,confluence,EB_Power_FrostShard,cold/water themed control blast,mod_gameplay_provisional
 Leviathan,confluence,EB_Power_FrostShard,cold/water themed control blast,mod_gameplay_provisional
 Life,normal,EB_Power_VerdantMend,growth/restoration healing,mod_gameplay_provisional
-Light,normal,EB_Power_PurifyingTouch,purification/cleansing,mod_gameplay_provisional
+Light,normal,EB_Power_CleansingRay,v0.17 thematic innate power,mod_gameplay_provisional
 Lightning,normal,EB_Power_StormSpark,lightning/energy themed strike,mod_gameplay_provisional
 Lizard,normal,EB_Power_StoneSkin,durability/armor enhancement,mod_gameplay_provisional
 Locust,normal,EB_Power_ForcePulse,physical force shockwave,mod_gameplay_provisional
@@ -116,10 +116,10 @@ Manatee,normal,EB_Power_FrostShard,cold/water themed control blast,mod_gameplay_
 Manticore,confluence,EB_Power_ForcePulse,physical force shockwave,mod_gameplay_provisional
 Master,confluence,EB_Power_KeenSight,perception/precision enhancement,mod_gameplay_provisional
 Might,normal,EB_Power_RallyingSurge,strength/leadership boon,mod_gameplay_provisional
-Ministration,confluence,EB_Power_VerdantMend,growth/restoration healing,mod_gameplay_provisional
+Ministration,confluence,EB_Power_MercyThread,v0.17 thematic innate power,mod_gameplay_provisional
 Minotaur,confluence,EB_Power_StoneSkin,durability/armor enhancement,mod_gameplay_provisional
 Mirage,confluence,EB_Power_MistVeil,concealment/evasion enhancement,mod_gameplay_provisional
-Mirror,normal,EB_Power_MistVeil,concealment/evasion enhancement,mod_gameplay_provisional
+Mirror,normal,EB_Power_MirrorGuard,v0.17 thematic innate power,mod_gameplay_provisional
 Monolith,confluence,EB_Power_StoneSkin,durability/armor enhancement,mod_gameplay_provisional
 Moon,normal,EB_Power_MoonlitReprieve,distinct MoonlitReprieve starter power,mod_gameplay_provisional
 Mouse,normal,EB_Power_KeenSight,perception/precision enhancement,mod_gameplay_provisional
@@ -127,18 +127,18 @@ Myriad,normal,EB_Power_RallyingSurge,strength/leadership boon,mod_gameplay_provi
 Mystic,confluence,EB_Power_SpiritBeacon,distinct SpiritBeacon starter power,mod_gameplay_provisional
 Nebula,confluence,EB_Power_StormSpark,lightning/energy themed strike,mod_gameplay_provisional
 Needle,normal,EB_Power_ForcePulse,physical force shockwave,mod_gameplay_provisional
-Nemesis,confluence,EB_Power_ForcePulse,physical force shockwave,mod_gameplay_provisional
+Nemesis,confluence,EB_Power_NemesisStrike,v0.17 thematic innate power,mod_gameplay_provisional
 Network,confluence,EB_Power_KeenSight,perception/precision enhancement,mod_gameplay_provisional
 Oasis,confluence,EB_Power_FrostShard,cold/water themed control blast,mod_gameplay_provisional
-Ocean,confluence,EB_Power_FrostShard,cold/water themed control blast,mod_gameplay_provisional
+Ocean,confluence,EB_Power_OceanRenewal,v0.17 thematic innate power,mod_gameplay_provisional
 Octopus,normal,EB_Power_FrostShard,cold/water themed control blast,mod_gameplay_provisional
-Omen,normal,EB_Power_MistVeil,concealment/evasion enhancement,mod_gameplay_provisional
+Omen,normal,EB_Power_OmenHex,v0.17 thematic innate power,mod_gameplay_provisional
 Onslaught,confluence,EB_Power_ForcePulse,physical force shockwave,mod_gameplay_provisional
 Pangolin,normal,EB_Power_StoneSkin,durability/armor enhancement,mod_gameplay_provisional
 Paper,normal,EB_Power_KeenSight,perception/precision enhancement,mod_gameplay_provisional
 Phantasmagoria,confluence,EB_Power_MistVeil,concealment/evasion enhancement,mod_gameplay_provisional
 Phoenix,confluence,EB_Power_EmberBolt,fire/heat themed ranged blast,mod_gameplay_provisional
-Plant,normal,EB_Power_VerdantMend,growth/restoration healing,mod_gameplay_provisional
+Plant,normal,EB_Power_BriarDetonation,v0.17 thematic innate power,mod_gameplay_provisional
 Potent,normal,EB_Power_RallyingSurge,strength/leadership boon,mod_gameplay_provisional
 Predatory,confluence,EB_Power_ForcePulse,physical force shockwave,mod_gameplay_provisional
 Prison,confluence,EB_Power_GuardianWard,protective ward,mod_gameplay_provisional
@@ -152,7 +152,7 @@ Renewal,normal,EB_Power_RenewalSeed,distinct RenewalSeed starter power,mod_gamep
 Resolute,normal,EB_Power_GuardianWard,protective ward,mod_gameplay_provisional
 Resonating,confluence,EB_Power_RallyingSurge,strength/leadership boon,mod_gameplay_provisional
 Roc,confluence,EB_Power_StormSpark,lightning/energy themed strike,mod_gameplay_provisional
-Rune,normal,EB_Power_KeenSight,perception/precision enhancement,mod_gameplay_provisional
+Rune,normal,EB_Power_RuneBind,v0.17 thematic innate power,mod_gameplay_provisional
 Sacrifice,confluence,EB_Power_PurifyingTouch,purification/cleansing,mod_gameplay_provisional
 Sand,normal,EB_Power_StoneSkin,durability/armor enhancement,mod_gameplay_provisional
 Sceptre,normal,EB_Power_RallyingSurge,strength/leadership boon,mod_gameplay_provisional
@@ -180,19 +180,19 @@ Spider,normal,EB_Power_KeenSight,perception/precision enhancement,mod_gameplay_p
 Spike,normal,EB_Power_ForcePulse,physical force shockwave,mod_gameplay_provisional
 Staff,normal,EB_Power_StormSpark,lightning/energy themed strike,mod_gameplay_provisional
 Star,normal,EB_Power_StormSpark,lightning/energy themed strike,mod_gameplay_provisional
-Stellar,confluence,EB_Power_StormSpark,lightning/energy themed strike,mod_gameplay_provisional
+Stellar,confluence,EB_Power_Starfall,v0.17 thematic innate power,mod_gameplay_provisional
 Storm,confluence,EB_Power_StormSpark,lightning/energy themed strike,mod_gameplay_provisional
 Succubus,confluence,EB_Power_MistVeil,concealment/evasion enhancement,mod_gameplay_provisional
-Sun,normal,EB_Power_EmberBolt,fire/heat themed ranged blast,mod_gameplay_provisional
+Sun,normal,EB_Power_InfernoLance,v0.17 thematic innate power,mod_gameplay_provisional
 Swarm,confluence,EB_Power_ForcePulse,physical force shockwave,mod_gameplay_provisional
 Swift,normal,EB_Power_SwiftStep,speed/agility enhancement,mod_gameplay_provisional
-Sword,normal,EB_Power_ForcePulse,physical force shockwave,mod_gameplay_provisional
+Sword,normal,EB_Power_BladeTempest,v0.17 thematic innate power,mod_gameplay_provisional
 Talisman,confluence,EB_Power_GuardianWard,protective ward,mod_gameplay_provisional
 Technology,normal,EB_Power_KeenSight,perception/precision enhancement,mod_gameplay_provisional
 Tentacle,normal,EB_Power_ForcePulse,physical force shockwave,mod_gameplay_provisional
-Thread,normal,EB_Power_GuardianWard,protective ward,mod_gameplay_provisional
+Thread,normal,EB_Power_ThreadSnare,v0.17 thematic innate power,mod_gameplay_provisional
 Thunderbird,confluence,EB_Power_ThunderChain,distinct ThunderChain starter power,mod_gameplay_provisional
-Time,confluence,EB_Power_SwiftStep,speed/agility enhancement,mod_gameplay_provisional
+Time,confluence,EB_Power_TemporalHaste,v0.17 thematic innate power,mod_gameplay_provisional
 Tranquil,confluence,EB_Power_PurifyingTouch,purification/cleansing,mod_gameplay_provisional
 Transfiguration,confluence,EB_Power_PurifyingTouch,purification/cleansing,mod_gameplay_provisional
 Transgression,confluence,EB_Power_ForcePulse,physical force shockwave,mod_gameplay_provisional
@@ -205,21 +205,21 @@ Undeath,confluence,EB_Power_ForcePulse,physical force shockwave,mod_gameplay_pro
 Unity,confluence,EB_Power_RallyingSurge,strength/leadership boon,mod_gameplay_provisional
 Vast,normal,EB_Power_RallyingSurge,strength/leadership boon,mod_gameplay_provisional
 Vehicle,normal,EB_Power_SwiftStep,speed/agility enhancement,mod_gameplay_provisional
-Venom,normal,EB_Power_ForcePulse,physical force shockwave,mod_gameplay_provisional
-Verdant,confluence,EB_Power_VerdantMend,growth/restoration healing,mod_gameplay_provisional
+Venom,normal,EB_Power_VipersBite,v0.17 thematic innate power,mod_gameplay_provisional
+Verdant,confluence,EB_Power_VerdantSanctuary,v0.17 thematic innate power,mod_gameplay_provisional
 Vessel,confluence,EB_Power_GuardianWard,protective ward,mod_gameplay_provisional
 Visage,normal,EB_Power_MistVeil,concealment/evasion enhancement,mod_gameplay_provisional
 Vision,confluence,EB_Power_KeenSight,perception/precision enhancement,mod_gameplay_provisional
-Void,normal,EB_Power_MistVeil,concealment/evasion enhancement,mod_gameplay_provisional
+Void,normal,EB_Power_UmbralLeech,v0.17 thematic innate power,mod_gameplay_provisional
 Volcano,confluence,EB_Power_CinderNova,distinct CinderNova starter power,mod_gameplay_provisional
 Vortex,confluence,EB_Power_GravitySnare,distinct GravitySnare starter power,mod_gameplay_provisional
 Wasp,normal,EB_Power_ForcePulse,physical force shockwave,mod_gameplay_provisional
-Water,normal,EB_Power_FrostShard,cold/water themed control blast,mod_gameplay_provisional
+Water,normal,EB_Power_TidalRebuke,v0.17 thematic innate power,mod_gameplay_provisional
 Weave,confluence,EB_Power_GuardianWard,protective ward,mod_gameplay_provisional
 Wendigo,confluence,EB_Power_ForcePulse,physical force shockwave,mod_gameplay_provisional
 Whale,normal,EB_Power_FrostShard,cold/water themed control blast,mod_gameplay_provisional
 Whip,normal,EB_Power_ForcePulse,physical force shockwave,mod_gameplay_provisional
-Wind,normal,EB_Power_StormSpark,lightning/energy themed strike,mod_gameplay_provisional
+Wind,normal,EB_Power_ZephyrRicochet,v0.17 thematic innate power,mod_gameplay_provisional
 Wing,normal,EB_Power_StormSpark,lightning/energy themed strike,mod_gameplay_provisional
 Wolf,normal,EB_Power_RallyingSurge,strength/leadership boon,mod_gameplay_provisional
 Wrath,confluence,EB_Power_EmberBolt,fire/heat themed ranged blast,mod_gameplay_provisional
