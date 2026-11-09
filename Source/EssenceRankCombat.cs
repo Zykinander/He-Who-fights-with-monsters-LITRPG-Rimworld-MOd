@@ -20,6 +20,11 @@ namespace Essencebound
             if (manifestation != null)
                 return Math.Max(0, Math.Min(4, manifestation.rankIndex));
 
+            // Wild animals and other non-humanlike creatures always have an
+            // inherent species rank unless an astral manifestation overrides it.
+            if (pawn.RaceProps != null && !pawn.RaceProps.Humanlike)
+                return EssenceCreatureRanks.InherentRankOf(pawn);
+
             var essenceUser = Hediff_EssenceUser.ForPawn(pawn);
             if (essenceUser == null || essenceUser.OwnedEssenceNames.Count == 0)
                 return -1;
