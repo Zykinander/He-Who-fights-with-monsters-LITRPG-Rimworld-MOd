@@ -144,7 +144,8 @@ namespace Essencebound
                 {
                     Pulse(effect);
                     effect.nextPulseTick = now + Math.Max(30, effect.pulseTicks);
-                    if (effect.kind == "delayedBlast")
+                    if (effect.kind == "delayedBlast" ||
+                        effect.kind == "delayedTeleport")
                         effect.expireTick = now;
                 }
                 if (now >= effect.expireTick)
@@ -156,12 +157,35 @@ namespace Essencebound
         {
             if (effect.caster == null || effect.caster.Dead ||
                 effect.caster.Map != map || !effect.center.InBounds(map)) return;
+            if (effect.kind == "orbitStrike" || effect.kind == "sustainedLeech")
+                effect.center = effect.caster.Position;
+            // Oasis Well can operate outside combat only.
+            if (effect.kind == "restorationZone" &&
+                map.mapPawns.AllPawnsSpawned.Any(p => p != null && !p.Dead &&
+                    p.HostileTo(effect.caster) &&
+                    p.Position.DistanceTo(effect.center) <= effect.radius + 4f))
+                return;
             var pawns = map.mapPawns.AllPawnsSpawned.Where(p =>
                 p != null && !p.Dead && p.Position.DistanceTo(effect.center) <= effect.radius &&
                 GenSight.LineOfSight(effect.center, p.Position, map)).ToList();
             float work = 0f;
             switch (effect.kind)
             {
+                case "delayedTeleport":
+                    IntVec3 destination = effect.center;
+                    Pawn traveler = effect.caster;
+                    if (destination.Standable(map) && !destination.Fogged(map) &&
+                        destination.GetFirstPawn(map) == null &&
+                        destination.GetFirstBuilding(map) == null &&
+                        traveler.Position != destination)
+                    {
+                        float distance = traveler.Position.DistanceTo(destination);
+                        EssenceAdvancedAbilities.MovePawn(traveler, destination);
+                        work = Math.Max(1f, distance * 0.55f);
+                    }
+                    break;
+                case "sustainedLeech":
+                case "orbitStrike":
                 case "delayedBlast":
                 case "hazardZone":
                     foreach (Pawn enemy in pawns.Where(p => p.HostileTo(effect.caster)))
@@ -170,12 +194,41 @@ namespace Essencebound
                             effect.damageDef, effect.magnitude, out float actual))
                             work += actual;
                     }
+                    if (effect.kind == "sustainedLeech" && work > 0f)
+                        EssencePowerExecutor.FieldHealing(effect.caster,
+                            work * 0.27f, out _);
                     break;
+                case "restorationZone":
                 case "healingZone":
                     foreach (Pawn ally in pawns.Where(p => !p.HostileTo(effect.caster)))
                     {
                         if (EssencePowerExecutor.FieldHealing(ally, effect.magnitude,
                             out float actual)) work += actual;
+                    }
+                    break;
+                case "webZone":
+                case "slowField":
+                case "gravityWell":
+                    foreach (Pawn enemy in pawns.Where(p => p.HostileTo(effect.caster)))
+                    {
+                        if (EssencePowerExecutor.AdvancedTimed(enemy, effect.buffDef,
+                            180, null, null))
+                            work += 0.35f;
+                        if (effect.kind == "gravityWell")
+                        {
+                            IntVec3 from = enemy.Position;
+                            int dx = Math.Sign(effect.center.x - from.x);
+                            int dz = Math.Sign(effect.center.z - from.z);
+                            IntVec3 next = new IntVec3(from.x + dx, 0, from.z + dz);
+                            if (next != from && next.InBounds(map) &&
+                                next.Standable(map) &&
+                                next.GetFirstBuilding(map) == null &&
+                                next.GetFirstPawn(map) == null)
+                            {
+                                EssenceAdvancedAbilities.MovePawn(enemy, next);
+                                work += 0.5f;
+                            }
+                        }
                     }
                     break;
                 case "powerAura":
