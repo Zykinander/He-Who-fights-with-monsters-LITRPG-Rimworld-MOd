@@ -144,6 +144,9 @@ namespace Essencebound
                 confluenceName ??= "";
                 confluenceStatus ??= "incomplete";
                 rank ??= "Iron";
+                // Repair old saves whose third essence previously produced no
+                // confluence. Never reroll an existing, already-owned confluence.
+                RestoreMissingConfluence();
                 EnsureAbilitySlots();
                 EssencePowerCatalog.BackfillLegacyPowers(abilitySlots);
                 // Grant missing starter powers without replacing existing awakenings.
@@ -323,22 +326,52 @@ namespace Essencebound
         internal bool Absorb(EssenceDef essence, out string reason)
         {
             if (!CanAbsorb(essence, out reason)) return false;
-            normalEssenceNames.Add(essence.defName);
-            if (normalEssenceNames.Count == 3)
+            // Resolve before consuming the third essence: never strand a pawn
+            // with all three slots filled if its confluence Defs failed to load.
+            ConfluenceOutcome outcome = null;
+            if (normalEssenceNames.Count == 2)
             {
-                var inputs = normalEssenceNames.Select(DefDatabase<EssenceDef>.GetNamedSilentFail).ToList();
-                var outcome = ConfluenceResolver.Resolve(inputs);
-                confluenceStatus = outcome.state.ToString().ToLowerInvariant();
-                confluenceName = outcome.essence?.defName ?? "";
-                confluenceRestricted = outcome.restricted;
+                var inputs = normalEssenceNames
+                    .Select(DefDatabase<EssenceDef>.GetNamedSilentFail)
+                    .Concat(new[] { essence }).ToList();
+                outcome = ConfluenceResolver.Resolve(inputs);
+                if (outcome.essence == null)
+                {
+                    reason = "No confluence definitions are available; the third essence was not consumed.";
+                    return false;
+                }
             }
+
+            normalEssenceNames.Add(essence.defName);
+            if (outcome != null) AssignConfluence(outcome);
             EnsureAbilitySlots();
             EnsureProgressionRecords();
             string innate = GrantInnatePower(essence.defName);
             string confluenceInnate = string.IsNullOrEmpty(confluenceName) ? "" : GrantInnatePower(confluenceName);
             reason = (string.IsNullOrEmpty(innate) ? "" : " Innate ability: " + innate + ".") +
-                     (string.IsNullOrEmpty(confluenceInnate) ? "" : " Confluence ability: " + confluenceInnate + ".");
+                     (outcome == null ? "" : " Confluence formed: " + outcome.essence.label +
+                     (outcome.state == ConfluenceState.Generated ? " (generated synthesis)." :
+                      outcome.state == ConfluenceState.ConflictResolved ? " (conflicting recipes resolved)." : ".") +
+                     (string.IsNullOrEmpty(confluenceInnate) ? "" : " Innate confluence ability: " + confluenceInnate + "."));
             return true;
+        }
+
+        private void AssignConfluence(ConfluenceOutcome outcome)
+        {
+            if (outcome?.essence == null) return;
+            confluenceName = outcome.essence.defName;
+            confluenceStatus = outcome.state.ToString().ToLowerInvariant();
+            confluenceRestricted = outcome.restricted;
+        }
+
+        private void RestoreMissingConfluence()
+        {
+            if (normalEssenceNames == null || normalEssenceNames.Count != 3 ||
+                !string.IsNullOrEmpty(confluenceName)) return;
+            var input = normalEssenceNames
+                .Select(DefDatabase<EssenceDef>.GetNamedSilentFail).ToList();
+            var outcome = ConfluenceResolver.Resolve(input);
+            if (outcome.essence != null) AssignConfluence(outcome);
         }
 
         internal bool CanAwaken(AwakeningStoneDef stone, string essenceName, out string reason)
