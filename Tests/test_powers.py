@@ -31,7 +31,7 @@ for power in powers:
                                'transfusion','tileBarrier','blinkStrike','summonOrder',
                                'survey','markedTarget','branchingHeal','containment',
                                'decoy','powerAura','wardDome','hazardZone'}
-    assert power['target'] in {'self','pawn'}
+    assert power['target'] in {'self','pawn','cell','thing'}
     assert power['cooldown_ticks']>0
     assert all('EB_Aspect_'+a in aspects for a in power['compatible_aspects'])
     assert all('EB_'+e in all_essences for e in power['favored_essences'])
