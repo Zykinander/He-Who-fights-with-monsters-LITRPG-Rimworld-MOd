@@ -30,12 +30,34 @@ namespace Essencebound
                 .Min(essenceUser.GetEssenceRankIndex)));
         }
 
+        // The fraction of ordinary damage dealt by an UNRANKED pawn to a
+        // defender at this rank. Gold takes 20%, Diamond takes just 1%.
+        // A separate baseline for each rank avoids exponential drift and
+        // provides precise balancing breakpoints.
+        public static float UnrankedDamageFactor(int targetRank)
+        {
+            switch (targetRank)
+            {
+                case 0: return 0.80f; // Iron: 20% reduction
+                case 1: return 0.60f; // Bronze: 40% reduction
+                case 2: return 0.40f; // Silver: 60% reduction
+                case 3: return 0.20f; // Gold: 80% reduction
+                case 4: return 0.01f; // Diamond: 99% reduction
+                default: return 1f;  // Unranked
+            }
+        }
+
         public static float LowerRankDamageFactor(int targetRank, int attackerRank)
         {
             if (targetRank < 0 || attackerRank >= targetRank)
                 return 1f;
-            int gap = Math.Min(5, targetRank - attackerRank);
-            return Math.Max(0.25f, (float)Math.Pow(0.75f, gap));
+            // Compute relative rank protection. Gold receives 20% of an
+            // unranked hit, but 50% of a Silver attack (0.20 / 0.40).
+            // Diamond receives 1% of an unranked hit and 5% of a Gold hit.
+            float attackerBaseline = UnrankedDamageFactor(attackerRank);
+            float defenderBaseline = UnrankedDamageFactor(targetRank);
+            return Math.Max(0.01f, Math.Min(1f,
+                defenderBaseline / Math.Max(0.01f, attackerBaseline)));
         }
 
         // Ranked monster attacks become more dangerous as tears grow stronger.

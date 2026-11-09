@@ -40,10 +40,10 @@
   "awakening_stone_source_provenance": "12 community_listed_known_rarity; 3 community_listed_rarity_unknown; 15 mod_original_unverified; themes, affinities and imprint designs are mod-original",
   "artwork_status": "all_30_unique_png_sprites; editable_SVG_for_18_new",
   "power_count": 12,
-  "gameplay_power_status": "v0.15 ranked monster tiers and universal rank mitigation pending CI and in-game testing",
+  "gameplay_power_status": "v0.15 Gold -80% / Diamond -99% rank-defense balance update pending CI and in-game testing; existing rank generation and looting unchanged",
   "stone_count": 30,
   "power_effect_definitions": 8,
-  "release_notes": "Five ranked magical manifestation tiers chosen from tear density, plus universal ranked defense for Essencebound pawns and monsters against lower-rank attackers using the common pawn damage pipeline.",
+  "release_notes": "Five ranked magical manifestation tiers chosen from tear density, plus universal ranked defense for Essencebound pawns and monsters against lower-rank attackers using the common pawn damage pipeline. Rank-defense rebalance: Gold now receives 20% of unranked pawn damage and Diamond only 1%. Intermediate ranks and ranked-vs-ranked mitigation use a calibrated relative curve.",
   "progression": {
     "attributes": [
       "Power",
@@ -191,10 +191,18 @@
     },
     "group_size": "Gold/Diamond 2 monsters, other ranks 1",
     "rank_inspection": "manifestation hediff stage label shows major tier; spawn message reports tier",
-    "damage_reduction": "for pawn-instigated hits only, 25% multiplicative reduction per major-rank gap when defender is higher rank; capped at 75% reduction",
+    "damage_reduction": "Gold takes exactly 20% (80% reduction) and Diamond 1% (99% reduction) of unranked pawn damage; Iron 80%, Bronze 60%, Silver 40%. Ranked attackers use defender baseline / attacker baseline; equal/higher rank takes no reduction.",
     "essence_user_rank": "lowest owned essence major rank",
     "unranked_attacker": "rank -1, below Iron",
     "environmental_damage": "unchanged without pawn instigator",
-    "implementation": "Harmony 3 patch Pawn.PreApplyDamage; requires separate Harmony mod"
+    "implementation": "Harmony 3 patch Pawn.PreApplyDamage; requires separate Harmony mod",
+    "unranked_damage_factors": {
+      "Iron": 0.8,
+      "Bronze": 0.6,
+      "Silver": 0.4,
+      "Gold": 0.2,
+      "Diamond": 0.01
+    },
+    "ranked_attacker_rule": "When attacker's major rank is below defender's, multiply incoming pawn-instigated damage by defender's unranked-damage factor divided by attacker's. Equal or higher ranked attackers are unaffected."
   }
 }
