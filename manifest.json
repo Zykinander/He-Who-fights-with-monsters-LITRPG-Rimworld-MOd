@@ -1,6 +1,6 @@
 {
   "project": "Essencebound",
-  "version": "0.14",
+  "version": "0.15",
   "target_game": "RimWorld 1.7",
   "requires_compilation": true,
   "compiled_assembly_included": false,
@@ -29,7 +29,8 @@
     "attribute_categories": 4,
     "rank_tiers": 5,
     "astral_tear_definitions": 1,
-    "manifestation_marker_defs": 1
+    "manifestation_marker_defs": 1,
+    "manifestation_rank_tiers": 5
   },
   "unknown_confluence_handling": "no automatic confluence",
   "conflict_handling": "no automatic confluence",
@@ -39,10 +40,10 @@
   "awakening_stone_source_provenance": "12 community_listed_known_rarity; 3 community_listed_rarity_unknown; 15 mod_original_unverified; themes, affinities and imprint designs are mod-original",
   "artwork_status": "all_30_unique_png_sprites; editable_SVG_for_18_new",
   "power_count": 12,
-  "gameplay_power_status": "v0.14 colony-strength-based magic density pending GitHub Actions and in-game validation; v0.13 looting mechanics unchanged",
+  "gameplay_power_status": "v0.15 ranked monster tiers and universal rank mitigation pending CI and in-game testing",
   "stone_count": 30,
   "power_effect_definitions": 8,
-  "release_notes": "Replace once-randomized map magic density with a deterministic, live colony-strength calculation: wealth, pawn count, combat experience and essence advancement. Density drives tear chance and monster danger; density multiplier settings and existing save timers remain.",
+  "release_notes": "Five ranked magical manifestation tiers chosen from tear density, plus universal ranked defense for Essencebound pawns and monsters against lower-rank attackers using the common pawn damage pipeline.",
   "progression": {
     "attributes": [
       "Power",
@@ -132,5 +133,68 @@
     },
     "dynamic_density": "recomputed when density is queried; affects the next tear event roll and future tears; active tears retain their opening-density snapshot",
     "saved_compatibility": "v0.13 ebAmbientDensity ignored; ebNextManifestationCheck preserved, no save schema change for essence users"
+  },
+  "requires_harmony": true,
+  "monster_progression": {
+    "rank_weights_by_magic_density": {
+      "5-24%": [
+        95,
+        5,
+        0,
+        0,
+        0
+      ],
+      "25-49%": [
+        58,
+        39,
+        3,
+        0,
+        0
+      ],
+      "50-74%": [
+        15,
+        55,
+        27,
+        3,
+        0
+      ],
+      "75-94%": [
+        0,
+        15,
+        65,
+        19,
+        1
+      ],
+      "95-100%": [
+        0,
+        0,
+        20,
+        75,
+        5
+      ]
+    },
+    "ranks": [
+      "Iron",
+      "Bronze",
+      "Silver",
+      "Gold",
+      "Diamond"
+    ],
+    "ranks_source": "tear opening density snapshot from current colony strength",
+    "generated_creatures": "Megascarab Iron, Warg Bronze, Thrumbo Silver/Gold/Diamond; creature sprites still placeholders",
+    "outgoing_monster_damage_multiplier": {
+      "Iron": 1,
+      "Bronze": 1.15,
+      "Silver": 1.35,
+      "Gold": 1.6,
+      "Diamond": 2
+    },
+    "group_size": "Gold/Diamond 2 monsters, other ranks 1",
+    "rank_inspection": "manifestation hediff stage label shows major tier; spawn message reports tier",
+    "damage_reduction": "for pawn-instigated hits only, 25% multiplicative reduction per major-rank gap when defender is higher rank; capped at 75% reduction",
+    "essence_user_rank": "lowest owned essence major rank",
+    "unranked_attacker": "rank -1, below Iron",
+    "environmental_damage": "unchanged without pawn instigator",
+    "implementation": "Harmony 3 patch Pawn.PreApplyDamage; requires separate Harmony mod"
   }
 }

@@ -1,10 +1,16 @@
 <?xml version='1.0' encoding='utf-8'?>
 <ModMetaData>
-  <name>Essencebound v0.14 — RimWorld 1.7</name>
+  <name>Essencebound v0.15 — RimWorld 1.7</name>
   <author>Essencebound Project</author>
   <packageId>essencebound.core.prototype</packageId>
   <supportedVersions>
     <li>1.7</li>
   </supportedVersions>
-  <description>Essencebound v0.14: colony-strength-driven magic density based on wealth, population, combat skill and Essencebound essence advancement. Astral tear frequency and monster danger now scale with colony progression. Includes manifestation monsters, Astral Loot, ranked abilities and configurable slots. Experimental RimWorld 1.7; test saves recommended.</description>
+  <modDependencies>
+    <li>
+      <packageId>brrainz.harmony</packageId>
+      <displayName>Harmony</displayName>
+    </li>
+  </modDependencies>
+  <description>Essencebound v0.15: Iron/Bronze/Silver/Gold/Diamond monster rank generation from colony-driven magical density, with universal lower-rank damage resistance for ranked Essencebound colonists and astral monsters. Requires Harmony. Experimental RimWorld 1.7; test saves recommended.</description>
 </ModMetaData>

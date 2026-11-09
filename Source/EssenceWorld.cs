@@ -89,8 +89,8 @@ namespace Essencebound
 
         private bool SpawnMonsterGroup(IntVec3 center, float intensity)
         {
-            string preferred = intensity >= 0.78f ? "Thrumbo" :
-                intensity >= 0.46f ? "Warg" : "Megascarab";
+            int monsterRank = EssenceMonsterRanks.Roll(intensity);
+            string preferred = EssenceMonsterRanks.PlaceholderPawnKind(monsterRank);
             PawnKindDef kind = DefDatabase<PawnKindDef>.GetNamedSilentFail(preferred);
             kind ??= DefDatabase<PawnKindDef>.GetNamedSilentFail("Warg");
             kind ??= DefDatabase<PawnKindDef>.GetNamedSilentFail("Megascarab");
@@ -101,7 +101,7 @@ namespace Essencebound
             }
 
             HediffDef markerDef = DefDatabase<HediffDef>.GetNamedSilentFail("EB_AstralManifestation");
-            int count = intensity >= 0.78f ? 2 : 1;
+            int count = EssenceMonsterRanks.GroupSize(monsterRank);
             int spawned = 0;
             for (int n = 0; n < count; n++)
             {
@@ -115,6 +115,8 @@ namespace Essencebound
                     if (marker != null)
                     {
                         marker.magicDensity = intensity;
+                        marker.rankIndex = monsterRank;
+                        marker.Severity = monsterRank + 1f;
                         monster.health.AddHediff(marker);
                     }
                 }
@@ -124,8 +126,9 @@ namespace Essencebound
                 spawned++;
             }
             if (spawned > 0)
-                Messages.Message("The astral tear unleashed " + spawned +
-                    " magical monster(s)! An essence user can loot their remains.",
+                Messages.Message("The astral tear unleashed " + spawned + " " +
+                    EssenceMonsterRanks.RankLabel(monsterRank) +
+                    "-rank magical monster(s)! Essencebound fighters of lower rank deal less damage.",
                     MessageTypeDefOf.ThreatBig, false);
             return spawned > 0;
         }
