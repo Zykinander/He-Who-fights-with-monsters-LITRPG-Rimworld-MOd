@@ -3,9 +3,30 @@
   <HediffDef>
     <defName>EB_AstralManifestation</defName>
     <label>astral manifestation</label>
-    <description>Creature released from an astral tear. A looting ability may extract an essence from its remains.</description>
+    <description>Creature released from an astral tear. Its visible hediff shows its magical rank. Lower-ranked attackers deal reduced damage to it; higher-rank monsters also attack more strongly. A looting ability may extract an essence from its remains.</description>
     <hediffClass>Essencebound.Hediff_AstralManifestation</hediffClass>
     <isBad>false</isBad>
-    <stages><li /></stages>
+    <maxSeverity>5</maxSeverity>
+    <stages>
+      <li>
+        <label>Iron astral manifestation</label>
+      </li>
+      <li>
+        <minSeverity>2</minSeverity>
+        <label>Bronze astral manifestation</label>
+      </li>
+      <li>
+        <minSeverity>3</minSeverity>
+        <label>Silver astral manifestation</label>
+      </li>
+      <li>
+        <minSeverity>4</minSeverity>
+        <label>Gold astral manifestation</label>
+      </li>
+      <li>
+        <minSeverity>5</minSeverity>
+        <label>Diamond astral manifestation</label>
+      </li>
+    </stages>
   </HediffDef>
 </Defs>

@@ -12,5 +12,7 @@
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Krafs.Rimworld.Ref" Version="1.7.*-*" PrivateAssets="all" />
+    <!-- Harmony 3 is installed by the required Harmony mod; do not package a copy. -->
+    <PackageReference Include="Lib.Harmony" Version="3.0.0-rc.3" ExcludeAssets="runtime" PrivateAssets="all" />
   </ItemGroup>
 </Project>

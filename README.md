@@ -1,58 +1,70 @@
-# Essencebound v0.14 — Colony strength drives magical density
+# Essencebound v0.15 — Ranked magical monsters and rank-based damage resistance
 
-**Development version v0.14 | RimWorld 1.7 | Experimental — test on backed-up saves**
+**RimWorld 1.7 experimental build | Back up saves before testing | Requires Harmony mod**
 
-## Magical density now follows your colony
+## Monsters now receive magical ranks
 
-Instead of assigning each map a random magic-density value when first created, **Essencebound recalculates local magic density from the strength of the colony on that map**.
+Every astral tear snapshots the colony's **current magic density** when it opens, using the v0.14 formula (wealth, population, combat skill and essence ranks). If it releases a monster, that monster rolls one **major magical rank** based on the snapshot:
 
-| Source of colony strength | Maximum contribution |
+| Magic density | Iron | Bronze | Silver | Gold | Diamond |
+|---|---:|---:|---:|---:|---:|
+| 5–24% | 95% | 5% | 0% | 0% | 0% |
+| 25–49% | 58% | 39% | 3% | 0% | 0% |
+| 50–74% | 15% | 55% | 27% | 3% | 0% |
+| 75–94% | 0% | 15% | 65% | 19% | 1% |
+| 95–100% | 0% | 0% | 20% | 75% | 5% |
+
+These are mod-original balance weights, chosen to avoid an early Diamond encounter while allowing occasional rare higher ranks.
+
+Monsters still use vanilla **visual placeholders** (Iron: Megascarab, Bronze: Warg, Silver/Gold/Diamond: Thrumbo). This version focuses on **rank logic and combat**, not creature art. Gold and Diamond manifestations spawn in pairs; lower ranks spawn alone. The opening alert identifies each monster's rank, and its health tab shows a rank-labelled astral manifestation hediff.
+
+### Higher ranked manifestations hit harder
+
+| Monster rank | Damage multiplier for the monster's attacks |
 |---|---:|
-| Starting magical background | 9 percentage points |
-| Colony wealth (gear, buildings, resources) | 23 percentage points |
-| Number of spawned free colonists | 14 percentage points |
-| Colonists' Shooting or Melee skills (whichever is higher) | 12 percentage points |
-| Absorbed essence count and the rank/sublevels of each essence | 42 percentage points |
+| Iron | 1.00× |
+| Bronze | 1.15× |
+| Silver | 1.35× |
+| Gold | 1.60× |
+| Diamond | 2.00× |
 
-These add up to 100% at very high strength and are subject to the **Low (0.65×), Normal (1×), High (1.45×)** multiplier and a final 5%–100% clamp. The displayed percentages for each strength factor in settings indicate *how close that factor is to its full contribution*, not its percentage-point contribution.
+Ranked monsters retain their rank when they die, so the same corpse remains eligible for the existing **Astral Loot** power.
 
-The weights are early gameplay balancing choices, not canonical book formulas. A new colony starts at relatively low magic density, while a wealthy, experienced, essence-rich colony attracts far more magic.
+## Universal rank difference protection
 
-### How progression affects encounters
+**Any pawn with an Essencebound major rank**, including colonists and astral manifestations, takes less damage from **lower-ranked pawns**. This applies to RimWorld pawn-instigated attacks and Essencebound ability damage, not only custom spells.
 
-- The map's daily astral-tear roll now uses the **current** colony-derived density. More developed colonies have a higher chance of a tear, subject to the existing event-frequency setting.
-- A tear takes a **snapshot** of the density when it opens. If your colony changes while the tear is already open, that tear's outcome remains based on the earlier reading.
-- The chance that a tear releases a hostile magical monster still increases with density.
-- Existing monster placeholders continue to scale from Megascarab (low) → Warg (medium) → Thrumbo and two monsters (high).
-- When your pawns level their Iron 0–9, Bronze, Silver, Gold and Diamond essences, their growing magical ability contributes directly to colony density. More Essencebound pawns contribute more.
+| Defending rank advantage | Incoming damage relative to same-rank attack |
+|---|---:|
+| Equal rank or defender lower | 100% |
+| 1 rank higher | 75% |
+| 2 ranks higher | 56.25% |
+| 3 ranks higher | 42.2% |
+| 4 ranks higher | 31.6% |
+| 5 ranks higher (Diamond vs unranked) | 25% |
 
-## See your colony's actual density
+Each rank gap multiplies the incoming damage by 0.75, with a minimum 25% damage floor. **Unranked attackers count as below Iron**, so even Iron essences have a defensive benefit against ordinary unranked pawns. A colonist's defensive rank is their **lowest ranked owned essence**, matching the profile's overall tier. Higher-ranked attackers do not lose damage merely for targeting a lower-ranked pawn.
 
-Open **Options → Mod Settings → Essencebound** while playing a colony. Under *Astral manifestations and magic density*, you will see:
+Damage from fires, weather and other hazards without a pawn instigator remains unchanged. Healing and recovery are not treated as attacks.
 
-- Current colony magic density as a percentage.
-- Wealth, population, combat-skill and essence-rank factors, each on a 0–100 scale.
+### Harmony requirement
 
-The density changes as your population, wealth, skills, and essence power grow. The setting changes the multiplier, not the underlying strength.
-
-## Existing colonies and saves
-
-Existing v0.13 saves can upgrade to v0.14 without resetting any pawn's essences, ranks, powers or affinities. The old map-wide random `ebAmbientDensity` is simply ignored; the map's next scheduled manifestation check remains saved. **Already-open astral tears** retain the density they recorded when they appeared.
-
-No changes to Astral Loot's nearby-corpse menu, mark requirement, 10-cell range or cooldown.
+RimWorld 1.7 needs the **Harmony** mod (package ID `brrainz.harmony`) enabled before Essencebound. The v0.15 mod uses Harmony 3 to patch RimWorld's shared `Pawn.PreApplyDamage` method. This avoids applying resistance only to our 12 prototype powers. **Do not ship a second copy of Harmony's DLL** alongside Essencebound.
 
 ## Testing checklist
 
-1. Open a newly founded colony and check the displayed magic-density value in Mod Settings.
-2. Add wealth or recruit colonists; the density should rise.
-3. Absorb essences into a colonist and advance an essence from Iron 0 to Iron 1; the essence contribution should rise, even if slightly.
-4. Try the density preset Low → Normal → High; the total should change immediately.
-5. In Dev Mode, open a tear and inspect its density. Increase colony strength while it is open; the tear should still resolve at its recorded opening density.
-6. Save and reload; check that the current density reflects colony strength and that the scheduled tear and pawn progress remain intact.
-7. On a mature test colony, check whether stronger monster manifestations become more likely than on the starter colony.
+1. Enable Harmony first, load a temporary test colony, and confirm v0.15 appears in the mod list.
+2. Generate multiple tears at Low/Normal/High magic density and observe the rank in each spawn alert and the monster's Health tab.
+3. Check that an unranked colonist attacks an Iron monster for ~75% the expected damage before ordinary armor calculations.
+4. Check an Iron essence user fighting a Bronze monster for ~75% damage and a Bronze user fighting an Iron monster for normal damage.
+5. Reverse the matchup: Bronze defenders should resist Iron attackers; Iron defenders should not resist Bronze attackers.
+6. Check damage to ranked colonists from unranked enemies (even ordinary animals).
+7. Save/reload a ranked monster and its corpse. Its rank and Astral Loot eligibility should persist.
+8. Check that hazards without instigators still behave normally.
+9. Verify the log has no Harmony patching or XML errors.
 
-## Still in development
+## Upgrade notes
 
-The manifestation creatures, tear sprites and loot pool are still prototypes; custom creatures, progression-adjusted loot and unique abilities come later. All existing configurable 2–5 ability slots, Iron 0–9 advancement, weighted Power/Speed/Spirit/Recovery affinities and Astral Loot controls remain.
+Existing saves and v0.14 essence ranks remain intact. Existing manifested monsters from v0.13/v0.14 load as **Iron-ranked** unless spawned anew with the v0.15 ranking logic. Existing astral tear snapshots are unchanged.
 
-GitHub Actions creates uniquely named build archives (e.g. `Essencebound-v0.14-RW1.7-build23-attempt1`); the installed folder remains `Essencebound`.
+This version does not yet add unique monster sprites or entirely new monster powers. Those are reserved for the next pass after rank combat and difficulty have been validated.

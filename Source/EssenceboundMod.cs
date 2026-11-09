@@ -1,4 +1,5 @@
 using System;
+using HarmonyLib;
 using UnityEngine;
 using Verse;
 
@@ -58,6 +59,10 @@ namespace Essencebound
         public EssenceboundMod(ModContentPack content) : base(content)
         {
             settings = GetSettings<EssenceboundSettings>();
+            // Harmony mod must load first; patch the common pawn damage hook
+            // once so ranked combat affects vanilla and Essencebound damage.
+            new Harmony("essencebound.core.prototype.rankedcombat")
+                .PatchAll(typeof(Patch_EssenceRankIncomingDamage).Assembly);
         }
 
         public override string SettingsCategory() => "Essencebound";

@@ -117,8 +117,8 @@ print('PASS: all 30 icons unique path, 128px RGBA, transparent corners')
 
 # Release metadata must use the development-version scheme.
 metadata=ET.parse(ROOT/'About/About.xml').getroot()
-assert 'v0.14' in metadata.findtext('name')
-assert json.loads((ROOT/'manifest.json').read_text())['version']=='0.14'
+assert 'v0.15' in metadata.findtext('name')
+assert json.loads((ROOT/'manifest.json').read_text())['version']=='0.15'
 print('PASS: v0.13 metadata and inherited stack-count overlays')
 
 # Regression: each GitHub Actions run must have a unique versioned artifact name.
@@ -269,7 +269,7 @@ assert 'Scribe_Values.Look(ref magicDensity' in marker
 for setting in ('manifestationsEnabled','manifestationMonstersEnabled',
                 'manifestationFrequency','densityPreset'):
     assert setting in settings
-assert json.loads((ROOT/'manifest.json').read_text())['version']=='0.14'
+assert json.loads((ROOT/'manifest.json').read_text())['version']=='0.15'
 print('PASS: v0.13 saveable magic density, tears, monster tiering and XML')
 
 # v0.14: monster danger follows actual colony progression, not random base magic.
@@ -317,6 +317,42 @@ assert density_for(70000,5,9,5)==density_for(70000,5,9,5)
 assert density_for(0,0,0,0)>=0.05
 assert density_for(10**9,100,20,100)<=1
 manifest=json.loads((ROOT/'manifest.json').read_text())
-assert manifest['version']=='0.14'
+assert manifest['version']=='0.15'
 assert manifest['world_integration']['density_weights']['essence']==0.42
 print('PASS: v0.14 deterministic strength-based density scales up with colony strength')
+
+# v0.15: all manifestation tiers appear visibly and save correctly.
+stage_defs=definitions('1.7/Defs/HediffDefs/AstralManifestations.xml','HediffDef')
+assert len(stage_defs)==1
+stage=stage_defs[0]
+assert child_text(stage,'maxSeverity')=='5'
+rank_stages=stage.find('stages')
+assert rank_stages is not None and len(rank_stages)==5
+assert [x.findtext('label') for x in rank_stages] == [
+    'Iron astral manifestation','Bronze astral manifestation',
+    'Silver astral manifestation','Gold astral manifestation',
+    'Diamond astral manifestation'
+]
+assert [x.findtext('minSeverity') for x in rank_stages][1:] == ['2','3','4','5']
+monster_src=(ROOT/'Source/EssenceMonsterRanks.cs').read_text()
+world=(ROOT/'Source/EssenceWorld.cs').read_text()
+mark=(ROOT/'Source/Hediff_AstralManifestation.cs').read_text()
+assert 'public static int[] WeightsForDensity(float density)' in monster_src
+assert 'public static int Roll(float density)' in monster_src
+for expected in ('95, 5, 0, 0, 0','58, 39, 3, 0, 0',
+                 '15, 55, 27, 3, 0','0, 15, 65, 19, 1','0, 0, 20, 75, 5'):
+    assert expected in monster_src
+assert 'EssenceMonsterRanks.Roll(intensity)' in world
+assert 'marker.rankIndex = monsterRank' in world
+assert 'marker.Severity = monsterRank + 1f' in world
+assert 'EssenceMonsterRanks.GroupSize(monsterRank)' in world
+assert 'ebMonsterRankIndex' in mark
+assert 'Scribe_Values.Look(ref magicDensity' in mark
+meta=json.loads((ROOT/'manifest.json').read_text())
+assert meta['version']=='0.15'
+assert meta['monster_progression']['ranks']==['Iron','Bronze','Silver','Gold','Diamond']
+assert all(sum(weights)==100 for weights in meta['monster_progression']['rank_weights_by_magic_density'].values())
+assert meta['requires_harmony']
+modxml=ET.parse(ROOT/'About/About.xml').getroot()
+assert modxml.findtext('modDependencies/li/packageId') == 'brrainz.harmony'
+print('PASS: v0.15 5 ranked manifestation tiers, persistent rank label, Harmony requirement')
