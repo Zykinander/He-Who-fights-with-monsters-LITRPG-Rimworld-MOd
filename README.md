@@ -21,7 +21,9 @@ Monster chance grows from about 15% at zero intensity to 80% at maximum intensit
 
 ## Astral Loot power
 
-Each Essencebound pawn temporarily has a **universal Astral Loot** gizmo. Select the ability, then target the **corpse** of a monster specifically released from an astral tear. Within 10 cells and line of sight, the power consumes those remains and produces one random normal essence crystal. It has a 60-second game cooldown. Ordinary animals cannot be looted by this power, nor can a manifested monster be looted twice.
+Each Essencebound pawn temporarily has a **universal Astral Loot** gizmo. Select the ability to open a menu listing eligible **marked monster corpses within 10 cells and line of sight**. Select one to extract its essence. Alternatively choose **Target a corpse on the map** and click its tile; this works even if the game treats the corpse as a cell instead of an item. The power consumes the remains and produces one random normal essence crystal, with a 60-second game cooldown. Ordinary animals cannot be looted by this power, nor can a manifested monster be looted twice.
+
+**Loot troubleshooting:** If no remains appear in the menu, move the pawn closer, check line of sight and confirm the target came from a tear rather than a normally spawned animal. A failed map-target attempt now provides a specific reason. Only a fully dead pawn with a spawned corpse can be extracted.
 
 This is a **prototype utility power**, not yet an awakened ability occupying one of the 2–5 slots. Future releases can introduce distinct looting powers from essences or awakening stones with their own rarity and effects.
 
@@ -42,7 +44,7 @@ With **Development Mode** enabled, select a colonist who has absorbed an essence
 
 1. Confirm the tear appears on the map, shows a density percentage, and persists for roughly 900 ticks.
 2. Verify it leaves a crystal or releases a creature. Use the density and monster toggles to test both cases.
-3. Defeat a manifested monster in a disposable colony, select an essence user, activate **Astral Loot**, and target its corpse.
+3. Defeat a manifested monster in a disposable colony, select an essence user, activate **Astral Loot**, and choose its remains from the nearby list. Also test the **Target a corpse on the map** fallback.
 4. Verify an essence crystal appears, the corpse disappears, and the 60-second cooldown starts.
 5. Confirm targeting an ordinary corpse cannot yield an essence.
 6. Save/reload during an open tear and verify its timer and density persist.

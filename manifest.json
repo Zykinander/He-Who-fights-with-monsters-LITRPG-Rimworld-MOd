@@ -42,7 +42,7 @@
   "gameplay_power_status": "v0.13 world event, monster AI and corpse-looting prototype pending GitHub Actions and RimWorld test",
   "stone_count": 30,
   "power_effect_definitions": 8,
-  "release_notes": "Ambient map magic density and configurable astral manifestations; a tear may crystallize an essence or summon 1–2 hostile magical monsters, whose corpses can be looted with Astral Loot.",
+  "release_notes": "Ambient map magic density and configurable astral manifestations; a tear may crystallize an essence or summon 1–2 hostile magical monsters, whose corpses can be looted with Astral Loot. Astral Loot hotfix: nearby corpse menu, map-cell targeting fallback, and clearer failures.",
   "progression": {
     "attributes": [
       "Power",
@@ -114,6 +114,8 @@
       "frequency 0–3",
       "magic density 3 presets"
     ],
-    "qa": "dev-mode pawn button forces a tear for in-game testing"
+    "qa": "dev-mode pawn button forces a tear for in-game testing",
+    "loot_targeting": "nearby marked corpse FloatMenu plus map-cell targeting fallback",
+    "loot_troubleshooting": "distinct rejection reasons for unmarked, out-of-range or obstructed remains"
   }
 }

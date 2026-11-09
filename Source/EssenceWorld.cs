@@ -172,7 +172,14 @@ namespace Essencebound
             string suffix = essence.defName.StartsWith("EB_")
                 ? essence.defName.Substring(3) : essence.defName;
             ThingDef crystal = DefDatabase<ThingDef>.GetNamedSilentFail("EB_" + suffix + "_Crystal");
-            if (crystal == null || !TryFindNear(center, map, out IntVec3 cell)) return false;
+            if (crystal == null) return false;
+            // The corpse's own tile is a valid fallback when surrounded by
+            // structures: do not discard the loot after a successful cast.
+            if (!TryFindNear(center, map, out IntVec3 cell))
+            {
+                if (!center.InBounds(map) || !center.Standable(map)) return false;
+                cell = center;
+            }
             GenSpawn.Spawn(ThingMaker.MakeThing(crystal), cell, map);
             label = essence.label;
             return true;

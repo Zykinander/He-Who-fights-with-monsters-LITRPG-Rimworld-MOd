@@ -394,21 +394,81 @@ namespace Essencebound
             return true;
         }
 
+
+        // RimWorld's point targeter may treat a Corpse as a pawn, rather than
+        // an item. A reliable menu makes marked remains selectable even when
+        // direct targeting cannot resolve the underlying corpse Thing.
         private void BeginAstralLoot()
         {
+            if (pawn?.Map == null)
+            {
+                Messages.Message("Astral Loot needs a pawn on a map.",
+                    MessageTypeDefOf.RejectInput, false);
+                return;
+            }
+
+            var nearby = pawn.Map.listerThings.AllThings.OfType<Corpse>()
+                .Where(c => c != null && c.Spawned && c.Map == pawn.Map &&
+                            c.Position.DistanceTo(pawn.Position) <= 10f &&
+                            HasAstralLootMark(c) &&
+                            GenSight.LineOfSight(pawn.Position, c.Position, pawn.Map))
+                .OrderBy(c => c.Position.DistanceTo(pawn.Position))
+                .ToList();
+
+            var options = new List<FloatMenuOption>
+            {
+                new FloatMenuOption("Target a corpse on the map", BeginAstralLootTargeting)
+            };
+            foreach (Corpse corpse in nearby)
+            {
+                Corpse captured = corpse;
+                string label = corpse.InnerPawn?.LabelShort ?? corpse.LabelShort;
+                options.Add(new FloatMenuOption("Loot astral remains: " + label +
+                    " (" + corpse.Position.DistanceTo(pawn.Position).ToString("0") + " cells)",
+                    () => NotifyAstralLoot(captured)));
+            }
+            if (nearby.Count == 0)
+                options.Add(new FloatMenuOption(
+                    "No marked astral monster remains within 10 cells and sight", null));
+            Find.WindowStack.Add(new FloatMenu(options));
+        }
+
+        private void BeginAstralLootTargeting()
+        {
+            // The old action permitted items but not ground cells. A corpse can
+            // be resolved through a cell even when RimWorld returns no Thing.
             var targets = new TargetingParameters
             {
                 canTargetItems = true,
+                canTargetLocations = true,
                 canTargetPawns = false,
-                canTargetBuildings = false,
-                canTargetLocations = false
+                canTargetBuildings = false
             };
             Find.Targeter.BeginTargeting(targets, (LocalTargetInfo local) =>
             {
-                bool ok = TryLootAstralRemains(local.Thing as Corpse, out string reason);
-                Messages.Message((pawn?.LabelShort ?? "Pawn") + ": " + reason,
-                    ok ? MessageTypeDefOf.PositiveEvent : MessageTypeDefOf.RejectInput, false);
+                Corpse corpse = local.Thing as Corpse;
+                if (corpse == null && pawn?.Map != null &&
+                    local.Cell.IsValid && local.Cell.InBounds(pawn.Map))
+                {
+                    corpse = local.Cell.GetThingList(pawn.Map).OfType<Corpse>()
+                        .OrderByDescending(HasAstralLootMark).FirstOrDefault();
+                }
+                NotifyAstralLoot(corpse);
             });
+        }
+
+        private void NotifyAstralLoot(Corpse corpse)
+        {
+            bool success = TryLootAstralRemains(corpse, out string reason);
+            Messages.Message((pawn?.LabelShort ?? "Pawn") + ": " + reason,
+                success ? MessageTypeDefOf.PositiveEvent : MessageTypeDefOf.RejectInput,
+                false);
+        }
+
+        private static bool HasAstralLootMark(Corpse corpse)
+        {
+            return corpse?.InnerPawn?.health?.hediffSet?.hediffs
+                ?.OfType<Hediff_AstralManifestation>().Any() == true;
         }
 
         public bool TryLootAstralRemains(Corpse corpse, out string reason)
@@ -419,13 +479,12 @@ namespace Essencebound
             int now = Find.TickManager.TicksGame;
             if (now < nextAstralLootTick)
             { reason = "Astral Loot is on cooldown."; return false; }
-            if (pawn.Position.DistanceTo(corpse.Position) > 10f ||
-                !GenSight.LineOfSight(pawn.Position, corpse.Position, pawn.Map))
-            { reason = "Move within 10 cells and establish line of sight."; return false; }
-            var mark = corpse.InnerPawn?.health?.hediffSet?.hediffs
-                ?.OfType<Hediff_AstralManifestation>().FirstOrDefault();
-            if (mark == null)
-            { reason = "These remains were not created by an astral tear."; return false; }
+            if (pawn.Position.DistanceTo(corpse.Position) > 10f)
+            { reason = "Move within 10 cells of the remains."; return false; }
+            if (!GenSight.LineOfSight(pawn.Position, corpse.Position, pawn.Map))
+            { reason = "Line of sight to the remains is blocked."; return false; }
+            if (!HasAstralLootMark(corpse))
+            { reason = "These remains are not from an astral-tear monster (or the marker was lost)."; return false; }
             if (!MapComponent_EssenceWorld.SpawnEssence(corpse.Position, pawn.Map,
                 out string essenceLabel))
             { reason = "No space was found to place the condensed essence."; return false; }
@@ -515,9 +574,9 @@ namespace Essencebound
             var lootCmd = new Command_Action
             {
                 defaultLabel = "Astral Loot",
-                defaultDesc = "Target the corpse of a monster released by an astral tear. " +
-                              "Extracts one random normal essence and consumes the remains. " +
-                              "Prototype power available to any Essencebound pawn.",
+                defaultDesc = "Choose a nearby marked astral corpse from a list, or target " +
+                              "its map cell directly. Extracts one normal essence and consumes " +
+                              "the remains. Only monsters released by astral tears qualify.",
                 icon = ContentFinder<UnityEngine.Texture2D>.Get(
                     "Essencebound/AwakeningStones/StoneFocus", false),
                 action = BeginAstralLoot
