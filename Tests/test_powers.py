@@ -557,7 +557,10 @@ cellKinds={'webZone','slowField','pullZone','groundWard','longTeleport'}
 assert len(pawnKinds)==25 and len(cellKinds)==5
 assert {jsonbyid[i]['effect'] for i in batch19}==pawnKinds|cellKinds
 for kind in pawnKinds|cellKinds:
-    assert 'case "'+kind+'":' in source,kind
+    if kind == 'longTeleport':
+        assert 'if (power.effectKind == "longTeleport")' in source
+    else:
+        assert 'case "'+kind+'":' in source,kind
     assert 'case "'+kind+'":' in prog,kind
 for kind in pawnKinds:
     assert 'case "'+kind+'":' in executor,kind
