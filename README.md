@@ -1,73 +1,57 @@
-# Essencebound v0.15 — Ranked magical monsters and rank-based damage resistance
+# Essencebound v0.16 — Unique ability expansion
 
-**RimWorld 1.7 experimental build | Back up saves before testing | Requires Harmony mod**
+**RimWorld 1.7 | Test release | Requires Harmony | Back up saves before upgrading**
 
-## Monsters now receive magical ranks
+## Twelve new playable powers (24 total)
 
-Every astral tear snapshots the colony's **current magic density** when it opens, using the v0.14 formula (wealth, population, combat skill and essence ranks). If it releases a monster, that monster rolls one **major magical rank** based on the snapshot:
+This update expands our previous 12 general power templates to **24 distinct abilities**. It adds **nine new effect mechanics** instead of just changing spell names. Every new power is available through the existing Awakening Stone aspect system and uses the same 2–5 ability slot limit per essence.
 
-| Magic density | Iron | Bronze | Silver | Gold | Diamond |
-|---|---:|---:|---:|---:|---:|
-| 5–24% | 95% | 5% | 0% | 0% | 0% |
-| 25–49% | 58% | 39% | 3% | 0% | 0% |
-| 50–74% | 15% | 55% | 27% | 3% | 0% |
-| 75–94% | 0% | 15% | 65% | 19% | 1% |
-| 95–100% | 0% | 0% | 20% | 75% | 5% |
+| Power | Role | What it actually does | Essence theme |
+|---|---|---|---|
+| Cinder Nova | Area damage | Burning pulse hurts hostile pawns near caster | Volcano |
+| Thunder Chain | Chain attack | Hits the selected pawn plus up to two nearby hostiles | Thunderbird |
+| Blood Siphon | Damage + self-healing | Damages target and heals the caster by a portion of effective damage | Blood |
+| Life Bloom | Grouped injury healing | Spends a healing pool across several of one pawn's injuries | Fertile |
+| Renewal Seed | Heal over time | Repairs actual injuries once every 120 ticks during its duration | Renewal |
+| Grove Shelter | Group ward | Gives nearby nonhostile pawns temporary armor buffs | Tree |
+| Purging Wave | Area cleansing | Removes Essencebound debuffs from nearby nonhostile pawns | Pure |
+| Gravity Snare | Battlefield control | Slows a hostile pawn; progress follows active restraint | Vortex |
+| Corrosive Strike | Armor debuff | Damages target and temporarily lowers its armor | Blight |
+| Echo Burst | Splash attack | Damages selected pawn plus nearby hostile pawns at half magnitude | Echo |
+| Spirit Beacon | Support buff | Temporarily improves work speed and ranged accuracy | Mystic |
+| Moonlit Reprieve | Healing + ward | Repairs an injury and grants a protective buff | Moon |
 
-These are mod-original balance weights, chosen to avoid an early Diamond encounter while allowing occasional rare higher ranks.
+These abilities are **original mod-gameplay interpretations**, not claims about specific canonical abilities from the books.
 
-Monsters still use vanilla **visual placeholders** (Iron: Megascarab, Bronze: Warg, Silver/Gold/Diamond: Thrumbo). This version focuses on **rank logic and combat**, not creature art. Gold and Diamond manifestations spawn in pairs; lower ranks spawn alone. The opening alert identifies each monster's rank, and its health tab shows a rank-labelled astral manifestation hediff.
+## Progression is tied to real results
 
-### Higher ranked manifestations hit harder
+New attack abilities earn XP from **effective damage dealt**. Life Bloom and Renewal Seed award XP only for **injuries actually healed**. Gravity Snare gains work while it genuinely affects a hostile pawn; Purging Wave only grants work for debuffs removed. Group wards grant periodic training while their benefits remain active. This carries forward the Iron 0–9 and per-essence synchronized rank requirements.
 
-| Monster rank | Damage multiplier for the monster's attacks |
-|---|---:|
-| Iron | 1.00× |
-| Bronze | 1.15× |
-| Silver | 1.35× |
-| Gold | 1.60× |
-| Diamond | 2.00× |
+Rank resistance from v0.15 still applies to damage through the shared RimWorld damage pipeline; a Diamond defender continues taking **99% less damage from unranked attackers**.
 
-Ranked monsters retain their rank when they die, so the same corpse remains eligible for the existing **Astral Loot** power.
+## How to obtain the new powers
 
-## Universal rank difference protection
+For new characters, 12 selected essences now grant one of these new abilities as their **innate starter** when first absorbed (for example, Volcano → Cinder Nova, Blood → Blood Siphon, Renewal → Renewal Seed). The other 214 essence starter mappings are unchanged.
 
-**Any pawn with an Essencebound major rank**, including colonists and astral manifestations, takes less damage from **lower-ranked pawns**. This applies to RimWorld pawn-instigated attacks and Essencebound ability damage, not only custom spells.
+All 24 powers can also appear as compatible Awakening Stone choices using their associated aspects. An essence favors powers aligned with its theme, but the stone/aspect system still allows unusual combinations.
 
-### Intensified rank-resistance balance update
-
-| Defender rank | Damage taken from unranked attacker | Reduction |
-|---|---:|---:|
-| Iron | 80% | 20% |
-| Bronze | 60% | 40% |
-| Silver | 40% | 60% |
-| Gold | **20%** | **80%** |
-| Diamond | **1%** | **99%** |
-
-These are the exact damage multipliers against an **unranked attacker**. For attacks between ranked pawns, damage is the ratio of the defender's baseline to the attacker's baseline. Examples: Iron attacking Bronze deals 75% damage; Silver attacking Gold deals 50%; Gold attacking Diamond deals only 5%; and Iron attacking Diamond deals 1.25%. **An attacker at the same or a higher rank gets no rank-based penalty.**
-
-This rule applies to all pawn-instigated hits through the existing Harmony damage hook. A colonist's defensive rank is their **lowest-ranked owned essence**, matching the overall rank in the profile. Ordinary armor and other health mechanics still apply after the rank-based damage adjustment. Diamond's extreme protection is deliberate and may require further gameplay tuning.
-
-Damage from fires, weather and other hazards without a pawn instigator remains unchanged. Healing and recovery are not treated as attacks.
-
-### Harmony requirement
-
-RimWorld 1.7 needs the **Harmony** mod (package ID `brrainz.harmony`) enabled before Essencebound. The v0.15 mod uses Harmony 3 to patch RimWorld's shared `Pawn.PreApplyDamage` method. This avoids applying resistance only to our 12 prototype powers. **Do not ship a second copy of Harmony's DLL** alongside Essencebound.
+**Existing saves:** Already awakened powers, cooldowns, affinity rolls and ranks are not rewritten. An essence absorbed *before* this release retains its original innate power. Only newly absorbed essences get the revised starter mapping.
 
 ## Testing checklist
 
-1. Enable Harmony first, load a temporary test colony, and confirm v0.15 appears in the mod list.
-2. Generate multiple tears at Low/Normal/High magic density and observe the rank in each spawn alert and the monster's Health tab.
-3. Check that an unranked colonist hits an Iron monster for ~80% normal damage, a Gold monster for ~20%, and a Diamond monster for ~1%, before ordinary armor calculations.
-4. Check an Iron essence user fighting a Bronze monster for ~75% damage and a Bronze user fighting an Iron monster for normal damage.
-5. Reverse the matchup: Bronze defenders should resist Iron attackers; Iron defenders should not resist Bronze attackers.
-6. Check damage to ranked colonists from unranked enemies (even ordinary animals).
-7. Save/reload a ranked monster and its corpse. Its rank and Astral Loot eligibility should persist.
-8. Check that hazards without instigators still behave normally.
-9. Verify the log has no Harmony patching or XML errors.
+1. On a temporary colony, absorb **Volcano**, **Blood**, **Renewal** or **Vortex** on new Essencebound pawns and check the new innate powers appear.
+2. Use Thunder Chain against a target surrounded by other hostiles; verify the secondary hits and actual damage XP.
+3. Test Life Bloom on a pawn with multiple wounds; the total healing should not exceed its configured budget.
+4. Apply Renewal Seed to an injured pawn; watch wounds recover over time, with XP awarded only for healing.
+5. Apply Grove Shelter and Spirit Beacon to allies. Confirm the hediff and periodic training persist across a save/reload.
+6. Use Purging Wave on allies affected by Chilled, Static, Gravity Snare or Corroded Armor. No afflicted pawn means no cleanse XP.
+7. Apply Gravity Snare to a hostile and verify it slows that pawn and grants duration-based work. Try it on an ally; the spell should be rejected.
+8. Use Blood Siphon with and without wounds on the caster. Effective damage earns attack XP, and healing is limited to existing injuries.
+9. Check that Stone awakenings now select from the wider pool, and that existing v0.15 powers still cast normally.
+10. Examine Player.log for new missing-def, targeting, or save/load errors.
 
-## Upgrade notes
+## Known limitations
 
-Existing saves and v0.14 essence ranks remain intact. Existing manifested monsters from v0.13/v0.14 load as **Iron-ranked** unless spawned anew with the v0.15 ranking logic. Existing astral tear snapshots are unchanged.
+New powers initially reuse existing awakening-stone icon art; unique sprites and animations are future work. Area effects select valid nearby pawns rather than producing visible projectile animations. The first wave favors breadth and mechanical diversity; we can add lore-specific abilities and distinctive animation passes next.
 
-This version does not yet add unique monster sprites or entirely new monster powers. Those are reserved for the next pass after rank combat and difficulty have been validated.
+This is an experimental compiled release, not yet tested in-game. Install only one copy of `Mods/Essencebound`, with Harmony enabled first.
