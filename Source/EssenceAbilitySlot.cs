@@ -15,7 +15,8 @@ namespace Essencebound
         public string awakeningAspectDefName = "";
         public int nextUseTick;
         public int abilityRankIndex; // Iron=0, Diamond=4.
-        public float rankWork;       // Measured real contribution toward the next tier.
+        public int abilitySublevel;  // 0..9 within Iron, Bronze, Silver and Gold.
+        public float rankWork;       // Measured work toward the next sublevel.
         // "innate" for absorption-granted powers; "stone" for awakening stones.
         public string sourceKind = "";
 
@@ -38,8 +39,22 @@ namespace Essencebound
             Scribe_Values.Look(ref nextUseTick, "nextUseTick", 0);
             Scribe_Values.Look(ref abilityRankIndex, "abilityRankIndex", 0);
             Scribe_Values.Look(ref rankWork, "rankWork", 0f);
-            abilityRankIndex = System.Math.Max(0, System.Math.Min(4, abilityRankIndex));
-            rankWork = System.Math.Max(0f, rankWork);
+            Scribe_Values.Look(ref abilitySublevel, "abilitySublevel", -1);
+            if (Scribe.mode == LoadSaveMode.PostLoadInit)
+            {
+                abilityRankIndex = System.Math.Max(0, System.Math.Min(4, abilityRankIndex));
+                rankWork = System.Math.Max(0f, rankWork);
+                if (abilitySublevel < 0)
+                {
+                    // Convert v0.11 progress (work per whole rank) into sublevels
+                    // without rerolling any affinity or discarding earned XP.
+                    float step = EssenceProgression.NextSublevelWork(abilityRankIndex);
+                    int completed = step > 0f ? (int)System.Math.Floor(rankWork / step) : 0;
+                    abilitySublevel = System.Math.Max(0, System.Math.Min(9, completed));
+                    rankWork = System.Math.Max(0f, rankWork - abilitySublevel * step);
+                }
+                abilitySublevel = System.Math.Max(0, System.Math.Min(9, abilitySublevel));
+            }
             Scribe_Values.Look(ref sourceKind, "sourceKind", "");
         }
     }

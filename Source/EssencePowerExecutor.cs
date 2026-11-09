@@ -128,9 +128,9 @@ namespace Essencebound
             }
             var result = target.TakeDamage(new DamageInfo(def, amount, 0f, -1f, caster));
             float inflicted = Math.Max(0f, result.totalDamageDealt);
-            // Damage to friendly/neutral pawns is still allowed, but doesn't
-            // train attacks. Prevents the easiest friendly-fire XP exploit.
-            work = target.HostileTo(caster) ? inflicted : 0f;
+            // All manually selected valid pawns yield progression proportional
+            // to actual damage dealt, matching universal targeting behavior.
+            work = inflicted;
             message = inflicted > 0f
                 ? "Hit " + target.LabelShort + " for " + inflicted.ToString("0.#") + " damage."
                 : "Hit " + target.LabelShort + ", but the damage was resisted or absorbed.";

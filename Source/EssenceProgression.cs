@@ -41,6 +41,29 @@ namespace Essencebound
             return currentRank < 0 || currentRank >= 4 ? 0f : Thresholds[currentRank];
         }
 
+        // Ten equal training steps within each rank. The total per-major-rank
+        // work remains unchanged from v0.11.
+        public static float NextSublevelWork(int currentRank)
+        {
+            return NextRankWork(currentRank) / 10f;
+        }
+
+        public static string RankWithLevel(int majorRank, int sublevel)
+        {
+            return RankLabel(majorRank) + " " +
+                Math.Max(0, Math.Min(9, majorRank >= 4 ? 0 : sublevel));
+        }
+
+        // Smoothly approach the NEXT tier's doubled bonus.
+        // Iron 0 = x1; Iron 1 = x1.1; Iron 9 = x1.9; Bronze 0 = x2.
+        // Bronze 9 = x3.8; Silver 0 = x4, etc.
+        public static float RankBonusMultiplier(int rankIndex, int sublevel)
+        {
+            float major = RankBonusMultiplier(rankIndex);
+            if (rankIndex >= 4) return major;
+            return major * (1f + Math.Max(0, Math.Min(9, sublevel)) / 10f);
+        }
+
         public static string RankLabel(int index)
         {
             return Ranks[Math.Max(0, Math.Min(4, index))];
