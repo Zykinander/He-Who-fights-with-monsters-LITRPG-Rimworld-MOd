@@ -57,7 +57,7 @@ namespace Essencebound
                 case "radiantPurge":
                     return RadiantPurge(caster, power, powerScale, out message, out work);
                 case "conditionalBuff":
-                    if (caster.Map.glowGrid.GameGlowAt(caster.Position) > 0.4f)
+                    if (caster.Map.glowGrid.GroundGlowAt(caster.Position) > 0.4f)
                     { message = "Moonshadow can only be invoked in dim light."; return false; }
                     return ApplyBoon(caster, "EB_Buff_Moonshadow", caster, slot,
                         duration, "Moonshadow enhances evasion in low light.", out message);
