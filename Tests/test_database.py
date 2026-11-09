@@ -118,7 +118,7 @@ print('PASS: all 30 icons unique path, 128px RGBA, transparent corners')
 # Release metadata must use the development-version scheme.
 metadata=ET.parse(ROOT/'About/About.xml').getroot()
 assert 'v0.13' in metadata.findtext('name')
-assert json.loads((ROOT/'manifest.json').read_text())['version']=='0.12'
+assert json.loads((ROOT/'manifest.json').read_text())['version']=='0.13'
 print('PASS: v0.13 metadata and inherited stack-count overlays')
 
 # Regression: each GitHub Actions run must have a unique versioned artifact name.
