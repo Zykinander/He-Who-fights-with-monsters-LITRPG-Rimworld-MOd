@@ -316,15 +316,20 @@
     "visual_guide": "ABILITY_VISUAL_DESIGN_GUIDE.md",
     "structured_data": "Data/ability_visual_designs.json",
     "ability_concepts": 100,
-    "finished_unique_icon_assets": 0,
-    "finished_unique_vfx_assets": 0,
-    "status": "first_pass_procedural_icons_and_sigils_generated_in_CI",
+    "finished_unique_icon_assets": 100,
+    "finished_unique_vfx_assets": 100,
+    "status": "100 usable first-pass icon PNGs and 100 matching sigil effects exported in build ZIP",
     "icon_target": "transparent 128x128 PNG with 64x64 and 32x32 previews",
     "future_asset_directory": "1.7/Textures/Essencebound/AbilityIcons",
     "gameplay_untouched": true,
     "generated_icon_assets_in_packaged_build": 100,
     "generated_cast_sigil_assets_in_packaged_build": 100,
     "produced_assets_stored_in_git": false,
-    "production_source": "Tools/generate_ability_icons.py"
+    "production_source": "Tools/generate_ability_icons.py",
+    "hand_painted_unique_icons": 0,
+    "individually_animated_spell_sequences": 0,
+    "custom_sound_assets": 0,
+    "in_game_verified": false,
+    "visual_fx_kind": "per_power_fading_growing_fleck_sigil_on_cast_target_and_field_pulse"
   }
 }

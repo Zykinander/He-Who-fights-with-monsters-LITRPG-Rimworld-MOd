@@ -2,8 +2,8 @@
   "version": "1.0",
   "source_version": "0.19",
   "ability_count": 100,
-  "status": "visual_concept_only",
-  "scope": "One silhouette, primary/highlight/shadow colors, casting cue, resulting effect and sound direction per power. No finished game art.",
+  "status": "procedural_first_pass_generated_in_build",
+  "scope": "Each power has a 128x128 transparent generated icon and a corresponding animated fleck sigil. Custom audio remains a design concept.",
   "technical_targets": {
     "icon_resolution_px": 128,
     "preview_resolutions_px": [
@@ -12,7 +12,8 @@
     ],
     "background": "transparent",
     "planned_texture_directory": "1.7/Textures/Essencebound/AbilityIcons",
-    "requires_export_and_implementation": true
+    "requires_export_and_implementation": false,
+    "generator": "Tools/generate_ability_icons.py"
   },
   "abilities": [
     {
@@ -27,7 +28,7 @@
         "Single Target"
       ],
       "existing_effect_kind": "damage",
-      "design_status": "concept_only",
+      "design_status": "procedural_first_pass",
       "asset_path": "Essencebound/AbilityIcons/EmberBolt",
       "icon_silhouette": "A flaming arrowhead enclosing one coal",
       "palette": {
@@ -37,7 +38,12 @@
       },
       "cast_vfx": "A bright orange rune sparks in the caster's palm",
       "result_vfx": "A narrow ember streak ends in one compact fire burst",
-      "sound_direction": "Short dry crackle"
+      "sound_direction": "Short dry crackle",
+      "icon_asset_status": "generated_in_mod_zip",
+      "sigil_asset_path": "Essencebound/AbilitySigils/EmberBolt",
+      "sigil_asset_status": "generated_in_mod_zip",
+      "vfx_status": "animated_fading_growing_sigil_at_cast_target_and_field_pulse",
+      "audio_asset_status": "not_implemented"
     },
     {
       "id": "FrostShard",
@@ -52,7 +58,7 @@
         "Single Target"
       ],
       "existing_effect_kind": "damageDebuff",
-      "design_status": "concept_only",
+      "design_status": "procedural_first_pass",
       "asset_path": "Essencebound/AbilityIcons/FrostShard",
       "icon_silhouette": "A jagged six-point icicle splitting a snowflake",
       "palette": {
@@ -62,7 +68,12 @@
       },
       "cast_vfx": "Three icy facets crystallize above the hand",
       "result_vfx": "The shard strikes with a frostflake snap and a thin slowing ring",
-      "sound_direction": "Glasslike chime"
+      "sound_direction": "Glasslike chime",
+      "icon_asset_status": "generated_in_mod_zip",
+      "sigil_asset_path": "Essencebound/AbilitySigils/FrostShard",
+      "sigil_asset_status": "generated_in_mod_zip",
+      "vfx_status": "animated_fading_growing_sigil_at_cast_target_and_field_pulse",
+      "audio_asset_status": "not_implemented"
     },
     {
       "id": "StormSpark",
@@ -77,7 +88,7 @@
         "Single Target"
       ],
       "existing_effect_kind": "damageDebuff",
-      "design_status": "concept_only",
+      "design_status": "procedural_first_pass",
       "asset_path": "Essencebound/AbilityIcons/StormSpark",
       "icon_silhouette": "A forked lightning bolt inside an open circle",
       "palette": {
@@ -87,7 +98,12 @@
       },
       "cast_vfx": "Violet sparks gather between three floating nodes",
       "result_vfx": "A short zigzag flashes and a static halo clings to the target",
-      "sound_direction": "Sharp electrical click"
+      "sound_direction": "Sharp electrical click",
+      "icon_asset_status": "generated_in_mod_zip",
+      "sigil_asset_path": "Essencebound/AbilitySigils/StormSpark",
+      "sigil_asset_status": "generated_in_mod_zip",
+      "vfx_status": "animated_fading_growing_sigil_at_cast_target_and_field_pulse",
+      "audio_asset_status": "not_implemented"
     },
     {
       "id": "VerdantMend",
@@ -101,7 +117,7 @@
         "Injury Healing"
       ],
       "existing_effect_kind": "heal",
-      "design_status": "concept_only",
+      "design_status": "procedural_first_pass",
       "asset_path": "Essencebound/AbilityIcons/VerdantMend",
       "icon_silhouette": "A split leaf stitched by a glowing thread",
       "palette": {
@@ -111,7 +127,12 @@
       },
       "cast_vfx": "A leaf-shaped ribbon circles the caster's fingertips",
       "result_vfx": "Soft green stitches close visible wound marks on the target",
-      "sound_direction": "Gentle leaf rustle"
+      "sound_direction": "Gentle leaf rustle",
+      "icon_asset_status": "generated_in_mod_zip",
+      "sigil_asset_path": "Essencebound/AbilitySigils/VerdantMend",
+      "sigil_asset_status": "generated_in_mod_zip",
+      "vfx_status": "animated_fading_growing_sigil_at_cast_target_and_field_pulse",
+      "audio_asset_status": "not_implemented"
     },
     {
       "id": "GuardianWard",
@@ -125,7 +146,7 @@
         "Single Target"
       ],
       "existing_effect_kind": "buff",
-      "design_status": "concept_only",
+      "design_status": "procedural_first_pass",
       "asset_path": "Essencebound/AbilityIcons/GuardianWard",
       "icon_silhouette": "A tall shield with a tiny central sun",
       "palette": {
@@ -135,7 +156,12 @@
       },
       "cast_vfx": "A shield outline traces itself around the hand",
       "result_vfx": "A translucent single-pawn shield shell pulses once",
-      "sound_direction": "Low resonant bell"
+      "sound_direction": "Low resonant bell",
+      "icon_asset_status": "generated_in_mod_zip",
+      "sigil_asset_path": "Essencebound/AbilitySigils/GuardianWard",
+      "sigil_asset_status": "generated_in_mod_zip",
+      "vfx_status": "animated_fading_growing_sigil_at_cast_target_and_field_pulse",
+      "audio_asset_status": "not_implemented"
     },
     {
       "id": "StoneSkin",
@@ -149,7 +175,7 @@
         "Self"
       ],
       "existing_effect_kind": "buff",
-      "design_status": "concept_only",
+      "design_status": "procedural_first_pass",
       "asset_path": "Essencebound/AbilityIcons/StoneSkin",
       "icon_silhouette": "A human silhouette covered in hexagonal stone plates",
       "palette": {
@@ -159,7 +185,12 @@
       },
       "cast_vfx": "Dust motes spiral inward onto the caster",
       "result_vfx": "Chunky rock plates click into place and a heavy footprint ripple fades",
-      "sound_direction": "Stone grinding"
+      "sound_direction": "Stone grinding",
+      "icon_asset_status": "generated_in_mod_zip",
+      "sigil_asset_path": "Essencebound/AbilitySigils/StoneSkin",
+      "sigil_asset_status": "generated_in_mod_zip",
+      "vfx_status": "animated_fading_growing_sigil_at_cast_target_and_field_pulse",
+      "audio_asset_status": "not_implemented"
     },
     {
       "id": "SwiftStep",
@@ -173,7 +204,7 @@
         "Self"
       ],
       "existing_effect_kind": "buff",
-      "design_status": "concept_only",
+      "design_status": "procedural_first_pass",
       "asset_path": "Essencebound/AbilityIcons/SwiftStep",
       "icon_silhouette": "Two opposing arrowhead boots crossing a wind ribbon",
       "palette": {
@@ -183,7 +214,12 @@
       },
       "cast_vfx": "Thin green speed lines collect at the feet",
       "result_vfx": "Twin parallel aftertrails follow a short rapid movement",
-      "sound_direction": "Light, crisp footstep swish"
+      "sound_direction": "Light, crisp footstep swish",
+      "icon_asset_status": "generated_in_mod_zip",
+      "sigil_asset_path": "Essencebound/AbilitySigils/SwiftStep",
+      "sigil_asset_status": "generated_in_mod_zip",
+      "vfx_status": "animated_fading_growing_sigil_at_cast_target_and_field_pulse",
+      "audio_asset_status": "not_implemented"
     },
     {
       "id": "MistVeil",
@@ -197,7 +233,7 @@
         "Buff"
       ],
       "existing_effect_kind": "buff",
-      "design_status": "concept_only",
+      "design_status": "procedural_first_pass",
       "asset_path": "Essencebound/AbilityIcons/MistVeil",
       "icon_silhouette": "A half-hidden eye behind three curled fog strands",
       "palette": {
@@ -207,7 +243,12 @@
       },
       "cast_vfx": "Shadow vapor rises from the shoulders",
       "result_vfx": "A translucent edge haze shimmers around the moving pawn",
-      "sound_direction": "Muted breathy hush"
+      "sound_direction": "Muted breathy hush",
+      "icon_asset_status": "generated_in_mod_zip",
+      "sigil_asset_path": "Essencebound/AbilitySigils/MistVeil",
+      "sigil_asset_status": "generated_in_mod_zip",
+      "vfx_status": "animated_fading_growing_sigil_at_cast_target_and_field_pulse",
+      "audio_asset_status": "not_implemented"
     },
     {
       "id": "KeenSight",
@@ -221,7 +262,7 @@
         "Buff"
       ],
       "existing_effect_kind": "buff",
-      "design_status": "concept_only",
+      "design_status": "procedural_first_pass",
       "asset_path": "Essencebound/AbilityIcons/KeenSight",
       "icon_silhouette": "A round iris with four compass ticks",
       "palette": {
@@ -231,7 +272,12 @@
       },
       "cast_vfx": "A blue aperture focuses in front of the caster",
       "result_vfx": "One clean crosshair glint blinks over the affected pawn",
-      "sound_direction": "Fine focusing ping"
+      "sound_direction": "Fine focusing ping",
+      "icon_asset_status": "generated_in_mod_zip",
+      "sigil_asset_path": "Essencebound/AbilitySigils/KeenSight",
+      "sigil_asset_status": "generated_in_mod_zip",
+      "vfx_status": "animated_fading_growing_sigil_at_cast_target_and_field_pulse",
+      "audio_asset_status": "not_implemented"
     },
     {
       "id": "RallyingSurge",
@@ -245,7 +291,7 @@
         "Buff"
       ],
       "existing_effect_kind": "buff",
-      "design_status": "concept_only",
+      "design_status": "procedural_first_pass",
       "asset_path": "Essencebound/AbilityIcons/RallyingSurge",
       "icon_silhouette": "A raised banner topped by two speed chevrons",
       "palette": {
@@ -255,7 +301,12 @@
       },
       "cast_vfx": "Amber light sweeps from the caster toward the target",
       "result_vfx": "Amber lines flare on the pawn's arms and feet then settle into a warm aura",
-      "sound_direction": "Confident drumbeat"
+      "sound_direction": "Confident drumbeat",
+      "icon_asset_status": "generated_in_mod_zip",
+      "sigil_asset_path": "Essencebound/AbilitySigils/RallyingSurge",
+      "sigil_asset_status": "generated_in_mod_zip",
+      "vfx_status": "animated_fading_growing_sigil_at_cast_target_and_field_pulse",
+      "audio_asset_status": "not_implemented"
     },
     {
       "id": "PurifyingTouch",
@@ -269,7 +320,7 @@
         "Single Target"
       ],
       "existing_effect_kind": "cleanse",
-      "design_status": "concept_only",
+      "design_status": "procedural_first_pass",
       "asset_path": "Essencebound/AbilityIcons/PurifyingTouch",
       "icon_silhouette": "An open palm holding a four-point white star",
       "palette": {
@@ -279,7 +330,12 @@
       },
       "cast_vfx": "A cream-white sigil unfolds over the palm",
       "result_vfx": "A dark status glyph unravels into clear teal flecks",
-      "sound_direction": "Soft cleansing bell"
+      "sound_direction": "Soft cleansing bell",
+      "icon_asset_status": "generated_in_mod_zip",
+      "sigil_asset_path": "Essencebound/AbilitySigils/PurifyingTouch",
+      "sigil_asset_status": "generated_in_mod_zip",
+      "vfx_status": "animated_fading_growing_sigil_at_cast_target_and_field_pulse",
+      "audio_asset_status": "not_implemented"
     },
     {
       "id": "ForcePulse",
@@ -293,7 +349,7 @@
         "Pulse"
       ],
       "existing_effect_kind": "pulse",
-      "design_status": "concept_only",
+      "design_status": "procedural_first_pass",
       "asset_path": "Essencebound/AbilityIcons/ForcePulse",
       "icon_silhouette": "A clenched fist inside three concentric rings",
       "palette": {
@@ -303,7 +359,12 @@
       },
       "cast_vfx": "Energy compresses into a small ochre sphere at chest level",
       "result_vfx": "One outward circular shockwave crosses nearby hostile tiles",
-      "sound_direction": "Deep bass thump"
+      "sound_direction": "Deep bass thump",
+      "icon_asset_status": "generated_in_mod_zip",
+      "sigil_asset_path": "Essencebound/AbilitySigils/ForcePulse",
+      "sigil_asset_status": "generated_in_mod_zip",
+      "vfx_status": "animated_fading_growing_sigil_at_cast_target_and_field_pulse",
+      "audio_asset_status": "not_implemented"
     },
     {
       "id": "CinderNova",
@@ -317,7 +378,7 @@
         "Pulse"
       ],
       "existing_effect_kind": "pulse",
-      "design_status": "concept_only",
+      "design_status": "procedural_first_pass",
       "asset_path": "Essencebound/AbilityIcons/CinderNova",
       "icon_silhouette": "An erupting crater surrounded by a burning sunring",
       "palette": {
@@ -327,7 +388,12 @@
       },
       "cast_vfx": "A rotating molten ring builds around the caster",
       "result_vfx": "A fiery circular wave expands outward with scattered falling embers",
-      "sound_direction": "Rumbling flame bloom"
+      "sound_direction": "Rumbling flame bloom",
+      "icon_asset_status": "generated_in_mod_zip",
+      "sigil_asset_path": "Essencebound/AbilitySigils/CinderNova",
+      "sigil_asset_status": "generated_in_mod_zip",
+      "vfx_status": "animated_fading_growing_sigil_at_cast_target_and_field_pulse",
+      "audio_asset_status": "not_implemented"
     },
     {
       "id": "ThunderChain",
@@ -341,7 +407,7 @@
         "Multi Target"
       ],
       "existing_effect_kind": "chain",
-      "design_status": "concept_only",
+      "design_status": "procedural_first_pass",
       "asset_path": "Essencebound/AbilityIcons/ThunderChain",
       "icon_silhouette": "Three connected lightning nodes forming an angled fork",
       "palette": {
@@ -351,7 +417,12 @@
       },
       "cast_vfx": "Three electric beads orbit the casting hand",
       "result_vfx": "Lightning branches from the first target toward two nearby hostiles",
-      "sound_direction": "Triple crackling snap"
+      "sound_direction": "Triple crackling snap",
+      "icon_asset_status": "generated_in_mod_zip",
+      "sigil_asset_path": "Essencebound/AbilitySigils/ThunderChain",
+      "sigil_asset_status": "generated_in_mod_zip",
+      "vfx_status": "animated_fading_growing_sigil_at_cast_target_and_field_pulse",
+      "audio_asset_status": "not_implemented"
     },
     {
       "id": "BloodSiphon",
@@ -365,7 +436,7 @@
         "Single Target"
       ],
       "existing_effect_kind": "drain",
-      "design_status": "concept_only",
+      "design_status": "procedural_first_pass",
       "asset_path": "Essencebound/AbilityIcons/BloodSiphon",
       "icon_silhouette": "Two inward crescents joined by a red droplet",
       "palette": {
@@ -375,7 +446,12 @@
       },
       "cast_vfx": "A crimson tether extends toward the target",
       "result_vfx": "A red stream returns to the caster and fades into healed wound marks",
-      "sound_direction": "Hollow pulse and inhale"
+      "sound_direction": "Hollow pulse and inhale",
+      "icon_asset_status": "generated_in_mod_zip",
+      "sigil_asset_path": "Essencebound/AbilitySigils/BloodSiphon",
+      "sigil_asset_status": "generated_in_mod_zip",
+      "vfx_status": "animated_fading_growing_sigil_at_cast_target_and_field_pulse",
+      "audio_asset_status": "not_implemented"
     },
     {
       "id": "LifeBloom",
@@ -389,7 +465,7 @@
         "Support"
       ],
       "existing_effect_kind": "healGroup",
-      "design_status": "concept_only",
+      "design_status": "procedural_first_pass",
       "asset_path": "Essencebound/AbilityIcons/LifeBloom",
       "icon_silhouette": "A flower whose petals are small healing crosses",
       "palette": {
@@ -399,7 +475,12 @@
       },
       "cast_vfx": "A closed green bud opens over the target",
       "result_vfx": "Separate petals glide to different injury spots and dissolve",
-      "sound_direction": "Opening blossom chime"
+      "sound_direction": "Opening blossom chime",
+      "icon_asset_status": "generated_in_mod_zip",
+      "sigil_asset_path": "Essencebound/AbilitySigils/LifeBloom",
+      "sigil_asset_status": "generated_in_mod_zip",
+      "vfx_status": "animated_fading_growing_sigil_at_cast_target_and_field_pulse",
+      "audio_asset_status": "not_implemented"
     },
     {
       "id": "RenewalSeed",
@@ -413,7 +494,7 @@
         "Support"
       ],
       "existing_effect_kind": "regeneration",
-      "design_status": "concept_only",
+      "design_status": "procedural_first_pass",
       "asset_path": "Essencebound/AbilityIcons/RenewalSeed",
       "icon_silhouette": "A small seed with a spiral sprout at its center",
       "palette": {
@@ -423,7 +504,12 @@
       },
       "cast_vfx": "A glowing seed descends onto the target",
       "result_vfx": "The sprout pulses gently with each delayed healing tick",
-      "sound_direction": "Slow rhythmic dew tones"
+      "sound_direction": "Slow rhythmic dew tones",
+      "icon_asset_status": "generated_in_mod_zip",
+      "sigil_asset_path": "Essencebound/AbilitySigils/RenewalSeed",
+      "sigil_asset_status": "generated_in_mod_zip",
+      "vfx_status": "animated_fading_growing_sigil_at_cast_target_and_field_pulse",
+      "audio_asset_status": "not_implemented"
     },
     {
       "id": "GroveShelter",
@@ -438,7 +524,7 @@
         "Ward"
       ],
       "existing_effect_kind": "auraBuff",
-      "design_status": "concept_only",
+      "design_status": "procedural_first_pass",
       "asset_path": "Essencebound/AbilityIcons/GroveShelter",
       "icon_silhouette": "A broad tree canopy forming an overhead shield",
       "palette": {
@@ -448,7 +534,12 @@
       },
       "cast_vfx": "Root-shaped lines spread outward from the caster",
       "result_vfx": "Individual leafy protective shells appear on nearby allies",
-      "sound_direction": "Wood creak and leaves"
+      "sound_direction": "Wood creak and leaves",
+      "icon_asset_status": "generated_in_mod_zip",
+      "sigil_asset_path": "Essencebound/AbilitySigils/GroveShelter",
+      "sigil_asset_status": "generated_in_mod_zip",
+      "vfx_status": "animated_fading_growing_sigil_at_cast_target_and_field_pulse",
+      "audio_asset_status": "not_implemented"
     },
     {
       "id": "PurgingWave",
@@ -462,7 +553,7 @@
         "Area"
       ],
       "existing_effect_kind": "areaCleanse",
-      "design_status": "concept_only",
+      "design_status": "procedural_first_pass",
       "asset_path": "Essencebound/AbilityIcons/PurgingWave",
       "icon_silhouette": "A breaking chain inside a circular water ripple",
       "palette": {
@@ -472,7 +563,12 @@
       },
       "cast_vfx": "A broad pale ring gathers at the caster's feet",
       "result_vfx": "A clear wave strips dark debuff flecks from nearby allies",
-      "sound_direction": "Rising water-bell"
+      "sound_direction": "Rising water-bell",
+      "icon_asset_status": "generated_in_mod_zip",
+      "sigil_asset_path": "Essencebound/AbilitySigils/PurgingWave",
+      "sigil_asset_status": "generated_in_mod_zip",
+      "vfx_status": "animated_fading_growing_sigil_at_cast_target_and_field_pulse",
+      "audio_asset_status": "not_implemented"
     },
     {
       "id": "GravitySnare",
@@ -486,7 +582,7 @@
         "Single Target"
       ],
       "existing_effect_kind": "debuff",
-      "design_status": "concept_only",
+      "design_status": "procedural_first_pass",
       "asset_path": "Essencebound/AbilityIcons/GravitySnare",
       "icon_silhouette": "A weighted sphere caught in four inward arrows",
       "palette": {
@@ -496,7 +592,12 @@
       },
       "cast_vfx": "Four blue geometric anchors lock around the target",
       "result_vfx": "A compact gravity grid drags downward around the hostile's steps",
-      "sound_direction": "Deep metallic hum"
+      "sound_direction": "Deep metallic hum",
+      "icon_asset_status": "generated_in_mod_zip",
+      "sigil_asset_path": "Essencebound/AbilitySigils/GravitySnare",
+      "sigil_asset_status": "generated_in_mod_zip",
+      "vfx_status": "animated_fading_growing_sigil_at_cast_target_and_field_pulse",
+      "audio_asset_status": "not_implemented"
     },
     {
       "id": "CorrosiveStrike",
@@ -510,7 +611,7 @@
         "Armor Break"
       ],
       "existing_effect_kind": "damageDebuff",
-      "design_status": "concept_only",
+      "design_status": "procedural_first_pass",
       "asset_path": "Essencebound/AbilityIcons/CorrosiveStrike",
       "icon_silhouette": "A sword tip dissolving into acidic droplets",
       "palette": {
@@ -520,7 +621,12 @@
       },
       "cast_vfx": "Yellow-green liquid light coats the caster's focus",
       "result_vfx": "A corrosive splatter leaves cracked armor outlines on the target",
-      "sound_direction": "Faint acidic hiss"
+      "sound_direction": "Faint acidic hiss",
+      "icon_asset_status": "generated_in_mod_zip",
+      "sigil_asset_path": "Essencebound/AbilitySigils/CorrosiveStrike",
+      "sigil_asset_status": "generated_in_mod_zip",
+      "vfx_status": "animated_fading_growing_sigil_at_cast_target_and_field_pulse",
+      "audio_asset_status": "not_implemented"
     },
     {
       "id": "EchoBurst",
@@ -534,7 +640,7 @@
         "Concussive"
       ],
       "existing_effect_kind": "splash",
-      "design_status": "concept_only",
+      "design_status": "procedural_first_pass",
       "asset_path": "Essencebound/AbilityIcons/EchoBurst",
       "icon_silhouette": "A broken sound ring striking a small central orb",
       "palette": {
@@ -544,7 +650,12 @@
       },
       "cast_vfx": "Two violet rings contract toward the chosen target",
       "result_vfx": "A main impact produces smaller concentric shock rings around nearby hostiles",
-      "sound_direction": "Layered echo clap"
+      "sound_direction": "Layered echo clap",
+      "icon_asset_status": "generated_in_mod_zip",
+      "sigil_asset_path": "Essencebound/AbilitySigils/EchoBurst",
+      "sigil_asset_status": "generated_in_mod_zip",
+      "vfx_status": "animated_fading_growing_sigil_at_cast_target_and_field_pulse",
+      "audio_asset_status": "not_implemented"
     },
     {
       "id": "SpiritBeacon",
@@ -558,7 +669,7 @@
         "Buff"
       ],
       "existing_effect_kind": "buff",
-      "design_status": "concept_only",
+      "design_status": "procedural_first_pass",
       "asset_path": "Essencebound/AbilityIcons/SpiritBeacon",
       "icon_silhouette": "A tall beacon with an eight-ray eye at its peak",
       "palette": {
@@ -568,7 +679,12 @@
       },
       "cast_vfx": "A blue pinprick of light rises above the target",
       "result_vfx": "A narrow steady pillar highlights the pawn's hands and aim",
-      "sound_direction": "Clear ascending ping"
+      "sound_direction": "Clear ascending ping",
+      "icon_asset_status": "generated_in_mod_zip",
+      "sigil_asset_path": "Essencebound/AbilitySigils/SpiritBeacon",
+      "sigil_asset_status": "generated_in_mod_zip",
+      "vfx_status": "animated_fading_growing_sigil_at_cast_target_and_field_pulse",
+      "audio_asset_status": "not_implemented"
     },
     {
       "id": "MoonlitReprieve",
@@ -582,7 +698,7 @@
         "Single Target"
       ],
       "existing_effect_kind": "healWard",
-      "design_status": "concept_only",
+      "design_status": "procedural_first_pass",
       "asset_path": "Essencebound/AbilityIcons/MoonlitReprieve",
       "icon_silhouette": "A crescent moon cradling a small shield and drop",
       "palette": {
@@ -592,7 +708,12 @@
       },
       "cast_vfx": "A pale lunar arc crosses the selected pawn",
       "result_vfx": "One wound glows shut and a thin moon-shaped shield appears",
-      "sound_direction": "Quiet lunar bell"
+      "sound_direction": "Quiet lunar bell",
+      "icon_asset_status": "generated_in_mod_zip",
+      "sigil_asset_path": "Essencebound/AbilitySigils/MoonlitReprieve",
+      "sigil_asset_status": "generated_in_mod_zip",
+      "vfx_status": "animated_fading_growing_sigil_at_cast_target_and_field_pulse",
+      "audio_asset_status": "not_implemented"
     },
     {
       "id": "InfernoLance",
@@ -606,7 +727,7 @@
         "Single Target"
       ],
       "existing_effect_kind": "damage",
-      "design_status": "concept_only",
+      "design_status": "procedural_first_pass",
       "asset_path": "Essencebound/AbilityIcons/InfernoLance",
       "icon_silhouette": "A needle-thin spear with a flame-shaped spearhead",
       "palette": {
@@ -616,7 +737,12 @@
       },
       "cast_vfx": "A sharp golden spear forms horizontally before the hand",
       "result_vfx": "A fast straight orange lance leaves a long fading heat streak",
-      "sound_direction": "High whistling flare"
+      "sound_direction": "High whistling flare",
+      "icon_asset_status": "generated_in_mod_zip",
+      "sigil_asset_path": "Essencebound/AbilitySigils/InfernoLance",
+      "sigil_asset_status": "generated_in_mod_zip",
+      "vfx_status": "animated_fading_growing_sigil_at_cast_target_and_field_pulse",
+      "audio_asset_status": "not_implemented"
     },
     {
       "id": "FrostHalo",
@@ -630,7 +756,7 @@
         "Cold"
       ],
       "existing_effect_kind": "pulse",
-      "design_status": "concept_only",
+      "design_status": "procedural_first_pass",
       "asset_path": "Essencebound/AbilityIcons/FrostHalo",
       "icon_silhouette": "A frosted circular crown with four hanging icicles",
       "palette": {
@@ -640,7 +766,12 @@
       },
       "cast_vfx": "Cold mist compresses around the caster's feet",
       "result_vfx": "A blue-white ring bursts outward with ice dust on enemy tiles",
-      "sound_direction": "Crystalline ring ping"
+      "sound_direction": "Crystalline ring ping",
+      "icon_asset_status": "generated_in_mod_zip",
+      "sigil_asset_path": "Essencebound/AbilitySigils/FrostHalo",
+      "sigil_asset_status": "generated_in_mod_zip",
+      "vfx_status": "animated_fading_growing_sigil_at_cast_target_and_field_pulse",
+      "audio_asset_status": "not_implemented"
     },
     {
       "id": "Quakebreaker",
@@ -654,7 +785,7 @@
         "Concussive"
       ],
       "existing_effect_kind": "splash",
-      "design_status": "concept_only",
+      "design_status": "procedural_first_pass",
       "asset_path": "Essencebound/AbilityIcons/Quakebreaker",
       "icon_silhouette": "A hammer fracturing a concentric stone disc",
       "palette": {
@@ -664,7 +795,12 @@
       },
       "cast_vfx": "Square stones hover and shake around the casting hand",
       "result_vfx": "A main ground crack radiates short secondary cracks toward nearby hostiles",
-      "sound_direction": "Layered rock crack"
+      "sound_direction": "Layered rock crack",
+      "icon_asset_status": "generated_in_mod_zip",
+      "sigil_asset_path": "Essencebound/AbilitySigils/Quakebreaker",
+      "sigil_asset_status": "generated_in_mod_zip",
+      "vfx_status": "animated_fading_growing_sigil_at_cast_target_and_field_pulse",
+      "audio_asset_status": "not_implemented"
     },
     {
       "id": "ZephyrRicochet",
@@ -678,7 +814,7 @@
         "Multi Target"
       ],
       "existing_effect_kind": "chain",
-      "design_status": "concept_only",
+      "design_status": "procedural_first_pass",
       "asset_path": "Essencebound/AbilityIcons/ZephyrRicochet",
       "icon_silhouette": "Three curved wind blades joined by tiny bounce arrows",
       "palette": {
@@ -688,7 +824,12 @@
       },
       "cast_vfx": "Three small mint blades spin beside the hand",
       "result_vfx": "A blade darts between targets in angled ricochets",
-      "sound_direction": "Three light metallic zips"
+      "sound_direction": "Three light metallic zips",
+      "icon_asset_status": "generated_in_mod_zip",
+      "sigil_asset_path": "Essencebound/AbilitySigils/ZephyrRicochet",
+      "sigil_asset_status": "generated_in_mod_zip",
+      "vfx_status": "animated_fading_growing_sigil_at_cast_target_and_field_pulse",
+      "audio_asset_status": "not_implemented"
     },
     {
       "id": "UmbralLeech",
@@ -702,7 +843,7 @@
         "Single Target"
       ],
       "existing_effect_kind": "drain",
-      "design_status": "concept_only",
+      "design_status": "procedural_first_pass",
       "asset_path": "Essencebound/AbilityIcons/UmbralLeech",
       "icon_silhouette": "A black crescent funnel drawing in a purple droplet",
       "palette": {
@@ -712,7 +853,12 @@
       },
       "cast_vfx": "Shadow wisps narrow into a thread at the hand",
       "result_vfx": "Violet energy siphons backward from target to caster as small wound marks fade",
-      "sound_direction": "Low reversed whoosh"
+      "sound_direction": "Low reversed whoosh",
+      "icon_asset_status": "generated_in_mod_zip",
+      "sigil_asset_path": "Essencebound/AbilitySigils/UmbralLeech",
+      "sigil_asset_status": "generated_in_mod_zip",
+      "vfx_status": "animated_fading_growing_sigil_at_cast_target_and_field_pulse",
+      "audio_asset_status": "not_implemented"
     },
     {
       "id": "VipersBite",
@@ -726,7 +872,7 @@
         "Slow"
       ],
       "existing_effect_kind": "damageDebuff",
-      "design_status": "concept_only",
+      "design_status": "procedural_first_pass",
       "asset_path": "Essencebound/AbilityIcons/VipersBite",
       "icon_silhouette": "A coiled viper head bearing two glowing fangs",
       "palette": {
@@ -736,7 +882,12 @@
       },
       "cast_vfx": "A green fang outline snaps over the hand",
       "result_vfx": "A short fang flash leaves slow-moving green toxin wisps",
-      "sound_direction": "Dry serpent hiss"
+      "sound_direction": "Dry serpent hiss",
+      "icon_asset_status": "generated_in_mod_zip",
+      "sigil_asset_path": "Essencebound/AbilitySigils/VipersBite",
+      "sigil_asset_status": "generated_in_mod_zip",
+      "vfx_status": "animated_fading_growing_sigil_at_cast_target_and_field_pulse",
+      "audio_asset_status": "not_implemented"
     },
     {
       "id": "ShardVolley",
@@ -750,7 +901,7 @@
         "Multi Target"
       ],
       "existing_effect_kind": "chain",
-      "design_status": "concept_only",
+      "design_status": "procedural_first_pass",
       "asset_path": "Essencebound/AbilityIcons/ShardVolley",
       "icon_silhouette": "Four diamond shards arranged like a fan of arrows",
       "palette": {
@@ -760,7 +911,12 @@
       },
       "cast_vfx": "Prisms assemble from clear fragments around the wrist",
       "result_vfx": "Crystalline darts strike in branching bright cyan streaks",
-      "sound_direction": "Bright shard tinkling"
+      "sound_direction": "Bright shard tinkling",
+      "icon_asset_status": "generated_in_mod_zip",
+      "sigil_asset_path": "Essencebound/AbilitySigils/ShardVolley",
+      "sigil_asset_status": "generated_in_mod_zip",
+      "vfx_status": "animated_fading_growing_sigil_at_cast_target_and_field_pulse",
+      "audio_asset_status": "not_implemented"
     },
     {
       "id": "BriarDetonation",
@@ -774,7 +930,7 @@
         "Debuff"
       ],
       "existing_effect_kind": "damageAreaDebuff",
-      "design_status": "concept_only",
+      "design_status": "procedural_first_pass",
       "asset_path": "Essencebound/AbilityIcons/BriarDetonation",
       "icon_silhouette": "An exploding thorned seed pod with four outward spikes",
       "palette": {
@@ -784,7 +940,12 @@
       },
       "cast_vfx": "A prickled seed brightens above the chosen pawn",
       "result_vfx": "Briar vines burst outward and wrap affected enemies briefly",
-      "sound_direction": "Brittle thorn snap"
+      "sound_direction": "Brittle thorn snap",
+      "icon_asset_status": "generated_in_mod_zip",
+      "sigil_asset_path": "Essencebound/AbilitySigils/BriarDetonation",
+      "sigil_asset_status": "generated_in_mod_zip",
+      "vfx_status": "animated_fading_growing_sigil_at_cast_target_and_field_pulse",
+      "audio_asset_status": "not_implemented"
     },
     {
       "id": "Starfall",
@@ -798,7 +959,7 @@
         "Celestial"
       ],
       "existing_effect_kind": "splash",
-      "design_status": "concept_only",
+      "design_status": "procedural_first_pass",
       "asset_path": "Essencebound/AbilityIcons/Starfall",
       "icon_silhouette": "A falling four-point star with a long comet-tail slash",
       "palette": {
@@ -808,7 +969,12 @@
       },
       "cast_vfx": "A tiny star glyph flashes overhead",
       "result_vfx": "A vertical violet-gold beam lands and sends out star-dust ripples",
-      "sound_direction": "Celestial boom"
+      "sound_direction": "Celestial boom",
+      "icon_asset_status": "generated_in_mod_zip",
+      "sigil_asset_path": "Essencebound/AbilitySigils/Starfall",
+      "sigil_asset_status": "generated_in_mod_zip",
+      "vfx_status": "animated_fading_growing_sigil_at_cast_target_and_field_pulse",
+      "audio_asset_status": "not_implemented"
     },
     {
       "id": "TidalRebuke",
@@ -822,7 +988,7 @@
         "Pulse"
       ],
       "existing_effect_kind": "pulse",
-      "design_status": "concept_only",
+      "design_status": "procedural_first_pass",
       "asset_path": "Essencebound/AbilityIcons/TidalRebuke",
       "icon_silhouette": "A curling tidal crest inside a shield-shaped wave",
       "palette": {
@@ -832,7 +998,12 @@
       },
       "cast_vfx": "Water coils around the caster's knees",
       "result_vfx": "A foamy blue arc surges outward across nearby hostile tiles",
-      "sound_direction": "Rolling splash"
+      "sound_direction": "Rolling splash",
+      "icon_asset_status": "generated_in_mod_zip",
+      "sigil_asset_path": "Essencebound/AbilitySigils/TidalRebuke",
+      "sigil_asset_status": "generated_in_mod_zip",
+      "vfx_status": "animated_fading_growing_sigil_at_cast_target_and_field_pulse",
+      "audio_asset_status": "not_implemented"
     },
     {
       "id": "IronBastion",
@@ -846,7 +1017,7 @@
         "Self"
       ],
       "existing_effect_kind": "buff",
-      "design_status": "concept_only",
+      "design_status": "procedural_first_pass",
       "asset_path": "Essencebound/AbilityIcons/IronBastion",
       "icon_silhouette": "An iron tower gate crossed by two heavy plates",
       "palette": {
@@ -856,7 +1027,12 @@
       },
       "cast_vfx": "Iron rivet points light up across the caster's shoulders",
       "result_vfx": "Thick segmented armor panels lock into position",
-      "sound_direction": "Heavy iron clang"
+      "sound_direction": "Heavy iron clang",
+      "icon_asset_status": "generated_in_mod_zip",
+      "sigil_asset_path": "Essencebound/AbilitySigils/IronBastion",
+      "sigil_asset_status": "generated_in_mod_zip",
+      "vfx_status": "animated_fading_growing_sigil_at_cast_target_and_field_pulse",
+      "audio_asset_status": "not_implemented"
     },
     {
       "id": "MirrorGuard",
@@ -870,7 +1046,7 @@
         "Buff"
       ],
       "existing_effect_kind": "buff",
-      "design_status": "concept_only",
+      "design_status": "procedural_first_pass",
       "asset_path": "Essencebound/AbilityIcons/MirrorGuard",
       "icon_silhouette": "A faceted upright mirror displaying a shifted silhouette",
       "palette": {
@@ -880,7 +1056,12 @@
       },
       "cast_vfx": "Silver-blue facets rotate above the caster",
       "result_vfx": "Brief duplicate outline slips sideways as a mirrored armor gleam appears",
-      "sound_direction": "Glassy shimmer"
+      "sound_direction": "Glassy shimmer",
+      "icon_asset_status": "generated_in_mod_zip",
+      "sigil_asset_path": "Essencebound/AbilitySigils/MirrorGuard",
+      "sigil_asset_status": "generated_in_mod_zip",
+      "vfx_status": "animated_fading_growing_sigil_at_cast_target_and_field_pulse",
+      "audio_asset_status": "not_implemented"
     },
     {
       "id": "DawnChorus",
@@ -894,7 +1075,7 @@
         "Group"
       ],
       "existing_effect_kind": "auraBuff",
-      "design_status": "concept_only",
+      "design_status": "procedural_first_pass",
       "asset_path": "Essencebound/AbilityIcons/DawnChorus",
       "icon_silhouette": "A rising sun made of five musical notes",
       "palette": {
@@ -904,7 +1085,12 @@
       },
       "cast_vfx": "Warm orange-gold notes float upward from the caster",
       "result_vfx": "Synchronized light rings gently appear under nearby allies",
-      "sound_direction": "Bright chord shimmer"
+      "sound_direction": "Bright chord shimmer",
+      "icon_asset_status": "generated_in_mod_zip",
+      "sigil_asset_path": "Essencebound/AbilitySigils/DawnChorus",
+      "sigil_asset_status": "generated_in_mod_zip",
+      "vfx_status": "animated_fading_growing_sigil_at_cast_target_and_field_pulse",
+      "audio_asset_status": "not_implemented"
     },
     {
       "id": "VerdantSanctuary",
@@ -918,7 +1104,7 @@
         "Injury Healing"
       ],
       "existing_effect_kind": "areaHeal",
-      "design_status": "concept_only",
+      "design_status": "procedural_first_pass",
       "asset_path": "Essencebound/AbilityIcons/VerdantSanctuary",
       "icon_silhouette": "An open four-leaf canopy over a healing cross",
       "palette": {
@@ -928,7 +1114,12 @@
       },
       "cast_vfx": "Four leaves unfold around the caster",
       "result_vfx": "Green healing threads branch to several nearby wounded allies",
-      "sound_direction": "Four-note growth melody"
+      "sound_direction": "Four-note growth melody",
+      "icon_asset_status": "generated_in_mod_zip",
+      "sigil_asset_path": "Essencebound/AbilitySigils/VerdantSanctuary",
+      "sigil_asset_status": "generated_in_mod_zip",
+      "vfx_status": "animated_fading_growing_sigil_at_cast_target_and_field_pulse",
+      "audio_asset_status": "not_implemented"
     },
     {
       "id": "OceanRenewal",
@@ -942,7 +1133,7 @@
         "Over Time"
       ],
       "existing_effect_kind": "areaRegen",
-      "design_status": "concept_only",
+      "design_status": "procedural_first_pass",
       "asset_path": "Essencebound/AbilityIcons/OceanRenewal",
       "icon_silhouette": "A wave cradle carrying four small raindrops",
       "palette": {
@@ -952,7 +1143,12 @@
       },
       "cast_vfx": "Small blue droplets orbit the caster",
       "result_vfx": "Each wounded ally receives a slow pulsing wave-ring",
-      "sound_direction": "Soft repeating surf"
+      "sound_direction": "Soft repeating surf",
+      "icon_asset_status": "generated_in_mod_zip",
+      "sigil_asset_path": "Essencebound/AbilitySigils/OceanRenewal",
+      "sigil_asset_status": "generated_in_mod_zip",
+      "vfx_status": "animated_fading_growing_sigil_at_cast_target_and_field_pulse",
+      "audio_asset_status": "not_implemented"
     },
     {
       "id": "CleansingRay",
@@ -966,7 +1162,7 @@
         "Single Target"
       ],
       "existing_effect_kind": "purgeHeal",
-      "design_status": "concept_only",
+      "design_status": "procedural_first_pass",
       "asset_path": "Essencebound/AbilityIcons/CleansingRay",
       "icon_silhouette": "A narrow white ray splitting a broken dark rune",
       "palette": {
@@ -976,7 +1172,12 @@
       },
       "cast_vfx": "A white line sharpens from the caster's hand",
       "result_vfx": "The beam removes dark glyphs and closes a faint injury mark",
-      "sound_direction": "Tonal pure chime"
+      "sound_direction": "Tonal pure chime",
+      "icon_asset_status": "generated_in_mod_zip",
+      "sigil_asset_path": "Essencebound/AbilitySigils/CleansingRay",
+      "sigil_asset_status": "generated_in_mod_zip",
+      "vfx_status": "animated_fading_growing_sigil_at_cast_target_and_field_pulse",
+      "audio_asset_status": "not_implemented"
     },
     {
       "id": "MercyThread",
@@ -990,7 +1191,7 @@
         "Injury Healing"
       ],
       "existing_effect_kind": "chainHeal",
-      "design_status": "concept_only",
+      "design_status": "procedural_first_pass",
       "asset_path": "Essencebound/AbilityIcons/MercyThread",
       "icon_silhouette": "Three linked gold needles threaded with one light ribbon",
       "palette": {
@@ -1000,7 +1201,12 @@
       },
       "cast_vfx": "A golden filament winds around the first target",
       "result_vfx": "Healing light stitches from the main target to two nearby allies",
-      "sound_direction": "Three successive harp notes"
+      "sound_direction": "Three successive harp notes",
+      "icon_asset_status": "generated_in_mod_zip",
+      "sigil_asset_path": "Essencebound/AbilitySigils/MercyThread",
+      "sigil_asset_status": "generated_in_mod_zip",
+      "vfx_status": "animated_fading_growing_sigil_at_cast_target_and_field_pulse",
+      "audio_asset_status": "not_implemented"
     },
     {
       "id": "SoulHarvest",
@@ -1014,7 +1220,7 @@
         "Drain"
       ],
       "existing_effect_kind": "leechPulse",
-      "design_status": "concept_only",
+      "design_status": "procedural_first_pass",
       "asset_path": "Essencebound/AbilityIcons/SoulHarvest",
       "icon_silhouette": "A dark sickle surrounding a returning light seed",
       "palette": {
@@ -1024,7 +1230,12 @@
       },
       "cast_vfx": "A purple circle blooms at the caster's feet",
       "result_vfx": "Wisps rise from nearby hostiles and converge on the caster as healing flecks",
-      "sound_direction": "Deep echoing draw"
+      "sound_direction": "Deep echoing draw",
+      "icon_asset_status": "generated_in_mod_zip",
+      "sigil_asset_path": "Essencebound/AbilitySigils/SoulHarvest",
+      "sigil_asset_status": "generated_in_mod_zip",
+      "vfx_status": "animated_fading_growing_sigil_at_cast_target_and_field_pulse",
+      "audio_asset_status": "not_implemented"
     },
     {
       "id": "RuneBind",
@@ -1038,7 +1249,7 @@
         "Single Target"
       ],
       "existing_effect_kind": "debuff",
-      "design_status": "concept_only",
+      "design_status": "procedural_first_pass",
       "asset_path": "Essencebound/AbilityIcons/RuneBind",
       "icon_silhouette": "A square rune stamped over two crossed chains",
       "palette": {
@@ -1048,7 +1259,12 @@
       },
       "cast_vfx": "A bright square seal rotates above the hand",
       "result_vfx": "The rune locks around the hostile's ankles as grid lines",
-      "sound_direction": "Solid runic click"
+      "sound_direction": "Solid runic click",
+      "icon_asset_status": "generated_in_mod_zip",
+      "sigil_asset_path": "Essencebound/AbilitySigils/RuneBind",
+      "sigil_asset_status": "generated_in_mod_zip",
+      "vfx_status": "animated_fading_growing_sigil_at_cast_target_and_field_pulse",
+      "audio_asset_status": "not_implemented"
     },
     {
       "id": "OmenHex",
@@ -1062,7 +1278,7 @@
         "Single Target"
       ],
       "existing_effect_kind": "debuff",
-      "design_status": "concept_only",
+      "design_status": "procedural_first_pass",
       "asset_path": "Essencebound/AbilityIcons/OmenHex",
       "icon_silhouette": "A cracked purple eye with a falling star pupil",
       "palette": {
@@ -1072,7 +1288,12 @@
       },
       "cast_vfx": "A shadow-purple sigil unrolls toward the pawn",
       "result_vfx": "A floating eye blinks once above the hostile before dissolving into static",
-      "sound_direction": "Uneasy dissonant whisper"
+      "sound_direction": "Uneasy dissonant whisper",
+      "icon_asset_status": "generated_in_mod_zip",
+      "sigil_asset_path": "Essencebound/AbilitySigils/OmenHex",
+      "sigil_asset_status": "generated_in_mod_zip",
+      "vfx_status": "animated_fading_growing_sigil_at_cast_target_and_field_pulse",
+      "audio_asset_status": "not_implemented"
     },
     {
       "id": "TemporalHaste",
@@ -1086,7 +1307,7 @@
         "Buff"
       ],
       "existing_effect_kind": "buff",
-      "design_status": "concept_only",
+      "design_status": "procedural_first_pass",
       "asset_path": "Essencebound/AbilityIcons/TemporalHaste",
       "icon_silhouette": "An hourglass crossed by forward chevrons",
       "palette": {
@@ -1096,7 +1317,12 @@
       },
       "cast_vfx": "The hourglass grains reverse and accelerate",
       "result_vfx": "Thin clock-tick trails follow the caster's movement",
-      "sound_direction": "Quick ticking"
+      "sound_direction": "Quick ticking",
+      "icon_asset_status": "generated_in_mod_zip",
+      "sigil_asset_path": "Essencebound/AbilitySigils/TemporalHaste",
+      "sigil_asset_status": "generated_in_mod_zip",
+      "vfx_status": "animated_fading_growing_sigil_at_cast_target_and_field_pulse",
+      "audio_asset_status": "not_implemented"
     },
     {
       "id": "BattlefieldFocus",
@@ -1110,7 +1336,7 @@
         "Buff"
       ],
       "existing_effect_kind": "buff",
-      "design_status": "concept_only",
+      "design_status": "procedural_first_pass",
       "asset_path": "Essencebound/AbilityIcons/BattlefieldFocus",
       "icon_silhouette": "A tactical reticle framing a crossed blade and arrow",
       "palette": {
@@ -1120,7 +1346,12 @@
       },
       "cast_vfx": "An angular aiming grid focuses over the caster",
       "result_vfx": "A clean reticle glint pulses at the eyes and weapon",
-      "sound_direction": "Single tactical click"
+      "sound_direction": "Single tactical click",
+      "icon_asset_status": "generated_in_mod_zip",
+      "sigil_asset_path": "Essencebound/AbilitySigils/BattlefieldFocus",
+      "sigil_asset_status": "generated_in_mod_zip",
+      "vfx_status": "animated_fading_growing_sigil_at_cast_target_and_field_pulse",
+      "audio_asset_status": "not_implemented"
     },
     {
       "id": "BladeTempest",
@@ -1134,7 +1365,7 @@
         "Pulse"
       ],
       "existing_effect_kind": "pulse",
-      "design_status": "concept_only",
+      "design_status": "procedural_first_pass",
       "asset_path": "Essencebound/AbilityIcons/BladeTempest",
       "icon_silhouette": "Four swords spinning around an empty central circle",
       "palette": {
@@ -1144,7 +1375,12 @@
       },
       "cast_vfx": "Sword silhouettes orbit the caster for half a turn",
       "result_vfx": "A fast outward ring of blade streaks strikes nearby hostiles",
-      "sound_direction": "Circular steel rush"
+      "sound_direction": "Circular steel rush",
+      "icon_asset_status": "generated_in_mod_zip",
+      "sigil_asset_path": "Essencebound/AbilitySigils/BladeTempest",
+      "sigil_asset_status": "generated_in_mod_zip",
+      "vfx_status": "animated_fading_growing_sigil_at_cast_target_and_field_pulse",
+      "audio_asset_status": "not_implemented"
     },
     {
       "id": "NemesisStrike",
@@ -1158,7 +1394,7 @@
         "Injury Scaling"
       ],
       "existing_effect_kind": "execute",
-      "design_status": "concept_only",
+      "design_status": "procedural_first_pass",
       "asset_path": "Essencebound/AbilityIcons/NemesisStrike",
       "icon_silhouette": "A downward blade passing through a broken target seal",
       "palette": {
@@ -1168,7 +1404,12 @@
       },
       "cast_vfx": "A small red target glyph marks the injured foe",
       "result_vfx": "The finisher leaves a sharp descending crimson-white impact slash",
-      "sound_direction": "Decisive heavy strike"
+      "sound_direction": "Decisive heavy strike",
+      "icon_asset_status": "generated_in_mod_zip",
+      "sigil_asset_path": "Essencebound/AbilitySigils/NemesisStrike",
+      "sigil_asset_status": "generated_in_mod_zip",
+      "vfx_status": "animated_fading_growing_sigil_at_cast_target_and_field_pulse",
+      "audio_asset_status": "not_implemented"
     },
     {
       "id": "ThreadSnare",
@@ -1182,7 +1423,7 @@
         "Slow"
       ],
       "existing_effect_kind": "damageDebuff",
-      "design_status": "concept_only",
+      "design_status": "procedural_first_pass",
       "asset_path": "Essencebound/AbilityIcons/ThreadSnare",
       "icon_silhouette": "A single hooked needle drawing a looped cord",
       "palette": {
@@ -1192,7 +1433,12 @@
       },
       "cast_vfx": "Silver strands twist between the caster's fingers",
       "result_vfx": "A taut knot snaps around the hostile's legs",
-      "sound_direction": "Twang and snap"
+      "sound_direction": "Twang and snap",
+      "icon_asset_status": "generated_in_mod_zip",
+      "sigil_asset_path": "Essencebound/AbilitySigils/ThreadSnare",
+      "sigil_asset_status": "generated_in_mod_zip",
+      "vfx_status": "animated_fading_growing_sigil_at_cast_target_and_field_pulse",
+      "audio_asset_status": "not_implemented"
     },
     {
       "id": "GlassWard",
@@ -1206,7 +1452,7 @@
         "Armor"
       ],
       "existing_effect_kind": "healWard",
-      "design_status": "concept_only",
+      "design_status": "procedural_first_pass",
       "asset_path": "Essencebound/AbilityIcons/GlassWard",
       "icon_silhouette": "A glass prism shield with a tiny healing droplet",
       "palette": {
@@ -1216,7 +1462,12 @@
       },
       "cast_vfx": "A transparent crystal forms above the target",
       "result_vfx": "A wound gleams closed beneath faceted protective panels",
-      "sound_direction": "Shimmering glass bell"
+      "sound_direction": "Shimmering glass bell",
+      "icon_asset_status": "generated_in_mod_zip",
+      "sigil_asset_path": "Essencebound/AbilitySigils/GlassWard",
+      "sigil_asset_status": "generated_in_mod_zip",
+      "vfx_status": "animated_fading_growing_sigil_at_cast_target_and_field_pulse",
+      "audio_asset_status": "not_implemented"
     },
     {
       "id": "AshenComet",
@@ -1230,7 +1481,7 @@
         "Fire"
       ],
       "existing_effect_kind": "delayedBlast",
-      "design_status": "concept_only",
+      "design_status": "procedural_first_pass",
       "asset_path": "Essencebound/AbilityIcons/AshenComet",
       "icon_silhouette": "A black-red comet with a phoenix-feather tail",
       "palette": {
@@ -1240,7 +1491,12 @@
       },
       "cast_vfx": "A thin ember ring marks the target's ground position",
       "result_vfx": "A delayed blazing comet hits the marked location with a short fireburst",
-      "sound_direction": "Falling ember roar"
+      "sound_direction": "Falling ember roar",
+      "icon_asset_status": "generated_in_mod_zip",
+      "sigil_asset_path": "Essencebound/AbilitySigils/AshenComet",
+      "sigil_asset_status": "generated_in_mod_zip",
+      "vfx_status": "animated_fading_growing_sigil_at_cast_target_and_field_pulse",
+      "audio_asset_status": "not_implemented"
     },
     {
       "id": "PrismaticDeflection",
@@ -1254,7 +1510,7 @@
         "Reactive"
       ],
       "existing_effect_kind": "reflect",
-      "design_status": "concept_only",
+      "design_status": "procedural_first_pass",
       "asset_path": "Essencebound/AbilityIcons/PrismaticDeflection",
       "icon_silhouette": "A triangular prism reflecting one incoming arrow",
       "palette": {
@@ -1264,7 +1520,12 @@
       },
       "cast_vfx": "A rotating rainbow-edged prism appears by the caster",
       "result_vfx": "An incoming ranged hit splinters into a returning beam",
-      "sound_direction": "Sharp crystalline rebound"
+      "sound_direction": "Sharp crystalline rebound",
+      "icon_asset_status": "generated_in_mod_zip",
+      "sigil_asset_path": "Essencebound/AbilitySigils/PrismaticDeflection",
+      "sigil_asset_status": "generated_in_mod_zip",
+      "vfx_status": "animated_fading_growing_sigil_at_cast_target_and_field_pulse",
+      "audio_asset_status": "not_implemented"
     },
     {
       "id": "LotusSanctum",
@@ -1278,7 +1539,7 @@
         "Regeneration"
       ],
       "existing_effect_kind": "healingZone",
-      "design_status": "concept_only",
+      "design_status": "procedural_first_pass",
       "asset_path": "Essencebound/AbilityIcons/LotusSanctum",
       "icon_silhouette": "A lotus blossom enclosing a pool and tiny cross",
       "palette": {
@@ -1288,7 +1549,12 @@
       },
       "cast_vfx": "A pale lotus opens on the ground",
       "result_vfx": "Transparent petals rise in a stationary zone and healing pulses ripple outward",
-      "sound_direction": "Water-drop temple chime"
+      "sound_direction": "Water-drop temple chime",
+      "icon_asset_status": "generated_in_mod_zip",
+      "sigil_asset_path": "Essencebound/AbilitySigils/LotusSanctum",
+      "sigil_asset_status": "generated_in_mod_zip",
+      "vfx_status": "animated_fading_growing_sigil_at_cast_target_and_field_pulse",
+      "audio_asset_status": "not_implemented"
     },
     {
       "id": "ChronoAnchor",
@@ -1302,7 +1568,7 @@
         "Utility"
       ],
       "existing_effect_kind": "returnTeleport",
-      "design_status": "concept_only",
+      "design_status": "procedural_first_pass",
       "asset_path": "Essencebound/AbilityIcons/ChronoAnchor",
       "icon_silhouette": "A clock dial tied to a fixed map pin",
       "palette": {
@@ -1312,7 +1578,12 @@
       },
       "cast_vfx": "A glowing pin stamps below the caster",
       "result_vfx": "A later recast folds the pawn into a clock ring and restores the pinned position",
-      "sound_direction": "Reverse clock tick"
+      "sound_direction": "Reverse clock tick",
+      "icon_asset_status": "generated_in_mod_zip",
+      "sigil_asset_path": "Essencebound/AbilitySigils/ChronoAnchor",
+      "sigil_asset_status": "generated_in_mod_zip",
+      "vfx_status": "animated_fading_growing_sigil_at_cast_target_and_field_pulse",
+      "audio_asset_status": "not_implemented"
     },
     {
       "id": "WolfpackCall",
@@ -1326,7 +1597,7 @@
         "Timed"
       ],
       "existing_effect_kind": "summon",
-      "design_status": "concept_only",
+      "design_status": "procedural_first_pass",
       "asset_path": "Essencebound/AbilityIcons/WolfpackCall",
       "icon_silhouette": "Two wolf heads emerging from one spiral portal",
       "palette": {
@@ -1336,7 +1607,12 @@
       },
       "cast_vfx": "Two spectral pawprints glow near the caster",
       "result_vfx": "Temporary wolves emerge from spiraling green-white light",
-      "sound_direction": "Twin distant howls"
+      "sound_direction": "Twin distant howls",
+      "icon_asset_status": "generated_in_mod_zip",
+      "sigil_asset_path": "Essencebound/AbilitySigils/WolfpackCall",
+      "sigil_asset_status": "generated_in_mod_zip",
+      "vfx_status": "animated_fading_growing_sigil_at_cast_target_and_field_pulse",
+      "audio_asset_status": "not_implemented"
     },
     {
       "id": "SpectralHand",
@@ -1350,7 +1626,7 @@
         "Exploration"
       ],
       "existing_effect_kind": "remoteManipulation",
-      "design_status": "concept_only",
+      "design_status": "procedural_first_pass",
       "asset_path": "Essencebound/AbilityIcons/SpectralHand",
       "icon_silhouette": "A translucent extended hand lifting a small cube",
       "palette": {
@@ -1360,7 +1636,12 @@
       },
       "cast_vfx": "A ghostly hand outline floats beside the caster",
       "result_vfx": "The targeted loose item slides back on a faint tether",
-      "sound_direction": "Soft telekinetic pluck"
+      "sound_direction": "Soft telekinetic pluck",
+      "icon_asset_status": "generated_in_mod_zip",
+      "sigil_asset_path": "Essencebound/AbilitySigils/SpectralHand",
+      "sigil_asset_status": "generated_in_mod_zip",
+      "vfx_status": "animated_fading_growing_sigil_at_cast_target_and_field_pulse",
+      "audio_asset_status": "not_implemented"
     },
     {
       "id": "ChimericAspect",
@@ -1374,7 +1655,7 @@
         "Buff"
       ],
       "existing_effect_kind": "adaptiveBuff",
-      "design_status": "concept_only",
+      "design_status": "procedural_first_pass",
       "asset_path": "Essencebound/AbilityIcons/ChimericAspect",
       "icon_silhouette": "A split chimera mask with plated and feathered halves",
       "palette": {
@@ -1384,7 +1665,12 @@
       },
       "cast_vfx": "The central mask rotates to select a side",
       "result_vfx": "Near threats evoke bronze armor plates; safety evokes swift green streaks",
-      "sound_direction": "Two-tone morph chime"
+      "sound_direction": "Two-tone morph chime",
+      "icon_asset_status": "generated_in_mod_zip",
+      "sigil_asset_path": "Essencebound/AbilitySigils/ChimericAspect",
+      "sigil_asset_status": "generated_in_mod_zip",
+      "vfx_status": "animated_fading_growing_sigil_at_cast_target_and_field_pulse",
+      "audio_asset_status": "not_implemented"
     },
     {
       "id": "VoidSlip",
@@ -1398,7 +1684,7 @@
         "Exploration"
       ],
       "existing_effect_kind": "teleport",
-      "design_status": "concept_only",
+      "design_status": "procedural_first_pass",
       "asset_path": "Essencebound/AbilityIcons/VoidSlip",
       "icon_silhouette": "A hollow doorway cut through a black crescent",
       "palette": {
@@ -1408,7 +1694,12 @@
       },
       "cast_vfx": "A dark ring briefly compresses at the caster",
       "result_vfx": "The pawn vanishes into a pinhole and reappears from a second ring",
-      "sound_direction": "Compressed airy pop"
+      "sound_direction": "Compressed airy pop",
+      "icon_asset_status": "generated_in_mod_zip",
+      "sigil_asset_path": "Essencebound/AbilitySigils/VoidSlip",
+      "sigil_asset_status": "generated_in_mod_zip",
+      "vfx_status": "animated_fading_growing_sigil_at_cast_target_and_field_pulse",
+      "audio_asset_status": "not_implemented"
     },
     {
       "id": "Fleshweave",
@@ -1422,7 +1713,7 @@
         "Injury Healing"
       ],
       "existing_effect_kind": "transfusion",
-      "design_status": "concept_only",
+      "design_status": "procedural_first_pass",
       "asset_path": "Essencebound/AbilityIcons/Fleshweave",
       "icon_silhouette": "An open palm sewing a branching pink thread",
       "palette": {
@@ -1432,7 +1723,12 @@
       },
       "cast_vfx": "A crimson stitch ribbon stretches from caster to target",
       "result_vfx": "Threads mend wounds while the caster's glow visibly dims",
-      "sound_direction": "Warm pulse then tired exhale"
+      "sound_direction": "Warm pulse then tired exhale",
+      "icon_asset_status": "generated_in_mod_zip",
+      "sigil_asset_path": "Essencebound/AbilitySigils/Fleshweave",
+      "sigil_asset_status": "generated_in_mod_zip",
+      "vfx_status": "animated_fading_growing_sigil_at_cast_target_and_field_pulse",
+      "audio_asset_status": "not_implemented"
     },
     {
       "id": "TidalWall",
@@ -1446,7 +1742,7 @@
         "Area"
       ],
       "existing_effect_kind": "tileBarrier",
-      "design_status": "concept_only",
+      "design_status": "procedural_first_pass",
       "asset_path": "Essencebound/AbilityIcons/TidalWall",
       "icon_silhouette": "Five rising water tiles forming a crenelated line",
       "palette": {
@@ -1456,7 +1752,12 @@
       },
       "cast_vfx": "A blue line sketches itself over the selected cells",
       "result_vfx": "Temporary translucent water-brick barriers rise in a row",
-      "sound_direction": "Five rolling splashes"
+      "sound_direction": "Five rolling splashes",
+      "icon_asset_status": "generated_in_mod_zip",
+      "sigil_asset_path": "Essencebound/AbilitySigils/TidalWall",
+      "sigil_asset_status": "generated_in_mod_zip",
+      "vfx_status": "animated_fading_growing_sigil_at_cast_target_and_field_pulse",
+      "audio_asset_status": "not_implemented"
     },
     {
       "id": "LightningStep",
@@ -1470,7 +1771,7 @@
         "Area"
       ],
       "existing_effect_kind": "blinkStrike",
-      "design_status": "concept_only",
+      "design_status": "procedural_first_pass",
       "asset_path": "Essencebound/AbilityIcons/LightningStep",
       "icon_silhouette": "A zigzag boot striking a circular lightning impact",
       "palette": {
@@ -1480,7 +1781,12 @@
       },
       "cast_vfx": "Electricity gathers around the caster's boots",
       "result_vfx": "A brief blink ends with a radial lightning shock on landing",
-      "sound_direction": "Electric snap and thud"
+      "sound_direction": "Electric snap and thud",
+      "icon_asset_status": "generated_in_mod_zip",
+      "sigil_asset_path": "Essencebound/AbilitySigils/LightningStep",
+      "sigil_asset_status": "generated_in_mod_zip",
+      "vfx_status": "animated_fading_growing_sigil_at_cast_target_and_field_pulse",
+      "audio_asset_status": "not_implemented"
     },
     {
       "id": "SovereignCommand",
@@ -1494,7 +1800,7 @@
         "Combat"
       ],
       "existing_effect_kind": "summonOrder",
-      "design_status": "concept_only",
+      "design_status": "procedural_first_pass",
       "asset_path": "Essencebound/AbilityIcons/SovereignCommand",
       "icon_silhouette": "A crown above three directional banners",
       "palette": {
@@ -1504,7 +1810,12 @@
       },
       "cast_vfx": "A gold command rune flares over the caster",
       "result_vfx": "Matching tiny crown pips pulse above summoned allies as they receive the order",
-      "sound_direction": "Short horn accent"
+      "sound_direction": "Short horn accent",
+      "icon_asset_status": "generated_in_mod_zip",
+      "sigil_asset_path": "Essencebound/AbilitySigils/SovereignCommand",
+      "sigil_asset_status": "generated_in_mod_zip",
+      "vfx_status": "animated_fading_growing_sigil_at_cast_target_and_field_pulse",
+      "audio_asset_status": "not_implemented"
     },
     {
       "id": "StarMap",
@@ -1518,7 +1829,7 @@
         "Ranged"
       ],
       "existing_effect_kind": "survey",
-      "design_status": "concept_only",
+      "design_status": "procedural_first_pass",
       "asset_path": "Essencebound/AbilityIcons/StarMap",
       "icon_silhouette": "A folded map with a glowing eight-point star",
       "palette": {
@@ -1528,7 +1839,12 @@
       },
       "cast_vfx": "An orbit of map-grid dots forms over the caster",
       "result_vfx": "Fog peels back in a soft outward star-grid sweep around the chosen cell",
-      "sound_direction": "Light surveying harp"
+      "sound_direction": "Light surveying harp",
+      "icon_asset_status": "generated_in_mod_zip",
+      "sigil_asset_path": "Essencebound/AbilitySigils/StarMap",
+      "sigil_asset_status": "generated_in_mod_zip",
+      "vfx_status": "animated_fading_growing_sigil_at_cast_target_and_field_pulse",
+      "audio_asset_status": "not_implemented"
     },
     {
       "id": "PredatorMark",
@@ -1542,7 +1858,7 @@
         "Debuff"
       ],
       "existing_effect_kind": "markedTarget",
-      "design_status": "concept_only",
+      "design_status": "procedural_first_pass",
       "asset_path": "Essencebound/AbilityIcons/PredatorMark",
       "icon_silhouette": "A clawed aiming sigil enclosing a red eye",
       "palette": {
@@ -1552,7 +1868,12 @@
       },
       "cast_vfx": "A crimson triangle briefly aligns over the hostile",
       "result_vfx": "A small target emblem tracks the marked pawn",
-      "sound_direction": "Focused hunting whistle"
+      "sound_direction": "Focused hunting whistle",
+      "icon_asset_status": "generated_in_mod_zip",
+      "sigil_asset_path": "Essencebound/AbilitySigils/PredatorMark",
+      "sigil_asset_status": "generated_in_mod_zip",
+      "vfx_status": "animated_fading_growing_sigil_at_cast_target_and_field_pulse",
+      "audio_asset_status": "not_implemented"
     },
     {
       "id": "HydraBloom",
@@ -1566,7 +1887,7 @@
         "Group"
       ],
       "existing_effect_kind": "branchingHeal",
-      "design_status": "concept_only",
+      "design_status": "procedural_first_pass",
       "asset_path": "Essencebound/AbilityIcons/HydraBloom",
       "icon_silhouette": "Three sprouting heads rising from one healing stem",
       "palette": {
@@ -1576,7 +1897,12 @@
       },
       "cast_vfx": "Three green buds glow on the caster's hand",
       "result_vfx": "Branching regenerative vines curl around multiple wounded allies",
-      "sound_direction": "Layered gentle bloom"
+      "sound_direction": "Layered gentle bloom",
+      "icon_asset_status": "generated_in_mod_zip",
+      "sigil_asset_path": "Essencebound/AbilitySigils/HydraBloom",
+      "sigil_asset_status": "generated_in_mod_zip",
+      "vfx_status": "animated_fading_growing_sigil_at_cast_target_and_field_pulse",
+      "audio_asset_status": "not_implemented"
     },
     {
       "id": "CrystalPrison",
@@ -1590,7 +1916,7 @@
         "Restraint"
       ],
       "existing_effect_kind": "containment",
-      "design_status": "concept_only",
+      "design_status": "procedural_first_pass",
       "asset_path": "Essencebound/AbilityIcons/CrystalPrison",
       "icon_silhouette": "A pawn silhouette inside four giant gemstone bars",
       "palette": {
@@ -1600,7 +1926,12 @@
       },
       "cast_vfx": "Four faceted corner posts blink around a selected foe",
       "result_vfx": "A small crystal cage rises and a blue binding grid shimmers inside",
-      "sound_direction": "Four bright crystal locks"
+      "sound_direction": "Four bright crystal locks",
+      "icon_asset_status": "generated_in_mod_zip",
+      "sigil_asset_path": "Essencebound/AbilitySigils/CrystalPrison",
+      "sigil_asset_status": "generated_in_mod_zip",
+      "vfx_status": "animated_fading_growing_sigil_at_cast_target_and_field_pulse",
+      "audio_asset_status": "not_implemented"
     },
     {
       "id": "EchoTwin",
@@ -1614,7 +1945,7 @@
         "Timed"
       ],
       "existing_effect_kind": "decoy",
-      "design_status": "concept_only",
+      "design_status": "procedural_first_pass",
       "asset_path": "Essencebound/AbilityIcons/EchoTwin",
       "icon_silhouette": "Two offset matching masks with one fading edge",
       "palette": {
@@ -1624,7 +1955,12 @@
       },
       "cast_vfx": "A lavender mirrored outline peels away from the caster",
       "result_vfx": "A ghostlike decoy silhouette appears with a ripple before settling into its temporary stand-in",
-      "sound_direction": "Double echo flutter"
+      "sound_direction": "Double echo flutter",
+      "icon_asset_status": "generated_in_mod_zip",
+      "sigil_asset_path": "Essencebound/AbilitySigils/EchoTwin",
+      "sigil_asset_status": "generated_in_mod_zip",
+      "vfx_status": "animated_fading_growing_sigil_at_cast_target_and_field_pulse",
+      "audio_asset_status": "not_implemented"
     },
     {
       "id": "ResonanceField",
@@ -1638,7 +1974,7 @@
         "Aura"
       ],
       "existing_effect_kind": "powerAura",
-      "design_status": "concept_only",
+      "design_status": "procedural_first_pass",
       "asset_path": "Essencebound/AbilityIcons/ResonanceField",
       "icon_silhouette": "Three waveforms crossing a bright central crystal",
       "palette": {
@@ -1648,7 +1984,12 @@
       },
       "cast_vfx": "An indigo sound ring forms beneath the caster",
       "result_vfx": "A stationary circular lattice pulses when allied essence attacks occur",
-      "sound_direction": "Sustained harmonic note"
+      "sound_direction": "Sustained harmonic note",
+      "icon_asset_status": "generated_in_mod_zip",
+      "sigil_asset_path": "Essencebound/AbilitySigils/ResonanceField",
+      "sigil_asset_status": "generated_in_mod_zip",
+      "vfx_status": "animated_fading_growing_sigil_at_cast_target_and_field_pulse",
+      "audio_asset_status": "not_implemented"
     },
     {
       "id": "GuardianBastion",
@@ -1662,7 +2003,7 @@
         "Aura"
       ],
       "existing_effect_kind": "wardDome",
-      "design_status": "concept_only",
+      "design_status": "procedural_first_pass",
       "asset_path": "Essencebound/AbilityIcons/GuardianBastion",
       "icon_silhouette": "A vaulted dome with a central guardian diamond",
       "palette": {
@@ -1672,7 +2013,12 @@
       },
       "cast_vfx": "A golden diamond rotates above the caster",
       "result_vfx": "A stationary translucent shield dome overlays nearby allies",
-      "sound_direction": "Low protective gong"
+      "sound_direction": "Low protective gong",
+      "icon_asset_status": "generated_in_mod_zip",
+      "sigil_asset_path": "Essencebound/AbilitySigils/GuardianBastion",
+      "sigil_asset_status": "generated_in_mod_zip",
+      "vfx_status": "animated_fading_growing_sigil_at_cast_target_and_field_pulse",
+      "audio_asset_status": "not_implemented"
     },
     {
       "id": "MoltenRain",
@@ -1687,7 +2033,7 @@
         "Fire"
       ],
       "existing_effect_kind": "hazardZone",
-      "design_status": "concept_only",
+      "design_status": "procedural_first_pass",
       "asset_path": "Essencebound/AbilityIcons/MoltenRain",
       "icon_silhouette": "Three dripping meteors above a cracked ground tile",
       "palette": {
@@ -1697,7 +2043,12 @@
       },
       "cast_vfx": "A glowing hot zone outline appears on the ground",
       "result_vfx": "Repeated molten streaks fall into the marked area",
-      "sound_direction": "Scattered ember impacts"
+      "sound_direction": "Scattered ember impacts",
+      "icon_asset_status": "generated_in_mod_zip",
+      "sigil_asset_path": "Essencebound/AbilitySigils/MoltenRain",
+      "sigil_asset_status": "generated_in_mod_zip",
+      "vfx_status": "animated_fading_growing_sigil_at_cast_target_and_field_pulse",
+      "audio_asset_status": "not_implemented"
     },
     {
       "id": "OasisWell",
@@ -1711,7 +2062,7 @@
         "Sanctuary"
       ],
       "existing_effect_kind": "restorationZone",
-      "design_status": "concept_only",
+      "design_status": "procedural_first_pass",
       "asset_path": "Essencebound/AbilityIcons/OasisWell",
       "icon_silhouette": "A small well with lotus leaves and a bright water drop",
       "palette": {
@@ -1721,7 +2072,12 @@
       },
       "cast_vfx": "A turquoise circle traces a stone-well silhouette on open ground",
       "result_vfx": "A stationary spring shimmer heals injured allies in slow ripples",
-      "sound_direction": "Quiet water trickle"
+      "sound_direction": "Quiet water trickle",
+      "icon_asset_status": "generated_in_mod_zip",
+      "sigil_asset_path": "Essencebound/AbilitySigils/OasisWell",
+      "sigil_asset_status": "generated_in_mod_zip",
+      "vfx_status": "animated_fading_growing_sigil_at_cast_target_and_field_pulse",
+      "audio_asset_status": "not_implemented"
     },
     {
       "id": "BoneFamiliar",
@@ -1735,7 +2091,7 @@
         "Combat"
       ],
       "existing_effect_kind": "familiar",
-      "design_status": "concept_only",
+      "design_status": "procedural_first_pass",
       "asset_path": "Essencebound/AbilityIcons/BoneFamiliar",
       "icon_silhouette": "A small bone-shelled beetle inside a summoning ring",
       "palette": {
@@ -1745,7 +2101,12 @@
       },
       "cast_vfx": "Ivory segmented markings rotate near the caster",
       "result_vfx": "A compact summoned insect emerges in pale ghostdust",
-      "sound_direction": "Dry bone rattle"
+      "sound_direction": "Dry bone rattle",
+      "icon_asset_status": "generated_in_mod_zip",
+      "sigil_asset_path": "Essencebound/AbilitySigils/BoneFamiliar",
+      "sigil_asset_status": "generated_in_mod_zip",
+      "vfx_status": "animated_fading_growing_sigil_at_cast_target_and_field_pulse",
+      "audio_asset_status": "not_implemented"
     },
     {
       "id": "Mistwalk",
@@ -1759,7 +2120,7 @@
         "Concealment"
       ],
       "existing_effect_kind": "concealment",
-      "design_status": "concept_only",
+      "design_status": "procedural_first_pass",
       "asset_path": "Essencebound/AbilityIcons/Mistwalk",
       "icon_silhouette": "A hood-shaped cloud with a fading footpath",
       "palette": {
@@ -1769,7 +2130,12 @@
       },
       "cast_vfx": "Cloud wisps pool around the caster's feet",
       "result_vfx": "Thin mist trails soften the pawn outline while the movement and evasion buff lasts",
-      "sound_direction": "Soft diffuse swish"
+      "sound_direction": "Soft diffuse swish",
+      "icon_asset_status": "generated_in_mod_zip",
+      "sigil_asset_path": "Essencebound/AbilitySigils/Mistwalk",
+      "sigil_asset_status": "generated_in_mod_zip",
+      "vfx_status": "animated_fading_growing_sigil_at_cast_target_and_field_pulse",
+      "audio_asset_status": "not_implemented"
     },
     {
       "id": "MirrorStep",
@@ -1783,7 +2149,7 @@
         "Swap"
       ],
       "existing_effect_kind": "swapTeleport",
-      "design_status": "concept_only",
+      "design_status": "procedural_first_pass",
       "asset_path": "Essencebound/AbilityIcons/MirrorStep",
       "icon_silhouette": "Two figures connected through an hourglass-shaped mirror",
       "palette": {
@@ -1793,7 +2159,12 @@
       },
       "cast_vfx": "Matching mirror glyphs flash under two allies",
       "result_vfx": "Both figures fracture into reflections and trade positions",
-      "sound_direction": "Two simultaneous glass pings"
+      "sound_direction": "Two simultaneous glass pings",
+      "icon_asset_status": "generated_in_mod_zip",
+      "sigil_asset_path": "Essencebound/AbilitySigils/MirrorStep",
+      "sigil_asset_status": "generated_in_mod_zip",
+      "vfx_status": "animated_fading_growing_sigil_at_cast_target_and_field_pulse",
+      "audio_asset_status": "not_implemented"
     },
     {
       "id": "WebWeaver",
@@ -1807,7 +2178,7 @@
         "Over Time"
       ],
       "existing_effect_kind": "webZone",
-      "design_status": "concept_only",
+      "design_status": "procedural_first_pass",
       "asset_path": "Essencebound/AbilityIcons/WebWeaver",
       "icon_silhouette": "A central spider knot inside a seven-strand web",
       "palette": {
@@ -1817,7 +2188,12 @@
       },
       "cast_vfx": "A purple web grid draws over a targeted area",
       "result_vfx": "Web strands fade in and pulse at slowed enemy feet",
-      "sound_direction": "Sticky silken pluck"
+      "sound_direction": "Sticky silken pluck",
+      "icon_asset_status": "generated_in_mod_zip",
+      "sigil_asset_path": "Essencebound/AbilitySigils/WebWeaver",
+      "sigil_asset_status": "generated_in_mod_zip",
+      "vfx_status": "animated_fading_growing_sigil_at_cast_target_and_field_pulse",
+      "audio_asset_status": "not_implemented"
     },
     {
       "id": "SonicLance",
@@ -1831,7 +2207,7 @@
         "Single Target"
       ],
       "existing_effect_kind": "piercingSound",
-      "design_status": "concept_only",
+      "design_status": "procedural_first_pass",
       "asset_path": "Essencebound/AbilityIcons/SonicLance",
       "icon_silhouette": "A narrow tuning fork spear striking a circular note",
       "palette": {
@@ -1841,7 +2217,12 @@
       },
       "cast_vfx": "A pale blue tuning fork oscillates by the caster",
       "result_vfx": "A focused straight sound-wave lance lands with tight concentric rings",
-      "sound_direction": "High-pitched resonant ping"
+      "sound_direction": "High-pitched resonant ping",
+      "icon_asset_status": "generated_in_mod_zip",
+      "sigil_asset_path": "Essencebound/AbilitySigils/SonicLance",
+      "sigil_asset_status": "generated_in_mod_zip",
+      "vfx_status": "animated_fading_growing_sigil_at_cast_target_and_field_pulse",
+      "audio_asset_status": "not_implemented"
     },
     {
       "id": "SunwardFlare",
@@ -1855,7 +2236,7 @@
         "Cleanse"
       ],
       "existing_effect_kind": "radiantPurge",
-      "design_status": "concept_only",
+      "design_status": "procedural_first_pass",
       "asset_path": "Essencebound/AbilityIcons/SunwardFlare",
       "icon_silhouette": "A rising sun split by a clean white spear of light",
       "palette": {
@@ -1865,7 +2246,12 @@
       },
       "cast_vfx": "The caster lifts a small golden sun halo",
       "result_vfx": "A sharp radial flare damages hostiles and burns away dark curse sigils from allies",
-      "sound_direction": "Bright shining burst"
+      "sound_direction": "Bright shining burst",
+      "icon_asset_status": "generated_in_mod_zip",
+      "sigil_asset_path": "Essencebound/AbilitySigils/SunwardFlare",
+      "sigil_asset_status": "generated_in_mod_zip",
+      "vfx_status": "animated_fading_growing_sigil_at_cast_target_and_field_pulse",
+      "audio_asset_status": "not_implemented"
     },
     {
       "id": "Moonshadow",
@@ -1879,7 +2265,7 @@
         "Conditional"
       ],
       "existing_effect_kind": "conditionalBuff",
-      "design_status": "concept_only",
+      "design_status": "procedural_first_pass",
       "asset_path": "Essencebound/AbilityIcons/Moonshadow",
       "icon_silhouette": "A dark crescent moon hiding a single silver eye",
       "palette": {
@@ -1889,7 +2275,12 @@
       },
       "cast_vfx": "Dim silver particles gather under the caster's hoodline",
       "result_vfx": "A faint crescent afterimage appears only in low light",
-      "sound_direction": "Subtle nocturnal chime"
+      "sound_direction": "Subtle nocturnal chime",
+      "icon_asset_status": "generated_in_mod_zip",
+      "sigil_asset_path": "Essencebound/AbilitySigils/Moonshadow",
+      "sigil_asset_status": "generated_in_mod_zip",
+      "vfx_status": "animated_fading_growing_sigil_at_cast_target_and_field_pulse",
+      "audio_asset_status": "not_implemented"
     },
     {
       "id": "HungerField",
@@ -1903,7 +2294,7 @@
         "Zone"
       ],
       "existing_effect_kind": "sustainedLeech",
-      "design_status": "concept_only",
+      "design_status": "procedural_first_pass",
       "asset_path": "Essencebound/AbilityIcons/HungerField",
       "icon_silhouette": "A hollow mouth-shaped vortex with inward arrows",
       "palette": {
@@ -1913,7 +2304,12 @@
       },
       "cast_vfx": "Dark ribbons spiral inward at the caster's feet",
       "result_vfx": "A moving violet ring draws thin life wisps from nearby hostiles",
-      "sound_direction": "Steady low inhaling hum"
+      "sound_direction": "Steady low inhaling hum",
+      "icon_asset_status": "generated_in_mod_zip",
+      "sigil_asset_path": "Essencebound/AbilitySigils/HungerField",
+      "sigil_asset_status": "generated_in_mod_zip",
+      "vfx_status": "animated_fading_growing_sigil_at_cast_target_and_field_pulse",
+      "audio_asset_status": "not_implemented"
     },
     {
       "id": "ShatterArmor",
@@ -1927,7 +2323,7 @@
         "Debuff"
       ],
       "existing_effect_kind": "armorBreak",
-      "design_status": "concept_only",
+      "design_status": "procedural_first_pass",
       "asset_path": "Essencebound/AbilityIcons/ShatterArmor",
       "icon_silhouette": "A hammer smashing an armored breastplate into three pieces",
       "palette": {
@@ -1937,7 +2333,12 @@
       },
       "cast_vfx": "A steel-white crack line forms on the target",
       "result_vfx": "An impact fractures a shield outline and leaves chipped armor flecks",
-      "sound_direction": "Hard armor fracture"
+      "sound_direction": "Hard armor fracture",
+      "icon_asset_status": "generated_in_mod_zip",
+      "sigil_asset_path": "Essencebound/AbilitySigils/ShatterArmor",
+      "sigil_asset_status": "generated_in_mod_zip",
+      "vfx_status": "animated_fading_growing_sigil_at_cast_target_and_field_pulse",
+      "audio_asset_status": "not_implemented"
     },
     {
       "id": "HarvestBlessing",
@@ -1951,7 +2352,7 @@
         "Aura"
       ],
       "existing_effect_kind": "harvestAura",
-      "design_status": "concept_only",
+      "design_status": "procedural_first_pass",
       "asset_path": "Essencebound/AbilityIcons/HarvestBlessing",
       "icon_silhouette": "A sheaf of golden wheat behind a small work hand",
       "palette": {
@@ -1961,7 +2362,12 @@
       },
       "cast_vfx": "Gold grain motes rise around the caster",
       "result_vfx": "A wheat-green buff ring appears near allied growers",
-      "sound_direction": "Soft wheat rustle"
+      "sound_direction": "Soft wheat rustle",
+      "icon_asset_status": "generated_in_mod_zip",
+      "sigil_asset_path": "Essencebound/AbilitySigils/HarvestBlessing",
+      "sigil_asset_status": "generated_in_mod_zip",
+      "vfx_status": "animated_fading_growing_sigil_at_cast_target_and_field_pulse",
+      "audio_asset_status": "not_implemented"
     },
     {
       "id": "WeaveWard",
@@ -1975,7 +2381,7 @@
         "Damage Sharing"
       ],
       "existing_effect_kind": "linkedDefense",
-      "design_status": "concept_only",
+      "design_status": "procedural_first_pass",
       "asset_path": "Essencebound/AbilityIcons/WeaveWard",
       "icon_silhouette": "Two shield knots joined by a taut silver thread",
       "palette": {
@@ -1985,7 +2391,12 @@
       },
       "cast_vfx": "A thread passes between caster and ally",
       "result_vfx": "A slim silver tether flashes as damage is shared",
-      "sound_direction": "Gentle thread hum"
+      "sound_direction": "Gentle thread hum",
+      "icon_asset_status": "generated_in_mod_zip",
+      "sigil_asset_path": "Essencebound/AbilitySigils/WeaveWard",
+      "sigil_asset_status": "generated_in_mod_zip",
+      "vfx_status": "animated_fading_growing_sigil_at_cast_target_and_field_pulse",
+      "audio_asset_status": "not_implemented"
     },
     {
       "id": "RuneBeacon",
@@ -1999,7 +2410,7 @@
         "Area"
       ],
       "existing_effect_kind": "groundWard",
-      "design_status": "concept_only",
+      "design_status": "procedural_first_pass",
       "asset_path": "Essencebound/AbilityIcons/RuneBeacon",
       "icon_silhouette": "A triangular stone rune standing inside a shield circle",
       "palette": {
@@ -2009,7 +2420,12 @@
       },
       "cast_vfx": "A rune is stamped onto the selected open tile",
       "result_vfx": "A stationary circular ward glyph pulses under nearby allies",
-      "sound_direction": "Stone rune toll"
+      "sound_direction": "Stone rune toll",
+      "icon_asset_status": "generated_in_mod_zip",
+      "sigil_asset_path": "Essencebound/AbilitySigils/RuneBeacon",
+      "sigil_asset_status": "generated_in_mod_zip",
+      "vfx_status": "animated_fading_growing_sigil_at_cast_target_and_field_pulse",
+      "audio_asset_status": "not_implemented"
     },
     {
       "id": "IronReprisal",
@@ -2023,7 +2439,7 @@
         "Melee"
       ],
       "existing_effect_kind": "counterStance",
-      "design_status": "concept_only",
+      "design_status": "procedural_first_pass",
       "asset_path": "Essencebound/AbilityIcons/IronReprisal",
       "icon_silhouette": "A shield backed by an outward-pointing spear",
       "palette": {
@@ -2033,7 +2449,12 @@
       },
       "cast_vfx": "An iron guard plate locks across the caster's arm",
       "result_vfx": "On a close hit, a steel counter-spark flashes back at the attacker",
-      "sound_direction": "Two-step clang reply"
+      "sound_direction": "Two-step clang reply",
+      "icon_asset_status": "generated_in_mod_zip",
+      "sigil_asset_path": "Essencebound/AbilitySigils/IronReprisal",
+      "sigil_asset_status": "generated_in_mod_zip",
+      "vfx_status": "animated_fading_growing_sigil_at_cast_target_and_field_pulse",
+      "audio_asset_status": "not_implemented"
     },
     {
       "id": "SerpentCoil",
@@ -2047,7 +2468,7 @@
         "Accuracy"
       ],
       "existing_effect_kind": "grapple",
-      "design_status": "concept_only",
+      "design_status": "procedural_first_pass",
       "asset_path": "Essencebound/AbilityIcons/SerpentCoil",
       "icon_silhouette": "A coiled serpent encircling a boot and crosshair",
       "palette": {
@@ -2057,7 +2478,12 @@
       },
       "cast_vfx": "A green serpentine loop forms around the targeted pawn",
       "result_vfx": "The loop tightens around legs while a green aiming sigil distorts",
-      "sound_direction": "Brief constricting hiss"
+      "sound_direction": "Brief constricting hiss",
+      "icon_asset_status": "generated_in_mod_zip",
+      "sigil_asset_path": "Essencebound/AbilitySigils/SerpentCoil",
+      "sigil_asset_status": "generated_in_mod_zip",
+      "vfx_status": "animated_fading_growing_sigil_at_cast_target_and_field_pulse",
+      "audio_asset_status": "not_implemented"
     },
     {
       "id": "DawnRebirth",
@@ -2071,7 +2497,7 @@
         "Self"
       ],
       "existing_effect_kind": "emergencyHeal",
-      "design_status": "concept_only",
+      "design_status": "procedural_first_pass",
       "asset_path": "Essencebound/AbilityIcons/DawnRebirth",
       "icon_silhouette": "A sunbird rising from a small healing cross",
       "palette": {
@@ -2081,7 +2507,12 @@
       },
       "cast_vfx": "A golden sunrise sigil rests over the caster",
       "result_vfx": "When triggered, warm rays pour into wound marks as a quick restorative flare",
-      "sound_direction": "Hopeful rising chord"
+      "sound_direction": "Hopeful rising chord",
+      "icon_asset_status": "generated_in_mod_zip",
+      "sigil_asset_path": "Essencebound/AbilitySigils/DawnRebirth",
+      "sigil_asset_status": "generated_in_mod_zip",
+      "vfx_status": "animated_fading_growing_sigil_at_cast_target_and_field_pulse",
+      "audio_asset_status": "not_implemented"
     },
     {
       "id": "AdeptConvergence",
@@ -2095,7 +2526,7 @@
         "Conversion"
       ],
       "existing_effect_kind": "attributeShift",
-      "design_status": "concept_only",
+      "design_status": "procedural_first_pass",
       "asset_path": "Essencebound/AbilityIcons/AdeptConvergence",
       "icon_silhouette": "Two attribute arrows trading positions through a central prism",
       "palette": {
@@ -2105,7 +2536,12 @@
       },
       "cast_vfx": "One blue and one gold rune rotate around the caster",
       "result_vfx": "The Power-side rune brightens while the Speed-side dims",
-      "sound_direction": "Balanced dual-tone click"
+      "sound_direction": "Balanced dual-tone click",
+      "icon_asset_status": "generated_in_mod_zip",
+      "sigil_asset_path": "Essencebound/AbilitySigils/AdeptConvergence",
+      "sigil_asset_status": "generated_in_mod_zip",
+      "vfx_status": "animated_fading_growing_sigil_at_cast_target_and_field_pulse",
+      "audio_asset_status": "not_implemented"
     },
     {
       "id": "FeyGlamour",
@@ -2119,7 +2555,7 @@
         "Accuracy"
       ],
       "existing_effect_kind": "confusion",
-      "design_status": "concept_only",
+      "design_status": "procedural_first_pass",
       "asset_path": "Essencebound/AbilityIcons/FeyGlamour",
       "icon_silhouette": "A smiling fae mask with three offset eye trails",
       "palette": {
@@ -2129,7 +2565,12 @@
       },
       "cast_vfx": "Pink-violet motes swirl around the hostile's head",
       "result_vfx": "False afterimages and wobbling aim lines confuse the enemy",
-      "sound_direction": "Playful warped bell"
+      "sound_direction": "Playful warped bell",
+      "icon_asset_status": "generated_in_mod_zip",
+      "sigil_asset_path": "Essencebound/AbilitySigils/FeyGlamour",
+      "sigil_asset_status": "generated_in_mod_zip",
+      "vfx_status": "animated_fading_growing_sigil_at_cast_target_and_field_pulse",
+      "audio_asset_status": "not_implemented"
     },
     {
       "id": "NimbusGuard",
@@ -2143,7 +2584,7 @@
         "Single Target"
       ],
       "existing_effect_kind": "mobileWard",
-      "design_status": "concept_only",
+      "design_status": "procedural_first_pass",
       "asset_path": "Essencebound/AbilityIcons/NimbusGuard",
       "icon_silhouette": "A cloud shield with one curved wind feather",
       "palette": {
@@ -2153,7 +2594,12 @@
       },
       "cast_vfx": "A blue-cloud ribbon wraps around the selected pawn",
       "result_vfx": "The protective cloud tracks the moving pawn with subtle sparks",
-      "sound_direction": "Soft sky rumble"
+      "sound_direction": "Soft sky rumble",
+      "icon_asset_status": "generated_in_mod_zip",
+      "sigil_asset_path": "Essencebound/AbilitySigils/NimbusGuard",
+      "sigil_asset_status": "generated_in_mod_zip",
+      "vfx_status": "animated_fading_growing_sigil_at_cast_target_and_field_pulse",
+      "audio_asset_status": "not_implemented"
     },
     {
       "id": "BladeOrbit",
@@ -2167,7 +2613,7 @@
         "Moving"
       ],
       "existing_effect_kind": "orbitStrike",
-      "design_status": "concept_only",
+      "design_status": "procedural_first_pass",
       "asset_path": "Essencebound/AbilityIcons/BladeOrbit",
       "icon_silhouette": "Three blade tips orbiting an empty crescent center",
       "palette": {
@@ -2177,7 +2623,12 @@
       },
       "cast_vfx": "Three slender sword silhouettes rise around the caster",
       "result_vfx": "Moving orbit blades leave repeatable short strike arcs against close hostiles",
-      "sound_direction": "Metallic revolving whirr"
+      "sound_direction": "Metallic revolving whirr",
+      "icon_asset_status": "generated_in_mod_zip",
+      "sigil_asset_path": "Essencebound/AbilitySigils/BladeOrbit",
+      "sigil_asset_status": "generated_in_mod_zip",
+      "vfx_status": "animated_fading_growing_sigil_at_cast_target_and_field_pulse",
+      "audio_asset_status": "not_implemented"
     },
     {
       "id": "GravityWell",
@@ -2191,7 +2642,7 @@
         "Zone"
       ],
       "existing_effect_kind": "pullZone",
-      "design_status": "concept_only",
+      "design_status": "procedural_first_pass",
       "asset_path": "Essencebound/AbilityIcons/GravityWell",
       "icon_silhouette": "A dark center orb with four spiraling inward arrows",
       "palette": {
@@ -2201,7 +2652,12 @@
       },
       "cast_vfx": "A circular grid appears over selected ground",
       "result_vfx": "Nearby enemies slide inward as lines curve toward the center",
-      "sound_direction": "Deep gravitational swell"
+      "sound_direction": "Deep gravitational swell",
+      "icon_asset_status": "generated_in_mod_zip",
+      "sigil_asset_path": "Essencebound/AbilitySigils/GravityWell",
+      "sigil_asset_status": "generated_in_mod_zip",
+      "vfx_status": "animated_fading_growing_sigil_at_cast_target_and_field_pulse",
+      "audio_asset_status": "not_implemented"
     },
     {
       "id": "CorruptingSeed",
@@ -2215,7 +2671,7 @@
         "Armor Break"
       ],
       "existing_effect_kind": "sustainedDebuff",
-      "design_status": "concept_only",
+      "design_status": "procedural_first_pass",
       "asset_path": "Essencebound/AbilityIcons/CorruptingSeed",
       "icon_silhouette": "A black seed splitting a cracked armored leaf",
       "palette": {
@@ -2225,7 +2681,12 @@
       },
       "cast_vfx": "A violet seed lodges over the target",
       "result_vfx": "Slow pulses shed sickly light and thin armor-crack flecks",
-      "sound_direction": "Faint thorny ticking"
+      "sound_direction": "Faint thorny ticking",
+      "icon_asset_status": "generated_in_mod_zip",
+      "sigil_asset_path": "Essencebound/AbilitySigils/CorruptingSeed",
+      "sigil_asset_status": "generated_in_mod_zip",
+      "vfx_status": "animated_fading_growing_sigil_at_cast_target_and_field_pulse",
+      "audio_asset_status": "not_implemented"
     },
     {
       "id": "TalismanSeal",
@@ -2239,7 +2700,7 @@
         "Ward"
       ],
       "existing_effect_kind": "storedTrigger",
-      "design_status": "concept_only",
+      "design_status": "procedural_first_pass",
       "asset_path": "Essencebound/AbilityIcons/TalismanSeal",
       "icon_silhouette": "A hanging scroll seal protecting a small shield",
       "palette": {
@@ -2249,7 +2710,12 @@
       },
       "cast_vfx": "A paper-like rune folds around the caster",
       "result_vfx": "The seal flares once on the next attack then breaks into gold paper flecks",
-      "sound_direction": "Paper snap and chime"
+      "sound_direction": "Paper snap and chime",
+      "icon_asset_status": "generated_in_mod_zip",
+      "sigil_asset_path": "Essencebound/AbilitySigils/TalismanSeal",
+      "sigil_asset_status": "generated_in_mod_zip",
+      "vfx_status": "animated_fading_growing_sigil_at_cast_target_and_field_pulse",
+      "audio_asset_status": "not_implemented"
     },
     {
       "id": "PactOfUnity",
@@ -2263,7 +2729,7 @@
         "Group"
       ],
       "existing_effect_kind": "teamLink",
-      "design_status": "concept_only",
+      "design_status": "procedural_first_pass",
       "asset_path": "Essencebound/AbilityIcons/PactOfUnity",
       "icon_silhouette": "Four hands connected in a bright central knot",
       "palette": {
@@ -2273,7 +2739,12 @@
       },
       "cast_vfx": "Four golden nodes form around the caster",
       "result_vfx": "Linked circles pulse briefly below nearby allied pawns",
-      "sound_direction": "Unified chord"
+      "sound_direction": "Unified chord",
+      "icon_asset_status": "generated_in_mod_zip",
+      "sigil_asset_path": "Essencebound/AbilitySigils/PactOfUnity",
+      "sigil_asset_status": "generated_in_mod_zip",
+      "vfx_status": "animated_fading_growing_sigil_at_cast_target_and_field_pulse",
+      "audio_asset_status": "not_implemented"
     },
     {
       "id": "PhoenixAshes",
@@ -2287,7 +2758,7 @@
         "Emergency"
       ],
       "existing_effect_kind": "survivalBoon",
-      "design_status": "concept_only",
+      "design_status": "procedural_first_pass",
       "asset_path": "Essencebound/AbilityIcons/PhoenixAshes",
       "icon_silhouette": "A phoenix feather curling around a healing ember",
       "palette": {
@@ -2297,7 +2768,12 @@
       },
       "cast_vfx": "A single glowing feather lands on the selected ally",
       "result_vfx": "When triggered, a gentle ash plume turns into a bright restorative spark",
-      "sound_direction": "Flame-soft renewal note"
+      "sound_direction": "Flame-soft renewal note",
+      "icon_asset_status": "generated_in_mod_zip",
+      "sigil_asset_path": "Essencebound/AbilitySigils/PhoenixAshes",
+      "sigil_asset_status": "generated_in_mod_zip",
+      "vfx_status": "animated_fading_growing_sigil_at_cast_target_and_field_pulse",
+      "audio_asset_status": "not_implemented"
     },
     {
       "id": "Worldstep",
@@ -2311,7 +2787,7 @@
         "Exploration"
       ],
       "existing_effect_kind": "longTeleport",
-      "design_status": "concept_only",
+      "design_status": "procedural_first_pass",
       "asset_path": "Essencebound/AbilityIcons/Worldstep",
       "icon_silhouette": "A distant doorway framed by a winding star-road",
       "palette": {
@@ -2321,7 +2797,12 @@
       },
       "cast_vfx": "A long spiral clock pathway traces toward the target cell",
       "result_vfx": "After channeling, the caster folds into a tunnel of light at the destination",
-      "sound_direction": "Long rising warp hum"
+      "sound_direction": "Long rising warp hum",
+      "icon_asset_status": "generated_in_mod_zip",
+      "sigil_asset_path": "Essencebound/AbilitySigils/Worldstep",
+      "sigil_asset_status": "generated_in_mod_zip",
+      "vfx_status": "animated_fading_growing_sigil_at_cast_target_and_field_pulse",
+      "audio_asset_status": "not_implemented"
     },
     {
       "id": "FeralClaw",
@@ -2335,7 +2816,7 @@
         "Close Range"
       ],
       "existing_effect_kind": "meleeCombo",
-      "design_status": "concept_only",
+      "design_status": "procedural_first_pass",
       "asset_path": "Essencebound/AbilityIcons/FeralClaw",
       "icon_silhouette": "Four claw slashes arranged as ascending steps",
       "palette": {
@@ -2345,7 +2826,12 @@
       },
       "cast_vfx": "A reddish claw aura charges over the caster's hands",
       "result_vfx": "Each successive close hit draws another brighter claw streak",
-      "sound_direction": "Escalating claw swipes"
+      "sound_direction": "Escalating claw swipes",
+      "icon_asset_status": "generated_in_mod_zip",
+      "sigil_asset_path": "Essencebound/AbilitySigils/FeralClaw",
+      "sigil_asset_status": "generated_in_mod_zip",
+      "vfx_status": "animated_fading_growing_sigil_at_cast_target_and_field_pulse",
+      "audio_asset_status": "not_implemented"
     },
     {
       "id": "WardEcho",
@@ -2359,7 +2845,7 @@
         "Counter"
       ],
       "existing_effect_kind": "debuffReflect",
-      "design_status": "concept_only",
+      "design_status": "procedural_first_pass",
       "asset_path": "Essencebound/AbilityIcons/WardEcho",
       "icon_silhouette": "A shield reflecting a bent curse arrow outward",
       "palette": {
@@ -2369,7 +2855,12 @@
       },
       "cast_vfx": "A pale mirror ring settles around the caster",
       "result_vfx": "Hostile curse wisps reverse into outward-traveling blue sigils",
-      "sound_direction": "Reversed chime"
+      "sound_direction": "Reversed chime",
+      "icon_asset_status": "generated_in_mod_zip",
+      "sigil_asset_path": "Essencebound/AbilitySigils/WardEcho",
+      "sigil_asset_status": "generated_in_mod_zip",
+      "vfx_status": "animated_fading_growing_sigil_at_cast_target_and_field_pulse",
+      "audio_asset_status": "not_implemented"
     },
     {
       "id": "SandsOfStillness",
@@ -2383,7 +2874,7 @@
         "Zone"
       ],
       "existing_effect_kind": "slowField",
-      "design_status": "concept_only",
+      "design_status": "procedural_first_pass",
       "asset_path": "Essencebound/AbilityIcons/SandsOfStillness",
       "icon_silhouette": "A stopped hourglass half buried in rippling dunes",
       "palette": {
@@ -2393,7 +2884,12 @@
       },
       "cast_vfx": "Golden sand forms a level circular boundary",
       "result_vfx": "Gentle sand bands thicken around hostile feet within the zone",
-      "sound_direction": "Dry muffled drift"
+      "sound_direction": "Dry muffled drift",
+      "icon_asset_status": "generated_in_mod_zip",
+      "sigil_asset_path": "Essencebound/AbilitySigils/SandsOfStillness",
+      "sigil_asset_status": "generated_in_mod_zip",
+      "vfx_status": "animated_fading_growing_sigil_at_cast_target_and_field_pulse",
+      "audio_asset_status": "not_implemented"
     },
     {
       "id": "TempestFlock",
@@ -2407,7 +2903,7 @@
         "Group"
       ],
       "existing_effect_kind": "summonFlock",
-      "design_status": "concept_only",
+      "design_status": "procedural_first_pass",
       "asset_path": "Essencebound/AbilityIcons/TempestFlock",
       "icon_silhouette": "Three bird wings crossing a storm spiral",
       "palette": {
@@ -2417,7 +2913,12 @@
       },
       "cast_vfx": "Three pale storm feathers circle the caster",
       "result_vfx": "A small flock emerges in windswept light and then fights or distracts nearby foes",
-      "sound_direction": "Wingbeats with windchime"
+      "sound_direction": "Wingbeats with windchime",
+      "icon_asset_status": "generated_in_mod_zip",
+      "sigil_asset_path": "Essencebound/AbilitySigils/TempestFlock",
+      "sigil_asset_status": "generated_in_mod_zip",
+      "vfx_status": "animated_fading_growing_sigil_at_cast_target_and_field_pulse",
+      "audio_asset_status": "not_implemented"
     }
   ]
 }

@@ -38,4 +38,7 @@ for node in fdefs:
 meta=json.loads((ROOT/"manifest.json").read_text())["visual_design_plan"]
 assert meta["generated_icon_assets_in_packaged_build"]==100
 assert meta["generated_cast_sigil_assets_in_packaged_build"]==100
+assert meta["finished_unique_icon_assets"]==100
+assert meta["finished_unique_vfx_assets"]==100
+assert meta["in_game_verified"] is False
 print("PASS: 100 unique transparent 128x128 icons and matching sigils")
