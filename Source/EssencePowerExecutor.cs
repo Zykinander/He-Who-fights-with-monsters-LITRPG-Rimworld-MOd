@@ -126,11 +126,20 @@ namespace Essencebound
                 Log.Warning("[Essencebound] " + message);
                 return false;
             }
+            // Prefer RimWorld's actual damage result. Some unusual damage
+            // handlers may report zero even though injury severity increased,
+            // so measure the injury change as a safe compatibility fallback.
+            float woundsBefore = target.health.hediffSet.hediffs
+                .OfType<Hediff_Injury>().Sum(i => i.Severity);
             var result = target.TakeDamage(new DamageInfo(def, amount, 0f, -1f, caster));
             float inflicted = Math.Max(0f, result.totalDamageDealt);
-            // Damage to friendly/neutral pawns is still allowed, but doesn't
-            // train attacks. Prevents the easiest friendly-fire XP exploit.
-            work = target.HostileTo(caster) ? inflicted : 0f;
+            float woundsAfter = target.health.hediffSet.hediffs
+                .OfType<Hediff_Injury>().Sum(i => i.Severity);
+            if (inflicted <= 0f)
+                inflicted = Math.Max(0f, woundsAfter - woundsBefore);
+            // Every selected pawn (ally, neutral or hostile) gives progress
+            // only when the hit actually inflicted health damage.
+            work = inflicted;
             message = inflicted > 0f
                 ? "Hit " + target.LabelShort + " for " + inflicted.ToString("0.#") + " damage."
                 : "Hit " + target.LabelShort + ", but the damage was resisted or absorbed.";

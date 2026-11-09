@@ -1,74 +1,63 @@
-# Essencebound v0.11 — earned ability ranks and weighted attributes
+# Essencebound v0.12 — numbered rank levels, smoother attribute growth and damage XP fixes
 
-**RimWorld 1.7 | Early development release v0.11 | Test saves recommended**
+**RimWorld 1.7 | Development version v0.12 | Please test on a copy of your save**
 
-## New progression system
+## Progression
 
-Each unlocked power has its own persisted tier and measured work toward the next tier: **Iron → Bronze → Silver → Gold → Diamond**. Progress comes from the *actual outcome*, not merely pressing the cast button.
+Each ability advances **Iron 0 → Iron 1 → ... → Iron 9 → Bronze 0**, and repeats for Bronze, Silver and Gold before reaching Diamond 0. Each numbered step costs 1/10th the previous v0.11 full-rank work threshold:
 
-| Power effect | Earned progression |
-|---|---|
-| Single-target damage / damage + debuff | Actual damage applied to a hostile pawn |
-| Area pulse | Total actual damage applied to nearby hostiles |
-| Healing | Actual injury severity healed |
-| Support buffs | 1 work per 60 game ticks the status remains active on a living spawned pawn |
-| Cleansing | 10 work per actual removed Essencebound chill/static affliction |
+| Major rank | Work per numbered advancement | Total work to next major rank |
+|---|---:|---:|
+| Iron | 4 | 40 |
+| Bronze | 12 | 120 |
+| Silver | 36 | 360 |
+| Gold | 108 | 1080 |
 
-The initial tier requirements are 40 work to Bronze, 120 more to Silver, 360 more to Gold, and 1080 more to Diamond. These are mod-original balancing defaults.
+Each ability still earns work from its **actual game effect**: inflicted damage, injury severity healed, active buff time, successful cleansing, or total area damage. Zero-damage hits give zero damage XP.
 
-**An essence ranks up only when all its required ability slots are unlocked and every one has reached the next rank.** Essences progress separately. The pawn's overall rank is the *lowest* of its owned essence ranks. Unresolved confluences are not counted until they form.
+An **essence's displayed numbered level** is its least-developed required awakened ability. If required slots are empty, it cannot progress beyond numbered level 0 yet. The essence only advances to the next *major rank* when **all its required slots** have abilities that reached that next rank.
 
-### Dynamic 2–5 ability slots
+### Tier synchronization
 
-In **Options → Mod Settings → Essencebound**, choose 2–5 slots per essence (default 3). Each essence remembers the **highest number of slots ever required since progression was introduced**. Raising the slot cap increases the required count; lowering it only pauses higher-index powers and does **not** make the essence rank up early. Increase the cap again to resume those requirements.
+After any ability reaches **Bronze 0**, its Bronze training waits until **every currently owned essence** (normal or confluence) also reaches Bronze. The same synchronized gate applies at Silver and Gold. Unowned slots and missing confluences do not block progress. A newly absorbed Iron essence can temporarily pause higher-tier training.
 
-## Weighted, random essence attribute affinities
+### Attribute growth every numbered level
 
-When a pawn gains a normal or confluence essence, it receives one **random** affinity. The same Fire essence can produce Power on one pawn and Spirit or even Recovery on another. The roll happens only once and is **saved in the pawn's hediff**. Older saves acquire one affinity per existing essence when first loaded with v0.11.
+Power, Speed, Spirit and Recovery bonuses **increase at each numbered essence level** rather than only at major rank boundaries. They interpolate smoothly between the existing doubled rank bonuses:
 
-Every essence has positive weights for all four attributes; the distribution is themed, not fixed. The 226 editable distributions are in `Data/essence_attribute_weights.csv` and embedded in the corresponding essence XML defs. These are mod-original choices and aren't canonical lore claims.
-
-### Doubled bonuses at each rank
-
-Each rank doubles the previous rank's **total** bonus from that essence. It is not a flat bonus added per rank-up.
-
-| Rank | Power damage | Speed cooldown reduction | Spirit buff duration | Recovery healing |
+| Essence level | Power | Speed cooldown reduction | Spirit buff duration | Recovery healing |
 |---|---:|---:|---:|---:|
-| Iron | +4% | -2.5% | +5% | +6% |
-| Bronze | +8% | -5% | +10% | +12% |
-| Silver | +16% | -10% | +20% | +24% |
-| Gold | +32% | -20% | +40% | +48% |
-| Diamond | +64% | -40% | +80% | +96% |
+| Iron 0 | +4.0% | -2.5% | +5.0% | +6.0% |
+| Iron 1 | +4.4% | -2.75% | +5.5% | +6.6% |
+| Iron 5 | +6.0% | -3.75% | +7.5% | +9.0% |
+| Iron 9 | +7.6% | -4.75% | +9.5% | +11.4% |
+| Bronze 0 | +8.0% | -5.0% | +10.0% | +12.0% |
+| Silver 0 | +16.0% | -10.0% | +20.0% | +24.0% |
+| Gold 0 | +32.0% | -20.0% | +40.0% | +48.0% |
+| Diamond 0 | +64.0% | -40.0% | +80.0% | +96.0% |
 
-All values are **per essence** with that affinity. Bonuses from different owned essences with the same attribute stack. Total **Speed** cooldown reduction is capped at 80% (abilities still have a minimum 30-tick cooldown). Other bonuses are capped at +400%, safely above the highest naturally attainable total from four Diamond essences, so a single Diamond Recovery essence receives the full +96%. These bonuses currently affect Essencebound powers, **not all vanilla pawn stats**; a later pass can integrate melee stats, movement speed, psychic resources, or natural injury recovery.
+The four attribute affinities are still randomly rolled for each essence with its original themed weights and saved on the pawn. An essence's affinity bonus is based on **that essence's own rank and numbered level**, not the pawn's global rank. Bonuses from multiple matching affinities still stack, with the existing 80% cap on cooldown reduction.
 
-A few illustrative base weights, in Power / Speed / Spirit / Recovery order:
-- **Fire:** 6 / 1 / 5 / 1 (Power and Spirit favored)
-- **Life:** 1 / 1 / 3 / 8 (Recovery favored)
-- **Swift:** 1 / 8 / 2 / 1 (Speed favored)
-- **Might:** 8 / 1 / 2 / 2 (Power favored)
-- **Balance:** 3 / 3 / 3 / 3 (equal chances)
+## Damage progression fix
 
-## Character profile
+Previously, even though targeting was unrestricted, **friendly and neutral hits earned zero progression**, because the executor required `HostileTo(caster)`. Now valid hits earn actual reported damage on **any pawn**, with an injury-severity fallback for damage handlers that report no direct damage result. Hits that do no damage grant zero work. The cast feedback reports **Progress +X** and the current ability level. If a rank gate blocks training, the message explicitly reports that. If a strong hit crosses a major-tier boundary, only the work needed to reach that boundary is credited, so no hidden XP banks while other essences are waiting.
 
-The four-panel profile displays each essence's randomly rolled attribute and individual rank. Ability rows show rank, effective-work progress and cooldowns. The header shows current combined Essencebound bonuses.
+No explicit Essencebound exception appeared in the provided Player.log; this addresses a concrete inconsistency in the code rather than claiming every possible lack-of-XP issue is resolved.
 
-## In-game test checklist
+## Old saves
 
-1. On a temporary colony, absorb the **same essence on two different pawns**; compare their attribute roll (results can match by chance).
-2. Save/reload, verify affinity selections remain identical.
-3. Cast Ember Bolt on enemies and confirm its damage-based progress increases. Friendly fire still works, but grants **no damage XP**.
-4. Heal wounded pawns using Verdant Mend and confirm progress matches the amount actually restored.
-5. Cast a ward/speed buff and verify support training appears over time, not instantly on cast.
-6. With two active slots, level one ability to Bronze while the other remains Iron; the essence rank should remain Iron.
-7. Level the second ability to Bronze and confirm the essence advances. If another essence remains Iron, overall pawn rank remains Iron.
-8. Change slot limit 2 → 5 → 2; check extra slots cannot be skipped for essence promotion and no previously earned power is lost.
-9. Save/reload after partial XP and rank ups to confirm persistence.
+The new `abilitySublevel` save value migrates the previous v0.11 `rankWork` bar to numbered levels, preserving leftover earned progress. Existing attribute rolls, unlocked abilities, cooldowns and essence rank records are reused.
 
-## Versioned builds
+The existing configurable 2–5 slots per essence remain. The highest slot requirement previously reached is preserved so lowering the cap cannot promote an essence prematurely.
 
-GitHub Actions automatically names the build artifact using the version and run number, for example `Essencebound-v0.11-RW1.7-build10-attempt1.zip`; the installed mod directory stays `Essencebound`.
+## Test plan
 
-## Known limitations
+1. Use an **existing essence pawn** and hit an allied pawn in a temporary test colony. Verify health drops, then check cast feedback shows **Progress +X** and that the ability bar increases.
+2. Repeat on a hostile pawn. Both hits should award work if damage was inflicted.
+3. Build up an ability through Iron 1 and ensure the profile shows its new level.
+4. Advance *all required abilities* through Iron 1 and check that their essence reaches Iron 1; its affinity bonus should rise slightly.
+5. Advance all required abilities to Bronze 0; check the essence reaches Bronze 0.
+6. Keep another owned essence at Iron and confirm Bronze training is stalled until that essence also reaches Bronze 0.
+7. Save/reload; confirm rolled affinities, numbered levels, partial work, and stat bonuses remain unchanged.
 
-Progression and weighted selection are v0.11 prototype mechanics that require successful C# compilation and in-game validation. The rank/attribute system is not claimed as a canon implementation, and the 12 reusable powers, two disputed confluence recipes, and placeholder spell effects remain. 
+The in-game mod folder is still **Essencebound**. GitHub Actions names test downloads uniquely by the development version and build number.

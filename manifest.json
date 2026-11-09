@@ -1,6 +1,6 @@
 {
   "project": "Essencebound",
-  "version": "0.11",
+  "version": "0.12",
   "target_game": "RimWorld 1.7",
   "requires_compilation": true,
   "compiled_assembly_included": false,
@@ -40,7 +40,7 @@
   "gameplay_power_status": "v0.11 progression and random affinities pending GitHub Actions compilation and in-game validation",
   "stone_count": 30,
   "power_effect_definitions": 8,
-  "release_notes": "Rank bonuses now double at every tier (Iron x1 through Diamond x16), with an 80% cap for stacked Speed cooldown reduction. Retains work-based advancement and weighted random per-pawn essence affinities.",
+  "release_notes": "Fix damage progress credit and explain in cast messages. Add 0–9 sublevels within each rank, smooth attribute bonus gains every sublevel, and cross-essence major-rank training synchronization.",
   "progression": {
     "attributes": [
       "Power",
@@ -59,11 +59,11 @@
     ],
     "requirements": "All highest-ever-configured ability slots within each essence must be awakened and reach the next rank.",
     "xp_sources": {
-      "damage": "actual damage on hostile pawns",
+      "damage": "effective damage dealt to any pawn independent of faction, using DamageResult with injury-delta fallback",
       "heal": "actual injury severity healed",
       "buff": "60 ticks of sustained active buff",
       "cleanse": "10 work per successful affliction removal",
-      "pulse": "actual total hostile damage"
+      "pulse": "effective total damage to hostiles"
     },
     "thresholds_by_tier": [
       40,
@@ -90,6 +90,11 @@
       "Power": "400% total ability damage bonus",
       "Spirit": "400% total buff-duration bonus",
       "Recovery": "400% total healing bonus"
-    }
+    },
+    "sublevels_per_major_rank": 10,
+    "rank_display": "Iron 0..9 → Bronze 0..9 → Silver 0..9 → Gold 0..9 → Diamond 0",
+    "sublevel_attribute_bonuses": "linear interpolation from current major-rank multiplier to next doubled major-rank multiplier, step 1/10, using the lowest required ability level per essence",
+    "tier_synchronization": "Training in any major tier Bronze or above pauses when another currently owned essence has not reached that tier.",
+    "migration": "Existing rankWork from v0.11 converted to saved 0..9 sublevels and fractional work without rerolling existing affinity."
   }
 }
