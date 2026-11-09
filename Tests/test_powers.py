@@ -65,7 +65,7 @@ by_essence={x.findtext('essence'):x.findtext('power') for x in starterdefs}
 assert len(by_essence)==226 and set(by_essence)==all_essences
 assert set(by_essence.values()) <= {p['defName'] for p in powers}
 assert by_essence['EB_Fire']=='EB_Power_EmberBolt'
-assert by_essence['EB_Phoenix']=='EB_Power_EmberBolt'
+assert by_essence['EB_Phoenix']=='EB_Power_AshenComet'
 assert next(x for x in powerdefs if x.findtext('defName')=='EB_Power_EmberBolt').findtext('damageDefName')=='Flame'
 source=(ROOT/'Source/Hediff_EssenceUser.cs').read_text()
 assert 'GrantInnatePower' in source and 'GrantMissingInnatePowers' in source
@@ -343,7 +343,7 @@ for essence,power in starter_map.items():
     assert by_essence['EB_'+essence]=='EB_Power_'+power
     assert any(row['essence']==essence and row['starter_power']=='EB_Power_'+power for row in rows)
 assert by_essence['EB_Fire']=='EB_Power_EmberBolt'
-assert by_essence['EB_Phoenix']=='EB_Power_EmberBolt'
+assert by_essence['EB_Phoenix']=='EB_Power_AshenComet'
 print('PASS: v0.16 24 powers, 14 status defs, 9 new handlers and 12 themed starter assignments')
 
 # v0.16 follow-up: secondary blasts cannot pass through walls.
@@ -436,7 +436,7 @@ for essence,ability in starterMap.items():
     assert by_essence['EB_'+essence]=='EB_Power_'+ability
     assert any(r['essence']==essence and r['starter_power']=='EB_Power_'+ability for r in rows)
 assert by_essence['EB_Fire']=='EB_Power_EmberBolt'
-assert by_essence['EB_Phoenix']=='EB_Power_EmberBolt'
+assert by_essence['EB_Phoenix']=='EB_Power_AshenComet'
 print('PASS: v0.17 50 playable powers, 25 statuses, 26 new starters, validated mechanics and CSV')
 
 # v0.18 20 new, genuinely wired gameplay abilities. The older 50 remain.
