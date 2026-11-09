@@ -466,8 +466,9 @@ executor=(ROOT/'Source/EssencePowerExecutor.cs').read_text()
 for kind in ('delayedBlast','reflect','healingZone','returnTeleport','summon',
  'adaptiveBuff','transfusion','summonOrder','markedTarget','branchingHeal',
  'containment','decoy','powerAura','wardDome','teleport','blinkStrike',
- 'remoteManipulation','tileBarrier','survey','hazardZone'):
+ 'tileBarrier','survey','hazardZone'):
     assert 'case "'+kind+'":' in src, kind
+assert 'power.effectKind != "remoteManipulation"' in src
 assert 'public static bool CastSpatial(' in src
 assert 'public static bool CastPawn(' in src
 assert 'public bool TryCastPower(EssenceAbilitySlot slot, LocalTargetInfo target, out string message)' in player
