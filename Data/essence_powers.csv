@@ -69,3 +69,33 @@ EchoTwin,Echo Twin,decoy,self,0,0,1500,900,,Veil; Familiar; Exploration; Counter
 ResonanceField,Resonance Field,powerAura,self,0,0,1440,960,EB_Buff_ResonanceField,Aura; Spell; Ritual; Stars,Resonating,original_mod_gameplay_design
 GuardianBastion,Guardian Bastion,wardDome,self,0,0,1440,1020,EB_Buff_GuardianBastion,Ward; Aura; Ritual; Counter,Guardian,original_mod_gameplay_design
 MoltenRain,Molten Rain,hazardZone,cell,12,3.2,1560,900,,Assault; Spell; Stars; Surge,Volcano,original_mod_gameplay_design
+OasisWell,Oasis Well,restorationZone,self,0,1.4,1500,1500,,Recovery; Ritual; Growth; Aura,Oasis,original_mod_gameplay_design
+BoneFamiliar,Bone Familiar,familiar,self,0,0,1800,1500,,Familiar; Ward; Adventure; Ritual,Bone,original_mod_gameplay_design
+Mistwalk,Mistwalk,concealment,self,0,0,1080,1050,EB_Buff_Mistwalk,Veil; Mobility; Preparation; Adventure,Cloud,original_mod_gameplay_design
+MirrorStep,Mirror Step,swapTeleport,pawn,10,0,1000,0,,Mobility; Veil; Reach; Spell,Mirror,original_mod_gameplay_design
+WebWeaver,Web Weaver,webZone,cell,11,0,1440,1080,EB_Debuff_Webbed,Control; Growth; Spell; Ritual,Spider,original_mod_gameplay_design
+SonicLance,Sonic Lance,piercingSound,pawn,12,9,840,0,,Assault; Spell; Precision; Reach,Song,original_mod_gameplay_design
+SunwardFlare,Sunward Flare,radiantPurge,self,0,4.5,1200,0,,Judgement; Spell; Recovery; Aura,Sun,original_mod_gameplay_design
+Moonshadow,Moonshadow,conditionalBuff,self,0,0,1080,1200,EB_Buff_Moonshadow,Veil; Mobility; Counter; Preparation,Moon,original_mod_gameplay_design
+HungerField,Hunger Field,sustainedLeech,self,0,3.1,1440,960,,Reaper; Aura; Recovery; Spell,Hunger,original_mod_gameplay_design
+ShatterArmor,Shatter Armor,armorBreak,pawn,9,6,900,900,EB_Debuff_ShatteredArmor,Assault; Reaper; Control; Precision,Hammer,original_mod_gameplay_design
+HarvestBlessing,Harvest Blessing,harvestAura,self,0,0,1800,1500,EB_Buff_HarvestBlessing,Growth; Ritual; Familiar; Aura,Harvest,original_mod_gameplay_design
+WeaveWard,Weave Ward,linkedDefense,pawn,9,0,1320,1000,EB_Buff_WeaveWard,Ward; Ritual; Familiar; Counter,Weave,original_mod_gameplay_design
+RuneBeacon,Rune Beacon,groundWard,cell,11,0,1500,1020,EB_Buff_RuneBeacon,Ward; Spell; Ritual; Preparation,Rune,original_mod_gameplay_design
+IronReprisal,Iron Reprisal,counterStance,self,0,4.8,1200,960,EB_Buff_IronReprisal,Counter; Ward; Assault; Preparation,Iron,original_mod_gameplay_design
+SerpentCoil,Serpent Coil,grapple,pawn,9,0,1100,900,EB_Debuff_SerpentCoil,Control; Spell; Reaper; Reach,Serpent,original_mod_gameplay_design
+DawnRebirth,Dawn Rebirth,emergencyHeal,self,0,12,1800,1500,EB_Buff_DawnRebirth,Recovery; Stars; Ward; Ritual,Dawn,original_mod_gameplay_design
+AdeptConvergence,Adept Convergence,attributeShift,self,0,0,1260,1020,EB_Buff_AdeptConvergence,Preparation; Spell; Surge; Ritual,Adept,original_mod_gameplay_design
+FeyGlamour,Fey Glamour,confusion,pawn,10,0,1020,900,EB_Debuff_FeyGlamour,Veil; Control; Spell; Counter,Fey,original_mod_gameplay_design
+NimbusGuard,Nimbus Guard,mobileWard,pawn,8,0,1380,1200,EB_Buff_NimbusGuard,Ward; Mobility; Familiar; Aura,Sky,original_mod_gameplay_design
+BladeOrbit,Blade Orbit,orbitStrike,self,0,3.4,1440,960,,Assault; Counter; Surge; Spell,Sword,original_mod_gameplay_design
+GravityWell,Gravity Well,pullZone,cell,12,0,1560,960,EB_Debuff_GravitySnare,Control; Spell; Reach; Surge,Vortex,original_mod_gameplay_design
+CorruptingSeed,Corrupting Seed,sustainedDebuff,pawn,10,2.5,1260,1200,EB_Debuff_CorruptingSeed,Reaper; Control; Spell; Growth,Corrupt,original_mod_gameplay_design
+TalismanSeal,Talisman Seal,storedTrigger,self,0,0,1500,1800,EB_Buff_TalismanSeal,Ward; Counter; Ritual; Preparation,Talisman,original_mod_gameplay_design
+PactOfUnity,Pact of Unity,teamLink,self,0,0,1500,1020,EB_Buff_PactOfUnity,Familiar; Ritual; Aura; Judgement,Unity,original_mod_gameplay_design
+PhoenixAshes,Phoenix Ashes,survivalBoon,pawn,9,12,1680,1800,EB_Buff_PhoenixAshes,Recovery; Ward; Growth; Stars,Firebird,original_mod_gameplay_design
+Worldstep,Worldstep,longTeleport,cell,22,0,1800,330,,Mobility; Exploration; Spell; Adventure,Dimension,original_mod_gameplay_design
+FeralClaw,Feral Claw,meleeCombo,pawn,2.5,5.5,390,480,EB_Buff_FeralCombo,Assault; Reaper; Mobility; Counter,Claw,original_mod_gameplay_design
+WardEcho,Ward Echo,debuffReflect,self,0,0,1620,1260,EB_Buff_WardEcho,Counter; Ward; Spell; Veil,Boundary,original_mod_gameplay_design
+SandsOfStillness,Sands of Stillness,slowField,cell,11,0,1500,900,EB_Debuff_Stillness,Control; Spell; Ritual; Veil,Sand,original_mod_gameplay_design
+TempestFlock,Tempest Flock,summonFlock,self,0,0,1740,1200,,Familiar; Surge; Aura; Adventure,Bird,original_mod_gameplay_design

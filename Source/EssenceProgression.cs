@@ -127,7 +127,14 @@ namespace Essencebound
                 case "execute":
                 case "delayedBlast":
                 case "blinkStrike":
-                case "hazardZone": return "effective damage";
+                case "hazardZone":
+                case "piercingSound":
+                case "radiantPurge":
+                case "sustainedLeech":
+                case "armorBreak":
+                case "orbitStrike":
+                case "sustainedDebuff":
+                case "meleeCombo": return "effective damage";
                 case "heal":
                 case "healGroup":
                 case "regeneration":
@@ -136,7 +143,10 @@ namespace Essencebound
                 case "areaRegen":
                 case "healingZone":
                 case "branchingHeal":
-                case "transfusion": return "injuries healed";
+                case "transfusion":
+                case "restorationZone":
+                case "emergencyHeal":
+                case "survivalBoon": return "actual healing";
                 case "healWard": return "healing plus ward duration";
                 case "buff":
                 case "auraBuff":
@@ -144,20 +154,40 @@ namespace Essencebound
                 case "adaptiveBuff":
                 case "powerAura":
                 case "wardDome":
-                case "markedTarget": return "active support and reflected damage";
+                case "markedTarget":
+                case "concealment":
+                case "conditionalBuff":
+                case "harvestAura":
+                case "linkedDefense":
+                case "counterStance":
+                case "attributeShift":
+                case "mobileWard":
+                case "storedTrigger":
+                case "teamLink":
+                case "debuffReflect": return "active support and triggered protection";
                 case "debuff":
                 case "containment":
-                case "summonOrder": return "active control";
+                case "summonOrder":
+                case "grapple":
+                case "confusion":
+                case "webZone":
+                case "slowField":
+                case "pullZone": return "active control";
                 case "cleanse":
                 case "areaCleanse":
                 case "purgeHeal": return "healing and cleansing work";
                 case "summon":
-                case "decoy": return "active summoned assistance";
+                case "decoy":
+                case "familiar":
+                case "summonFlock": return "active summoned assistance";
                 case "returnTeleport":
                 case "teleport":
                 case "remoteManipulation":
                 case "tileBarrier":
-                case "survey": return "successful utility work";
+                case "survey":
+                case "swapTeleport":
+                case "groundWard":
+                case "longTeleport": return "successful utility work";
                 default: return "progress";
             }
         }

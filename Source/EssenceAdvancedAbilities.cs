@@ -283,7 +283,7 @@ namespace Essencebound
             return true;
         }
 
-        private static bool CanTeleport(Pawn caster, IntVec3 cell, out string message,
+        internal static bool CanTeleport(Pawn caster, IntVec3 cell, out string message,
             bool requiresSight = true)
         {
             if (!cell.IsValid || !cell.InBounds(caster.Map) ||
@@ -299,14 +299,14 @@ namespace Essencebound
             return true;
         }
 
-        private static void MovePawn(Pawn caster, IntVec3 cell)
+        internal static void MovePawn(Pawn caster, IntVec3 cell)
         {
             caster.pather.StopDead();
             caster.Position = cell;
             caster.Notify_Teleported();
         }
 
-        private static bool SummonCreatures(Pawn caster, EssencePowerDef power,
+        internal static bool SummonCreatures(Pawn caster, EssencePowerDef power,
             EssenceAbilitySlot slot, string kindName, int count, int duration,
             out string message, out float work)
         {

@@ -86,7 +86,16 @@ namespace Essencebound
                 totalBonus += EssenceProgression.RankBonusMultiplier(tier, level) *
                               EssenceProgression.BonusPerTier(attribute);
             }
-            return Math.Min(EssenceProgression.MaxAttributeBonus(attribute), totalBonus);
+            // Adept Convergence redirects some Speed affinity into Power
+            // for the duration of the saved timed effect.
+            if (pawn?.health?.hediffSet?.hediffs.Any(h =>
+                h.def.defName == "EB_Buff_AdeptConvergence") == true)
+            {
+                if (attribute == "Power") totalBonus += 0.12f;
+                if (attribute == "Speed") totalBonus -= 0.07f;
+            }
+            return Math.Max(0f,
+                Math.Min(EssenceProgression.MaxAttributeBonus(attribute), totalBonus));
         }
 
         public float NextWorkFor(EssenceAbilitySlot slot)
@@ -388,8 +397,11 @@ namespace Essencebound
             { message = "Cooldown: " + ((slot.nextUseTick - now + 59) / 60) + " seconds left."; return false; }
             float realWork;
             bool applied = power.targetKind == "cell" || power.targetKind == "thing"
-                ? EssenceAdvancedAbilities.CastSpatial(pawn, power, target, slot,
-                    out message, out realWork)
+                ? (EssenceHundredAbilities.IsSpatial(power.effectKind)
+                    ? EssenceHundredAbilities.CastSpatial(pawn, power, target, slot,
+                        out message, out realWork)
+                    : EssenceAdvancedAbilities.CastSpatial(pawn, power, target, slot,
+                        out message, out realWork))
                 : EssencePowerExecutor.Apply(pawn, power, target.Thing as Pawn,
                     slot, out message, out realWork);
             if (!applied) return false;
