@@ -21,7 +21,7 @@ assert len(conflicted) == 2
 assert all(r['conflict'] == (tuple(r['essences']) in conflicted) for r in rows)
 
 xmlpaths = list((ROOT/'1.7/Defs').rglob('*.xml'))
-assert len(xmlpaths) == 15, xmlpaths
+assert len(xmlpaths) == 16, xmlpaths
 for p in xmlpaths:
     ET.parse(p)
 
@@ -117,8 +117,8 @@ print('PASS: all 30 icons unique path, 128px RGBA, transparent corners')
 
 # Release metadata must use the development-version scheme.
 metadata=ET.parse(ROOT/'About/About.xml').getroot()
-assert 'v0.17' in metadata.findtext('name')
-assert json.loads((ROOT/'manifest.json').read_text())['version']=='0.17'
+assert 'v0.18' in metadata.findtext('name')
+assert json.loads((ROOT/'manifest.json').read_text())['version']=='0.18'
 print('PASS: v0.13 metadata and inherited stack-count overlays')
 
 # Regression: each GitHub Actions run must have a unique versioned artifact name.
@@ -269,7 +269,7 @@ assert 'Scribe_Values.Look(ref magicDensity' in marker
 for setting in ('manifestationsEnabled','manifestationMonstersEnabled',
                 'manifestationFrequency','densityPreset'):
     assert setting in settings
-assert json.loads((ROOT/'manifest.json').read_text())['version']=='0.17'
+assert json.loads((ROOT/'manifest.json').read_text())['version']=='0.18'
 print('PASS: v0.13 saveable magic density, tears, monster tiering and XML')
 
 # v0.14: monster danger follows actual colony progression, not random base magic.
@@ -317,7 +317,7 @@ assert density_for(70000,5,9,5)==density_for(70000,5,9,5)
 assert density_for(0,0,0,0)>=0.05
 assert density_for(10**9,100,20,100)<=1
 manifest=json.loads((ROOT/'manifest.json').read_text())
-assert manifest['version']=='0.17'
+assert manifest['version']=='0.18'
 assert manifest['world_integration']['density_weights']['essence']==0.42
 print('PASS: v0.14 deterministic strength-based density scales up with colony strength')
 
@@ -349,7 +349,7 @@ assert 'EssenceMonsterRanks.GroupSize(monsterRank)' in world
 assert 'ebMonsterRankIndex' in mark
 assert 'Scribe_Values.Look(ref magicDensity' in mark
 meta=json.loads((ROOT/'manifest.json').read_text())
-assert meta['version']=='0.17'
+assert meta['version']=='0.18'
 assert meta['monster_progression']['ranks']==['Iron','Bronze','Silver','Gold','Diamond']
 assert all(sum(weights)==100 for weights in meta['monster_progression']['rank_weights_by_magic_density'].values())
 assert meta['requires_harmony']
@@ -363,8 +363,8 @@ with (ROOT/'Data/ability_roster_100.csv').open(encoding='utf-8',newline='') as _
     _roster=list(_roster_csv.DictReader(_file))
 assert len(_roster)==100
 assert len({r['id'] for r in _roster})==100
-assert sum(r['status']=='playable' for r in _roster)==50
-assert sum(r['status']=='planned' for r in _roster)==50
+assert sum(r['status']=='playable' for r in _roster)==70
+assert sum(r['status']=='planned' for r in _roster)==30
 assert set(r['id'] for r in _roster if r['status']=='playable')=={
     p['id'] for p in json.loads((ROOT/'Data/essence_powers.json').read_text())['powers']}
 assert all(r['primary_essence'] in {
@@ -378,3 +378,30 @@ assert sum(r['target_milestone']=='v0.20' for r in _roster)==10
 assert all(r['mechanic'] and r['source_status']=='original_mod_gameplay_design' for r in _roster)
 assert json.loads((ROOT/'manifest.json').read_text())['ability_plan']['minimum_playable_target']==100
 print('PASS: v0.17 100 unique themed designs, 50 playable and 50 future milestones')
+
+# v0.18: saveable advanced battlefield effects and 70/100 milestone.
+barriers=definitions('1.7/Defs/ThingDefs/EssenceBarriers.xml','ThingDef')
+assert len(barriers)==1
+assert child_text(barriers[0],'defName')=='EB_TemporaryEssenceBarrier'
+assert child_text(barriers[0],'passability')=='Impassable'
+assert child_text(barriers[0],'tickerType')=='Normal'
+world=(ROOT/'Source/MapComponent_EssenceAbilityWorld.cs').read_text()
+assert 'class MapComponent_EssenceAbilityWorld : MapComponent' in world
+assert 'Scribe_Collections.Look(ref effects, "ebAbilityWorldEffects", LookMode.Deep)' in world
+assert 'public void TrackSummon(' in world
+assert 'public List<Pawn> AlliedSummons(' in world
+for kind in ('delayedBlast','hazardZone','healingZone','powerAura','wardDome'):
+    assert 'case "'+kind+'":' in world
+assert 'EssencePowerExecutor.FieldDamage' in world
+assert 'EssencePowerExecutor.FieldHealing' in world
+assert 'EssencePowerExecutor.FieldBuff' in world
+m=json.loads((ROOT/'manifest.json').read_text())
+assert m['version']=='0.18'
+assert m['counts']['playable_power_defs']==70
+assert m['counts']['timed_power_effect_defs']==33
+assert m['ability_plan']['minimum_playable_target']==100
+assert m['ability_plan']['current_playable']==70
+assert m['ability_plan']['remaining_to_implement']==30
+assert sum(r['status']=='playable' and r['target_milestone']=='v0.18' for r in _roster)==20
+assert sum(r['status']=='planned' and r['target_milestone']=='v0.18' for r in _roster)==0
+print('PASS: v0.18 70/100 ability roster, field saves and barrier XML')
