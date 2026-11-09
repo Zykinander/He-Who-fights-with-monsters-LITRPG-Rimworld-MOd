@@ -16,10 +16,47 @@ namespace Essencebound
         private bool confluenceRestricted;
         private string rank = "Iron";
         private List<EssenceAbilitySlot> abilitySlots = new List<EssenceAbilitySlot>();
+        private List<EssenceAffinityRecord> affinities = new List<EssenceAffinityRecord>();
+        private List<EssenceRankRecord> essenceRanks = new List<EssenceRankRecord>();
 
         public IReadOnlyList<string> NormalEssences => normalEssenceNames;
         public string ConfluenceName => confluenceName;
         public string Rank => rank;
+        public string GetAffinity(string essenceName)
+        {
+            EnsureProgressionRecords();
+            return affinities.FirstOrDefault(a => a.essenceDefName == essenceName)?.attribute ?? "";
+        }
+
+        public int GetEssenceRankIndex(string essenceName)
+        {
+            EnsureProgressionRecords();
+            return essenceRanks.FirstOrDefault(r => r.essenceDefName == essenceName)?.rankIndex ?? 0;
+        }
+
+        public int GetRequiredSlotCount(string essenceName)
+        {
+            EnsureProgressionRecords();
+            return essenceRanks.FirstOrDefault(r => r.essenceDefName == essenceName)?.requiredSlotCount ?? SlotsPerEssence;
+        }
+
+        public float GetAffinityBonus(string attribute)
+        {
+            EnsureProgressionRecords();
+            float totalBonus = 0f;
+            foreach (var a in affinities.Where(a => a.attribute == attribute))
+            {
+                int tier = essenceRanks.FirstOrDefault(r => r.essenceDefName == a.essenceDefName)?.rankIndex ?? 0;
+                totalBonus += EssenceProgression.RankBonusMultiplier(tier) *
+                              EssenceProgression.BonusPerTier(attribute);
+            }
+            return Math.Min(EssenceProgression.MaxAttributeBonus(attribute), totalBonus);
+        }
+
+        public float NextWorkFor(EssenceAbilitySlot slot)
+        {
+            return EssenceProgression.NextRankWork(slot?.abilityRankIndex ?? 4);
+        }
         public IReadOnlyList<EssenceAbilitySlot> AbilitySlots => abilitySlots;
         public int SlotsPerEssence => EssenceboundMod.SlotsPerEssence;
         public string ConfluenceStatus => confluenceStatus;
@@ -51,6 +88,8 @@ namespace Essencebound
             Scribe_Values.Look(ref confluenceRestricted, "confluenceRestricted", false);
             Scribe_Values.Look(ref rank, "essenceRank", "Iron");
             Scribe_Collections.Look(ref abilitySlots, "abilitySlots", LookMode.Deep);
+            Scribe_Collections.Look(ref affinities, "essenceAffinities", LookMode.Deep);
+            Scribe_Collections.Look(ref essenceRanks, "essenceRanks", LookMode.Deep);
 
             if (Scribe.mode == LoadSaveMode.PostLoadInit)
             {
@@ -63,7 +102,91 @@ namespace Essencebound
                 EssencePowerCatalog.BackfillLegacyPowers(abilitySlots);
                 // Grant missing starter powers without replacing existing awakenings.
                 GrantMissingInnatePowers();
+                EnsureProgressionRecords();
+                RefreshOverallRank();
             }
+        }
+
+
+        private void EnsureProgressionRecords()
+        {
+            affinities ??= new List<EssenceAffinityRecord>();
+            essenceRanks ??= new List<EssenceRankRecord>();
+            foreach (string name in OwnedEssenceNames)
+            {
+                if (!affinities.Any(a => a != null && a.essenceDefName == name))
+                {
+                    var essence = DefDatabase<EssenceDef>.GetNamedSilentFail(name);
+                    affinities.Add(new EssenceAffinityRecord
+                    {
+                        essenceDefName = name,
+                        attribute = EssenceProgression.RollAttribute(essence)
+                    });
+                }
+                var record = essenceRanks.FirstOrDefault(r => r != null && r.essenceDefName == name);
+                if (record == null)
+                {
+                    essenceRanks.Add(new EssenceRankRecord
+                    {
+                        essenceDefName = name, rankIndex = 0, requiredSlotCount = SlotsPerEssence
+                    });
+                }
+                else
+                {
+                    record.requiredSlotCount = Math.Max(record.requiredSlotCount, SlotsPerEssence);
+                }
+            }
+        }
+
+        private void RefreshOverallRank()
+        {
+            int lowestRank = essenceRanks == null || essenceRanks.Count == 0 ? 0 :
+                OwnedEssenceNames.Select(n => essenceRanks.FirstOrDefault(r =>
+                    r != null && r.essenceDefName == n)?.rankIndex ?? 0).DefaultIfEmpty(0).Min();
+            rank = EssenceProgression.RankLabel(lowestRank);
+        }
+
+        private void TryAdvanceEssenceRank(string essenceName)
+        {
+            EnsureProgressionRecords();
+            var record = essenceRanks.FirstOrDefault(r => r.essenceDefName == essenceName);
+            if (record == null) return;
+            while (record.rankIndex < 4)
+            {
+                // The maximum-ever slot count is a permanent progression requirement.
+                // Reducing the configured cap does not erase or bypass this requirement.
+                var required = abilitySlots.Where(s => s != null && s.essenceDefName == essenceName &&
+                    s.index >= 0 && s.index < record.requiredSlotCount).ToList();
+                if (required.Count != record.requiredSlotCount ||
+                    required.Any(s => !s.IsAwakened || s.abilityRankIndex <= record.rankIndex))
+                    break;
+                record.rankIndex++;
+                string label = DefDatabase<EssenceDef>.GetNamedSilentFail(essenceName)?.label ?? essenceName;
+                if (pawn?.Faction == Faction.OfPlayer)
+                    Messages.Message(pawn.LabelShort + "'s " + label + " essence advanced to " +
+                        EssenceProgression.RankLabel(record.rankIndex) + "!",
+                        MessageTypeDefOf.PositiveEvent, false);
+            }
+            RefreshOverallRank();
+        }
+
+        public void AddAbilityWork(string essenceName, int slotIndex, float amount)
+        {
+            if (amount <= 0f || string.IsNullOrEmpty(essenceName)) return;
+            EnsureAbilitySlots();
+            EnsureProgressionRecords();
+            var slot = abilitySlots.FirstOrDefault(s => s != null && s.essenceDefName == essenceName &&
+                s.index == slotIndex && s.index >= 0 && s.index < SlotsPerEssence && s.IsAwakened);
+            if (slot == null || slot.abilityRankIndex >= 4) return;
+            slot.rankWork += amount;
+            while (slot.abilityRankIndex < 4 &&
+                   slot.rankWork >= EssenceProgression.NextRankWork(slot.abilityRankIndex))
+            {
+                slot.rankWork -= EssenceProgression.NextRankWork(slot.abilityRankIndex);
+                slot.abilityRankIndex++;
+            }
+            if (slot.abilityRankIndex == 4) slot.rankWork = 0f;
+            TryAdvanceEssenceRank(essenceName);
         }
 
         private void EnsureAbilitySlots()
@@ -137,6 +260,7 @@ namespace Essencebound
                 confluenceRestricted = outcome.restricted;
             }
             EnsureAbilitySlots();
+            EnsureProgressionRecords();
             string innate = GrantInnatePower(essence.defName);
             string confluenceInnate = string.IsNullOrEmpty(confluenceName) ? "" : GrantInnatePower(confluenceName);
             reason = (string.IsNullOrEmpty(innate) ? "" : " Innate ability: " + innate + ".") +
@@ -171,6 +295,9 @@ namespace Essencebound
             slot.abilityDefName = chosen.power.defName;
             slot.sourceKind = "stone";
             slot.nextUseTick = 0;
+            slot.abilityRankIndex = 0;
+            slot.rankWork = 0f;
+            TryAdvanceEssenceRank(essenceName);
             var essence = DefDatabase<EssenceDef>.GetNamedSilentFail(essenceName);
             message = "awakened " + chosen.power.label + " (" + chosen.aspect.label + ") in " +
                 (essence?.label ?? essenceName) + " (slot " + (slot.index + 1) + "/" + SlotsPerEssence + ").";
@@ -189,8 +316,10 @@ namespace Essencebound
             int now = Find.TickManager.TicksGame;
             if (slot.nextUseTick > now)
             { message = "Cooldown: " + ((slot.nextUseTick - now + 59) / 60) + " seconds left."; return false; }
-            if (!EssencePowerExecutor.Apply(pawn, power, target, out message)) return false;
-            slot.nextUseTick = now + power.cooldownTicks;
+            if (!EssencePowerExecutor.Apply(pawn, power, target, slot, out message, out float realWork)) return false;
+            if (realWork > 0f) AddAbilityWork(slot.essenceDefName, slot.index, realWork);
+            float cooldownReduction = GetAffinityBonus("Speed");
+            slot.nextUseTick = now + Math.Max(30, (int)(power.cooldownTicks * (1f - cooldownReduction)));
             message = power.label.CapitalizeFirst() + ": " + message;
             return true;
         }
@@ -229,7 +358,7 @@ namespace Essencebound
             EnsureAbilitySlots();
             var b = new StringBuilder();
             b.AppendLine("ESSENCEBOUND PROFILE");
-            b.AppendLine("Rank: " + rank + " (rank progression mechanics not yet implemented)");
+            b.AppendLine("Overall rank: " + rank + " (lowest owned essence rank)");
             b.AppendLine("Normal essences (" + normalEssenceNames.Count + "/3)");
             b.AppendLine("Confluence: " + (string.IsNullOrEmpty(confluenceName) ? "None" :
                 DefDatabase<EssenceDef>.GetNamedSilentFail(confluenceName)?.label ?? confluenceName));
@@ -239,12 +368,17 @@ namespace Essencebound
             foreach (string name in OwnedEssenceNames)
             {
                 var essence = DefDatabase<EssenceDef>.GetNamedSilentFail(name);
-                b.AppendLine("  " + (essence?.label ?? name) + ":");
+                b.AppendLine("  " + (essence?.label ?? name) + ": " +
+                    EssenceProgression.RankLabel(GetEssenceRankIndex(name)) +
+                    " / " + GetAffinity(name) + " (progression requires " +
+                    GetRequiredSlotCount(name) + " abilities)");
                 foreach (var slot in GetActiveSlotsFor(name))
                 {
                     var power = DefDatabase<EssencePowerDef>.GetNamedSilentFail(slot.abilityDefName);
                     b.AppendLine("    " + (slot.index + 1) + ". " +
-                        (slot.IsAwakened ? (power?.label ?? "unresolved imprint") : "empty"));
+                        (slot.IsAwakened ? (power?.label ?? "unresolved imprint") +
+                        " [" + EssenceProgression.RankLabel(slot.abilityRankIndex) + ", " +
+                        slot.rankWork.ToString("0.#") + " work]" : "empty"));
                 }
             }
             if (PausedPowersCount > 0)
@@ -277,7 +411,9 @@ namespace Essencebound
                     defaultLabel = power.label.CapitalizeFirst(),
                     defaultDesc = power.description + "\nEssence: " + (essence?.label ?? slot.essenceDefName) +
                         "\nTarget: " + (power.targetKind == "self" ? "Self" : "Any living pawn (ally or enemy)") +
-                        "\nCooldown: " + (power.cooldownTicks / 60f).ToString("0.#") + " s",
+                        "\nRank: " + EssenceProgression.RankLabel(slot.abilityRankIndex) +
+                        "\nTraining: " + EssenceProgression.WorkLabel(power.effectKind) +
+                        "\nCooldown: " + (power.cooldownTicks / 60f).ToString("0.#") + " s (before Speed bonus)",
                     icon = ContentFinder<UnityEngine.Texture2D>.Get(power.iconPath, false),
                     action = () => ActivatePower(captured, power)
                 };

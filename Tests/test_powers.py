@@ -92,7 +92,39 @@ print('PASS: v0.09 seven cross-faction targeted powers; five self-cast powers un
 src=(ROOT/'Source/Hediff_EssenceUser.cs').read_text()
 assert 's.index < SlotsPerEssence' in src
 assert 'slot.index >= SlotsPerEssence' in src
-assert 'if (!EssencePowerExecutor.Apply(pawn, power, target, out message)) return false;' in src
+assert 'if (!EssencePowerExecutor.Apply(pawn, power, target, slot, out message, out float realWork)) return false;' in src
 assert 'Find.Targeter.BeginTargeting(targets' in src
 assert 'GrantInnatePower' in src
 print('PASS: old targeting and innate unlock pathways preserved with active slot limit')
+
+# v0.11 — work credits by actual effect, with meaningful type-specific requirements.
+executor=(ROOT/'Source/EssencePowerExecutor.cs').read_text()
+timed=(ROOT/'Source/Hediff_EssenceTimed.cs').read_text()
+assert 'work = Math.Max(0f, before - injury.Severity)' in executor
+assert 'work = target.HostileTo(caster) ? inflicted : 0f' in executor
+assert 'work = 10f' in executor
+assert 'work += dealt' in executor
+assert 'float powerScale = 1f + (user?.GetAffinityBonus("Power") ?? 0f)' in executor
+assert 'float recoveryScale = 1f + (user?.GetAffinityBonus("Recovery") ?? 0f)' in executor
+assert 'float spiritScale = 1f + (user?.GetAffinityBonus("Spirit") ?? 0f)' in executor
+assert 'GetAffinityBonus("Speed")' in src
+assert 'slot.nextUseTick = now + Math.Max(30' in src
+assert 'if (++benefitTicks >= 60)' in timed
+assert 'AddAbilityWork(' in timed
+assert 'Scribe_References.Look(ref creditCaster, "ebCreditCaster")' in timed
+ui=(ROOT/'Source/Dialog_EssenceProfile.cs').read_text()
+assert 'state.GetAffinity(essenceName)' in ui
+assert 'GetEssenceRankIndex(essenceName)' in ui
+assert 'slot.rankWork' in ui and 'NextRankWork' in ui
+print('PASS: ability-type progression work tracking and rank-scaled bonuses')
+
+# The multiplier applies at the affinity contribution, before the existing
+# Power/Speed/Spirit/Recovery effect hooks consume the total.
+progression_source=(ROOT/'Source/EssenceProgression.cs').read_text()
+rank_source=(ROOT/'Source/Hediff_EssenceUser.cs').read_text()
+assert 'public static int RankBonusMultiplier(int rankIndex)' in progression_source
+assert 'EssenceProgression.RankBonusMultiplier(tier) *' in rank_source
+assert 'EssenceProgression.BonusPerTier(attribute)' in rank_source
+assert 'Math.Min(EssenceProgression.MaxAttributeBonus(attribute), totalBonus)' in rank_source
+assert 'GetAffinityBonus("Speed")' in rank_source
+print('PASS: effect scaling uses exponential rank bonus with safe Speed cap')

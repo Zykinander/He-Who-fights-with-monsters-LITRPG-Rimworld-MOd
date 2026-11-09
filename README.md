@@ -1,35 +1,74 @@
-# Essencebound v0.10 — character interface & configurable ability slots
+# Essencebound v0.11 — earned ability ranks and weighted attributes
 
-**Development version v0.10 | RimWorld 1.7 | Experimental prototype**
+**RimWorld 1.7 | Early development release v0.11 | Test saves recommended**
 
-## What changed
+## New progression system
 
-- The pawn's **Essence profile** gizmo opens a dedicated, scrollable **four-panel character window** instead of a plain text popup.
-- Panels show normal essence slots I, II and III, plus the confluence essence, with locked/empty states.
-- Each panel lists awakened abilities with an icon, source (innate or awakening stone), description, and remaining cooldown.
-- The header shows the pawn's current Iron/Bronze/Silver/Gold/Diamond rank; rank progression is still a future mechanic.
-- **Mod Settings > Essencebound**: click the slot control to cycle **2 → 3 → 4 → 5 → 2** available ability slots **per essence**, globally.
-- Default remains **3 slots** per essence, or **12** at a full four-essence set. Minimum is **8** total and maximum **20**.
-- In each essence, the innate ability uses a slot; awakening stones can fill the other available slots.
-- Increasing the setting creates more empty slots on existing essence users. Decreasing it **does not delete powers** previously earned in higher slots: these are paused (not shown/castable) until you raise the limit again.
-- This setting is global for the mod, and applies to all pawns/essences; individual essence-by-essence overrides are not yet implemented.
+Each unlocked power has its own persisted tier and measured work toward the next tier: **Iron → Bronze → Silver → Gold → Diamond**. Progress comes from the *actual outcome*, not merely pressing the cast button.
 
-## Known prototype functionality
+| Power effect | Earned progression |
+|---|---|
+| Single-target damage / damage + debuff | Actual damage applied to a hostile pawn |
+| Area pulse | Total actual damage applied to nearby hostiles |
+| Healing | Actual injury severity healed |
+| Support buffs | 1 work per 60 game ticks the status remains active on a living spawned pawn |
+| Cleansing | 10 work per actual removed Essencebound chill/static affliction |
 
-125 normal essences, 101 confluences, 366 recipe rows (two conflicting triples unresolvable), 30 awakening stones with custom artwork, 12 reusable magic effect types. Pawn-targeting powers accept allies or enemies; self-cast powers remain self-cast. No changes in the save serialization format for ability slots.
+The initial tier requirements are 40 work to Bronze, 120 more to Silver, 360 more to Gold, and 1080 more to Diamond. These are mod-original balancing defaults.
 
-## Testing checklist
+**An essence ranks up only when all its required ability slots are unlocked and every one has reached the next rank.** Essences progress separately. The pawn's overall rank is the *lowest* of its owned essence ranks. Unresolved confluences are not counted until they form.
 
-1. Build with the GitHub Actions PR workflow (C# and XML checks must pass), then install the new test artifact.
-2. Select a pawn with an essence and click **Essence profile**. Verify all four panels and its current ability descriptions appear.
-3. Set 5 slots in **Options → Mod Settings → Essencebound** and inspect the same pawn again. Verify five slots per essence panel and no duplicate innate powers.
-4. Use awakening stones to fill extra slots. Check that the count and slot cap are respected (maximum 5).
-5. Reduce the setting to 2; check that ability gizmos for slots 3-5 disappear, but existing powers remain in the save.
-6. Restore 5 and check those powers reappear and retain cooldowns after saving/reloading.
-7. Verify two ally/enemy targeted abilities, plus a self-cast ability, continue to work.
+### Dynamic 2–5 ability slots
 
-## Build artifacts
-GitHub Actions produces a uniquely named archive using the mod version and workflow run/attempt numbers, for example `Essencebound-v0.10-RW1.7-build9-attempt1.zip`. The installed folder name remains **Essencebound**.
+In **Options → Mod Settings → Essencebound**, choose 2–5 slots per essence (default 3). Each essence remembers the **highest number of slots ever required since progression was introduced**. Raising the slot cap increases the required count; lowering it only pauses higher-index powers and does **not** make the essence rank up early. Increase the cap again to resume those requirements.
 
-## Limitations
-The prototype still has a fixed set of 12 reusable gameplay power effects, no unique animation or projectile visuals, and no functioning XP/rank progression system yet. A successful C# build does not replace testing the window in RimWorld 1.7.
+## Weighted, random essence attribute affinities
+
+When a pawn gains a normal or confluence essence, it receives one **random** affinity. The same Fire essence can produce Power on one pawn and Spirit or even Recovery on another. The roll happens only once and is **saved in the pawn's hediff**. Older saves acquire one affinity per existing essence when first loaded with v0.11.
+
+Every essence has positive weights for all four attributes; the distribution is themed, not fixed. The 226 editable distributions are in `Data/essence_attribute_weights.csv` and embedded in the corresponding essence XML defs. These are mod-original choices and aren't canonical lore claims.
+
+### Doubled bonuses at each rank
+
+Each rank doubles the previous rank's **total** bonus from that essence. It is not a flat bonus added per rank-up.
+
+| Rank | Power damage | Speed cooldown reduction | Spirit buff duration | Recovery healing |
+|---|---:|---:|---:|---:|
+| Iron | +4% | -2.5% | +5% | +6% |
+| Bronze | +8% | -5% | +10% | +12% |
+| Silver | +16% | -10% | +20% | +24% |
+| Gold | +32% | -20% | +40% | +48% |
+| Diamond | +64% | -40% | +80% | +96% |
+
+All values are **per essence** with that affinity. Bonuses from different owned essences with the same attribute stack. Total **Speed** cooldown reduction is capped at 80% (abilities still have a minimum 30-tick cooldown). Other bonuses are capped at +400%, safely above the highest naturally attainable total from four Diamond essences, so a single Diamond Recovery essence receives the full +96%. These bonuses currently affect Essencebound powers, **not all vanilla pawn stats**; a later pass can integrate melee stats, movement speed, psychic resources, or natural injury recovery.
+
+A few illustrative base weights, in Power / Speed / Spirit / Recovery order:
+- **Fire:** 6 / 1 / 5 / 1 (Power and Spirit favored)
+- **Life:** 1 / 1 / 3 / 8 (Recovery favored)
+- **Swift:** 1 / 8 / 2 / 1 (Speed favored)
+- **Might:** 8 / 1 / 2 / 2 (Power favored)
+- **Balance:** 3 / 3 / 3 / 3 (equal chances)
+
+## Character profile
+
+The four-panel profile displays each essence's randomly rolled attribute and individual rank. Ability rows show rank, effective-work progress and cooldowns. The header shows current combined Essencebound bonuses.
+
+## In-game test checklist
+
+1. On a temporary colony, absorb the **same essence on two different pawns**; compare their attribute roll (results can match by chance).
+2. Save/reload, verify affinity selections remain identical.
+3. Cast Ember Bolt on enemies and confirm its damage-based progress increases. Friendly fire still works, but grants **no damage XP**.
+4. Heal wounded pawns using Verdant Mend and confirm progress matches the amount actually restored.
+5. Cast a ward/speed buff and verify support training appears over time, not instantly on cast.
+6. With two active slots, level one ability to Bronze while the other remains Iron; the essence rank should remain Iron.
+7. Level the second ability to Bronze and confirm the essence advances. If another essence remains Iron, overall pawn rank remains Iron.
+8. Change slot limit 2 → 5 → 2; check extra slots cannot be skipped for essence promotion and no previously earned power is lost.
+9. Save/reload after partial XP and rank ups to confirm persistence.
+
+## Versioned builds
+
+GitHub Actions automatically names the build artifact using the version and run number, for example `Essencebound-v0.11-RW1.7-build10-attempt1.zip`; the installed mod directory stays `Essencebound`.
+
+## Known limitations
+
+Progression and weighted selection are v0.11 prototype mechanics that require successful C# compilation and in-game validation. The rank/attribute system is not claimed as a canon implementation, and the 12 reusable powers, two disputed confluence recipes, and placeholder spell effects remain. 

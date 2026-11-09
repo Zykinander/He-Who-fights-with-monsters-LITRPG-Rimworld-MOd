@@ -48,7 +48,7 @@ namespace Essencebound
             DrawHeader(new Rect(inRect.x, inRect.y, inRect.width, 122f), cap, active, possible);
 
             Rect outer = new Rect(inRect.x, inRect.y + 130f, inRect.width, inRect.height - 130f);
-            float panelHeight = 75f + cap * 84f;
+            float panelHeight = 85f + cap * 108f;
             float contentHeight = panelHeight * 2f + 16f;
             float contentWidth = outer.width - 20f;
             Rect content = new Rect(0f, 0f, contentWidth, contentHeight);
@@ -103,8 +103,11 @@ namespace Essencebound
             }
 
             string note = state.PausedPowersCount > 0
-                ? state.PausedPowersCount + " saved powers are paused above the current slot limit."
-                : "Rank advancement is planned; current rank is shown without an experience meter.";
+                ? state.PausedPowersCount + " stored powers paused by the current slot limit."
+                : "Attribute bonuses: Power " + (100f * state.GetAffinityBonus("Power")).ToString("0.#") +
+                  "%  •  Speed " + (100f * state.GetAffinityBonus("Speed")).ToString("0.#") +
+                  "%  •  Spirit " + (100f * state.GetAffinityBonus("Spirit")).ToString("0.#") +
+                  "%  •  Recovery " + (100f * state.GetAffinityBonus("Recovery")).ToString("0.#") + "%";
             Color previous = GUI.color;
             GUI.color = Muted;
             Widgets.Label(new Rect(rect.x, rect.y + 99f, rect.width, 22f), note);
@@ -130,16 +133,20 @@ namespace Essencebound
             Widgets.Label(new Rect(panel.x + 12f, panel.y + 27f, panel.width - 24f, 30f), displayName);
             Text.Font = GameFont.Small;
 
-            string countText = unlocked ? awakened + "/" + cap + " awakened" :
-                (confluence ? "Complete a known three-essence recipe" : "Absorb an essence to unlock");
+            string countText = unlocked
+                ? awakened + "/" + cap + " awakened   •   " +
+                  EssenceProgression.RankLabel(state.GetEssenceRankIndex(essenceName)) +
+                  "   •   " + state.GetAffinity(essenceName) +
+                  "   •   needs " + state.GetRequiredSlotCount(essenceName) + " slots"
+                : (confluence ? "Complete a known three-essence recipe" : "Absorb an essence to unlock");
             Widgets.Label(new Rect(panel.x + 12f, panel.y + 56f, panel.width - 24f, 17f), countText);
 
             for (int index = 0; index < cap; index++)
             {
                 EssenceAbilitySlot slot = slots == null ? null :
                     slots.FirstOrDefault(s => s.index == index);
-                Rect row = new Rect(panel.x + 9f, panel.y + 75f + index * 84f,
-                    panel.width - 18f, 78f);
+                Rect row = new Rect(panel.x + 9f, panel.y + 80f + index * 108f,
+                    panel.width - 18f, 102f);
                 DrawAbilityRow(row, index, slot, unlocked);
             }
         }
@@ -192,10 +199,25 @@ namespace Essencebound
                 : "Ready";
             string description = power == null ? "Power definition could not be found."
                 : power.description;
-            Widgets.Label(new Rect(left, rect.y + 26f, contentWidth, 36f), description);
+            Widgets.Label(new Rect(left, rect.y + 24f, contentWidth, 33f), description);
             Color previousColor = GUI.color;
             GUI.color = Muted;
-            Widgets.Label(new Rect(left, rect.y + 62f, contentWidth, 16f), cooldown);
+            float needed = EssenceProgression.NextRankWork(slot.abilityRankIndex);
+            string training = needed > 0f
+                ? EssenceProgression.RankLabel(slot.abilityRankIndex) + "  •  " +
+                  slot.rankWork.ToString("0.#") + "/" + needed.ToString("0.#") + " " +
+                  EssenceProgression.WorkLabel(power?.effectKind ?? "")
+                : "Diamond rank  •  mastered";
+            Widgets.Label(new Rect(left, rect.y + 58f, contentWidth, 17f), training);
+            if (needed > 0f)
+            {
+                Rect meter = new Rect(left, rect.y + 76f, contentWidth - 5f, 4f);
+                Widgets.DrawBoxSolid(meter, PanelBackground);
+                float fraction = Mathf.Clamp01(slot.rankWork / needed);
+                Widgets.DrawBoxSolid(new Rect(meter.x, meter.y, meter.width * fraction, meter.height),
+                    Highlight);
+            }
+            Widgets.Label(new Rect(left, rect.y + 82f, contentWidth, 17f), cooldown);
             GUI.color = previousColor;
         }
     }
