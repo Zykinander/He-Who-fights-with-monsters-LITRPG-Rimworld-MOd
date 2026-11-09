@@ -258,7 +258,7 @@ assert 'public override void MapComponentTick()' in world
 assert 'ebNextManifestationCheck' in world and 'ebAmbientDensity' in world
 assert 'private float ambientDensity' not in world
 assert 'map.IsPlayerHome' in world and 'FreeColonistsSpawned.Count == 0' in world
-assert 'EssenceboundMod.MagicDensityMultiplier' in world
+assert 'EssenceboundMod.MagicDensityMultiplier' in (ROOT/'Source/EssenceDensityCalculator.cs').read_text()
 assert '0.15f + 0.65f * intensity' in world
 assert 'Rand.Value < chance' in world
 assert 'monster.mindState.mentalStateHandler.TryStartMentalState' in world
