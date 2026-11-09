@@ -1,8 +1,8 @@
 id,name,status,role,primary_essence,mechanic,target_milestone,source_status,primary_category,tags,other_favored_essences
-EmberBolt,Ember Bolt,playable,damage,Fire,"""A focused flame strike. Can damage any targeted pawn"," including allies.""",v0.17,original_mod_gameplay_design,Attack,Attack; Ranged; Fire; Single Target,Sun; Elemental; Volcano
+EmberBolt,Ember Bolt,playable,damage,Fire,"A focused flame strike. Can damage any targeted pawn, including allies.",v0.17,original_mod_gameplay_design,Attack,Attack; Ranged; Fire; Single Target,Sun; Elemental; Volcano
 FrostShard,Frost Shard,playable,damageDebuff,Ice,A chilling shard that deals damage and slows any targeted pawn.,v0.17,original_mod_gameplay_design,Attack,Attack; Control; Debuff; Cold; Single Target,Water
 StormSpark,Storm Spark,playable,damageDebuff,Lightning,A crackling spell that deals damage and disrupts any targeted pawn.,v0.17,original_mod_gameplay_design,Attack,Attack; Control; Debuff; Lightning; Single Target,Storm; Magic; Wind
-VerdantMend,Verdant Mend,playable,heal,Life,"""Heal an injured pawn"," whether ally or enemy.""",v0.17,original_mod_gameplay_design,Healing,Healing; Support; Single Target; Injury Healing,Plant; Renewal; Growth; Tree
+VerdantMend,Verdant Mend,playable,heal,Life,"Heal an injured pawn, whether ally or enemy.",v0.17,original_mod_gameplay_design,Healing,Healing; Support; Single Target; Injury Healing,Plant; Renewal; Growth; Tree
 GuardianWard,Guardian Ward,playable,buff,Shield,Grant a temporary protective ward to any targeted pawn.,v0.17,original_mod_gameplay_design,Defense,Defense; Support; Ward; Single Target,Magic; Light; Pure
 StoneSkin,Stone Skin,playable,buff,Earth,Gain temporary armor with a small movement penalty.,v0.17,original_mod_gameplay_design,Defense,Defense; Armor; Buff; Self,Iron; Might; Shield
 SwiftStep,Swift Step,playable,buff,Swift,Move faster for a short time.,v0.17,original_mod_gameplay_design,Mobility,Mobility; Speed; Buff; Self,Wind; Wing; Balance; Bird
