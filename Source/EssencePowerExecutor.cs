@@ -195,7 +195,8 @@ namespace Essencebound
             work += first;
             var nearby = caster.Map.mapPawns.AllPawnsSpawned
                 .Where(p => p != caster && p != target && !p.Dead && p.HostileTo(caster) &&
-                    p.Position.DistanceTo(center) <= power.areaRadius)
+                    p.Position.DistanceTo(center) <= power.areaRadius &&
+                    GenSight.LineOfSight(center, p.Position, caster.Map))
                 .OrderBy(p => p.Position.DistanceTo(center))
                 .Take(Math.Max(0, Math.Min(5, power.maxExtraTargets))).ToList();
             int hitCount = 1;
@@ -222,7 +223,8 @@ namespace Essencebound
             int hitCount = 1;
             var nearby = caster.Map.mapPawns.AllPawnsSpawned
                 .Where(p => p != caster && p != target && !p.Dead && p.HostileTo(caster) &&
-                    p.Position.DistanceTo(center) <= power.areaRadius).ToList();
+                    p.Position.DistanceTo(center) <= power.areaRadius &&
+                    GenSight.LineOfSight(center, p.Position, caster.Map)).ToList();
             foreach (Pawn other in nearby)
             {
                 if (Damage(caster, other, power.damageDefName,

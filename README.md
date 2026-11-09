@@ -9,7 +9,7 @@ This update expands our previous 12 general power templates to **24 distinct abi
 | Power | Role | What it actually does | Essence theme |
 |---|---|---|---|
 | Cinder Nova | Area damage | Burning pulse hurts hostile pawns near caster | Volcano |
-| Thunder Chain | Chain attack | Hits the selected pawn plus up to two nearby hostiles | Thunderbird |
+| Thunder Chain | Chain attack | Hits the selected pawn plus up to two visible nearby hostiles | Thunderbird |
 | Blood Siphon | Damage + self-healing | Damages target and heals the caster by a portion of effective damage | Blood |
 | Life Bloom | Grouped injury healing | Spends a healing pool across several of one pawn's injuries | Fertile |
 | Renewal Seed | Heal over time | Repairs actual injuries once every 120 ticks during its duration | Renewal |

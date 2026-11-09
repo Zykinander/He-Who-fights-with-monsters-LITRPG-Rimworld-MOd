@@ -334,3 +334,10 @@ for essence,power in starter_map.items():
 assert by_essence['EB_Fire']=='EB_Power_EmberBolt'
 assert by_essence['EB_Phoenix']=='EB_Power_EmberBolt'
 print('PASS: v0.16 24 powers, 14 status defs, 9 new handlers and 12 themed starter assignments')
+
+# v0.16 follow-up: secondary blasts cannot pass through walls.
+executor=(ROOT/'Source/EssencePowerExecutor.cs').read_text()
+timed=(ROOT/'Source/Hediff_EssenceTimed.cs').read_text()
+assert executor.count('GenSight.LineOfSight(center, p.Position, caster.Map)')==2
+assert 'using RimWorld;' in timed
+print('PASS: v0.16 LOS gating for secondary impacts and hostile-control API namespace')
