@@ -366,7 +366,7 @@ new_batch={
 }
 assert len(new_batch)==26
 assert new_batch <= {p['id'] for p in powers}
-assert len({p['id'] for p in powers}-new_batch)==24
+assert len({p['id'] for p in powers}-new_batch)==44  # Original 24 plus 20 v0.18 abilities
 jsonbyid={p['id']:p for p in powers}
 xmlbyid={x.findtext('defName'):x for x in powerdefs}
 for p in powers:
