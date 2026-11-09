@@ -21,7 +21,7 @@ assert len(conflicted) == 2
 assert all(r['conflict'] == (tuple(r['essences']) in conflicted) for r in rows)
 
 xmlpaths = list((ROOT/'1.7/Defs').rglob('*.xml'))
-assert len(xmlpaths) == 13, xmlpaths
+assert len(xmlpaths) == 15, xmlpaths
 for p in xmlpaths:
     ET.parse(p)
 
@@ -117,9 +117,9 @@ print('PASS: all 30 icons unique path, 128px RGBA, transparent corners')
 
 # Release metadata must use the development-version scheme.
 metadata=ET.parse(ROOT/'About/About.xml').getroot()
-assert 'v0.12' in metadata.findtext('name')
-assert json.loads((ROOT/'manifest.json').read_text())['version']=='0.12'
-print('PASS: v0.12 metadata and inherited stack-count overlays')
+assert 'v0.13' in metadata.findtext('name')
+assert json.loads((ROOT/'manifest.json').read_text())['version']=='0.13'
+print('PASS: v0.13 metadata and inherited stack-count overlays')
 
 # Regression: each GitHub Actions run must have a unique versioned artifact name.
 workflow=(ROOT/'.github/workflows/build-essencebound.yml').read_text()
@@ -208,7 +208,7 @@ assert abs(bases['Recovery']*16-0.96)<1e-8
 assert abs(bases['Power']*16-0.64)<1e-8
 print('PASS: exponential x1/x2/x4/x8/x16 affinity bonuses, including Diamond Recovery')
 
-# v0.12: 0-9 sublevels, cross-essence tier gating and smooth per-level bonuses.
+# v0.13: 0-9 sublevels, cross-essence tier gating and smooth per-level bonuses.
 sublevel_src=(ROOT/'Source/EssenceAbilitySlot.cs').read_text()
 progress_src=(ROOT/'Source/EssenceProgression.cs').read_text()
 rank_src=(ROOT/'Source/Hediff_EssenceUser.cs').read_text()
@@ -237,4 +237,36 @@ for tier_base in [1,2,4,8]:
 assert abs(0.04*1.1-0.044)<1e-8
 assert abs(0.04*1.9-0.076)<1e-8
 assert abs(0.04*2.0-0.08)<1e-8
-print('PASS: v0.12 rank sublevels, synchronized tiers, smooth attribute bonuses')
+print('PASS: v0.13 rank sublevels, synchronized tiers, smooth attribute bonuses')
+
+# v0.13: spatial magic density and astral tears are real saveable game objects.
+world=(ROOT/'Source/EssenceWorld.cs').read_text(encoding='utf-8')
+tear=(ROOT/'Source/Thing_AstralTear.cs').read_text(encoding='utf-8')
+marker=(ROOT/'Source/Hediff_AstralManifestation.cs').read_text(encoding='utf-8')
+settings=(ROOT/'Source/EssenceboundMod.cs').read_text(encoding='utf-8')
+defs=definitions('1.7/Defs/ThingDefs/AstralTears.xml')
+marks=definitions('1.7/Defs/HediffDefs/AstralManifestations.xml')
+assert len(defs)==1 and len(marks)==1
+assert child_text(defs[0],'defName')=='EB_AstralTear'
+assert child_text(defs[0],'tickerType')=='Normal'
+assert child_text(defs[0],'thingClass')=='Essencebound.Thing_AstralTear'
+assert child_text(marks[0],'defName')=='EB_AstralManifestation'
+assert child_text(marks[0],'hediffClass')=='Essencebound.Hediff_AstralManifestation'
+assert (ROOT/'1.7/Textures/Essencebound/AwakeningStones/StoneMagus.png').exists()
+assert 'public sealed class MapComponent_EssenceWorld : MapComponent' in world
+assert 'public override void MapComponentTick()' in world
+assert 'ebAmbientDensity' in world and 'ebNextManifestationCheck' in world
+assert 'map.IsPlayerHome' in world and 'FreeColonistsSpawned.Count == 0' in world
+assert 'EssenceboundMod.MagicDensityMultiplier' in world
+assert '0.15f + 0.65f * intensity' in world
+assert 'Rand.Value < chance' in world
+assert 'monster.mindState.mentalStateHandler.TryStartMentalState' in world
+assert 'public static bool SpawnEssence(' in world
+assert 'Essencebound.Thing_AstralTear' in (ROOT/'1.7/Defs/ThingDefs/AstralTears.xml').read_text()
+assert 'ticksUntilResolution' in tear and 'Scribe_Values.Look' in tear
+assert 'Scribe_Values.Look(ref magicDensity' in marker
+for setting in ('manifestationsEnabled','manifestationMonstersEnabled',
+                'manifestationFrequency','densityPreset'):
+    assert setting in settings
+assert json.loads((ROOT/'manifest.json').read_text())['version']=='0.13'
+print('PASS: v0.13 saveable magic density, tears, monster tiering and XML')

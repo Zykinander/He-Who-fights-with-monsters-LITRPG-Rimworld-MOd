@@ -1,0 +1,20 @@
+# Essencebound v0.13 — astral manifestations
+
+- Add per-map saved magical density with basic biome adjustment and a normal/low/high density modifier.
+- Schedule astral tears via a daily density-weighted roll on populated player-home maps.
+- Tear is a visible 900-tick Thing with a persisted countdown; it resolves into a normal essence crystal or hostile monster(s).
+- Monster chance and placeholder creature type increase with local density; two creatures at high density.
+- Spawned magical monsters carry a saved astral marker; their corpses are eligible for one-time essence extraction.
+- Add an **Astral Loot** targeted gizmo to essence users, using 10-cell range, line of sight, one essence per marked corpse, 3600-tick cooldown, and one-time remains consumption.
+- Add DEV-mode test gizmo for immediately opening a tear.
+- Mod settings control tear occurrence, monster presence, frequency and effective density.
+- No changes to v0.12 XP and essence rank progression save fields.
+
+This is an experimental first pass: vanilla animal templates and the existing StoneMagus texture are placeholders pending unique magical monster and portal artwork. Needs compilation and in-game validation.
+
+## Astral Loot targeting hotfix (build-specific update)
+- The original item-only targeter failed to reliably select monster corpses. Astral Loot now offers a menu of marked nearby corpses and an explicit map-target mode that can resolve a corpse from its map cell.
+- Different failures (out of range, blocked line of sight, unmarked remains) have distinct feedback.
+- Successful extraction still requires a tagged monster, spawns exactly one essence and consumes the corpse.
+- Item spawn position falls back to the corpse tile if there are no viable adjacent cells.
+- No changes to the mod version or save schema; GitHub Actions build number distinguishes this updated v0.13 test artifact.

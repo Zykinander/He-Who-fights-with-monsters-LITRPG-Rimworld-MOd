@@ -1,63 +1,59 @@
-# Essencebound v0.12 — numbered rank levels, smoother attribute growth and damage XP fixes
+# Essencebound v0.13 — Astral tears, magic density and manifestation loot
 
-**RimWorld 1.7 | Development version v0.12 | Please test on a copy of your save**
+**Development version v0.13 | RimWorld 1.7 | Experimental, use test saves**
 
-## Progression
+## The new gameplay loop
 
-Each ability advances **Iron 0 → Iron 1 → ... → Iron 9 → Bronze 0**, and repeats for Bronze, Silver and Gold before reaching Diamond 0. Each numbered step costs 1/10th the previous v0.11 full-rank work threshold:
+A map now has a **saved ambient magic density** (some biomes influence the initial roll). Every in-game day, player-home maps with colonists may develop an astral tear. A tear stays visible for about 15 game seconds before it resolves:
 
-| Major rank | Work per numbered advancement | Total work to next major rank |
-|---|---:|---:|
-| Iron | 4 | 40 |
-| Bronze | 12 | 120 |
-| Silver | 36 | 360 |
-| Gold | 108 | 1080 |
+1. **Magical condensation:** The tear collapses into a randomly selected normal essence crystal, which an eligible pawn can absorb.
+2. **Monster manifestation:** The tear releases one or more hostile magical monsters. The stronger the local magic density, the greater the chance and danger.
 
-Each ability still earns work from its **actual game effect**: inflicted damage, injury severity healed, active buff time, successful cleansing, or total area damage. Zero-damage hits give zero damage XP.
+In this first version, manifested monsters use vanilla RimWorld creatures as **visual placeholders**, not yet custom-made HWFWM magical monster sprites or abilities.
 
-An **essence's displayed numbered level** is its least-developed required awakened ability. If required slots are empty, it cannot progress beyond numbered level 0 yet. The essence only advances to the next *major rank* when **all its required slots** have abilities that reached that next rank.
+| Density | Current creature placeholder | Approximate behavior |
+|---|---|---|
+| Low | Megascarab | One manhunter |
+| Medium | Warg | One manhunter |
+| High (78%+) | Thrumbo | Two manhunters |
 
-### Tier synchronization
+Monster chance grows from about 15% at zero intensity to 80% at maximum intensity. The density values are random per map and modified by Mod Settings, not by real-world geography.
 
-After any ability reaches **Bronze 0**, its Bronze training waits until **every currently owned essence** (normal or confluence) also reaches Bronze. The same synchronized gate applies at Silver and Gold. Unowned slots and missing confluences do not block progress. A newly absorbed Iron essence can temporarily pause higher-tier training.
+## Astral Loot power
 
-### Attribute growth every numbered level
+Each Essencebound pawn temporarily has a **universal Astral Loot** gizmo. Select the ability to open a menu listing eligible **marked monster corpses within 10 cells and line of sight**. Select one to extract its essence. Alternatively choose **Target a corpse on the map** and click its tile; this works even if the game treats the corpse as a cell instead of an item. The power consumes the remains and produces one random normal essence crystal, with a 60-second game cooldown. Ordinary animals cannot be looted by this power, nor can a manifested monster be looted twice.
 
-Power, Speed, Spirit and Recovery bonuses **increase at each numbered essence level** rather than only at major rank boundaries. They interpolate smoothly between the existing doubled rank bonuses:
+**Loot troubleshooting:** If no remains appear in the menu, move the pawn closer, check line of sight and confirm the target came from a tear rather than a normally spawned animal. A failed map-target attempt now provides a specific reason. Only a fully dead pawn with a spawned corpse can be extracted.
 
-| Essence level | Power | Speed cooldown reduction | Spirit buff duration | Recovery healing |
-|---|---:|---:|---:|---:|
-| Iron 0 | +4.0% | -2.5% | +5.0% | +6.0% |
-| Iron 1 | +4.4% | -2.75% | +5.5% | +6.6% |
-| Iron 5 | +6.0% | -3.75% | +7.5% | +9.0% |
-| Iron 9 | +7.6% | -4.75% | +9.5% | +11.4% |
-| Bronze 0 | +8.0% | -5.0% | +10.0% | +12.0% |
-| Silver 0 | +16.0% | -10.0% | +20.0% | +24.0% |
-| Gold 0 | +32.0% | -20.0% | +40.0% | +48.0% |
-| Diamond 0 | +64.0% | -40.0% | +80.0% | +96.0% |
+This is a **prototype utility power**, not yet an awakened ability occupying one of the 2–5 slots. Future releases can introduce distinct looting powers from essences or awakening stones with their own rarity and effects.
 
-The four attribute affinities are still randomly rolled for each essence with its original themed weights and saved on the pawn. An essence's affinity bonus is based on **that essence's own rank and numbered level**, not the pawn's global rank. Bonuses from multiple matching affinities still stack, with the existing 80% cap on cooldown reduction.
+## Mod Settings
 
-## Damage progression fix
+In **Options → Mod Settings → Essencebound**:
 
-Previously, even though targeting was unrestricted, **friendly and neutral hits earned zero progression**, because the executor required `HostileTo(caster)`. Now valid hits earn actual reported damage on **any pawn**, with an injury-severity fallback for damage handlers that report no direct damage result. Hits that do no damage grant zero work. The cast feedback reports **Progress +X** and the current ability level. If a rank gate blocks training, the message explicitly reports that. If a strong hit crosses a major-tier boundary, only the work needed to reach that boundary is credited, so no hidden XP banks while other essences are waiting.
+- **Astral tears**: enabled/disabled.
+- **Monsters from tears**: enabled/disabled; when off, every tear crystallizes an essence.
+- **Manifestation frequency**: off, rare, normal, frequent.
+- **Map magic density**: low, normal or high multiplier.
 
-No explicit Essencebound exception appeared in the provided Player.log; this addresses a concrete inconsistency in the code rather than claiming every possible lack-of-XP issue is resolved.
+Automatic tears roll once per in-game day and may take multiple days to occur, even at high frequency. Only one tear is allowed to remain open on a map at a time.
 
-## Old saves
+## Testing
 
-The new `abilitySublevel` save value migrates the previous v0.11 `rankWork` bar to numbered levels, preserving leftover earned progress. Existing attribute rolls, unlocked abilities, cooldowns and essence rank records are reused.
+With **Development Mode** enabled, select a colonist who has absorbed an essence. Use **DEV: Astral tear** to immediately open a test tear near the pawn; this bypasses the event-frequency roll, not the density-based outcome.
 
-The existing configurable 2–5 slots per essence remain. The highest slot requirement previously reached is preserved so lowering the cap cannot promote an essence prematurely.
+1. Confirm the tear appears on the map, shows a density percentage, and persists for roughly 900 ticks.
+2. Verify it leaves a crystal or releases a creature. Use the density and monster toggles to test both cases.
+3. Defeat a manifested monster in a disposable colony, select an essence user, activate **Astral Loot**, and choose its remains from the nearby list. Also test the **Target a corpse on the map** fallback.
+4. Verify an essence crystal appears, the corpse disappears, and the 60-second cooldown starts.
+5. Confirm targeting an ordinary corpse cannot yield an essence.
+6. Save/reload during an open tear and verify its timer and density persist.
+7. Inspect the error log for issues and share any exceptions.
 
-## Test plan
+**Warning:** High-density encounters intentionally can summon dangerous creatures. Test with development mode and a backup rather than an important colony.
 
-1. Use an **existing essence pawn** and hit an allied pawn in a temporary test colony. Verify health drops, then check cast feedback shows **Progress +X** and that the ability bar increases.
-2. Repeat on a hostile pawn. Both hits should award work if damage was inflicted.
-3. Build up an ability through Iron 1 and ensure the profile shows its new level.
-4. Advance *all required abilities* through Iron 1 and check that their essence reaches Iron 1; its affinity bonus should rise slightly.
-5. Advance all required abilities to Bronze 0; check the essence reaches Bronze 0.
-6. Keep another owned essence at Iron and confirm Bronze training is stalled until that essence also reaches Bronze 0.
-7. Save/reload; confirm rolled affinities, numbered levels, partial work, and stat bonuses remain unchanged.
+## Deferred work
 
-The in-game mod folder is still **Essencebound**. GitHub Actions names test downloads uniquely by the development version and build number.
+Astral tears currently use an enlarged existing magical-stone sprite as a temporary portal marker; custom portal animation, purpose-built monsters, unique drops/rarity weighting, quest integration, specialized looting powers and magic-density environmental dynamics belong in later versions. All existing rank, affinity and configurable slot mechanics remain.
+
+GitHub Actions names each compiled test download with its version and build number; the installed folder stays `Essencebound`.

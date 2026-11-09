@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <HediffDef>
+    <defName>EB_AstralManifestation</defName>
+    <label>astral manifestation</label>
+    <description>Creature released from an astral tear. A looting ability may extract an essence from its remains.</description>
+    <hediffClass>Essencebound.Hediff_AstralManifestation</hediffClass>
+    <isBad>false</isBad>
+    <stages><li /></stages>
+  </HediffDef>
+</Defs>

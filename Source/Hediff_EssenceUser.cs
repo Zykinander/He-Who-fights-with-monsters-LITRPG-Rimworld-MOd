@@ -15,6 +15,7 @@ namespace Essencebound
         private string confluenceStatus = "incomplete";
         private bool confluenceRestricted;
         private string rank = "Iron";
+        private int nextAstralLootTick;
         private List<EssenceAbilitySlot> abilitySlots = new List<EssenceAbilitySlot>();
         private List<EssenceAffinityRecord> affinities = new List<EssenceAffinityRecord>();
         private List<EssenceRankRecord> essenceRanks = new List<EssenceRankRecord>();
@@ -122,6 +123,7 @@ namespace Essencebound
             Scribe_Values.Look(ref confluenceStatus, "confluenceStatus", "incomplete");
             Scribe_Values.Look(ref confluenceRestricted, "confluenceRestricted", false);
             Scribe_Values.Look(ref rank, "essenceRank", "Iron");
+            Scribe_Values.Look(ref nextAstralLootTick, "nextAstralLootTick", 0);
             Scribe_Collections.Look(ref abilitySlots, "abilitySlots", LookMode.Deep);
             Scribe_Collections.Look(ref affinities, "essenceAffinities", LookMode.Deep);
             Scribe_Collections.Look(ref essenceRanks, "essenceRanks", LookMode.Deep);
@@ -392,6 +394,106 @@ namespace Essencebound
             return true;
         }
 
+
+        // RimWorld's point targeter may treat a Corpse as a pawn, rather than
+        // an item. A reliable menu makes marked remains selectable even when
+        // direct targeting cannot resolve the underlying corpse Thing.
+        private void BeginAstralLoot()
+        {
+            if (pawn?.Map == null)
+            {
+                Messages.Message("Astral Loot needs a pawn on a map.",
+                    MessageTypeDefOf.RejectInput, false);
+                return;
+            }
+
+            var nearby = pawn.Map.listerThings.AllThings.OfType<Corpse>()
+                .Where(c => c != null && c.Spawned && c.Map == pawn.Map &&
+                            c.Position.DistanceTo(pawn.Position) <= 10f &&
+                            HasAstralLootMark(c) &&
+                            GenSight.LineOfSight(pawn.Position, c.Position, pawn.Map))
+                .OrderBy(c => c.Position.DistanceTo(pawn.Position))
+                .ToList();
+
+            var options = new List<FloatMenuOption>
+            {
+                new FloatMenuOption("Target a corpse on the map", BeginAstralLootTargeting)
+            };
+            foreach (Corpse corpse in nearby)
+            {
+                Corpse captured = corpse;
+                string label = corpse.InnerPawn?.LabelShort ?? corpse.LabelShort;
+                options.Add(new FloatMenuOption("Loot astral remains: " + label +
+                    " (" + corpse.Position.DistanceTo(pawn.Position).ToString("0") + " cells)",
+                    () => NotifyAstralLoot(captured)));
+            }
+            if (nearby.Count == 0)
+                options.Add(new FloatMenuOption(
+                    "No marked astral monster remains within 10 cells and sight", null));
+            Find.WindowStack.Add(new FloatMenu(options));
+        }
+
+        private void BeginAstralLootTargeting()
+        {
+            // The old action permitted items but not ground cells. A corpse can
+            // be resolved through a cell even when RimWorld returns no Thing.
+            var targets = new TargetingParameters
+            {
+                canTargetItems = true,
+                canTargetLocations = true,
+                canTargetPawns = false,
+                canTargetBuildings = false
+            };
+            Find.Targeter.BeginTargeting(targets, (LocalTargetInfo local) =>
+            {
+                Corpse corpse = local.Thing as Corpse;
+                if (corpse == null && pawn?.Map != null &&
+                    local.Cell.IsValid && local.Cell.InBounds(pawn.Map))
+                {
+                    corpse = local.Cell.GetThingList(pawn.Map).OfType<Corpse>()
+                        .OrderByDescending(HasAstralLootMark).FirstOrDefault();
+                }
+                NotifyAstralLoot(corpse);
+            });
+        }
+
+        private void NotifyAstralLoot(Corpse corpse)
+        {
+            bool success = TryLootAstralRemains(corpse, out string reason);
+            Messages.Message((pawn?.LabelShort ?? "Pawn") + ": " + reason,
+                success ? MessageTypeDefOf.PositiveEvent : MessageTypeDefOf.RejectInput,
+                false);
+        }
+
+        private static bool HasAstralLootMark(Corpse corpse)
+        {
+            return corpse?.InnerPawn?.health?.hediffSet?.hediffs
+                ?.OfType<Hediff_AstralManifestation>().Any() == true;
+        }
+
+        public bool TryLootAstralRemains(Corpse corpse, out string reason)
+        {
+            if (pawn == null || pawn.Dead || !pawn.Spawned || pawn.Faction != Faction.OfPlayer ||
+                corpse == null || !corpse.Spawned || corpse.Map != pawn.Map)
+            { reason = "Choose a manifested monster corpse on the same map."; return false; }
+            int now = Find.TickManager.TicksGame;
+            if (now < nextAstralLootTick)
+            { reason = "Astral Loot is on cooldown."; return false; }
+            if (pawn.Position.DistanceTo(corpse.Position) > 10f)
+            { reason = "Move within 10 cells of the remains."; return false; }
+            if (!GenSight.LineOfSight(pawn.Position, corpse.Position, pawn.Map))
+            { reason = "Line of sight to the remains is blocked."; return false; }
+            if (!HasAstralLootMark(corpse))
+            { reason = "These remains are not from an astral-tear monster (or the marker was lost)."; return false; }
+            if (!MapComponent_EssenceWorld.SpawnEssence(corpse.Position, pawn.Map,
+                out string essenceLabel))
+            { reason = "No space was found to place the condensed essence."; return false; }
+            corpse.Destroy(DestroyMode.Vanish); // One successful extraction per monster.
+            nextAstralLootTick = now + 3600;
+            reason = "Astral Loot extracted a " + essenceLabel + " essence.";
+            return true;
+        }
+
         private void ActivatePower(EssenceAbilitySlot slot, EssencePowerDef power)
         {
             if (power.targetKind == "self")
@@ -466,6 +568,34 @@ namespace Essencebound
                 defaultDesc = "Open the Essencebound character interface: four essences, rank and configured ability slots.",
                 action = () => Find.WindowStack.Add(new Dialog_EssenceProfile(this))
             };
+            // Prototype universal looting technique. Later versions can add
+            // essence- or stone-specific looting abilities.
+            int lootRemaining = nextAstralLootTick - Find.TickManager.TicksGame;
+            var lootCmd = new Command_Action
+            {
+                defaultLabel = "Astral Loot",
+                defaultDesc = "Choose a nearby marked astral corpse from a list, or target " +
+                              "its map cell directly. Extracts one normal essence and consumes " +
+                              "the remains. Only monsters released by astral tears qualify.",
+                icon = ContentFinder<UnityEngine.Texture2D>.Get(
+                    "Essencebound/AwakeningStones/StoneFocus", false),
+                action = BeginAstralLoot
+            };
+            if (lootRemaining > 0)
+                lootCmd.Disable("Astral Loot cooldown: " + ((lootRemaining + 59) / 60) + " s");
+            yield return lootCmd;
+            if (Prefs.DevMode)
+                yield return new Command_Action
+                {
+                    defaultLabel = "DEV: Astral tear",
+                    defaultDesc = "Test a tear near this pawn, using the current map magic density.",
+                    action = () =>
+                    {
+                        if (pawn.Map?.GetComponent<MapComponent_EssenceWorld>()?.TryOpenTear() != true)
+                            Messages.Message("Could not place an astral tear near this pawn.",
+                                MessageTypeDefOf.RejectInput, false);
+                    }
+                };
             foreach (var slot in abilitySlots.Where(s => s != null && s.index >= 0 &&
                                                         s.index < SlotsPerEssence &&
                                                         !string.IsNullOrEmpty(s.abilityDefName)))

@@ -151,3 +151,37 @@ assert 'float credited = Math.Min(amount, remainingToTier)' in src
 assert 'slot.rankWork += credited;' in src
 assert 'slot.rankWork += amount;' not in src
 print('PASS: no extra XP is banked beyond a locked major-rank boundary')
+
+# v0.13: only tagged astral monsters can yield an essence through Astral Loot.
+player=(ROOT/'Source/Hediff_EssenceUser.cs').read_text()
+world=(ROOT/'Source/EssenceWorld.cs').read_text()
+assert 'BeginAstralLoot' in player
+assert 'TryLootAstralRemains(Corpse corpse, out string reason)' in player
+assert 'Hediff_AstralManifestation' in player and 'corpse.InnerPawn?' in player
+assert 'Scribe_Values.Look(ref nextAstralLootTick' in player
+assert 'GenSight.LineOfSight(pawn.Position, corpse.Position, pawn.Map)' in player
+assert 'corpse.Destroy(DestroyMode.Vanish)' in player
+assert 'MapComponent_EssenceWorld.SpawnEssence' in player
+assert 'GetNamedSilentFail("EB_AstralManifestation")' in world
+assert 'monster.health.AddHediff(marker)' in world
+assert 'if (Prefs.DevMode)' in player and 'TryOpenTear()' in player
+print('PASS: v0.13 tagged monster corpse loot is single-use, range checked and saved')
+
+# v0.13 looting patch: targeter fallback and nearby-corpse menu.
+player=(ROOT/'Source/Hediff_EssenceUser.cs').read_text()
+world=(ROOT/'Source/EssenceWorld.cs').read_text()
+assert 'private void BeginAstralLootTargeting()' in player
+assert 'canTargetLocations = true' in player
+assert 'local.Cell.GetThingList(pawn.Map).OfType<Corpse>()' in player
+assert 'private static bool HasAstralLootMark(Corpse corpse)' in player
+assert 'pawn.Map.listerThings.AllThings.OfType<Corpse>()' in player
+assert 'new FloatMenu(options)' in player
+assert 'No marked astral monster remains within 10 cells and sight' in player
+assert 'NotifyAstralLoot(captured)' in player
+assert 'if (!HasAstralLootMark(corpse))' in player
+assert 'Move within 10 cells of the remains' in player
+assert 'Line of sight to the remains is blocked' in player
+assert 'if (!TryFindNear(center, map, out IntVec3 cell))' in world
+assert 'cell = center;' in world
+assert player.index('if (!HasAstralLootMark(corpse))') < player.index('corpse.Destroy(DestroyMode.Vanish)')
+print('PASS: corpse targeting fallback, nearby menu and safe single extraction')
