@@ -92,7 +92,7 @@ assert 'target.Faction != caster.Faction' not in validator
 assert 'GenSight.LineOfSight(' in validator and 'power.range' in validator
 assert 'target != caster' in validator  # allow targetable self-healing without LOS from self to self
 ui=(ROOT/'Source/Hediff_EssenceUser.cs').read_text()
-assert 'canTargetPawns = true' in ui and 'canTargetSelf = true' in ui
+assert 'canTargetPawns = !items && !locations' in ui and 'canTargetSelf = !items && !locations' in ui
 assert 'Any living pawn (ally or enemy)' in ui
 print('PASS: v0.09 seven cross-faction targeted powers; five self-cast powers unchanged')
 
