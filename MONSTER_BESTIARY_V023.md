@@ -4,15 +4,15 @@ The first wave of custom astral monsters replaces vanilla animal placeholders **
 
 ## New magical monster archetypes
 
-| Assigned rank | Monster | Vanilla body used in this prototype | Signature magic | Associated essence preferences |
+| Assigned rank | Monster | Underlying physiology (art is original) | Signature magic | Associated essence preferences |
 | --- | --- | --- | --- | --- |
-| Iron | Glassmote Scarab | Megascarab, cyan crystalline tint | Dazzling static condition on a nearby colonist | Glass, Crystal, Lightning |
-| Bronze | Emberfang Stalker | Warg, crimson tint | Short-ranged ember pulse | Fire, Wolf, Smoke |
-| Silver | Duskweaver | Megaspider, violet tint | Astral web slowing a nearby colonist | Spider, Thread, Dark |
-| Gold | Stormhide Colossus | Rhinoceros, storm-blue tint | Storm surge and static condition | Lightning, Earth, Might |
-| Diamond | Prismatic Sovereign | Thrumbo, lavender tint | Prismatic pulse plus healing of nearby injured astral manifestations | Light, Star, Mirror |
+| Iron | Glassmote Scarab | Megascarab — cyan crystalline scarab sprite | Dazzling static condition on a nearby colonist | Glass, Crystal, Lightning |
+| Bronze | Emberfang Stalker | Warg — charcoal-and-ember stalker sprite | Short-ranged ember pulse | Fire, Wolf, Smoke |
+| Silver | Duskweaver | Megaspider — indigo astral spider sprite | Astral web slowing a nearby colonist | Spider, Thread, Dark |
+| Gold | Stormhide Colossus | Rhinoceros — storm-plated colossus sprite | Storm surge and static condition | Lightning, Earth, Might |
+| Diamond | Prismatic Sovereign | Thrumbo — ivory prismatic sovereign sprite | Prismatic pulse plus healing of nearby injured astral manifestations | Light, Star, Mirror |
 
-The tinted animals are **prototype visuals**, not finished original monster sprite assets. Def files and body graphics are in `1.7/Defs/PawnKindDefs/AstralMonsterKinds.xml`. Monsters still have the ordinary animal race's physiology and corpse behavior, but their unique `PawnKindDef` gives them a separate name and appearance tint.
+The creatures now use **five original simplified, transparent monster illustrations**, not recolored vanilla sprites. The source images are in `ArtSource/Monsters/`; `Tools/generate_monster_textures.py` produces 20 directional 256×256 textures in `1.7/Textures/Essencebound/Monsters/` during the GitHub Actions build. The `PawnKindDef.lifeStages.bodyGraphicData` `texPath` values point to `Essencebound/Monsters/<Name>` with `Graphic_Multi`. Colors are not tinted again. East artwork is original, west is mirrored; north and south are **provisional perspective adaptations**, not custom front/back paintings yet. Vanilla species retain their own textures. The magical creatures still share the relevant vanilla physiology and corpse behavior.
 
 ## Spawn and rank rules
 
@@ -47,7 +47,7 @@ Enable RimWorld developer mode, select a colonist with an Essencebound essence, 
 ## In-game QA
 
 1. Trigger astral tears at low and high density and confirm each of the five tiers uses the appropriate monster name and visible rank.
-2. Verify the tinted prototype textures load rather than appearing as missing graphics. In the health tab, the assigned astral rank must override the vanilla body species.
+2. Verify the original transparent textures appear at normal gameplay zoom in all four directions, without pink missing-graphic squares or an unwanted second color tint. The north/south views are temporary adaptations. In the health tab, the astral rank must override the vanilla species.
 3. Encounter all five: verify one signature power activates periodically for each, without unintended extra effects outside line-of-sight range.
 4. Save/reload during a creature's pulse cooldown. Its archetype and cooldown should survive; no duplicate hediffs or repeated rewards.
 5. Defeat a custom manifestation and confirm the existing rare essence and more-common awakening-stone rolls, plus Astral Loot.
@@ -55,4 +55,4 @@ Enable RimWorld developer mode, select a colonist with an Essencebound essence, 
 7. Test the fallback on an isolated development copy with a temporarily unavailable custom kind; an ordinary animal should still appear.
 8. Run existing 100-power regression checks, as monster behavior must not change player progression.
 
-GitHub Actions checks the XML/source integration and compiles the RimWorld 1.7 DLL. This is not a substitute for in-game QA, particularly artwork path and combat-effect checks.
+GitHub Actions verifies the original source image checksums, generates all 20 directional PNGs, checks their alpha channels and paths, and compiles the RimWorld 1.7 DLL. This is not a substitute for in-game QA, particularly artwork path and combat-effect checks.
