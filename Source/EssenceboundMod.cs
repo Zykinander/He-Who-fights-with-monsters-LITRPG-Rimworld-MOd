@@ -71,6 +71,12 @@ namespace Essencebound
         {
             var list = new Listing_Standard();
             list.Begin(inRect);
+            if (list.ButtonText("Open Essencebound Codex (current colony)"))
+            {
+                if (Find.Game != null)
+                    Find.WindowStack.Add(new Dialog_EssenceCodex());
+            }
+            list.GapLine();
             list.Label("Ability slots per essence");
             list.Label("Affects all three normal essences and the confluence (2-5 each).");
             list.Gap(10f);
