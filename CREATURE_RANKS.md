@@ -6,6 +6,12 @@ Every non-humanlike pawn (animals and other non-humanlike creatures) now has an 
 
 **Select a living creature on the map.** Its normal bottom-left inspection panel now shows `Creature rank: Unranked / Iron / Bronze / Silver / Gold / Diamond`. Creatures spawned from astral tears instead show `Astral rank: <rank>`, which reflects the rank assigned by the tear even if the underlying vanilla creature type normally has a different rank. Both labels use the same rank resolver as damage calculations and loot drops, so the displayed value matches gameplay. The line appears alongside vanilla inspection text; it does not require opening the Health tab or developer mode.
 
+## Health tab rank status
+
+Open a living creature's **Health** tab to see the permanent, non-harmful `Creature rank: <rank>` hediff, using the same computed rank as the bottom-left inspection line. It will show `Astral rank: <rank>` on creatures that were spawned by an astral tear, which may differ from the inherent rank of the base species. A separate astral manifestation marker can also appear for these monsters.
+
+The rank status has no damage, pain, buffs, or health effects; all damage and loot calculations still use `EssenceRankCombat.RankOf`. It is automatically attached once when a creature spawns **or when existing map creatures are loaded from a saved game**. Reloads and respawns must not create duplicate hediff entries.
+
 ## Default categories
 
 | Rank | Example creatures |
@@ -64,12 +70,12 @@ Ranked creatures roll **two independent drops** once when they die on a map and 
 - Kill a manifested creature, confirm the direct drops and then use Astral Loot; no rerolls after its corpse is consumed.
 - Test a corpse destroyed without spawning, and a dead creature arriving on a map; these should not trigger unexpected extra rewards.
 
-- Select a squirrel, warg, elephant and thrumbo; the bottom-left inspection panel should show Unranked, Bronze, Gold and Diamond, respectively.
+- Select a squirrel, warg, elephant and thrumbo; the bottom-left inspection panel **and Health tab hediff** should show Unranked, Bronze, Gold and Diamond, respectively.
 - Select a spawned astral monster whose generated rank differs from its vanilla species rank; its panel must show the astral rank, not the species rank.
 - Compare an unranked colonist attacking a squirrel, warg, elephant, and thrumbo. Damage to Diamond thrumbos should use the existing 99% reduction against unranked attackers.
 - Confirm two creatures of the same species receive the same inherent rank.
 - Confirm astral manifestations still use their saved generated rank regardless of species.
 - Test a custom modded creature with and without an extension.
-- Check save/load; innate ranks are derived from species so no new per-pawn save data is needed.
+- Load a previous save with existing wildlife; each living animal gains exactly one rank hediff. Save/reload again and confirm no duplicate rank hediffs.
 
 This is a source-level implementation, not evidence that it has been playtested in RimWorld.
