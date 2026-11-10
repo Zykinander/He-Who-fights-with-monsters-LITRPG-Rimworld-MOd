@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
-  <!-- First custom astral-monster wave. These PawnKinds borrow vanilla race
-       bodies/graphics but have unique names, visual tints and active powers.
-       ecoSystemWeight=0 prevents replacing ordinary biome wildlife. -->
+  <!-- Five original custom creature sprites, loaded from Essencebound/Monsters/.
+       Vanilla races still provide physiology and corpse graphics. Only these
+       astral PawnKinds use custom artwork; ordinary wildlife is untouched. -->
   <PawnKindDef ParentName="AnimalKindBase">
     <defName>EB_Monster_Glassmote</defName>
     <label>glassmote scarab</label>
@@ -15,34 +15,37 @@
     <lifeStages>
       <li>
         <bodyGraphicData>
-          <texPath>Things/Pawn/Animal/Megascarab/Megascarab</texPath>
+          <texPath>Essencebound/Monsters/Glassmote</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
           <drawSize>0.8</drawSize>
-          <color>(100,205,240)</color>
         </bodyGraphicData>
         <dessicatedBodyGraphicData>
           <texPath>Things/Pawn/Animal/Megascarab/Megascarab</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
           <drawSize>0.8</drawSize>
         </dessicatedBodyGraphicData>
       </li>
       <li>
         <bodyGraphicData>
-          <texPath>Things/Pawn/Animal/Megascarab/Megascarab</texPath>
+          <texPath>Essencebound/Monsters/Glassmote</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
           <drawSize>1.05</drawSize>
-          <color>(100,205,240)</color>
         </bodyGraphicData>
         <dessicatedBodyGraphicData>
           <texPath>Things/Pawn/Animal/Megascarab/Megascarab</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
           <drawSize>1.05</drawSize>
         </dessicatedBodyGraphicData>
       </li>
       <li>
         <bodyGraphicData>
-          <texPath>Things/Pawn/Animal/Megascarab/Megascarab</texPath>
+          <texPath>Essencebound/Monsters/Glassmote</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
           <drawSize>1.35</drawSize>
-          <color>(100,205,240)</color>
         </bodyGraphicData>
         <dessicatedBodyGraphicData>
           <texPath>Things/Pawn/Animal/Megascarab/Megascarab</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
           <drawSize>1.35</drawSize>
         </dessicatedBodyGraphicData>
       </li>
@@ -61,34 +64,37 @@
     <lifeStages>
       <li>
         <bodyGraphicData>
-          <texPath>Things/Pawn/Animal/Warg/Warg</texPath>
+          <texPath>Essencebound/Monsters/Emberfang</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
           <drawSize>1.2</drawSize>
-          <color>(245,116,78)</color>
         </bodyGraphicData>
         <dessicatedBodyGraphicData>
           <texPath>Things/Pawn/Animal/Warg/Warg</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
           <drawSize>1.2</drawSize>
         </dessicatedBodyGraphicData>
       </li>
       <li>
         <bodyGraphicData>
-          <texPath>Things/Pawn/Animal/Warg/Warg</texPath>
+          <texPath>Essencebound/Monsters/Emberfang</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
           <drawSize>1.75</drawSize>
-          <color>(245,116,78)</color>
         </bodyGraphicData>
         <dessicatedBodyGraphicData>
           <texPath>Things/Pawn/Animal/Warg/Warg</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
           <drawSize>1.75</drawSize>
         </dessicatedBodyGraphicData>
       </li>
       <li>
         <bodyGraphicData>
-          <texPath>Things/Pawn/Animal/Warg/Warg</texPath>
+          <texPath>Essencebound/Monsters/Emberfang</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
           <drawSize>2.3</drawSize>
-          <color>(245,116,78)</color>
         </bodyGraphicData>
         <dessicatedBodyGraphicData>
           <texPath>Things/Pawn/Animal/Warg/Warg</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
           <drawSize>2.3</drawSize>
         </dessicatedBodyGraphicData>
       </li>
@@ -107,34 +113,37 @@
     <lifeStages>
       <li>
         <bodyGraphicData>
-          <texPath>Things/Pawn/Animal/Megaspider/Megaspider</texPath>
+          <texPath>Essencebound/Monsters/Duskweaver</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
           <drawSize>1.1</drawSize>
-          <color>(157,110,225)</color>
         </bodyGraphicData>
         <dessicatedBodyGraphicData>
           <texPath>Things/Pawn/Animal/Megaspider/Megaspider</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
           <drawSize>1.1</drawSize>
         </dessicatedBodyGraphicData>
       </li>
       <li>
         <bodyGraphicData>
-          <texPath>Things/Pawn/Animal/Megaspider/Megaspider</texPath>
+          <texPath>Essencebound/Monsters/Duskweaver</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
           <drawSize>1.65</drawSize>
-          <color>(157,110,225)</color>
         </bodyGraphicData>
         <dessicatedBodyGraphicData>
           <texPath>Things/Pawn/Animal/Megaspider/Megaspider</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
           <drawSize>1.65</drawSize>
         </dessicatedBodyGraphicData>
       </li>
       <li>
         <bodyGraphicData>
-          <texPath>Things/Pawn/Animal/Megaspider/Megaspider</texPath>
+          <texPath>Essencebound/Monsters/Duskweaver</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
           <drawSize>2.3</drawSize>
-          <color>(157,110,225)</color>
         </bodyGraphicData>
         <dessicatedBodyGraphicData>
           <texPath>Things/Pawn/Animal/Megaspider/Megaspider</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
           <drawSize>2.3</drawSize>
         </dessicatedBodyGraphicData>
       </li>
@@ -153,34 +162,37 @@
     <lifeStages>
       <li>
         <bodyGraphicData>
-          <texPath>Things/Pawn/Animal/Rhinoceros/Rhinoceros</texPath>
+          <texPath>Essencebound/Monsters/Stormhide</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
           <drawSize>1.65</drawSize>
-          <color>(108,183,225)</color>
         </bodyGraphicData>
         <dessicatedBodyGraphicData>
           <texPath>Things/Pawn/Animal/Rhinoceros/Rhinoceros</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
           <drawSize>1.65</drawSize>
         </dessicatedBodyGraphicData>
       </li>
       <li>
         <bodyGraphicData>
-          <texPath>Things/Pawn/Animal/Rhinoceros/Rhinoceros</texPath>
+          <texPath>Essencebound/Monsters/Stormhide</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
           <drawSize>2.35</drawSize>
-          <color>(108,183,225)</color>
         </bodyGraphicData>
         <dessicatedBodyGraphicData>
           <texPath>Things/Pawn/Animal/Rhinoceros/Rhinoceros</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
           <drawSize>2.35</drawSize>
         </dessicatedBodyGraphicData>
       </li>
       <li>
         <bodyGraphicData>
-          <texPath>Things/Pawn/Animal/Rhinoceros/Rhinoceros</texPath>
+          <texPath>Essencebound/Monsters/Stormhide</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
           <drawSize>3.3</drawSize>
-          <color>(108,183,225)</color>
         </bodyGraphicData>
         <dessicatedBodyGraphicData>
           <texPath>Things/Pawn/Animal/Rhinoceros/Rhinoceros</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
           <drawSize>3.3</drawSize>
         </dessicatedBodyGraphicData>
       </li>
@@ -199,34 +211,37 @@
     <lifeStages>
       <li>
         <bodyGraphicData>
-          <texPath>Things/Pawn/Animal/Thrumbo/Thrumbo</texPath>
+          <texPath>Essencebound/Monsters/PrismaticSovereign</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
           <drawSize>2.5</drawSize>
-          <color>(218,161,247)</color>
         </bodyGraphicData>
         <dessicatedBodyGraphicData>
           <texPath>Things/Pawn/Animal/Thrumbo/Thrumbo</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
           <drawSize>2.5</drawSize>
         </dessicatedBodyGraphicData>
       </li>
       <li>
         <bodyGraphicData>
-          <texPath>Things/Pawn/Animal/Thrumbo/Thrumbo</texPath>
+          <texPath>Essencebound/Monsters/PrismaticSovereign</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
           <drawSize>3.7</drawSize>
-          <color>(218,161,247)</color>
         </bodyGraphicData>
         <dessicatedBodyGraphicData>
           <texPath>Things/Pawn/Animal/Thrumbo/Thrumbo</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
           <drawSize>3.7</drawSize>
         </dessicatedBodyGraphicData>
       </li>
       <li>
         <bodyGraphicData>
-          <texPath>Things/Pawn/Animal/Thrumbo/Thrumbo</texPath>
+          <texPath>Essencebound/Monsters/PrismaticSovereign</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
           <drawSize>5.2</drawSize>
-          <color>(218,161,247)</color>
         </bodyGraphicData>
         <dessicatedBodyGraphicData>
           <texPath>Things/Pawn/Animal/Thrumbo/Thrumbo</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
           <drawSize>5.2</drawSize>
         </dessicatedBodyGraphicData>
       </li>
