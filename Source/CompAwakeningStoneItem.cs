@@ -17,6 +17,7 @@ namespace Essencebound
     {
         private AwakeningStoneDef Stone => DefDatabase<AwakeningStoneDef>.GetNamedSilentFail(
             ((CompProperties_AwakeningStoneItem)props).stoneDefName);
+        public AwakeningStoneDef DiscoveryStone => Stone;
 
         public override string CompInspectStringExtra()
         {
