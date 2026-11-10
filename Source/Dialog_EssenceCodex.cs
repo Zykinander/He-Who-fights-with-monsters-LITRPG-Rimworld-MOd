@@ -384,18 +384,18 @@ namespace Essencebound
                 if (kind == null || !journal.MonsterTypes.Contains(kind.id))
                     return "Magical monster not yet discovered.";
 
-                return kind.name.ToUpperInvariant() + "\\n\\n" +
+                return kind.name.ToUpperInvariant() + "\n\n" +
                     "Rank: " + EssenceProgression.RankLabel(kind.rank) +
-                    "\\nSignature power: " + kind.feature +
-                    "\\nRange: " + kind.range.ToString("0.#") + " cells" +
-                    "\\n\\nEssence crystal chance: " +
+                    "\nSignature power: " + kind.feature +
+                    "\nRange: " + kind.range.ToString("0.#") + " cells" +
+                    "\n\nEssence crystal chance: " +
                     Percent(EssenceCreatureLoot.EssenceChance(kind.rank, true)) +
-                    "\\nAwakening stone chance: " +
+                    "\nAwakening stone chance: " +
                     Percent(EssenceCreatureLoot.StoneChance(kind.rank, true)) +
-                    "\\n\\nThematic essence affinities (unknown ones masked): " +
+                    "\n\nThematic essence affinities (unknown ones masked): " +
                     string.Join(", ", kind.favoredEssences.Select(n =>
                         journal.NormalEssences.Contains(n) ? EssenceName(n) : "???")) +
-                    "\\n\\nOnly astral tear encounters spawn this magical creature.";
+                    "\n\nOnly astral tear encounters spawn this magical creature.";
             }
 
             if (key.StartsWith("astral:", StringComparison.Ordinal) &&
