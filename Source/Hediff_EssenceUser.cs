@@ -547,8 +547,10 @@ namespace Essencebound
             // The initial death already rolled normal loot. Astral Loot offers
             // one extra, weaker roll, even when the remains yield nothing.
             int rank = EssenceRankCombat.RankOf(corpse.InnerPawn);
+            string monsterType = corpse.InnerPawn?.health?.hediffSet?.hediffs
+                ?.OfType<Hediff_AstralManifestation>().FirstOrDefault()?.archetypeId;
             bool foundLoot = EssenceCreatureLoot.RollDrops(rank, true,
-                corpse.Position, pawn.Map, out string description, 0.60f);
+                corpse.Position, pawn.Map, out string description, 0.60f, monsterType);
             corpse.Destroy(DestroyMode.Vanish); // No reroll on failed extraction.
             nextAstralLootTick = now + 3600;
             reason = foundLoot ? "Astral Loot extracted " + description + "." :
@@ -657,6 +659,7 @@ namespace Essencebound
                 lootCmd.Disable("Astral Loot cooldown: " + ((lootRemaining + 59) / 60) + " s");
             yield return lootCmd;
             if (Prefs.DevMode)
+            {
                 yield return new Command_Action
                 {
                     defaultLabel = "DEV: Astral tear",
@@ -668,6 +671,28 @@ namespace Essencebound
                                 MessageTypeDefOf.RejectInput, false);
                     }
                 };
+                yield return new Command_Action
+                {
+                    defaultLabel = "DEV: Astral monsters",
+                    defaultDesc = "Choose an astral monster tier to spawn for testing " +
+                                  "rank, visual tint, special power, Codex and loot.",
+                    action = () =>
+                    {
+                        var options = EssenceMonsterArchetypes.All.Select(archetype =>
+                            new FloatMenuOption(
+                                archetype.name + " (" +
+                                EssenceProgression.RankLabel(archetype.rank) + ")",
+                                () =>
+                                {
+                                    if (pawn.Map?.GetComponent<MapComponent_EssenceWorld>()
+                                        ?.TrySpawnDevMonster(pawn, archetype.rank) != true)
+                                        Messages.Message("No suitable test spawn tile was found.",
+                                            MessageTypeDefOf.RejectInput, false);
+                                })).ToList();
+                        Find.WindowStack.Add(new FloatMenu(options));
+                    }
+                };
+            }
             foreach (var slot in abilitySlots.Where(s => s != null && s.index >= 0 &&
                                                         s.index < SlotsPerEssence &&
                                                         !string.IsNullOrEmpty(s.abilityDefName)))

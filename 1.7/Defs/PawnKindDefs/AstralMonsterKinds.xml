@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <!-- Five original custom creature sprites, loaded from Essencebound/Monsters/.
+       Vanilla races still provide physiology and corpse graphics. Only these
+       astral PawnKinds use custom artwork; ordinary wildlife is untouched. -->
+  <PawnKindDef ParentName="AnimalKindBase">
+    <defName>EB_Monster_Glassmote</defName>
+    <label>glassmote scarab</label>
+    <labelPlural>glassmote scarabs</labelPlural>
+    <description>A shard-coated astral insect that scrambles nearby senses with bursts of glittering static.</description>
+    <race>Megascarab</race>
+    <combatPower>55</combatPower>
+    <ecoSystemWeight>0</ecoSystemWeight>
+    <canArriveManhunter>false</canArriveManhunter>
+    <lifeStages>
+      <li>
+        <bodyGraphicData>
+          <texPath>Essencebound/Monsters/Glassmote</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>0.8</drawSize>
+        </bodyGraphicData>
+        <dessicatedBodyGraphicData>
+          <texPath>Things/Pawn/Animal/Megascarab/Megascarab</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>0.8</drawSize>
+        </dessicatedBodyGraphicData>
+      </li>
+      <li>
+        <bodyGraphicData>
+          <texPath>Essencebound/Monsters/Glassmote</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>1.05</drawSize>
+        </bodyGraphicData>
+        <dessicatedBodyGraphicData>
+          <texPath>Things/Pawn/Animal/Megascarab/Megascarab</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>1.05</drawSize>
+        </dessicatedBodyGraphicData>
+      </li>
+      <li>
+        <bodyGraphicData>
+          <texPath>Essencebound/Monsters/Glassmote</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>1.35</drawSize>
+        </bodyGraphicData>
+        <dessicatedBodyGraphicData>
+          <texPath>Things/Pawn/Animal/Megascarab/Megascarab</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>1.35</drawSize>
+        </dessicatedBodyGraphicData>
+      </li>
+    </lifeStages>
+  </PawnKindDef>
+
+  <PawnKindDef ParentName="AnimalKindBase">
+    <defName>EB_Monster_Emberfang</defName>
+    <label>emberfang stalker</label>
+    <labelPlural>emberfang stalkers</labelPlural>
+    <description>A crimson predator that projects short-range waves of magical heat.</description>
+    <race>Warg</race>
+    <combatPower>175</combatPower>
+    <ecoSystemWeight>0</ecoSystemWeight>
+    <canArriveManhunter>false</canArriveManhunter>
+    <lifeStages>
+      <li>
+        <bodyGraphicData>
+          <texPath>Essencebound/Monsters/Emberfang</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>1.2</drawSize>
+        </bodyGraphicData>
+        <dessicatedBodyGraphicData>
+          <texPath>Things/Pawn/Animal/Warg/Warg</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>1.2</drawSize>
+        </dessicatedBodyGraphicData>
+      </li>
+      <li>
+        <bodyGraphicData>
+          <texPath>Essencebound/Monsters/Emberfang</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>1.75</drawSize>
+        </bodyGraphicData>
+        <dessicatedBodyGraphicData>
+          <texPath>Things/Pawn/Animal/Warg/Warg</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>1.75</drawSize>
+        </dessicatedBodyGraphicData>
+      </li>
+      <li>
+        <bodyGraphicData>
+          <texPath>Essencebound/Monsters/Emberfang</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>2.3</drawSize>
+        </bodyGraphicData>
+        <dessicatedBodyGraphicData>
+          <texPath>Things/Pawn/Animal/Warg/Warg</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>2.3</drawSize>
+        </dessicatedBodyGraphicData>
+      </li>
+    </lifeStages>
+  </PawnKindDef>
+
+  <PawnKindDef ParentName="AnimalKindBase">
+    <defName>EB_Monster_Duskweaver</defName>
+    <label>duskweaver</label>
+    <labelPlural>duskweavers</labelPlural>
+    <description>A violet arachnid whose strands of astral web slow nearby enemies.</description>
+    <race>Megaspider</race>
+    <combatPower>290</combatPower>
+    <ecoSystemWeight>0</ecoSystemWeight>
+    <canArriveManhunter>false</canArriveManhunter>
+    <lifeStages>
+      <li>
+        <bodyGraphicData>
+          <texPath>Essencebound/Monsters/Duskweaver</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>1.1</drawSize>
+        </bodyGraphicData>
+        <dessicatedBodyGraphicData>
+          <texPath>Things/Pawn/Animal/Megaspider/Megaspider</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>1.1</drawSize>
+        </dessicatedBodyGraphicData>
+      </li>
+      <li>
+        <bodyGraphicData>
+          <texPath>Essencebound/Monsters/Duskweaver</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>1.65</drawSize>
+        </bodyGraphicData>
+        <dessicatedBodyGraphicData>
+          <texPath>Things/Pawn/Animal/Megaspider/Megaspider</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>1.65</drawSize>
+        </dessicatedBodyGraphicData>
+      </li>
+      <li>
+        <bodyGraphicData>
+          <texPath>Essencebound/Monsters/Duskweaver</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>2.3</drawSize>
+        </bodyGraphicData>
+        <dessicatedBodyGraphicData>
+          <texPath>Things/Pawn/Animal/Megaspider/Megaspider</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>2.3</drawSize>
+        </dessicatedBodyGraphicData>
+      </li>
+    </lifeStages>
+  </PawnKindDef>
+
+  <PawnKindDef ParentName="AnimalKindBase">
+    <defName>EB_Monster_Stormhide</defName>
+    <label>stormhide colossus</label>
+    <labelPlural>stormhide colossi</labelPlural>
+    <description>A titan wrapped in flickering stormlight that discharges arcs of charged energy.</description>
+    <race>Rhinoceros</race>
+    <combatPower>440</combatPower>
+    <ecoSystemWeight>0</ecoSystemWeight>
+    <canArriveManhunter>false</canArriveManhunter>
+    <lifeStages>
+      <li>
+        <bodyGraphicData>
+          <texPath>Essencebound/Monsters/Stormhide</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>1.65</drawSize>
+        </bodyGraphicData>
+        <dessicatedBodyGraphicData>
+          <texPath>Things/Pawn/Animal/Rhinoceros/Rhinoceros</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>1.65</drawSize>
+        </dessicatedBodyGraphicData>
+      </li>
+      <li>
+        <bodyGraphicData>
+          <texPath>Essencebound/Monsters/Stormhide</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>2.35</drawSize>
+        </bodyGraphicData>
+        <dessicatedBodyGraphicData>
+          <texPath>Things/Pawn/Animal/Rhinoceros/Rhinoceros</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>2.35</drawSize>
+        </dessicatedBodyGraphicData>
+      </li>
+      <li>
+        <bodyGraphicData>
+          <texPath>Essencebound/Monsters/Stormhide</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>3.3</drawSize>
+        </bodyGraphicData>
+        <dessicatedBodyGraphicData>
+          <texPath>Things/Pawn/Animal/Rhinoceros/Rhinoceros</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>3.3</drawSize>
+        </dessicatedBodyGraphicData>
+      </li>
+    </lifeStages>
+  </PawnKindDef>
+
+  <PawnKindDef ParentName="AnimalKindBase">
+    <defName>EB_Monster_PrismaticSovereign</defName>
+    <label>prismatic sovereign</label>
+    <labelPlural>prismatic sovereigns</labelPlural>
+    <description>A rare sovereign of refracted astral light that shields and restores nearby manifestations.</description>
+    <race>Thrumbo</race>
+    <combatPower>850</combatPower>
+    <ecoSystemWeight>0</ecoSystemWeight>
+    <canArriveManhunter>false</canArriveManhunter>
+    <lifeStages>
+      <li>
+        <bodyGraphicData>
+          <texPath>Essencebound/Monsters/PrismaticSovereign</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>2.5</drawSize>
+        </bodyGraphicData>
+        <dessicatedBodyGraphicData>
+          <texPath>Things/Pawn/Animal/Thrumbo/Thrumbo</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>2.5</drawSize>
+        </dessicatedBodyGraphicData>
+      </li>
+      <li>
+        <bodyGraphicData>
+          <texPath>Essencebound/Monsters/PrismaticSovereign</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>3.7</drawSize>
+        </bodyGraphicData>
+        <dessicatedBodyGraphicData>
+          <texPath>Things/Pawn/Animal/Thrumbo/Thrumbo</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>3.7</drawSize>
+        </dessicatedBodyGraphicData>
+      </li>
+      <li>
+        <bodyGraphicData>
+          <texPath>Essencebound/Monsters/PrismaticSovereign</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>5.2</drawSize>
+        </bodyGraphicData>
+        <dessicatedBodyGraphicData>
+          <texPath>Things/Pawn/Animal/Thrumbo/Thrumbo</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>5.2</drawSize>
+        </dessicatedBodyGraphicData>
+      </li>
+    </lifeStages>
+  </PawnKindDef>
+</Defs>

@@ -2,6 +2,10 @@
 
 **RimWorld 1.7 | Harmony required | Experimental: use a backup or test save.**
 
+## v0.23 development: Distinct astral monster archetypes
+
+Astral tears now produce five recognizable monster types according to their existing density-based rank roll: **Glassmote Scarab (Iron), Emberfang Stalker (Bronze), Duskweaver (Silver), Stormhide Colossus (Gold), and Prismatic Sovereign (Diamond)**. Each now uses its own simplified, transparent creature art (256px directional textures generated in the mod build), a timed signature magical power, a persisted archetype identifier, and its own discoverable Codex entry. North/south views are temporary perspective adaptations until separately illustrated. Their loot remains rare for essence crystals and more generous for awakening stones; a successfully rolled essence can favor the monster's associated essences. Use **DEV: Astral monsters** from an essence user's gizmos to test each one with developer mode enabled. See [monster bestiary and QA notes](MONSTER_BESTIARY_V023.md).
+
 ## v0.22 development: Colony Essencebound Codex
 
 A five-tab discovery encyclopedia now tracks **essences, confluences and discovered recipes, awakening stones, powers, and a creature bestiary**. Discoveries are saved separately for each colony game; hidden entries stay masked until the player finds or unlocks them. Open it from an essence user's **Essence Codex** gizmo, their Essence profile, or the Essencebound mod settings. See [the Codex guide](CODEX_GUIDE.md) for discovery rules, legacy-save backfill, and QA.

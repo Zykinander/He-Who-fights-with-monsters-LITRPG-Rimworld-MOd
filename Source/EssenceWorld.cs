@@ -87,13 +87,38 @@ namespace Essencebound
                     MessageTypeDefOf.PositiveEvent, false);
         }
 
-        private bool SpawnMonsterGroup(IntVec3 center, float intensity)
+        // Developer-only shortcut: test any monster tier beside the selected
+        // colonist without changing the colony's actual magic density.
+        public bool TrySpawnDevMonster(Pawn observer, int rank)
         {
-            int monsterRank = EssenceMonsterRanks.Roll(intensity);
+            if (!Prefs.DevMode || observer == null || observer.Map != map ||
+                !observer.Spawned) return false;
+            for (int i = 0; i < 120; i++)
+            {
+                IntVec3 cell = new IntVec3(observer.Position.x + Rand.Range(-10, 11), 0,
+                    observer.Position.z + Rand.Range(-10, 11));
+                float distance = cell.DistanceTo(observer.Position);
+                if (distance < 5f || distance > 10f ||
+                    !cell.InBounds(map) || !cell.Standable(map) ||
+                    cell.Fogged(map) || cell.GetFirstBuilding(map) != null)
+                    continue;
+                return SpawnMonsterGroup(cell, MagicDensity, Math.Max(0, Math.Min(4, rank)));
+            }
+            return false;
+        }
+
+        private bool SpawnMonsterGroup(IntVec3 center, float intensity, int forcedRank = -1)
+        {
+            int monsterRank = forcedRank >= 0 ? Math.Max(0, Math.Min(4, forcedRank)) :
+                EssenceMonsterRanks.Roll(intensity);
+            var archetype = EssenceMonsterArchetypes.ForRank(monsterRank);
+            PawnKindDef customKind = archetype == null ? null :
+                DefDatabase<PawnKindDef>.GetNamedSilentFail(archetype.kindDef);
             string preferred = EssenceMonsterRanks.PlaceholderPawnKind(monsterRank);
-            PawnKindDef kind = DefDatabase<PawnKindDef>.GetNamedSilentFail(preferred);
-            kind ??= DefDatabase<PawnKindDef>.GetNamedSilentFail("Warg");
-            kind ??= DefDatabase<PawnKindDef>.GetNamedSilentFail("Megascarab");
+            PawnKindDef fallbackKind = DefDatabase<PawnKindDef>.GetNamedSilentFail(preferred);
+            fallbackKind ??= DefDatabase<PawnKindDef>.GetNamedSilentFail("Warg");
+            fallbackKind ??= DefDatabase<PawnKindDef>.GetNamedSilentFail("Megascarab");
+            PawnKindDef kind = customKind ?? fallbackKind;
             if (kind == null)
             {
                 Log.Warning("[Essencebound] No vanilla pawn kind for an astral manifestation.");
@@ -107,7 +132,27 @@ namespace Essencebound
             {
                 IntVec3 cell = center;
                 if (n > 0 && !TryFindNear(center, map, out cell)) break;
-                Pawn monster = PawnGenerator.GeneratePawn(kind);
+                Pawn monster = null;
+                bool customSpawned = kind == customKind && customKind != null;
+                try
+                {
+                    monster = PawnGenerator.GeneratePawn(kind);
+                }
+                catch (Exception exception)
+                {
+                    Log.Warning("[Essencebound] Could not generate " + kind.defName +
+                        "; falling back to a vanilla animal. " + exception.Message);
+                    if (fallbackKind != null && kind != fallbackKind)
+                    {
+                        customSpawned = false;
+                        try { monster = PawnGenerator.GeneratePawn(fallbackKind); }
+                        catch (Exception fallbackError)
+                        {
+                            Log.Error("[Essencebound] Monster fallback generation failed: " +
+                                fallbackError.Message);
+                        }
+                    }
+                }
                 if (monster == null) continue;
                 if (markerDef != null)
                 {
@@ -117,6 +162,8 @@ namespace Essencebound
                         marker.magicDensity = intensity;
                         marker.rankIndex = monsterRank;
                         marker.Severity = monsterRank + 1f;
+                        if (customSpawned && archetype != null)
+                            marker.AssignArchetype(archetype.id);
                         monster.health.AddHediff(marker);
                     }
                 }
@@ -127,8 +174,10 @@ namespace Essencebound
             }
             if (spawned > 0)
                 Messages.Message("The astral tear unleashed " + spawned + " " +
-                    EssenceMonsterRanks.RankLabel(monsterRank) +
-                    "-rank magical monster(s)! Essencebound fighters of lower rank deal less damage.",
+                    EssenceMonsterRanks.RankLabel(monsterRank) + "-rank " +
+                    (customKind != null ? archetype.name : "magical monster") +
+                    (spawned == 1 ? "!" : " creatures!") +
+                    " Lower-ranked fighters deal reduced damage.",
                     MessageTypeDefOf.ThreatBig, false);
             return spawned > 0;
         }
@@ -146,14 +195,24 @@ namespace Essencebound
             return false;
         }
 
-        public static bool SpawnEssence(IntVec3 center, Map map, out string label)
+        public static bool SpawnEssence(IntVec3 center, Map map, out string label,
+            System.Collections.Generic.IEnumerable<string> preferredEssenceNames = null)
         {
             label = "";
             if (map == null) return false;
             var pool = DefDatabase<EssenceDef>.AllDefsListForReading
                 .Where(e => e != null && !e.isConfluence).ToList();
             if (pool.Count == 0) return false;
-            EssenceDef essence = pool[Rand.Range(0, pool.Count)];
+            // On a successful monster loot roll, a thematic essence is
+            // favored, but never guaranteed. Drop *rates* are unchanged.
+            var favorites = preferredEssenceNames == null ? null :
+                new System.Collections.Generic.HashSet<string>(
+                    preferredEssenceNames, StringComparer.Ordinal);
+            var themed = favorites == null ? null :
+                pool.Where(e => favorites.Contains(e.defName)).ToList();
+            var selection = themed != null && themed.Count > 0 && Rand.Value < 0.45f
+                ? themed : pool;
+            EssenceDef essence = selection[Rand.Range(0, selection.Count)];
             string suffix = essence.defName.StartsWith("EB_")
                 ? essence.defName.Substring(3) : essence.defName;
             ThingDef crystal = DefDatabase<ThingDef>.GetNamedSilentFail("EB_" + suffix + "_Crystal");
