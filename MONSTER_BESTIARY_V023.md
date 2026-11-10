@@ -40,6 +40,10 @@ Like other manifestations, these monsters receive the existing 20% relative drop
 
 The colony Codex Bestiary now records first encounters with each magical monster under its **own name**, as well as the generic base species. It records discovered archetypes and astral ranks in the save and shows a signature power, rank, drop odds, and favorite essences whose names have been discovered.
 
+## Developer quick-test menu
+
+Enable RimWorld developer mode, select a colonist with an Essencebound essence, and use the **DEV: Astral monsters** command. The menu lists all five archetypes with their assigned ranks. Choose one to spawn it on a standable, visible tile 5–10 cells away, without altering colony magic density. Spawned test monsters still have their normal magical archetype, saved rank, loot, abilities, and Codex discovery behavior. This menu is only visible in developer mode.
+
 ## In-game QA
 
 1. Trigger astral tears at low and high density and confirm each of the five tiers uses the appropriate monster name and visible rank.
