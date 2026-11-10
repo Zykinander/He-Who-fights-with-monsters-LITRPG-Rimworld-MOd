@@ -32,9 +32,16 @@ namespace Essencebound
         {
             base.Tick();
             if (pawn == null || pawn.Dead || !pawn.Spawned ||
-                pawn.Downed || string.IsNullOrEmpty(archetypeId) ||
-                Find.TickManager == null)
+                string.IsNullOrEmpty(archetypeId) || Find.TickManager == null)
                 return;
+            // Losing consciousness cancels the charged spell entirely.
+            // A recovering monster must begin a fresh warning period.
+            if (pawn.Downed)
+            {
+                chargeEndTick = 0;
+                chargedCell = IntVec3.Invalid;
+                return;
+            }
 
             var type = EssenceMonsterArchetypes.ForId(archetypeId);
             if (type == null) return;
@@ -105,6 +112,15 @@ namespace Essencebound
                 {
                     chargeEndTick = 0;
                     chargedCell = IntVec3.Invalid;
+                }
+                else if (Find.TickManager != null &&
+                         chargeEndTick <= Find.TickManager.TicksGame)
+                {
+                    // Loading an overdue telegraph must not cause a surprise
+                    // instant hit on the first simulation tick.
+                    var type = EssenceMonsterArchetypes.ForId(archetypeId);
+                    chargeEndTick = Find.TickManager.TicksGame +
+                        (type?.windupTicks ?? 90);
                 }
             }
         }
