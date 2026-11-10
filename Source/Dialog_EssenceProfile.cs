@@ -46,6 +46,9 @@ namespace Essencebound
             int possible = cap * 4;
 
             DrawHeader(new Rect(inRect.x, inRect.y, inRect.width, 122f), cap, active, possible);
+            if (Widgets.ButtonText(new Rect(inRect.x + inRect.width - 155f,
+                inRect.y + 4f, 145f, 28f), "Open Codex"))
+                Find.WindowStack.Add(new Dialog_EssenceCodex());
 
             Rect outer = new Rect(inRect.x, inRect.y + 130f, inRect.width, inRect.height - 130f);
             float panelHeight = 85f + cap * 108f;
