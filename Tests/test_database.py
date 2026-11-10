@@ -21,7 +21,7 @@ assert len(conflicted) == 2
 assert all(r['conflict'] == (tuple(r['essences']) in conflicted) for r in rows)
 
 xmlpaths = list((ROOT/'1.7/Defs').rglob('*.xml'))
-assert len(xmlpaths) == 17, xmlpaths
+assert len(xmlpaths) == 18, xmlpaths
 for p in xmlpaths:
     ET.parse(p)
 
