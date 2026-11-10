@@ -18,6 +18,7 @@ namespace Essencebound
         public string kindDef;
         public string name;
         public string feature;
+        public string combatStyle;
         public int rank;
         public int pulseInterval;
         public int windupTicks;
@@ -37,6 +38,7 @@ namespace Essencebound
             {
                 id = "glassmote", kindDef = "EB_Monster_Glassmote",
                 name = "Glassmote Scarab", feature = "Dazzling static burst",
+                combatStyle = "Disrupts the nearest visible colonist and others nearby.",
                 rank = 0, pulseInterval = 480, windupTicks = 75,
                 range = 5f, radius = 2f, debuff = "EB_Debuff_Static",
                 impact = 0f,
@@ -46,6 +48,7 @@ namespace Essencebound
             {
                 id = "emberfang", kindDef = "EB_Monster_Emberfang",
                 name = "Emberfang Stalker", feature = "Hunting ember blast",
+                combatStyle = "Pursues injured colonists with a compact heat blast.",
                 rank = 1, pulseInterval = 390, windupTicks = 65,
                 range = 6f, radius = 1.6f, impact = 4f, damageDef = "Flame",
                 favoredEssences = new[] { "EB_Fire", "EB_Wolf", "EB_Smoke" }
@@ -54,6 +57,7 @@ namespace Essencebound
             {
                 id = "duskweaver", kindDef = "EB_Monster_Duskweaver",
                 name = "Duskweaver", feature = "Binding astral web",
+                combatStyle = "Targets the farthest visible colonist with a broad slowing web.",
                 rank = 2, pulseInterval = 360, windupTicks = 110,
                 range = 7f, radius = 2.3f, impact = 0f,
                 debuff = "EB_Debuff_Webbed",
@@ -63,6 +67,7 @@ namespace Essencebound
             {
                 id = "stormhide", kindDef = "EB_Monster_Stormhide",
                 name = "Stormhide Colossus", feature = "Point-blank thunder shockwave",
+                combatStyle = "Unleashes a large disruption wave around its position at wind-up.",
                 rank = 3, pulseInterval = 330, windupTicks = 105,
                 range = 5f, radius = 4f, impact = 6f,
                 damageDef = "Blunt", debuff = "EB_Debuff_Static",
@@ -72,6 +77,7 @@ namespace Essencebound
             {
                 id = "sovereign", kindDef = "EB_Monster_PrismaticSovereign",
                 name = "Prismatic Sovereign", feature = "Prismatic ward and renewal",
+                combatStyle = "Wards and heals nearby astral allies while striking a target area.",
                 rank = 4, pulseInterval = 300, windupTicks = 135,
                 range = 7f, radius = 2f, impact = 7f, damageDef = "Blunt",
                 favoredEssences = new[] { "EB_Light", "EB_Star", "EB_Mirror" }
