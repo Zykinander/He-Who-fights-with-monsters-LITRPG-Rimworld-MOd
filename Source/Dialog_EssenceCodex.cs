@@ -123,7 +123,8 @@ namespace Essencebound
                         " powers discovered";
                 default:
                     return journal.CreatureRaces.Count + " species  •  " +
-                        journal.AstralRanks.Count + " / 5 astral ranks encountered";
+                        journal.MonsterTypes.Count + " / " + EssenceMonsterArchetypes.All.Count +
+                        " magical monsters  •  " + journal.AstralRanks.Count + " / 5 astral ranks";
             }
         }
 
@@ -184,13 +185,20 @@ namespace Essencebound
             {
                 var defs = DefDatabase<ThingDef>.AllDefsListForReading
                     .Where(d => d?.race != null && !d.race.Humanlike).ToList();
-                total = defs.Count + 5;
+                total = defs.Count + 5 + EssenceMonsterArchetypes.All.Count;
                 foreach (var def in defs)
                 {
                     if (!journal.CreatureRaces.Contains(def.defName)) continue;
                     known++;
                     AddFiltered(items, "creature:" + def.defName,
                         def.label.CapitalizeFirst());
+                }
+                foreach (var archetype in EssenceMonsterArchetypes.All)
+                {
+                    if (!journal.MonsterTypes.Contains(archetype.id)) continue;
+                    known++;
+                    AddFiltered(items, "monster:" + archetype.id,
+                        archetype.name + " [" + EssenceProgression.RankLabel(archetype.rank) + "]");
                 }
                 for (int i = 0; i <= 4; i++)
                 {
@@ -368,6 +376,26 @@ namespace Essencebound
                       journal.ConfluenceEssences.Contains(power.primaryEssence.defName))
                          ? power.primaryEssence.label.CapitalizeFirst() : "???") +
                     "\n\nThis ability was revealed by a colony essence user.";
+            }
+
+            if (key.StartsWith("monster:", StringComparison.Ordinal))
+            {
+                var kind = EssenceMonsterArchetypes.ForId(key.Substring("monster:".Length));
+                if (kind == null || !journal.MonsterTypes.Contains(kind.id))
+                    return "Magical monster not yet discovered.";
+
+                return kind.name.ToUpperInvariant() + "\\n\\n" +
+                    "Rank: " + EssenceProgression.RankLabel(kind.rank) +
+                    "\\nSignature power: " + kind.feature +
+                    "\\nRange: " + kind.range.ToString("0.#") + " cells" +
+                    "\\n\\nEssence crystal chance: " +
+                    Percent(EssenceCreatureLoot.EssenceChance(kind.rank, true)) +
+                    "\\nAwakening stone chance: " +
+                    Percent(EssenceCreatureLoot.StoneChance(kind.rank, true)) +
+                    "\\n\\nThematic essence affinities (unknown ones masked): " +
+                    string.Join(", ", kind.favoredEssences.Select(n =>
+                        journal.NormalEssences.Contains(n) ? EssenceName(n) : "???")) +
+                    "\\n\\nOnly astral tear encounters spawn this magical creature.";
             }
 
             if (key.StartsWith("astral:", StringComparison.Ordinal) &&
