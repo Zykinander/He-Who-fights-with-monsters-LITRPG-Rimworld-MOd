@@ -73,7 +73,7 @@ namespace Essencebound
             list.Begin(inRect);
             if (list.ButtonText("Open Essencebound Codex (current colony)"))
             {
-                if (Find.Game != null)
+                if (Current.Game != null)
                     Find.WindowStack.Add(new Dialog_EssenceCodex());
             }
             list.GapLine();
