@@ -49,14 +49,16 @@ namespace Essencebound
         // The optional multiplier lets Astral Loot make a separate, reduced
         // extraction roll after ordinary death drops without guaranteeing loot.
         public static bool RollDrops(int rank, bool manifestation, IntVec3 cell,
-            Map map, out string description, float chanceMultiplier = 1f)
+            Map map, out string description, float chanceMultiplier = 1f,
+            string archetypeId = null)
         {
             description = "nothing";
             if (map == null || !cell.IsValid || !cell.InBounds(map)) return false;
 
             var found = new List<string>();
             if (Rand.Value < EssenceChance(rank, manifestation) * chanceMultiplier &&
-                MapComponent_EssenceWorld.SpawnEssence(cell, map, out string essence))
+                MapComponent_EssenceWorld.SpawnEssence(cell, map, out string essence,
+                    EssenceMonsterArchetypes.FavoredEssences(archetypeId)))
                 found.Add(essence + " essence");
 
             if (Rand.Value < StoneChance(rank, manifestation) * chanceMultiplier &&
@@ -144,11 +146,12 @@ namespace Essencebound
             Corpse corpse = __instance.Corpse;
             if (corpse == null || !corpse.Spawned || corpse.Map == null) return;
 
-            bool manifestation = __instance.health?.hediffSet?.hediffs
-                ?.OfType<Hediff_AstralManifestation>().Any() == true;
+            var marker = __instance.health?.hediffSet?.hediffs
+                ?.OfType<Hediff_AstralManifestation>().FirstOrDefault();
+            bool manifestation = marker != null;
             int rank = EssenceRankCombat.RankOf(__instance);
             if (EssenceCreatureLoot.RollDrops(rank, manifestation, corpse.Position,
-                corpse.Map, out string found))
+                corpse.Map, out string found, 1f, marker?.archetypeId))
             {
                 // Do not spam the event log for ordinary small animal deaths.
                 if (manifestation || rank >= 3)
