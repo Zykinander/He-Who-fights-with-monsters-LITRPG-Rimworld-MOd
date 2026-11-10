@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <!-- First custom astral-monster wave. These PawnKinds borrow vanilla race
+       bodies/graphics but have unique names, visual tints and active powers.
+       ecoSystemWeight=0 prevents replacing ordinary biome wildlife. -->
+  <PawnKindDef ParentName="AnimalKindBase">
+    <defName>EB_Monster_Glassmote</defName>
+    <label>glassmote scarab</label>
+    <labelPlural>glassmote scarabs</labelPlural>
+    <description>A shard-coated astral insect that scrambles nearby senses with bursts of glittering static.</description>
+    <race>Megascarab</race>
+    <combatPower>55</combatPower>
+    <ecoSystemWeight>0</ecoSystemWeight>
+    <canArriveManhunter>false</canArriveManhunter>
+    <lifeStages>
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/Pawn/Animal/Megascarab/Megascarab</texPath>
+          <drawSize>0.8</drawSize>
+          <color>(100,205,240)</color>
+        </bodyGraphicData>
+        <dessicatedBodyGraphicData>
+          <texPath>Things/Pawn/Animal/Megascarab/Megascarab</texPath>
+          <drawSize>0.8</drawSize>
+        </dessicatedBodyGraphicData>
+      </li>
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/Pawn/Animal/Megascarab/Megascarab</texPath>
+          <drawSize>1.05</drawSize>
+          <color>(100,205,240)</color>
+        </bodyGraphicData>
+        <dessicatedBodyGraphicData>
+          <texPath>Things/Pawn/Animal/Megascarab/Megascarab</texPath>
+          <drawSize>1.05</drawSize>
+        </dessicatedBodyGraphicData>
+      </li>
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/Pawn/Animal/Megascarab/Megascarab</texPath>
+          <drawSize>1.35</drawSize>
+          <color>(100,205,240)</color>
+        </bodyGraphicData>
+        <dessicatedBodyGraphicData>
+          <texPath>Things/Pawn/Animal/Megascarab/Megascarab</texPath>
+          <drawSize>1.35</drawSize>
+        </dessicatedBodyGraphicData>
+      </li>
+    </lifeStages>
+  </PawnKindDef>
+
+  <PawnKindDef ParentName="AnimalKindBase">
+    <defName>EB_Monster_Emberfang</defName>
+    <label>emberfang stalker</label>
+    <labelPlural>emberfang stalkers</labelPlural>
+    <description>A crimson predator that projects short-range waves of magical heat.</description>
+    <race>Warg</race>
+    <combatPower>175</combatPower>
+    <ecoSystemWeight>0</ecoSystemWeight>
+    <canArriveManhunter>false</canArriveManhunter>
+    <lifeStages>
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/Pawn/Animal/Warg/Warg</texPath>
+          <drawSize>1.2</drawSize>
+          <color>(245,116,78)</color>
+        </bodyGraphicData>
+        <dessicatedBodyGraphicData>
+          <texPath>Things/Pawn/Animal/Warg/Warg</texPath>
+          <drawSize>1.2</drawSize>
+        </dessicatedBodyGraphicData>
+      </li>
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/Pawn/Animal/Warg/Warg</texPath>
+          <drawSize>1.75</drawSize>
+          <color>(245,116,78)</color>
+        </bodyGraphicData>
+        <dessicatedBodyGraphicData>
+          <texPath>Things/Pawn/Animal/Warg/Warg</texPath>
+          <drawSize>1.75</drawSize>
+        </dessicatedBodyGraphicData>
+      </li>
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/Pawn/Animal/Warg/Warg</texPath>
+          <drawSize>2.3</drawSize>
+          <color>(245,116,78)</color>
+        </bodyGraphicData>
+        <dessicatedBodyGraphicData>
+          <texPath>Things/Pawn/Animal/Warg/Warg</texPath>
+          <drawSize>2.3</drawSize>
+        </dessicatedBodyGraphicData>
+      </li>
+    </lifeStages>
+  </PawnKindDef>
+
+  <PawnKindDef ParentName="AnimalKindBase">
+    <defName>EB_Monster_Duskweaver</defName>
+    <label>duskweaver</label>
+    <labelPlural>duskweavers</labelPlural>
+    <description>A violet arachnid whose strands of astral web slow nearby enemies.</description>
+    <race>Megaspider</race>
+    <combatPower>290</combatPower>
+    <ecoSystemWeight>0</ecoSystemWeight>
+    <canArriveManhunter>false</canArriveManhunter>
+    <lifeStages>
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/Pawn/Animal/Megaspider/Megaspider</texPath>
+          <drawSize>1.1</drawSize>
+          <color>(157,110,225)</color>
+        </bodyGraphicData>
+        <dessicatedBodyGraphicData>
+          <texPath>Things/Pawn/Animal/Megaspider/Megaspider</texPath>
+          <drawSize>1.1</drawSize>
+        </dessicatedBodyGraphicData>
+      </li>
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/Pawn/Animal/Megaspider/Megaspider</texPath>
+          <drawSize>1.65</drawSize>
+          <color>(157,110,225)</color>
+        </bodyGraphicData>
+        <dessicatedBodyGraphicData>
+          <texPath>Things/Pawn/Animal/Megaspider/Megaspider</texPath>
+          <drawSize>1.65</drawSize>
+        </dessicatedBodyGraphicData>
+      </li>
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/Pawn/Animal/Megaspider/Megaspider</texPath>
+          <drawSize>2.3</drawSize>
+          <color>(157,110,225)</color>
+        </bodyGraphicData>
+        <dessicatedBodyGraphicData>
+          <texPath>Things/Pawn/Animal/Megaspider/Megaspider</texPath>
+          <drawSize>2.3</drawSize>
+        </dessicatedBodyGraphicData>
+      </li>
+    </lifeStages>
+  </PawnKindDef>
+
+  <PawnKindDef ParentName="AnimalKindBase">
+    <defName>EB_Monster_Stormhide</defName>
+    <label>stormhide colossus</label>
+    <labelPlural>stormhide colossi</labelPlural>
+    <description>A titan wrapped in flickering stormlight that discharges arcs of charged energy.</description>
+    <race>Rhinoceros</race>
+    <combatPower>440</combatPower>
+    <ecoSystemWeight>0</ecoSystemWeight>
+    <canArriveManhunter>false</canArriveManhunter>
+    <lifeStages>
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/Pawn/Animal/Rhinoceros/Rhinoceros</texPath>
+          <drawSize>1.65</drawSize>
+          <color>(108,183,225)</color>
+        </bodyGraphicData>
+        <dessicatedBodyGraphicData>
+          <texPath>Things/Pawn/Animal/Rhinoceros/Rhinoceros</texPath>
+          <drawSize>1.65</drawSize>
+        </dessicatedBodyGraphicData>
+      </li>
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/Pawn/Animal/Rhinoceros/Rhinoceros</texPath>
+          <drawSize>2.35</drawSize>
+          <color>(108,183,225)</color>
+        </bodyGraphicData>
+        <dessicatedBodyGraphicData>
+          <texPath>Things/Pawn/Animal/Rhinoceros/Rhinoceros</texPath>
+          <drawSize>2.35</drawSize>
+        </dessicatedBodyGraphicData>
+      </li>
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/Pawn/Animal/Rhinoceros/Rhinoceros</texPath>
+          <drawSize>3.3</drawSize>
+          <color>(108,183,225)</color>
+        </bodyGraphicData>
+        <dessicatedBodyGraphicData>
+          <texPath>Things/Pawn/Animal/Rhinoceros/Rhinoceros</texPath>
+          <drawSize>3.3</drawSize>
+        </dessicatedBodyGraphicData>
+      </li>
+    </lifeStages>
+  </PawnKindDef>
+
+  <PawnKindDef ParentName="AnimalKindBase">
+    <defName>EB_Monster_PrismaticSovereign</defName>
+    <label>prismatic sovereign</label>
+    <labelPlural>prismatic sovereigns</labelPlural>
+    <description>A rare sovereign of refracted astral light that shields and restores nearby manifestations.</description>
+    <race>Thrumbo</race>
+    <combatPower>850</combatPower>
+    <ecoSystemWeight>0</ecoSystemWeight>
+    <canArriveManhunter>false</canArriveManhunter>
+    <lifeStages>
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/Pawn/Animal/Thrumbo/Thrumbo</texPath>
+          <drawSize>2.5</drawSize>
+          <color>(218,161,247)</color>
+        </bodyGraphicData>
+        <dessicatedBodyGraphicData>
+          <texPath>Things/Pawn/Animal/Thrumbo/Thrumbo</texPath>
+          <drawSize>2.5</drawSize>
+        </dessicatedBodyGraphicData>
+      </li>
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/Pawn/Animal/Thrumbo/Thrumbo</texPath>
+          <drawSize>3.7</drawSize>
+          <color>(218,161,247)</color>
+        </bodyGraphicData>
+        <dessicatedBodyGraphicData>
+          <texPath>Things/Pawn/Animal/Thrumbo/Thrumbo</texPath>
+          <drawSize>3.7</drawSize>
+        </dessicatedBodyGraphicData>
+      </li>
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/Pawn/Animal/Thrumbo/Thrumbo</texPath>
+          <drawSize>5.2</drawSize>
+          <color>(218,161,247)</color>
+        </bodyGraphicData>
+        <dessicatedBodyGraphicData>
+          <texPath>Things/Pawn/Animal/Thrumbo/Thrumbo</texPath>
+          <drawSize>5.2</drawSize>
+        </dessicatedBodyGraphicData>
+      </li>
+    </lifeStages>
+  </PawnKindDef>
+</Defs>
