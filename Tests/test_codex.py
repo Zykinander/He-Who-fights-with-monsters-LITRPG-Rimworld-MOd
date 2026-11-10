@@ -23,7 +23,7 @@ assert count("1.7/Defs/PowerDefs/EssencePowers.xml", "Essencebound.EssencePowerD
 assert "public sealed class GameComponent_EssenceCodex : GameComponent" in state
 assert "Verse.Current.Game?.GetComponent<GameComponent_EssenceCodex>()" in state
 assert "public sealed class EssenceCodexRecipe : IExposable" in state
-assert 'names.OrderBy(n => n, StringComparer.Ordinal)' in state
+assert 'components.OrderBy(n => n, StringComparer.Ordinal)' in state
 assert 'public string Key => first + "|" + second + "|" + third;' in state
 assert "LookMode.Deep" in state and "ebCodexRecipes" in state
 for name in [
