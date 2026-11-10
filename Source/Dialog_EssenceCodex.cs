@@ -387,7 +387,11 @@ namespace Essencebound
                 return kind.name.ToUpperInvariant() + "\n\n" +
                     "Rank: " + EssenceProgression.RankLabel(kind.rank) +
                     "\nSignature power: " + kind.feature +
-                    "\nRange: " + kind.range.ToString("0.#") + " cells" +
+                    "\nCombat tactic: " + kind.combatStyle +
+                    "\nAttack range: " + kind.range.ToString("0.#") + " cells" +
+                    "\nImpact radius: " + kind.radius.ToString("0.#") + " cells" +
+                    "\nWarning period: " + (kind.windupTicks / 60f).ToString("0.#") + " seconds" +
+                    "\nSpell cooldown: " + (kind.pulseInterval / 60f).ToString("0.#") + " seconds" +
                     "\n\nEssence crystal chance: " +
                     Percent(EssenceCreatureLoot.EssenceChance(kind.rank, true)) +
                     "\nAwakening stone chance: " +
