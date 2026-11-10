@@ -22,4 +22,23 @@ assert '{ "Squirrel", -1 }' in creatures
 assert '{ "Thrumbo", 4 }' in creatures
 assert "PatchAll(typeof(Patch_EssenceRankIncomingDamage).Assembly)" in settings
 
-print("PASS: inspect pane displays actual creature/astral ranks via shared resolver.")
+health = (root / "Source/Hediff_CreatureRank.cs").read_text()
+xml = (root / "1.7/Defs/HediffDefs/CreatureRanks.xml").read_text()
+assert "[HarmonyPatch(typeof(Pawn), nameof(Pawn.SpawnSetup))]" in health
+assert "private static void Postfix(Pawn __instance)" in health
+assert "__instance.RaceProps.Humanlike || __instance.Dead" in health
+assert "GetFirstHediffOfDef(rankDef) != null" in health
+assert '__instance.health.AddHediff(rankDef)' in health
+assert 'public override string LabelBase' in health
+assert "EssenceRankCombat.RankOf(pawn)" in health
+assert "EssenceCreatureRanks.RankLabel(tier)" in health
+assert '"Astral rank: "' in health and '"Creature rank: "' in health
+assert "<defName>EB_CreatureRank</defName>" in xml
+assert "<hediffClass>Essencebound.Hediff_CreatureRank</hediffClass>" in xml
+assert "<isBad>false</isBad>" in xml
+assert "<initialSeverity>1</initialSeverity>" in xml
+assert "<maxSeverity>1</maxSeverity>" in xml
+assert "new Harmony(" in settings and ".PatchAll(" in settings
+
+print("PASS: inspect pane and Health tab both display actual creature/astral ranks via shared resolver.")
+
