@@ -57,7 +57,7 @@ namespace Essencebound
         public GameComponent_EssenceCodex(Game game) { }
 
         public static GameComponent_EssenceCodex Current =>
-            Find.Game?.GetComponent<GameComponent_EssenceCodex>();
+            Current.Game?.GetComponent<GameComponent_EssenceCodex>();
 
         public IReadOnlyList<string> NormalEssences => normalEssences;
         public IReadOnlyList<string> ConfluenceEssences => confluenceEssences;
