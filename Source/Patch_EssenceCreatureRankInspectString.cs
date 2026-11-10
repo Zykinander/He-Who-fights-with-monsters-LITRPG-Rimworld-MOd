@@ -8,7 +8,7 @@ namespace Essencebound
     /// Show a creature's effective rank in the normal selection inspect pane.
     /// This uses exactly the same rank resolver as combat and loot; astral
     /// manifestations show their assigned rank, not their placeholder species.
-    /// No new saved fields or permanent hediffs are needed.
+    /// A separate harmless rank hediff exposes the same tier in the Health tab.
     /// </summary>
     [HarmonyPatch(typeof(Pawn), nameof(Pawn.GetInspectString))]
     public static class Patch_EssenceCreatureRankInspectString
