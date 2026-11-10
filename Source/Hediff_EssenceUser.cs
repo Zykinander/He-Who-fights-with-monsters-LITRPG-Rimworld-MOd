@@ -547,8 +547,10 @@ namespace Essencebound
             // The initial death already rolled normal loot. Astral Loot offers
             // one extra, weaker roll, even when the remains yield nothing.
             int rank = EssenceRankCombat.RankOf(corpse.InnerPawn);
+            string monsterType = corpse.InnerPawn?.health?.hediffSet?.hediffs
+                ?.OfType<Hediff_AstralManifestation>().FirstOrDefault()?.archetypeId;
             bool foundLoot = EssenceCreatureLoot.RollDrops(rank, true,
-                corpse.Position, pawn.Map, out string description, 0.60f);
+                corpse.Position, pawn.Map, out string description, 0.60f, monsterType);
             corpse.Destroy(DestroyMode.Vanish); // No reroll on failed extraction.
             nextAstralLootTick = now + 3600;
             reason = foundLoot ? "Astral Loot extracted " + description + "." :
