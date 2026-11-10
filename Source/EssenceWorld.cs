@@ -90,10 +90,14 @@ namespace Essencebound
         private bool SpawnMonsterGroup(IntVec3 center, float intensity)
         {
             int monsterRank = EssenceMonsterRanks.Roll(intensity);
+            var archetype = EssenceMonsterArchetypes.ForRank(monsterRank);
+            PawnKindDef customKind = archetype == null ? null :
+                DefDatabase<PawnKindDef>.GetNamedSilentFail(archetype.kindDef);
             string preferred = EssenceMonsterRanks.PlaceholderPawnKind(monsterRank);
-            PawnKindDef kind = DefDatabase<PawnKindDef>.GetNamedSilentFail(preferred);
-            kind ??= DefDatabase<PawnKindDef>.GetNamedSilentFail("Warg");
-            kind ??= DefDatabase<PawnKindDef>.GetNamedSilentFail("Megascarab");
+            PawnKindDef fallbackKind = DefDatabase<PawnKindDef>.GetNamedSilentFail(preferred);
+            fallbackKind ??= DefDatabase<PawnKindDef>.GetNamedSilentFail("Warg");
+            fallbackKind ??= DefDatabase<PawnKindDef>.GetNamedSilentFail("Megascarab");
+            PawnKindDef kind = customKind ?? fallbackKind;
             if (kind == null)
             {
                 Log.Warning("[Essencebound] No vanilla pawn kind for an astral manifestation.");
@@ -107,7 +111,27 @@ namespace Essencebound
             {
                 IntVec3 cell = center;
                 if (n > 0 && !TryFindNear(center, map, out cell)) break;
-                Pawn monster = PawnGenerator.GeneratePawn(kind);
+                Pawn monster = null;
+                bool customSpawned = kind == customKind && customKind != null;
+                try
+                {
+                    monster = PawnGenerator.GeneratePawn(kind);
+                }
+                catch (Exception exception)
+                {
+                    Log.Warning("[Essencebound] Could not generate " + kind.defName +
+                        "; falling back to a vanilla animal. " + exception.Message);
+                    if (fallbackKind != null && kind != fallbackKind)
+                    {
+                        customSpawned = false;
+                        try { monster = PawnGenerator.GeneratePawn(fallbackKind); }
+                        catch (Exception fallbackError)
+                        {
+                            Log.Error("[Essencebound] Monster fallback generation failed: " +
+                                fallbackError.Message);
+                        }
+                    }
+                }
                 if (monster == null) continue;
                 if (markerDef != null)
                 {
@@ -117,6 +141,8 @@ namespace Essencebound
                         marker.magicDensity = intensity;
                         marker.rankIndex = monsterRank;
                         marker.Severity = monsterRank + 1f;
+                        if (customSpawned && archetype != null)
+                            marker.AssignArchetype(archetype.id);
                         monster.health.AddHediff(marker);
                     }
                 }
@@ -127,8 +153,10 @@ namespace Essencebound
             }
             if (spawned > 0)
                 Messages.Message("The astral tear unleashed " + spawned + " " +
-                    EssenceMonsterRanks.RankLabel(monsterRank) +
-                    "-rank magical monster(s)! Essencebound fighters of lower rank deal less damage.",
+                    EssenceMonsterRanks.RankLabel(monsterRank) + "-rank " +
+                    (customKind != null ? archetype.name : "magical monster") +
+                    (spawned == 1 ? "!" : " creatures!") +
+                    " Lower-ranked fighters deal reduced damage.",
                     MessageTypeDefOf.ThreatBig, false);
             return spawned > 0;
         }
