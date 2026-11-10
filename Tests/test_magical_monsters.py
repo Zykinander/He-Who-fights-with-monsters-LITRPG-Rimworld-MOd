@@ -27,9 +27,14 @@ for monster, race in zip(monsters, expected_races):
     for stage in stages:
         graphic = stage.find("bodyGraphicData")
         assert graphic is not None
-        assert graphic.findtext("texPath").startswith("Things/Pawn/Animal/")
-        assert graphic.findtext("color")
+        expected_name = monster.findtext("defName").removeprefix("EB_Monster_")
+        assert graphic.findtext("texPath") == f"Essencebound/Monsters/{expected_name}"
+        assert graphic.findtext("graphicClass") == "Graphic_Multi"
+        assert graphic.find("color") is None, "Do not tint original painted colors"
         assert float(graphic.findtext("drawSize")) > 0
+        dessicated = stage.find("dessicatedBodyGraphicData")
+        assert dessicated is not None
+        assert dessicated.findtext("texPath").startswith("Things/Pawn/Animal/")
 
 archetypes = (ROOT / "Source/EssenceMonsterArchetypes.cs").read_text()
 marker = (ROOT / "Source/Hediff_AstralManifestation.cs").read_text()
