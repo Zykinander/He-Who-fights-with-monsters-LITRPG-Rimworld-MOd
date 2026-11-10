@@ -51,6 +51,7 @@ namespace Essencebound
         private List<string> awakeningStones = new List<string>();
         private List<string> learnedPowers = new List<string>();
         private List<string> creatureRaces = new List<string>();
+        private List<string> monsterTypes = new List<string>();
         private List<string> astralRanks = new List<string>();
         private List<EssenceCodexRecipe> recipes = new List<EssenceCodexRecipe>();
 
@@ -64,6 +65,7 @@ namespace Essencebound
         public IReadOnlyList<string> AwakeningStones => awakeningStones;
         public IReadOnlyList<string> LearnedPowers => learnedPowers;
         public IReadOnlyList<string> CreatureRaces => creatureRaces;
+        public IReadOnlyList<string> MonsterTypes => monsterTypes;
         public IReadOnlyList<string> AstralRanks => astralRanks;
         public IReadOnlyList<EssenceCodexRecipe> Recipes => recipes;
 
@@ -75,6 +77,7 @@ namespace Essencebound
             Scribe_Collections.Look(ref awakeningStones, "ebCodexAwakeningStones", LookMode.Value);
             Scribe_Collections.Look(ref learnedPowers, "ebCodexPowers", LookMode.Value);
             Scribe_Collections.Look(ref creatureRaces, "ebCodexCreatures", LookMode.Value);
+            Scribe_Collections.Look(ref monsterTypes, "ebCodexMonsterTypes", LookMode.Value);
             Scribe_Collections.Look(ref astralRanks, "ebCodexAstralRanks", LookMode.Value);
             Scribe_Collections.Look(ref recipes, "ebCodexRecipes", LookMode.Deep);
             if (Scribe.mode == LoadSaveMode.PostLoadInit)
@@ -84,6 +87,7 @@ namespace Essencebound
                 awakeningStones = Distinct(awakeningStones);
                 learnedPowers = Distinct(learnedPowers);
                 creatureRaces = Distinct(creatureRaces);
+                monsterTypes = Distinct(monsterTypes);
                 astralRanks = Distinct(astralRanks);
                 recipes ??= new List<EssenceCodexRecipe>();
                 recipes = recipes.Where(r => r != null &&
@@ -126,6 +130,9 @@ namespace Essencebound
         {
             if (creature?.RaceProps == null || creature.RaceProps.Humanlike) return;
             AddUnique(creatureRaces, creature.def.defName);
+            var archetype = EssenceMonsterArchetypes.ForPawn(creature);
+            if (archetype != null)
+                AddUnique(monsterTypes, archetype.id);
 
             bool manifested = creature.health?.hediffSet?.hediffs
                 ?.OfType<Hediff_AstralManifestation>().Any() == true;
