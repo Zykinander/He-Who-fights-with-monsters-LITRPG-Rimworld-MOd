@@ -348,6 +348,7 @@ namespace Essencebound
             EnsureProgressionRecords();
             string innate = GrantInnatePower(essence.defName);
             string confluenceInnate = string.IsNullOrEmpty(confluenceName) ? "" : GrantInnatePower(confluenceName);
+            GameComponent_EssenceCodex.Current?.ObserveColonist(pawn);
             reason = (string.IsNullOrEmpty(innate) ? "" : " Innate ability: " + innate + ".") +
                      (outcome == null ? "" : " Confluence formed: " + outcome.essence.label +
                      (outcome.state == ConfluenceState.Generated ? " (generated synthesis)." :
@@ -405,6 +406,7 @@ namespace Essencebound
             slot.abilitySublevel = 0;
             slot.rankWork = 0f;
             TryAdvanceEssenceRank(essenceName);
+            GameComponent_EssenceCodex.Current?.ObserveColonist(pawn);
             var essence = DefDatabase<EssenceDef>.GetNamedSilentFail(essenceName);
             message = "awakened " + chosen.power.label + " (" + chosen.aspect.label + ") in " +
                 (essence?.label ?? essenceName) + " (slot " + (slot.index + 1) + "/" + SlotsPerEssence + ").";
@@ -629,6 +631,13 @@ namespace Essencebound
                 defaultLabel = "Essence profile",
                 defaultDesc = "Open the Essencebound character interface: four essences, rank and configured ability slots.",
                 action = () => Find.WindowStack.Add(new Dialog_EssenceProfile(this))
+            };
+            yield return new Command_Action
+            {
+                defaultLabel = "Essence Codex",
+                defaultDesc = "Open the colony-wide encyclopedia of discovered essences, " +
+                              "confluence combinations, awakening stones, abilities and creatures.",
+                action = () => Find.WindowStack.Add(new Dialog_EssenceCodex())
             };
             // Prototype universal looting technique. Later versions can add
             // essence- or stone-specific looting abilities.
