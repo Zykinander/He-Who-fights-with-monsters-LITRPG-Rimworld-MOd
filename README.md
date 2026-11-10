@@ -2,6 +2,10 @@
 
 **RimWorld 1.7 | Harmony required | Experimental: use a backup or test save.**
 
+## v0.24 development: Tactical magical monster combat
+
+The five custom monsters now have **different cast tactics** instead of only an instant single-target spell. Glassmotes disrupt groups, Emberfangs hunt injured colonists, Duskweavers spread web slowdowns, Stormhides unleash wide shockwaves, and Prismatic Sovereigns heal and ward nearby astral allies. Each attack has a visible, color-coded warning at a **fixed location** before the spell lands, so moving out of the area can avoid it. The cast countdown and target location persist through save/load, and being downed cancels the charge. The Codex shows attack radii, targeting style, wind-up time and cooldown. No changes to the monster loot table or rank-resistance curve. See [v0.24 monster combat design and QA](MONSTER_COMBAT_V024.md). This combat change is build-tested, not yet validated in-game.
+
 ## v0.23 development: Distinct astral monster archetypes
 
 Astral tears now produce five recognizable monster types according to their existing density-based rank roll: **Glassmote Scarab (Iron), Emberfang Stalker (Bronze), Duskweaver (Silver), Stormhide Colossus (Gold), and Prismatic Sovereign (Diamond)**. Each now uses its own simplified, transparent creature art (256px directional textures generated in the mod build), a timed signature magical power, a persisted archetype identifier, and its own discoverable Codex entry. North/south views are temporary perspective adaptations until separately illustrated. Their loot remains rare for essence crystals and more generous for awakening stones; a successfully rolled essence can favor the monster's associated essences. Use **DEV: Astral monsters** from an essence user's gizmos to test each one with developer mode enabled. See [monster bestiary and QA notes](MONSTER_BESTIARY_V023.md).
