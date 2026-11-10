@@ -87,9 +87,30 @@ namespace Essencebound
                     MessageTypeDefOf.PositiveEvent, false);
         }
 
-        private bool SpawnMonsterGroup(IntVec3 center, float intensity)
+        // Developer-only shortcut: test any monster tier beside the selected
+        // colonist without changing the colony's actual magic density.
+        public bool TrySpawnDevMonster(Pawn observer, int rank)
         {
-            int monsterRank = EssenceMonsterRanks.Roll(intensity);
+            if (!Prefs.DevMode || observer == null || observer.Map != map ||
+                !observer.Spawned) return false;
+            for (int i = 0; i < 120; i++)
+            {
+                IntVec3 cell = new IntVec3(observer.Position.x + Rand.Range(-10, 11), 0,
+                    observer.Position.z + Rand.Range(-10, 11));
+                float distance = cell.DistanceTo(observer.Position);
+                if (distance < 5f || distance > 10f ||
+                    !cell.InBounds(map) || !cell.Standable(map) ||
+                    cell.Fogged(map) || cell.GetFirstBuilding(map) != null)
+                    continue;
+                return SpawnMonsterGroup(cell, MagicDensity, Math.Max(0, Math.Min(4, rank)));
+            }
+            return false;
+        }
+
+        private bool SpawnMonsterGroup(IntVec3 center, float intensity, int forcedRank = -1)
+        {
+            int monsterRank = forcedRank >= 0 ? Math.Max(0, Math.Min(4, forcedRank)) :
+                EssenceMonsterRanks.Roll(intensity);
             var archetype = EssenceMonsterArchetypes.ForRank(monsterRank);
             PawnKindDef customKind = archetype == null ? null :
                 DefDatabase<PawnKindDef>.GetNamedSilentFail(archetype.kindDef);
