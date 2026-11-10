@@ -43,7 +43,7 @@ assert "caster.Map.mapPawns.FreeColonistsSpawned" in combat
 assert "GenSight.LineOfSight" in combat
 assert 'case "emberfang":' in combat
 assert 'case "duskweaver":' in combat
-assert 'case "sovereign":' in combat
+assert 'type.id == "sovereign" && options.Count == 0' in combat
 assert "OrderByDescending(p =>" in combat
 assert "OfType<Hediff_Injury>()" in combat
 assert 'type.id == "stormhide" ? caster.Position : target.Position' in combat
