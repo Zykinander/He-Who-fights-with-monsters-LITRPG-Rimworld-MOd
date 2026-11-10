@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <!-- Visible in the Health tab for every non-humanlike creature. -->
+  <!-- The actual rank text comes from the live combat resolver, not severity. -->
+  <HediffDef>
+    <defName>EB_CreatureRank</defName>
+    <label>creature rank</label>
+    <description>This creature's effective Essencebound rank. Ordinary creatures inherit a rank from their species; astral manifestations use the rank assigned when their tear opened. The rank controls relative damage resistance and influences essence and awakening-stone loot.</description>
+    <hediffClass>Essencebound.Hediff_CreatureRank</hediffClass>
+    <isBad>false</isBad>
+    <initialSeverity>1</initialSeverity>
+    <maxSeverity>1</maxSeverity>
+  </HediffDef>
+</Defs>
