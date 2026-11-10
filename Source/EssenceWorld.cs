@@ -174,14 +174,24 @@ namespace Essencebound
             return false;
         }
 
-        public static bool SpawnEssence(IntVec3 center, Map map, out string label)
+        public static bool SpawnEssence(IntVec3 center, Map map, out string label,
+            System.Collections.Generic.IEnumerable<string> preferredEssenceNames = null)
         {
             label = "";
             if (map == null) return false;
             var pool = DefDatabase<EssenceDef>.AllDefsListForReading
                 .Where(e => e != null && !e.isConfluence).ToList();
             if (pool.Count == 0) return false;
-            EssenceDef essence = pool[Rand.Range(0, pool.Count)];
+            // On a successful monster loot roll, a thematic essence is
+            // favored, but never guaranteed. Drop *rates* are unchanged.
+            var favorites = preferredEssenceNames == null ? null :
+                new System.Collections.Generic.HashSet<string>(
+                    preferredEssenceNames, StringComparer.Ordinal);
+            var themed = favorites == null ? null :
+                pool.Where(e => favorites.Contains(e.defName)).ToList();
+            var selection = themed != null && themed.Count > 0 && Rand.Value < 0.45f
+                ? themed : pool;
+            EssenceDef essence = selection[Rand.Range(0, selection.Count)];
             string suffix = essence.defName.StartsWith("EB_")
                 ? essence.defName.Substring(3) : essence.defName;
             ThingDef crystal = DefDatabase<ThingDef>.GetNamedSilentFail("EB_" + suffix + "_Crystal");
