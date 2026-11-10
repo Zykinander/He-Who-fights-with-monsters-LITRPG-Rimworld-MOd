@@ -70,6 +70,12 @@ assert "marker.AssignArchetype(archetype.id)" in world
 assert "EssenceMonsterArchetypes.ForRank(monsterRank)" in world
 assert "kind ?? fallbackKind" not in world
 assert "fallbackKind" in world
+assert "public bool TrySpawnDevMonster(Pawn observer, int rank)" in world
+assert "!Prefs.DevMode" in world
+assert "forcedRank >= 0" in world
+assert "Math.Max(0, Math.Min(4, rank))" in world
+assert '"DEV: Astral monsters"' in corpse
+assert "TrySpawnDevMonster(pawn, archetype.rank)" in corpse
 
 assert "EssenceMonsterArchetypes.FavoredEssences(archetypeId)" in loot
 assert "marker?.archetypeId" in loot
