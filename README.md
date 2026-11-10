@@ -2,6 +2,10 @@
 
 **RimWorld 1.7 | Harmony required | Experimental: use a backup or test save.**
 
+## v0.22 development: Colony Essencebound Codex
+
+A five-tab discovery encyclopedia now tracks **essences, confluences and discovered recipes, awakening stones, powers, and a creature bestiary**. Discoveries are saved separately for each colony game; hidden entries stay masked until the player finds or unlocks them. Open it from an essence user's **Essence Codex** gizmo, their Essence profile, or the Essencebound mod settings. See [the Codex guide](CODEX_GUIDE.md) for discovery rules, legacy-save backfill, and QA.
+
 ## v0.21 development: every unique triple forms a confluence
 
 Three **different** normal essences now always grant a fourth, playable confluence essence. The 364 catalogued combinations are preserved (including deterministic handling of two disputed triples); other combinations choose a deterministic, theme-informed result from the 101 existing confluences. The third-essence absorption menu previews the outcome, and older saves missing a confluence can recover theirs when loaded. Generated syntheses are original mod content, not verified novel recipes. See [confluence rules](CONFLUENCE_RULES.md) for the exact behavior and validation details.
