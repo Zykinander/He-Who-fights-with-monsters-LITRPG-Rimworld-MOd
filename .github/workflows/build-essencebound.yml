@@ -31,6 +31,7 @@ jobs:
           python Tests/test_creature_ranks.py
           python Tests/test_creature_rank_inspect.py
           python Tests/test_magical_monsters.py
+          python Tests/test_magical_monster_combat.py
           python Tests/test_monster_art.py
           python Tests/test_creature_loot.py
           python Tests/test_ability_visual_designs.py
