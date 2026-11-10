@@ -24,6 +24,7 @@ jobs:
         run: |
           python Tests/test_database.py
           python Tests/test_confluence_resolution.py
+          python Tests/test_codex.py
           python Tests/test_powers.py
           python Tests/test_creature_ranks.py
           python Tests/test_creature_rank_inspect.py

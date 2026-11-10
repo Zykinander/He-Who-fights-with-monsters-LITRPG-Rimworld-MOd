@@ -17,6 +17,8 @@ namespace Essencebound
     {
         private EssenceDef Essence => DefDatabase<EssenceDef>.GetNamedSilentFail(
             ((CompProperties_EssenceItem)props).essenceDefName);
+        // The codex observes crystal discoveries without consuming items.
+        public EssenceDef DiscoveryEssence => Essence;
 
         public override string CompInspectStringExtra()
         {
