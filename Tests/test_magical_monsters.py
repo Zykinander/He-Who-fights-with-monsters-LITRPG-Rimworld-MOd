@@ -56,7 +56,7 @@ assert "EB_Debuff_Static" in archetypes
 assert "EB_Debuff_Webbed" in archetypes
 assert "target.TakeDamage(" in archetypes
 assert "GenSight.LineOfSight" in archetypes
-assert "map.mapPawns.FreeColonistsSpawned" in archetypes
+assert "caster.Map.mapPawns.FreeColonistsSpawned" in archetypes
 assert '"EB_Fire"' in archetypes and '"EB_Star"' in archetypes
 
 essence_ids = {
